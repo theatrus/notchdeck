@@ -36,10 +36,15 @@ table in [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.
 | [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.md) | Our emulation spec: unified HID report descriptor, input/output report layouts, byte offsets (USB vs BLE), notch-axis encoding table, button/hat map, LED output reports. |
 | [`docs/03-hardware-and-firmware-architecture.md`](docs/03-hardware-and-firmware-architecture.md) | nRF SoC selection, dual-mode (USB/BLE) transport arbitration, BLE HOGP + Battery service, USB HID class, power budget, and the LED/lamp/display subsystem. |
 | [`docs/04-bom-sourcing.md`](docs/04-bom-sourcing.md) | JLCPCB/LCSC availability for every block — module, power path, USB-C, lever sensor, LEDs — with part numbers, stock, and fallbacks. Confirms the design is fully assemblable. |
+| [`docs/05-firmware-update.md`](docs/05-firmware-update.md) | User-upgrade strategy: UF2 drag-and-drop over USB (primary), BLE OTA (secondary), SWD (factory/recovery); build outputs and the security trade-off. |
+| [`hardware/NETPLAN.md`](hardware/NETPLAN.md) | E73 pad → peripheral net plan that makes schematic capture mechanical (power tree, USB, dual I²C, buttons, LEDs, SWD/reset). |
+| [`hardware/PARTS.md`](hardware/PARTS.md) | Real JLCPCB parts → KiCad symbol/footprint/3D mapping; current library status. |
 
 ## Status
 
-Research + protocol framing. No firmware or hardware committed yet. Name is provisional.
+Research, protocol, name, firmware skeleton, KiCad scaffold + vendored part libraries, and the
+E73 net plan are in. Schematic capture is the next hands-on step. Hardware/firmware are not yet
+built or fabricated.
 
 ## License
 
