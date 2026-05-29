@@ -1,0 +1,52 @@
+/*
+ * NotchDeck One — devicetree overlay (TEMPLATE for the nRF52840 DK bring-up).
+ * Pins are PLACEHOLDERS. For the real board, create a proper board definition and
+ * move these nodes there. For the Ebyte E73 module, map to the GPIOs the module
+ * actually brings out (and confirm the USB D+/D- pads are exposed — see hardware/).
+ */
+#include <zephyr/dt-bindings/led/led.h>
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		led-strip = &ws2812;
+	};
+
+	/* Cab buttons. Child order = HID button index (first child -> button 1).
+	 * Functions per spec §3; wire to GPIOs the module exposes. */
+	buttons: buttons {
+		compatible = "gpio-keys";
+		btn_horn_hi: button_1 { gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "horn-hi (A)"; };
+		btn_horn_lo: button_2 { gpios = <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "horn-lo/bell (B)"; };
+		btn_door_cl: button_3 { gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "door-close (X)"; };
+		btn_door_op: button_4 { gpios = <&gpio0 25 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "door-open (Y)"; };
+		btn_ats:     button_5 { gpios = <&gpio1 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "ATS-reset (L)"; };
+		btn_cab:     button_6 { gpios = <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "cab/view (R)"; };
+		btn_select:  button_7 { gpios = <&gpio1 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "select"; };
+		btn_start:   button_8 { gpios = <&gpio1 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; label = "start"; };
+	};
+};
+
+/* AS5600 lever sensor lives on this I2C bus (direct register reads in lever.c). */
+&i2c0 {
+	status = "okay";
+	/* as5600 responds at 0x36; no child node needed for raw-angle reads. */
+};
+
+/* WS2812 notch bar + status pixel over SPI.
+ * TODO: define pinctrl (spi MOSI -> strip DIN) for the chosen board/pins. */
+&spi1 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	/* pinctrl-0 = <&spi1_default>; pinctrl-names = "default";  <-- add for target */
+
+	ws2812: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		reg = <0>;
+		spi-max-frequency = <4000000>;
+		chain-length = <16>;            /* 1 status pixel + 15-notch bar */
+		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+	};
+};

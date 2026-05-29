@@ -11,8 +11,16 @@ twister-out*/
 *-backups/
 *.kicad_pcb-bak
 *.kicad_sch-bak
+*.kicad_prl
 fp-info-cache
 ~*.*
+.history/
+
+# KiCad generated outputs (regenerate with `make` in hardware/)
+hardware/*/docs/images/
+hardware/*/jlcpcb/
+hardware/*/*-jlcpcb.zip
+hardware/*/jlcpcb_bom.csv
 
 # Editor / OS
 .DS_Store

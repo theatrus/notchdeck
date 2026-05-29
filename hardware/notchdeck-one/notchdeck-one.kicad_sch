@@ -1,0 +1,22 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01")
+	(paper "A3")
+	(title_block
+		(title "NotchDeck One")
+		(date "2026-05-29")
+		(rev "A")
+		(company "BenchBits")
+		(comment 1 "Dual-mode (USB + BLE) one-handle train master controller")
+		(comment 2 "Empty scaffold — populate per hardware/PARTS.md")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
