@@ -10,7 +10,7 @@ jobs:
   host-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Host protocol test
         run: make -C firmware test
 
@@ -18,7 +18,7 @@ jobs:
   firmware-build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       # Pulls NCS (imports Zephyr + modules) per firmware/west.yml and installs the
       # arm-zephyr-eabi toolchain. self.path in west.yml must equal app-path.
       - name: Set up NCS / Zephyr
@@ -43,9 +43,11 @@ jobs:
   # Uses the KiCad 9+/nightly CLI; bump the tag if the project format outpaces it.
   hardware-checks:
     runs-on: ubuntu-latest
-    container: ghcr.io/kicad/kicad:nightly
+    container:
+      image: ghcr.io/kicad/kicad:nightly
+      options: --user root      # kicad image defaults to a non-root user; runner temp needs root
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Validate libraries + export BOM
         working-directory: hardware
         run: |
@@ -53,7 +55,14 @@ jobs:
           kicad-cli sym upgrade lib/symbols/notchdeck.kicad_sym
           kicad-cli fp upgrade lib/footprints.pretty
           kicad-cli sch erc notchdeck-one/notchdeck-one.kicad_sch || true
-          make bom-notchdeck-one
+          # call kicad-cli directly (the image may not ship `make`)
+          kicad-cli sch export bom \
+            --output notchdeck-one/jlcpcb_bom.csv \
+            --fields '${ITEM_NUMBER},Reference,Value,Footprint,${QUANTITY},LCSC,MPN,Manufacturer' \
+            --labels 'Item,Designator,Comment,Footprint,Qty,LCSC Part #,MPN,Manufacturer' \
+            --group-by 'Value,Footprint' \
+            --exclude-dnp \
+            notchdeck-one/notchdeck-one.kicad_sch
       - uses: actions/upload-artifact@v4
         with:
           name: notchdeck-one-bom
