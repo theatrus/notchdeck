@@ -15,7 +15,7 @@ Legend — **Status**: `stdlib` = ships with KiCad · `vendor` = drop into `lib/
 
 | Block | Ref | Qty | Part / Value | LCSC | MPN (Manufacturer) | KiCad symbol | Footprint | 3D | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| **MCU+radio** | U1 | 1 | Ebyte E73-2G4M08S1C (nRF52840, onboard antenna) | C356849 | E73-2G4M08S1C (Ebyte) | `notchdeck:E73-2G4M08S1C` | `notchdeck:EBYTE_E73-2G4M08S1C` | E73 STEP | **vendor** |
+| **MCU+radio** | U1 | 1 | Ebyte E73-2G4M08S1C (nRF52840, onboard antenna; USB on pads 27/29/31) | C356849 | E73-2G4M08S1C (Ebyte) | `notchdeck:E73-2G4M08S1C` | `notchdeck:EBYTE_E73-2G4M08S1C` | E73 STEP | **vendor** |
 | **3V3 LDO** | U2 | 1 | AP2112K-3.3 | C23380830 | AP2112K-3.3TRG1 (Diodes) | `Regulator_Linear:AP2112K-3.3` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
 | **Charger** | U3 | 1 | MCP73831-2-OT | C424093 | MCP73831T-2ACI/OT (Microchip) | `Battery_Management:MCP73831-2-OT` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
 | **Fuel gauge** | U4 | 1 | MAX17048 | C2682616 | MAX17048G+T10 (Analog Devices) | `notchdeck:MAX17048` | `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm` *(verify EP vs datasheet)* | stdlib FP | **vendor sym** |
@@ -55,15 +55,20 @@ and repoint the footprint's 3D path to `${KIPRJMOD}/../lib/3dmodels/<file>.step`
 > symbol + footprint + STEP together, which is exactly the "pre-built library + 3D model"
 > path requested. Record each import (source + license) in `lib/ATTRIBUTIONS.md`.
 
-## ⚠️ Blocking verification — E73 USB pins
+## ✓ Verified — E73 exposes USB (dual-mode confirmed)
 
-The entire **USB half of the dual-mode design depends on the E73 module bringing the
-nRF52840 USB D+/D- lines out to castellated pads.** Confirm this against the
-E73-2G4M08S1C datasheet/pinout **before** committing to the module footprint. If the E73
-does **not** expose USB:
-- fall back to the **bare nRF52840-QIAA** (`C190794`) — USB D+/D- are dedicated chip pins,
-  guaranteed available (but then you own the RF/antenna/cert work), **or**
-- choose a module that documents USB pads (e.g. Raytac MDBT50Q exposes them — consigned).
+Confirmed from Ebyte's official E73-2G4M08S1C pin-definition table (43 pads total): the
+module brings the nRF52840 USB lines out to castellated pads, so the dual-mode USB design
+works on the E73 as-is — **no parts change, bare-chip fallback not needed.**
+
+| Pad | Name | Function | Wire to |
+|---|---|---|---|
+| 27 | VBS | USB 5V (VBUS) — feeds nRF52840 USB regulator + VBUS-detect | USB-C VBUS (+ `vbus_present()` sense) |
+| 29 | D− | USB D− | USB-C D− (CC-side pair) |
+| 31 | D+ | USB D+ | USB-C D+ |
+
+Corroborated by USB(-C) boards built on this exact module: joric/nrfmicro and
+ddB0515/nRF52840-BBoard. Source: <https://www.cdebyte.com/products/E73-2G4M08S1C/2>.
 
 ## JLCPCB assembly notes
 

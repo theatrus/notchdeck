@@ -44,10 +44,10 @@ make clean-docs clean-jlc    # remove generated artifacts
 Generated outputs (`*/docs/images/`, `*/jlcpcb/`, `*-jlcpcb.zip`, `jlcpcb_bom.csv`) are
 git-ignored — regenerate with `make`.
 
-## Before you route
+## USB on the E73 — verified
 
-See the **blocking verification** in `PARTS.md`: confirm the Ebyte E73 module brings the
-nRF52840 **USB D+/D- pads** out to castellations — the dual-mode USB half depends on it.
-The bare nRF52840-QIAA is the guaranteed-USB fallback.
+The Ebyte E73-2G4M08S1C **exposes the nRF52840 USB lines**: pad 27 = VBS (VBUS),
+pad 29 = D−, pad 31 = D+ (confirmed against Ebyte's pin-definition table; see `PARTS.md`).
+The dual-mode USB design works on the module as-is — no parts change needed.
 
 Requires `kicad-cli` (KiCad 10) on `PATH`.
