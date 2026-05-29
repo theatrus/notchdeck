@@ -35,3 +35,6 @@ hardware/*/jlcpcb_bom.csv
 .vscode/
 .idea/
 *.swp
+
+# Local-only naming notes (never commit)
+NAMING.md
