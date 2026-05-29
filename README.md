@@ -33,6 +33,7 @@ table in [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.
 | [`docs/01-research-findings.md`](docs/01-research-findings.md) | What the Zuiki Mascon / MasconPro and the Densha de GO! lineage actually do on the wire — VID/PIDs, HID class, byte tables, the SDL driver, reverse-engineering sources. Verified research. |
 | [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.md) | Our emulation spec: unified HID report descriptor, input/output report layouts, byte offsets (USB vs BLE), notch-axis encoding table, button/hat map, LED output reports. |
 | [`docs/03-hardware-and-firmware-architecture.md`](docs/03-hardware-and-firmware-architecture.md) | nRF SoC selection, dual-mode (USB/BLE) transport arbitration, BLE HOGP + Battery service, USB HID class, power budget, and the LED/lamp/display subsystem. |
+| [`docs/04-bom-sourcing.md`](docs/04-bom-sourcing.md) | JLCPCB/LCSC availability for every block — module, power path, USB-C, lever sensor, LEDs — with part numbers, stock, and fallbacks. Confirms the design is fully assemblable. |
 
 ## Status
 

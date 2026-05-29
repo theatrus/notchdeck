@@ -30,15 +30,18 @@ All Nordic SoCs here are **Extended** parts (one-time ~$3 feeder fee; must be in
 | nRF52840-QIAA-R7 | `C1851953` | aQFN-73 | ~355 | $3.70 | reel variant |
 | nRF52840-CKAA-R | `C3606910` | WLCSP-94 | ~239 | $5.65 | |
 | nRF52840-QFAA-F-R | `C3606918` | QFN-48 | ~112 | $10.30 | |
-| **Ebyte E73-2G4M08S1C** | `C2764963` / `C356849` | module 18×13 mm | ~399 / 240 | $5.96 / 7.19 | **nRF52840 module: PCB antenna + crystals + matching, pre-certified** |
+| **Ebyte E73-2G4M08S1C** (onboard antenna) | `C356849` | module 18×13 mm | ~240 | $7.19 | **nRF52840 module: onboard ceramic chip antenna + crystals + matching, pre-cert.** ← integrated-antenna part |
+| Ebyte E73-2G4M08S1**CX** (u.FL) | `C2764963` | module 18×13 mm | ~399 | $5.96 | same module but **IPEX/u.FL connector** for an *external* antenna |
 | nRF52833-QDAA-R | `C2895249` | **QFN-40 (5×5)** | ~4,196 | $3.26 | fallback SoC; easier package, better stock, 512 KB/128 KB |
 | nRF52833-QIAA-R | `C504799` | aQFN-73 | ~590 | $3.53 | |
 
 Not in the JLCPCB library (would need consigned assembly): Raytac **MDBT50Q**, Insight **ISP1807**.
 
 **Sourcing recommendation:**
-1. **Prototype → Ebyte E73-2G4M08S1C module** (`C2764963`). No RF layout/tuning, certified, in stock —
-   de-risks the first spin for ~$2 over the bare chip.
+1. **Prototype → Ebyte E73-2G4M08S1C module, onboard ceramic antenna** (`C356849`). No RF layout/tuning,
+   no external antenna part, certified, in stock — de-risks the first spin. (Use the `…S1CX` / `C2764963`
+   only if you specifically want a u.FL external antenna.) Keep the module's antenna end at the board edge
+   with a ground keep-out, and don't enclose it in metal.
 2. **Cost-down rev → bare nRF52840-QIAA** (`C190794`) once the RF/antenna/cert work is justified.
 3. **If aQFN-73 placement or stock is a concern → nRF52833-QDAA** (`C2895249`): QFN-40, ~4k stock,
    still USB+BLE; accept 512 KB/128 KB (fine unless a graphical display is added).
