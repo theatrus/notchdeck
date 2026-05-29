@@ -1,4 +1,4 @@
-# Hardware & Firmware Architecture — BenchBits Master Controller
+# Hardware & Firmware Architecture — NotchDeck
 
 How the dual-mode (USB + BLE) HID stack from [`02-emulation-protocol-spec.md`](02-emulation-protocol-spec.md)
 maps onto a low-power Nordic nRF SoC.
@@ -153,7 +153,7 @@ explicitly enabled.
 ## 7. Suggested repo layout (when firmware lands)
 
 ```
-benchbits-master-controller/
+notchdeck/
 ├── docs/                      # this research + spec (here now)
 ├── firmware/                  # nRF Connect SDK (Zephyr) app
 │   ├── src/

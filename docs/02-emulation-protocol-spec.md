@@ -1,4 +1,4 @@
-# Emulation Protocol Spec — BenchBits Master Controller
+# Emulation Protocol Spec — NotchDeck
 
 Defines the on-wire HID contract our device presents over **both** transports. Design goals:
 
@@ -14,7 +14,7 @@ Defines the on-wire HID contract our device presents over **both** transports. D
 | Field | USB | BLE |
 |---|---|---|
 | Vendor/Product ID | **allocate our own** — e.g. [pid.codes](https://pid.codes) test VID `0x1209` + a sub-PID, or a real assigned VID. **Never** ship Zuiki's `0x33DD`. | n/a (GATT) |
-| Product string | `BenchBits Master Controller` | same, as GAP Device Name |
+| Product string | `NotchDeck One` | same, as GAP Device Name |
 | Appearance | — | `0x03C4` (Gamepad) |
 | HID version | `bcdHID 0x0111` | HID Information char |
 

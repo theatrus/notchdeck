@@ -1,8 +1,10 @@
-# BenchBits Master Controller
+# NotchDeck
 
-> Working name. A dual-mode (USB + BLE) train **master controller** ("mascon") — an
-> open-hardware reimplementation of the Zuiki / Densha de GO! style one-handle power/brake
-> lever, built on a low-power Nordic nRF SoC.
+> **NotchDeck** (a BenchBits product) — **NotchDeck One** is a dual-mode (USB + BLE) train
+> **master controller** ("mascon"): an open-hardware reimplementation of the Zuiki / Densha de GO!
+> style one-handle power/brake lever, built on a low-power Nordic nRF SoC. *"One handle. Every notch."*
+>
+> The "One" is the one-handle unit; the name leaves room for a two-handle **NotchDeck Two** later.
 
 The goal is a controller that plugs in over **USB HID** *and* roams over **Bluetooth LE HID**,
 presenting to every host (Windows / macOS / Linux / Android / iOS / Switch-class hosts) as a

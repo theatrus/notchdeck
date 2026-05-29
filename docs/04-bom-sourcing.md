@@ -1,4 +1,4 @@
-# BOM & JLCPCB Sourcing — BenchBits Master Controller
+# BOM & JLCPCB Sourcing — NotchDeck
 
 JLCPCB/LCSC availability of the major functional blocks (checked May 2026). All Nordic + most
 support parts are **Extended** (one-time ~$3 feeder fee each; verify in-stock at order time). Goal:
