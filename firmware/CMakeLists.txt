@@ -10,4 +10,5 @@ target_sources(app PRIVATE
 	src/leds.c
 	src/transport_usb.c
 	src/transport_ble.c
+	src/dfu.c
 )

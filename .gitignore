@@ -1,11 +1,19 @@
 # Zephyr / nRF Connect SDK build output
 build/
 build_*/
+dist/
 *.hex
 *.bin
 *.elf
 *.map
 twister-out*/
+# west workspace artifacts (NCS pulled as siblings in CI / local west workspace)
+/nrf/
+/zephyr/
+/modules/
+/bootloader/
+/tools/
+/.west/
 
 # KiCad
 *-backups/

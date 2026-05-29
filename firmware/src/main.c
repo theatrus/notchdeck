@@ -11,6 +11,7 @@
 #include "transport.h"
 #include "leds.h"
 #include "lever.h"
+#include "dfu.h"
 
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
@@ -38,6 +39,17 @@ int main(void)
 
 	leds_init();
 	report_engine_init();
+
+	/* Hold Select + Start (HID buttons 7 & 8) at power-on to drop into the
+	 * USB UF2 update drive — the no-physical-reset path to firmware update. */
+	{
+		struct notchdeck_in_report boot;
+
+		report_engine_build(&boot);
+		if ((boot.buttons & (BIT(6) | BIT(7))) == (BIT(6) | BIT(7))) {
+			notchdeck_enter_dfu();   /* does not return */
+		}
+	}
 
 	if (vbus_present()) {
 		mode = MODE_USB;

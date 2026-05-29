@@ -133,8 +133,9 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
   fit a 32.768 kHz crystal instead (lower sleep current / tighter timing), reclaim P0.00/P0.01
   and drop BTN11/BTN12 (or move buttons to a scan matrix).
 
-## Not-yet-in-BOM parts flagged here
+## Support parts (now specified in PARTS.md)
 
-P-FET load-share + Schottky (power-path), USB TVS/ESD array, WS2812 level shifter (only if the
-strip runs at 5 V), pull-up/series resistors, decoupling caps. Add during capture; all are
-stdlib KiCad symbols/footprints.
+The power-path P-FET (AO3401A) + Schottky (B5819W), USB ESD (USBLC6-2SC6), reset button, SWD
+header, optional WS2812 level shifter (74LVC1G125), and the pull-up/gate/decoupling passives are
+all in [`PARTS.md`](PARTS.md) → "Power-path, protection & programming". All are stdlib KiCad
+symbols with shipped 3D and are stocked at JLCPCB (AO3401A + B5819W are basic parts).

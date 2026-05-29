@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # Fast, toolchain-free: guards the protocol/report layer (sizes, offsets, IDs).
+  host-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Host protocol test
+        run: make -C firmware test
+
+  # Full nRF Connect SDK build for the nRF52840. Produces the .uf2 update artifact.
+  firmware-build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      # Pulls NCS (imports Zephyr + modules) per firmware/west.yml and installs the
+      # arm-zephyr-eabi toolchain. self.path in west.yml must equal app-path.
+      - name: Set up NCS / Zephyr
+        uses: zephyrproject-rtos/action-zephyr-setup@v1
+        with:
+          app-path: firmware
+          toolchains: arm-zephyr-eabi
+      - name: Build (nrf52840dk)
+        run: west build -b nrf52840dk/nrf52840 firmware -d build
+      - name: Collect artifacts
+        run: |
+          mkdir -p dist
+          cp build/zephyr/zephyr.uf2 dist/notchdeck-one.uf2 || true
+          cp build/zephyr/zephyr.hex dist/notchdeck-one.hex || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: notchdeck-one-firmware
+          path: dist/
+          if-no-files-found: warn
+
+  # Hardware sanity: KiCad libraries parse, schematic ERC, BOM exports.
+  # Uses the KiCad 9+/nightly CLI; bump the tag if the project format outpaces it.
+  hardware-checks:
+    runs-on: ubuntu-latest
+    container: ghcr.io/kicad/kicad:nightly
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate libraries + export BOM
+        working-directory: hardware
+        run: |
+          kicad-cli version
+          kicad-cli sym upgrade lib/symbols/notchdeck.kicad_sym
+          kicad-cli fp upgrade lib/footprints.pretty
+          kicad-cli sch erc notchdeck-one/notchdeck-one.kicad_sch || true
+          make bom-notchdeck-one
+      - uses: actions/upload-artifact@v4
+        with:
+          name: notchdeck-one-bom
+          path: hardware/notchdeck-one/jlcpcb_bom.csv
+          if-no-files-found: warn

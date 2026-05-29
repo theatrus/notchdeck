@@ -1,0 +1,12 @@
+# West manifest — makes firmware/ a freestanding nRF Connect SDK application.
+# `west init -l firmware && west update` (and CI) pulls NCS, which in turn
+# imports Zephyr + all required modules. Bump `revision` to track NCS releases.
+manifest:
+  version: "0.13"
+  projects:
+    - name: nrf
+      url: https://github.com/nrfconnect/sdk-nrf
+      revision: v2.9.0
+      import: true
+  self:
+    path: firmware

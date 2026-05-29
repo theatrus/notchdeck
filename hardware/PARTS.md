@@ -35,6 +35,27 @@ Legend — **Status**: `stdlib` = ships with KiCad · `vendor` = drop into `lib/
 |---|---|---|---|---|---|---|---|---|
 | PMIC | U6 | nPM1300 | C7501206 | nPM1300-QEAA (Nordic) | `notchdeck:nPM1300` | `Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm` | vendor STEP | **vendor sym** |
 
+## Power-path, protection & programming (from the net plan)
+
+The parts `NETPLAN.md` flagged as "not yet in BOM" — all map to **KiCad stdlib symbols** with
+shipped 3D, all stocked at JLCPCB.
+
+| Block | Ref | Part / value | LCSC | MPN (Manufacturer) | KiCad symbol | Footprint | Status |
+|---|---|---|---|---|---|---|---|
+| **USB ESD** | U7 | USBLC6-2SC6 | C2687116 | USBLC6-2SC6 (ST) | `Power_Protection:USBLC6-2SC6` | `Package_TO_SOT_SMD:SOT-23-6` | stdlib |
+| **Power-path PMOS** | Q1 | AO3401A (P-ch, load-share) | C15127 *(basic)* | AO3401A (AOS) | `Transistor_FET:Q_PMOS_GSD` | `Package_TO_SOT_SMD:SOT-23` | stdlib |
+| **Power-path diode** | D_PP | B5819W Schottky (VBUS→VSYS) | C8598 *(basic)* | B5819W (Slkor) | `Device:D_Schottky` | `Diode_SMD:D_SOD-123` | stdlib |
+| **Reset button** | SW_RST | SMD tactile | *(in-stock)* | e.g. TS-1187A | `Switch:SW_Push` | `Button_Switch_SMD:*` | stdlib |
+| **SWD header** | J3 | 2×5 1.27 mm (Cortex debug) | *(in-stock / Tag-Connect)* | — | `Connector:Conn_ARM_JTAG_SWD_10` | `Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD` | stdlib |
+| **WS2812 level shift** *(opt, DNP unless strip @5 V)* | U8 | 74LVC1G125 | C52098142 | 74LVC1G125W5 (Diodes) | `74xGxx:74LVC1G125` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib |
+| **Gate / pull resistors** | R_PP.. | 100 kΩ 0402 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
+| **I²C pull-ups** | R_I2C.. | 4.7 kΩ 0402 ×4 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
+
+Notes: AO3401A + B5819W are **JLCPCB basic parts** (no feeder fee). SWD: a Tag-Connect
+`TC2030-IDC-NL` footprint is the no-connector alternative to the 2×5 header. The level shifter is
+only populated if the WS2812 strip is run at 5 V (3.3 V data into a 5 V strip can be marginal);
+default-DNP if the strip runs at 3.3 V.
+
 ## Library status (what's in `lib/` now)
 
 All default-build parts now resolve to a symbol + footprint + 3D model. Verified with

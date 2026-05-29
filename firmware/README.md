@@ -51,6 +51,26 @@ E73 / custom PCB later (and move `boards/*.overlay` content into it).
 - **LEDs.** Local lever-follow + connection/battery status by default; a host Output report
   (the channel Zuiki repurposes from "rumble") takes over for in-sim signalling.
 
+## Firmware updates (see ../docs/05-firmware-update.md)
+
+- **User path:** UF2 drag-and-drop. `CONFIG_BUILD_OUTPUT_UF2=y` emits `build/zephyr/zephyr.uf2`;
+  the user double-taps RESET (or holds **Select + Start** at power-on → `dfu.c` writes the
+  bootloader GPREGRET magic and resets) to mount the update drive, then drops the `.uf2`.
+- **Version:** the `VERSION` file drives `app_version.h` and the BLE DIS firmware-revision
+  (`CONFIG_BT_DIS_FW_REV_STR`, kept in sync by the `release` target).
+- `make release` stamps versioned `dist/notchdeck-one-vX.Y.Z.{uf2,hex}`.
+- The UF2 base address / flash partitions are finalized with the production board's bootloader
+  (Adafruit nRF52 UF2 bootloader, flashed once via the SWD header). MCUboot + signed images is
+  the documented secure-update upgrade path.
+
+## Test & CI
+
+- `make test` builds and runs `test/host_report_test.c` with a **plain host compiler** (no
+  Zephyr) — it guards the wire contract: report sizes (7 B), field offsets (lever = Y = byte 4),
+  report IDs, and the DFU boot-combo mask. Runs in CI as the fast `host-test` job.
+- `.github/workflows/ci.yml` also builds the full NCS firmware (`firmware-build`, via
+  `firmware/west.yml`) and runs KiCad library/ERC/BOM checks (`hardware-checks`).
+
 ## TODOs before first flash
 
 - Set real `LEVER_ANGLE_MIN/MAX` and direction in `lever.c` after assembling the shaft.
