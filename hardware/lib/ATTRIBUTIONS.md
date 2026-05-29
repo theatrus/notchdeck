@@ -18,22 +18,28 @@ sed -i '' 's|\${KICAD.*_3RD_PARTY}/3dmodels/.*/|\${KIPRJMOD}/../lib/3dmodels/|' 
     lib/footprints.pretty/Foo.kicad_mod
 ```
 
-## Planned imports (see ../PARTS.md)
-
-These are the parts NOT in the KiCad standard library and must be vendored before the
-schematic/PCB can be completed. Fill in exact source URL + license as each is imported.
+## Imported / authored parts
 
 | Part | Symbol | Footprint | 3D | Source | License |
 |---|---|---|---|---|---|
-| Ebyte E73-2G4M08S1C (nRF52840 module) | ☐ | ☐ | ☐ | SnapEDA / Component Search Engine (Samacsys); Ebyte datasheet | _TBD_ |
-| Analog Devices MAX17048 (fuel gauge) | ☐ | stdlib TDFN-8 2×2 | n/a | SnapEDA / Component Search Engine | _TBD_ |
-| AMS AS5600 (magnetic angle) | ☐ | stdlib SOIC-8 | stdlib | SnapEDA | _TBD_ |
-| USB-C 16P receptacle (JLCPCB TYPE-C 16PIN 2MD) | stdlib | ☐ | ☐ | community "TYPE-C-31-M-12" / SnapEDA | _TBD_ |
-| WS2812B-2020 (if 2020 pkg chosen) | stdlib | ☐ | ☐ | SnapEDA / community | _TBD_ |
-| Nordic nPM1300 (optional PMIC) | ☐ | stdlib QFN-32 5×5 | ☐ | Nordic KiCad library / SnapEDA | _TBD_ |
+| Ebyte E73-2G4M08S1C (nRF52840 module) | ✅ `notchdeck:E73-2G4M08S1C` | ✅ `EBYTE_E73-2G4M08S1C.kicad_mod` | ✅ `3dmodels/EBYTE_E73-2G4M08S1C.step` | joric/nrfmicro | **Unlicense (public domain)** |
+| AMS AS5600 (magnetic angle) | ✅ `notchdeck:AS5600` (authored) | stdlib `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` | stdlib | in-house, from ams datasheet v1-06 pinout (Fig.4) | own work |
+| ADI MAX17048 (fuel gauge) | ✅ `notchdeck:MAX17048` (authored) | stdlib `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` | stdlib | in-house, from ADI datasheet pinout | own work |
+| USB-C 16P receptacle (HRO TYPE-C-31-M-12, C165948) | stdlib | stdlib `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | stdlib | KiCad standard library | CC-BY-SA 4.0 |
+| Nordic nPM1300 (optional, Option A only) | ☐ not yet | stdlib `Package_DFN_QFN:QFN-32-1EP_5x5mm…` | ☐ | Nordic KiCad lib / SnapEDA | _TBD_ |
 
-(☐ = needs importing. "stdlib" = use the KiCad-shipped part, nothing to vendor.)
+### E73-2G4M08S1C — details
 
-Prefer **Component Search Engine (Samacsys)** / **SnapEDA** parts since they bundle
-symbol + footprint + STEP together. Most are free under permissive/own-use terms — record
-the exact license per part above.
+- `footprints.pretty/EBYTE_E73-2G4M08S1C.kicad_mod` — the 43-pad module footprint, taken from
+  joric/nrfmicro (`hardware/nrfmicro.pretty/E73-2G4M08S1C-52840.kicad_mod`), upgraded to the
+  KiCad 10 format with `kicad-cli fp upgrade`, renamed, and relinked to the 3D model below.
+- `3dmodels/EBYTE_E73-2G4M08S1C.step` — module STEP from the same repo.
+- `symbols/notchdeck.kicad_sym` → `E73-2G4M08S1C` — symbol extracted from nrfmicro's schematic
+  (`nrfmicro.kicad_sch` lib_symbols), upgraded with `kicad-cli sym upgrade`, footprint property
+  repointed to `notchdeck:EBYTE_E73-2G4M08S1C`, BOM props (LCSC/MPN/Manufacturer) added.
+
+Source repo: <https://github.com/joric/nrfmicro> — released into the public domain (Unlicense),
+so no attribution is required; recorded here for provenance. The nrfmicro footprint pin/pad
+numbering and the extracted symbol come from the same project, so they are mutually consistent.
+
+(☐ = still to import. "stdlib" = KiCad-shipped, nothing vendored.)
