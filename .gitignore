@@ -1,0 +1,21 @@
+# Zephyr / nRF Connect SDK build output
+build/
+build_*/
+*.hex
+*.bin
+*.elf
+*.map
+twister-out*/
+
+# KiCad
+*-backups/
+*.kicad_pcb-bak
+*.kicad_sch-bak
+fp-info-cache
+~*.*
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
