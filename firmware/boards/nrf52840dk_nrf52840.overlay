@@ -8,9 +8,9 @@
 #include <zephyr/dt-bindings/gpio/gpio.h>
 
 / {
-	aliases {
-		led-strip = &ws2812;
-	};
+	/* led-strip alias intentionally omitted on the DK (no WS2812 wired / no
+	 * pinctrl); leds.c compiles in its no-strip fallback. Add the alias +
+	 * the &spi1 ws2812 node (below) on the custom NotchDeck board. */
 
 	/* Cab buttons. Child order = HID button index (first child -> button 1).
 	 * Functions per spec §3; wire to GPIOs the module exposes. */
@@ -33,20 +33,24 @@
 	/* as5600 responds at 0x36; no child node needed for raw-angle reads. */
 };
 
-/* WS2812 notch bar + status pixel over SPI.
- * TODO: define pinctrl (spi MOSI -> strip DIN) for the chosen board/pins. */
-&spi1 {
-	compatible = "nordic,nrf-spim";
-	status = "okay";
-	/* pinctrl-0 = <&spi1_default>; pinctrl-names = "default";  <-- add for target */
-
-	ws2812: ws2812@0 {
-		compatible = "worldsemi,ws2812-spi";
-		reg = <0>;
-		spi-max-frequency = <4000000>;
-		chain-length = <16>;            /* 1 status pixel + 15-notch bar */
-		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-		spi-one-frame = <0x70>;
-		spi-zero-frame = <0x40>;
-	};
-};
+/* WS2812 notch bar + status pixel over SPI — for the custom NotchDeck board.
+ * Disabled on the DK (needs pinctrl + a real strip). To enable: add the
+ * `led-strip = &ws2812;` alias above, re-enable CONFIG_SPI/LED_STRIP in
+ * prj.conf, and define pinctrl mapping SPIM MOSI -> WS2812_DIN (P0.08).
+ *
+ * &spi1 {
+ *     compatible = "nordic,nrf-spim";
+ *     status = "okay";
+ *     pinctrl-0 = <&spi1_default>;
+ *     pinctrl-names = "default";
+ *     ws2812: ws2812@0 {
+ *         compatible = "worldsemi,ws2812-spi";
+ *         reg = <0>;
+ *         spi-max-frequency = <4000000>;
+ *         chain-length = <16>;
+ *         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+ *         spi-one-frame = <0x70>;
+ *         spi-zero-frame = <0x40>;
+ *     };
+ * };
+ */

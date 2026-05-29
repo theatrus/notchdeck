@@ -17,6 +17,7 @@
 #include <zephyr/bluetooth/gatt.h>
 #include <zephyr/bluetooth/services/bas.h>
 #include <bluetooth/services/hids.h>
+#include <zephyr/settings/settings.h>
 #include <zephyr/logging/log.h>
 #include <string.h>
 
@@ -133,7 +134,7 @@ int transport_ble_init(notchdeck_output_cb cb)
 
 int transport_ble_start_adv(void)
 {
-	int err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), NULL, 0);
+	int err = bt_le_adv_start(BT_LE_ADV_CONN_FAST_2, ad, ARRAY_SIZE(ad), NULL, 0);
 
 	if (err && err != -EALREADY) {
 		LOG_ERR("adv start failed (%d)", err);
