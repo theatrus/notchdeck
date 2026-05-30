@@ -114,6 +114,59 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
   - Mechanical: diametric magnet centered over the package on the lever shaft.
 - **TWIM1 — MAX17048** (U4): SDA=P0.12(20), SCL=P0.07(22), 4.7 kΩ pull-ups to +3V3.
 
+## Lever sensing — two interchangeable front-ends
+
+The lever is a **discrete-detent** input (15 positions: EB, B8–B1, N, P1–P5), so this is
+"which detent am I in," not a precision-angle problem. The choice is **contained entirely in
+firmware `lever.c`** (`lever_get_notch()` returns a notch index); the notch→HID-byte table and
+everything downstream are sensor-agnostic. Two options:
+
+### Option 1 — AS5600 magnetic angle (default)
+
+Per the I²C section above. **Why drift isn't a concern here:** the AS5600 reports the *direction*
+of a diametric magnet's field (ratiometric `atan2`), so magnet temp-coefficient (~−0.12 %/°C) and
+aging barely shift the angle; on-chip temp compensation handles the silicon. Absolute accuracy is
+~±1–2° (it's a budget part) against **~6–12° notch spacing**, and the mechanical detent **parks
+the lever at each band's center**, far from the decision thresholds — so quantization is robust
+(firmware adds hysteresis). It's *absolute* (no power-on homing). Real risks are mechanical, not
+drift: magnet centering, air-gap (0.5–3 mm), shaft runout. Optional upgrade if you ever want more
+margin: MT6701 (14-bit, ~same cost, JLCPCB-stocked).
+
+### Option 2 — cam + 4 Gray-coded switches (deterministic, authentic)
+
+A cam on the shaft actuates **4 switches**; the pattern encodes the notch. **Zero drift, zero
+calibration, decodes as pure GPIO** — and it's how the real Densha de GO! / DGC-255 controllers
+work (research doc §4). Cost moves into the cam. Use **Gray code** so exactly one bit changes per
+detent transition (no transient-invalid codes); an unused/unknown code → hold last valid.
+
+4-bit Gray map (S3 S2 S1 S0), one bit changes between physically adjacent notches:
+
+| Notch | code | | Notch | code |
+|---|---|---|---|---|
+| EB | 0000 | | B1 | 1100 |
+| B8 | 0001 | | N  | 1101 |
+| B7 | 0011 | | P1 | 1111 |
+| B6 | 0010 | | P2 | 1110 |
+| B5 | 0110 | | P3 | 1010 |
+| B4 | 0111 | | P4 | 1011 |
+| B3 | 0101 | | P5 | 1001 |
+| B2 | 0100 | | *(unused)* | 1000 |
+
+Switch element — pick one:
+- **Hall (recommended): 4× DRV5032FB** (SOT-23, contactless, no wear) + small magnet lobes on the
+  cam. SMD-assemblable at JLCPCB.
+- **Mechanical: 4× snap-action** (Omron SS-5GL / D2F-class, cam-lever actuated) — cheapest, most
+  authentic *feel*, but contacts wear (~10⁵–10⁶ cycles) and are usually hand-mounted.
+
+GPIO (reuses the freed AS5600 I²C0 pins + 2 analog spares; MAX17048 stays on TWIM1):
+`LEVER_S0`=P0.26(12), `LEVER_S1`=P0.06(14), `LEVER_S2`=P0.03(3), `LEVER_S3`=P0.28(4) —
+active-low to GND with internal pull-ups (or Hall open-drain outputs + pull-ups). Debounce a few
+ms in firmware.
+
+**Recommendation:** ship Option 1 (AS5600) for the simplest BOM; choose Option 2 if you want
+calibration-free determinism / maximum authenticity and don't mind the cam machining. If machining
+a cam anyway, driving Hall switches off it removes the analog layer for ~$0.80 of sensors.
+
 ## Programming / reset (see `../docs/05-firmware-update.md`)
 
 - **SWD header**: SWDIO(37), SWDCLK(39), nRESET(26/P0.18), +3V3, GND. Use a Tag-Connect

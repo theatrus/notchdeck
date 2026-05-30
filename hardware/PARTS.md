@@ -56,6 +56,22 @@ Notes: AO3401A + B5819W are **JLCPCB basic parts** (no feeder fee). SWD: a Tag-C
 only populated if the WS2812 strip is run at 5 V (3.3 V data into a 5 V strip can be marginal);
 default-DNP if the strip runs at 3.3 V.
 
+## Alternative lever front-end (Option 2 — cam + Gray-coded switches)
+
+Swaps the AS5600 (U5) for a 4-switch cam (see `NETPLAN.md` → "Lever sensing"). Deterministic,
+no calibration; reads as 4 GPIO. Pick one switch element:
+
+| Block | Ref | Part | LCSC | MPN | KiCad symbol | Footprint | Status |
+|---|---|---|---|---|---|---|---|
+| Hall switch ×4 (recommended) | U5a–d | DRV5032FB | C2655033 | DRV5032FBDBZR (TI) | generic 3-pin / vendor | `Package_TO_SOT_SMD:SOT-23` | **vendor sym** (not in stdlib) |
+| or snap-action ×4 | SW_La–d | SS-5GL (Omron) | C87120 | SS-5GL2 | `Switch:SW_SPST` | through-hole / hand-mount | stdlib sym |
+| Hall pull-ups / lobe magnets | — | 4.7 kΩ + small NdFeB | — | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
+
+Notes: DRV5032FB is contactless (no wear), SOT-23, JLCPCB-stocked (~13k, $0.20) — needs a 3-pin
+Hall-switch symbol (generic or vendored; not in KiCad stdlib). SS-5GL is the authentic cam
+microswitch (through-hole, ~$0.60) — most authentic feel, but contacts wear and it's hand-mounted.
+Default build uses the AS5600; this section is the drop-in alternative.
+
 ## Library status (what's in `lib/` now)
 
 All default-build parts now resolve to a symbol + footprint + 3D model. Verified with

@@ -8,6 +8,11 @@
  * TODO(hw): set LEVER_ANGLE_MIN/MAX to the real mechanical end-stops after
  *           assembling the detented shaft + diametric magnet, and confirm the
  *           rotation direction (flip LEVER_REVERSED if EB/P5 come out swapped).
+ *
+ * The sensor choice is contained in THIS file: the alternative front-end
+ * (cam + 4 Gray-coded switches) only rewrites lever_get_notch() to read 4 GPIO
+ * through a Gray-code lookup — the notch table and everything downstream are
+ * unchanged. See hardware/NETPLAN.md -> "Lever sensing".
  */
 #include "lever.h"
 
