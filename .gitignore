@@ -38,3 +38,6 @@ hardware/*/jlcpcb_bom.csv
 
 # Local-only naming notes (never commit)
 NAMING.md
+
+# Patch/merge backups
+*.orig
