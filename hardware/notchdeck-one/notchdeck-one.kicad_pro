@@ -50,7 +50,23 @@
         "silk_text_thickness": 0.125,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.15
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.15,
+          "min_island_area": 10.0,
+          "min_thickness": 0.25,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -690,8 +706,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "servo.kicad_sch",
-        "name": "servo",
+        "filename": "notchdeck-one.kicad_sch",
+        "name": "notchdeck-one",
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
@@ -700,16 +716,24 @@
   },
   "sheets": [
     [
-      "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
-      "servo"
+      "9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01",
+      "notchdeck-one"
     ],
     [
-      "a1b2c3d4-e5f6-7890-abcd-ef0123456789",
-      "PSU"
+      "0d4eb303-8502-4a0e-80b0-eb5483675459",
+      "MCU"
     ],
     [
-      "b2c3d4e5-f6a7-8901-bcde-f01234567890",
-      "PSU_SERVO"
+      "7d2dd40e-5097-4a0f-9306-a516a342b95f",
+      "Power"
+    ],
+    [
+      "9867d166-6f44-4981-8f02-32c7eec144e9",
+      "Lever"
+    ],
+    [
+      "edefe4a1-1b44-437c-947e-785de0970a70",
+      "Controls"
     ]
   ],
   "text_variables": {},

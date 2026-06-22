@@ -41,3 +41,7 @@ NAMING.md
 
 # Patch/merge backups
 *.orig
+
+# Python bytecode (scripts/)
+__pycache__/
+*.pyc

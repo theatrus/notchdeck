@@ -10,9 +10,73 @@
 		(rev "A")
 		(company "BenchBits")
 		(comment 1 "Dual-mode (USB + BLE) one-handle train master controller")
-		(comment 2 "Empty scaffold — populate per hardware/PARTS.md")
+		(comment 2 "Top-level — hierarchical sheets per functional block")
 	)
 	(lib_symbols)
+	(sheet
+		(at 40.64 40.64)
+		(size 36.00 22.00)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "0d4eb303-8502-4a0e-80b0-eb5483675459")
+		(property "Sheetname" "MCU"
+			(at 40.64 39.37 0)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 40.64 63.91 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+	)
+	(sheet
+		(at 96.52 40.64)
+		(size 36.00 22.00)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "7d2dd40e-5097-4a0f-9306-a516a342b95f")
+		(property "Sheetname" "Power"
+			(at 96.52 39.37 0)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 96.52 63.91 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+	)
+	(sheet
+		(at 152.40 40.64)
+		(size 36.00 22.00)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "9867d166-6f44-4981-8f02-32c7eec144e9")
+		(property "Sheetname" "Lever"
+			(at 152.40 39.37 0)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Sheetfile" "lever.kicad_sch"
+			(at 152.40 63.91 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+	)
+	(sheet
+		(at 208.28 40.64)
+		(size 36.00 22.00)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "edefe4a1-1b44-437c-947e-785de0970a70")
+		(property "Sheetname" "Controls"
+			(at 208.28 39.37 0)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Sheetfile" "controls.kicad_sch"
+			(at 208.28 63.91 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

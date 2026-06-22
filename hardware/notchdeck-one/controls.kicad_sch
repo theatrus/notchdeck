@@ -1,0 +1,2486 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "edefe4a1-1b44-437c-947e-785de0970a70")
+	(paper "A3")
+	(title_block
+		(title "NotchDeck One — Controls (buttons / hat / WS2812 LEDs / status)")
+		(date "2026-05-29")
+		(rev "A")
+		(company "BenchBits")
+	)
+	(lib_symbols
+	(symbol "Switch:SW_Push"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "SW"
+			(at 1.27 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 0 -1.524 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "switch normally-open pushbutton push-button"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "SW_Push_0_1"
+			(circle
+				(center -2.032 0)
+				(radius 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 1.27) (xy 0 3.048)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.032 0)
+				(radius 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 1.27) (xy -2.54 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 5.08 0 180)
+				(length 2.54)
+				(name "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "LED:WS2812B"
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 5.08 5.715 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right bottom)
+			)
+		)
+		(property "Value" "WS2812B"
+			(at 1.27 -5.715 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+			(at 1.27 -7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+			(at 2.54 -9.525 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "RGB LED NeoPixel addressable"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "WS2812B_0_0"
+			(text "RGB"
+				(at 2.286 -4.191 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+				)
+			)
+		)
+		(symbol "WS2812B_0_1"
+			(polyline
+				(pts
+					(xy 1.27 -2.54) (xy 1.778 -2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 -3.556) (xy 1.778 -3.556)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.286 -1.524) (xy 1.27 -2.54) (xy 1.27 -2.032)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.286 -2.54) (xy 1.27 -3.556) (xy 1.27 -3.048)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.683 -1.016) (xy 3.683 -3.556) (xy 3.683 -4.064)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 4.699 -1.524) (xy 2.667 -1.524) (xy 3.683 -3.556) (xy 4.699 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 4.699 -3.556) (xy 2.667 -3.556)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start 5.08 5.08)
+				(end -5.08 -5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "WS2812B_1_1"
+			(pin power_in line
+				(at 0 7.62 270)
+				(length 2.54)
+				(name "VDD"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name "DOUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name "VSS"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -7.62 0 0)
+				(length 2.54)
+				(name "DIN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:C"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "C_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_0_1"
+			(polyline
+				(pts
+					(xy -2.032 0.762) (xy 2.032 0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.032 -0.762) (xy 2.032 -0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "C_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:LED"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "LED diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "LED_0_1"
+			(polyline
+				(pts
+					(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 0) (xy 1.27 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 -1.27) (xy -1.27 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "LED_1_1"
+			(pin passive line
+				(at -3.81 0 0)
+				(length 2.54)
+				(name "K"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 3.81 0 180)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 30.4800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "521febf0-395f-4ae5-8147-e88b5c6a1f33")
+		(property "Reference" "SW1"
+			(at 34.2900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 34.2900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 30.4800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "966f559b-29f5-4ff1-aedb-9af23d0de44b"))
+		(pin "2" (uuid "caeb483a-dfc4-4f99-99fa-2c44f28ede19"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 68.5800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f38e567f-ab90-43ef-a23f-7a2f1957388e")
+		(property "Reference" "SW2"
+			(at 72.3900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 72.3900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 68.5800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 68.5800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3c4bd959-8f25-4e34-905f-e7561b66da89"))
+		(pin "2" (uuid "68b24f1a-a53f-4496-a41c-b9e2b5c3b1f1"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 106.6800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69d5afc7-93c5-4784-ab8a-9cf8576b61ee")
+		(property "Reference" "SW3"
+			(at 110.4900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 110.4900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 106.6800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 106.6800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "13a68460-7f38-4e13-aab8-a64121e6845f"))
+		(pin "2" (uuid "646117c6-b409-4c67-90b4-b61a14cbf283"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 144.7800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43979509-6f47-4f78-8a7b-4735f0450e7a")
+		(property "Reference" "SW4"
+			(at 148.5900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 148.5900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 144.7800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 144.7800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "842a6b60-06b2-4b09-91eb-15ab30492d92"))
+		(pin "2" (uuid "c6c113b7-0bd4-4b26-938a-9bf44577412e"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 182.8800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dad7fbe4-0d9a-476b-9436-6b5635625625")
+		(property "Reference" "SW5"
+			(at 186.6900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 186.6900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 182.8800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 182.8800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a8a0d1eb-6679-49c8-9966-5f198408429c"))
+		(pin "2" (uuid "4f338c6c-2ff7-4e91-87b0-27faa73220a2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 220.9800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "16ebf658-b8ba-4d66-9081-2ce72a127e79")
+		(property "Reference" "SW6"
+			(at 224.7900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 224.7900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 220.9800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 220.9800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "175fae3f-f8e0-44d9-b7e0-01224056361a"))
+		(pin "2" (uuid "6daa1b6d-150b-4511-a8d1-c4e872f98f6f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 259.0800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "772f9fc5-4778-4ec5-972a-64cb9e529e4b")
+		(property "Reference" "SW7"
+			(at 262.8900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 262.8900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 259.0800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 259.0800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5a03099e-6e8b-496c-9248-9665855c821e"))
+		(pin "2" (uuid "791a594a-0500-4710-9826-ee4b21e6bb8a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 297.1800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b319df33-0b6d-4638-a74d-ed096c900eeb")
+		(property "Reference" "SW8"
+			(at 300.9900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 300.9900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 297.1800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 297.1800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "08c90a51-516c-4adb-8d1f-c035dfd3b37c"))
+		(pin "2" (uuid "087fc237-8962-470a-b1a5-aadadb58e481"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 335.2800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "91cbf994-29dd-4ed4-9916-0236bb27366c")
+		(property "Reference" "SW9"
+			(at 339.0900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 339.0900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 335.2800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 335.2800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b8570915-3edb-4981-aa35-e25ab543f0fc"))
+		(pin "2" (uuid "46ba1808-11a1-4214-b982-2c501366cf40"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 373.3800 40.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9a8467a3-0346-4753-a489-49925f7a0bb6")
+		(property "Reference" "SW10"
+			(at 377.1900 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 377.1900 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 373.3800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 373.3800 40.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1ff5a3c8-bf3d-4805-88ee-fa45858ca003"))
+		(pin "2" (uuid "2dbb477f-80de-448a-a152-23331db3df12"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 30.4800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "079f5f2a-0ef6-4558-98db-98f856dd9428")
+		(property "Reference" "SW11"
+			(at 34.2900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 34.2900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 30.4800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "800afbbf-e8b6-4c73-acb0-b94731cf7aff"))
+		(pin "2" (uuid "5b39544e-a53d-4048-acd0-e6446e5e3661"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 68.5800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ba809acb-816b-4d91-a657-47ce39170168")
+		(property "Reference" "SW12"
+			(at 72.3900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 72.3900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 68.5800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 68.5800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d96af665-501c-4a0c-b15c-d52817a402e3"))
+		(pin "2" (uuid "80f3eab3-9d97-4a43-94b2-d5201dbd5121"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 106.6800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "235e5b3d-4a1a-4d2a-9df9-ddd69b5764c1")
+		(property "Reference" "SW13"
+			(at 110.4900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 110.4900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 106.6800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 106.6800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "08c2d2e6-d9df-4460-86c8-831a420a5f4d"))
+		(pin "2" (uuid "16dd1c3f-ac9c-4f08-aa52-c6f8db6aae7f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 144.7800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "41321f02-2fe1-407a-9b07-7480c405ef40")
+		(property "Reference" "SW14"
+			(at 148.5900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 148.5900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 144.7800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 144.7800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a8837487-060c-4959-b44e-c10e00bf0fc8"))
+		(pin "2" (uuid "2df1fcc6-f36a-4e5d-bc41-5a24cb1b648a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 182.8800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9be191bc-a8b9-4bb8-b9f8-00032912da20")
+		(property "Reference" "SW15"
+			(at 186.6900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 186.6900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 182.8800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 182.8800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6e68847b-0807-41e8-83b7-e16b46473fd1"))
+		(pin "2" (uuid "9dfa2ed2-e1b0-4f49-9285-2b84dc09761a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 220.9800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e2d9c9d-afa6-4002-9e88-e72ff5028e14")
+		(property "Reference" "SW16"
+			(at 224.7900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SW_Push"
+			(at 224.7900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 220.9800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 220.9800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "04e1d924-ec12-405a-8941-d69d1f3a0e2d"))
+		(pin "2" (uuid "4843589d-540e-4696-8373-d2bd64996daf"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "SW16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 259.0800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2aa07ebc-1c1b-4676-aadc-68d7cd12d6aa")
+		(property "Reference" "D1"
+			(at 262.8900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 262.8900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 259.0800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 259.0800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 259.0800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 259.0800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c91d637c-b7d3-4bdf-98d8-1748a8e93166"))
+		(pin "2" (uuid "f92871db-cacc-424c-a034-6b15260b1e3f"))
+		(pin "3" (uuid "6c17050d-2df1-4134-bad8-5924e55e3992"))
+		(pin "4" (uuid "2b092b87-cb94-4811-a413-725f3f0a643b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 297.1800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "02bce8dd-6502-4757-9f8b-19269588f173")
+		(property "Reference" "D2"
+			(at 300.9900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 300.9900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 297.1800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 297.1800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 297.1800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 297.1800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "fbf48245-4318-4c4e-bb9f-fc13adf51516"))
+		(pin "2" (uuid "2a710bc9-041e-42e5-be7e-2b31423741bb"))
+		(pin "3" (uuid "7e9aa369-cb55-4e86-b238-7d65e2d5de0b"))
+		(pin "4" (uuid "64e8990b-6969-46a5-befe-67e08fcdf921"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 335.2800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "972c69b9-a5a1-49d6-b430-72826cb4f26f")
+		(property "Reference" "D3"
+			(at 339.0900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 339.0900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 335.2800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 335.2800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 335.2800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 335.2800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "58c8167d-62a9-4d50-9cb3-d5b14a645376"))
+		(pin "2" (uuid "2c156155-4703-42a0-af5b-6961311cc43f"))
+		(pin "3" (uuid "c954d103-9767-4a44-9586-3205305807a0"))
+		(pin "4" (uuid "e19e290f-7d2d-4f3d-b3d1-9853ce16a385"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 373.3800 71.1200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d255ff0c-4276-4e07-a3be-94d702f43bf6")
+		(property "Reference" "D4"
+			(at 377.1900 68.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 377.1900 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 373.3800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 373.3800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 373.3800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 373.3800 71.1200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "328b5b83-ff30-4c47-b87e-dc1db8da0454"))
+		(pin "2" (uuid "ada6f933-3146-4ac6-bd94-a19abf6add18"))
+		(pin "3" (uuid "f0d95b9c-0130-4c8f-a791-40ffbd6d8157"))
+		(pin "4" (uuid "3fc1ff8c-43d1-4d5d-9a35-7e00e2e9b91e"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 30.4800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f94cf617-a5aa-49d2-aa10-095a0e47827c")
+		(property "Reference" "D5"
+			(at 34.2900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 34.2900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 30.4800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 30.4800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 30.4800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c3ebd286-d9c8-4d9c-917d-23e868cdcde5"))
+		(pin "2" (uuid "9fcd6dd8-79a3-4298-acc7-3d6372779e39"))
+		(pin "3" (uuid "0b7c69ca-e882-4d79-8df5-2b7a999647aa"))
+		(pin "4" (uuid "19fb566e-2331-4415-a853-be8869fe7f1f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 68.5800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "57a021ca-e093-476c-b9cd-d6d47f11a2a3")
+		(property "Reference" "D6"
+			(at 72.3900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 72.3900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 68.5800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 68.5800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 68.5800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 68.5800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "47cefa0f-d05b-43e8-8a58-320d3b5ad722"))
+		(pin "2" (uuid "2e1db1c0-65da-480d-8812-1037730e185c"))
+		(pin "3" (uuid "947f3c53-7fa0-487d-9c97-1e0a987b1dcf"))
+		(pin "4" (uuid "5e5a3dd0-b588-4b5c-b53e-533800baea60"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 106.6800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0b1099ba-fc11-4e53-b5d3-5168a307c07c")
+		(property "Reference" "D7"
+			(at 110.4900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 110.4900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 106.6800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 106.6800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 106.6800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 106.6800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "652c9297-9d0e-4bf5-abd0-043f15ac4c11"))
+		(pin "2" (uuid "fb624262-08bb-4be7-b65c-6154f1ae9ed5"))
+		(pin "3" (uuid "92c2cc6f-84fa-49d3-a356-96fa79fd023d"))
+		(pin "4" (uuid "02a4a4cc-6d00-40c8-87a2-42f7aa0fd00c"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 144.7800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8aeecbb2-84e4-4b86-82a5-0c8c4cc7fd47")
+		(property "Reference" "D8"
+			(at 148.5900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 148.5900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 144.7800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 144.7800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 144.7800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 144.7800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "555b6e90-3fd6-4983-b859-1d3f8aaa5695"))
+		(pin "2" (uuid "f58e76bb-7878-4739-89d9-9de92c143bbb"))
+		(pin "3" (uuid "78cce42f-1afe-457a-905f-710d03fb16dc"))
+		(pin "4" (uuid "f2b746fc-0c19-446b-9113-5ac025b6e882"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 182.8800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce5e707a-3fef-4743-b927-25362c0099b4")
+		(property "Reference" "D9"
+			(at 186.6900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 186.6900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 182.8800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 182.8800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 182.8800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 182.8800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f48a9c3d-2c9d-4ed2-a1a8-cc0a123a5398"))
+		(pin "2" (uuid "b1391269-4d5c-4a5d-a89c-22eefaf90ccc"))
+		(pin "3" (uuid "43ce2e0e-30bc-46d6-b1aa-35c57a70c38a"))
+		(pin "4" (uuid "89b8417c-8e32-4d90-bc8a-d4266735b941"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 220.9800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b77158ca-a466-44be-b25a-0c8c51607883")
+		(property "Reference" "D10"
+			(at 224.7900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 224.7900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 220.9800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 220.9800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 220.9800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 220.9800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "17d5d2f4-45e4-4f26-8bba-6eed0017a9d0"))
+		(pin "2" (uuid "1dd49784-77e0-48b1-9983-d6c10bd6099d"))
+		(pin "3" (uuid "27d79e61-f448-4e91-8bee-70cd816be02b"))
+		(pin "4" (uuid "bda50ae9-2356-4c15-a7f4-59ffa50af912"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 259.0800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "24a1f260-9c4d-473f-9174-8bc34c71cc9c")
+		(property "Reference" "D11"
+			(at 262.8900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 262.8900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 259.0800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 259.0800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 259.0800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 259.0800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3bc733fe-c755-4875-99ac-1d84f623a7f3"))
+		(pin "2" (uuid "11904189-ddcf-4e83-9f56-fdc291f10aa3"))
+		(pin "3" (uuid "7e2bf21f-8cbc-4527-ad12-fc0403888aab"))
+		(pin "4" (uuid "39659a6c-e488-4992-9d23-1e269cac2d89"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 297.1800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "24796dd9-3e8c-4cf0-9e69-5f780712a956")
+		(property "Reference" "D12"
+			(at 300.9900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 300.9900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 297.1800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 297.1800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 297.1800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 297.1800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "eace8081-6f34-4161-80e5-abf4b3a3d91f"))
+		(pin "2" (uuid "5d3c7a9d-7351-4d5c-922d-4c14abcd1599"))
+		(pin "3" (uuid "8b4e6a45-5d25-4599-90c7-647828d158ff"))
+		(pin "4" (uuid "4b5f43dd-100d-41b9-b8bc-49ab1d33653b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 335.2800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ac61cb78-71e6-4ac3-aa80-4e81254d1cbf")
+		(property "Reference" "D13"
+			(at 339.0900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 339.0900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 335.2800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 335.2800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 335.2800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 335.2800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "662fcad2-e216-46b2-8727-345ddbe66d08"))
+		(pin "2" (uuid "ba0decca-6392-41be-8809-24741c22bde5"))
+		(pin "3" (uuid "855eaadf-5449-4972-9504-a9b5608d7868"))
+		(pin "4" (uuid "97625ea3-a6f5-4513-b844-fbdfc31a88a4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 373.3800 101.6000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "84a39fca-2800-4250-888f-b22383efc682")
+		(property "Reference" "D14"
+			(at 377.1900 99.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 377.1900 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 373.3800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 373.3800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 373.3800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 373.3800 101.6000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b968e492-c8b2-4243-98ba-71fb4fc1b7c6"))
+		(pin "2" (uuid "a761a3f5-c2fe-41cb-94a5-c7688f0fff34"))
+		(pin "3" (uuid "2dadcfe6-c70f-4ec9-8892-cafcf7a2e989"))
+		(pin "4" (uuid "713e6fa0-4996-4e55-9d65-63593387ce77"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 30.4800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4ba58495-1ce9-45bd-994a-121038751c0f")
+		(property "Reference" "D15"
+			(at 34.2900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 34.2900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 30.4800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 30.4800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 30.4800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "9b3e539b-775b-4080-93b6-5206f02b4e97"))
+		(pin "2" (uuid "df6e9e18-32a0-4c34-b47f-6f910d2ed273"))
+		(pin "3" (uuid "c63d6b68-3700-4f65-aff6-04cacca04914"))
+		(pin "4" (uuid "e3ee5b6b-3df3-4506-a3a3-d4155fda5b99"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 68.5800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d9ee6bf5-4dad-45a6-b81d-3f33a6f3c12e")
+		(property "Reference" "D16"
+			(at 72.3900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 72.3900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6703c980-6bb1-4b2c-b4be-6c59b84dc19b"))
+		(pin "2" (uuid "4c983dc6-5f39-4085-81ef-7c28e59cce5b"))
+		(pin "3" (uuid "b655261e-923b-403d-9db8-7f3320ccbc7d"))
+		(pin "4" (uuid "1d8a3e22-1185-40d0-9a5a-02cc69cb5741"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 106.6800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1c223a74-1636-4e8e-b2cf-bed26285dde5")
+		(property "Reference" "C13"
+			(at 110.4900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100uF"
+			(at 110.4900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+			(at 106.6800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 106.6800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "65362871-aa92-42ad-aa7a-bdc8cc36d5db"))
+		(pin "2" (uuid "5e5b1e05-7eee-4cc6-a93c-c4b32081e814"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 144.7800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3c64fbdd-1032-4268-bd67-0cf498455c05")
+		(property "Reference" "R11"
+			(at 148.5900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "330"
+			(at 148.5900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 144.7800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 144.7800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "171f2089-b909-4472-bd16-87211e0b6080"))
+		(pin "2" (uuid "04a9f7ba-30fb-4d1c-b315-ea14557aefb4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 182.8800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fc7a2d75-ece6-48eb-accc-88d7a8a45ee1")
+		(property "Reference" "D17"
+			(at 186.6900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "LED"
+			(at 186.6900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 182.8800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 182.8800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "19ed3063-9ecd-4b01-8816-ec810b3dc3cc"))
+		(pin "2" (uuid "182e37bf-5c0a-46d4-8aff-9fd8f0f7e951"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 220.9800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ccfe6c4a-84cf-4919-bc14-6c6e2ffdf3cb")
+		(property "Reference" "R12"
+			(at 224.7900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 224.7900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 220.9800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 220.9800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "935a641f-2a85-4fe7-a40e-395592ed2f6c"))
+		(pin "2" (uuid "94ba8ec0-a4e6-436d-8543-f268aef79b6f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 259.0800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "46f2084c-142c-45b3-ab2e-e034709d6025")
+		(property "Reference" "D18"
+			(at 262.8900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "LED"
+			(at 262.8900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 259.0800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 259.0800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "bd0e838e-6253-43be-aab5-678a3445fcb9"))
+		(pin "2" (uuid "88b0bf2c-2578-4947-b742-517bbfd91691"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "D18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.1800 132.0800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2d95a729-d474-4553-970f-473edf067590")
+		(property "Reference" "R13"
+			(at 300.9900 129.5400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 300.9900 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 297.1800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 297.1800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "bd87ec75-0ccd-4e26-9d6a-db9a34b4a112"))
+		(pin "2" (uuid "121b507c-f857-4a23-b001-5e813856980e"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "NotchDeck One — Controls: buttons, hat, WS2812 LEDs, status.  Placed, not wired. See NETPLAN.md.\n\nBUTTONS (active-low to GND, internal pull-ups, debounce in FW):\n  SW1 BTN1 horn-hi  P1.11(1)    SW5 BTN5 L/ATS    P0.20(32)   SW9  BTN9 panto   P0.09(41)   SW13 HAT_UP    P0.22(34)\n  SW2 BTN2 horn-lo  P1.10(2)    SW6 BTN6 R/cab    P0.13(33)   SW10 BTN10 head   P0.10(43)   SW14 HAT_DOWN  P0.24(35)\n  SW3 BTN3 door-cl  P1.13(6)    SW7 BTN7 select   P1.04(40)   SW11 BTN11        P0.00(11)   SW15 HAT_LEFT  P1.00(36)\n  SW4 BTN4 door-op  P1.09(17)   SW8 BTN8 start    P1.06(42)   SW12 BTN12        P0.01(13)   SW16 HAT_RIGHT P1.02(38)\nWS2812 (D1..D16, addressable RGB): VDD -> +3V3 (or VBUS+U8 level-shift). Chain DOUT(n) -> DIN(n+1).\n  R11 330ohm series on WS2812_DIN from E73 P0.08(16) into D1.  C13 100uF bulk across strip V+/GND (add 100nF/LED ideally).\nSTATUS LEDs: D17 (status) + R12 1k ;  D18 (charge) + R13 1k <- CHG_STAT(P0.17).  Anodes -> +3V3 or GPIO per use."
+		(exclude_from_sim no)
+		(at 15.00 168.00 0)
+		(effects (font (size 1.5 1.5)) (justify left top))
+		(uuid "a64281b2-1def-492c-9fca-08cf32efc77d")
+	)
+	(sheet_instances
+		(path "/"
+			(page "5")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -25,21 +25,29 @@ hardware/
 
 ## Status
 
-Scaffold only. The `.kicad_sch` / `.kicad_pcb` are **valid but empty** (they export and
-package cleanly via the Makefile — verified — they just have no components yet). Populate
-the schematic in KiCad using [`PARTS.md`](PARTS.md), which maps every block to a real
-JLCPCB part and a KiCad symbol/footprint/3D model (stdlib where possible, vendored where
-not). Sourcing rationale is in [`../docs/04-bom-sourcing.md`](../docs/04-bom-sourcing.md).
+**Schematic populated, not yet wired.** The hierarchical schematic (root + MCU / Power /
+Lever / Controls sheets) is generated from a data manifest,
+[`scripts/notchdeck-one.schgen.py`](scripts/notchdeck-one.schgen.py) — every part from
+[`PARTS.md`](PARTS.md) is placed and resolves to a real symbol + footprint, with a per-sheet
+wiring / pin-assignment note drawn from [`NETPLAN.md`](NETPLAN.md). Inter-sheet wiring
+(hierarchical labels + power rails) is the next step, done in eeschema per the notes. The
+`.kicad_pcb` is still an empty scaffold. Sourcing rationale:
+[`../docs/04-bom-sourcing.md`](../docs/04-bom-sourcing.md).
 
 ## Workflow
 
 ```sh
 make help                    # list targets
+make gen-notchdeck-one       # regenerate the schematic from its manifest
+make check-notchdeck-one     # sanity-check (components / footprints / dup refs / ERC)
+make render-notchdeck-one    # render sheets to PNG for visual review
 make docs-notchdeck-one      # schematic SVGs + PCB SVGs + 3D renders + JLCPCB BOM
 make bom-notchdeck-one       # just the BOM (jlcpcb_bom.csv)
 make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
 make clean-docs clean-jlc    # remove generated artifacts
 ```
+
+See [`scripts/README.md`](scripts/README.md) for the generation / check / render tooling.
 
 Generated outputs (`*/docs/images/`, `*/jlcpcb/`, `*-jlcpcb.zip`, `jlcpcb_bom.csv`) are
 git-ignored — regenerate with `make`.
