@@ -125,30 +125,60 @@ RAW_CPL="$OUT_DIR/${NAME}-CPL-raw.csv"
 # schema (Designator,Val,Package,Mid X,Mid Y,Rotation,Layer). Also capitalize
 # the Side values ("top"/"bottom" -> "Top"/"Bottom").
 python3 <<PYEOF
-import csv, os, sys
+import csv, os, re
 
 raw = "$RAW_CPL"
 out = "$OUT_DIR/${NAME}-CPL.csv"
+pcb = "$PCB"
 
-import re as _re
+# Footprints flagged "exclude_from_bom" in the PCB (solder jumpers, tag-connect
+# programming pads, test points) carry no LCSC part number, so JLCPCB cannot
+# assemble them. They must be dropped from the CPL as well — otherwise JLCPCB
+# reports "<ref> designators don't exist in the BOM file" and refuses the order.
+def excluded_from_bom(pcb_path):
+    src = open(pcb_path).read()
+    refs, i = set(), 0
+    while True:
+        idx = src.find("(footprint ", i)
+        if idx < 0:
+            break
+        depth, j = 0, idx
+        while j < len(src):
+            c = src[j]
+            if c == "(":
+                depth += 1
+            elif c == ")":
+                depth -= 1
+                if depth == 0:
+                    break
+            j += 1
+        block = src[idx:j + 1]
+        m = re.search(r'\(property "Reference" "([^"]+)"', block)
+        a = re.search(r"\(attr ([^)]*)\)", block)
+        if m and a and "exclude_from_bom" in a.group(1):
+            refs.add(m.group(1))
+        i = j + 1
+    return refs
+
 handsolder = {r for r in os.environ.get("HANDSOLDER", "").split(",") if r}
+noplace = excluded_from_bom(pcb)
+mech = re.compile(r"^(H|MH|MK|MP|FID|REF)\d+$")  # mounting holes / fiducials
 skipped = []
 with open(raw, newline="") as fin, open(out, "w", newline="") as fout:
     rdr = csv.reader(fin)
     wtr = csv.writer(fout)
-    hdr = next(rdr)
-    # KiCad header: Ref,Val,Package,PosX,PosY,Rot,Side
+    next(rdr)  # KiCad header: Ref,Val,Package,PosX,PosY,Rot,Side
     wtr.writerow(["Designator", "Val", "Package", "Mid X", "Mid Y", "Rotation", "Layer"])
     for row in rdr:
         if not row: continue
         ref, val, pkg, x, y, rot, side = row[:7]
-        # drop mounting holes / fiducials (mechanical, never placed) + hand-solder
-        if _re.match(r'^(H|MH|MK|MP|FID|REF)\d+$', ref) or ref in handsolder:
+        # drop mounting holes / fiducials, exclude-from-BOM parts, and hand-solder
+        if mech.match(ref) or ref in noplace or ref in handsolder:
             skipped.append(ref); continue
         side_cap = side.strip().capitalize()
         wtr.writerow([ref, val, pkg, x, y, rot, side_cap])
 print(f"[jlcpcb]   wrote {out}"
-      + (f" (hand-solder skipped: {','.join(sorted(skipped))})" if skipped else ""))
+      + (f" (CPL skipped: {','.join(sorted(skipped))})" if skipped else ""))
 PYEOF
 rm -f "$RAW_CPL"
 
