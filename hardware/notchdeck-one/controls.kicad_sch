@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "edefe4a1-1b44-437c-947e-785de0970a70")
+	(uuid "d0f07d24-fa67-434c-83d8-dc7502ce5528")
 	(paper "A3")
 	(title_block
 		(title "NotchDeck One — Controls (buttons / hat / WS2812 LEDs / status)")
@@ -951,7 +951,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "521febf0-395f-4ae5-8147-e88b5c6a1f33")
+		(uuid "824af964-78e8-4f38-86b3-2fed5a994449")
 		(property "Reference" "SW1"
 			(at 34.2900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -968,11 +968,11 @@
 			(at 30.4800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "966f559b-29f5-4ff1-aedb-9af23d0de44b"))
-		(pin "2" (uuid "caeb483a-dfc4-4f99-99fa-2c44f28ede19"))
+		(pin "1" (uuid "b2cc6b35-2fe2-4818-b014-b774e2a26e7b"))
+		(pin "2" (uuid "cb067ff8-5c27-4470-b5cb-394b16900663"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW1")
 					(unit 1)
 				)
@@ -987,7 +987,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f38e567f-ab90-43ef-a23f-7a2f1957388e")
+		(uuid "33915be9-ca85-4ac7-ba22-9574ace18361")
 		(property "Reference" "SW2"
 			(at 72.3900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1004,11 +1004,11 @@
 			(at 68.5800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3c4bd959-8f25-4e34-905f-e7561b66da89"))
-		(pin "2" (uuid "68b24f1a-a53f-4496-a41c-b9e2b5c3b1f1"))
+		(pin "1" (uuid "6b03f603-9284-4ca3-a980-c3eef814b400"))
+		(pin "2" (uuid "cd11bc1c-5d51-437f-a7ea-b6af7090e501"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW2")
 					(unit 1)
 				)
@@ -1023,7 +1023,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "69d5afc7-93c5-4784-ab8a-9cf8576b61ee")
+		(uuid "e6616d8d-43b7-4d99-a796-12c44bdde91f")
 		(property "Reference" "SW3"
 			(at 110.4900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1040,11 +1040,11 @@
 			(at 106.6800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "13a68460-7f38-4e13-aab8-a64121e6845f"))
-		(pin "2" (uuid "646117c6-b409-4c67-90b4-b61a14cbf283"))
+		(pin "1" (uuid "52bb1593-a95f-4d52-899e-11b341953a87"))
+		(pin "2" (uuid "65120601-d765-4720-a446-864ea86ac86b"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW3")
 					(unit 1)
 				)
@@ -1059,7 +1059,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "43979509-6f47-4f78-8a7b-4735f0450e7a")
+		(uuid "dda83a17-b72e-42e7-87cb-271425f092ad")
 		(property "Reference" "SW4"
 			(at 148.5900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1076,11 +1076,11 @@
 			(at 144.7800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "842a6b60-06b2-4b09-91eb-15ab30492d92"))
-		(pin "2" (uuid "c6c113b7-0bd4-4b26-938a-9bf44577412e"))
+		(pin "1" (uuid "3dcfa9d9-553b-454b-ad91-ef182205b424"))
+		(pin "2" (uuid "6e434faa-8a0f-452b-84a0-29eb1e33babb"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW4")
 					(unit 1)
 				)
@@ -1095,7 +1095,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dad7fbe4-0d9a-476b-9436-6b5635625625")
+		(uuid "de35e3c0-f680-45f0-826a-3ee8cdfd171c")
 		(property "Reference" "SW5"
 			(at 186.6900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1112,11 +1112,11 @@
 			(at 182.8800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a8a0d1eb-6679-49c8-9966-5f198408429c"))
-		(pin "2" (uuid "4f338c6c-2ff7-4e91-87b0-27faa73220a2"))
+		(pin "1" (uuid "1b1a0366-7b63-4794-b3fd-ebc2ab8219fa"))
+		(pin "2" (uuid "66cd35eb-56e7-4ae8-a98f-12ae4da57d9e"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW5")
 					(unit 1)
 				)
@@ -1131,7 +1131,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "16ebf658-b8ba-4d66-9081-2ce72a127e79")
+		(uuid "619ab801-83a1-4a7b-bf6e-45e49cb7aee0")
 		(property "Reference" "SW6"
 			(at 224.7900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1148,11 +1148,11 @@
 			(at 220.9800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "175fae3f-f8e0-44d9-b7e0-01224056361a"))
-		(pin "2" (uuid "6daa1b6d-150b-4511-a8d1-c4e872f98f6f"))
+		(pin "1" (uuid "dbc56c86-a339-4bf9-86fa-9d1a7259079c"))
+		(pin "2" (uuid "c662fee3-40a3-4ae1-b0b8-8e40fec7dfd5"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW6")
 					(unit 1)
 				)
@@ -1167,7 +1167,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "772f9fc5-4778-4ec5-972a-64cb9e529e4b")
+		(uuid "0c35122e-a480-4b9a-83b0-63b9ac97e46d")
 		(property "Reference" "SW7"
 			(at 262.8900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1184,11 +1184,11 @@
 			(at 259.0800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5a03099e-6e8b-496c-9248-9665855c821e"))
-		(pin "2" (uuid "791a594a-0500-4710-9826-ee4b21e6bb8a"))
+		(pin "1" (uuid "e033f35e-b81c-4a18-8b05-f5b8d1e83c4c"))
+		(pin "2" (uuid "6036443b-d6cc-4560-90b1-69381ec27efe"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW7")
 					(unit 1)
 				)
@@ -1203,7 +1203,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b319df33-0b6d-4638-a74d-ed096c900eeb")
+		(uuid "ae58881a-b8c6-416f-ae0d-66ff2e905c1b")
 		(property "Reference" "SW8"
 			(at 300.9900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1220,11 +1220,11 @@
 			(at 297.1800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "08c90a51-516c-4adb-8d1f-c035dfd3b37c"))
-		(pin "2" (uuid "087fc237-8962-470a-b1a5-aadadb58e481"))
+		(pin "1" (uuid "c07bf965-dad9-42c8-92ee-f728a03575cb"))
+		(pin "2" (uuid "5f25bb1a-e1d2-4d0e-9b8f-dfc81c16e464"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW8")
 					(unit 1)
 				)
@@ -1239,7 +1239,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "91cbf994-29dd-4ed4-9916-0236bb27366c")
+		(uuid "d53345bf-e37f-4faf-a029-a6634c44358c")
 		(property "Reference" "SW9"
 			(at 339.0900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1256,11 +1256,11 @@
 			(at 335.2800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "b8570915-3edb-4981-aa35-e25ab543f0fc"))
-		(pin "2" (uuid "46ba1808-11a1-4214-b982-2c501366cf40"))
+		(pin "1" (uuid "abfb89e9-a3fa-493e-822f-9cf35aabb793"))
+		(pin "2" (uuid "22af59e1-2942-46f2-a05b-2ca3e3720d1c"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW9")
 					(unit 1)
 				)
@@ -1275,7 +1275,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9a8467a3-0346-4753-a489-49925f7a0bb6")
+		(uuid "26ecd879-70a5-4b3c-a9d8-62fe7c51afbd")
 		(property "Reference" "SW10"
 			(at 377.1900 38.1000 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1292,11 +1292,11 @@
 			(at 373.3800 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1ff5a3c8-bf3d-4805-88ee-fa45858ca003"))
-		(pin "2" (uuid "2dbb477f-80de-448a-a152-23331db3df12"))
+		(pin "1" (uuid "80cc3e5b-16a8-40aa-b87f-72ae6eb0afe0"))
+		(pin "2" (uuid "79caa68a-f0a3-4ef8-b502-545e8e0a3175"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW10")
 					(unit 1)
 				)
@@ -1311,7 +1311,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "079f5f2a-0ef6-4558-98db-98f856dd9428")
+		(uuid "de1d8660-8b06-4543-a1b1-7248ec4400a0")
 		(property "Reference" "SW11"
 			(at 34.2900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1328,11 +1328,11 @@
 			(at 30.4800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "800afbbf-e8b6-4c73-acb0-b94731cf7aff"))
-		(pin "2" (uuid "5b39544e-a53d-4048-acd0-e6446e5e3661"))
+		(pin "1" (uuid "38715120-40a7-4667-abaa-da7760f51185"))
+		(pin "2" (uuid "47d9fea2-a7c0-4706-9c3d-e0b5760cc624"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW11")
 					(unit 1)
 				)
@@ -1347,7 +1347,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ba809acb-816b-4d91-a657-47ce39170168")
+		(uuid "bdf0a05a-158f-4559-9d8c-422719c28356")
 		(property "Reference" "SW12"
 			(at 72.3900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1364,11 +1364,11 @@
 			(at 68.5800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d96af665-501c-4a0c-b15c-d52817a402e3"))
-		(pin "2" (uuid "80f3eab3-9d97-4a43-94b2-d5201dbd5121"))
+		(pin "1" (uuid "4d929e05-c437-4e8b-a5be-2081e10e1a05"))
+		(pin "2" (uuid "46828ab1-4c3b-4b1c-a46f-e62f96846d0d"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW12")
 					(unit 1)
 				)
@@ -1383,7 +1383,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "235e5b3d-4a1a-4d2a-9df9-ddd69b5764c1")
+		(uuid "eeaba4a4-5896-4e3f-a42f-614cf24a38e3")
 		(property "Reference" "SW13"
 			(at 110.4900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1400,11 +1400,11 @@
 			(at 106.6800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "08c2d2e6-d9df-4460-86c8-831a420a5f4d"))
-		(pin "2" (uuid "16dd1c3f-ac9c-4f08-aa52-c6f8db6aae7f"))
+		(pin "1" (uuid "d4626fc4-7eae-4ad5-ad6d-fffabbfc9a1f"))
+		(pin "2" (uuid "82064ce8-eb77-444f-b662-7a58f916462b"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW13")
 					(unit 1)
 				)
@@ -1419,7 +1419,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "41321f02-2fe1-407a-9b07-7480c405ef40")
+		(uuid "d71c8092-86de-4d5f-90c9-c004c9c34a05")
 		(property "Reference" "SW14"
 			(at 148.5900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1436,11 +1436,11 @@
 			(at 144.7800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a8837487-060c-4959-b44e-c10e00bf0fc8"))
-		(pin "2" (uuid "2df1fcc6-f36a-4e5d-bc41-5a24cb1b648a"))
+		(pin "1" (uuid "3eb17a1b-de5c-4cce-ba70-c3f840b01406"))
+		(pin "2" (uuid "f6652a83-7bce-4257-b06e-e503f552847c"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW14")
 					(unit 1)
 				)
@@ -1455,7 +1455,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9be191bc-a8b9-4bb8-b9f8-00032912da20")
+		(uuid "0a00593d-f314-4c94-8556-d57291f6c773")
 		(property "Reference" "SW15"
 			(at 186.6900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1472,11 +1472,11 @@
 			(at 182.8800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6e68847b-0807-41e8-83b7-e16b46473fd1"))
-		(pin "2" (uuid "9dfa2ed2-e1b0-4f49-9285-2b84dc09761a"))
+		(pin "1" (uuid "4f09a0a6-3822-4671-9426-14afec98e3dc"))
+		(pin "2" (uuid "952dbfb9-2886-4e22-a621-a74a4dfd54c3"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW15")
 					(unit 1)
 				)
@@ -1491,7 +1491,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5e2d9c9d-afa6-4002-9e88-e72ff5028e14")
+		(uuid "1ccbc51a-e815-4b60-9f65-bcc4cee15955")
 		(property "Reference" "SW16"
 			(at 224.7900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1508,11 +1508,11 @@
 			(at 220.9800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "04e1d924-ec12-405a-8941-d69d1f3a0e2d"))
-		(pin "2" (uuid "4843589d-540e-4696-8373-d2bd64996daf"))
+		(pin "1" (uuid "15ad6d35-09f0-4487-ac55-008e79cf2611"))
+		(pin "2" (uuid "989b6368-1868-49ad-b598-a1a34c34c3d9"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "SW16")
 					(unit 1)
 				)
@@ -1527,7 +1527,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2aa07ebc-1c1b-4676-aadc-68d7cd12d6aa")
+		(uuid "8c7e236e-52bd-469d-9968-60b908daf89d")
 		(property "Reference" "D1"
 			(at 262.8900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1552,13 +1552,13 @@
 			(at 259.0800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "c91d637c-b7d3-4bdf-98d8-1748a8e93166"))
-		(pin "2" (uuid "f92871db-cacc-424c-a034-6b15260b1e3f"))
-		(pin "3" (uuid "6c17050d-2df1-4134-bad8-5924e55e3992"))
-		(pin "4" (uuid "2b092b87-cb94-4811-a413-725f3f0a643b"))
+		(pin "1" (uuid "64cc0343-6e7e-494f-b4b1-d1e739207b6c"))
+		(pin "2" (uuid "45249e6a-3b41-4af5-8f4d-d9a099a3af4e"))
+		(pin "3" (uuid "791b8881-955f-432f-9680-e3b33bae035f"))
+		(pin "4" (uuid "4933bd60-16dd-4f20-a4ff-def85dc31bf3"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D1")
 					(unit 1)
 				)
@@ -1573,7 +1573,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "02bce8dd-6502-4757-9f8b-19269588f173")
+		(uuid "24a589a3-7fab-49af-a4b3-66a055ad5815")
 		(property "Reference" "D2"
 			(at 300.9900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1598,13 +1598,13 @@
 			(at 297.1800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fbf48245-4318-4c4e-bb9f-fc13adf51516"))
-		(pin "2" (uuid "2a710bc9-041e-42e5-be7e-2b31423741bb"))
-		(pin "3" (uuid "7e9aa369-cb55-4e86-b238-7d65e2d5de0b"))
-		(pin "4" (uuid "64e8990b-6969-46a5-befe-67e08fcdf921"))
+		(pin "1" (uuid "6a455066-1f98-46e6-b112-33cd32e80818"))
+		(pin "2" (uuid "77995915-126f-4b67-8b0e-718400eb6d26"))
+		(pin "3" (uuid "d45704e1-bb29-42b2-8684-82422bb82ea1"))
+		(pin "4" (uuid "d8273efb-5366-484b-a229-0dd7ec94c065"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D2")
 					(unit 1)
 				)
@@ -1619,7 +1619,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "972c69b9-a5a1-49d6-b430-72826cb4f26f")
+		(uuid "bc6a3b14-470f-462f-8d5c-4fa60b600f3c")
 		(property "Reference" "D3"
 			(at 339.0900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1644,13 +1644,13 @@
 			(at 335.2800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "58c8167d-62a9-4d50-9cb3-d5b14a645376"))
-		(pin "2" (uuid "2c156155-4703-42a0-af5b-6961311cc43f"))
-		(pin "3" (uuid "c954d103-9767-4a44-9586-3205305807a0"))
-		(pin "4" (uuid "e19e290f-7d2d-4f3d-b3d1-9853ce16a385"))
+		(pin "1" (uuid "c1dc31ea-fd35-4ef9-92c2-ab95dda8d4cb"))
+		(pin "2" (uuid "3da91735-36db-46fd-ba62-505ff7e1828e"))
+		(pin "3" (uuid "dadae54a-8b68-4d2d-ac66-b7e1775c2750"))
+		(pin "4" (uuid "aeb75865-7c3d-40a3-b2b1-b274508ebc0f"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D3")
 					(unit 1)
 				)
@@ -1665,7 +1665,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d255ff0c-4276-4e07-a3be-94d702f43bf6")
+		(uuid "33ad66cf-f194-48d3-a37c-b90742bf24cc")
 		(property "Reference" "D4"
 			(at 377.1900 68.5800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1690,13 +1690,13 @@
 			(at 373.3800 71.1200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "328b5b83-ff30-4c47-b87e-dc1db8da0454"))
-		(pin "2" (uuid "ada6f933-3146-4ac6-bd94-a19abf6add18"))
-		(pin "3" (uuid "f0d95b9c-0130-4c8f-a791-40ffbd6d8157"))
-		(pin "4" (uuid "3fc1ff8c-43d1-4d5d-9a35-7e00e2e9b91e"))
+		(pin "1" (uuid "31a86677-9ee2-4807-9eb6-556541c88c7b"))
+		(pin "2" (uuid "dd02f723-40f8-41aa-8ea0-5cf3739f5bb6"))
+		(pin "3" (uuid "9accdd66-8ca4-4869-8ccb-40b2b26ec95a"))
+		(pin "4" (uuid "02a8b81f-1bbd-467d-82dc-4c5b30248d94"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D4")
 					(unit 1)
 				)
@@ -1711,7 +1711,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f94cf617-a5aa-49d2-aa10-095a0e47827c")
+		(uuid "3777ed92-b255-4917-945c-9b0d1cf0c16f")
 		(property "Reference" "D5"
 			(at 34.2900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1736,13 +1736,13 @@
 			(at 30.4800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "c3ebd286-d9c8-4d9c-917d-23e868cdcde5"))
-		(pin "2" (uuid "9fcd6dd8-79a3-4298-acc7-3d6372779e39"))
-		(pin "3" (uuid "0b7c69ca-e882-4d79-8df5-2b7a999647aa"))
-		(pin "4" (uuid "19fb566e-2331-4415-a853-be8869fe7f1f"))
+		(pin "1" (uuid "b473f7f2-0beb-47a4-a84e-064186fd7111"))
+		(pin "2" (uuid "bf19a00f-5698-4441-a28a-c7d5d27dfcee"))
+		(pin "3" (uuid "68684971-2ae8-4995-95ea-4ddb37c1e331"))
+		(pin "4" (uuid "c046758f-8abb-4255-b2e3-59ee442641d4"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D5")
 					(unit 1)
 				)
@@ -1757,7 +1757,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "57a021ca-e093-476c-b9cd-d6d47f11a2a3")
+		(uuid "fd00ca33-4a2f-4d25-8944-7db392260ebf")
 		(property "Reference" "D6"
 			(at 72.3900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1782,13 +1782,13 @@
 			(at 68.5800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "47cefa0f-d05b-43e8-8a58-320d3b5ad722"))
-		(pin "2" (uuid "2e1db1c0-65da-480d-8812-1037730e185c"))
-		(pin "3" (uuid "947f3c53-7fa0-487d-9c97-1e0a987b1dcf"))
-		(pin "4" (uuid "5e5a3dd0-b588-4b5c-b53e-533800baea60"))
+		(pin "1" (uuid "05eb2d5e-a983-4b0f-80fb-8970bb08a4f7"))
+		(pin "2" (uuid "541bff91-77cb-4132-b5f4-980d2db58590"))
+		(pin "3" (uuid "f9d66e67-99f3-41f6-87a4-0a315866247b"))
+		(pin "4" (uuid "642af74e-b983-4c7e-91e3-231f7e6f502f"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D6")
 					(unit 1)
 				)
@@ -1803,7 +1803,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0b1099ba-fc11-4e53-b5d3-5168a307c07c")
+		(uuid "0bc89bd4-351b-4774-8607-d1eb6317ae70")
 		(property "Reference" "D7"
 			(at 110.4900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1828,13 +1828,13 @@
 			(at 106.6800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "652c9297-9d0e-4bf5-abd0-043f15ac4c11"))
-		(pin "2" (uuid "fb624262-08bb-4be7-b65c-6154f1ae9ed5"))
-		(pin "3" (uuid "92c2cc6f-84fa-49d3-a356-96fa79fd023d"))
-		(pin "4" (uuid "02a4a4cc-6d00-40c8-87a2-42f7aa0fd00c"))
+		(pin "1" (uuid "c5f89f9f-ece0-4a36-8e41-23214c8f9a85"))
+		(pin "2" (uuid "b273ae4a-7d89-4354-92d0-7c933b65e90f"))
+		(pin "3" (uuid "b1035374-7445-4bd1-9acd-47d0b1c763c2"))
+		(pin "4" (uuid "a82881ee-04cb-4074-9e7f-ba354bb3dcf9"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D7")
 					(unit 1)
 				)
@@ -1849,7 +1849,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8aeecbb2-84e4-4b86-82a5-0c8c4cc7fd47")
+		(uuid "ae96337c-b10a-4524-b62c-4b19aeb9f444")
 		(property "Reference" "D8"
 			(at 148.5900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1874,13 +1874,13 @@
 			(at 144.7800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "555b6e90-3fd6-4983-b859-1d3f8aaa5695"))
-		(pin "2" (uuid "f58e76bb-7878-4739-89d9-9de92c143bbb"))
-		(pin "3" (uuid "78cce42f-1afe-457a-905f-710d03fb16dc"))
-		(pin "4" (uuid "f2b746fc-0c19-446b-9113-5ac025b6e882"))
+		(pin "1" (uuid "d0c049e2-ce5a-4265-aec9-b7a131188722"))
+		(pin "2" (uuid "a815dea1-fd20-45b4-b638-6ac8a405d041"))
+		(pin "3" (uuid "62ea18bc-e299-4cfb-be59-b98dc569ddc5"))
+		(pin "4" (uuid "51ce858e-e56d-4cd8-868e-02e7acecfbab"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D8")
 					(unit 1)
 				)
@@ -1895,7 +1895,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ce5e707a-3fef-4743-b927-25362c0099b4")
+		(uuid "571104d4-d4c9-4453-baaa-64a1edc89b99")
 		(property "Reference" "D9"
 			(at 186.6900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1920,13 +1920,13 @@
 			(at 182.8800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f48a9c3d-2c9d-4ed2-a1a8-cc0a123a5398"))
-		(pin "2" (uuid "b1391269-4d5c-4a5d-a89c-22eefaf90ccc"))
-		(pin "3" (uuid "43ce2e0e-30bc-46d6-b1aa-35c57a70c38a"))
-		(pin "4" (uuid "89b8417c-8e32-4d90-bc8a-d4266735b941"))
+		(pin "1" (uuid "ef198fd5-6f2a-4eaf-9146-8aa349641dc3"))
+		(pin "2" (uuid "1fc54fba-6d69-4205-8651-fc24b207e413"))
+		(pin "3" (uuid "0737c5fb-e2c8-413b-bd25-cbb6188b5b0d"))
+		(pin "4" (uuid "090d959e-d1a6-4f00-9c7e-025165f731ce"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D9")
 					(unit 1)
 				)
@@ -1941,7 +1941,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b77158ca-a466-44be-b25a-0c8c51607883")
+		(uuid "8886ccd0-adec-4e5a-812b-b56762dc11c0")
 		(property "Reference" "D10"
 			(at 224.7900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1966,13 +1966,13 @@
 			(at 220.9800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "17d5d2f4-45e4-4f26-8bba-6eed0017a9d0"))
-		(pin "2" (uuid "1dd49784-77e0-48b1-9983-d6c10bd6099d"))
-		(pin "3" (uuid "27d79e61-f448-4e91-8bee-70cd816be02b"))
-		(pin "4" (uuid "bda50ae9-2356-4c15-a7f4-59ffa50af912"))
+		(pin "1" (uuid "b7515ec9-7ae1-4011-9d03-3aba2f9f84dc"))
+		(pin "2" (uuid "1d4c511f-248c-4235-9b54-85375f1d6e9b"))
+		(pin "3" (uuid "3a7752e0-9517-4c3a-b8c4-483ca7a8a0a1"))
+		(pin "4" (uuid "6c00bc72-2fbc-4ddd-8172-ba656aa31bdd"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D10")
 					(unit 1)
 				)
@@ -1987,7 +1987,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "24a1f260-9c4d-473f-9174-8bc34c71cc9c")
+		(uuid "a1cc4d25-2787-43d0-8c37-60c169cdb166")
 		(property "Reference" "D11"
 			(at 262.8900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2012,13 +2012,13 @@
 			(at 259.0800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3bc733fe-c755-4875-99ac-1d84f623a7f3"))
-		(pin "2" (uuid "11904189-ddcf-4e83-9f56-fdc291f10aa3"))
-		(pin "3" (uuid "7e2bf21f-8cbc-4527-ad12-fc0403888aab"))
-		(pin "4" (uuid "39659a6c-e488-4992-9d23-1e269cac2d89"))
+		(pin "1" (uuid "c53727cd-05af-4b03-b0f8-3f5755897b12"))
+		(pin "2" (uuid "b9784b81-d265-45a9-a095-6e1faaafd1fa"))
+		(pin "3" (uuid "5d59e9cd-edc2-4151-9149-de8204c65e00"))
+		(pin "4" (uuid "e57bf4b6-8c8c-47ff-992d-0f27fabc2680"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D11")
 					(unit 1)
 				)
@@ -2033,7 +2033,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "24796dd9-3e8c-4cf0-9e69-5f780712a956")
+		(uuid "2f34802b-5193-443e-ac04-a0cc9226ed27")
 		(property "Reference" "D12"
 			(at 300.9900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2058,13 +2058,13 @@
 			(at 297.1800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "eace8081-6f34-4161-80e5-abf4b3a3d91f"))
-		(pin "2" (uuid "5d3c7a9d-7351-4d5c-922d-4c14abcd1599"))
-		(pin "3" (uuid "8b4e6a45-5d25-4599-90c7-647828d158ff"))
-		(pin "4" (uuid "4b5f43dd-100d-41b9-b8bc-49ab1d33653b"))
+		(pin "1" (uuid "0aee73db-9ade-47fa-a25a-67aa03d03f69"))
+		(pin "2" (uuid "018d6ff2-5dfa-408e-a15f-5ae4dadf626f"))
+		(pin "3" (uuid "6a4ee079-a7e9-4105-bd67-35a146fed09c"))
+		(pin "4" (uuid "ff5bbba4-3c33-4762-8e1d-ca2cfa155ce2"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D12")
 					(unit 1)
 				)
@@ -2079,7 +2079,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ac61cb78-71e6-4ac3-aa80-4e81254d1cbf")
+		(uuid "b5d89ac6-968e-41e5-be39-c383032b0ea3")
 		(property "Reference" "D13"
 			(at 339.0900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2104,13 +2104,13 @@
 			(at 335.2800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "662fcad2-e216-46b2-8727-345ddbe66d08"))
-		(pin "2" (uuid "ba0decca-6392-41be-8809-24741c22bde5"))
-		(pin "3" (uuid "855eaadf-5449-4972-9504-a9b5608d7868"))
-		(pin "4" (uuid "97625ea3-a6f5-4513-b844-fbdfc31a88a4"))
+		(pin "1" (uuid "bd42a1ca-f8cd-49a5-b7ac-2908d60e4b07"))
+		(pin "2" (uuid "f762a012-9877-4844-8279-0fced3938f32"))
+		(pin "3" (uuid "efaff7bb-d05e-43cb-84c3-72e4bc5ca2b5"))
+		(pin "4" (uuid "3c2b216c-d513-468e-acec-2266d45d9c92"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D13")
 					(unit 1)
 				)
@@ -2125,7 +2125,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "84a39fca-2800-4250-888f-b22383efc682")
+		(uuid "fdf8235b-1507-405f-9170-bccce58e5a2e")
 		(property "Reference" "D14"
 			(at 377.1900 99.0600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2150,13 +2150,13 @@
 			(at 373.3800 101.6000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "b968e492-c8b2-4243-98ba-71fb4fc1b7c6"))
-		(pin "2" (uuid "a761a3f5-c2fe-41cb-94a5-c7688f0fff34"))
-		(pin "3" (uuid "2dadcfe6-c70f-4ec9-8892-cafcf7a2e989"))
-		(pin "4" (uuid "713e6fa0-4996-4e55-9d65-63593387ce77"))
+		(pin "1" (uuid "b355f125-434b-4988-9d8e-f8c4039f7e7b"))
+		(pin "2" (uuid "c86caeff-394b-4ec0-a1d7-3b076d157701"))
+		(pin "3" (uuid "915f8b2b-6edf-4a8e-8ee6-7ffbf2d691b7"))
+		(pin "4" (uuid "f8f544b7-31e7-48c4-8052-c703e0ea5ed0"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D14")
 					(unit 1)
 				)
@@ -2171,7 +2171,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4ba58495-1ce9-45bd-994a-121038751c0f")
+		(uuid "c3025b29-478e-4801-951a-df96763192e9")
 		(property "Reference" "D15"
 			(at 34.2900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2196,13 +2196,13 @@
 			(at 30.4800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9b3e539b-775b-4080-93b6-5206f02b4e97"))
-		(pin "2" (uuid "df6e9e18-32a0-4c34-b47f-6f910d2ed273"))
-		(pin "3" (uuid "c63d6b68-3700-4f65-aff6-04cacca04914"))
-		(pin "4" (uuid "e3ee5b6b-3df3-4506-a3a3-d4155fda5b99"))
+		(pin "1" (uuid "c15cef15-d319-4753-a874-01f494aade20"))
+		(pin "2" (uuid "60c7f933-0073-4074-9e94-ed8899231ace"))
+		(pin "3" (uuid "7f1749b6-91b8-4f85-946c-ef6f5d839efa"))
+		(pin "4" (uuid "26eede75-fc41-4a88-8e3b-fbd48d68daa5"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D15")
 					(unit 1)
 				)
@@ -2217,7 +2217,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d9ee6bf5-4dad-45a6-b81d-3f33a6f3c12e")
+		(uuid "d8196050-716a-490b-a42c-3ff7ab8eea34")
 		(property "Reference" "D16"
 			(at 72.3900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2242,13 +2242,13 @@
 			(at 68.5800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6703c980-6bb1-4b2c-b4be-6c59b84dc19b"))
-		(pin "2" (uuid "4c983dc6-5f39-4085-81ef-7c28e59cce5b"))
-		(pin "3" (uuid "b655261e-923b-403d-9db8-7f3320ccbc7d"))
-		(pin "4" (uuid "1d8a3e22-1185-40d0-9a5a-02cc69cb5741"))
+		(pin "1" (uuid "4e80d180-f37c-4c96-9799-85a6ac6f9fda"))
+		(pin "2" (uuid "f42683cb-c90d-413f-8360-c15fbbb64745"))
+		(pin "3" (uuid "af7f069f-b9d5-46d6-be20-c756650b7ef7"))
+		(pin "4" (uuid "7e7b1399-f7a4-47fa-ad86-8b1bc3379780"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D16")
 					(unit 1)
 				)
@@ -2263,7 +2263,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1c223a74-1636-4e8e-b2cf-bed26285dde5")
+		(uuid "6aea60b9-629d-466d-889d-5dd1af9cf412")
 		(property "Reference" "C13"
 			(at 110.4900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2280,11 +2280,11 @@
 			(at 106.6800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "65362871-aa92-42ad-aa7a-bdc8cc36d5db"))
-		(pin "2" (uuid "5e5b1e05-7eee-4cc6-a93c-c4b32081e814"))
+		(pin "1" (uuid "3587a838-e1ec-4ca4-a2c7-2d3a1217bfc2"))
+		(pin "2" (uuid "154f99f3-3bf3-4a3b-b22a-9c983f44ff34"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "C13")
 					(unit 1)
 				)
@@ -2299,7 +2299,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3c64fbdd-1032-4268-bd67-0cf498455c05")
+		(uuid "dd3df613-4806-4030-9830-78a1457f3800")
 		(property "Reference" "R11"
 			(at 148.5900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2316,11 +2316,11 @@
 			(at 144.7800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "171f2089-b909-4472-bd16-87211e0b6080"))
-		(pin "2" (uuid "04a9f7ba-30fb-4d1c-b315-ea14557aefb4"))
+		(pin "1" (uuid "b6f6a9a0-b61b-46a2-98f0-855da665b682"))
+		(pin "2" (uuid "63eca9cb-2300-4c39-b770-01ec9f3d0dbd"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "R11")
 					(unit 1)
 				)
@@ -2335,7 +2335,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fc7a2d75-ece6-48eb-accc-88d7a8a45ee1")
+		(uuid "a4c39994-d011-4961-858e-b2720029ceab")
 		(property "Reference" "D17"
 			(at 186.6900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2352,11 +2352,11 @@
 			(at 182.8800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "19ed3063-9ecd-4b01-8816-ec810b3dc3cc"))
-		(pin "2" (uuid "182e37bf-5c0a-46d4-8aff-9fd8f0f7e951"))
+		(pin "1" (uuid "807319bc-4221-4b6a-9420-6334847eb262"))
+		(pin "2" (uuid "7a0aee1e-3a5c-4e39-9e13-3ce62c191743"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D17")
 					(unit 1)
 				)
@@ -2371,7 +2371,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ccfe6c4a-84cf-4919-bc14-6c6e2ffdf3cb")
+		(uuid "79708fef-2231-4296-bb79-8c2012d13d54")
 		(property "Reference" "R12"
 			(at 224.7900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2388,11 +2388,11 @@
 			(at 220.9800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "935a641f-2a85-4fe7-a40e-395592ed2f6c"))
-		(pin "2" (uuid "94ba8ec0-a4e6-436d-8543-f268aef79b6f"))
+		(pin "1" (uuid "4a1a4365-d25b-4aa5-b6f4-207ce805b699"))
+		(pin "2" (uuid "eef30350-8c3e-4e0a-a395-dd21f44dbc29"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "R12")
 					(unit 1)
 				)
@@ -2407,7 +2407,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "46f2084c-142c-45b3-ab2e-e034709d6025")
+		(uuid "ccd67fcd-6ebe-4c92-8a6d-4114f2083651")
 		(property "Reference" "D18"
 			(at 262.8900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2424,11 +2424,11 @@
 			(at 259.0800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "bd0e838e-6253-43be-aab5-678a3445fcb9"))
-		(pin "2" (uuid "88b0bf2c-2578-4947-b742-517bbfd91691"))
+		(pin "1" (uuid "99261b97-0b97-420c-b598-ed8542510604"))
+		(pin "2" (uuid "782098d4-84f5-41a5-aaec-7b35a401b03f"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "D18")
 					(unit 1)
 				)
@@ -2443,7 +2443,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2d95a729-d474-4553-970f-473edf067590")
+		(uuid "be73e8b1-ddf5-4671-ae28-4e81a12ee45b")
 		(property "Reference" "R13"
 			(at 300.9900 129.5400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2460,11 +2460,11 @@
 			(at 297.1800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "bd87ec75-0ccd-4e26-9d6a-db9a34b4a112"))
-		(pin "2" (uuid "121b507c-f857-4a23-b001-5e813856980e"))
+		(pin "1" (uuid "f208a238-04c5-480f-ab24-0516774aca1c"))
+		(pin "2" (uuid "9a2a9daf-bcf8-4543-8be8-ca0d6aa04822"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/edefe4a1-1b44-437c-947e-785de0970a70"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
 					(reference "R13")
 					(unit 1)
 				)
@@ -2474,8 +2474,8 @@
 	(text "NotchDeck One — Controls: buttons, hat, WS2812 LEDs, status.  Placed, not wired. See NETPLAN.md.\n\nBUTTONS (active-low to GND, internal pull-ups, debounce in FW):\n  SW1 BTN1 horn-hi  P1.11(1)    SW5 BTN5 L/ATS    P0.20(32)   SW9  BTN9 panto   P0.09(41)   SW13 HAT_UP    P0.22(34)\n  SW2 BTN2 horn-lo  P1.10(2)    SW6 BTN6 R/cab    P0.13(33)   SW10 BTN10 head   P0.10(43)   SW14 HAT_DOWN  P0.24(35)\n  SW3 BTN3 door-cl  P1.13(6)    SW7 BTN7 select   P1.04(40)   SW11 BTN11        P0.00(11)   SW15 HAT_LEFT  P1.00(36)\n  SW4 BTN4 door-op  P1.09(17)   SW8 BTN8 start    P1.06(42)   SW12 BTN12        P0.01(13)   SW16 HAT_RIGHT P1.02(38)\nWS2812 (D1..D16, addressable RGB): VDD -> +3V3 (or VBUS+U8 level-shift). Chain DOUT(n) -> DIN(n+1).\n  R11 330ohm series on WS2812_DIN from E73 P0.08(16) into D1.  C13 100uF bulk across strip V+/GND (add 100nF/LED ideally).\nSTATUS LEDs: D17 (status) + R12 1k ;  D18 (charge) + R13 1k <- CHG_STAT(P0.17).  Anodes -> +3V3 or GPIO per use."
 		(exclude_from_sim no)
 		(at 15.00 168.00 0)
-		(effects (font (size 1.5 1.5)) (justify left top))
-		(uuid "a64281b2-1def-492c-9fca-08cf32efc77d")
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "fe38e295-a411-484b-9b16-b15b33eba961")
 	)
 	(sheet_instances
 		(path "/"

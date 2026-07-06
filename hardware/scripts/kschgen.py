@@ -181,11 +181,45 @@ def _prop(name, val, x, y, hide=False, justify="left"):
             f'\t\t\t(effects (font (size 1.27 1.27)){j}){h}\n\t\t)\n')
 
 
-def text_note(s, x, y, size=1.5):
+# Schematic notes are rendered in a MONOSPACE font so wiring tables/columns line
+# up. "Courier New" is broadly available (macOS/Windows; Linux substitutes a mono
+# face); KiCad falls back to its stroke font if absent -- content still reads.
+NOTE_FONT = "Courier New"
+
+
+def text_note(s, x, y, size=1.27, mono=True):
+    face = f'(face "{NOTE_FONT}") ' if mono else ""
     return (f'\t(text "{esc(s)}"\n\t\t(exclude_from_sim no)\n'
             f'\t\t(at {x:.2f} {y:.2f} 0)\n'
-            f'\t\t(effects (font (size {size} {size})) (justify left top))\n'
+            f'\t\t(effects (font {face}(size {size} {size})) (justify left top))\n'
             f'\t\t(uuid "{U()}")\n\t)\n')
+
+
+def note_block(*lines):
+    """Join note lines into one monospace block (newlines preserved by esc())."""
+    return "\n".join(lines)
+
+
+def pin_table(pairs, header=("PIN", "SIGNAL"), cols=2, indent="  "):
+    """Format [(pin, signal), ...] as an aligned monospace table."""
+    pairs = [(str(p), str(s)) for p, s in pairs]
+    n = len(pairs)
+    per = (n + cols - 1) // cols if cols > 1 else n
+    pw = max([len(p) for p, _ in pairs] + [len(header[0])])
+    sw = max([len(s) for _, s in pairs] + [len(header[1])])
+
+    def cell(p, s):
+        return f"{p:>{pw}}  {s:<{sw}}"
+
+    rows = [indent + "    ".join([cell(*header)] * min(cols, (n + per - 1) // per))]
+    for i in range(per):
+        line = [cell(*pairs[i])]
+        j = i + per
+        while j < n:
+            line.append(cell(*pairs[j]))
+            j += per
+        rows.append(indent + "    ".join(line))
+    return "\n".join(rows).rstrip()
 
 
 def _comp(c, project, root_uuid, sheet_uuid):

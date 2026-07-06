@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "0d4eb303-8502-4a0e-80b0-eb5483675459")
+	(uuid "69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11")
 	(paper "A3")
 	(title_block
 		(title "NotchDeck One — MCU & Programming")
@@ -1807,7 +1807,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a0288e57-2290-4789-a967-5276161a1a37")
+		(uuid "962dfe66-9d30-43ba-908d-0ca42d999a12")
 		(property "Reference" "U1"
 			(at 49.5300 53.3400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1836,52 +1836,52 @@
 			(at 45.7200 55.8800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "97175e06-29ed-4f10-9e0c-36dace6eeb58"))
-		(pin "2" (uuid "226c4ffe-8456-4a0e-8a44-8a02dc575d3d"))
-		(pin "3" (uuid "49ed1096-d35c-436d-bf39-fb8b9a4f0529"))
-		(pin "4" (uuid "4965eb3e-7c62-4cc8-9e00-e5f193a47067"))
-		(pin "5" (uuid "c1ceda86-f7d3-488e-83ac-4b38b91a087b"))
-		(pin "6" (uuid "92b336e1-5f37-4922-8300-b6644908dfc4"))
-		(pin "7" (uuid "4c785e47-44e6-4c3f-b81d-e7d3cb9ee0ab"))
-		(pin "8" (uuid "8c5ef807-0170-4e76-93fb-93da09481ec1"))
-		(pin "9" (uuid "35c87f9a-a56c-46a9-821b-20ed597bd534"))
-		(pin "10" (uuid "e6780d11-ecf2-440b-86e4-9f41399b5e9a"))
-		(pin "11" (uuid "e75aa4c4-7d49-43bd-8649-7b677a9d260e"))
-		(pin "12" (uuid "57d40c20-692a-4603-b69e-a61be3db238d"))
-		(pin "13" (uuid "ff4694f2-f997-4b1d-9ee8-6fe717001959"))
-		(pin "14" (uuid "433a4226-8973-4b85-8a9a-1f1587e910c6"))
-		(pin "15" (uuid "7600396d-481f-4714-b661-37d2094d354d"))
-		(pin "16" (uuid "330ddfec-0892-4f37-a546-ae485f8c8a4c"))
-		(pin "17" (uuid "5e89c435-e651-47e6-9990-76918103df31"))
-		(pin "18" (uuid "b274dd40-5fb5-4a8c-8408-08ed2d479bfc"))
-		(pin "19" (uuid "bf0949ce-56f7-40b4-9d99-35f35e9cea24"))
-		(pin "20" (uuid "30af3a4e-979e-4a82-8ede-a88f4568d4f8"))
-		(pin "21" (uuid "9db95450-ef41-4c03-b15a-3af7883e95fd"))
-		(pin "22" (uuid "31bf1e38-1cc3-4bc4-a46d-81f017dd6a3f"))
-		(pin "23" (uuid "5f637fa7-64b3-495b-ae6f-e6f806c5e06c"))
-		(pin "24" (uuid "6632e449-eddb-44db-a99f-b40dd8cea6f5"))
-		(pin "25" (uuid "867b23d3-6b2c-40c2-8a57-3d04b57b0d45"))
-		(pin "26" (uuid "185c1fe6-832e-474e-852b-c17645ec8e6a"))
-		(pin "27" (uuid "5c980c5c-63fb-422b-ad65-9f522b313e14"))
-		(pin "28" (uuid "e8238b15-6998-4464-9fb0-27093ca64007"))
-		(pin "29" (uuid "5dcd08d0-f12b-46ec-9895-b5e8332bca3e"))
-		(pin "30" (uuid "a795bc07-69ee-4379-ac94-fa1a302b4fff"))
-		(pin "31" (uuid "ac8d8d60-d1e2-496d-a8ff-0e785a8170a9"))
-		(pin "32" (uuid "f7b370a0-faec-4d1c-9bf9-67ab0e955fdd"))
-		(pin "33" (uuid "fad7df41-0fb5-49d4-b095-46cf3e65ca8a"))
-		(pin "34" (uuid "24e20b43-6720-408d-aafd-1a87664ea134"))
-		(pin "35" (uuid "280c47a0-8c56-454e-851e-4b5a61a54c94"))
-		(pin "36" (uuid "f82a2ed4-c14a-466f-a263-2ff1e7cf879e"))
-		(pin "37" (uuid "825f4a87-631e-4caf-8085-8fd2f20ccbab"))
-		(pin "38" (uuid "ee521f0b-9d2d-49ff-8f6f-01a1b30cfaef"))
-		(pin "39" (uuid "29ac3521-5ba7-4d52-bf2b-ceb6d379b855"))
-		(pin "40" (uuid "9ce23a86-0dac-471b-82e2-638800712844"))
-		(pin "41" (uuid "b18f7c11-0db5-4705-92c2-5437caee1f77"))
-		(pin "42" (uuid "24070259-033f-4faa-bcdb-d42c3c3fad0d"))
-		(pin "43" (uuid "f2e73d6b-3065-4d64-81d2-aa5c4bd6caa7"))
+		(pin "1" (uuid "283bc0aa-e50b-46e7-8ece-65402372aed5"))
+		(pin "2" (uuid "38ac9100-fa1c-4b23-a169-220926194f48"))
+		(pin "3" (uuid "7d7a55ad-bdc1-4aba-b63b-fb816bfe70e3"))
+		(pin "4" (uuid "67c1fc3f-a5bc-4c87-8e08-7ba327c08874"))
+		(pin "5" (uuid "ce31ab89-6bd9-4b0b-8b6e-e4e77ea41cb0"))
+		(pin "6" (uuid "a322903f-20a7-4249-84a6-47c14dbb000f"))
+		(pin "7" (uuid "70dc7233-d405-465a-a186-a89a18c0c829"))
+		(pin "8" (uuid "0189d25e-a11e-4427-a6be-0ef2c524a793"))
+		(pin "9" (uuid "789580e5-a70c-4ed8-b507-4f722f474320"))
+		(pin "10" (uuid "977a308f-6d6c-43e6-af01-0927b0ffed6f"))
+		(pin "11" (uuid "b647fd76-b4ed-497a-b402-bd8bff0a4931"))
+		(pin "12" (uuid "e15c7bf1-bd0b-44d6-adee-9da3143f3694"))
+		(pin "13" (uuid "97f39be5-323f-4156-9a1e-f230b6a5f844"))
+		(pin "14" (uuid "316bdc1b-8605-4ea0-84ca-9ded7cbe2490"))
+		(pin "15" (uuid "6a9f9eb4-2f0e-4dc9-a802-5f937ba0e834"))
+		(pin "16" (uuid "f74e3d8b-7bac-4022-b70e-f3da01f8b882"))
+		(pin "17" (uuid "907c85df-0fa1-41ec-a839-f846db6cccac"))
+		(pin "18" (uuid "8cdf4840-9c4c-4249-8603-d94a5a368270"))
+		(pin "19" (uuid "b0bda39a-5625-4cd5-8240-14a1d7686353"))
+		(pin "20" (uuid "40cae66a-a7a2-4789-85e6-82c7e1fba174"))
+		(pin "21" (uuid "6e315dbd-2d8e-4dc0-a91d-0cedee7d01cf"))
+		(pin "22" (uuid "1fd2d0a4-f918-464e-9198-988ac81690d1"))
+		(pin "23" (uuid "86e0a6fc-b794-40be-b4a4-3e76ebebb8fb"))
+		(pin "24" (uuid "e080e6a9-b0d4-4dc9-884c-e122517c3add"))
+		(pin "25" (uuid "09eeb94a-6786-411f-ad34-8a2ef9ac937d"))
+		(pin "26" (uuid "19ee265b-50c2-4e79-8cb4-5d795b27031f"))
+		(pin "27" (uuid "79291b68-8bc3-423a-b76f-629a383f5f7f"))
+		(pin "28" (uuid "4279766f-333f-4160-a0f7-6aaa00735fe8"))
+		(pin "29" (uuid "fca4261d-f7aa-4af5-a29d-710b1c32cbf8"))
+		(pin "30" (uuid "2bfb29c7-8d15-4450-8a97-1d7a2f0321a0"))
+		(pin "31" (uuid "0b5befa8-0fed-489d-b3c7-51ccc67174b6"))
+		(pin "32" (uuid "d18c47b6-39f4-4015-a32a-efb5abf46fac"))
+		(pin "33" (uuid "240cb20b-588d-4282-9077-c710000e3087"))
+		(pin "34" (uuid "5c182ba7-2757-4f72-9a25-0ffc70327719"))
+		(pin "35" (uuid "8e60c675-90df-4338-8399-d7a9b2083093"))
+		(pin "36" (uuid "02f95a1e-7430-4f8b-8f48-f7724dc43259"))
+		(pin "37" (uuid "88764cd2-da1a-4032-934c-371a38dc7b30"))
+		(pin "38" (uuid "ba8dc998-76f4-430b-866e-78d0a4021272"))
+		(pin "39" (uuid "600509c2-5ad9-4fd3-84c0-c263d5187d06"))
+		(pin "40" (uuid "a9368475-b9c6-418f-a876-20b969445b26"))
+		(pin "41" (uuid "a348deeb-5839-46a6-ad1a-87d9d5094330"))
+		(pin "42" (uuid "af624979-130a-4371-b27f-1f97a04b3d30"))
+		(pin "43" (uuid "67e08950-a402-42a8-bc3f-17e7cbd69b03"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "U1")
 					(unit 1)
 				)
@@ -1896,7 +1896,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ceffb65c-7f5d-4c20-aac3-f9fa09955056")
+		(uuid "49cf9a9d-eb96-471b-ad8b-2e0e85ed284f")
 		(property "Reference" "J3"
 			(at 146.0500 53.3400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1913,19 +1913,19 @@
 			(at 142.2400 55.8800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "998576ff-01a3-4151-a0ac-d5db13353ed1"))
-		(pin "2" (uuid "9cbcd130-459c-4e3c-9a84-3059ecbd75ba"))
-		(pin "3" (uuid "542d089e-0e71-4267-98e7-c79ed4e3200c"))
-		(pin "4" (uuid "3cc76808-799a-45c8-9329-d95d2504fa66"))
-		(pin "5" (uuid "ab50db7d-2b07-4bd6-898b-be2b7a67d3c0"))
-		(pin "6" (uuid "2d1e20e9-ebb1-4329-941e-db300bb91e0b"))
-		(pin "7" (uuid "e9d3e207-8af4-4359-98b2-fd8df7af3a02"))
-		(pin "8" (uuid "bfcb2da0-7599-436e-b46d-94443540d2e0"))
-		(pin "9" (uuid "2c3e05b6-43c0-4019-96de-7e9791526000"))
-		(pin "10" (uuid "504d593b-5237-4a4b-82b4-3de1e022d1a6"))
+		(pin "1" (uuid "07c16f20-8e84-44d5-8d78-e0d8afcfafa2"))
+		(pin "2" (uuid "3585970d-8b5e-4653-9983-34f1f62a2e2f"))
+		(pin "3" (uuid "ff12a4de-97a4-4eed-bb20-3084302544ad"))
+		(pin "4" (uuid "a9733e17-3073-47de-8fc7-712cdcb92716"))
+		(pin "5" (uuid "d41e763b-8475-4598-98a3-be54d96f883a"))
+		(pin "6" (uuid "eb17e18f-2810-4dd1-a665-b9c419d5d02b"))
+		(pin "7" (uuid "e80b5186-6fb1-4bbb-bacc-13e60a009416"))
+		(pin "8" (uuid "a481b172-6a4d-4c9d-a64f-78376d1b19a5"))
+		(pin "9" (uuid "fe47f939-347f-4485-b93f-d8b5767135fc"))
+		(pin "10" (uuid "2f6b07f0-e05c-4a90-9f9c-a26143abec12"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "J3")
 					(unit 1)
 				)
@@ -1940,7 +1940,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4577507d-ef1c-4a28-b8d5-2f5a99b926c1")
+		(uuid "b9694e9a-ae52-413e-9da0-dbcf25984b22")
 		(property "Reference" "J4"
 			(at 242.5700 53.3400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1957,15 +1957,15 @@
 			(at 238.7600 55.8800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5dc74edd-8170-4a0a-bb43-1b80974dc1e1"))
-		(pin "2" (uuid "70c26658-68cc-4f31-88f2-e0960526e0c3"))
-		(pin "3" (uuid "04d42aa9-cd01-4b14-923a-48852ee46955"))
-		(pin "4" (uuid "ec05c91a-8eef-4494-b8f1-e6de1a2ebe21"))
-		(pin "5" (uuid "cf7898c9-8275-413f-babb-8f7c044c0d0d"))
-		(pin "6" (uuid "5b3f72ec-1255-43ea-93d1-3cc221b31252"))
+		(pin "1" (uuid "f8c60e60-bd1b-4f64-b700-fde6f56cb8cc"))
+		(pin "2" (uuid "85012cbe-1988-4633-8c92-232383c4f686"))
+		(pin "3" (uuid "b66aa943-3888-4e04-bd99-0b775e8a872f"))
+		(pin "4" (uuid "3cef84a2-4f37-4754-82b2-e8e7870e955a"))
+		(pin "5" (uuid "7f66bae9-b801-4a72-a07c-118cadb05134"))
+		(pin "6" (uuid "9d27f9e6-fe7c-4009-8049-519773db77da"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "J4")
 					(unit 1)
 				)
@@ -1980,7 +1980,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ed4d06b8-1356-4728-bb12-dd36f5a40e42")
+		(uuid "bc625dc1-9457-4765-a511-f0a392117e08")
 		(property "Reference" "C1"
 			(at 34.2900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -1997,11 +1997,11 @@
 			(at 30.4800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3c21d65e-4294-4fee-a132-d924bcec58c7"))
-		(pin "2" (uuid "8648a72c-81b8-4345-ab81-7656d75131d4"))
+		(pin "1" (uuid "f4e90fc3-b77b-4a54-803c-f0f52744ac43"))
+		(pin "2" (uuid "b3e44f1d-bbe0-4963-b117-518e6e5355b1"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "C1")
 					(unit 1)
 				)
@@ -2016,7 +2016,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f1957388-53da-480c-8263-098d0c31830b")
+		(uuid "202ca633-ee36-4642-93f1-84cbeb2cc8fe")
 		(property "Reference" "C2"
 			(at 72.3900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2033,11 +2033,11 @@
 			(at 68.5800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9729c680-88ff-457f-a9db-6802aad44c3c"))
-		(pin "2" (uuid "2117f682-4d2f-4276-a5ae-be1dd57f38b9"))
+		(pin "1" (uuid "1228cf75-ec8a-4682-8aa3-42128551911e"))
+		(pin "2" (uuid "36b94eb8-898e-4a1d-829e-f12f24062722"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "C2")
 					(unit 1)
 				)
@@ -2052,7 +2052,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "41fef96f-1b6c-48c5-8392-8ad1578302c8")
+		(uuid "1cad3e73-d386-4f60-a5f2-cafada249bd0")
 		(property "Reference" "C3"
 			(at 110.4900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2069,11 +2069,11 @@
 			(at 106.6800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "e54ad894-1ec8-4176-a8df-c6b0fcf2eba4"))
-		(pin "2" (uuid "f5ac2957-87e3-4b1d-aae5-f61cf10a33b4"))
+		(pin "1" (uuid "7b28d586-8011-4aa5-aad3-db5048169431"))
+		(pin "2" (uuid "7b4ae737-82d2-4122-8afa-541d1fabae62"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "C3")
 					(unit 1)
 				)
@@ -2088,7 +2088,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ffe0fc0a-70bf-4f5d-badc-6457aa20eac0")
+		(uuid "860fd96f-0fe7-4cf0-b2c2-f89611bd7fe6")
 		(property "Reference" "C4"
 			(at 148.5900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2105,11 +2105,11 @@
 			(at 144.7800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "ee1f6acc-3274-4b61-9327-f53379f5af5a"))
-		(pin "2" (uuid "9ef59179-bec5-4da9-8c02-851a68f87187"))
+		(pin "1" (uuid "e431bc07-029b-465b-9dae-d605f027ad9d"))
+		(pin "2" (uuid "59b1a66d-071d-47f9-9cff-e605027e327d"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "C4")
 					(unit 1)
 				)
@@ -2124,7 +2124,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "19f8d32c-cfbd-4cb8-82d2-78984280b2ee")
+		(uuid "a56c073a-1e94-4e75-9b44-f7fea47147d5")
 		(property "Reference" "C5"
 			(at 186.6900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2141,11 +2141,11 @@
 			(at 182.8800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "ce3f26b8-c93c-493b-9e18-5541b234c224"))
-		(pin "2" (uuid "8ece7c93-8e1a-473c-a5a3-61e123d700eb"))
+		(pin "1" (uuid "80f4d01d-8f39-42ec-8f78-4e7cb2d4cc0e"))
+		(pin "2" (uuid "cc0dafbf-25e7-4cdc-a716-ad5c0f18eedf"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "C5")
 					(unit 1)
 				)
@@ -2160,7 +2160,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ddac121-14e6-488f-863c-705d568f78e0")
+		(uuid "d4d6f39c-11b9-4dc5-8237-b49e1d2f0358")
 		(property "Reference" "C6"
 			(at 224.7900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2177,11 +2177,11 @@
 			(at 220.9800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "90c73a3f-572e-4826-89ff-e023878aff7e"))
-		(pin "2" (uuid "fa300c9f-0bec-49d7-a073-b7a97dd3bcef"))
+		(pin "1" (uuid "5c45fff1-d284-49ac-8c9f-e5095fb40e45"))
+		(pin "2" (uuid "5cf948b2-6ff2-47f9-a20c-bb33ca77246d"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "C6")
 					(unit 1)
 				)
@@ -2196,7 +2196,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3e6eb513-e5b7-4de4-a82f-4bbbfdc66d10")
+		(uuid "9e6dbe65-e888-48f6-87b6-cf99652f1668")
 		(property "Reference" "SW_RST"
 			(at 262.8900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
@@ -2213,22 +2213,22 @@
 			(at 259.0800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f02cca77-aabd-415e-a8b7-9f74ee5c31e9"))
-		(pin "2" (uuid "742c1f35-218f-4b05-8509-835b0b416e31"))
+		(pin "1" (uuid "8b6ea924-8a3a-463a-a7c2-d67821fc44e9"))
+		(pin "2" (uuid "7b62c580-0f6e-46e1-bee9-6866a704e902"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/0d4eb303-8502-4a0e-80b0-eb5483675459"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/69c9301a-7d1c-4dfc-8a82-adc2c5ab1b11"
 					(reference "SW_RST")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(text "NotchDeck One — MCU & Programming (U1 Ebyte E73-2G4M08S1C, nRF52840)\nComponents placed, NOT yet wired. Pad numbers = E73 module pads (per notchdeck:E73 symbol / NETPLAN.md).\n\nPOWER:  VDD(19) + VDDH(23) -> +3V3 (tie together = normal-voltage mode; module DC/DC handles REG1).\n        DCCH(25) = NC (leave open). Decouple each VDD/VDDH with 100nF (C1,C2) + 1uF (C3,C4); 10uF bulk (C5) on +3V3.\nUSB:    VBUS(27) -> USB_VBUS(5V)  |  D-(29) -> USB_DM  |  D+(31) -> USB_DP   [from Power sheet, through U7 ESD].\n        nRF on-chip USB regulator + vbus_present() read VBUS directly (no GPIO).\nSWD:    SWDIO(37), SWDCLK(39), nRESET(26/P0.18), +3V3, GND -> wire to BOTH J3 (2x05) and J4 (TC2030-NL) in parallel.\nRESET:  SW_RST: nRESET -> GND (momentary). 100nF (C6) on nRESET. Bootloader double-tap-to-DFU (no BOOT pin).\nFW:     NFC pins P0.09/P0.10 used as GPIO -> set CONFIG_NFCT_PINS_AS_GPIO. nRESET enabled in UICR.\n        P0.00/P0.01 used as GPIO -> LFCLK = internal RC (no 32.768kHz xtal).\n\nE73 full pad map (signal -> net/function):\n 1  P1.11        BTN1 horn-hi (A)        23 VDDH         +3V3 (tie to VDD)\n 2  P1.10        BTN2 horn-lo/bell (B)   24 GND          GND\n 3  P0.03/AIN1   spare (LEVER_S2 alt)    25 DCCH         NC (open)\n 4  P0.28/AIN4   spare (LEVER_S3 alt)    26 P0.18/RESET  nRESET (SW_RST + SWD)\n 5  GND          GND                     27 VBUS         USB_VBUS (5V)\n 6  P1.13        BTN3 door-close (X)     28 P0.15        FG_ALRT  (MAX17048 ALRT)\n 7  P0.02/AIN0   REVERSER_AIN (ADC)      29 USB_D-       USB_DM\n 8  P0.29/AIN5   spare                   30 P0.17        CHG_STAT (MCP73831 STAT)\n 9  P0.31/AIN7   spare                   31 USB_D+       USB_DP\n10  P0.30/AIN6   spare                   32 P0.20        BTN5 ATS-reset (L)\n11  P0.00/XL1    BTN11 (GPIO, no LFXO)   33 P0.13        BTN6 cab/view (R)\n12  P0.26        I2C0_SDA -> AS5600      34 P0.22        HAT_UP\n13  P0.01/XL2    BTN12 (GPIO, no LFXO)   35 P0.24        HAT_DOWN\n14  P0.06        I2C0_SCL -> AS5600      36 P1.00        HAT_LEFT\n15  P0.05/AIN3   spare                   37 SWDIO        SWDIO (J3/J4)\n16  P0.08        WS2812_DIN              38 P1.02        HAT_RIGHT\n17  P1.09        BTN4 door-open (Y)      39 SWDCLK       SWDCLK (J3/J4)\n18  P0.04/AIN2   spare                   40 P1.04        BTN7 select\n19  VDD          +3V3                    41 P0.09/NFC1   BTN9 pantograph\n20  P0.12        I2C1_SDA -> MAX17048    42 P1.06        BTN8 start\n21  GND          GND                     43 P0.10/NFC2   BTN10 headlight\n22  P0.07        I2C1_SCL -> MAX17048"
+	(text "NotchDeck One — MCU & Programming (U1 Ebyte E73-2G4M08S1C, nRF52840)\nComponents placed, NOT yet wired. Pad numbers = E73 module pads (per notchdeck:E73 symbol / NETPLAN.md).\n\nPOWER:  VDD(19) + VDDH(23) -> +3V3 (tie together = normal-voltage mode; module DC/DC handles REG1).\n        DCCH(25) = NC (leave open). Decouple each VDD/VDDH with 100nF (C1,C2) + 1uF (C3,C4); 10uF bulk (C5) on +3V3.\nUSB:    VBUS(27) -> USB_VBUS(5V)  |  D-(29) -> USB_DM  |  D+(31) -> USB_DP   [from Power sheet, through U7 ESD].\n        nRF on-chip USB regulator + vbus_present() read VBUS directly (no GPIO).\nSWD:    SWDIO(37), SWDCLK(39), nRESET(26/P0.18), +3V3, GND -> wire to BOTH J3 (2x05) and J4 (TC2030-NL) in parallel.\nRESET:  SW_RST: nRESET -> GND (momentary). 100nF (C6) on nRESET. Bootloader double-tap-to-DFU (no BOOT pin).\nFW:     NFC pins P0.09/P0.10 used as GPIO -> set CONFIG_NFCT_PINS_AS_GPIO. nRESET enabled in UICR.\n        P0.00/P0.01 used as GPIO -> LFCLK = internal RC (no 32.768kHz xtal).\n\nE73 full pad map (signal -> net/function):\n 1  P1.11        BTN1 horn-hi (A)        23 VDDH         +3V3 (tie to VDD)\n 2  P1.10        BTN2 horn-lo/bell (B)   24 GND          GND\n 3  P0.03/AIN1   LEVER_S0 (coded-sw)     25 DCCH         NC (open)\n 4  P0.28/AIN4   LEVER_S1 (coded-sw)     26 P0.18/RESET  nRESET (SW_RST + SWD)\n 5  GND          GND                     27 VBUS         USB_VBUS (5V)\n 6  P1.13        BTN3 door-close (X)     28 P0.15        FG_ALRT  (MAX17048 ALRT)\n 7  P0.02/AIN0   REVERSER_AIN (ADC)      29 USB_D-       USB_DM\n 8  P0.29/AIN5   spare                   30 P0.17        CHG_STAT (MCP73831 STAT)\n 9  P0.31/AIN7   spare                   31 USB_D+       USB_DP\n10  P0.30/AIN6   spare                   32 P0.20        BTN5 ATS-reset (L)\n11  P0.00/XL1    BTN11 (GPIO, no LFXO)   33 P0.13        BTN6 cab/view (R)\n12  P0.26        I2C0_SDA -> AS5600      34 P0.22        HAT_UP\n13  P0.01/XL2    BTN12 (GPIO, no LFXO)   35 P0.24        HAT_DOWN\n14  P0.06        I2C0_SCL -> AS5600      36 P1.00        HAT_LEFT\n15  P0.05/AIN3   LEVER_S3 (coded-sw)     37 SWDIO        SWDIO (J3/J4)\n16  P0.08        WS2812_DIN              38 P1.02        HAT_RIGHT\n17  P1.09        BTN4 door-open (Y)      39 SWDCLK       SWDCLK (J3/J4)\n18  P0.04/AIN2   LEVER_S2 (coded-sw)     40 P1.04        BTN7 select\n19  VDD          +3V3                    41 P0.09/NFC1   BTN9 pantograph\n20  P0.12        I2C1_SDA -> MAX17048    42 P1.06        BTN8 start\n21  GND          GND                     43 P0.10/NFC2   BTN10 headlight\n22  P0.07        I2C1_SCL -> MAX17048"
 		(exclude_from_sim no)
 		(at 15.00 165.00 0)
-		(effects (font (size 1.5 1.5)) (justify left top))
-		(uuid "4e1584a8-0de5-4f5a-97c7-dd23746e95d3")
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "377cc021-3750-4464-bfb4-002b0792ee6a")
 	)
 	(sheet_instances
 		(path "/"

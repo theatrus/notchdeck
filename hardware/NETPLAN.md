@@ -50,17 +50,18 @@ default — adjust freely in capture, they're all software-defined.
 | 43 | P0.10/NFC2 | BTN10 headlight | NFC→GPIO (UICR) |
 | 11 | P0.00/XL1 | BTN11 (or LFXO) | GPIO if no 32 kHz xtal |
 | 13 | P0.01/XL2 | BTN12 (or LFXO) | GPIO if no 32 kHz xtal |
-| 3 | P0.03/AIN1 | spare (analog) | expansion |
-| 4 | P0.28/AIN4 | spare (analog) | expansion |
+| 3 | P0.03/AIN1 | **LEVER_S0** | coded-switch bit 0 (J5); GPIO in, ext 10k pull-up + RC debounce |
+| 4 | P0.28/AIN4 | **LEVER_S1** | coded-switch bit 1 (J6); GPIO in, ext 10k pull-up + RC debounce |
 | 8 | P0.29/AIN5 | spare (analog) | expansion |
 | 9 | P0.31/AIN7 | spare (analog) | expansion |
 | 10 | P0.30/AIN6 | spare (analog) | expansion |
-| 15 | P0.05/AIN3 | spare (analog) | expansion |
-| 18 | P0.04/AIN2 | spare (analog) | expansion |
+| 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J8); GPIO in, ext 10k pull-up + RC debounce |
+| 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J7); GPIO in, ext 10k pull-up + RC debounce |
 
 Budget: 12 momentary buttons + 4-way hat (16 HID buttons + hat), 2× I²C, WS2812, reverser
-ADC, 2 status inputs — with **7 spare analog GPIOs** for expansion (extra buttons, an OLED,
-a second lever, etc.).
+ADC, 2 status inputs, **4-bit coded-switch lever input** (LEVER_S0–S3 on P0.03/P0.28/P0.04/P0.05)
+— with **3 spare analog GPIOs** left (P0.29/P0.31/P0.30) for expansion. The coded-switch bits
+are dedicated (not shared with the AS5600 I²C0), so both lever front-ends can be populated at once.
 
 ## Power architecture
 
@@ -114,12 +115,13 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
   - Mechanical: diametric magnet centered over the package on the lever shaft.
 - **TWIM1 — MAX17048** (U4): SDA=P0.12(20), SCL=P0.07(22), 4.7 kΩ pull-ups to +3V3.
 
-## Lever sensing — two interchangeable front-ends
+## Lever sensing — two front-ends (interchangeable, or populate both)
 
 The lever is a **discrete-detent** input (15 positions: EB, B8–B1, N, P1–P5), so this is
 "which detent am I in," not a precision-angle problem. The choice is **contained entirely in
 firmware `lever.c`** (`lever_get_notch()` returns a notch index); the notch→HID-byte table and
-everything downstream are sensor-agnostic. Two options:
+everything downstream are sensor-agnostic. Two options — and because the coded-switch bits are on
+dedicated GPIO, both can be populated at once (firmware picks, or cross-checks one against the other):
 
 ### Option 1 — AS5600 magnetic angle (default)
 
@@ -132,12 +134,17 @@ the lever at each band's center**, far from the decision thresholds — so quant
 drift: magnet centering, air-gap (0.5–3 mm), shaft runout. Optional upgrade if you ever want more
 margin: MT6701 (14-bit, ~same cost, JLCPCB-stocked).
 
-### Option 2 — cam + 4 Gray-coded switches (deterministic, authentic)
+### Option 2 — 4 binary/Gray coded switches (deterministic, authentic)
 
-A cam on the shaft actuates **4 switches**; the pattern encodes the notch. **Zero drift, zero
+**4 switches** encode the notch position — either an on-board cam on the shaft, or (the mascon
+case) a coded-switch assembly in the handle **wired in on a harness**. **Zero drift, zero
 calibration, decodes as pure GPIO** — and it's how the real Densha de GO! / DGC-255 controllers
-work (research doc §4). Cost moves into the cam. Use **Gray code** so exactly one bit changes per
-detent transition (no transient-invalid codes); an unused/unknown code → hold last valid.
+work (research doc §4). Use **Gray code** so exactly one bit changes per detent transition (no
+transient-invalid codes); an unused/unknown code → hold last valid. Binary (BCD) coded switches
+also work — de-Gray is just skipped in firmware.
+
+This front-end is **on-board and dedicated** (its own 4 GPIO + connectors + debounce), so it can be
+populated **alongside** the AS5600 (Option 1), not only as a swap — see "coexists" below.
 
 4-bit Gray map (S3 S2 S1 S0), one bit changes between physically adjacent notches:
 
@@ -152,20 +159,29 @@ detent transition (no transient-invalid codes); an unused/unknown code → hold 
 | B3 | 0101 | | P5 | 1001 |
 | B2 | 0100 | | *(unused)* | 1000 |
 
-Switch element — pick one:
+For an **on-board cam** (instead of the mascon harness) driving the same 4 nets, pick a switch
+element:
 - **Hall (recommended): 4× DRV5032FB** (SOT-23, contactless, no wear) + small magnet lobes on the
   cam. SMD-assemblable at JLCPCB.
 - **Mechanical: 4× snap-action** (Omron SS-5GL / D2F-class, cam-lever actuated) — cheapest, most
   authentic *feel*, but contacts wear (~10⁵–10⁶ cycles) and are usually hand-mounted.
 
-GPIO (reuses the freed AS5600 I²C0 pins + 2 analog spares; MAX17048 stays on TWIM1):
-`LEVER_S0`=P0.26(12), `LEVER_S1`=P0.06(14), `LEVER_S2`=P0.03(3), `LEVER_S3`=P0.28(4) —
-active-low to GND with internal pull-ups (or Hall open-drain outputs + pull-ups). Debounce a few
-ms in firmware.
+**GPIO — dedicated (coexists with the AS5600 on I²C0):** the 4 bits take 4 spare analog GPIO so
+neither front-end blocks the other. `LEVER_S0`=P0.03(3), `LEVER_S1`=P0.28(4), `LEVER_S2`=P0.04(18),
+`LEVER_S3`=P0.05(15). Active-low: each switch shorts its bit line to GND; open = high. MAX17048
+stays on TWIM1, AS5600 on TWIM0. (This supersedes the earlier "reuse the freed I²C0 pins" plan,
+which only worked as an AS5600 *swap*.)
 
-**Recommendation:** ship Option 1 (AS5600) for the simplest BOM; choose Option 2 if you want
-calibration-free determinism / maximum authenticity and don't mind the cam machining. If machining
-a cam anyway, driving Hall switches off it removes the analog layer for ~$0.80 of sensors.
+**Connectors + hardware debounce (mascon harness):** the coded switches live in the handle and come
+in on **one 2-pin JST-PH per bit** — `J5`=S0, `J6`=S1, `J7`=S2, `J8`=S3 (pin 1 = bit line, pin 2 =
+GND). Each bit has an on-board **RC debounce**: 10 kΩ pull-up to +3V3, 1 kΩ series into the GPIO,
+100 nF to GND → τ ≈ 1.1 ms release / 0.1 ms press. The series R also limits the cap-discharge
+current and adds ESD margin on the cable; firmware still applies a few-ms software debounce on top.
+Parts: `R14–R17` (pull-ups), `R18–R21` (series), `C14–C17` (caps) on the Lever sheet.
+
+**Recommendation:** ship Option 1 (AS5600) for the simplest BOM. Populate the coded-switch input
+(J5–J8) when you want calibration-free determinism / maximum authenticity or must interface a real
+mascon's coded switch — and since its pins are dedicated, you can stuff both and let firmware choose.
 
 ## Programming / reset (see `../docs/05-firmware-update.md`)
 

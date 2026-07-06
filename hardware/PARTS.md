@@ -56,10 +56,32 @@ Notes: AO3401A + B5819W are **JLCPCB basic parts** (no feeder fee). SWD: a Tag-C
 only populated if the WS2812 strip is run at 5 V (3.3 V data into a 5 V strip can be marginal);
 default-DNP if the strip runs at 3.3 V.
 
-## Alternative lever front-end (Option 2 — cam + Gray-coded switches)
+## Coded-switch lever input (Option 2 — 4-bit binary/Gray, coexists with AS5600)
 
-Swaps the AS5600 (U5) for a 4-switch cam (see `NETPLAN.md` → "Lever sensing"). Deterministic,
-no calibration; reads as 4 GPIO. Pick one switch element:
+A 4-bit coded switch reports notch position as pure GPIO (see `NETPLAN.md` → "Lever sensing").
+Its 4 bits are on **dedicated GPIO** (P0.03/P0.28/P0.04/P0.05), so this coexists with the AS5600
+(U5) — populate either front-end or both. The switches themselves live in the **mascon handle** and
+wire in on a harness: **one 2-pin JST-PH per bit** (signal + GND), each bit active-low with an
+on-board RC debounce. These are on-board parts of the default build (on the Lever sheet):
+
+| Block | Ref | Qty | Part / value | MPN (Manufacturer) | KiCad symbol | Footprint | Status |
+|---|---|---|---|---|---|---|---|
+| **Coded-switch conn.** | J5–J8 | 4 | JST-PH 2-pin (per bit: signal + GND) | S2B-PH-SM4-TB (JST) | `Connector_Generic:Conn_01x02` | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` | stdlib |
+| **Bit pull-ups** | R14–R17 | 4 | 10 kΩ 0402 (to +3V3) | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
+| **Bit series R** | R18–R21 | 4 | 1 kΩ 0402 (RC debounce + GPIO/ESD limit) | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
+| **Debounce caps** | C14–C17 | 4 | 100 nF 0402 (to GND) | — | `Device:C` | `Capacitor_SMD:C_0402_1005Metric` | stdlib |
+
+Debounce per bit: `+3V3 → 10k pull-up → bit line (Jn.1, switch to GND)`, then `1k series → GPIO`
+with `100 nF → GND`. τ ≈ 1.1 ms on release / 0.1 ms on press — a small hardware debounce; firmware
+adds a few ms on top. The 1 kΩ series also limits cap-discharge current and gives cable ESD margin.
+All stdlib; same JST-PH family as the battery J2, so no new symbols/footprints. (If any switch is a
+maintained/latching type or a shared-common wafer, tie its common to a GND pin and keep the per-bit
+RC — the topology is unchanged.)
+
+### On-board cam alternative (in place of the mascon harness)
+
+If the 4 switches are actuated by an **on-board cam** on the shaft rather than an external mascon,
+drop J5–J8 and drive the same 4 nets (LEVER_S0–S3) from a cam switch element — pick one:
 
 | Block | Ref | Part | LCSC | MPN | KiCad symbol | Footprint | Status |
 |---|---|---|---|---|---|---|---|
@@ -70,7 +92,6 @@ no calibration; reads as 4 GPIO. Pick one switch element:
 Notes: DRV5032FB is contactless (no wear), SOT-23, JLCPCB-stocked (~13k, $0.20) — needs a 3-pin
 Hall-switch symbol (generic or vendored; not in KiCad stdlib). SS-5GL is the authentic cam
 microswitch (through-hole, ~$0.60) — most authentic feel, but contacts wear and it's hand-mounted.
-Default build uses the AS5600; this section is the drop-in alternative.
 
 ## Library status (what's in `lib/` now)
 

@@ -106,12 +106,32 @@ POWER = dict(name="Power", file="power.kicad_sch",
     ])
 
 LEVER = dict(name="Lever", file="lever.kicad_sch",
-    title="Lever sensor (AS5600, I2C0)", page="4", big=[],
+    title="Lever sensing (AS5600 magnetic + 4-bit coded-switch)", page="4",
+    big=[
+        # One 2-pin JST-PH per coded-switch bit (signal + GND), 4 switches from the mascon.
+        dict(ref="J5", lib_id="Connector_Generic:Conn_01x02", value="CODE S0",
+             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+             mpn="S2B-PH-SM4-TB", mfr="JST"),
+        dict(ref="J6", lib_id="Connector_Generic:Conn_01x02", value="CODE S1",
+             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+             mpn="S2B-PH-SM4-TB", mfr="JST"),
+        dict(ref="J7", lib_id="Connector_Generic:Conn_01x02", value="CODE S2",
+             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+             mpn="S2B-PH-SM4-TB", mfr="JST"),
+        dict(ref="J8", lib_id="Connector_Generic:Conn_01x02", value="CODE S3",
+             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+             mpn="S2B-PH-SM4-TB", mfr="JST"),
+    ],
     small=[
         dict(ref="U5", lib_id="notchdeck:AS5600", value="AS5600",
              fp="Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
              lcsc="C499458", mpn="AS5600-ASOM", mfr="AMS"),
         C("C11", "100nF"), C("C12", "1uF"), R("R9", "4.7k"), R("R10", "4.7k"),
+        # 4-bit coded-switch input: active-low, per-bit RC debounce
+        # (Rpu 10k to +3V3 / Rs 1k series / C 100nF to GND).
+        R("R14", "10k"), R("R15", "10k"), R("R16", "10k"), R("R17", "10k"),
+        R("R18", "1k"), R("R19", "1k"), R("R20", "1k"), R("R21", "1k"),
+        C("C14", "100nF"), C("C15", "100nF"), C("C16", "100nF"), C("C17", "100nF"),
     ])
 
 ctrl = []
@@ -148,8 +168,8 @@ FW:     NFC pins P0.09/P0.10 used as GPIO -> set CONFIG_NFCT_PINS_AS_GPIO. nRESE
 E73 full pad map (signal -> net/function):
  1  P1.11        BTN1 horn-hi (A)        23 VDDH         +3V3 (tie to VDD)
  2  P1.10        BTN2 horn-lo/bell (B)   24 GND          GND
- 3  P0.03/AIN1   spare (LEVER_S2 alt)    25 DCCH         NC (open)
- 4  P0.28/AIN4   spare (LEVER_S3 alt)    26 P0.18/RESET  nRESET (SW_RST + SWD)
+ 3  P0.03/AIN1   LEVER_S0 (coded-sw)     25 DCCH         NC (open)
+ 4  P0.28/AIN4   LEVER_S1 (coded-sw)     26 P0.18/RESET  nRESET (SW_RST + SWD)
  5  GND          GND                     27 VBUS         USB_VBUS (5V)
  6  P1.13        BTN3 door-close (X)     28 P0.15        FG_ALRT  (MAX17048 ALRT)
  7  P0.02/AIN0   REVERSER_AIN (ADC)      29 USB_D-       USB_DM
@@ -160,10 +180,10 @@ E73 full pad map (signal -> net/function):
 12  P0.26        I2C0_SDA -> AS5600      34 P0.22        HAT_UP
 13  P0.01/XL2    BTN12 (GPIO, no LFXO)   35 P0.24        HAT_DOWN
 14  P0.06        I2C0_SCL -> AS5600      36 P1.00        HAT_LEFT
-15  P0.05/AIN3   spare                   37 SWDIO        SWDIO (J3/J4)
+15  P0.05/AIN3   LEVER_S3 (coded-sw)     37 SWDIO        SWDIO (J3/J4)
 16  P0.08        WS2812_DIN              38 P1.02        HAT_RIGHT
 17  P1.09        BTN4 door-open (Y)      39 SWDCLK       SWDCLK (J3/J4)
-18  P0.04/AIN2   spare                   40 P1.04        BTN7 select
+18  P0.04/AIN2   LEVER_S2 (coded-sw)     40 P1.04        BTN7 select
 19  VDD          +3V3                    41 P0.09/NFC1   BTN9 pantograph
 20  P0.12        I2C1_SDA -> MAX17048    42 P1.06        BTN8 start
 21  GND          GND                     43 P0.10/NFC2   BTN10 headlight
@@ -188,14 +208,25 @@ FUEL GAUGE U4 (MAX17048): VDD->BAT+;  CELL(2)=NC (1-cell);  CTG/GND/EP/QSTRT -> 
 BATTERY J2 (JST-PH): pin1 BAT+, pin2 GND (1S Li-ion).
 U8 (74LVC1G125) = DNP: only populate if WS2812 strip runs at 5V (level-shift WS2812_DIN).  Default DNP (3V3 strip).""")
 
-LEVER["note"] = (15, 95, """NotchDeck One — Lever sensor (U5 AS5600, magnetic angle).  Placed, not wired. See NETPLAN.md "I2C buses" / "Lever sensing".
+LEVER["note"] = (15, 165, """NotchDeck One — Lever sensing: AS5600 magnetic angle (I2C0) + 4-bit coded-switch input (J5).  Placed, not wired. See NETPLAN.md "Lever sensing".
 
 AS5600 U5:  VDD5V(1) + VDD3V3(2) -> +3V3 (3.3V mode: tie both).   GND(4) -> GND.   DIR(8) -> GND (CW = increasing).
             SDA(6) / SCL(7) -> I2C0 bus.   OUT(3) = NC,  PGO(5) = NC.   C11 100nF + C12 1uF decouple.
 I2C0 (TWIM0): SDA = P0.26 (pad 12),  SCL = P0.06 (pad 14).   R9 / R10 = 4.7k pull-ups to +3V3.
 !! AS5600 and MAX17048 SHARE I2C addr 0x36 -> they MUST be on separate buses. AS5600 = TWIM0, MAX17048 = TWIM1.
 MECH: diametric magnet centered over the package on the lever shaft, 0.5-3mm air-gap.
-ALT (Option 2, cam + Gray-coded switches): reuse these pins as LEVER_S0=P0.26, S1=P0.06, S2=P0.03(3), S3=P0.28(4).""")
+
+CODED-SWITCH INPUT (J5-J8) — coexists with AS5600; populate either front-end, or both. Switches live in the mascon, wired in on the harness.
+  ONE 2-pin JST-PH per bit:  J5=LEVER_S0  J6=LEVER_S1  J7=LEVER_S2  J8=LEVER_S3.   Each: pin1 = bit line, pin2 = GND.
+  4-bit binary/Gray code, ACTIVE-LOW: each switch bridges its connector (bit line -> GND); open = high (held by pull-up).
+  Per-bit input circuit (small RC debounce), one of 4:
+        +3V3 --[Rpu 10k]--+-- Jn.1 (bit line, switch to GND)
+                          +--[Rs 1k]--+-- E73 GPIO      tau_release ~1.1ms ((Rpu+Rs)*C), tau_press ~0.1ms (Rs*C)
+                                      +--[C 100nF]-- GND   Rs also limits cap-discharge / adds cable ESD margin.
+     bit0(J5): Rpu R14 / Rs R18 / C C14    bit1(J6): R15 / R19 / C15    bit2(J7): R16 / R20 / C16    bit3(J8): R17 / R21 / C17
+  GPIO (4 dedicated spares, so it does NOT collide with AS5600 on I2C0):
+     LEVER_S0 = P0.03/AIN1 (pad 3)   LEVER_S1 = P0.28/AIN4 (pad 4)   LEVER_S2 = P0.04/AIN2 (pad 18)   LEVER_S3 = P0.05/AIN3 (pad 15)
+  FW: read the 4 GPIO, de-Gray/decode to a notch index in lever.c; notch->HID table stays sensor-agnostic. Ext 10k already sets the level (internal pull-ups optional).""")
 
 CONTROLS["note"] = (15, 168, """NotchDeck One — Controls: buttons, hat, WS2812 LEDs, status.  Placed, not wired. See NETPLAN.md.
 

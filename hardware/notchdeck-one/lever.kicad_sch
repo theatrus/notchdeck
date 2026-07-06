@@ -2,15 +2,173 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "9867d166-6f44-4981-8f02-32c7eec144e9")
+	(uuid "4d8b3eca-f05c-4607-a10a-8a1e17845aee")
 	(paper "A3")
 	(title_block
-		(title "NotchDeck One — Lever sensor (AS5600, I2C0)")
+		(title "NotchDeck One — Lever sensing (AS5600 magnetic + 4-bit coded-switch)")
 		(date "2026-05-29")
 		(rev "A")
 		(company "BenchBits")
 	)
 	(lib_symbols
+	(symbol "Connector_Generic:Conn_01x02"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x02_1_1"
+			(rectangle
+				(start -1.27 1.27)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "notchdeck:AS5600"
 		(pin_names
 			(offset 1.016)
@@ -564,53 +722,229 @@
 	)
 	)
 	(symbol
-		(lib_id "notchdeck:AS5600")
-		(at 30.4800 40.6400 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 45.7200 55.8800 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "79576e64-cb32-48a8-8381-f62d87d4f62d")
-		(property "Reference" "U5"
-			(at 34.2900 38.1000 0)
+		(uuid "30b8d960-afbd-4276-af2a-a4962b451888")
+		(property "Reference" "J5"
+			(at 49.5300 53.3400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "AS5600"
-			(at 34.2900 43.1800 0)
+		(property "Value" "CODE S0"
+			(at 49.5300 58.4200 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 30.4800 40.6400 0)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 45.7200 55.8800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 30.4800 40.6400 0)
+			(at 45.7200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB"
+			(at 45.7200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 45.7200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "91fdb99b-8a9e-42de-a6ef-e91fde6e20f6"))
+		(pin "2" (uuid "f616ac55-d94a-4f56-8b84-6609fa3fdfc5"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 142.2400 55.8800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a601c8c-c22d-4286-b145-f75c5f5ef305")
+		(property "Reference" "J6"
+			(at 146.0500 53.3400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "CODE S1"
+			(at 146.0500 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 142.2400 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 142.2400 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB"
+			(at 142.2400 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 142.2400 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f93f9199-8093-4d3a-b7f9-85ee20e8e550"))
+		(pin "2" (uuid "a4f93156-4efc-4a5f-85c9-fa0eeea1af33"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 238.7600 55.8800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6d015b47-3ff9-4608-8070-afba7250e3d8")
+		(property "Reference" "J7"
+			(at 242.5700 53.3400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "CODE S2"
+			(at 242.5700 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 238.7600 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 238.7600 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB"
+			(at 238.7600 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 238.7600 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "08a86c9d-4bf9-4524-b0f3-b2917d76848e"))
+		(pin "2" (uuid "f4ee1bb2-66dc-41aa-84a0-539efa77c11a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 335.2800 55.8800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "33a9c53e-f03c-4119-bf34-7c1728088aa2")
+		(property "Reference" "J8"
+			(at 339.0900 53.3400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "CODE S3"
+			(at 339.0900 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 335.2800 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 335.2800 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB"
+			(at 335.2800 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 335.2800 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "71a7c977-dd08-47fd-9005-d22b26f6820d"))
+		(pin "2" (uuid "1632c5ba-953f-4d4f-98d2-b212aa9448fb"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "notchdeck:AS5600")
+		(at 30.4800 121.9200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3f6c0a04-0bec-4161-ad0b-817aca95fb6c")
+		(property "Reference" "U5"
+			(at 34.2900 119.3800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "AS5600"
+			(at 34.2900 124.4600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 30.4800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "LCSC" "C499458"
-			(at 30.4800 40.6400 0)
+			(at 30.4800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "MPN" "AS5600-ASOM"
-			(at 30.4800 40.6400 0)
+			(at 30.4800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Manufacturer" "AMS"
-			(at 30.4800 40.6400 0)
+			(at 30.4800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6d1fee50-22b3-4082-9188-6782a2996416"))
-		(pin "2" (uuid "19673b8f-bf76-49bf-9598-ef30927e24c6"))
-		(pin "3" (uuid "e8e7406f-7a03-4c52-82ed-551af47bf3f5"))
-		(pin "4" (uuid "8615b488-d2d8-4191-b2cc-ba009928c5ff"))
-		(pin "5" (uuid "501a090a-db50-4bf4-80e1-77167a1b3e47"))
-		(pin "6" (uuid "a2ee31f6-6ad7-4608-bda0-d173cbc97a46"))
-		(pin "7" (uuid "46dd0bf9-b514-408a-adcf-4445910b7b14"))
-		(pin "8" (uuid "c8fbf11f-00fd-4bb7-b221-b7239a7e531c"))
+		(pin "1" (uuid "7f757bba-0694-483e-b637-dff22f37f5d2"))
+		(pin "2" (uuid "6acc0c73-61b4-45ef-91cc-d11235228460"))
+		(pin "3" (uuid "1bb7cbc8-db3a-4c13-beb4-22defdd5955a"))
+		(pin "4" (uuid "c934e35b-9c5b-4c5e-af2c-22bae6535eaa"))
+		(pin "5" (uuid "2d817a9d-ac44-479e-893b-698c24a74239"))
+		(pin "6" (uuid "e2318d97-2955-40c3-ad15-423dbc5e8d22"))
+		(pin "7" (uuid "f1663bfb-4aee-4254-b219-6e2b4c512a9a"))
+		(pin "8" (uuid "54ec17ca-d943-4ae2-a14c-32f61ea6b85f"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/9867d166-6f44-4981-8f02-32c7eec144e9"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
 					(reference "U5")
 					(unit 1)
 				)
@@ -619,34 +953,34 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 68.5800 40.6400 0)
+		(at 68.5800 121.9200 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ef0e18a-4310-47c2-b7c0-f6d0077899b4")
+		(uuid "7e309a5d-c1eb-47e0-a175-b0b987e60ec9")
 		(property "Reference" "C11"
-			(at 72.3900 38.1000 0)
+			(at 72.3900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "100nF"
-			(at 72.3900 43.1800 0)
+			(at 72.3900 124.4600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 68.5800 40.6400 0)
+			(at 68.5800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 68.5800 40.6400 0)
+			(at 68.5800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fd5bb618-794b-4ec2-afb1-4d304069310d"))
-		(pin "2" (uuid "43634d76-6074-4749-892e-ebcadbc76a02"))
+		(pin "1" (uuid "2308c519-b99e-438c-85fa-cea9d3a2454e"))
+		(pin "2" (uuid "805e5998-811d-466c-bcb0-1fff3fbca3f6"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/9867d166-6f44-4981-8f02-32c7eec144e9"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
 					(reference "C11")
 					(unit 1)
 				)
@@ -655,34 +989,34 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 106.6800 40.6400 0)
+		(at 106.6800 121.9200 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d5d75c33-ac83-42d4-8d0a-9c25777c9647")
+		(uuid "b9d26a28-1044-4eee-aa9b-a9fa463fb21c")
 		(property "Reference" "C12"
-			(at 110.4900 38.1000 0)
+			(at 110.4900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "1uF"
-			(at 110.4900 43.1800 0)
+			(at 110.4900 124.4600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 106.6800 40.6400 0)
+			(at 106.6800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 106.6800 40.6400 0)
+			(at 106.6800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "597c05d5-8828-4d74-b90f-29597f4c50d4"))
-		(pin "2" (uuid "7d941bde-6576-4d37-9dd4-de1a9ee19c6a"))
+		(pin "1" (uuid "b7fb4eba-6e96-4f85-8cfb-bd2ce09b0c9e"))
+		(pin "2" (uuid "b8f9347b-2e7a-462d-9576-ae6295663fcb"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/9867d166-6f44-4981-8f02-32c7eec144e9"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
 					(reference "C12")
 					(unit 1)
 				)
@@ -691,34 +1025,34 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 144.7800 40.6400 0)
+		(at 144.7800 121.9200 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a2d8b0da-8f20-4e8f-9b2c-40e0c425ff05")
+		(uuid "1ee474dd-5cce-43d1-90ea-4fce365a0b53")
 		(property "Reference" "R9"
-			(at 148.5900 38.1000 0)
+			(at 148.5900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "4.7k"
-			(at 148.5900 43.1800 0)
+			(at 148.5900 124.4600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 144.7800 40.6400 0)
+			(at 144.7800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 144.7800 40.6400 0)
+			(at 144.7800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "ac2963ae-4e29-405b-8832-abcd83911adc"))
-		(pin "2" (uuid "0b5b89ef-07cc-4c16-844e-24b6b403f363"))
+		(pin "1" (uuid "564b6110-6ce8-4c7e-9844-aedd88cadf51"))
+		(pin "2" (uuid "85ce18ee-6ed8-4c54-b24c-9a333e54c100"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/9867d166-6f44-4981-8f02-32c7eec144e9"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
 					(reference "R9")
 					(unit 1)
 				)
@@ -727,45 +1061,477 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 182.8800 40.6400 0)
+		(at 182.8800 121.9200 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4bdb0366-1a48-4b6f-b8bc-14eff90cfbfa")
+		(uuid "9f8469ed-f7e4-444f-ae27-5d22bdb8a15f")
 		(property "Reference" "R10"
-			(at 186.6900 38.1000 0)
+			(at 186.6900 119.3800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "4.7k"
-			(at 186.6900 43.1800 0)
+			(at 186.6900 124.4600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 182.8800 40.6400 0)
+			(at 182.8800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 182.8800 40.6400 0)
+			(at 182.8800 121.9200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6eac8058-736a-4a59-88c0-3685f8a2dc25"))
-		(pin "2" (uuid "805b6222-a362-465f-ae91-f8cb6c1a03a6"))
+		(pin "1" (uuid "7ac46d9f-7d11-44d2-a4df-80c2563547f0"))
+		(pin "2" (uuid "87a5442a-9a8d-4806-9afb-132c2f392d2a"))
 		(instances
 			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/9867d166-6f44-4981-8f02-32c7eec144e9"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
 					(reference "R10")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(text "NotchDeck One — Lever sensor (U5 AS5600, magnetic angle).  Placed, not wired. See NETPLAN.md \"I2C buses\" / \"Lever sensing\".\n\nAS5600 U5:  VDD5V(1) + VDD3V3(2) -> +3V3 (3.3V mode: tie both).   GND(4) -> GND.   DIR(8) -> GND (CW = increasing).\n            SDA(6) / SCL(7) -> I2C0 bus.   OUT(3) = NC,  PGO(5) = NC.   C11 100nF + C12 1uF decouple.\nI2C0 (TWIM0): SDA = P0.26 (pad 12),  SCL = P0.06 (pad 14).   R9 / R10 = 4.7k pull-ups to +3V3.\n!! AS5600 and MAX17048 SHARE I2C addr 0x36 -> they MUST be on separate buses. AS5600 = TWIM0, MAX17048 = TWIM1.\nMECH: diametric magnet centered over the package on the lever shaft, 0.5-3mm air-gap.\nALT (Option 2, cam + Gray-coded switches): reuse these pins as LEVER_S0=P0.26, S1=P0.06, S2=P0.03(3), S3=P0.28(4)."
+	(symbol
+		(lib_id "Device:R")
+		(at 220.9800 121.9200 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 15.00 95.00 0)
-		(effects (font (size 1.5 1.5)) (justify left top))
-		(uuid "11bcaf5e-d1c0-48c2-9a46-00dc675b9234")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9d85481c-6619-43aa-b32a-85682124a34d")
+		(property "Reference" "R14"
+			(at 224.7900 119.3800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "10k"
+			(at 224.7900 124.4600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 220.9800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 220.9800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "2380ff05-dcf0-4e9d-a8d4-50a8321bba0b"))
+		(pin "2" (uuid "4f31c5a6-b970-4aa0-8995-edb6a22bc11a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 259.0800 121.9200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fb69bb43-b08a-455e-af13-65b452efe02f")
+		(property "Reference" "R15"
+			(at 262.8900 119.3800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "10k"
+			(at 262.8900 124.4600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 259.0800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 259.0800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c83311ca-0338-4cd7-a8b6-171b67528210"))
+		(pin "2" (uuid "2088a654-a575-4f6d-8477-9da237d3fa4c"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.1800 121.9200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f7565bf2-137b-45b1-b0f1-8f2d3b3d0187")
+		(property "Reference" "R16"
+			(at 300.9900 119.3800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "10k"
+			(at 300.9900 124.4600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 297.1800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 297.1800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f85902d7-8d47-456a-b53d-4417d4db291a"))
+		(pin "2" (uuid "2924da43-6b30-4f21-8767-db8ae73a629f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 335.2800 121.9200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b401813e-61ac-4320-a872-457aaf425908")
+		(property "Reference" "R17"
+			(at 339.0900 119.3800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "10k"
+			(at 339.0900 124.4600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 335.2800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 335.2800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6ca5fb4d-46ef-4536-8338-6aa6f7d3cb23"))
+		(pin "2" (uuid "9c1f9d1c-1041-4a44-8535-45cb64a80c41"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 373.3800 121.9200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aa4dc518-2b10-4846-8622-77b6f7300236")
+		(property "Reference" "R18"
+			(at 377.1900 119.3800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 377.1900 124.4600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 373.3800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 373.3800 121.9200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6754529a-cb59-4962-b691-5bf6d3945339"))
+		(pin "2" (uuid "5b5cc480-4059-423a-84f6-793e267d511e"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 30.4800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "00f7f6dd-ae49-420e-8ac9-cbba281b15f6")
+		(property "Reference" "R19"
+			(at 34.2900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 34.2900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 30.4800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "00b7ac1a-9cd8-4be2-8284-9f5f8dc4cffc"))
+		(pin "2" (uuid "0147f41a-134c-4628-b776-a13d1b35d974"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 68.5800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "978d529f-cba3-4235-afb6-866e3e992ad2")
+		(property "Reference" "R20"
+			(at 72.3900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 72.3900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 68.5800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 68.5800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "48e3d6ab-37c9-46d6-9368-eef013da20bf"))
+		(pin "2" (uuid "06be5a28-c915-4186-9a4b-bcf016f2b842"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 106.6800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9d9d959d-79f3-4616-87ce-ccfd8357c1d0")
+		(property "Reference" "R21"
+			(at 110.4900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 110.4900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 106.6800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 106.6800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1226253c-3123-466c-8b9e-80022cdb4a56"))
+		(pin "2" (uuid "d9f5a95a-e0e9-4c3c-9719-3bf09924c97f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 144.7800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2c2cbb7c-dbdf-4f26-95e3-d43e9f5bc7df")
+		(property "Reference" "C14"
+			(at 148.5900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 148.5900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 144.7800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 144.7800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "aebe7e79-104a-4a39-abb3-8cda6622f649"))
+		(pin "2" (uuid "c8a9c3b9-bf3e-4f88-8289-ac618db4ae47"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 182.8800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f9559af9-c40f-4422-878d-797b315801d2")
+		(property "Reference" "C15"
+			(at 186.6900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 186.6900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 182.8800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 182.8800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6ef61055-7c41-4906-94c1-a52f941f9306"))
+		(pin "2" (uuid "c2ee2479-3763-4705-8049-a1808e2d001b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 220.9800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "83fd355d-e3c9-4060-be14-67048b3bf22d")
+		(property "Reference" "C16"
+			(at 224.7900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 224.7900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 220.9800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 220.9800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8e00341a-9fcc-42d1-a881-ac83e7ffe217"))
+		(pin "2" (uuid "678a066e-6120-432d-be5d-2d491926ad7e"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 259.0800 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2e8e8b5b-1688-45ea-82f8-c9157c394133")
+		(property "Reference" "C17"
+			(at 262.8900 149.8600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 262.8900 154.9400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 259.0800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 259.0800 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "865db5af-3d5b-4af3-95ca-fccdc4449f61"))
+		(pin "2" (uuid "cfb9acc2-9c11-4aa1-a53b-6f5c05e82c7b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "NotchDeck One — Lever sensing: AS5600 magnetic angle (I2C0) + 4-bit coded-switch input (J5).  Placed, not wired. See NETPLAN.md \"Lever sensing\".\n\nAS5600 U5:  VDD5V(1) + VDD3V3(2) -> +3V3 (3.3V mode: tie both).   GND(4) -> GND.   DIR(8) -> GND (CW = increasing).\n            SDA(6) / SCL(7) -> I2C0 bus.   OUT(3) = NC,  PGO(5) = NC.   C11 100nF + C12 1uF decouple.\nI2C0 (TWIM0): SDA = P0.26 (pad 12),  SCL = P0.06 (pad 14).   R9 / R10 = 4.7k pull-ups to +3V3.\n!! AS5600 and MAX17048 SHARE I2C addr 0x36 -> they MUST be on separate buses. AS5600 = TWIM0, MAX17048 = TWIM1.\nMECH: diametric magnet centered over the package on the lever shaft, 0.5-3mm air-gap.\n\nCODED-SWITCH INPUT (J5-J8) — coexists with AS5600; populate either front-end, or both. Switches live in the mascon, wired in on the harness.\n  ONE 2-pin JST-PH per bit:  J5=LEVER_S0  J6=LEVER_S1  J7=LEVER_S2  J8=LEVER_S3.   Each: pin1 = bit line, pin2 = GND.\n  4-bit binary/Gray code, ACTIVE-LOW: each switch bridges its connector (bit line -> GND); open = high (held by pull-up).\n  Per-bit input circuit (small RC debounce), one of 4:\n        +3V3 --[Rpu 10k]--+-- Jn.1 (bit line, switch to GND)\n                          +--[Rs 1k]--+-- E73 GPIO      tau_release ~1.1ms ((Rpu+Rs)*C), tau_press ~0.1ms (Rs*C)\n                                      +--[C 100nF]-- GND   Rs also limits cap-discharge / adds cable ESD margin.\n     bit0(J5): Rpu R14 / Rs R18 / C C14    bit1(J6): R15 / R19 / C15    bit2(J7): R16 / R20 / C16    bit3(J8): R17 / R21 / C17\n  GPIO (4 dedicated spares, so it does NOT collide with AS5600 on I2C0):\n     LEVER_S0 = P0.03/AIN1 (pad 3)   LEVER_S1 = P0.28/AIN4 (pad 4)   LEVER_S2 = P0.04/AIN2 (pad 18)   LEVER_S3 = P0.05/AIN3 (pad 15)\n  FW: read the 4 GPIO, de-Gray/decode to a notch index in lever.c; notch->HID table stays sensor-agnostic. Ext 10k already sets the level (internal pull-ups optional)."
+		(exclude_from_sim no)
+		(at 15.00 165.00 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "af000f27-581b-4e4c-80f6-83ece02b379b")
 	)
 	(sheet_instances
 		(path "/"
