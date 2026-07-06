@@ -175,6 +175,23 @@ def esc(s):
     return s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
 
 
+def _env_truthy(name):
+    return os.environ.get(name, "").lower() in ("1", "true", "yes", "on")
+
+
+def _force_regen(force=False):
+    return force or _env_truthy("KSCHGEN_FORCE")
+
+
+def _schematic_uuid(path):
+    """Return an existing .kicad_sch file UUID, if the sheet already exists."""
+    if not os.path.exists(path):
+        return None
+    txt = open(path, encoding="utf-8").read()
+    m = re.search(r'\(kicad_sch\b.*?\(uuid "([^"]+)"\)', txt, re.S)
+    return m.group(1) if m else None
+
+
 def _prop(name, val, x, y, hide=False, justify="left"):
     h = " (hide yes)" if hide else ""
     j = f" (justify {justify})" if justify else ""
@@ -292,7 +309,11 @@ def _title_block(title):
     return s
 
 
-def _write_child(sh, project, root_uuid, title, paper):
+def _write_child(sh, project, root_uuid, title, paper, force=False):
+    path = os.path.join(sh["_dir"], sh["file"])
+    if os.path.exists(path) and not _force_regen(force):
+        print(f"  {sh['file']:22s} kept existing ({sh['uuid']})")
+        return
     comps = sh.get("big", []) + sh.get("small", [])
     cache = []
     for c in comps:
@@ -315,7 +336,7 @@ def _write_child(sh, project, root_uuid, title, paper):
         out += text_note(ntxt, nx, sh.get("_note_y", ny))
     out += ('\t(sheet_instances\n\t\t(path "/"\n\t\t\t(page "'
             + sh["page"] + '")\n\t\t)\n\t)\n\t(embedded_fonts no)\n)\n')
-    open(os.path.join(sh["_dir"], sh["file"]), "w", encoding="utf-8").write(out)
+    open(path, "w", encoding="utf-8").write(out)
     print(f"  {sh['file']:22s} {len(comps):3d} symbols, {len(cache)} lib_symbols"
           + ("  +note" if sh.get("note") else ""))
 
@@ -336,42 +357,53 @@ def _sheet_block(sh, x, y):
             "\t\t\t(effects (font (size 1.27 1.27)) (justify left top))\n\t\t)\n\t)\n")
 
 
-def build(project, proj_dir, root_uuid, title, sheets, paper="A3"):
-    """Generate child sheets + root + update <project>.kicad_pro.
+def build(project, proj_dir, root_uuid, title, sheets, paper="A3", force=False):
+    """Create missing child sheets + root + update <project>.kicad_pro.
 
     sheets: list of dicts {name, file, title, page, big[], small[], note?, uuid?}
+    Existing .kicad_sch files are kept intact by default. Set force=True or
+    KSCHGEN_FORCE=1 to rebuild them, reusing their existing sheet UUIDs.
     """
+    force = _force_regen(force)
+    rpath = os.path.join(proj_dir, f"{project}.kicad_sch")
+    root_uuid = _schematic_uuid(rpath) or root_uuid
+
     for sh in sheets:
-        sh.setdefault("uuid", U())
         sh["_dir"] = proj_dir
+        child_path = os.path.join(proj_dir, sh["file"])
+        sh["uuid"] = _schematic_uuid(child_path) or sh.get("uuid") or U()
         _layout(sh)
 
     print("child sheets:")
     for sh in sheets:
-        _write_child(sh, project, root_uuid, title, paper)
+        _write_child(sh, project, root_uuid, title, paper, force=force)
 
     # root
-    rtitle = dict(title)
-    root = ("(kicad_sch\n\t(version 20260306)\n\t(generator \"eeschema\")\n"
-            "\t(generator_version \"10.0\")\n"
-            f'\t(uuid "{root_uuid}")\n\t(paper "{paper}")\n')
-    root += _title_block(rtitle)
-    root += "\t(lib_symbols)\n"
-    x = 16 * G
-    for sh in sheets:
-        root += _sheet_block(sh, x, 16 * G)
-        x += 22 * G
-    root += ('\t(sheet_instances\n\t\t(path "/"\n\t\t\t(page "1")\n\t\t)\n\t)\n'
-             "\t(embedded_fonts no)\n)\n")
-    rpath = os.path.join(proj_dir, f"{project}.kicad_sch")
-    open(rpath, "w", encoding="utf-8").write(root)
-    print(f"root: {project}.kicad_sch  ({len(sheets)} sheet symbols)")
+    if os.path.exists(rpath) and not force:
+        print(f"root: {project}.kicad_sch  kept existing ({root_uuid})")
+    else:
+        rtitle = dict(title)
+        root = ("(kicad_sch\n\t(version 20260306)\n\t(generator \"eeschema\")\n"
+                "\t(generator_version \"10.0\")\n"
+                f'\t(uuid "{root_uuid}")\n\t(paper "{paper}")\n')
+        root += _title_block(rtitle)
+        root += "\t(lib_symbols)\n"
+        x = 16 * G
+        for sh in sheets:
+            root += _sheet_block(sh, x, 16 * G)
+            x += 22 * G
+        root += ('\t(sheet_instances\n\t\t(path "/"\n\t\t\t(page "1")\n\t\t)\n\t)\n'
+                 "\t(embedded_fonts no)\n)\n")
+        open(rpath, "w", encoding="utf-8").write(root)
+        print(f"root: {project}.kicad_sch  ({len(sheets)} sheet symbols)")
 
     # .kicad_pro sheets array
     pro = os.path.join(proj_dir, f"{project}.kicad_pro")
     if os.path.exists(pro):
         pj = json.load(open(pro))
-        pj["sheets"] = ([[root_uuid, project]]
+        sheets_array = ([[root_uuid, project]]
                         + [[sh["uuid"], sh["name"]] for sh in sheets])
-        json.dump(pj, open(pro, "w"), indent=2)
-        print(f"updated {project}.kicad_pro sheets array")
+        if pj.get("sheets") != sheets_array:
+            pj["sheets"] = sheets_array
+            json.dump(pj, open(pro, "w"), indent=2)
+            print(f"updated {project}.kicad_pro sheets array")

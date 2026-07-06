@@ -30,8 +30,10 @@ make render-notchdeck-one   # eyeball it
 
 Components are **placed, not wired** — laid out on a 100-mil grid with refs,
 values, footprints and a per-sheet wiring note. Wiring is done afterwards in
-eeschema (the notes are the spec). Re-running `gen` reassigns internal UUIDs but
-keeps the root sheet UUID stable; do it before wiring, not after.
+eeschema (the notes are the spec). By default, re-running `gen` creates missing
+sheets and keeps existing `.kicad_sch` files intact, reusing their UUIDs in
+project metadata. Use `KSCHGEN_FORCE=1 make gen-<project>` only when you
+intentionally want to rebuild generated sheets from the manifest.
 Notes render in a fixed-width font; use `K.note_block()` and `K.pin_table()` in
 manifests when writing pin maps or wiring tables that need alignment.
 
