@@ -52,7 +52,15 @@ convert() {  # $1 svg  $2 png
   else echo "kicad-sch-render: no SVG->PNG converter (install librsvg/inkscape/cairosvg)" >&2; return 1; fi
 }
 
+converted=0
 for s in "${SVGS[@]}"; do
   png="${s%.svg}.png"
-  if convert "$s" "$png"; then echo "$png"; fi
+  if convert "$s" "$png"; then
+    echo "$png"
+    converted=$((converted + 1))
+  fi
 done
+[ "$converted" -gt 0 ] || {
+  echo "kicad-sch-render: no PNGs converted (install librsvg/inkscape/cairosvg, or fix qlmanage conversion)" >&2
+  exit 1
+}
