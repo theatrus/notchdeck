@@ -84,7 +84,9 @@ def _read(path):
 
 def extract(path, name):
     txt = _read(path)
-    m = re.search(r'\n\t\(symbol "' + re.escape(name) + r'"', txt)
+    # Top-level symbols are indented with a tab (KiCad stdlib) or spaces in
+    # some project libraries; accept either form.
+    m = re.search(r'\n[ \t]*\(symbol "' + re.escape(name) + r'"', txt)
     if not m:
         raise SystemExit(f"kschgen: symbol {name!r} not found in {path}")
     i = m.start() + 1                       # at the '(' before 'symbol'
@@ -264,6 +266,12 @@ def _layout(sh):
     for k, c in enumerate(sh.get("small", [])):
         c["x"] = 12 * G + (k % cols) * dx
         c["y"] = y0 + (k // cols) * dy
+    # Park the wiring note BELOW every component so long generated tables do
+    # not overlap the automatically placed symbol grid.
+    n = len(sh.get("small", []))
+    small_bottom = y0 + ((n - 1) // cols) * dy if n else 0
+    big_bottom = 22 * G + 45 if sh.get("big") else 0
+    sh["_note_y"] = max(small_bottom, big_bottom) + 16
 
 
 # ----------------------------------------------------------------------------
@@ -304,7 +312,7 @@ def _write_child(sh, project, root_uuid, title, paper):
         out += _comp(c, project, root_uuid, sh["uuid"])
     if sh.get("note"):
         nx, ny, ntxt = sh["note"]
-        out += text_note(ntxt, nx, ny)
+        out += text_note(ntxt, nx, sh.get("_note_y", ny))
     out += ('\t(sheet_instances\n\t\t(path "/"\n\t\t\t(page "'
             + sh["page"] + '")\n\t\t)\n\t)\n\t(embedded_fonts no)\n)\n')
     open(os.path.join(sh["_dir"], sh["file"]), "w", encoding="utf-8").write(out)
