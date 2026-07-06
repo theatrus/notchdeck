@@ -357,6 +357,240 @@ def _sheet_block(sh, x, y):
             "\t\t\t(effects (font (size 1.27 1.27)) (justify left top))\n\t\t)\n\t)\n")
 
 
+# ============================================================================
+# multi-channel + wiring extensions
+# ----------------------------------------------------------------------------
+# The flat build() above PLACES components. The helpers below additionally WIRE
+# them (wires + net labels) and support a *reused* sheet — one child .kicad_sch
+# instantiated by several sheet symbols (a KiCad "multi-channel" design), where
+# each instance annotates to its own reference designators. Used by boards whose
+# structure repeats (e.g. the display's identical 7-seg rows).
+# ============================================================================
+
+_PIN_RE = re.compile(
+    r'\(pin\b.*?\(at\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\).*?'
+    r'\(length\s+([\d.]+)\).*?\(name\s+"([^"]*)".*?\(number\s+"([^"]+)"', re.S)
+
+
+def pin_geom(lib_id):
+    """[{number,name,x,y,angle,length}] for lib_id's pins (library coords, +Y up)."""
+    path, name = SRC[lib_id]
+    blk = extract(path, name)
+    return [dict(number=m.group(6), name=m.group(5),
+                 x=float(m.group(1)), y=float(m.group(2)),
+                 angle=int(float(m.group(3))), length=float(m.group(4)))
+            for m in _PIN_RE.finditer(blk)]
+
+
+# outward (away-from-body) unit direction of a pin, in SHEET coords (+Y down).
+# lib angle 0 = body to the right (pin exits left); 180 = exits right;
+# 90 = exits down on screen; 270 = exits up on screen (Y is flipped vs the lib).
+_OUTWARD = {0: (-1.0, 0.0), 180: (1.0, 0.0), 90: (0.0, 1.0), 270: (0.0, -1.0)}
+
+
+def _sheet_xy(c, p):
+    """Pin p's connection point in sheet coords for comp c placed at orient 0."""
+    return (round(c["x"] + p["x"], 4), round(c["y"] - p["y"], 4))
+
+
+def pin_at(c, number):
+    """(x, y, angle) of pin #number's connection point for placed comp c."""
+    for p in pin_geom(c["lib_id"]):
+        if p["number"] == str(number):
+            x, y = _sheet_xy(c, p)
+            return (x, y, p["angle"])
+    raise KeyError(f'{c["lib_id"]}: no pin #{number}')
+
+
+def pin_named(c, name):
+    """[(x, y, angle), ...] connection points of pins whose name == name."""
+    out = []
+    for p in pin_geom(c["lib_id"]):
+        if p["name"] == name:
+            x, y = _sheet_xy(c, p)
+            out.append((x, y, p["angle"]))
+    return out
+
+
+# ---- schematic element emitters (strings) ----------------------------------
+def w_wire(x1, y1, x2, y2):
+    return (f'\t(wire (pts (xy {x1:.4f} {y1:.4f}) (xy {x2:.4f} {y2:.4f}))\n'
+            f'\t\t(stroke (width 0) (type default))\n\t\t(uuid "{U()}")\n\t)\n')
+
+
+def w_junction(x, y):
+    return (f'\t(junction (at {x:.4f} {y:.4f}) (diameter 0) (color 0 0 0 0)\n'
+            f'\t\t(uuid "{U()}")\n\t)\n')
+
+
+def _lbl_angle(dx, dy):
+    return 0 if dx > 0 else 180 if dx < 0 else 270 if dy < 0 else 90
+
+
+def w_label(t, x, y, a=0):
+    return (f'\t(label "{esc(t)}"\n\t\t(at {x:.4f} {y:.4f} {a})\n'
+            f'\t\t(effects (font (size 1.27 1.27)) (justify left bottom))\n'
+            f'\t\t(uuid "{U()}")\n\t)\n')
+
+
+def w_hlabel(t, x, y, a=0, shape="input"):
+    return (f'\t(hierarchical_label "{esc(t)}"\n\t\t(shape {shape})\n'
+            f'\t\t(at {x:.4f} {y:.4f} {a})\n'
+            f'\t\t(effects (font (size 1.27 1.27)) (justify left))\n'
+            f'\t\t(uuid "{U()}")\n\t)\n')
+
+
+def w_glabel(t, x, y, a=0, shape="bidirectional"):
+    return (f'\t(global_label "{esc(t)}"\n\t\t(shape {shape})\n'
+            f'\t\t(at {x:.4f} {y:.4f} {a})\n\t\t(fields_autoplaced yes)\n'
+            f'\t\t(effects (font (size 1.27 1.27)) (justify left))\n'
+            f'\t\t(uuid "{U()}")\n\t)\n')
+
+
+def net_pin(c, ref, net, kind="label", stub=2.54, shape="input"):
+    """Wire a short stub outward from a pin and attach a net label of `kind`
+    (label / hlabel / glabel). Returns the s-expr string."""
+    if str(ref).isdigit():
+        x, y, ang = pin_at(c, ref)
+    else:
+        x, y, ang = pin_named(c, ref)[0]
+    dx, dy = _OUTWARD[ang]
+    ex, ey = round(x + dx * stub, 4), round(y + dy * stub, 4)
+    s = w_wire(x, y, ex, ey)
+    a = _lbl_angle(dx, dy)
+    s += ({"label": w_label, "hlabel": lambda t, X, Y, A: w_hlabel(t, X, Y, A, shape),
+           "glabel": lambda t, X, Y, A: w_glabel(t, X, Y, A, shape)}[kind])(net, ex, ey, a)
+    return s
+
+
+# ---- placed symbol with one OR MANY instance paths -------------------------
+def w_symbol(c, project, instances):
+    """A placed symbol. instances = [(path, reference), ...]; more than one path
+    makes it a reused (multi-channel) symbol annotated per instance."""
+    x, y = c["x"], c["y"]
+    dnp = "yes" if c.get("dnp") else "no"
+    inbom = "no" if c.get("in_bom") is False else "yes"
+    ref0 = instances[0][1]
+    s = ("\t(symbol\n"
+         f'\t\t(lib_id "{c["lib_id"]}")\n'
+         f'\t\t(at {x:.4f} {y:.4f} 0)\n\t\t(unit 1)\n'
+         "\t\t(exclude_from_sim no)\n"
+         f"\t\t(in_bom {inbom})\n\t\t(on_board yes)\n"
+         f"\t\t(dnp {dnp})\n"
+         f'\t\t(uuid "{U()}")\n')
+    s += _prop("Reference", ref0, x + 3.81, y - 2.54)
+    s += _prop("Value", c.get("value", ""), x + 3.81, y + 2.54)
+    s += _prop("Footprint", c.get("fp", ""), x, y, hide=True, justify="")
+    s += _prop("Datasheet", c.get("datasheet", "~"), x, y, hide=True, justify="")
+    for k, fld in (("lcsc", "LCSC"), ("mpn", "MPN"), ("mfr", "Manufacturer")):
+        if c.get(k):
+            s += _prop(fld, c[k], x, y, hide=True, justify="")
+    for pn in pin_numbers(c["lib_id"]):
+        s += f'\t\t(pin "{pn}" (uuid "{U()}"))\n'
+    s += "\t\t(instances\n" + f'\t\t\t(project "{project}"\n'
+    for path, ref in instances:
+        s += (f'\t\t\t\t(path "{path}"\n\t\t\t\t\t(reference "{ref}")\n'
+              "\t\t\t\t\t(unit 1)\n\t\t\t\t)\n")
+    s += "\t\t\t)\n\t\t)\n\t)\n"
+    return s
+
+
+# ---- sheet symbol (with hierarchical pins) ---------------------------------
+def w_sheet(name, file, uuid, x, y, w, h, pins):
+    """A sheet symbol. pins = [(name, ptype, px, py, angle), ...] on its border."""
+    s = ("\t(sheet\n"
+         f"\t\t(at {x:.4f} {y:.4f})\n\t\t(size {w:.4f} {h:.4f})\n"
+         "\t\t(fields_autoplaced yes)\n"
+         "\t\t(stroke (width 0.1524) (type solid))\n"
+         "\t\t(fill (color 0 0 0 0.0000))\n"
+         f'\t\t(uuid "{uuid}")\n'
+         f'\t\t(property "Sheetname" "{esc(name)}"\n'
+         f'\t\t\t(at {x:.4f} {y - 1.27:.4f} 0)\n'
+         "\t\t\t(effects (font (size 1.27 1.27)) (justify left bottom))\n\t\t)\n"
+         f'\t\t(property "Sheetfile" "{esc(file)}"\n'
+         f'\t\t\t(at {x:.4f} {y + h + 1.27:.4f} 0)\n'
+         "\t\t\t(effects (font (size 1.27 1.27)) (justify left top))\n\t\t)\n")
+    for (pn, pt, px, py, pa) in pins:
+        s += (f'\t\t(pin "{esc(pn)}" {pt}\n'
+              f'\t\t\t(at {px:.4f} {py:.4f} {pa})\n'
+              f'\t\t\t(effects (font (size 1.27 1.27)) (justify left))\n'
+              f'\t\t\t(uuid "{U()}")\n\t\t)\n')
+    s += "\t)\n"
+    return s
+
+
+def _sch_open(uuid, title, paper):
+    out = ("(kicad_sch\n\t(version 20260306)\n\t(generator \"eeschema\")\n"
+           "\t(generator_version \"10.0\")\n"
+           f'\t(uuid "{uuid}")\n\t(paper "{paper}")\n')
+    out += _title_block(title)
+    return out
+
+
+def write_wired_child(sh, project, root_uuid, title, paper, force=False):
+    """Write a child sheet that carries pre-computed instance paths + wiring.
+
+    sh keys:
+      uuid, file, title, page
+      comps      : [(comp_dict, [(path, ref), ...]), ...]
+      wiring     : pre-emitted s-expr string (built with w_wire/net_pin/...)
+      notes      : [(x, y, text), ...]  (optional)
+    """
+    path = os.path.join(sh["_dir"], sh["file"])
+    sh["uuid"] = _schematic_uuid(path) or sh.get("uuid") or U()
+    if os.path.exists(path) and not _force_regen(force):
+        print(f"  {sh['file']:24s} kept existing ({sh['uuid']})")
+        return
+    ctitle = dict(title=f'{title.get("title","")} — {sh["title"]}',
+                  date=title.get("date"), rev=title.get("rev"),
+                  company=title.get("company"))
+    out = _sch_open(sh["uuid"], ctitle, paper)
+    cache = []
+    for c, _inst in sh["comps"]:
+        cache_entries(c["lib_id"], cache)
+    out += "\t(lib_symbols\n"
+    for _lid, entry in cache:
+        out += entry + "\n"
+    out += "\t)\n"
+    for c, inst in sh["comps"]:
+        out += w_symbol(c, project, inst)
+    out += sh.get("wiring", "")
+    for (nx, ny, ntxt) in sh.get("notes", []):
+        out += text_note(ntxt, nx, ny)
+    out += ('\t(sheet_instances\n\t\t(path "/"\n\t\t\t(page "'
+            + sh["page"] + '")\n\t\t)\n\t)\n\t(embedded_fonts no)\n)\n')
+    open(path, "w", encoding="utf-8").write(out)
+    n = len(sh["comps"])
+    print(f"  {sh['file']:24s} {n:3d} symbols x{len(sh['comps'][0][1]) if n else 0}"
+          f"  {len(cache)} lib_symbols  +wired")
+
+
+def write_root(project, proj_dir, root_uuid, title, sheet_symbols, wiring,
+               pro_sheets, paper="A3", force=False):
+    """Write the root schematic from pre-built sheet-symbol + wiring strings."""
+    rpath = os.path.join(proj_dir, f"{project}.kicad_sch")
+    root_uuid = _schematic_uuid(rpath) or root_uuid
+    if os.path.exists(rpath) and not _force_regen(force):
+        print(f"root: {project}.kicad_sch  kept existing ({root_uuid})")
+    else:
+        root = _sch_open(root_uuid, dict(title), paper)
+        root += "\t(lib_symbols)\n"
+        root += sheet_symbols
+        root += wiring
+        root += ('\t(sheet_instances\n\t\t(path "/"\n\t\t\t(page "1")\n\t\t)\n\t)\n'
+                 "\t(embedded_fonts no)\n)\n")
+        open(rpath, "w", encoding="utf-8").write(root)
+        print(f"root: {project}.kicad_sch")
+    pro = os.path.join(proj_dir, f"{project}.kicad_pro")
+    if os.path.exists(pro):
+        pj = json.load(open(pro))
+        sheets_array = [[root_uuid, project]] + pro_sheets
+        if pj.get("sheets") != sheets_array:
+            pj["sheets"] = sheets_array
+            json.dump(pj, open(pro, "w"), indent=2)
+            print(f"updated {project}.kicad_pro sheets array")
+
+
 def build(project, proj_dir, root_uuid, title, sheets, paper="A3", force=False):
     """Create missing child sheets + root + update <project>.kicad_pro.
 
