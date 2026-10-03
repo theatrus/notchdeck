@@ -43,3 +43,15 @@ so no attribution is required; recorded here for provenance. The nrfmicro footpr
 numbering and the extracted symbol come from the same project, so they are mutually consistent.
 
 (☐ = still to import. "stdlib" = KiCad-shipped, nothing vendored.)
+
+### Revision B schematic symbol corrections
+
+E73 GPIO/USB/SWDIO pins are modeled as bidirectional, including pad 28 (P0.15),
+which the imported symbol incorrectly typed as a power input. The pad map is unchanged.
+
+`notchdeck:SWD_2x05` and `notchdeck:SWD_TC2030` derive from KiCad 10's
+`Connector:Conn_ARM_JTAG_SWD_10` and `Connector:Conn_ARM_SWD_TagConnect_TC2030-NL`.
+They use passive signal pins to model physical connectors wired in parallel;
+only one probe may be connected at a time. Graphics and pin numbering are unchanged.
+Source: installed KiCad symbol library, KiCad library contributors.
+License: [CC-BY-SA 4.0 with the KiCad library exception](https://www.kicad.org/libraries/license/).

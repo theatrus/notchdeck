@@ -28,12 +28,22 @@ make check-notchdeck-one    # verify it
 make render-notchdeck-one   # eyeball it
 ```
 
-Components are **placed, not wired** — laid out on a 100-mil grid with refs,
-values, footprints and a per-sheet wiring note. Wiring is done afterwards in
-eeschema (the notes are the spec). By default, re-running `gen` creates missing
-sheets and keeps existing `.kicad_sch` files intact, reusing their UUIDs in
-project metadata. Use `KSCHGEN_FORCE=1 make gen-<project>` only when you
-intentionally want to rebuild generated sheets from the manifest.
+NotchDeck's manifest now captures **components, wiring, hierarchical ports and
+layout**. The `Capture` helper groups local circuits and checks that every pin is
+wired or explicitly NC. The root connects MCU, Power, Lever and Controls.
+By default, `gen` keeps existing sheets intact. Close the NotchDeck schematic editor,
+then use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply manifest changes.
+Manual editor changes must be reflected in the manifest before a forced rebuild.
+
+`make verify-notchdeck-one` exports KiCad XML and compares **every endpoint** to
+`scripts/notchdeck-netcheck.py`, then requires zero ERC violations. This independent
+contract checks rail isolation, MCU pads, both I2C buses, USB pairs, the power path,
+SWD/reset, all switches, reverser and all sixteen LEDs. Set `NETCHECK_OUT` to a
+local directory to retain netlist/JSON reports. It checks both opens and extra pins
+(shorts), not just whether an expected pair happens to share a net.
+
+The engine supports component rotation and field offsets. Derived-library symbols
+are flattened with property overrides, matching KiCad's library resolver.
 Notes render in a fixed-width font; use `K.note_block()` and `K.pin_table()` in
 manifests when writing pin maps or wiring tables that need alignment.
 
@@ -46,7 +56,5 @@ the component lists and the notes, then add the project to `PROJECTS` in the
 - `kicad-sch-render.sh` converts SVG→PNG with the first available of
   `rsvg-convert` / `inkscape` / `cairosvg` / macOS `qlmanage`. Output goes to a
   temp dir (override with `$RENDER_OUT`); pass sheet name(s) to render a subset.
-- `extends`-based library symbols (e.g. `AP2112K-3.3`, `USBLC6-2SC6`,
-  `…TC2030-NL`) draw correctly in eeschema but may render body-less via
-  `kicad-cli` and show a benign `lib_symbol_mismatch` in ERC until first saved in
-  eeschema (or **Tools → Update Symbols from Library**).
+- Derived symbols are now flattened correctly, including their overridden properties;
+  no library-mismatch ERC warnings are expected for this project.

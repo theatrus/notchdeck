@@ -43,7 +43,7 @@ table in [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.
 ## Status
 
 Research, protocol, name, firmware skeleton, KiCad scaffold + vendored part libraries, and the
-E73 net plan are in. Schematic capture is the next hands-on step. Hardware/firmware are not yet
+E73 net plan are in. The controller schematic is wired and passes strict ERC plus a complete net audit; PCB layout is next. Hardware/firmware are not yet
 built or fabricated.
 
 ## License

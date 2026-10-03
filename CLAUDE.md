@@ -42,14 +42,15 @@ make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
 - **Don't hand-edit `hardware/notchdeck-one/*.kicad_sch`** — edit the manifest
   `hardware/scripts/notchdeck-one.schgen.py` and `make gen-notchdeck-one`.
 - **Close KiCad before regenerating** (eeschema open on those files will clash).
-- **Regenerate before wiring, not after** — regen reassigns internal UUIDs and
-  would discard wires added in eeschema. The schematic is currently *placed, not
-  wired*; wiring is the next phase, done in eeschema per the sheet notes.
+- Wiring and deliberate block layout now live in the manifest. Default generation
+  preserves existing sheets; use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply
+  manifest changes, with the NotchDeck schematic editor closed.
+- After changes run `make verify-notchdeck-one`: the complete exported pin/net
+  contract and zero ERC errors/warnings are required. Review SVG/PNG exports too.
 - Use Makefile targets when possible.
 - Don't violate the hard constraints in the `notchdeck-hardware` skill (esp. the
   0x36 two-bus split and the NFC/LFXO/UICR firmware requirements).
-- `extends`-based symbols show a benign `lib_symbol_mismatch` in ERC until first
-  saved in eeschema — not a real error.
+- No ERC exclusions are needed. Derived symbols must resolve without library mismatch warnings.
 
 ## Firmware
 

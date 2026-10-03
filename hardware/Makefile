@@ -51,6 +51,7 @@ help:
 	@echo "  jlc-<project>      JLCPCB zip for one PCB"
 	@echo "  gen-<project>      Regenerate schematic from scripts/<project>.schgen.py"
 	@echo "  check-<project>    Sanity-check schematic (comps/footprints/dups/ERC)"
+	@echo "  verify-notchdeck-one  Strict ERC + complete controller pin/net audit"
 	@echo "  render-<project>   Render schematic sheets to PNG for visual review"
 	@echo "  clean-docs         Remove generated docs"
 	@echo "  clean-jlc          Remove generated JLCPCB packages"
@@ -126,3 +127,7 @@ render-$(1): $$($(1)_SCH)
 endef
 
 $(foreach p,$(PROJECTS),$(eval $(call PROJECT_TEMPLATE,$(p))))
+
+.PHONY: verify-notchdeck-one
+verify-notchdeck-one:
+	@KICAD_CLI=$(KICAD_CLI) python3 $(SCRIPTS_DIR)/notchdeck-netcheck.py

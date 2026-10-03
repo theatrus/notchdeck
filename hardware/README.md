@@ -25,21 +25,49 @@ hardware/
 
 ## Status
 
-**Schematic populated, not yet wired.** The hierarchical schematic (root + MCU / Power /
-Lever / Controls sheets) is generated from a data manifest,
-[`scripts/notchdeck-one.schgen.py`](scripts/notchdeck-one.schgen.py) — every part from
-[`PARTS.md`](PARTS.md) is placed and resolves to a real symbol + footprint, with a per-sheet
-wiring / pin-assignment note drawn from [`NETPLAN.md`](NETPLAN.md). Inter-sheet wiring
-(hierarchical labels + power rails) is the next step, done in eeschema per the notes. The
-`.kicad_pcb` is still an empty scaffold. Sourcing rationale:
-[`../docs/04-bom-sourcing.md`](../docs/04-bom-sourcing.md).
+**Revision B schematic wired and verified (2026-10-02).** The root sheet connects
+MCU, Power, Lever and Controls with explicit hierarchical ports and visible wires.
+Local circuits show USB pair joins and ESD, the battery load-share, charger/LDO,
+RC lever inputs, switch returns, reverser divider/filter and both RGB chain rows.
+
+The wiring and layout are captured in [`scripts/notchdeck-one.schgen.py`](scripts/notchdeck-one.schgen.py).
+`make verify-notchdeck-one` checks KiCad's exported netlist against an independent
+pin-level contract: **116 components, 80 nets, 360 pin endpoints, 14 explicit NCs**.
+KiCad 10.0.6 ERC reports **zero errors and zero warnings**, without exclusions.
+All components have footprints; the PCB remains an empty scaffold.
+
+Electrical corrections made during capture:
+
+- Q1 drain goes to BAT+, source to VSYS; R4 pulls its gate down and R5 connects
+  VBUS to the gate. The former source/drain note would allow unwanted charging
+  through the body diode.
+- U3 is **MCP73832T-2ACI/OT**, whose open-drain STAT safely pulls up to 3V3.
+  Do not substitute the MCP73831 without addressing its driven-high STAT voltage.
+- MAX17048 CELL and VDD connect to BAT+ per the ADI pin table.
+- RGB LEDs use USB VBUS with a populated **SN74AHCT1G125DBVR** buffer; RGB is off
+  during battery operation. C20 and C21–C36 provide local decoupling. C13 is 1uF,
+  reducing the directly connected VBUS capacitance from the former 100uF bulk.
+- J9 adds the missing center-off SPDT reverser input: 3V3 / midpoint / GND,
+  filtered by R25/C37. D17 indicates 3V3; D18 indicates active charging.
+- E73 GPIO electrical types are corrected (especially pad 28, incorrectly marked
+  as power input). Passive SWD connector variants model the two parallel headers;
+  attach only one probe at a time. `SW_RST` is now SW17 and `D_PP` is D19.
+
+This is a connectivity-verified schematic, not a fabrication release. Review the
+500mA charge setting against the selected protected cell and USB source, total USB
+current and inrush, LDO dropout/thermal behavior, exact LED sourcing/pad orientation,
+and MAX17048 exposed-pad land pattern before layout/fabrication. The firmware still
+has a development-kit overlay; a board definition must implement NETPLAN's GPIOs,
+USB-absent LED handling and a suitable LED brightness/current limit. Updated U3/U8
+procurement IDs must be selected; stale LCSC IDs were removed.
 
 ## Workflow
 
 ```sh
 make help                    # list targets
 make gen-notchdeck-one       # regenerate the schematic from its manifest
-make check-notchdeck-one     # sanity-check (components / footprints / dup refs / ERC)
+make check-notchdeck-one     # structural sanity check
+make verify-notchdeck-one    # strict ERC + all expected net endpoints
 make render-notchdeck-one    # render sheets to PNG for visual review
 make docs-notchdeck-one      # schematic SVGs + PCB SVGs + 3D renders + JLCPCB BOM
 make bom-notchdeck-one       # just the BOM (jlcpcb_bom.csv)

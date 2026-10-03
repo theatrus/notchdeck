@@ -17,7 +17,7 @@ Legend — **Status**: `stdlib` = ships with KiCad · `vendor` = drop into `lib/
 |---|---|---|---|---|---|---|---|---|---|
 | **MCU+radio** | U1 | 1 | Ebyte E73-2G4M08S1C (nRF52840, onboard antenna; USB on pads 27/29/31) | C356849 | E73-2G4M08S1C (Ebyte) | `notchdeck:E73-2G4M08S1C` | `notchdeck:EBYTE_E73-2G4M08S1C` | E73 STEP | **vendored ✓** |
 | **3V3 LDO** | U2 | 1 | AP2112K-3.3 | C23380830 | AP2112K-3.3TRG1 (Diodes) | `Regulator_Linear:AP2112K-3.3` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
-| **Charger** | U3 | 1 | MCP73831-2-OT | C424093 | MCP73831T-2ACI/OT (Microchip) | `Battery_Management:MCP73831-2-OT` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
+| **Charger** | U3 | 1 | MCP73832-2-OT | *(select for MCP73832)* | MCP73832T-2ACI/OT (Microchip) | `Battery_Management:MCP73832-2-OT` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
 | **Fuel gauge** | U4 | 1 | MAX17048 | C2682616 | MAX17048G+T10 (Analog Devices) | `notchdeck:MAX17048` | `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` *(verify EP vs land pattern)* | stdlib FP | **sym authored ✓** |
 | **USB-C** | J1 | 1 | USB-C 2.0 receptacle 16P (HRO) | C165948 | TYPE-C-31-M-12 | `Connector:USB_C_Receptacle_USB2.0_16P` | `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | stdlib | **all stdlib ✓** |
 | **Lever sensor** | U5 | 1 | AS5600 (12-bit magnetic angle) | C499458 | AS5600-ASOM (AMS) | `notchdeck:AS5600` | `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` | stdlib | **sym authored ✓** |
@@ -26,7 +26,7 @@ Legend — **Status**: `stdlib` = ships with KiCad · `vendor` = drop into `lib/
 | **Battery conn.** | J2 | 1 | JST-PH 2-pin | *(in-stock)* | S2B-PH-SM4-TB (JST) | `Connector:Conn_01x02` *(or Connector_JST sym)* | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` | stdlib | stdlib |
 | **CC resistors** | R1,R2 | 2 | 5.1 kΩ 0402 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib | stdlib |
 | **Decoupling** | C1.. | n | 100 nF / 1 µF / 10 µF 0402-0805 | *(in-stock)* | — | `Device:C` | `Capacitor_SMD:C_0402_1005Metric` (etc.) | stdlib | stdlib |
-| **Charge-rate R** | R3 | 1 | MCP73831 PROG (set Icharge) | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib | stdlib |
+| **Charge-rate R** | R3 | 1 | MCP73832 PROG (set Icharge) | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib | stdlib |
 | **Status/charge LEDs** | D17.. | 1-2 | 0603 LED | *(in-stock)* | — | `Device:LED` | `LED_SMD:LED_0603_1608Metric` | stdlib | stdlib |
 
 ## Optional: Option A integrated PMIC (replaces U2/U3/U4)
@@ -37,24 +37,30 @@ Legend — **Status**: `stdlib` = ships with KiCad · `vendor` = drop into `lib/
 
 ## Power-path, protection & programming (from the net plan)
 
-The parts `NETPLAN.md` flagged as "not yet in BOM" — all map to **KiCad stdlib symbols** with
-shipped 3D, all stocked at JLCPCB.
+Support parts used by the wired schematic. Confirm current sourcing before assembly.
 
 | Block | Ref | Part / value | LCSC | MPN (Manufacturer) | KiCad symbol | Footprint | Status |
 |---|---|---|---|---|---|---|---|
 | **USB ESD** | U7 | USBLC6-2SC6 | C2687116 | USBLC6-2SC6 (ST) | `Power_Protection:USBLC6-2SC6` | `Package_TO_SOT_SMD:SOT-23-6` | stdlib |
 | **Power-path PMOS** | Q1 | AO3401A (P-ch, load-share) | C15127 *(basic)* | AO3401A (AOS) | `Transistor_FET:Q_PMOS_GSD` | `Package_TO_SOT_SMD:SOT-23` | stdlib |
-| **Power-path diode** | D_PP | B5819W Schottky (VBUS→VSYS) | C8598 *(basic)* | B5819W (Slkor) | `Device:D_Schottky` | `Diode_SMD:D_SOD-123` | stdlib |
-| **Reset button** | SW_RST | SMD tactile | *(in-stock)* | e.g. TS-1187A | `Switch:SW_Push` | `Button_Switch_SMD:*` | stdlib |
-| **SWD header** | J3 | 2×5 1.27 mm (Cortex debug) | *(in-stock / Tag-Connect)* | — | `Connector:Conn_ARM_JTAG_SWD_10` | `Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD` | stdlib |
-| **WS2812 level shift** *(opt, DNP unless strip @5 V)* | U8 | 74LVC1G125 | C52098142 | 74LVC1G125W5 (Diodes) | `74xGxx:74LVC1G125` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib |
+| **Power-path diode** | D19 | B5819W Schottky (VBUS→VSYS) | C8598 *(basic)* | B5819W (Slkor) | `Device:D_Schottky` | `Diode_SMD:D_SOD-123` | stdlib |
+| **Reset button** | SW17 | SMD tactile | *(in-stock)* | e.g. TS-1187A | `Switch:SW_Push` | `Button_Switch_SMD:*` | stdlib |
+| **SWD header** | J3 | 2×5 1.27 mm (Cortex debug) | *(in-stock / Tag-Connect)* | — | `notchdeck:SWD_2x05` | `Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD` | stdlib |
+| **WS2812 level shift** | U8 | 74AHCT1G125 | *(select for AHCT)* | SN74AHCT1G125DBVR (TI) | `74xGxx:74AHCT1G125` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib |
 | **Gate / pull resistors** | R_PP.. | 100 kΩ 0402 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
 | **I²C pull-ups** | R_I2C.. | 4.7 kΩ 0402 ×4 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
 
-Notes: AO3401A + B5819W are **JLCPCB basic parts** (no feeder fee). SWD: a Tag-Connect
-`TC2030-IDC-NL` footprint is the no-connector alternative to the 2×5 header. The level shifter is
-only populated if the WS2812 strip is run at 5 V (3.3 V data into a 5 V strip can be marginal);
-default-DNP if the strip runs at 3.3 V.
+J3 and J4 (`notchdeck:SWD_TC2030`) use passive connector symbols derived from
+KiCad's ARM debug connectors; only one debug probe may be attached at a time.
+U8 is populated and powered from USB VBUS. The RGB chain is USB-only.
+R4=100k gate pulldown; R5=1k between USB VBUS and Q1 gate.
+
+Added during wiring: C18/C19 4.7uF charger bypass (0805); R22 100k STAT pull-up;
+C20 100nF U8 bypass; C21–C36 100nF LED bypass; R26 100k LED data pulldown;
+J9 JST S3B-PH-SM4-TB with `Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal`;
+R23/R24 100k reverser bias, R25 1k series and C37 100nF filter. Resistors and 100nF
+capacitors use 0402 footprints. C13 is now 1uF 0805, rated at least 10V.
+U3/U8 MPNs are recorded but replacement LCSC codes are intentionally unassigned.
 
 ## Coded-switch lever input (Option 2 — 4-bit binary/Gray, coexists with AS5600)
 
@@ -104,7 +110,7 @@ All default-build parts now resolve to a symbol + footprint + 3D model. Verified
 | **AS5600** (U5) | `notchdeck:AS5600` (authored, datasheet pinout) | stdlib `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` | stdlib (shipped) | ✅ |
 | **MAX17048** (U4) | `notchdeck:MAX17048` (authored, datasheet pinout, incl. EP=pin9) | stdlib `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` | stdlib (shipped) | ✅ |
 | **USB-C** (J1) | stdlib `Connector:USB_C_Receptacle_USB2.0_16P` | stdlib `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | stdlib (shipped) | ✅ all stdlib (use LCSC C165948) |
-| AP2112K / MCP73831 / WS2812B(5050) / passives / JST | stdlib | stdlib | stdlib | ✅ |
+| AP2112K / MCP73832 / WS2812B(5050) / passives / JST | stdlib | stdlib | stdlib | ✅ |
 | **nPM1300** (U6, Option A only) | _not yet_ — Nordic KiCad lib / SnapEDA | stdlib `Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm` | needs STEP | ☐ deferred (only for Option A) |
 
 Notes / to verify in KiCad GUI:

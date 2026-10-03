@@ -5,9 +5,9 @@
 	(uuid "d0f07d24-fa67-434c-83d8-dc7502ce5528")
 	(paper "A3")
 	(title_block
-		(title "NotchDeck One — Controls (buttons / hat / WS2812 LEDs / status)")
-		(date "2026-05-29")
-		(rev "A")
+		(title "NotchDeck One — Controls and indicators")
+		(date "2026-10-02")
+		(rev "B")
 		(company "BenchBits")
 	)
 	(lib_symbols
@@ -165,6 +165,1132 @@
 					)
 				)
 				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "power:GND"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR"
+			(at 0 -6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 0 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "GND_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "GND_1_1"
+			(pin power_in line
+				(at 0 0 270)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Connector_Generic:Conn_01x03"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x03_1_1"
+			(rectangle
+				(start -1.27 3.81)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 2.667)
+				(end 0 2.413)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 2.54 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "power:+3V3"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR"
+			(at 0 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 0 3.556 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "+3V3_0_1"
+			(polyline
+				(pts
+					(xy -0.762 1.27) (xy 0 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 2.54) (xy 0.762 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "+3V3_1_1"
+			(pin power_in line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:C"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "C_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_0_1"
+			(polyline
+				(pts
+					(xy -2.032 0.762) (xy 2.032 0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.032 -0.762) (xy 2.032 -0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "C_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:LED"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "LED diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "LED_0_1"
+			(polyline
+				(pts
+					(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 0) (xy 1.27 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 -1.27) (xy -1.27 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "LED_1_1"
+			(pin passive line
+				(at -3.81 0 0)
+				(length 2.54)
+				(name "K"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 3.81 0 180)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "74xGxx:74AHCT1G125"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at -2.54 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "74AHCT1G125"
+			(at 0 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Single Buffer Gate Tri-State, Low-Voltage CMOS"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "Single Gate Buff Tri-State LVC CMOS"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "SOT* SG-*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "74AHCT1G125_0_1"
+			(polyline
+				(pts
+					(xy -7.62 6.35) (xy -7.62 -6.35) (xy 5.08 0) (xy -7.62 6.35)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "74AHCT1G125_1_1"
+			(pin input inverted
+				(at 0 10.16 270)
+				(length 7.62)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -15.24 0 0)
+				(length 7.62)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -5.08 -10.16 90)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin tri_state line
+				(at 12.7 0 180)
+				(length 7.62)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -5.08 10.16 270)
+				(length 5.08)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -446,530 +1572,34 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "Device:C"
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 0.254)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "C"
-			(at 0.635 2.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "C"
-			(at 0.635 -2.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 0.9652 -3.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_keywords" "cap capacitor"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_fp_filters" "C_*"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "C_0_1"
-			(polyline
-				(pts
-					(xy -2.032 0.762) (xy 2.032 0.762)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -2.032 -0.762) (xy 2.032 -0.762)
-				)
-				(stroke
-					(width 0.508)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "C_1_1"
-			(pin passive line
-				(at 0 3.81 270)
-				(length 2.794)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -3.81 90)
-				(length 2.794)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "Device:R"
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 0)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "R"
-			(at 2.032 0 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R"
-			(at 0 0 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at -1.778 0 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_keywords" "R res resistor"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_fp_filters" "R_*"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "R_0_1"
-			(rectangle
-				(start -1.016 -2.54)
-				(end 1.016 2.54)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "R_1_1"
-			(pin passive line
-				(at 0 3.81 270)
-				(length 1.27)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -3.81 90)
-				(length 1.27)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "Device:LED"
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 1.016)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "D"
-			(at 0 2.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 0 -2.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_keywords" "LED diode"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "LED_0_1"
-			(polyline
-				(pts
-					(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -1.27 0) (xy 1.27 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -1.27 -1.27) (xy -1.27 1.27)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "LED_1_1"
-			(pin passive line
-				(at -3.81 0 0)
-				(length 2.54)
-				(name "K"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 3.81 0 180)
-				(length 2.54)
-				(name "A"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 30.4800 40.6400 0)
+		(at 43.1800 35.5600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "824af964-78e8-4f38-86b3-2fed5a994449")
+		(uuid "014c8f33-6e82-416f-b333-5c4e14e61d5d")
 		(property "Reference" "SW1"
-			(at 34.2900 38.1000 0)
+			(at 40.6400 29.2100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 34.2900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 40.6400 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 30.4800 40.6400 0)
+			(at 43.1800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 30.4800 40.6400 0)
+			(at 43.1800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "b2cc6b35-2fe2-4818-b014-b774e2a26e7b"))
-		(pin "2" (uuid "cb067ff8-5c27-4470-b5cb-394b16900663"))
+		(pin "1" (uuid "e9ab906b-f757-4226-a163-64d91db4aa26"))
+		(pin "2" (uuid "45e0ee49-d42e-4052-95b9-54bc64c6d246"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -980,32 +1610,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 53.3400 35.5600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a5607d9a-be8b-43e1-aa4e-ea08a44a14a5")
+		(property "Reference" "#PWR501"
+			(at 57.1500 33.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 50.8000 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 53.3400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 53.3400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b12e2660-8242-41f7-bc40-c4313b62f729"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR501")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 68.5800 40.6400 0)
+		(at 119.3800 35.5600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "33915be9-ca85-4ac7-ba22-9574ace18361")
+		(uuid "5ec5108f-91b9-4ed2-b346-e23f9f3b22a9")
 		(property "Reference" "SW2"
-			(at 72.3900 38.1000 0)
+			(at 116.8400 29.2100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 72.3900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 116.8400 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 68.5800 40.6400 0)
+			(at 119.3800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 68.5800 40.6400 0)
+			(at 119.3800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6b03f603-9284-4ca3-a980-c3eef814b400"))
-		(pin "2" (uuid "cd11bc1c-5d51-437f-a7ea-b6af7090e501"))
+		(pin "1" (uuid "a3779349-d3b6-4259-b307-32140c5c0b30"))
+		(pin "2" (uuid "734e0391-e9d2-4ca7-ba9e-2eb141118480"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1016,32 +1681,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 129.5400 35.5600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7c75b28-fa87-4887-aafb-ac214fa89437")
+		(property "Reference" "#PWR502"
+			(at 133.3500 33.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 127.0000 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 129.5400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 129.5400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "ab1a4074-35ca-41c5-9ffa-7a9a60d6be95"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 106.6800 40.6400 0)
+		(at 195.5800 35.5600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e6616d8d-43b7-4d99-a796-12c44bdde91f")
+		(uuid "b57f234f-e85f-43c8-b51f-38f563999bfd")
 		(property "Reference" "SW3"
-			(at 110.4900 38.1000 0)
+			(at 193.0400 29.2100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 110.4900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 193.0400 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 106.6800 40.6400 0)
+			(at 195.5800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 106.6800 40.6400 0)
+			(at 195.5800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "52bb1593-a95f-4d52-899e-11b341953a87"))
-		(pin "2" (uuid "65120601-d765-4720-a446-864ea86ac86b"))
+		(pin "1" (uuid "9a318fc1-a66b-4004-9d25-fcbbd3ce7adc"))
+		(pin "2" (uuid "ed9590a6-6d2e-4c81-b4e0-c8245fd758cc"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1052,32 +1752,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 205.7400 35.5600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "633e2c60-cf96-435f-9b61-55747118a9b5")
+		(property "Reference" "#PWR503"
+			(at 209.5500 33.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 203.2000 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 205.7400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 205.7400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "35bb4db3-9970-4787-9be5-b3f3ecebc9cb"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR503")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 144.7800 40.6400 0)
+		(at 271.7800 35.5600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dda83a17-b72e-42e7-87cb-271425f092ad")
+		(uuid "e8a3e2ac-6dbe-4ae3-a7ba-77c828d931ff")
 		(property "Reference" "SW4"
-			(at 148.5900 38.1000 0)
+			(at 269.2400 29.2100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 148.5900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 269.2400 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 144.7800 40.6400 0)
+			(at 271.7800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 144.7800 40.6400 0)
+			(at 271.7800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3dcfa9d9-553b-454b-ad91-ef182205b424"))
-		(pin "2" (uuid "6e434faa-8a0f-452b-84a0-29eb1e33babb"))
+		(pin "1" (uuid "7895f154-44e9-457f-87db-49ee1fe641ca"))
+		(pin "2" (uuid "2a991a53-1671-4d4b-88e8-b27987f6eaeb"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1088,32 +1823,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 281.9400 35.5600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "1e2a3fd6-cc50-442f-b7fb-1240035a87cd")
+		(property "Reference" "#PWR504"
+			(at 285.7500 33.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 279.4000 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 281.9400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 281.9400 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "226f970b-a8cb-4b5a-85e4-042f6c2e8300"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR504")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 182.8800 40.6400 0)
+		(at 43.1800 60.9600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "de35e3c0-f680-45f0-826a-3ee8cdfd171c")
+		(uuid "983d80f3-7719-4ae2-b1f2-51b56fd7520c")
 		(property "Reference" "SW5"
-			(at 186.6900 38.1000 0)
+			(at 40.6400 54.6100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 186.6900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 40.6400 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 182.8800 40.6400 0)
+			(at 43.1800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 182.8800 40.6400 0)
+			(at 43.1800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1b1a0366-7b63-4794-b3fd-ebc2ab8219fa"))
-		(pin "2" (uuid "66cd35eb-56e7-4ae8-a98f-12ae4da57d9e"))
+		(pin "1" (uuid "e134fcbe-869e-4b14-9ab2-bd3778ba2318"))
+		(pin "2" (uuid "b9081a9a-9b67-445e-8a31-9d0319171c9d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1124,32 +1894,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 53.3400 60.9600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a39cc50-6de8-4980-ae39-b33a3563c5c2")
+		(property "Reference" "#PWR505"
+			(at 57.1500 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 50.8000 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 53.3400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 53.3400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "736e2cd3-c641-4069-bb86-771dc77e6bee"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR505")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 220.9800 40.6400 0)
+		(at 119.3800 60.9600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "619ab801-83a1-4a7b-bf6e-45e49cb7aee0")
+		(uuid "e4c76268-467e-40d2-adb7-80691112f14a")
 		(property "Reference" "SW6"
-			(at 224.7900 38.1000 0)
+			(at 116.8400 54.6100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 224.7900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 116.8400 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 220.9800 40.6400 0)
+			(at 119.3800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 220.9800 40.6400 0)
+			(at 119.3800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "dbc56c86-a339-4bf9-86fa-9d1a7259079c"))
-		(pin "2" (uuid "c662fee3-40a3-4ae1-b0b8-8e40fec7dfd5"))
+		(pin "1" (uuid "dff4f695-6001-4a9b-b548-be9ba055e90d"))
+		(pin "2" (uuid "6ef5af05-c7c4-4d41-91da-fa06a784aa68"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1160,32 +1965,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 129.5400 60.9600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "98d477b2-67df-43da-b846-4687cf4f1ca2")
+		(property "Reference" "#PWR506"
+			(at 133.3500 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 127.0000 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 129.5400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 129.5400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "0edc9049-59cd-4b3f-8fe1-e408a1a6cd56"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR506")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 259.0800 40.6400 0)
+		(at 195.5800 60.9600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0c35122e-a480-4b9a-83b0-63b9ac97e46d")
+		(uuid "585499c4-af4e-4ce1-8e1d-2dc755c8e4b2")
 		(property "Reference" "SW7"
-			(at 262.8900 38.1000 0)
+			(at 193.0400 54.6100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 262.8900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 193.0400 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 259.0800 40.6400 0)
+			(at 195.5800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 259.0800 40.6400 0)
+			(at 195.5800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "e033f35e-b81c-4a18-8b05-f5b8d1e83c4c"))
-		(pin "2" (uuid "6036443b-d6cc-4560-90b1-69381ec27efe"))
+		(pin "1" (uuid "052d40c7-3cb2-47d2-93c2-75f31aadc33c"))
+		(pin "2" (uuid "de23f84e-4600-4e60-adb6-684f8748d743"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1196,32 +2036,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 205.7400 60.9600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "77b8442a-2370-44f4-823a-fb5efba825d8")
+		(property "Reference" "#PWR507"
+			(at 209.5500 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 203.2000 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 205.7400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 205.7400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "ecbbf3fa-121d-4290-9199-f92f53a9fe33"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR507")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 297.1800 40.6400 0)
+		(at 271.7800 60.9600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ae58881a-b8c6-416f-ae0d-66ff2e905c1b")
+		(uuid "599ba5e7-b0b3-4850-96c7-5b6eeae03a70")
 		(property "Reference" "SW8"
-			(at 300.9900 38.1000 0)
+			(at 269.2400 54.6100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 300.9900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 269.2400 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 297.1800 40.6400 0)
+			(at 271.7800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 297.1800 40.6400 0)
+			(at 271.7800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "c07bf965-dad9-42c8-92ee-f728a03575cb"))
-		(pin "2" (uuid "5f25bb1a-e1d2-4d0e-9b8f-dfc81c16e464"))
+		(pin "1" (uuid "dc8a85c2-ce2b-4d60-89c1-411cd5bebc74"))
+		(pin "2" (uuid "a7f1322a-5dfa-4e66-ae99-e7e577ead1cc"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1232,32 +2107,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 281.9400 60.9600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3810d60f-df7e-4151-a9a1-804fb80a2a9d")
+		(property "Reference" "#PWR508"
+			(at 285.7500 58.4200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 279.4000 57.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 281.9400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 281.9400 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b6638bfb-fb94-49ec-a61d-89e9b3f1abbc"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR508")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 335.2800 40.6400 0)
+		(at 43.1800 86.3600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d53345bf-e37f-4faf-a029-a6634c44358c")
+		(uuid "bc51bddb-2680-4ddd-8b30-e23b54fddd73")
 		(property "Reference" "SW9"
-			(at 339.0900 38.1000 0)
+			(at 40.6400 80.0100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 339.0900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 40.6400 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 335.2800 40.6400 0)
+			(at 43.1800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 335.2800 40.6400 0)
+			(at 43.1800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "abfb89e9-a3fa-493e-822f-9cf35aabb793"))
-		(pin "2" (uuid "22af59e1-2942-46f2-a05b-2ca3e3720d1c"))
+		(pin "1" (uuid "87bbcc40-7dc5-42ad-b372-120e78c5b7e9"))
+		(pin "2" (uuid "283fd8da-c352-451f-a5f9-25093026f07d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1268,32 +2178,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 53.3400 86.3600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce3f0a2b-d982-4c65-8ecd-7ffba7abe7c1")
+		(property "Reference" "#PWR509"
+			(at 57.1500 83.8200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 50.8000 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 53.3400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 53.3400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "e912ee7c-5802-47e4-ac85-8ebb4aa46329"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR509")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 373.3800 40.6400 0)
+		(at 119.3800 86.3600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "26ecd879-70a5-4b3c-a9d8-62fe7c51afbd")
+		(uuid "632484b1-9629-42bc-a029-148db08d0e5e")
 		(property "Reference" "SW10"
-			(at 377.1900 38.1000 0)
+			(at 116.8400 80.0100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 377.1900 43.1800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 116.8400 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 373.3800 40.6400 0)
+			(at 119.3800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 373.3800 40.6400 0)
+			(at 119.3800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "80cc3e5b-16a8-40aa-b87f-72ae6eb0afe0"))
-		(pin "2" (uuid "79caa68a-f0a3-4ef8-b502-545e8e0a3175"))
+		(pin "1" (uuid "75f1ceda-2c7e-47f0-ba51-6d96818891b3"))
+		(pin "2" (uuid "539e3201-d29a-4ed3-a740-e62d3188cfc1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1304,32 +2249,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 129.5400 86.3600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a0589ed5-e4dc-42fd-b416-2bcf137deffd")
+		(property "Reference" "#PWR510"
+			(at 133.3500 83.8200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 127.0000 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 129.5400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 129.5400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "bcf503c9-ce03-4808-832e-1c004660ff45"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR510")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 30.4800 71.1200 0)
+		(at 195.5800 86.3600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "de1d8660-8b06-4543-a1b1-7248ec4400a0")
+		(uuid "204d512c-544f-441a-b70e-db23ab3c2402")
 		(property "Reference" "SW11"
-			(at 34.2900 68.5800 0)
+			(at 193.0400 80.0100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 34.2900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 193.0400 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 30.4800 71.1200 0)
+			(at 195.5800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 30.4800 71.1200 0)
+			(at 195.5800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "38715120-40a7-4667-abaa-da7760f51185"))
-		(pin "2" (uuid "47d9fea2-a7c0-4706-9c3d-e0b5760cc624"))
+		(pin "1" (uuid "e56503ad-209b-4b84-a4fd-d483f6cf6a2b"))
+		(pin "2" (uuid "91fdd6c7-d1c8-466f-85bc-48790cbe4537"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1340,32 +2320,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 205.7400 86.3600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "14767548-7a3e-402b-ae39-3741888d60ad")
+		(property "Reference" "#PWR511"
+			(at 209.5500 83.8200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 203.2000 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 205.7400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 205.7400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "264315d3-4d04-4ba0-a4a9-56b7338befe4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR511")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 68.5800 71.1200 0)
+		(at 271.7800 86.3600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bdf0a05a-158f-4559-9d8c-422719c28356")
+		(uuid "6450b0a3-67af-483d-b407-3e2d9353738d")
 		(property "Reference" "SW12"
-			(at 72.3900 68.5800 0)
+			(at 269.2400 80.0100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 72.3900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 269.2400 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 68.5800 71.1200 0)
+			(at 271.7800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 68.5800 71.1200 0)
+			(at 271.7800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4d929e05-c437-4e8b-a5be-2081e10e1a05"))
-		(pin "2" (uuid "46828ab1-4c3b-4b1c-a46f-e62f96846d0d"))
+		(pin "1" (uuid "55f00199-c306-460a-8402-9ec4595da8e1"))
+		(pin "2" (uuid "5d4bb4a8-b72e-4060-a346-5898c802de12"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1376,32 +2391,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 281.9400 86.3600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "764e0d9c-e413-44bd-9d99-05c8db941041")
+		(property "Reference" "#PWR512"
+			(at 285.7500 83.8200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 279.4000 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 281.9400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 281.9400 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8f22a23c-26e1-4d4a-8071-51bcb3564870"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR512")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 106.6800 71.1200 0)
+		(at 43.1800 111.7600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "eeaba4a4-5896-4e3f-a42f-614cf24a38e3")
+		(uuid "488fa834-0652-4da7-bba0-dbb24565e666")
 		(property "Reference" "SW13"
-			(at 110.4900 68.5800 0)
+			(at 40.6400 105.4100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 110.4900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 40.6400 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 106.6800 71.1200 0)
+			(at 43.1800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 106.6800 71.1200 0)
+			(at 43.1800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d4626fc4-7eae-4ad5-ad6d-fffabbfc9a1f"))
-		(pin "2" (uuid "82064ce8-eb77-444f-b662-7a58f916462b"))
+		(pin "1" (uuid "25ebd96b-0da3-4a02-95ab-d47982abb56c"))
+		(pin "2" (uuid "fe33992e-81fb-4b7f-a7fc-c9302e73a47e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1412,32 +2462,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 53.3400 111.7600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "fe22f0cb-0abe-4d1c-b39d-1beb80d573a1")
+		(property "Reference" "#PWR513"
+			(at 57.1500 109.2200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 50.8000 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 53.3400 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 53.3400 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "350fbab3-88fc-4f4b-a19c-54416aa878a4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR513")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 144.7800 71.1200 0)
+		(at 119.3800 111.7600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d71c8092-86de-4d5f-90c9-c004c9c34a05")
+		(uuid "2242cceb-28a4-4e24-9523-a0054ef34ff6")
 		(property "Reference" "SW14"
-			(at 148.5900 68.5800 0)
+			(at 116.8400 105.4100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 148.5900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 116.8400 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 144.7800 71.1200 0)
+			(at 119.3800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 144.7800 71.1200 0)
+			(at 119.3800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3eb17a1b-de5c-4cce-ba70-c3f840b01406"))
-		(pin "2" (uuid "f6652a83-7bce-4257-b06e-e503f552847c"))
+		(pin "1" (uuid "163a5baa-8299-4e2c-8d71-1db58fcfbd9f"))
+		(pin "2" (uuid "fd1a5b58-bf4a-4773-9b5e-587eaf358314"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1448,32 +2533,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 129.5400 111.7600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "4b650568-0879-4104-aeb8-bf8d71607c63")
+		(property "Reference" "#PWR514"
+			(at 133.3500 109.2200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 127.0000 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 129.5400 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 129.5400 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "bc58e5de-b495-4253-b2b2-0bbb36ba1493"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR514")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 182.8800 71.1200 0)
+		(at 195.5800 111.7600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0a00593d-f314-4c94-8556-d57291f6c773")
+		(uuid "a9b484d9-2825-4294-a78f-30ac2dad72f4")
 		(property "Reference" "SW15"
-			(at 186.6900 68.5800 0)
+			(at 193.0400 105.4100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 186.6900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 193.0400 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 182.8800 71.1200 0)
+			(at 195.5800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 182.8800 71.1200 0)
+			(at 195.5800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4f09a0a6-3822-4671-9426-14afec98e3dc"))
-		(pin "2" (uuid "952dbfb9-2886-4e22-a621-a74a4dfd54c3"))
+		(pin "1" (uuid "0f5ee7d3-a547-48a3-b5b6-c2d776cd508d"))
+		(pin "2" (uuid "e1fb7c3e-0a1b-4a46-8f3c-25761b73c406"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1484,32 +2604,67 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 205.7400 111.7600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c3f94e13-d8c1-43cc-80a6-cd5318283a2e")
+		(property "Reference" "#PWR515"
+			(at 209.5500 109.2200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 203.2000 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 205.7400 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 205.7400 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "97d01563-7655-43ee-ba2c-ffe6218d11b0"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR515")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 220.9800 71.1200 0)
+		(at 271.7800 111.7600 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1ccbc51a-e815-4b60-9f65-bcc4cee15955")
+		(uuid "bab621ed-b1b2-4bdc-a5d9-b854f483b8e0")
 		(property "Reference" "SW16"
-			(at 224.7900 68.5800 0)
+			(at 269.2400 105.4100 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "SW_Push"
-			(at 224.7900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 269.2400 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 220.9800 71.1200 0)
+			(at 271.7800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 220.9800 71.1200 0)
+			(at 271.7800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "15ad6d35-09f0-4487-ac55-008e79cf2611"))
-		(pin "2" (uuid "989b6368-1868-49ad-b598-a1a34c34c3d9"))
+		(pin "1" (uuid "42aae934-ac19-4aba-8121-23f99c77b091"))
+		(pin "2" (uuid "ac75d4d7-4041-4425-a753-5d9251cb2023"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1520,736 +2675,258 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 259.0800 71.1200 0)
+		(lib_id "power:GND")
+		(at 281.9400 111.7600 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "8c7e236e-52bd-469d-9968-60b908daf89d")
-		(property "Reference" "D1"
-			(at 262.8900 68.5800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "d8199f66-7c8e-49eb-abc9-3352f022f005")
+		(property "Reference" "#PWR516"
+			(at 285.7500 109.2200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Value" "WS2812B"
-			(at 262.8900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+		(property "Value" "GND"
+			(at 279.4000 107.9500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 259.0800 71.1200 0)
+		(property "Footprint" ""
+			(at 281.9400 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 259.0800 71.1200 0)
+			(at 281.9400 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 259.0800 71.1200 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 259.0800 71.1200 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "64cc0343-6e7e-494f-b4b1-d1e739207b6c"))
-		(pin "2" (uuid "45249e6a-3b41-4af5-8f4d-d9a099a3af4e"))
-		(pin "3" (uuid "791b8881-955f-432f-9680-e3b33bae035f"))
-		(pin "4" (uuid "4933bd60-16dd-4f20-a4ff-def85dc31bf3"))
+		(pin "1" (uuid "e21ae170-7954-4335-bf96-0487d74c9293"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D1")
+					(reference "#PWR516")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 297.1800 71.1200 0)
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 353.0600 43.1800 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "24a589a3-7fab-49af-a4b3-66a055ad5815")
-		(property "Reference" "D2"
-			(at 300.9900 68.5800 0)
+		(uuid "6ff8472a-10a1-4d5e-a9d4-bc5e5a06b80c")
+		(property "Reference" "J9"
+			(at 350.5200 34.2900 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "WS2812B"
-			(at 300.9900 73.6600 0)
+		(property "Value" "REV F-N-R"
+			(at 347.9800 36.8300 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 297.1800 71.1200 0)
+		(property "Footprint" "Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal"
+			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 297.1800 71.1200 0)
+			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 297.1800 71.1200 0)
+		(property "MPN" "S3B-PH-SM4-TB"
+			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 297.1800 71.1200 0)
+		(property "Manufacturer" "JST"
+			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6a455066-1f98-46e6-b112-33cd32e80818"))
-		(pin "2" (uuid "77995915-126f-4b67-8b0e-718400eb6d26"))
-		(pin "3" (uuid "d45704e1-bb29-42b2-8684-82422bb82ea1"))
-		(pin "4" (uuid "d8273efb-5366-484b-a229-0dd7ec94c065"))
+		(pin "1" (uuid "ce288bbe-34a3-4a4c-8642-f6d080f4264c"))
+		(pin "2" (uuid "517ef9bd-401c-4f7b-8fd0-f58579305ffb"))
+		(pin "3" (uuid "604a8186-58b7-49eb-8169-781c4ae6b9e0"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D2")
+					(reference "J9")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 335.2800 71.1200 0)
+		(lib_id "power:+3V3")
+		(at 342.9000 40.6400 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "bc6a3b14-470f-462f-8d5c-4fa60b600f3c")
-		(property "Reference" "D3"
-			(at 339.0900 68.5800 0)
+		(uuid "178994b9-ed10-4772-b291-65fb46d1deae")
+		(property "Reference" "#PWR517"
+			(at 346.7100 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "+3V3"
+			(at 340.3600 36.8300 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "WS2812B"
-			(at 339.0900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 335.2800 71.1200 0)
+		(property "Footprint" ""
+			(at 342.9000 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 335.2800 71.1200 0)
+			(at 342.9000 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 335.2800 71.1200 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 335.2800 71.1200 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "c1dc31ea-fd35-4ef9-92c2-ab95dda8d4cb"))
-		(pin "2" (uuid "3da91735-36db-46fd-ba62-505ff7e1828e"))
-		(pin "3" (uuid "dadae54a-8b68-4d2d-ac66-b7e1775c2750"))
-		(pin "4" (uuid "aeb75865-7c3d-40a3-b2b1-b274508ebc0f"))
+		(pin "1" (uuid "cf01ded0-1d3b-4d92-a105-91a2063a9bd6"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D3")
+					(reference "#PWR517")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 373.3800 71.1200 0)
+		(lib_id "power:GND")
+		(at 342.9000 45.7200 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "33ad66cf-f194-48d3-a37c-b90742bf24cc")
-		(property "Reference" "D4"
-			(at 377.1900 68.5800 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "828c142c-b607-41fb-b8c7-b31073d43ca4")
+		(property "Reference" "#PWR518"
+			(at 346.7100 43.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Value" "WS2812B"
-			(at 377.1900 73.6600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+		(property "Value" "GND"
+			(at 340.3600 41.9100 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 373.3800 71.1200 0)
+		(property "Footprint" ""
+			(at 342.9000 45.7200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 373.3800 71.1200 0)
+			(at 342.9000 45.7200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 373.3800 71.1200 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 373.3800 71.1200 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "31a86677-9ee2-4807-9eb6-556541c88c7b"))
-		(pin "2" (uuid "dd02f723-40f8-41aa-8ea0-5cf3739f5bb6"))
-		(pin "3" (uuid "9accdd66-8ca4-4869-8ccb-40b2b26ec95a"))
-		(pin "4" (uuid "02a8b81f-1bbd-467d-82dc-4c5b30248d94"))
+		(pin "1" (uuid "89f76759-a66a-4bc6-a723-6f9026525278"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D4")
+					(reference "#PWR518")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 30.4800 101.6000 0)
+		(lib_id "Device:R")
+		(at 304.8000 50.8000 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3777ed92-b255-4917-945c-9b0d1cf0c16f")
-		(property "Reference" "D5"
-			(at 34.2900 99.0600 0)
+		(uuid "8579c8ba-c8a9-4082-afef-6af7d6dc4704")
+		(property "Reference" "R23"
+			(at 308.6100 48.2600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "WS2812B"
-			(at 34.2900 104.1400 0)
+		(property "Value" "100k"
+			(at 308.6100 53.3400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 30.4800 101.6000 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 304.8000 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 30.4800 101.6000 0)
+			(at 304.8000 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 30.4800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 30.4800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "b473f7f2-0beb-47a4-a84e-064186fd7111"))
-		(pin "2" (uuid "bf19a00f-5698-4441-a28a-c7d5d27dfcee"))
-		(pin "3" (uuid "68684971-2ae8-4995-95ea-4ddb37c1e331"))
-		(pin "4" (uuid "c046758f-8abb-4255-b2e3-59ee442641d4"))
+		(pin "1" (uuid "fdf9dd95-360c-4dec-a1d4-6ed2a7445e61"))
+		(pin "2" (uuid "243cb97f-5161-4daf-bf26-6d4f6a7f45b0"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D5")
+					(reference "R23")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 68.5800 101.6000 0)
+		(lib_id "Device:R")
+		(at 304.8000 81.2800 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fd00ca33-4a2f-4d25-8944-7db392260ebf")
-		(property "Reference" "D6"
-			(at 72.3900 99.0600 0)
+		(uuid "7936a90d-f547-468e-9a7a-856348509c88")
+		(property "Reference" "R24"
+			(at 308.6100 78.7400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "WS2812B"
-			(at 72.3900 104.1400 0)
+		(property "Value" "100k"
+			(at 308.6100 83.8200 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 68.5800 101.6000 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 304.8000 81.2800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 68.5800 101.6000 0)
+			(at 304.8000 81.2800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 68.5800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 68.5800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "05eb2d5e-a983-4b0f-80fb-8970bb08a4f7"))
-		(pin "2" (uuid "541bff91-77cb-4132-b5f4-980d2db58590"))
-		(pin "3" (uuid "f9d66e67-99f3-41f6-87a4-0a315866247b"))
-		(pin "4" (uuid "642af74e-b983-4c7e-91e3-231f7e6f502f"))
+		(pin "1" (uuid "85e3345e-7505-44fc-97ba-cca1da26bd01"))
+		(pin "2" (uuid "459e280c-0f81-4223-a536-67c6a058e09e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D6")
+					(reference "R24")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 106.6800 101.6000 0)
+		(lib_id "Device:R")
+		(at 337.8200 66.0400 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0bc89bd4-351b-4774-8607-d1eb6317ae70")
-		(property "Reference" "D7"
-			(at 110.4900 99.0600 0)
+		(uuid "6884f7ab-06bf-434f-b3d6-801aff07f010")
+		(property "Reference" "R25"
+			(at 335.2800 60.9600 90)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "WS2812B"
-			(at 110.4900 104.1400 0)
+		(property "Value" "1k"
+			(at 335.2800 63.5000 90)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 106.6800 101.6000 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 337.8200 66.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 106.6800 101.6000 0)
+			(at 337.8200 66.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "LCSC" "C2843785"
-			(at 106.6800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 106.6800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "c5f89f9f-ece0-4a36-8e41-23214c8f9a85"))
-		(pin "2" (uuid "b273ae4a-7d89-4354-92d0-7c933b65e90f"))
-		(pin "3" (uuid "b1035374-7445-4bd1-9acd-47d0b1c763c2"))
-		(pin "4" (uuid "a82881ee-04cb-4074-9e7f-ba354bb3dcf9"))
+		(pin "1" (uuid "d47a56c1-8f67-4120-a4e1-ba6927972103"))
+		(pin "2" (uuid "e2a746cd-e7dd-462e-ba9a-342a3a7def15"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 144.7800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ae96337c-b10a-4524-b62c-4b19aeb9f444")
-		(property "Reference" "D8"
-			(at 148.5900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 148.5900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 144.7800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 144.7800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 144.7800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 144.7800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "d0c049e2-ce5a-4265-aec9-b7a131188722"))
-		(pin "2" (uuid "a815dea1-fd20-45b4-b638-6ac8a405d041"))
-		(pin "3" (uuid "62ea18bc-e299-4cfb-be59-b98dc569ddc5"))
-		(pin "4" (uuid "51ce858e-e56d-4cd8-868e-02e7acecfbab"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 182.8800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "571104d4-d4c9-4453-baaa-64a1edc89b99")
-		(property "Reference" "D9"
-			(at 186.6900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 186.6900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 182.8800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 182.8800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 182.8800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 182.8800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "ef198fd5-6f2a-4eaf-9146-8aa349641dc3"))
-		(pin "2" (uuid "1fc54fba-6d69-4205-8651-fc24b207e413"))
-		(pin "3" (uuid "0737c5fb-e2c8-413b-bd25-cbb6188b5b0d"))
-		(pin "4" (uuid "090d959e-d1a6-4f00-9c7e-025165f731ce"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 220.9800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8886ccd0-adec-4e5a-812b-b56762dc11c0")
-		(property "Reference" "D10"
-			(at 224.7900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 224.7900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 220.9800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 220.9800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 220.9800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 220.9800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "b7515ec9-7ae1-4011-9d03-3aba2f9f84dc"))
-		(pin "2" (uuid "1d4c511f-248c-4235-9b54-85375f1d6e9b"))
-		(pin "3" (uuid "3a7752e0-9517-4c3a-b8c4-483ca7a8a0a1"))
-		(pin "4" (uuid "6c00bc72-2fbc-4ddd-8172-ba656aa31bdd"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 259.0800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a1cc4d25-2787-43d0-8c37-60c169cdb166")
-		(property "Reference" "D11"
-			(at 262.8900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 262.8900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 259.0800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 259.0800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 259.0800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 259.0800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "c53727cd-05af-4b03-b0f8-3f5755897b12"))
-		(pin "2" (uuid "b9784b81-d265-45a9-a095-6e1faaafd1fa"))
-		(pin "3" (uuid "5d59e9cd-edc2-4151-9149-de8204c65e00"))
-		(pin "4" (uuid "e57bf4b6-8c8c-47ff-992d-0f27fabc2680"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 297.1800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2f34802b-5193-443e-ac04-a0cc9226ed27")
-		(property "Reference" "D12"
-			(at 300.9900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 300.9900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 297.1800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 297.1800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 297.1800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 297.1800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "0aee73db-9ade-47fa-a25a-67aa03d03f69"))
-		(pin "2" (uuid "018d6ff2-5dfa-408e-a15f-5ae4dadf626f"))
-		(pin "3" (uuid "6a4ee079-a7e9-4105-bd67-35a146fed09c"))
-		(pin "4" (uuid "ff5bbba4-3c33-4762-8e1d-ca2cfa155ce2"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 335.2800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b5d89ac6-968e-41e5-be39-c383032b0ea3")
-		(property "Reference" "D13"
-			(at 339.0900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 339.0900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 335.2800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 335.2800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 335.2800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 335.2800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "bd42a1ca-f8cd-49a5-b7ac-2908d60e4b07"))
-		(pin "2" (uuid "f762a012-9877-4844-8279-0fced3938f32"))
-		(pin "3" (uuid "efaff7bb-d05e-43cb-84c3-72e4bc5ca2b5"))
-		(pin "4" (uuid "3c2b216c-d513-468e-acec-2266d45d9c92"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 373.3800 101.6000 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fdf8235b-1507-405f-9170-bccce58e5a2e")
-		(property "Reference" "D14"
-			(at 377.1900 99.0600 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 377.1900 104.1400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 373.3800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 373.3800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 373.3800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 373.3800 101.6000 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "b355f125-434b-4988-9d8e-f8c4039f7e7b"))
-		(pin "2" (uuid "c86caeff-394b-4ec0-a1d7-3b076d157701"))
-		(pin "3" (uuid "915f8b2b-6edf-4a8e-8ee6-7ffbf2d691b7"))
-		(pin "4" (uuid "f8f544b7-31e7-48c4-8052-c703e0ea5ed0"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 30.4800 132.0800 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c3025b29-478e-4801-951a-df96763192e9")
-		(property "Reference" "D15"
-			(at 34.2900 129.5400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 34.2900 134.6200 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 30.4800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 30.4800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 30.4800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 30.4800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "c15cef15-d319-4753-a874-01f494aade20"))
-		(pin "2" (uuid "60c7f933-0073-4074-9e94-ed8899231ace"))
-		(pin "3" (uuid "7f1749b6-91b8-4f85-946c-ef6f5d839efa"))
-		(pin "4" (uuid "26eede75-fc41-4a88-8e3b-fbd48d68daa5"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 68.5800 132.0800 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d8196050-716a-490b-a42c-3ff7ab8eea34")
-		(property "Reference" "D16"
-			(at 72.3900 129.5400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "WS2812B"
-			(at 72.3900 134.6200 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
-			(at 68.5800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 68.5800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "LCSC" "C2843785"
-			(at 68.5800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "MPN" "XL-5050RGBC-2812B"
-			(at 68.5800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "4e80d180-f37c-4c96-9799-85a6ac6f9fda"))
-		(pin "2" (uuid "f42683cb-c90d-413f-8360-c15fbbb64745"))
-		(pin "3" (uuid "af7f069f-b9d5-46d6-be20-c756650b7ef7"))
-		(pin "4" (uuid "7e7b1399-f7a4-47fa-ad86-8b1bc3379780"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D16")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -2257,35 +2934,140 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 106.6800 132.0800 0)
+		(at 370.8400 83.8200 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6aea60b9-629d-466d-889d-5dd1af9cf412")
-		(property "Reference" "C13"
-			(at 110.4900 129.5400 0)
+		(uuid "bd08ed76-b3e8-4e4b-bcd5-84150ad2e31e")
+		(property "Reference" "C37"
+			(at 374.6500 81.2800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "100uF"
-			(at 110.4900 134.6200 0)
+		(property "Value" "100nF"
+			(at 374.6500 86.3600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-			(at 106.6800 132.0800 0)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 370.8400 83.8200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 106.6800 132.0800 0)
+			(at 370.8400 83.8200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3587a838-e1ec-4ca4-a2c7-2d3a1217bfc2"))
-		(pin "2" (uuid "154f99f3-3bf3-4a3b-b22a-9c983f44ff34"))
+		(pin "1" (uuid "9e02acd9-d1da-4090-9c6b-7761d92e1bf0"))
+		(pin "2" (uuid "e49c3d9b-7a62-4b58-83a5-deb32d66c9a7"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "C13")
+					(reference "C37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 304.8000 41.9100 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "44a523a8-7329-4c6c-96c0-2ccb7636e68c")
+		(property "Reference" "#PWR519"
+			(at 308.6100 39.3700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "+3V3"
+			(at 302.2600 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 304.8000 41.9100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 304.8000 41.9100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6e53a803-a738-42fd-8121-369d33d81948"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR519")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 304.8000 90.1700 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "aa08d25d-edf7-4704-9221-8487720ec734")
+		(property "Reference" "#PWR520"
+			(at 308.6100 87.6300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 302.2600 86.3600 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 304.8000 90.1700 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 304.8000 90.1700 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3af6ad34-3b95-4f25-a4ad-3aa47ff0fc8f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR520")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 370.8400 92.7100 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "200fcf77-d729-4d4c-9a6c-4b0a05f3c618")
+		(property "Reference" "#PWR521"
+			(at 374.6500 90.1700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 368.3000 88.9000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 370.8400 92.7100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 370.8400 92.7100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8f816d7b-0aa8-438d-bc9d-147ffdc21560"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR521")
 					(unit 1)
 				)
 			)
@@ -2293,103 +3075,31 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 144.7800 132.0800 0)
+		(at 378.4600 147.3200 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dd3df613-4806-4030-9830-78a1457f3800")
-		(property "Reference" "R11"
-			(at 148.5900 129.5400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "330"
-			(at 148.5900 134.6200 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 144.7800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 144.7800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "b6f6a9a0-b61b-46a2-98f0-855da665b682"))
-		(pin "2" (uuid "63eca9cb-2300-4c39-b770-01ec9f3d0dbd"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 182.8800 132.0800 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a4c39994-d011-4961-858e-b2720029ceab")
-		(property "Reference" "D17"
-			(at 186.6900 129.5400 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Value" "LED"
-			(at 186.6900 134.6200 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 182.8800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(property "Datasheet" "~"
-			(at 182.8800 132.0800 0)
-			(effects (font (size 1.27 1.27))) (hide yes)
-		)
-		(pin "1" (uuid "807319bc-4221-4b6a-9420-6334847eb262"))
-		(pin "2" (uuid "7a0aee1e-3a5c-4e39-9e13-3ce62c191743"))
-		(instances
-			(project "notchdeck-one"
-				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "D17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 220.9800 132.0800 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "79708fef-2231-4296-bb79-8c2012d13d54")
+		(uuid "6070b79c-3982-441c-8839-b6561f12d955")
 		(property "Reference" "R12"
-			(at 224.7900 129.5400 0)
+			(at 382.2700 144.7800 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "1k"
-			(at 224.7900 134.6200 0)
+			(at 382.2700 149.8600 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 220.9800 132.0800 0)
+			(at 378.4600 147.3200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 220.9800 132.0800 0)
+			(at 378.4600 147.3200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4a1a4365-d25b-4aa5-b6f4-207ce805b699"))
-		(pin "2" (uuid "eef30350-8c3e-4e0a-a395-dd21f44dbc29"))
+		(pin "1" (uuid "4c94fb8f-21f1-4a65-a00d-184bd1f37266"))
+		(pin "2" (uuid "0fff3115-c97b-49dd-9235-e3137c92c54a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2401,31 +3111,138 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 259.0800 132.0800 0)
+		(at 378.4600 157.4800 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ccd67fcd-6ebe-4c92-8a6d-4114f2083651")
-		(property "Reference" "D18"
-			(at 262.8900 129.5400 0)
+		(uuid "4f7b315e-8d42-4a1b-bf94-97573904c599")
+		(property "Reference" "D17"
+			(at 382.2700 156.2100 90)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Value" "LED"
-			(at 262.8900 134.6200 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(at 382.2700 158.7500 90)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
 		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 259.0800 132.0800 0)
+			(at 378.4600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 259.0800 132.0800 0)
+			(at 378.4600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "99261b97-0b97-420c-b598-ed8542510604"))
-		(pin "2" (uuid "782098d4-84f5-41a5-aaec-7b35a401b03f"))
+		(pin "1" (uuid "d8584de5-ed15-4139-96bf-b83f626e074e"))
+		(pin "2" (uuid "c68e70f1-7f4b-4db9-ab94-6a313afd82a1"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 378.4600 138.4300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "48a4ceba-14cf-4f16-bf4d-d733b47bcf06")
+		(property "Reference" "#PWR522"
+			(at 382.2700 135.8900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "+3V3"
+			(at 375.9200 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 378.4600 138.4300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 378.4600 138.4300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "ff95c9c6-d87d-4a39-a15e-4921268471b8"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR522")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 378.4600 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f3787709-6a66-4ab7-a82b-3457681fc8f5")
+		(property "Reference" "R13"
+			(at 382.2700 190.5000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 382.2700 195.5800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "653e4f37-14b0-48bb-ab69-6212eb0c9b7d"))
+		(pin "2" (uuid "5c908919-3660-494c-9957-c2c955779b83"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 378.4600 203.2000 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69b56c61-7f71-4236-a3b8-f0f7f0cd90ad")
+		(property "Reference" "D18"
+			(at 382.2700 201.9300 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "LED"
+			(at 382.2700 204.4700 90)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "39d42b0a-9e82-43e1-8277-d6f12ed2bbed"))
+		(pin "2" (uuid "438a513b-26e1-4d8a-9c78-4b268117eead"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2436,46 +3253,3038 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 297.1800 132.0800 0)
+		(lib_id "power:+3V3")
+		(at 378.4600 184.1500 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "be73e8b1-ddf5-4671-ae28-4e81a12ee45b")
-		(property "Reference" "R13"
-			(at 300.9900 129.5400 0)
+		(uuid "b6aef13d-305e-423b-bd80-7c9ae7c24490")
+		(property "Reference" "#PWR523"
+			(at 382.2700 181.6100 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "+3V3"
+			(at 375.9200 180.3400 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "1k"
-			(at 300.9900 134.6200 0)
-			(effects (font (size 1.27 1.27)) (justify left))
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 297.1800 132.0800 0)
+		(property "Footprint" ""
+			(at 378.4600 184.1500 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
 		(property "Datasheet" "~"
-			(at 297.1800 132.0800 0)
+			(at 378.4600 184.1500 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f208a238-04c5-480f-ab24-0516774aca1c"))
-		(pin "2" (uuid "9a2a9daf-bcf8-4543-8be8-ca0d6aa04822"))
+		(pin "1" (uuid "10f53850-8a7c-4e23-8f45-a72487984a47"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
-					(reference "R13")
+					(reference "#PWR523")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(text "NotchDeck One — Controls: buttons, hat, WS2812 LEDs, status.  Placed, not wired. See NETPLAN.md.\n\nBUTTONS (active-low to GND, internal pull-ups, debounce in FW):\n  SW1 BTN1 horn-hi  P1.11(1)    SW5 BTN5 L/ATS    P0.20(32)   SW9  BTN9 panto   P0.09(41)   SW13 HAT_UP    P0.22(34)\n  SW2 BTN2 horn-lo  P1.10(2)    SW6 BTN6 R/cab    P0.13(33)   SW10 BTN10 head   P0.10(43)   SW14 HAT_DOWN  P0.24(35)\n  SW3 BTN3 door-cl  P1.13(6)    SW7 BTN7 select   P1.04(40)   SW11 BTN11        P0.00(11)   SW15 HAT_LEFT  P1.00(36)\n  SW4 BTN4 door-op  P1.09(17)   SW8 BTN8 start    P1.06(42)   SW12 BTN12        P0.01(13)   SW16 HAT_RIGHT P1.02(38)\nWS2812 (D1..D16, addressable RGB): VDD -> +3V3 (or VBUS+U8 level-shift). Chain DOUT(n) -> DIN(n+1).\n  R11 330ohm series on WS2812_DIN from E73 P0.08(16) into D1.  C13 100uF bulk across strip V+/GND (add 100nF/LED ideally).\nSTATUS LEDs: D17 (status) + R12 1k ;  D18 (charge) + R13 1k <- CHG_STAT(P0.17).  Anodes -> +3V3 or GPIO per use."
+	(symbol
+		(lib_id "power:GND")
+		(at 378.4600 166.3700 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 15.00 168.00 0)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "dbf0999e-48eb-4883-a508-8d77683dcdd8")
+		(property "Reference" "#PWR524"
+			(at 382.2700 163.8300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 375.9200 162.5600 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 378.4600 166.3700 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 378.4600 166.3700 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "85983a66-3a21-47dd-8186-4768e2e3d347"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR524")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xGxx:74AHCT1G125")
+		(at 86.3600 152.4000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae57d302-1f77-4b76-9d75-49a462d23a99")
+		(property "Reference" "U8"
+			(at 81.2800 143.5100 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "74AHCT1G125"
+			(at 78.7400 146.0500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "SN74AHCT1G125DBVR"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "9a57f2ce-1a1c-4972-bb4c-b5c6edb163b7"))
+		(pin "2" (uuid "9b882f75-5d4a-4975-b27a-37c1c975a869"))
+		(pin "3" (uuid "0da74e44-f067-4cb5-9818-27fceebf68d1"))
+		(pin "4" (uuid "55c4fb13-11f9-4c10-89e7-c32bb968ac9a"))
+		(pin "5" (uuid "72ba0b73-22d9-40ef-83ed-1c2fea40df1f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.3600 137.1600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b79b7e73-581e-4c68-90d1-bc3426783634")
+		(property "Reference" "#PWR525"
+			(at 90.1700 134.6200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 83.8200 133.3500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 86.3600 137.1600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 86.3600 137.1600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "28450a20-e73d-4237-8c6b-3c2be0e1e5e2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR525")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 81.2800 167.6400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "177a19d9-28b3-40d8-814e-498e7e4d779f")
+		(property "Reference" "#PWR526"
+			(at 85.0900 165.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 78.7400 163.8300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 81.2800 167.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 81.2800 167.6400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6b115a59-bec2-4116-b538-a5b50c0d5b0a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR526")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 45.7200 165.1000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f793246f-13fb-4c9f-8d70-2a5e93de51fb")
+		(property "Reference" "R26"
+			(at 49.5300 162.5600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 49.5300 167.6400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "34627e18-1578-4098-92d4-840b46671782"))
+		(pin "2" (uuid "ef7a342f-a12d-420c-92a9-54843222a726"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 45.7200 173.9900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "9f19cac9-60d2-4354-a697-0181dd9d3f42")
+		(property "Reference" "#PWR527"
+			(at 49.5300 171.4500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 43.1800 170.1800 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 45.7200 173.9900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 45.7200 173.9900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "395c7fd2-9908-4817-a4d4-9a4c5fac1c5c"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR527")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.9200 152.4000 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4037258b-7399-4d15-9e84-126dfd59603a")
+		(property "Reference" "R11"
+			(at 119.3800 147.3200 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "330"
+			(at 119.3800 149.8600 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a7a628d3-c0cd-45e3-9a91-1d3fb51c6a7d"))
+		(pin "2" (uuid "fa81f6f9-ec26-46b6-b585-71acbcd66909"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 157.4800 154.9400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "93e13b17-fe74-4198-b9be-b61fc3b1f351")
+		(property "Reference" "C20"
+			(at 161.2900 152.4000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 161.2900 157.4800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "efa85b34-0329-44ce-8483-3a486f21dfd6"))
+		(pin "2" (uuid "738a1b2c-a754-44f5-86ed-21826472934c"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.4800 163.8300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fb463b0-01b3-482b-a6a6-bbf9a47817f7")
+		(property "Reference" "#PWR528"
+			(at 161.2900 161.2900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 154.9400 160.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 157.4800 163.8300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 157.4800 163.8300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "20d7637d-219e-41b2-b687-0e344f43d0c4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR528")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 193.0400 154.9400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2f13d7b3-885a-436d-95d5-fb129311d46f")
+		(property "Reference" "C13"
+			(at 196.8500 152.4000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1uF"
+			(at 196.8500 157.4800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f49b4cc6-377e-46c9-9811-bba48577f53d"))
+		(pin "2" (uuid "27654b74-f036-4707-a0fa-99d2f2002ed4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 193.0400 163.8300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "33ffd8ee-97eb-455f-80c0-00c9c05f2768")
+		(property "Reference" "#PWR529"
+			(at 196.8500 161.2900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 190.5000 160.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 193.0400 163.8300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 193.0400 163.8300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b5e60248-3aa9-4c32-8809-75688360e73b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR529")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 30.4800 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "509ada1b-2f72-483b-84d0-07563dbf1ab5")
+		(property "Reference" "D1"
+			(at 26.6700 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 26.6700 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "ed7c177c-f5d4-4b51-a468-6ff6951b5899"))
+		(pin "2" (uuid "89664582-f4e3-4863-8b78-7dee4882d4a4"))
+		(pin "3" (uuid "fd897399-8b60-4585-8802-402bf234c556"))
+		(pin "4" (uuid "be973e7a-29b1-441b-a48e-0118fcefec95"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 43.1800 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "acc94f3a-2e16-49a5-a3f9-e8a270d58dd1")
+		(property "Reference" "C21"
+			(at 44.4500 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 44.4500 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "ec50d976-5432-4424-9b2e-441145d5172d"))
+		(pin "2" (uuid "c1223526-4c16-4951-8b53-e20bee143cd2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 71.1200 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3cfd78cd-d0ad-42cd-ac79-85fe1c14740d")
+		(property "Reference" "D2"
+			(at 67.3100 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 67.3100 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a67e170a-d65f-4562-84a7-2be3e4253982"))
+		(pin "2" (uuid "ca2e66a3-d24c-43cf-adce-523feed959d1"))
+		(pin "3" (uuid "fdad4d12-94d1-4f1d-8524-fbd24994b8b7"))
+		(pin "4" (uuid "8f3fec32-6336-4a75-80d2-294516aa611e"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 83.8200 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "731ce731-46c8-4a84-889c-f173f1862cf8")
+		(property "Reference" "C22"
+			(at 85.0900 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 85.0900 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7214c797-420e-4923-9eb9-ea6f4636cf50"))
+		(pin "2" (uuid "8f00f098-542a-47c6-b6fa-69e139c8e77a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 111.7600 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b3e05dd5-185a-4ab5-afc6-355cf4d84f10")
+		(property "Reference" "D3"
+			(at 107.9500 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 107.9500 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "daea21dc-6852-42be-b475-fd2bbedc8a32"))
+		(pin "2" (uuid "7ef809f8-76b7-4e69-94cd-05880fadc7d4"))
+		(pin "3" (uuid "452e4c20-1612-4210-9bcb-c7ba4390342f"))
+		(pin "4" (uuid "26f0ba23-b9ea-483a-a477-a3309072d58f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 124.4600 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e49cbf52-8e26-475c-aa8a-d77df084bff5")
+		(property "Reference" "C23"
+			(at 125.7300 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 125.7300 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "85f7bae3-aef2-4e06-86a2-690ebffd94e2"))
+		(pin "2" (uuid "2ffaeaa5-59f8-494d-8b77-1e0967592489"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 152.4000 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "723eea9f-b27d-49b7-b225-d720ce773e8a")
+		(property "Reference" "D4"
+			(at 148.5900 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 148.5900 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "2536d469-23b7-4d74-b77a-976038bfe7b7"))
+		(pin "2" (uuid "6f83f70e-99ec-42fd-a800-bfb641481db4"))
+		(pin "3" (uuid "1fafcbd3-c62b-4d76-ba9c-ede5585d925f"))
+		(pin "4" (uuid "4d0c61c6-47f0-4c0d-ac58-d8a87410340a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 165.1000 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4519eab2-f19a-4c1d-83ab-112613beb05b")
+		(property "Reference" "C24"
+			(at 166.3700 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 166.3700 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c97db25c-c4db-4e8e-a246-ab1b2d0177bf"))
+		(pin "2" (uuid "455e2eaa-3178-4d98-897d-21568e4c8034"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 193.0400 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "207d0615-92d2-4d68-b69e-21cabf4aacfc")
+		(property "Reference" "D5"
+			(at 189.2300 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 189.2300 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3831899e-47b1-44e2-9ca1-6f93ba744235"))
+		(pin "2" (uuid "4e0c2fe3-c8f9-439a-967f-131024059849"))
+		(pin "3" (uuid "45cd4c08-3196-4ba2-9bca-a30e4fc87f80"))
+		(pin "4" (uuid "8629a51e-6ca4-4d57-a207-a46ea5890282"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 205.7400 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8220308c-7419-40a7-aa56-911936435096")
+		(property "Reference" "C25"
+			(at 207.0100 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 207.0100 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "0557e4dd-7262-4060-a5ee-a75b3a72418f"))
+		(pin "2" (uuid "03c41459-6d7a-4a74-84ed-9250b62da3bd"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 233.6800 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "779e98a0-98bc-4a8e-995a-3236673e4b3a")
+		(property "Reference" "D6"
+			(at 229.8700 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 229.8700 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "06c70c63-4b98-4ae1-a1f2-239eb0f6de5e"))
+		(pin "2" (uuid "f3b5f18f-546d-4563-9edb-4d8ec7014b4b"))
+		(pin "3" (uuid "b32666b5-8c25-469e-94be-4af3ab7ea366"))
+		(pin "4" (uuid "06acf92a-99cd-4ff5-afd8-536a54b05f7d"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 246.3800 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6eed509e-e0f9-45d9-80dd-1e0cb5119e0a")
+		(property "Reference" "C26"
+			(at 247.6500 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 247.6500 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "04ea1ce2-6263-47e6-afb4-f9a142896f44"))
+		(pin "2" (uuid "a0b7ccdd-1f2a-432c-8bc9-edb2bd1d8652"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 274.3200 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e499791c-0753-4440-bbfd-86ec3a867656")
+		(property "Reference" "D7"
+			(at 270.5100 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 270.5100 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "60fed035-eeab-4638-9532-1e08fd82800e"))
+		(pin "2" (uuid "6b5379bb-788c-4669-a457-34097c279de8"))
+		(pin "3" (uuid "45d6d7fc-a60a-4ab8-8c12-8ad91485b7b6"))
+		(pin "4" (uuid "5033a0f3-ed9b-4250-99cc-4ccd8223b467"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 287.0200 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "923e4b4d-8108-4ac6-b5e1-d46491e5f379")
+		(property "Reference" "C27"
+			(at 288.2900 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 288.2900 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "9708a734-2ce5-4965-8384-0c09083cbbbe"))
+		(pin "2" (uuid "507f5727-8c5d-4130-9529-bca1c7dff028"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 314.9600 193.0400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "214b8f9e-3ca9-40a0-bf0a-985fbc77056a")
+		(property "Reference" "D8"
+			(at 311.1500 186.6900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 311.1500 199.3900 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a9d3932e-446c-4c4b-9819-759795c90f7d"))
+		(pin "2" (uuid "147c67df-90ef-46e5-bf2f-e492d6403ec3"))
+		(pin "3" (uuid "1d563089-7b32-4aa9-8873-e7ca55204a95"))
+		(pin "4" (uuid "f8eb04ee-ddb8-45c3-8e32-e80b3f64c5ae"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 327.6600 186.6900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "74f41211-d7e8-47ea-a5fa-06d96c9ce7e8")
+		(property "Reference" "C28"
+			(at 328.9300 184.1500 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 328.9300 189.2300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "01a56cfd-95e2-4e19-9849-9eb66521a8e1"))
+		(pin "2" (uuid "d5a3e302-9474-4e87-be1e-218d09dc2b98"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 30.4800 205.7400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce09a37f-0b6e-4f50-87fe-45b26a1e7b3e")
+		(property "Reference" "#PWR530"
+			(at 34.2900 203.2000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 27.9400 201.9300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 30.4800 205.7400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 205.7400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "195913c2-cd7b-46b3-88d1-e09d2ee9b800"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR530")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 30.4800 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60b60a52-f464-4774-bb52-0fdd408095ed")
+		(property "Reference" "D9"
+			(at 26.6700 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 26.6700 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "807bb54a-58f7-471a-b30e-d12ecfc9fa26"))
+		(pin "2" (uuid "95099698-684d-4f6f-9200-b0554ca449fe"))
+		(pin "3" (uuid "29b43b40-f0aa-4051-acce-1a2ff9aaa8c6"))
+		(pin "4" (uuid "3d82e07c-bc37-4b9c-955e-170a5988b6f5"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 43.1800 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "58a8ccf8-b0f1-4119-b012-b1f70260c57f")
+		(property "Reference" "C29"
+			(at 44.4500 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 44.4500 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d6b5c05a-0ff1-409a-800c-6266f5f71567"))
+		(pin "2" (uuid "09dab43b-f973-4a2d-b790-935e9a2785c4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 71.1200 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f0ea35de-f002-4c84-befc-81ac07cb7169")
+		(property "Reference" "D10"
+			(at 67.3100 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 67.3100 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c0a558c8-08b8-4ee5-a9a3-981feee1521d"))
+		(pin "2" (uuid "408177a8-3608-40d7-9823-7b4fbea27137"))
+		(pin "3" (uuid "67df98c0-5855-4b15-977e-94ee7bf2403c"))
+		(pin "4" (uuid "c902752c-2dcb-415c-8b70-95066c2f5a06"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 83.8200 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a68de98e-9b3c-461b-a8ca-b70bb35b2407")
+		(property "Reference" "C30"
+			(at 85.0900 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 85.0900 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "12bcee40-636c-41d1-b060-b3a04202b8e1"))
+		(pin "2" (uuid "c4f92392-281e-4a8a-a122-913262f1e2c4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 111.7600 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a11af509-7a06-40a4-9e20-91f00b22b08b")
+		(property "Reference" "D11"
+			(at 107.9500 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 107.9500 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "20848650-d93d-452a-8cf0-b886226a51f5"))
+		(pin "2" (uuid "735b6284-08c6-424a-824e-8def326d5c8f"))
+		(pin "3" (uuid "98538511-c118-413b-8c74-fccdfe26117c"))
+		(pin "4" (uuid "54df5071-4074-4558-bd7a-7d695ce86148"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 124.4600 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ffdc9051-a3bc-4c18-a22c-d62a751a4831")
+		(property "Reference" "C31"
+			(at 125.7300 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 125.7300 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "2c170560-35d8-4632-9e8f-2f378b01d7d5"))
+		(pin "2" (uuid "a4c9863c-3ec8-4125-ad5a-172623417efa"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 152.4000 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6c57f8e2-1217-422c-a0ce-d28c318be8d1")
+		(property "Reference" "D12"
+			(at 148.5900 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 148.5900 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "60498a61-0666-485e-b571-aa8e8f6dd570"))
+		(pin "2" (uuid "91bf7492-944e-4a46-ab7d-a6175fb55381"))
+		(pin "3" (uuid "05d680c8-10b4-4bbd-9346-b6648d1ce24c"))
+		(pin "4" (uuid "b670d52e-ba35-448a-9e53-64ba47e1e884"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 165.1000 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "406dfb71-37b7-41d7-b647-b8d134a4d261")
+		(property "Reference" "C32"
+			(at 166.3700 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 166.3700 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f2bdac84-2262-45d3-9274-072a66ead7b8"))
+		(pin "2" (uuid "2349abc8-1d2f-4da5-ae58-ca6cdf809334"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 193.0400 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c99e7bb6-1ded-4b6b-99da-bae85d01a401")
+		(property "Reference" "D13"
+			(at 189.2300 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 189.2300 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1b4d0f10-aa7c-4d84-adeb-8b5e04755dd2"))
+		(pin "2" (uuid "65be04bd-8d3c-4f4f-83f8-76c8d0a9cf22"))
+		(pin "3" (uuid "44744dc3-24c8-418d-8eff-91b6d9a45536"))
+		(pin "4" (uuid "01c7cfd0-7026-4997-9246-b7e421b373a3"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 205.7400 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1d5f89c6-ad9d-4053-b196-549c9073b0f3")
+		(property "Reference" "C33"
+			(at 207.0100 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 207.0100 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "749ee59b-c793-4091-9c41-1f182d884bb7"))
+		(pin "2" (uuid "ccedda14-5d3d-42fc-91aa-e3703e5d3cd2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 233.6800 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dcc2a37e-3004-40c2-924a-fef8b7528b35")
+		(property "Reference" "D14"
+			(at 229.8700 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 229.8700 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "79e994fa-61f2-4896-ba17-8bc93ff602c7"))
+		(pin "2" (uuid "8a1ba6d2-63c5-471a-b58e-3c9f85dd1591"))
+		(pin "3" (uuid "ef372aaf-80f9-42f5-8d90-e1f9d9c7dd75"))
+		(pin "4" (uuid "194217b0-5aed-4656-b058-291cfea59c96"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 246.3800 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "70c8ab7b-54f2-4226-a5cc-9593a27a5ae8")
+		(property "Reference" "C34"
+			(at 247.6500 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 247.6500 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "28cad3e0-bad0-4dff-bf99-ca700eced7a8"))
+		(pin "2" (uuid "55542895-4a1b-4976-a4a2-a67b4d256c3d"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 274.3200 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "13c46dc9-8d7f-4636-b7ef-a270ed1f8f1f")
+		(property "Reference" "D15"
+			(at 270.5100 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 270.5100 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "01ff520b-1d23-4333-ae00-de3e32e6c049"))
+		(pin "2" (uuid "728628ac-24e3-40c4-a795-6e771116d363"))
+		(pin "3" (uuid "79000048-368e-42c4-a6f7-9f663be83db4"))
+		(pin "4" (uuid "d5602d27-a586-4a62-8bf8-cd2d1c4ff707"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 287.0200 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ba208509-7912-4013-8237-4bda8d796fdf")
+		(property "Reference" "C35"
+			(at 288.2900 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 288.2900 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4a82804f-fd70-4599-b67e-e95aaf8f7158"))
+		(pin "2" (uuid "08b73a84-e322-492f-8262-b3d97c200a60"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 314.9600 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6188e981-f431-4fb4-b6b7-8afe3fd315e4")
+		(property "Reference" "D16"
+			(at 311.1500 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "WS2812B"
+			(at 311.1500 240.0300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2843785"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-5050RGBC-2812B"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c241895d-0e68-48c0-b53d-46ce1a4896f3"))
+		(pin "2" (uuid "9b5e428c-dba9-43cd-b248-2efcebd4111a"))
+		(pin "3" (uuid "0b7b171f-d898-4ae1-a15f-c47cb09af746"))
+		(pin "4" (uuid "0e35e86d-530f-43d4-92e2-a4e9fdd50c0c"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "D16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 327.6600 227.3300 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "53edccb4-cc40-42fd-9a57-fea57ad6ef08")
+		(property "Reference" "C36"
+			(at 328.9300 224.7900 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 328.9300 229.8700 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "12fc0e38-6f54-4e83-9684-dfbdd403c285"))
+		(pin "2" (uuid "090a63a0-411c-458d-9a5c-3b02a3e3fc38"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "C36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 30.4800 246.3800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "833c000d-7e7a-4cf9-a11d-748824647006")
+		(property "Reference" "#PWR531"
+			(at 34.2900 243.8400 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 27.9400 242.5700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 30.4800 246.3800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 30.4800 246.3800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "dfdd7475-1254-4c34-a19e-28afe2b555be"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
+					(reference "#PWR531")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire (pts (xy 17.7800 193.0400) (xy 22.8600 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "8f98c542-014a-4dd6-8cfc-a8e7e7b37414")
+	)
+	(wire (pts (xy 17.7800 233.6800) (xy 22.8600 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "965cf01b-f7c5-4973-a207-8d8187bfc966")
+	)
+	(wire (pts (xy 30.4800 180.3400) (xy 30.4800 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "083cb733-375f-4698-b393-6be4b705e626")
+	)
+	(wire (pts (xy 30.4800 180.3400) (xy 43.1800 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "e2110a8c-bd8b-4007-8441-cae3d0d0944a")
+	)
+	(wire (pts (xy 30.4800 200.6600) (xy 30.4800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "76cc8f91-6c33-4367-847c-5d79c5053360")
+	)
+	(wire (pts (xy 30.4800 205.7400) (xy 43.1800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "3e6a1afb-e66a-4125-8a5c-92cfe5ecef53")
+	)
+	(wire (pts (xy 30.4800 220.9800) (xy 30.4800 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "7a48c181-2d07-4525-a97f-2f12f11a8b9f")
+	)
+	(wire (pts (xy 30.4800 220.9800) (xy 43.1800 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "f28172af-b6cf-47ff-93e3-9a9c2f3ce0da")
+	)
+	(wire (pts (xy 30.4800 241.3000) (xy 30.4800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "21e39bd3-5d62-491c-b424-04fa8a7569de")
+	)
+	(wire (pts (xy 30.4800 246.3800) (xy 43.1800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "d5f67fc9-959a-45e7-8b95-0543dd503649")
+	)
+	(wire (pts (xy 33.0200 35.5600) (xy 38.1000 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "33497618-9a99-4041-aacf-5480cf1ed1b7")
+	)
+	(wire (pts (xy 33.0200 60.9600) (xy 38.1000 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "8371fdf1-8d6d-43f4-9245-6e2c1fb4f5ca")
+	)
+	(wire (pts (xy 33.0200 86.3600) (xy 38.1000 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "a242df8b-aef1-4d77-aa09-16b53be4fa53")
+	)
+	(wire (pts (xy 33.0200 111.7600) (xy 38.1000 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "7b3cda4c-bd68-44a6-9963-2eb36977b4c7")
+	)
+	(wire (pts (xy 38.1000 193.0400) (xy 63.5000 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "c4079255-46c1-4830-9099-0f29d3af4816")
+	)
+	(wire (pts (xy 38.1000 233.6800) (xy 63.5000 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "7c00781b-6136-472b-b952-7ecab567e03e")
+	)
+	(wire (pts (xy 43.1800 180.3400) (xy 43.1800 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "24850eb4-716d-4400-9744-68484b546e29")
+	)
+	(wire (pts (xy 43.1800 180.3400) (xy 71.1200 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "e7b15967-6ee7-4078-b7fb-8584a96883d5")
+	)
+	(wire (pts (xy 43.1800 190.5000) (xy 43.1800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "9960cf90-77b3-4cdd-8886-95f9c7c4867d")
+	)
+	(wire (pts (xy 43.1800 205.7400) (xy 71.1200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "33c797f6-6ebd-47a1-acc1-5b477f294efa")
+	)
+	(wire (pts (xy 43.1800 220.9800) (xy 43.1800 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "383707d5-c399-403e-b75e-c5352aa098e0")
+	)
+	(wire (pts (xy 43.1800 220.9800) (xy 71.1200 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "5ef185ed-88b0-4a19-8806-6e94af1d0745")
+	)
+	(wire (pts (xy 43.1800 231.1400) (xy 43.1800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "20d423c1-cf4e-4eda-9afe-c4cef0cfd584")
+	)
+	(wire (pts (xy 43.1800 246.3800) (xy 71.1200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "7801e6a8-19e5-4511-80db-e04e27fcdf8a")
+	)
+	(wire (pts (xy 45.7200 156.2100) (xy 45.7200 161.2900))
+		(stroke (width 0) (type default))
+		(uuid "5bb56efe-1817-44e3-a056-467e01f2aa73")
+	)
+	(wire (pts (xy 45.7200 168.9100) (xy 45.7200 173.9900))
+		(stroke (width 0) (type default))
+		(uuid "ef0b05c2-01b6-451d-8983-a20d9b8664ac")
+	)
+	(wire (pts (xy 48.2600 35.5600) (xy 53.3400 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "6d7f2ab7-2461-4a40-bd45-97b98d7064fe")
+	)
+	(wire (pts (xy 48.2600 60.9600) (xy 53.3400 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "8998fb64-32ff-4cb0-a171-b46f5ab07a92")
+	)
+	(wire (pts (xy 48.2600 86.3600) (xy 53.3400 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "7a5a0b59-d4b6-4efc-b82a-4d0d45ce5928")
+	)
+	(wire (pts (xy 48.2600 111.7600) (xy 53.3400 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "1ce73e4e-847a-4fac-b68a-198b7ddb87e0")
+	)
+	(wire (pts (xy 66.0400 152.4000) (xy 71.1200 152.4000))
+		(stroke (width 0) (type default))
+		(uuid "a44988e1-31aa-432a-b1d3-425086e39259")
+	)
+	(wire (pts (xy 71.1200 180.3400) (xy 71.1200 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "a4682827-3e06-4962-9add-4dc0765500f6")
+	)
+	(wire (pts (xy 71.1200 180.3400) (xy 83.8200 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "4cdfac84-4404-4411-b2ca-00da6a169449")
+	)
+	(wire (pts (xy 71.1200 200.6600) (xy 71.1200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "7c10c45a-3b0b-4a39-83d2-b83f190385cd")
+	)
+	(wire (pts (xy 71.1200 205.7400) (xy 83.8200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "c8ca6ff5-f526-4ce4-8bdb-f8f1cad62997")
+	)
+	(wire (pts (xy 71.1200 220.9800) (xy 71.1200 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "7dfe27cd-94f1-4e30-a5d6-ff2a19667a27")
+	)
+	(wire (pts (xy 71.1200 220.9800) (xy 83.8200 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "2d6a48f8-1b7a-483b-a560-e7ac5cf53699")
+	)
+	(wire (pts (xy 71.1200 241.3000) (xy 71.1200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "229e131a-c33a-48cb-921c-1566085f96bf")
+	)
+	(wire (pts (xy 71.1200 246.3800) (xy 83.8200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "0b56a625-0949-433b-a8cf-8513b759d33c")
+	)
+	(wire (pts (xy 78.7400 193.0400) (xy 104.1400 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "1e3acf4b-ae4a-405b-bb86-4fb31d9e327f")
+	)
+	(wire (pts (xy 78.7400 233.6800) (xy 104.1400 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "70a8f35a-5c1a-46ec-a75c-1efd81d00a61")
+	)
+	(wire (pts (xy 81.2800 137.1600) (xy 81.2800 142.2400))
+		(stroke (width 0) (type default))
+		(uuid "e82c452a-abe3-4b43-be26-51346f5254f5")
+	)
+	(wire (pts (xy 81.2800 162.5600) (xy 81.2800 167.6400))
+		(stroke (width 0) (type default))
+		(uuid "1b326ec2-6cd7-41fd-81c0-d1756b788366")
+	)
+	(wire (pts (xy 83.8200 180.3400) (xy 83.8200 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "960ae765-ae16-4ca7-b73e-2767753edeeb")
+	)
+	(wire (pts (xy 83.8200 180.3400) (xy 111.7600 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "3e35f79c-4e26-4931-b039-b150c0ebe4f4")
+	)
+	(wire (pts (xy 83.8200 190.5000) (xy 83.8200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "4d5a56ee-4684-4b38-b571-7f12ada047ba")
+	)
+	(wire (pts (xy 83.8200 205.7400) (xy 111.7600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "ff548a09-0b88-4cc2-bcef-3e132bdeb32c")
+	)
+	(wire (pts (xy 83.8200 220.9800) (xy 83.8200 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "80ee78c5-ae13-4b54-b6a0-d1d12ff06276")
+	)
+	(wire (pts (xy 83.8200 220.9800) (xy 111.7600 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "cf432472-de99-4e4b-8843-fb1999eb3874")
+	)
+	(wire (pts (xy 83.8200 231.1400) (xy 83.8200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "0d5f36d6-49f6-46e9-bb60-66af7be790c2")
+	)
+	(wire (pts (xy 83.8200 246.3800) (xy 111.7600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "87fa26ee-429e-4b7b-80d2-ef66a94dc75f")
+	)
+	(wire (pts (xy 86.3600 137.1600) (xy 86.3600 142.2400))
+		(stroke (width 0) (type default))
+		(uuid "c7ec3a32-6cb3-4ea5-9ed7-6310904be4fb")
+	)
+	(wire (pts (xy 99.0600 152.4000) (xy 118.1100 152.4000))
+		(stroke (width 0) (type default))
+		(uuid "d26512b6-fbe5-4ddf-ad6c-f67ac8eca011")
+	)
+	(wire (pts (xy 109.2200 35.5600) (xy 114.3000 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "61d7577d-3074-4549-b7b4-307442596bdf")
+	)
+	(wire (pts (xy 109.2200 60.9600) (xy 114.3000 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "2f4baa67-32f5-4253-b2d5-60c56ab7e5d8")
+	)
+	(wire (pts (xy 109.2200 86.3600) (xy 114.3000 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "0a0ac4f0-2dd4-4153-9aef-07fda7642f52")
+	)
+	(wire (pts (xy 109.2200 111.7600) (xy 114.3000 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "cd3db72e-7d4a-4ca4-9714-efb2b90844f9")
+	)
+	(wire (pts (xy 111.7600 180.3400) (xy 111.7600 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "3ab8f294-5d83-4bdf-9267-0a0d5e322ee4")
+	)
+	(wire (pts (xy 111.7600 180.3400) (xy 124.4600 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "12aa9bdd-3c77-4d09-9836-02bbbef5d10d")
+	)
+	(wire (pts (xy 111.7600 200.6600) (xy 111.7600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "26af6eef-31d3-45c6-b1bd-7fcf789a802e")
+	)
+	(wire (pts (xy 111.7600 205.7400) (xy 124.4600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "2616b9fb-1a20-41ee-8abb-29fbb0745114")
+	)
+	(wire (pts (xy 111.7600 220.9800) (xy 111.7600 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "ba79f2a6-d7ea-4e60-ad0c-5dbbb1444eea")
+	)
+	(wire (pts (xy 111.7600 220.9800) (xy 124.4600 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "f21dddb9-857b-48d3-a034-54b07a02346b")
+	)
+	(wire (pts (xy 111.7600 241.3000) (xy 111.7600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "c8509ebb-eaf1-4ec0-8c4b-dfc0d6a323db")
+	)
+	(wire (pts (xy 111.7600 246.3800) (xy 124.4600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "7803076b-9779-447c-95d5-9cca3d9cc1cd")
+	)
+	(wire (pts (xy 119.3800 193.0400) (xy 144.7800 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "b84cb9f8-92d5-449d-8077-f94e60c627b4")
+	)
+	(wire (pts (xy 119.3800 233.6800) (xy 144.7800 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "22ac6729-2116-4ce5-ac62-d95b235114a2")
+	)
+	(wire (pts (xy 124.4600 35.5600) (xy 129.5400 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "b464f515-9c28-49a4-a91b-702f7f838b34")
+	)
+	(wire (pts (xy 124.4600 60.9600) (xy 129.5400 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "aa4f62c2-64df-4a3c-9e5f-bc4dbcbb2276")
+	)
+	(wire (pts (xy 124.4600 86.3600) (xy 129.5400 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "d8e326bf-1525-4657-82c0-6aa9b3b747e6")
+	)
+	(wire (pts (xy 124.4600 111.7600) (xy 129.5400 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "0a696d61-b54d-4ab2-b169-398bc5ac7311")
+	)
+	(wire (pts (xy 124.4600 180.3400) (xy 124.4600 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "464dcef9-336e-4c51-bfa4-ef7af5e3a0f9")
+	)
+	(wire (pts (xy 124.4600 180.3400) (xy 152.4000 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "db4cf156-5281-4b8a-9968-c1bf8377f3ed")
+	)
+	(wire (pts (xy 124.4600 190.5000) (xy 124.4600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "044d02c0-22de-49ff-8968-aad4ec42d1fc")
+	)
+	(wire (pts (xy 124.4600 205.7400) (xy 152.4000 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "5236f95c-209c-4ed6-bc9e-cdbf0815fa5f")
+	)
+	(wire (pts (xy 124.4600 220.9800) (xy 124.4600 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "e176fb27-8a52-407b-b05d-372dab1e97b8")
+	)
+	(wire (pts (xy 124.4600 220.9800) (xy 152.4000 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "92b3844c-22a0-43d6-ac3f-031291083ff2")
+	)
+	(wire (pts (xy 124.4600 231.1400) (xy 124.4600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "2e0a380c-4169-4707-84fe-606e3a078754")
+	)
+	(wire (pts (xy 124.4600 246.3800) (xy 152.4000 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "0a24ab59-c305-49ff-91b2-c9e521921fc4")
+	)
+	(wire (pts (xy 125.7300 152.4000) (xy 130.8100 152.4000))
+		(stroke (width 0) (type default))
+		(uuid "734990d0-86a5-4a0f-92d3-5726146adad2")
+	)
+	(wire (pts (xy 152.4000 180.3400) (xy 152.4000 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "aa78dce0-cb47-478c-ad46-b504f1bf2ef1")
+	)
+	(wire (pts (xy 152.4000 180.3400) (xy 165.1000 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "dbe24e09-94a7-4c04-9209-210df0a3a229")
+	)
+	(wire (pts (xy 152.4000 200.6600) (xy 152.4000 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "d118b4ee-da0a-4821-bb99-64ceac5ec06a")
+	)
+	(wire (pts (xy 152.4000 205.7400) (xy 165.1000 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "3a7a96c0-b730-48ef-8ccb-3964decf5972")
+	)
+	(wire (pts (xy 152.4000 220.9800) (xy 152.4000 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "054d5dfe-f2b0-4903-b3dd-b7f6a5681fd5")
+	)
+	(wire (pts (xy 152.4000 220.9800) (xy 165.1000 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "04822934-e1d1-4801-ab19-8849564d1dba")
+	)
+	(wire (pts (xy 152.4000 241.3000) (xy 152.4000 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "5e0dcebf-e299-49ad-a63f-a0d0c1ef6cfd")
+	)
+	(wire (pts (xy 152.4000 246.3800) (xy 165.1000 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "4ecfe837-fecc-47ff-8583-8d8231a82002")
+	)
+	(wire (pts (xy 157.4800 146.0500) (xy 157.4800 151.1300))
+		(stroke (width 0) (type default))
+		(uuid "bcc94e06-82cd-4b8a-a9a0-a2da3c14b205")
+	)
+	(wire (pts (xy 157.4800 158.7500) (xy 157.4800 163.8300))
+		(stroke (width 0) (type default))
+		(uuid "a49e1cec-f596-4c58-99d1-ac1e15907ac0")
+	)
+	(wire (pts (xy 160.0200 193.0400) (xy 185.4200 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "d74e0f84-2438-41e0-a93a-d32f2e726642")
+	)
+	(wire (pts (xy 160.0200 233.6800) (xy 185.4200 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "2b5165a7-072c-4a60-af0e-70ca31f9415a")
+	)
+	(wire (pts (xy 165.1000 180.3400) (xy 165.1000 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "1c0fb628-9113-4931-997b-eed39c46e9fc")
+	)
+	(wire (pts (xy 165.1000 180.3400) (xy 193.0400 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "bdf14556-cad3-436d-81c7-58e687f194e2")
+	)
+	(wire (pts (xy 165.1000 190.5000) (xy 165.1000 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "8ee4f502-9b2b-4690-8fc0-ffd7733cace8")
+	)
+	(wire (pts (xy 165.1000 205.7400) (xy 193.0400 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "030b3533-722d-4c71-83d3-a3f318c06c3e")
+	)
+	(wire (pts (xy 165.1000 220.9800) (xy 165.1000 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "3a0306f4-8337-4353-a802-e2a4ea4e7787")
+	)
+	(wire (pts (xy 165.1000 220.9800) (xy 193.0400 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "1f1b47c4-c762-4afb-9d80-89fd722ac620")
+	)
+	(wire (pts (xy 165.1000 231.1400) (xy 165.1000 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "867e7cde-a65a-48af-a5c4-ef6cb022bf5f")
+	)
+	(wire (pts (xy 165.1000 246.3800) (xy 193.0400 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "288f6f53-78bb-4764-b854-a14ccf9dbc3d")
+	)
+	(wire (pts (xy 185.4200 35.5600) (xy 190.5000 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "3537101d-bffa-4512-a0d3-2a3dffbfaa51")
+	)
+	(wire (pts (xy 185.4200 60.9600) (xy 190.5000 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "c47e2366-6f18-47f3-9793-ca9dfa001777")
+	)
+	(wire (pts (xy 185.4200 86.3600) (xy 190.5000 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "a7f348c8-d577-4cbc-818f-e4864a47cb40")
+	)
+	(wire (pts (xy 185.4200 111.7600) (xy 190.5000 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "67626ea2-7ab6-4af5-828c-5cb9f491b6fa")
+	)
+	(wire (pts (xy 193.0400 146.0500) (xy 193.0400 151.1300))
+		(stroke (width 0) (type default))
+		(uuid "fbcca946-e532-45ec-8cbe-d8f3ed54fa82")
+	)
+	(wire (pts (xy 193.0400 158.7500) (xy 193.0400 163.8300))
+		(stroke (width 0) (type default))
+		(uuid "1c882f7a-d7bc-4867-ad5f-f8b5c8184555")
+	)
+	(wire (pts (xy 193.0400 180.3400) (xy 193.0400 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "a59f8936-1cbe-409f-b35a-fe8d3b51f731")
+	)
+	(wire (pts (xy 193.0400 180.3400) (xy 205.7400 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "5aa12093-e138-4cfa-a483-3cc73c150813")
+	)
+	(wire (pts (xy 193.0400 200.6600) (xy 193.0400 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "22752727-967f-4be8-8fd0-c55831172607")
+	)
+	(wire (pts (xy 193.0400 205.7400) (xy 205.7400 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "771d9d25-dc2d-4e4b-8a86-8819698f6a6d")
+	)
+	(wire (pts (xy 193.0400 220.9800) (xy 193.0400 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "fba0d8af-b7bc-4d2b-98e9-d4d7a88bde91")
+	)
+	(wire (pts (xy 193.0400 220.9800) (xy 205.7400 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "6f37f6d9-9096-4af8-b976-f48f6e16dd64")
+	)
+	(wire (pts (xy 193.0400 241.3000) (xy 193.0400 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "a620fa9e-24b4-45eb-b4fa-89cc4e835aa2")
+	)
+	(wire (pts (xy 193.0400 246.3800) (xy 205.7400 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "961bcaa2-38a6-4c66-b802-3e0d52a5d406")
+	)
+	(wire (pts (xy 200.6600 35.5600) (xy 205.7400 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "a11303b5-54c2-4e38-afcb-62348a4a194a")
+	)
+	(wire (pts (xy 200.6600 60.9600) (xy 205.7400 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "80d34a66-bef2-4fbd-a5ee-9a5439977303")
+	)
+	(wire (pts (xy 200.6600 86.3600) (xy 205.7400 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "0c7c7b23-aca6-4505-8f87-8906e1a4bf2a")
+	)
+	(wire (pts (xy 200.6600 111.7600) (xy 205.7400 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "4588efa0-a15d-4359-99e2-cfc91da6749d")
+	)
+	(wire (pts (xy 200.6600 193.0400) (xy 226.0600 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "e576ced0-7e58-4294-8a72-c5acdcab4585")
+	)
+	(wire (pts (xy 200.6600 233.6800) (xy 226.0600 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "33ce2333-655a-41d6-978b-4a0d318a5040")
+	)
+	(wire (pts (xy 205.7400 180.3400) (xy 205.7400 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "47492edf-4612-459d-b2b2-d660a67d87e2")
+	)
+	(wire (pts (xy 205.7400 180.3400) (xy 233.6800 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "a820a700-a9d1-4f33-a606-605afe099b67")
+	)
+	(wire (pts (xy 205.7400 190.5000) (xy 205.7400 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "20e48642-656f-4335-9128-93843a9cfc2a")
+	)
+	(wire (pts (xy 205.7400 205.7400) (xy 233.6800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "4d384b3c-0432-4e27-8509-88641c75bfb5")
+	)
+	(wire (pts (xy 205.7400 220.9800) (xy 205.7400 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "c403990f-c802-462e-9074-b8fc68550596")
+	)
+	(wire (pts (xy 205.7400 220.9800) (xy 233.6800 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "06e466b1-de8f-44e6-88c3-29bc5e8d36b7")
+	)
+	(wire (pts (xy 205.7400 231.1400) (xy 205.7400 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "15e7821a-338e-460e-965b-cdeaad9e3b98")
+	)
+	(wire (pts (xy 205.7400 246.3800) (xy 233.6800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "58c0d628-fdbd-4ebc-a891-c802a6332d9f")
+	)
+	(wire (pts (xy 233.6800 180.3400) (xy 233.6800 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "b60177a5-a282-40fb-b9e1-c47c79f5c979")
+	)
+	(wire (pts (xy 233.6800 180.3400) (xy 246.3800 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "9567162a-f769-47ab-ab1e-1d212f826c0b")
+	)
+	(wire (pts (xy 233.6800 200.6600) (xy 233.6800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "9a66dfae-6fa6-4df6-80c6-a2a060694c8b")
+	)
+	(wire (pts (xy 233.6800 205.7400) (xy 246.3800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "597783d0-3b63-4767-9a95-cdf2f3496b37")
+	)
+	(wire (pts (xy 233.6800 220.9800) (xy 233.6800 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "e606a35e-88ff-469f-8561-7d49a388817c")
+	)
+	(wire (pts (xy 233.6800 220.9800) (xy 246.3800 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "42e6d3c5-d67f-4d71-9948-8a7093aecc69")
+	)
+	(wire (pts (xy 233.6800 241.3000) (xy 233.6800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "e947fb47-0484-405d-a0ed-451e032e225b")
+	)
+	(wire (pts (xy 233.6800 246.3800) (xy 246.3800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "778dc12d-b9d4-4f65-9ba2-ec496a08b219")
+	)
+	(wire (pts (xy 241.3000 193.0400) (xy 266.7000 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "9c127d5b-4247-4095-ac0e-bbe10bad46b6")
+	)
+	(wire (pts (xy 241.3000 233.6800) (xy 266.7000 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "533e0488-83a7-4608-b0c5-84c5d44e62c8")
+	)
+	(wire (pts (xy 246.3800 180.3400) (xy 246.3800 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "a391c4d6-1982-477e-ab59-d03a28b4b982")
+	)
+	(wire (pts (xy 246.3800 180.3400) (xy 274.3200 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "33afe6c1-e70c-4122-9ecc-58201293a4c8")
+	)
+	(wire (pts (xy 246.3800 190.5000) (xy 246.3800 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "6c329843-7aec-442c-b3d5-f0e562ca87f2")
+	)
+	(wire (pts (xy 246.3800 205.7400) (xy 274.3200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "c3255b9e-663b-4217-a8f8-c4facab670e4")
+	)
+	(wire (pts (xy 246.3800 220.9800) (xy 246.3800 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "8bb85806-c217-40df-9b01-02cee70ee770")
+	)
+	(wire (pts (xy 246.3800 220.9800) (xy 274.3200 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "b9b70299-2239-4c25-b923-e06dd9482e47")
+	)
+	(wire (pts (xy 246.3800 231.1400) (xy 246.3800 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "e1e80edc-2365-4967-9648-7ae1ece21415")
+	)
+	(wire (pts (xy 246.3800 246.3800) (xy 274.3200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "e834b7bd-bbe3-45b3-b9d2-368d79c2a14f")
+	)
+	(wire (pts (xy 261.6200 35.5600) (xy 266.7000 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "dfe70109-537a-490b-aaff-3d647b6b59e0")
+	)
+	(wire (pts (xy 261.6200 60.9600) (xy 266.7000 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "1bac3539-a49f-4808-a3fc-10ecec48cba4")
+	)
+	(wire (pts (xy 261.6200 86.3600) (xy 266.7000 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "e6537540-f448-49b3-a53f-697825843429")
+	)
+	(wire (pts (xy 261.6200 111.7600) (xy 266.7000 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "04188dbc-7d77-459a-bd0f-510fb3a69512")
+	)
+	(wire (pts (xy 274.3200 180.3400) (xy 274.3200 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "2c7fd02c-a3a9-4b37-bda9-252d5abfecf9")
+	)
+	(wire (pts (xy 274.3200 180.3400) (xy 287.0200 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "9dd69497-f87e-4ba7-be76-40989588a8f6")
+	)
+	(wire (pts (xy 274.3200 200.6600) (xy 274.3200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "8120f919-9886-4511-a1e4-b8e352ed7328")
+	)
+	(wire (pts (xy 274.3200 205.7400) (xy 287.0200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "cf978bce-22df-4f56-9abe-30c948842223")
+	)
+	(wire (pts (xy 274.3200 220.9800) (xy 274.3200 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "9a72ccc5-9cec-4711-81b9-129767352c73")
+	)
+	(wire (pts (xy 274.3200 220.9800) (xy 287.0200 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "151bb073-98e3-4baf-bc56-3975a03a17bb")
+	)
+	(wire (pts (xy 274.3200 241.3000) (xy 274.3200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "01b4e201-6c30-41ef-bec3-0b73b6d7d9b6")
+	)
+	(wire (pts (xy 274.3200 246.3800) (xy 287.0200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "b3c1fa1a-392a-4113-a485-5209b2a43946")
+	)
+	(wire (pts (xy 276.8600 35.5600) (xy 281.9400 35.5600))
+		(stroke (width 0) (type default))
+		(uuid "5c470872-4053-47cb-af1d-b4fc5e410f09")
+	)
+	(wire (pts (xy 276.8600 60.9600) (xy 281.9400 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "5739f655-fe38-47c9-b55e-c4127748c0d9")
+	)
+	(wire (pts (xy 276.8600 86.3600) (xy 281.9400 86.3600))
+		(stroke (width 0) (type default))
+		(uuid "6a591484-f068-40a4-84ae-5efd36f86eb3")
+	)
+	(wire (pts (xy 276.8600 111.7600) (xy 281.9400 111.7600))
+		(stroke (width 0) (type default))
+		(uuid "45d16336-ce28-407a-ab34-ab81ba4b0b28")
+	)
+	(wire (pts (xy 281.9400 193.0400) (xy 307.3400 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "6e986bbb-39fd-4a18-83a1-2cab0bfe0cde")
+	)
+	(wire (pts (xy 281.9400 233.6800) (xy 307.3400 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "9b9179d6-28ac-4055-88c3-afd5e487efbe")
+	)
+	(wire (pts (xy 287.0200 180.3400) (xy 287.0200 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "1fd1c0ef-efb3-4a44-9c8b-3630f1430833")
+	)
+	(wire (pts (xy 287.0200 180.3400) (xy 314.9600 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "a057045c-e5fe-4dbd-bc3c-b1a996f92668")
+	)
+	(wire (pts (xy 287.0200 190.5000) (xy 287.0200 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "4788eb55-f646-412e-85e8-91c01088d0ab")
+	)
+	(wire (pts (xy 287.0200 205.7400) (xy 314.9600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "3fa29d01-467a-46ea-b08f-71acff0dacf8")
+	)
+	(wire (pts (xy 287.0200 220.9800) (xy 287.0200 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "10493096-6a6a-4517-81cb-11f6b8b3ad5e")
+	)
+	(wire (pts (xy 287.0200 220.9800) (xy 314.9600 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "0f46c764-dc54-4204-bc02-e596372122ef")
+	)
+	(wire (pts (xy 287.0200 231.1400) (xy 287.0200 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "3e98b319-75aa-4d85-938a-19afb3b98011")
+	)
+	(wire (pts (xy 287.0200 246.3800) (xy 314.9600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "610e4f4e-e2ca-465c-b2e7-ba041b2d1ff1")
+	)
+	(wire (pts (xy 304.8000 41.9100) (xy 304.8000 46.9900))
+		(stroke (width 0) (type default))
+		(uuid "d5540f47-4856-4e5e-a7b2-fb48870db034")
+	)
+	(wire (pts (xy 304.8000 54.6100) (xy 304.8000 66.0400))
+		(stroke (width 0) (type default))
+		(uuid "e2c4533d-323a-4358-9f80-a03e1c4361c0")
+	)
+	(wire (pts (xy 304.8000 66.0400) (xy 304.8000 77.4700))
+		(stroke (width 0) (type default))
+		(uuid "ec2b232b-ed61-41a1-9622-29cd2bfee37c")
+	)
+	(wire (pts (xy 304.8000 66.0400) (xy 317.5000 66.0400))
+		(stroke (width 0) (type default))
+		(uuid "b654849d-fd9a-4932-bac5-68c8cfbd8961")
+	)
+	(wire (pts (xy 304.8000 85.0900) (xy 304.8000 90.1700))
+		(stroke (width 0) (type default))
+		(uuid "107d4c6b-29bb-43eb-b16b-bfa342b4d699")
+	)
+	(wire (pts (xy 314.9600 180.3400) (xy 314.9600 185.4200))
+		(stroke (width 0) (type default))
+		(uuid "6bed0878-1014-4a66-883c-cbfde5910cdc")
+	)
+	(wire (pts (xy 314.9600 180.3400) (xy 327.6600 180.3400))
+		(stroke (width 0) (type default))
+		(uuid "ca868d85-93dd-49ea-8361-7c7829025ba6")
+	)
+	(wire (pts (xy 314.9600 200.6600) (xy 314.9600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "7e4b2ee2-5fec-4dae-a8ff-9b41316ca835")
+	)
+	(wire (pts (xy 314.9600 205.7400) (xy 327.6600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "565ab1c7-0b1e-407e-9e6f-20c98b99b8cd")
+	)
+	(wire (pts (xy 314.9600 220.9800) (xy 314.9600 226.0600))
+		(stroke (width 0) (type default))
+		(uuid "066a16df-bc8d-420b-bc09-0a9d2749b4a7")
+	)
+	(wire (pts (xy 314.9600 220.9800) (xy 327.6600 220.9800))
+		(stroke (width 0) (type default))
+		(uuid "49013e12-b273-4653-acee-c73a39bf751c")
+	)
+	(wire (pts (xy 314.9600 241.3000) (xy 314.9600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "eeb2fb9a-1e42-40a3-b7b0-440d7469fc2d")
+	)
+	(wire (pts (xy 314.9600 246.3800) (xy 327.6600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "79e1d6f9-ae31-40a8-8dc8-ec70ff5f92eb")
+	)
+	(wire (pts (xy 317.5000 43.1800) (xy 317.5000 66.0400))
+		(stroke (width 0) (type default))
+		(uuid "0dff03af-008a-42c0-92b1-5972b00c3e4f")
+	)
+	(wire (pts (xy 317.5000 43.1800) (xy 347.9800 43.1800))
+		(stroke (width 0) (type default))
+		(uuid "5e58a063-40f7-4c7b-b2e0-f15180cdc882")
+	)
+	(wire (pts (xy 317.5000 66.0400) (xy 334.0100 66.0400))
+		(stroke (width 0) (type default))
+		(uuid "6f0c9311-f597-43f9-b753-ba75824dd704")
+	)
+	(wire (pts (xy 320.0400 109.2200) (xy 345.4400 109.2200))
+		(stroke (width 0) (type default))
+		(uuid "2aae41e5-6f0d-495b-bc92-b1f78de33358")
+	)
+	(wire (pts (xy 322.5800 193.0400) (xy 342.9000 193.0400))
+		(stroke (width 0) (type default))
+		(uuid "dbae1a85-bb4e-4bdd-a171-e7c14ff8bd81")
+	)
+	(wire (pts (xy 327.6600 180.3400) (xy 327.6600 182.8800))
+		(stroke (width 0) (type default))
+		(uuid "ff14e60a-8851-4b92-b093-78fa60d96d82")
+	)
+	(wire (pts (xy 327.6600 190.5000) (xy 327.6600 205.7400))
+		(stroke (width 0) (type default))
+		(uuid "362fbae8-9069-45fe-894d-46410b70c11d")
+	)
+	(wire (pts (xy 327.6600 220.9800) (xy 327.6600 223.5200))
+		(stroke (width 0) (type default))
+		(uuid "129d77e9-fdff-4e6e-8239-4a63b11dafe5")
+	)
+	(wire (pts (xy 327.6600 231.1400) (xy 327.6600 246.3800))
+		(stroke (width 0) (type default))
+		(uuid "9f06130a-627c-4e70-ba5e-817582ffcbdf")
+	)
+	(wire (pts (xy 340.3600 208.2800) (xy 365.7600 208.2800))
+		(stroke (width 0) (type default))
+		(uuid "c63f7e91-ecc5-474b-809e-19998505fd62")
+	)
+	(wire (pts (xy 341.6300 66.0400) (xy 370.8400 66.0400))
+		(stroke (width 0) (type default))
+		(uuid "9cdc302d-44cf-452e-ab5d-fab167bf071b")
+	)
+	(wire (pts (xy 342.9000 40.6400) (xy 347.9800 40.6400))
+		(stroke (width 0) (type default))
+		(uuid "a601f533-0bb9-42e6-984a-cb68fde57fa6")
+	)
+	(wire (pts (xy 342.9000 45.7200) (xy 347.9800 45.7200))
+		(stroke (width 0) (type default))
+		(uuid "751fd817-3aeb-47d7-8265-a47473b18400")
+	)
+	(wire (pts (xy 345.4400 243.8400) (xy 370.8400 243.8400))
+		(stroke (width 0) (type default))
+		(uuid "6537a0ce-c841-491e-9f98-324aefc0bef3")
+	)
+	(wire (pts (xy 370.8400 66.0400) (xy 370.8400 80.0100))
+		(stroke (width 0) (type default))
+		(uuid "d49613cf-3630-44ea-9886-441065f6e2b6")
+	)
+	(wire (pts (xy 370.8400 87.6300) (xy 370.8400 92.7100))
+		(stroke (width 0) (type default))
+		(uuid "cc697d4d-cc9f-487e-9b74-a472be88a753")
+	)
+	(wire (pts (xy 378.4600 138.4300) (xy 378.4600 143.5100))
+		(stroke (width 0) (type default))
+		(uuid "730006f6-332a-4106-be26-f83bf7d86fab")
+	)
+	(wire (pts (xy 378.4600 151.1300) (xy 378.4600 153.6700))
+		(stroke (width 0) (type default))
+		(uuid "dc30403f-c4ab-4b0d-a82c-81751cadce9a")
+	)
+	(wire (pts (xy 378.4600 161.2900) (xy 378.4600 166.3700))
+		(stroke (width 0) (type default))
+		(uuid "308316e2-31c1-4999-a3af-2d932dddaee1")
+	)
+	(wire (pts (xy 378.4600 184.1500) (xy 378.4600 189.2300))
+		(stroke (width 0) (type default))
+		(uuid "a54b85af-a1bd-44eb-a606-dc8807b471e1")
+	)
+	(wire (pts (xy 378.4600 196.8500) (xy 378.4600 199.3900))
+		(stroke (width 0) (type default))
+		(uuid "26e597ac-0dd9-4083-aef0-763b5903ae0e")
+	)
+	(wire (pts (xy 378.4600 207.0100) (xy 378.4600 212.0900))
+		(stroke (width 0) (type default))
+		(uuid "525e80f8-95c0-47e3-860f-3202e6d5f330")
+	)
+	(junction (at 314.9600 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "4b6a7718-ae35-430e-ae3d-1151ee671e1d")
+	)
+	(junction (at 193.0400 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "602c6178-696f-423e-b7f4-21b650415a07")
+	)
+	(junction (at 205.7400 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "7987f393-b823-4087-80e6-9ce4a40235c8")
+	)
+	(junction (at 83.8200 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "1420d2c6-bdf6-466c-8518-5a1b27dc63dd")
+	)
+	(junction (at 314.9600 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "70d100e2-130d-4238-af48-ecb5f250e461")
+	)
+	(junction (at 152.4000 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "3c65dc42-f69d-4874-9188-9c1f8ba52661")
+	)
+	(junction (at 165.1000 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "c162e22b-8add-4180-896d-840b5c1e6e26")
+	)
+	(junction (at 193.0400 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "c4e0258f-a4b9-4b57-9599-44f02e522234")
+	)
+	(junction (at 274.3200 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "28ab01a1-8704-4c69-9334-0ba3a5df231d")
+	)
+	(junction (at 287.0200 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "77cd54da-2ef9-4bb9-bc15-dbc31c2da71e")
+	)
+	(junction (at 314.9600 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "ae6d5a70-f9df-467d-896a-0b4eed0abdae")
+	)
+	(junction (at 111.7600 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "b76cd78d-5b82-49bc-bfd4-82a7a6280dd0")
+	)
+	(junction (at 274.3200 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "7b81a6a8-af7e-4bbf-b5c7-021d4e28549b")
+	)
+	(junction (at 71.1200 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "b09bd928-4cde-4e50-9728-edcd9c2496b0")
+	)
+	(junction (at 233.6800 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "8f1659e8-6f9a-422a-b094-7b4d67f31ab2")
+	)
+	(junction (at 111.7600 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "ad14f9e5-830a-4f30-b991-f5d19b88b84a")
+	)
+	(junction (at 71.1200 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "990b95ce-18b7-4d03-8f43-0e690ad7b6a5")
+	)
+	(junction (at 111.7600 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "e3329939-0c88-442a-8d71-097e4ec9fd3e")
+	)
+	(junction (at 314.9600 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "f8056169-511a-4b3b-8303-421e01cbe19d")
+	)
+	(junction (at 124.4600 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "d4fe1ef5-61c2-46aa-8076-9672a7936b17")
+	)
+	(junction (at 43.1800 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "4b465f89-36e6-497f-99bf-3da726070c8e")
+	)
+	(junction (at 124.4600 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "b8ef4dd2-b5e8-4de5-b02f-70bcd552a04e")
+	)
+	(junction (at 152.4000 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "08583c8c-06b6-4c80-bc3e-075e8d1eec38")
+	)
+	(junction (at 205.7400 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "29a640f0-5003-412e-9217-ed78da4f215b")
+	)
+	(junction (at 124.4600 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "5feb8de9-af60-430a-86f0-5c683d3eca58")
+	)
+	(junction (at 287.0200 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "03955710-09ee-4f1d-8621-0ebb9bd591bd")
+	)
+	(junction (at 165.1000 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "1c2c6376-550e-4976-9ec9-9ac2642e4f1b")
+	)
+	(junction (at 43.1800 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "ad37890e-8683-46a8-8812-c460d7dd76a0")
+	)
+	(junction (at 274.3200 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "9fa02ae0-e054-4448-991b-8dc09c41bbed")
+	)
+	(junction (at 205.7400 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "e2a65a90-093d-48fb-b77f-23998d73ba86")
+	)
+	(junction (at 233.6800 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "41cc98a4-c1e2-4b3f-a508-4ea8353f1a47")
+	)
+	(junction (at 71.1200 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "c03b5828-80ab-4fc7-bc1b-69eee62336ab")
+	)
+	(junction (at 83.8200 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "0615b502-85a2-4444-81db-602b9e9e587d")
+	)
+	(junction (at 233.6800 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "94d508bf-3a14-4337-a35f-06bcd7886ff3")
+	)
+	(junction (at 246.3800 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "411827e6-b45e-4c64-8307-97d8b9436a2a")
+	)
+	(junction (at 317.5000 66.0400) (diameter 0) (color 0 0 0 0)
+		(uuid "03452c24-7313-4b65-bb28-f67991777fc4")
+	)
+	(junction (at 246.3800 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "cb1af956-5b21-4906-ae6a-561361392d9a")
+	)
+	(junction (at 246.3800 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "70921392-71dc-4650-ab0c-4b52c729aec4")
+	)
+	(junction (at 274.3200 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "9684beb6-eba4-4889-989e-c9292fb229e8")
+	)
+	(junction (at 165.1000 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "01f931a2-b271-453f-a36a-0d124ee5dcf4")
+	)
+	(junction (at 83.8200 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "88dc5d5f-0abe-45e4-b718-4d8a65966b5d")
+	)
+	(junction (at 193.0400 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "069539ec-8d8c-423b-8f35-fe5f78a81290")
+	)
+	(junction (at 233.6800 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "11ec719f-3d66-4361-a180-7846f78dd4e3")
+	)
+	(junction (at 43.1800 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "6ea5eabc-a9d9-4f8f-966e-2e2e0d94e033")
+	)
+	(junction (at 111.7600 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "75989dcc-9aba-475d-9b86-7effc3c07110")
+	)
+	(junction (at 246.3800 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "0656b69b-c5c9-4b1f-8ab6-7250b40fb35b")
+	)
+	(junction (at 287.0200 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "4b14298e-e5bf-4acc-ae59-f4a658389fd4")
+	)
+	(junction (at 83.8200 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "8d599afc-47f3-4221-a42d-97ee508a0a79")
+	)
+	(junction (at 193.0400 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "19c3df0d-e826-46ef-9097-568b7289b240")
+	)
+	(junction (at 152.4000 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "a3d15021-d657-47a7-8297-9d3cb81d8885")
+	)
+	(junction (at 71.1200 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "352fe1e0-0882-4b98-b61a-c04bd186acb0")
+	)
+	(junction (at 205.7400 180.3400) (diameter 0) (color 0 0 0 0)
+		(uuid "f4846be1-9488-4baf-ad03-d8f69d0cfa14")
+	)
+	(junction (at 152.4000 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "ddacfc90-5747-4673-a60e-82ec11479053")
+	)
+	(junction (at 124.4600 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "7c8f3849-9211-4896-afaa-67bdb26457cd")
+	)
+	(junction (at 304.8000 66.0400) (diameter 0) (color 0 0 0 0)
+		(uuid "0b3a3db5-00f2-4637-b9ff-1740d06a9bdf")
+	)
+	(junction (at 165.1000 246.3800) (diameter 0) (color 0 0 0 0)
+		(uuid "35a6573f-2733-48a6-9d09-71a5a6c056c1")
+	)
+	(junction (at 43.1800 205.7400) (diameter 0) (color 0 0 0 0)
+		(uuid "8c8356cc-bfa3-45d7-a40c-a7a3c30d1af3")
+	)
+	(junction (at 287.0200 220.9800) (diameter 0) (color 0 0 0 0)
+		(uuid "3bc45f62-9e46-4e4e-8cec-cb3aea05996a")
+	)
+	(hierarchical_label "BTN1"
+		(shape passive)
+		(at 33.0200 35.5600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "f8550f92-1145-48b6-a9ba-872ef83bca32")
+	)
+	(hierarchical_label "BTN2"
+		(shape passive)
+		(at 109.2200 35.5600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "84a42bad-5ae0-420c-9d82-62fae6542363")
+	)
+	(hierarchical_label "BTN3"
+		(shape passive)
+		(at 185.4200 35.5600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "5e0a3f59-34f4-4e6c-936c-42f1a645494c")
+	)
+	(hierarchical_label "BTN4"
+		(shape passive)
+		(at 261.6200 35.5600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "70c14c79-94e8-4355-b95d-7add31128f55")
+	)
+	(hierarchical_label "BTN5"
+		(shape passive)
+		(at 33.0200 60.9600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "22edff13-f0b4-46c1-8f03-9bb9fefc9057")
+	)
+	(hierarchical_label "BTN6"
+		(shape passive)
+		(at 109.2200 60.9600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "977c91f6-8f45-4712-b048-8cf8402c666d")
+	)
+	(hierarchical_label "BTN7"
+		(shape passive)
+		(at 185.4200 60.9600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "0188753f-b741-42aa-b458-f5cffd641d7a")
+	)
+	(hierarchical_label "BTN8"
+		(shape passive)
+		(at 261.6200 60.9600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "048207f7-91ae-4450-adbe-9deaf158f045")
+	)
+	(hierarchical_label "BTN9"
+		(shape passive)
+		(at 33.0200 86.3600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "2c1cc76c-b420-4b1a-807c-ea6e001036aa")
+	)
+	(hierarchical_label "BTN10"
+		(shape passive)
+		(at 109.2200 86.3600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "9a5fbb63-9504-4cd4-9d7d-63636cdb2283")
+	)
+	(hierarchical_label "BTN11"
+		(shape passive)
+		(at 185.4200 86.3600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ebe5066b-143d-4d10-975c-ae17df54f050")
+	)
+	(hierarchical_label "BTN12"
+		(shape passive)
+		(at 261.6200 86.3600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ec2d8d37-a062-4354-8bb1-d8c310cd4da0")
+	)
+	(hierarchical_label "HAT_UP"
+		(shape passive)
+		(at 33.0200 111.7600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "7c3ce5d3-fd80-4b19-9dc9-4f182628caed")
+	)
+	(hierarchical_label "HAT_DOWN"
+		(shape passive)
+		(at 109.2200 111.7600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "d3a0d8ab-0434-4a6c-9e3c-e49c04997fc9")
+	)
+	(hierarchical_label "HAT_LEFT"
+		(shape passive)
+		(at 185.4200 111.7600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "50ad370c-002a-43ff-b75a-43a8b76567ce")
+	)
+	(hierarchical_label "HAT_RIGHT"
+		(shape passive)
+		(at 261.6200 111.7600 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "4f69eb1d-acac-4e1c-b91f-97cf56b3fd2e")
+	)
+	(label "REVERSER_AIN"
+		(at 370.8400 66.0400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "4d2ccd3c-f881-4e01-9013-289c749bc68e")
+	)
+	(hierarchical_label "REVERSER_AIN"
+		(shape bidirectional)
+		(at 320.0400 109.2200 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "e100188b-211f-41a0-8120-e44185ebe111")
+	)
+	(label "REVERSER_AIN"
+		(at 345.4400 109.2200 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "da8ffcc6-97c2-4a81-bde4-86c90e0bd0ee")
+	)
+	(label "CHG_STAT"
+		(at 378.4600 212.0900 90)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "7f677dc9-6c0b-4417-a0b0-e37bf1b31db9")
+	)
+	(hierarchical_label "CHG_STAT"
+		(shape bidirectional)
+		(at 340.3600 208.2800 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "093d77d6-9dc3-44ec-861e-9133f3282812")
+	)
+	(label "CHG_STAT"
+		(at 365.7600 208.2800 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "3bdbc771-eed0-40da-898b-1465f13c7a3e")
+	)
+	(label "USB_VBUS"
+		(at 81.2800 137.1600 270)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "9d0d317b-acd3-4a99-a47c-f901f2b1c634")
+	)
+	(hierarchical_label "WS2812_DIN"
+		(shape input)
+		(at 66.0400 152.4000 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "2420a4b2-8867-4c1d-893b-98941e3dd85d")
+	)
+	(label "WS2812_DIN"
+		(at 45.7200 156.2100 270)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "fdbd2fe8-709d-4cc6-97eb-38deed643c7b")
+	)
+	(label "LED_DATA"
+		(at 130.8100 152.4000 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8d735958-601e-4f92-92ca-e382f9ab3e90")
+	)
+	(label "USB_VBUS"
+		(at 157.4800 146.0500 270)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "80bad7d0-a381-4491-bc7f-c6fdcdb515d1")
+	)
+	(label "USB_VBUS"
+		(at 193.0400 146.0500 270)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ab2eaa8f-34b3-4645-af78-bd085791a0ad")
+	)
+	(label "USB_VBUS"
+		(at 30.4800 180.3400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "1d88470f-8718-41b0-a8cd-739855cde960")
+	)
+	(label "USB_VBUS"
+		(at 30.4800 220.9800 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8e775a32-3494-4d98-8ceb-8b9bbf4ee977")
+	)
+	(label "LED_DATA"
+		(at 17.7800 193.0400 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "bc0e91a0-2386-463d-a3e4-c0681c45b2f7")
+	)
+	(label "LED_ROW2"
+		(at 342.9000 193.0400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "c7b11b0e-4222-460a-8ac0-60d38e249a70")
+	)
+	(label "LED_ROW2"
+		(at 17.7800 233.6800 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "f7f226e1-1a42-4c1f-a787-9f06234d8b5c")
+	)
+	(no_connect (at 322.58 233.68) (uuid "6e9e14bf-b632-41ff-9dae-d58816d459fb"))
+	(hierarchical_label "USB_VBUS"
+		(shape bidirectional)
+		(at 345.4400 243.8400 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "caa4a18b-116b-4206-8bb4-6537ebc9adff")
+	)
+	(label "USB_VBUS"
+		(at 370.8400 243.8400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "c95462b0-eb7e-4a83-b404-992c7ff4172d")
+	)
+	(text "Buttons/hat: active-low; MCU internal pull-ups + firmware debounce."
+		(exclude_from_sim no)
+		(at 152.40 127.00 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "fe38e295-a411-484b-9b16-b15b33eba961")
+		(uuid "f75d07df-91c0-46c1-9a56-883cb9a12979")
+	)
+	(text "J9: 1=3V3, 2=common, 3=GND.\nSPDT center-off: F / N / R."
+		(exclude_from_sim no)
+		(at 309.88 121.92 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "b54ee2fc-7bbc-4be8-8248-ef50682cfcc4")
+	)
+	(text "RGB: USB 5V only; 100nF at each LED.\nC13 1uF limits direct VBUS capacitance.\nBudget LEDs + charger against USB source.\nDrive DIN low while USB is absent."
+		(exclude_from_sim no)
+		(at 220.98 149.86 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "b0e1b8d8-6f40-4a47-839b-7b834acbec3c")
 	)
 	(sheet_instances
 		(path "/"

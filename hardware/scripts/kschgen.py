@@ -129,6 +129,32 @@ def _flattened_block(path, name):
     g = pblk.replace('(symbol "' + parent + '_', '(symbol "' + name + '_')
     g = re.sub(r'^(\s*)\(symbol "' + re.escape(parent) + '"',
                r'\1(symbol "' + name + '"', g, count=1)
+    # Derived symbols override properties as well as the displayed instance
+    # value. Preserve those overrides so the cache matches KiCad's resolver.
+    def properties(text):
+        result = {}
+        for m in re.finditer(r'\(property "([^"]+)"', text):
+            depth, quoted, escaped = 0, False, False
+            for j in range(m.start(), len(text)):
+                ch = text[j]
+                if escaped:
+                    escaped = False
+                elif ch == '\\' and quoted:
+                    escaped = True
+                elif ch == '"':
+                    quoted = not quoted
+                elif not quoted:
+                    depth += (ch == '(') - (ch == ')')
+                    if depth == 0:
+                        result[m.group(1)] = text[m.start():j + 1]
+                        break
+        return result
+    existing = properties(g)
+    for key, prop in properties(blk).items():
+        if key in existing:
+            g = g.replace(existing[key], prop, 1)
+        else:
+            g = g.rstrip()[:-1] + '\n\t\t' + prop + '\n\t)'
     return g
 
 
@@ -192,11 +218,11 @@ def _schematic_uuid(path):
     return m.group(1) if m else None
 
 
-def _prop(name, val, x, y, hide=False, justify="left"):
+def _prop(name, val, x, y, hide=False, justify="left", angle=0):
     h = " (hide yes)" if hide else ""
     j = f" (justify {justify})" if justify else ""
     return (f'\t\t(property "{name}" "{esc(val)}"\n'
-            f'\t\t\t(at {x:.4f} {y:.4f} 0)\n'
+            f'\t\t\t(at {x:.4f} {y:.4f} {angle})\n'
             f'\t\t\t(effects (font (size 1.27 1.27)){j}){h}\n\t\t)\n')
 
 
@@ -375,7 +401,7 @@ _PIN_RE = re.compile(
 def pin_geom(lib_id):
     """[{number,name,x,y,angle,length}] for lib_id's pins (library coords, +Y up)."""
     path, name = SRC[lib_id]
-    blk = extract(path, name)
+    blk = _flattened_block(path, name)
     return [dict(number=m.group(6), name=m.group(5),
                  x=float(m.group(1)), y=float(m.group(2)),
                  angle=int(float(m.group(3))), length=float(m.group(4)))
@@ -389,8 +415,12 @@ _OUTWARD = {0: (-1.0, 0.0), 180: (1.0, 0.0), 90: (0.0, 1.0), 270: (0.0, -1.0)}
 
 
 def _sheet_xy(c, p):
-    """Pin p's connection point in sheet coords for comp c placed at orient 0."""
-    return (round(c["x"] + p["x"], 4), round(c["y"] - p["y"], 4))
+    """Pin position after the instance's KiCad counterclockwise rotation."""
+    import math
+    a = math.radians(c.get("angle", 0))
+    x = p["x"] * math.cos(a) - p["y"] * math.sin(a)
+    y = p["x"] * math.sin(a) + p["y"] * math.cos(a)
+    return (round(c["x"] + x, 4), round(c["y"] - y, 4))
 
 
 def pin_at(c, number):
@@ -398,7 +428,7 @@ def pin_at(c, number):
     for p in pin_geom(c["lib_id"]):
         if p["number"] == str(number):
             x, y = _sheet_xy(c, p)
-            return (x, y, p["angle"])
+            return (x, y, (p["angle"] + c.get("angle", 0)) % 360)
     raise KeyError(f'{c["lib_id"]}: no pin #{number}')
 
 
@@ -408,7 +438,7 @@ def pin_named(c, name):
     for p in pin_geom(c["lib_id"]):
         if p["name"] == name:
             x, y = _sheet_xy(c, p)
-            out.append((x, y, p["angle"]))
+            out.append((x, y, (p["angle"] + c.get("angle", 0)) % 360))
     return out
 
 
@@ -428,15 +458,17 @@ def _lbl_angle(dx, dy):
 
 
 def w_label(t, x, y, a=0):
+    justify = "right bottom" if a in (90, 180) else "left bottom"
     return (f'\t(label "{esc(t)}"\n\t\t(at {x:.4f} {y:.4f} {a})\n'
-            f'\t\t(effects (font (size 1.27 1.27)) (justify left bottom))\n'
+            f'\t\t(effects (font (size 1.27 1.27)) (justify {justify}))\n'
             f'\t\t(uuid "{U()}")\n\t)\n')
 
 
 def w_hlabel(t, x, y, a=0, shape="input"):
+    justify = "right" if a == 180 else "left"
     return (f'\t(hierarchical_label "{esc(t)}"\n\t\t(shape {shape})\n'
             f'\t\t(at {x:.4f} {y:.4f} {a})\n'
-            f'\t\t(effects (font (size 1.27 1.27)) (justify left))\n'
+            f'\t\t(effects (font (size 1.27 1.27)) (justify {justify}))\n'
             f'\t\t(uuid "{U()}")\n\t)\n')
 
 
@@ -473,13 +505,16 @@ def w_symbol(c, project, instances):
     ref0 = instances[0][1]
     s = ("\t(symbol\n"
          f'\t\t(lib_id "{c["lib_id"]}")\n'
-         f'\t\t(at {x:.4f} {y:.4f} 0)\n\t\t(unit 1)\n'
+         f'\t\t(at {x:.4f} {y:.4f} {c.get("angle", 0)})\n\t\t(unit 1)\n'
          "\t\t(exclude_from_sim no)\n"
          f"\t\t(in_bom {inbom})\n\t\t(on_board yes)\n"
          f"\t\t(dnp {dnp})\n"
          f'\t\t(uuid "{U()}")\n')
-    s += _prop("Reference", ref0, x + 3.81, y - 2.54)
-    s += _prop("Value", c.get("value", ""), x + 3.81, y + 2.54)
+    rx, ry = c.get("ref_offset", (3.81, -2.54))
+    vx, vy = c.get("value_offset", (3.81, 2.54))
+    s += _prop("Reference", ref0, x + rx, y + ry, hide=ref0.startswith("#"), angle=c.get("angle", 0) % 180)
+    s += _prop("Value", c.get("value", ""), x + vx, y + vy,
+               hide=c.get("hide_value", False), angle=c.get("angle", 0) % 180)
     s += _prop("Footprint", c.get("fp", ""), x, y, hide=True, justify="")
     s += _prop("Datasheet", c.get("datasheet", "~"), x, y, hide=True, justify="")
     for k, fld in (("lcsc", "LCSC"), ("mpn", "MPN"), ("mfr", "Manufacturer")):
@@ -511,9 +546,10 @@ def w_sheet(name, file, uuid, x, y, w, h, pins):
          f'\t\t\t(at {x:.4f} {y + h + 1.27:.4f} 0)\n'
          "\t\t\t(effects (font (size 1.27 1.27)) (justify left top))\n\t\t)\n")
     for (pn, pt, px, py, pa) in pins:
+        justify = "right" if pa == 0 else "left"
         s += (f'\t\t(pin "{esc(pn)}" {pt}\n'
               f'\t\t\t(at {px:.4f} {py:.4f} {pa})\n'
-              f'\t\t\t(effects (font (size 1.27 1.27)) (justify left))\n'
+              f'\t\t\t(effects (font (size 1.27 1.27)) (justify {justify}))\n'
               f'\t\t\t(uuid "{U()}")\n\t\t)\n')
     s += "\t)\n"
     return s

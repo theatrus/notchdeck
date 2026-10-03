@@ -33,7 +33,7 @@ default — adjust freely in capture, they're all software-defined.
 | 16 | P0.08 | **WS2812_DIN** | LED data (SPIM MOSI / PWM+DMA) |
 | 7 | P0.02/AIN0 | **REVERSER_AIN** | 3-pos reverser via resistor divider (ADC); or 2 GPIO |
 | 28 | P0.15 | **FG_ALRT** | MAX17048 ALRT (open-drain in, pull-up) |
-| 30 | P0.17 | **CHG_STAT** | MCP73831 STAT (open-drain in / LED) |
+| 30 | P0.17 | **CHG_STAT** | MCP73832 STAT (open-drain in / LED) |
 | 1 | P1.11 | BTN1 horn-hi (A) | momentary, active-low, internal pull-up |
 | 2 | P1.10 | BTN2 horn-lo/bell (B) | |
 | 6 | P1.13 | BTN3 door-close (X) | |
@@ -68,9 +68,9 @@ are dedicated (not shared with the AS5600 I²C0), so both lever front-ends can b
 ```
 USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────► E73 VBUS (pad 27)   ; USB regulator + VBUS-detect
                              │
-                             ├─► MCP73831 VDD (charge in)
-                             │      MCP73831 VBAT ─► BAT+ (Li-ion 1S)   ; PROG R sets I_chg
-                             │      MCP73831 STAT ─► CHG_STAT (P0.17) + LED
+                             ├─► MCP73832 VDD (charge in)
+                             │      MCP73832 VBAT ─► BAT+ (Li-ion 1S)   ; PROG R sets I_chg
+                             │      MCP73832 STAT ─► CHG_STAT (P0.17) + LED
                              │
                              └─► [power-path OR-ing] ─► VSYS ─► AP2112K-3.3 ─► +3V3
    BAT+ ───────────────────────► [power-path OR-ing] ─┘                        │
@@ -85,18 +85,15 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
 - **VBUS to the module:** USB-C `VBUS` → E73 `VBUS`(27). The nRF52840's internal USB regulator
   uses this, and firmware reads VBUS-present from it (no GPIO needed — `vbus_present()` in
   `main.c`).
-- **Charger:** MCP73831-2-OT, 1-cell Li-ion. `PROG` resistor sets charge current (e.g. 2 kΩ ≈
+- **Charger:** MCP73832-2-OT, 1-cell Li-ion. `PROG` resistor sets charge current (e.g. 2 kΩ ≈
   500 mA, 10 kΩ ≈ 100 mA — match the battery). `STAT` → CHG_STAT (P0.17) + a charge LED.
-- **Power-path (recommended):** MCP73831 is charge-only (no load-sharing), so add a load-share
-  so the device runs from **USB when present** and **battery when not**, while charging:
-  classic **P-FET load-share** (PMOS between BAT+ and VSYS, gate pulled to VBUS so the battery
-  disconnects from the load while USB is in) + a Schottky/ideal-diode from VBUS to VSYS. Adds
-  ~1 PMOS + 1 Schottky + 2 R (not yet in BOM — flagged). Simpler interim: VSYS = BAT+ and USB
-  only charges (requires a battery to be present to run). **Verify against runtime needs.**
-- **Fuel gauge:** MAX17048 `VDD`(3) → BAT+ (it senses its own supply); `CELL`(2) = **NC** for
-  the 1-cell MAX17048; `CTG`(1), `GND`(4), `EP`(9), `QSTRT`(6) → GND; `ALRT`(5) → FG_ALRT
-  (P0.15) with pull-up. *(Source disagreement on CELL — confirm NC for MAX17048 vs sense for
-  MAX17049 in the ADI datasheet during capture.)*
+- **Power-path:** Q1 AO3401A **drain (3) → BAT+, source (2) → VSYS**;
+  its body diode conducts BAT+ toward VSYS and blocks VSYS-to-battery backfeed.
+  Gate (1) → R4 100k → GND, and USB_VBUS → R5 1k → gate. D19 B5819W anode (2)
+  → USB_VBUS, cathode (1) → VSYS. USB raises the gate and disconnects the battery
+  from the load; R4 turns Q1 on when USB is absent.
+- **Fuel gauge:** MAX17048 `VDD`(3) → BAT+ (it senses its own supply); `CELL`(2) → BAT+ per the ADI pin table (internally unconnected in MAX17048); `CTG`(1), `GND`(4), `EP`(9), `QSTRT`(6) → GND; `ALRT`(5) → FG_ALRT
+  (P0.15) with pull-up. See the verified sources below.
 
 ## USB-C (J1, HRO TYPE-C-31-M-12)
 
@@ -105,7 +102,7 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
 - `D+` (A6/B6 tied) → USB_DP → E73 pad 31; `D−` (A7/B7 tied) → USB_DM → E73 pad 29.
 - `SBU1/SBU2` → NC. `Shield` → GND (optionally via a 1 MΩ ∥ 4.7 nF / bead).
 - **ESD:** add a low-cap TVS array on D+/D−/VBUS (e.g. USBLC6-2 / SRV05 class) near the
-  connector. (Not yet in BOM — flagged.)
+  connector. (U7 is populated.)
 
 ## I²C buses (two, to dodge the 0x36 collision)
 
@@ -194,10 +191,16 @@ mascon's coded switch — and since its pins are dedicated, you can stuff both a
 ## Decoupling & misc
 
 - Per-supply: 100 nF close to each VDD/VDDH pad; 1 µF + 4.7–10 µF bulk on +3V3.
-- WS2812 strip: 100–470 µF bulk across the strip's V+/GND; ~330 Ω series on `WS2812_DIN`;
-  level note — at 3.3 V data into 5 V-ish strips watch V_IH (the 2020/SK6812 parts at ~3.7–5 V
-  generally accept 3.3 V logic; if running the strip at 5 V from VBUS, verify V_IH or add a
-  level shifter). Gate the strip behind a load switch for battery (see protocol §7).
+- RGB array D1–D16: VDD → USB_VBUS, GND → GND. It is **USB-powered only**.
+  U8 SN74AHCT1G125DBVR: VCC→VBUS, /OE→GND, input→WS2812_DIN, output→R11 330Ω→D1 DIN.
+  DOUT chains to the next DIN; D16 DOUT is NC. R26 100k holds DIN low during MCU reset.
+  C20 is the buffer bypass; C21–C36 are 100nF per LED. C13 is 1uF bulk (10V or higher).
+  Firmware must hold DIN low without USB and cap brightness to the source-current budget.
+- Reverser J9: pin 1→3V3, pin 2→external SPDT common, pin 3→GND. The switch is
+  center-off. R23/R24 (100k each) bias common to 1.65V in neutral. R25 (1k) feeds
+  REVERSER_AIN; C37 (100nF) filters at the ADC. Forward/reverse select 3.3V/0V.
+- D17/R12 show 3V3 power; D18/R13 run from 3V3 to CHG_STAT (active-low). R22 100k
+  pulls CHG_STAT up to 3V3. U3 must be the open-drain MCP73832 variant.
 - LFXO note: P0.00/P0.01 are used as GPIO → LFCLK = internal RC (fine for BLE, calibrated). To
   fit a 32.768 kHz crystal instead (lower sleep current / tighter timing), reclaim P0.00/P0.01
   and drop BTN11/BTN12 (or move buttons to a scan matrix).
@@ -205,6 +208,23 @@ mascon's coded switch — and since its pins are dedicated, you can stuff both a
 ## Support parts (now specified in PARTS.md)
 
 The power-path P-FET (AO3401A) + Schottky (B5819W), USB ESD (USBLC6-2SC6), reset button, SWD
-header, optional WS2812 level shifter (74LVC1G125), and the pull-up/gate/decoupling passives are
+header, populated WS2812 level shifter (74AHCT1G125), and the pull-up/gate/decoupling passives are
 all in [`PARTS.md`](PARTS.md) → "Power-path, protection & programming". All are stdlib KiCad
 symbols with shipped 3D and are stocked at JLCPCB (AO3401A + B5819W are basic parts).
+
+## Verified capture references (2026-10-02)
+
+- [Microchip AN1149](https://ww1.microchip.com/downloads/en/AppNotes/01149c.pdf),
+  load-sharing PMOS and Schottky topology.
+- [Microchip MCP73831/2 datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf),
+  STAT behavior: MCP73831 drives high at charge completion; MCP73832 releases its open drain.
+- [ADI MAX17048/49 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max17048-max17049.pdf),
+  pin table: CELL and VDD to the positive battery terminal; CTG/QSTRT/EP to ground.
+- [TI SN74AHCT1G125](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf),
+  4.5–5.5V supply and TTL-compatible input threshold.
+- [ams AS5600 datasheet](https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf),
+  3.3V supply mode and sensor pinout.
+
+Run `make verify-notchdeck-one` from `hardware/` for a strict net and ERC check.
+The expected endpoint sets live in `scripts/notchdeck-netcheck.py`, independently
+of the wiring manifest. See `README.md` for remaining pre-fabrication checks.
