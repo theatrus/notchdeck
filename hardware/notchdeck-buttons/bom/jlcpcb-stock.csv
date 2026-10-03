@@ -1,0 +1,14 @@
+LCSC Part #,MPN,Designator,Qty per board,JLCPCB In Stock,JLCPCB Available Order Qty,Minimum Order Qty,Board equivalents before attrition,Private Stock,Checked UTC,Source,Build Boards,Qty for Build,Public Stock Covers Build Before Attrition
+C1525,CL05B104KO5NNNC,"C21,C22,C23,C24,C25,C26,C27,C28,C29,C30,C31,C32,C33,C34,C35,C36,C20,C1,C3,C4,C5",21,21559366,15328027,1,729906,Not counted; see shared local inventory,2026-10-03T20:19:21.575Z,https://jlcpcb.com/partdetail/C1525,5,105,yes
+C28323,CL21B105KBFNNNE,C13,1,2230992,1676723,1,1676723,Not counted; see shared local inventory,2026-10-03T20:19:22.869Z,https://jlcpcb.com/partdetail/C28323,5,5,yes
+C318884,TS-1187A-B-A-B,"SW1,SW2,SW3,SW4,SW5,SW6,SW7,SW8,SW9,SW10,SW11,SW12,SW13,SW14,SW15,SW16",16,472881,415024,1,25939,Not counted; see shared local inventory,2026-10-03T20:18:49.172Z,https://jlcpcb.com/partdetail/C318884,5,80,yes
+C2843785,XL-5050RGBC-2812B,"D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16",16,886036,845639,1,52852,Not counted; see shared local inventory,2026-10-03T20:18:50.269Z,https://jlcpcb.com/partdetail/C2843785,5,80,yes
+C7484,SN74AHCT1G125DBVR,U8,1,47691,39527,1,39527,Not counted; see shared local inventory,2026-10-03T20:18:14.935Z,https://jlcpcb.com/partdetail/C7484,5,5,yes
+C25104,0402WGF3300TCE,R11,1,1186323,971999,1,971999,Not counted; see shared local inventory,2026-10-03T20:19:56.517Z,https://jlcpcb.com/partdetail/C25104,5,5,yes
+C25741,0402WGF1003TCE,"R26,R6,R7",3,8241090,6852140,1,2284046,Not counted; see shared local inventory,2026-10-03T20:19:53.172Z,https://jlcpcb.com/partdetail/C25741,5,15,yes
+C1779,CL21A475KAQNNNE,C2,1,2979521,2673706,1,2673706,Not counted; see shared local inventory,2026-10-03T20:19:47.290Z,https://jlcpcb.com/partdetail/C1779,5,5,yes
+C25744,0402WGF1002TCE,"R1,R2,R3,R4,R5",5,21715183,17588427,1,3517685,Not counted; see shared local inventory,2026-10-03T20:19:57.691Z,https://jlcpcb.com/partdetail/C25744,5,25,yes
+C7519,USBLC6-2SC6,U2,1,48647,45024,1,45024,Not counted; see shared local inventory,2026-10-03T20:18:46.694Z,https://jlcpcb.com/partdetail/C7519,5,5,yes
+C262712,AFA07-S06FCA-00,J1,1,31876,31746,1,31746,Not counted; see shared local inventory,2026-10-03T23:00:57.351908+00:00,https://jlcpcb.com/partdetail/C262712,5,5,yes
+C529330,STM32G030F6P6TR,U1,1,,,,,Owned JLCPCB balance covers five sets; confirm allocation/attrition before order,2026-10-03T20:30:17.038Z,Shared local jlcpcb-private-inventory.csv (not published),5,5,not assessed; using owned private stock
+C81598,1N4148W,"D20,D21,D22,D23,D24,D25,D26,D27,D28,D29,D30,D31,D32,D33,D34,D35",16,5166074,4858639,1,303664,Not counted; see shared local inventory,2026-10-03T23:00:57.351908+00:00,https://jlcpcb.com/partdetail/C81598,5,80,yes

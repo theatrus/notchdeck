@@ -1,4 +1,4 @@
-# Japanese-style handles on the Rev D controller
+# Japanese-style handles on the Rev E controller
 
 Build either a left-hand power lever and a right-hand rotary brake, or a combined
 mascon, around the same NotchDeck One PCB. The mechanisms are chassis mounted;
@@ -73,7 +73,7 @@ harnesses. Detailed circuit behavior is in the [interface guide](06-handle-inter
 - [`handle-layout.json`](../hardware/mechanical/handle-layout.json) records the
   provisional 400×220mm panel, module envelopes and target detent angles.
 - [`handle-layout.svg`](../hardware/mechanical/handle-layout.svg) shows the actual
-  145×105mm PCB and 4×4 button spacing within those envelopes. It is an integration
+  115×90mm logic PCB and separate 86×120mm 4×4 button board within those envelopes. It is an integration
   drawing, not a cutting template or an enclosure fit check.
 - [`detents-and-cams.csv`](../hardware/mechanical/detents-and-cams.csv) gives all
   31 targets across the three assemblies, electrical Gray levels, contacts that
@@ -97,8 +97,7 @@ implied by this layout study.
 
 Use `dual_gray.conf`, `dual_magnetic.conf`, or either mixed profile for the separate
 handles. Use `combined_gray.conf` or `combined_magnetic.conf` for the mascon.
-The existing **Rev C GPIO overlay/config also applies to Rev D**: connector
-packaging changed, but MCU assignments, sensor channels and cam maps did not.
+Handle GPIO assignments, sensor channels and cam maps remain unchanged in Rev E. The old Rev C/D direct button/RGB overlay does not support the new STM32 panel; its firmware and main I²C integration remain required. See [button interface](../hardware/notchdeck-buttons/README.md).
 The [interface guide](06-handle-interfaces.md#firmware-profiles-and-output) has the
 build command and complete output/fault behavior.
 

@@ -25,7 +25,7 @@ KICAD_CLI ?= kicad-cli
 KICAD_PYTHON ?= /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3.9
 
 # Add new PCB projects here.
-PROJECTS    := notchdeck-one
+PROJECTS    := notchdeck-one notchdeck-buttons
 
 BOM_FIELDS  := $${ITEM_NUMBER},Reference,Value,Footprint,$${QUANTITY},LCSC,MPN,Manufacturer,BOM Comments
 BOM_LABELS  := Item,Designator,Comment,Footprint,Qty,LCSC Part \#,MPN,Manufacturer,Notes
@@ -52,7 +52,7 @@ help:
 	@echo "  jlc-<project>      JLCPCB zip for one PCB"
 	@echo "  gen-<project>      Regenerate schematic from scripts/<project>.schgen.py"
 	@echo "  check-<project>    Sanity-check schematic (comps/footprints/dups/ERC)"
-	@echo "  verify-notchdeck-one  Strict ERC + complete controller pin/net audit"
+	@echo "  verify               Both boards: strict ERC, net, PCB and BOM audits"
 	@echo "  verify-pcb-notchdeck-one  Complete schematic/PCB pad-net and UUID audit"
 	@echo "  verify-bom-notchdeck-one  Export and audit all JLCPCB part assignments"
 	@echo "  render-<project>   Render schematic sheets to PNG for visual review"
@@ -88,11 +88,11 @@ images-$(1): $$($(1)_SCH) $$($(1)_PCB)
 	@echo "[$(1)] PCB top SVG"
 	$$(KICAD_CLI) pcb export svg -o $$($(1)_IMG)/pcb-top.svg \
 	    --layers "F.Cu,F.Silkscreen,F.Mask,Edge.Cuts" \
-	    --page-size-mode 2 $$($(1)_PCB)
+	    --mode-single --exclude-drawing-sheet --page-size-mode 2 $$($(1)_PCB)
 	@echo "[$(1)] PCB bottom SVG (mirrored)"
 	$$(KICAD_CLI) pcb export svg -o $$($(1)_IMG)/pcb-bottom.svg \
 	    --layers "B.Cu,B.Silkscreen,B.Mask,Edge.Cuts" \
-	    --mirror --page-size-mode 2 $$($(1)_PCB)
+	    --mirror --mode-single --exclude-drawing-sheet --page-size-mode 2 $$($(1)_PCB)
 	@echo "[$(1)] 3D renders"
 	$$(KICAD_CLI) pcb render --side top    --width 1600 --height 1000 \
 	    -o $$($(1)_IMG)/pcb-3d-top.png    $$($(1)_PCB)
@@ -132,14 +132,16 @@ endef
 
 $(foreach p,$(PROJECTS),$(eval $(call PROJECT_TEMPLATE,$(p))))
 
-.PHONY: verify-notchdeck-one
+# Electrical contracts are deliberately independent of the generators.
+.PHONY: verify verify-notchdeck-one verify-notchdeck-buttons
+verify: $(foreach p,$(PROJECTS),verify-$(p) verify-pcb-$(p) verify-bom-$(p))
 verify-notchdeck-one:
 	@KICAD_CLI=$(KICAD_CLI) python3 $(SCRIPTS_DIR)/notchdeck-netcheck.py
+verify-notchdeck-buttons:
+	@KICAD_CLI=$(KICAD_CLI) python3 $(SCRIPTS_DIR)/notchdeck-panelcheck.py
 
-.PHONY: verify-pcb-notchdeck-one
-verify-pcb-notchdeck-one:
-	@KICAD_CLI=$(KICAD_CLI) $(KICAD_PYTHON) $(SCRIPTS_DIR)/notchdeck-boardcheck.py
-
-.PHONY: verify-bom-notchdeck-one
-verify-bom-notchdeck-one: bom-notchdeck-one
-	@python3 $(SCRIPTS_DIR)/notchdeck-bomcheck.py
+.PHONY: $(foreach p,$(PROJECTS),verify-pcb-$(p) verify-bom-$(p))
+$(foreach p,$(PROJECTS),verify-pcb-$(p)):
+	@KICAD_CLI=$(KICAD_CLI) $(KICAD_PYTHON) $(SCRIPTS_DIR)/notchdeck-boardcheck.py --project $(@:verify-pcb-%=%)
+$(foreach p,$(PROJECTS),verify-bom-$(p)): verify-bom-%: bom-%
+	@python3 $(SCRIPTS_DIR)/notchdeck-bomcheck.py --project $(@:verify-bom-%=%)

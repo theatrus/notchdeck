@@ -2,15 +2,13 @@
 
 Connection plan to make the KiCad schematic capture mechanical. Pad numbers are the
 **E73-2G4M08S1C** module pads (per `lib/symbols/notchdeck:E73-2G4M08S1C`, confirmed against
-Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev D
+Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev E
 default — adjust freely in capture, they're all software-defined.
 
 > **Two design constraints baked in here:**
 > 1. **AS5600 and MAX17048 share I²C address `0x36`** → they go on **two separate I²C buses**
 >    (nRF52840 TWIM0 + TWIM1), not one shared bus.
-> 2. **NFC pins** P0.09/P0.10 are reused as GPIO → firmware must set `nfct-pins-as-gpios` in the UICR devicetree node.
->    **P0.18** is used as `nRESET` → enable reset in UICR (Zephyr default). **P0.00/P0.01** are
->    used as GPIO → LFCLK runs from the internal RC (no 32.768 kHz crystal); see LFXO note.
+> 2. **P0.18** remains nRESET; enable reset in UICR. No LF crystal is populated, so retain RC LFCLK. Rev E frees the former NFC/LFXO button pins; old Rev C/D GPIO button firmware does not apply to the split panel.
 
 ## Full E73 pad assignment
 
@@ -30,26 +28,26 @@ default — adjust freely in capture, they're all software-defined.
 | 14 | P0.06 | **I2C0_SCL** | → AS5600 (bus 0) |
 | 20 | P0.12 | **I2C1_SDA** | → MAX17048 (bus 1) |
 | 22 | P0.07 | **I2C1_SCL** | → MAX17048 (bus 1) |
-| 16 | P0.08 | **WS2812_DIN** | LED data (SPIM MOSI / PWM+DMA) |
+| 16 | P0.08 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 7 | P0.02/AIN0 | **REVERSER_AIN** | 3-pos reverser via resistor divider (ADC); or 2 GPIO |
 | 28 | P0.15 | **FG_ALRT** | MAX17048 ALRT (open-drain in, pull-up) |
 | 30 | P0.17 | **CHG_STAT** | MCP73832 STAT (open-drain in / LED) |
-| 1 | P1.11 | BTN1 horn-hi (A) | momentary, active-low, internal pull-up |
-| 2 | P1.10 | BTN2 horn-lo/bell (B) | |
-| 6 | P1.13 | BTN3 door-close (X) | |
-| 17 | P1.09 | BTN4 door-open (Y) | |
-| 32 | P0.20 | BTN5 ATS-reset (L) | |
-| 33 | P0.13 | BTN6 cab/view (R) | |
+| 1 | P1.11 | **PANEL_INT** | Button-board IRQ_N, active-low open drain; R42 10k pull-up |
+| 2 | P1.10 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 6 | P1.13 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 17 | P1.09 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 32 | P0.20 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 33 | P0.13 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 40 | P1.04 | BTN7 select | |
 | 42 | P1.06 | BTN8 start | |
-| 34 | P0.22 | HAT_UP | nav/D-pad |
-| 35 | P0.24 | HAT_DOWN | |
-| 36 | P1.00 | HAT_LEFT | |
-| 38 | P1.02 | HAT_RIGHT | |
-| 41 | P0.09/NFC1 | BTN9 pantograph | NFC→GPIO (UICR) |
-| 43 | P0.10/NFC2 | BTN10 headlight | NFC→GPIO (UICR) |
-| 11 | P0.00/XL1 | BTN11 (or LFXO) | GPIO if no 32 kHz xtal |
-| 13 | P0.01/XL2 | BTN12 (or LFXO) | GPIO if no 32 kHz xtal |
+| 34 | P0.22 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 35 | P0.24 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 36 | P1.00 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 38 | P1.02 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 41 | P0.09/NFC1 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 43 | P0.10/NFC2 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 11 | P0.00/XL1 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 13 | P0.01/XL2 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 3 | P0.03/AIN1 | **LEVER_S0** | coded-switch bit 0 (J5.2); GPIO in, ext 10k pull-up + RC debounce |
 | 4 | P0.28/AIN4 | **LEVER_S1** | coded-switch bit 1 (J5.3); GPIO in, ext 10k pull-up + RC debounce |
 | 8 | P0.29/AIN5 | **POWER_S0** | power Gray bit 0, J12.2, external pull-up + RC |
@@ -58,10 +56,13 @@ default — adjust freely in capture, they're all software-defined.
 | 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J5.5); GPIO in, ext 10k pull-up + RC debounce |
 | 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J5.4); GPIO in, ext 10k pull-up + RC debounce |
 
-Budget: 12 momentary buttons + 4-way hat (16 HID buttons + hat), 2× I²C, WS2812, reverser
-ADC, 2 status inputs, four brake/combined Gray bits and three power Gray bits.
-**No spare GPIO remains.** Gray inputs and magnetic buses are independent; each
-handle's sensor type is explicitly selected in firmware.
+Rev E moves all 16 panel keys and RGB output to the button MCU. Main retains BTN7 (SW18 Select) and BTN8 (SW19 Start); the panel’s corresponding keys are combined with these in firmware. Fourteen former GPIO pads are now intentionally NC. Gray handle inputs and magnetic buses remain independent and unchanged.
+
+## Rev E button interconnect
+
+Main J15 is a six-way 1mm FFC, using Molex 0151670213 Type A. Pin1 GND, pin2 3V3, pin3 I2C0_SDA, pin4 I2C0_SCL, pin5 PANEL_INT, pin6 USB_VBUS. Button J1 reverses the assignment: **main n → button 7−n**. R42 pulls IRQ up; U12 protects SDA/SCL and C44 bypasses 3V3. Existing R9/R10 are the only upstream I²C pull-ups. Use 100kHz; panel target address is 0x20. The main logic board remains the I²C controller.
+
+Button U1 is STM32G030F6P6TR, scanning PA0–3 rows and PA4–7 columns with one isolation diode per key. PB6/PB7 AF6 provide I2C1; PC15 is open-drain IRQ; PA8 TIM1_CH1 AF2 drives local U8 AHCT and the RGB chain; PA12 ADC_IN16 measures divided VBUS. Key power is 3V3 including battery; RGB is USB-only. See [panel pin plan, cable ratings and firmware requirements](notchdeck-buttons/README.md). Both MCUs require separately programmed firmware; the Rev C/D overlay is not a Rev E firmware solution.
 
 ## Power architecture
 
@@ -104,9 +105,9 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
 - **ESD:** add a low-cap TVS array on D+/D−/VBUS (e.g. USBLC6-2 / SRV05 class) near the
   connector. (U7 is populated.)
 
-## I²C buses and independent handle inputs (Rev D)
+## I²C buses and independent handle inputs (Rev E)
 
-- **TWIM0:** SDA=P0.26 (pad12), SCL=P0.06 (pad14), R9/R10 4.7k pull-ups.
+- **TWIM0:** SDA=P0.26 (pad12), SCL=P0.06 (pad14), R9/R10 4.7k pull-ups. Button MCU target 0x20 shares this upstream bus.
   U9 TCA9543APWR at 0x70 isolates two AS5600 address-0x36 channels. A0/A1 are
   grounded, RESET follows nRESET with R39 10k pull-up; INT0/INT1 have 10k pull-ups
   and INT output is deliberately unconnected. C38 bypasses its 3V3 supply.
@@ -156,8 +157,8 @@ boards and harnesses are separate from the main PCB assembly BOM.
 ## Decoupling & misc
 
 - Per-supply: 100 nF close to each VDD/VDDH pad; 1 µF + 4.7–10 µF bulk on +3V3.
-- RGB array D1–D16: VDD → USB_VBUS, GND → GND. It is **USB-powered only**.
-  U8 SN74AHCT1G125DBVR: VCC→VBUS, /OE→GND, input→WS2812_DIN, output→R11 330Ω→D1 DIN.
+- **On the button board**, RGB array D1–D16: VDD → USB_VBUS, GND → GND. It is **USB-powered only**.
+  U8 SN74AHCT1G125DBVR: VCC→VBUS, /OE→GND, input→RGB_PWM (STM32 PA8), output→R11 330Ω→D1 DIN.
   DOUT chains to the next DIN; D16 DOUT is NC. R26 100k holds DIN low during MCU reset.
   C20 is the buffer bypass; C21–C36 are 100nF per LED. C13 is 1uF bulk (10V or higher).
   Firmware must hold DIN low without USB and cap brightness to the source-current budget.
@@ -166,9 +167,7 @@ boards and harnesses are separate from the main PCB assembly BOM.
   REVERSER_AIN; C37 (100nF) filters at the ADC. Forward/reverse select 3.3V/0V.
 - D17/R12 show 3V3 power; D18/R13 run from 3V3 to CHG_STAT (active-low). R22 100k
   pulls CHG_STAT up to 3V3. U3 must be the open-drain MCP73832 variant.
-- LFXO note: P0.00/P0.01 are used as GPIO → LFCLK = internal RC (fine for BLE, calibrated). To
-  fit a 32.768 kHz crystal instead (lower sleep current / tighter timing), reclaim P0.00/P0.01
-  and drop BTN11/BTN12 (or move buttons to a scan matrix).
+- LFXO note: P0.00/P0.01 are now intentionally NC; no crystal is populated. Keep internal RC LFCLK unless hardware and firmware are deliberately revised together.
 
 ## Support parts (now specified in PARTS.md)
 
@@ -190,6 +189,6 @@ symbols with shipped 3D and are stocked at JLCPCB (AO3401A + B5819W are basic pa
 - [ams AS5600 datasheet](https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf),
   3.3V supply mode and sensor pinout.
 
-Run `make verify-notchdeck-one` from `hardware/` for a strict net and ERC check.
+Run `make verify` from `hardware/` for a strict net and ERC check.
 The expected endpoint sets live in `scripts/notchdeck-netcheck.py`, independently
 of the wiring manifest. See `README.md` for remaining pre-fabrication checks.

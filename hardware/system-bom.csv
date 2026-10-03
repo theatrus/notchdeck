@@ -1,0 +1,2 @@
+Item,Manufacturer,MPN,Distributor,Distributor PN,Qty per set,Build sets,Qty for build,Stock snapshot,Unit price USD snapshot,Checked UTC,URL,Notes
+Main-to-button FFC cable,Molex,0151670213,DigiKey,WM13121-ND,1,5,5,139,2.31,2026-10-03,https://www.digikey.com/en/products/detail/molex/0151670213/3281466,"6-way 1mm pitch Type A same-side; 177.8mm; 0.30mm reinforced ends. Main J15 pin n -> button J1 pin 7-n. Separate purchase, excluded from both PCB assembly BOMs."

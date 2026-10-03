@@ -39,13 +39,12 @@ make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
 
 ## Rules
 
-- **Don't hand-edit `hardware/notchdeck-one/*.kicad_sch`** — edit the manifest
-  `hardware/scripts/notchdeck-one.schgen.py` and `make gen-notchdeck-one`.
+- **Don't hand-edit generated `.kicad_sch` files** — edit `hardware/scripts/<project>.schgen.py` and run `make gen-<project>` for notchdeck-one or notchdeck-buttons.
 - **Close KiCad before regenerating** (eeschema open on those files will clash).
 - Wiring and deliberate block layout now live in the manifest. Default generation
   preserves existing sheets; use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply
   manifest changes, with the NotchDeck schematic editor closed.
-- After changes run `make verify-notchdeck-one`: the complete exported pin/net
+- After changes run `make verify`: both boards’ complete exported pin/net
   contract and zero ERC errors/warnings are required. Review SVG/PNG exports too.
 - Use Makefile targets when possible.
 - Don't violate the hard constraints in the `notchdeck-hardware` skill (esp. the
@@ -57,3 +56,7 @@ make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
 Firmware lives in `firmware/` (see `firmware/README.md`). Handle types are configured independently through Kconfig profiles. See
 `docs/06-handle-interfaces.md`; pure decoding/filtering lives in `handle_decode.c`,
 sensor access in `lever.c`. Run `make -C firmware test` after behavior changes.
+
+## Rev E split panel
+
+`notchdeck-one` is the 115×90mm logic/handle PCB; `notchdeck-buttons` is the 86×120mm STM32G030 key/RGB PCB. The FFC is six-way Type A, main J15 pin n to button J1 pin 7−n. Main keeps Select/Start plus Reset. Panel firmware and main I²C integration remain open; do not treat the Rev C/D overlay as compatible. See `hardware/notchdeck-buttons/README.md`. `make -C hardware verify` and `make -C hardware jlc` cover both assemblies.

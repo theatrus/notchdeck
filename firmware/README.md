@@ -10,6 +10,10 @@ bench-validated on the controller. Magnetic calibration is deliberately empty un
 real detent angles are measured. See [handle interfaces](../docs/06-handle-interfaces.md)
 for wiring, profiles, calibration and fault behavior.
 
+## Rev E split hardware
+
+Rev E moves the 4×4 buttons and RGB to an STM32G030 panel over I²C. **The existing Rev C/D direct-GPIO overlay and LED driver are not compatible with that panel.** Panel firmware, a versioned I²C protocol and main-board integration remain to be implemented; handle pin assignments are unchanged. See [panel interface and programming](../hardware/notchdeck-buttons/README.md). No Rev E flashable image is provided yet.
+
 ## Layout
 
 ```

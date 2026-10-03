@@ -98,14 +98,34 @@ for i in range(4):
     PLACEMENT[f"R{14+i}"] = (97, 110 + 7*i, 90)
     PLACEMENT[f"R{18+i}"] = (100, 112 + 7*i, 0)
     PLACEMENT[f"C{14+i}"] = (103, 112 + 7*i, 90)
+
+
+# Rev E: main logic/connector board, no 4x4 array.
+PLACEMENT.update({
+    "J5": (159.2, 109, 90), "J9": (79, 134.2, 0),
+    "R23": (78,128,90), "R24": (80.5,128,90), "R25": (84,128,0), "C37": (87,128,90),
+    "J10": (119,134.2,0), "J11": (145,134.2,0),
+    "U10": (119,125,0), "U11": (145,125,0), "C39": (123,125,90), "C40": (149,125,90),
+    "J15": (124,64,90), "SW18": (128,104,0), "SW19": (147,104,0),
+})
+PLACEMENT.pop("C13")
+for ref in ("U8","R11","R26","C20"):PLACEMENT.pop(ref)
+PLACEMENT.update({"J15":(135,54.2,180),"U12":(135,62,0),"C44":(140,62,90),"R42":(130,63,90)})
+BUTTON_PLACEMENT={
+ "J1":(93,165,0),"J2":(66,154,0),"U1":(94,147,90),"U2":(106,162,0),
+ "U8":(118,151,0),"R11":(118,146,0),"R26":(114,151,90),"C20":(122,151,90),"C13":(124,141,90),
+ "C1":(97,141.8,0),"C2":(101,143,90),"C3":(83,145,90),"C4":(105,156,90),"C5":(103,165,90),
+ "R1":(83,141,0),"R2":(84,152,90),"R3":(87,152,90),"R4":(90,152,90),"R5":(93,152,90),
+ "R6":(109,154,90),"R7":(109,158,90),
+}
 for row in range(4):
     for col in range(4):
-        x, y = 122 + col * 19, 84 + row * 19
-        PLACEMENT[f"SW{row*4+col+1}"] = (x, y, 0)
-        led = row * 4 + (col + 1 if row % 2 == 0 else 4 - col)
-        # DIN on the left for left-to-right rows; reverse for return rows.
-        PLACEMENT[f"D{led}"] = (x, y - 7, 180 if row % 2 == 0 else 0)
-        PLACEMENT[f"C{led+20}"] = (x, y - 10.8, 0)
+        x,y=64.5+col*19,72+row*19
+        BUTTON_PLACEMENT[f"SW{row*4+col+1}"]=(x,y,0)
+        BUTTON_PLACEMENT[f"D{20+row*4+col}"]=(x+7,y+2.5,90)
+        led=row*4+(col+1 if row%2==0 else 4-col)
+        BUTTON_PLACEMENT[f"D{led}"]=(x,y-7,180 if row%2==0 else 0)
+        BUTTON_PLACEMENT[f"C{20+led}"]=(x,y-10.8,0)
 
 
 def mm(x, y):
@@ -150,46 +170,39 @@ def load_footprint(lid):
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--output", type=Path, default=PROJECT / "notchdeck-one.kicad_pcb")
-    ap.add_argument("--replace-unrouted", action="store_true")
-    args = ap.parse_args()
-    if args.output.exists():
-        with tempfile.TemporaryDirectory(prefix="notchdeck-existing-") as tmp:
-            oldfile = Path(tmp) / "existing.kicad_pcb"
-            shutil.copyfile(args.output, oldfile)
-            old = P.LoadBoard(str(oldfile))
-        if len(old.GetTracks()) or any(not z.GetIsRuleArea() for z in old.Zones()):
-            ap.error("Refusing to overwrite routing or copper zones")
-        if len(old.GetFootprints()) and not args.replace_unrouted:
-            ap.error(
-                "Board already populated; edit it in KiCad or explicitly use --replace-unrouted"
-            )
+    ap=argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--project", choices=("notchdeck-one","notchdeck-buttons"), default="notchdeck-one")
+    ap.add_argument("--output",type=Path)
+    ap.add_argument("--replace-unrouted",action="store_true")
+    args=ap.parse_args()
+    project_name=args.project
+    project=HW/project_name
+    output=args.output or project/(project_name+".kicad_pcb")
+    identities={}
+    # Preserve footprint identities; the migration may draw moved parts from main.
+    for name in ("notchdeck-one",project_name):
+        source=HW/name/(name+".kicad_pcb")
+        if not source.exists():continue
+        with tempfile.TemporaryDirectory(prefix="notchdeck-old-") as tmp:
+            copy=Path(tmp)/"board.kicad_pcb";shutil.copyfile(source,copy)
+            old=P.LoadBoard(str(copy))
+            if name==project_name:
+                if len(old.GetTracks()) or any(not z.GetIsRuleArea() for z in old.Zones()):
+                    ap.error("Refusing to replace routing or copper pours")
+                if len(old.GetFootprints()) and not args.replace_unrouted:
+                    ap.error("Use --replace-unrouted for an intentional floorplan reset")
+            for fp in old.GetFootprints():
+                identities[fp.GetReference()]=(fp.GetFPIDAsString(),fp.m_Uuid.AsString())
     with tempfile.TemporaryDirectory(prefix="notchdeck-floorplan-") as tmp:
-        netfile = Path(tmp) / "schematic.xml"
-        subprocess.run(
-            [
-                os.environ.get("KICAD_CLI", "kicad-cli"),
-                "sch",
-                "export",
-                "netlist",
-                "--format",
-                "kicadxml",
-                "-o",
-                str(netfile),
-                str(PROJECT / "notchdeck-one.kicad_sch"),
-            ],
-            check=True,
-        )
-        tree = ET.parse(netfile)
-    board = P.BOARD()
-    board.SetCopperLayerCount(4)
+        netfile=Path(tmp)/"schematic.xml"
+        subprocess.run([os.environ.get("KICAD_CLI","kicad-cli"),"sch","export","netlist","--format","kicadxml","-o",str(netfile),str(project/(project_name+".kicad_sch"))],check=True)
+        tree=ET.parse(netfile)
+    board=P.BOARD()
+    is_main=project_name=="notchdeck-one"
+    placements=PLACEMENT if is_main else BUTTON_PLACEMENT
+    board.SetCopperLayerCount(4 if is_main else 2)
     board.GetDesignSettings().SetBoardThickness(P.FromMM(1.6))
-    title = board.GetTitleBlock()
-    title.SetTitle("NotchDeck One - provisional floorplan")
-    title.SetRevision("D")
-    title.SetDate("2026-10-03")
-    title.SetCompany("BenchBits")
+    title=board.GetTitleBlock();title.SetTitle(project_name+" - provisional floorplan");title.SetRevision("E");title.SetDate("2026-10-03");title.SetCompany("BenchBits")
     nets, pins = {}, {}
     for n in tree.findall(".//nets/net"):
         name = n.attrib["name"]
@@ -201,11 +214,13 @@ def main():
         for node in n.findall("node"):
             pins[(node.attrib["ref"], node.attrib["pin"])] = (net, node.attrib)
     components = tree.findall(".//components/comp")
-    assert {c.attrib["ref"] for c in components} == set(PLACEMENT)
+    assert {c.attrib["ref"] for c in components} == set(placements)
     placed = {}
     for c in components:
         ref = c.attrib["ref"]
         fp = load_footprint(c.findtext("footprint"))
+        if ref in identities and identities[ref][0] == c.findtext("footprint"):
+            fp.SetUuid(P.KIID(identities[ref][1]))
         fp.SetReference(ref)
         fp.SetValue(c.findtext("value"))
         fp.SetField("Datasheet", c.findtext("datasheet", ""))
@@ -232,7 +247,7 @@ def main():
             if field.GetName() != "Reference":
                 field.SetVisible(False)
         board.Add(fp)
-        x, y, angle = PLACEMENT[ref]
+        x, y, angle = placements[ref]
         fp.SetOrientationDegrees(angle)
         fp.SetPosition(mm(x, y))
         fp.Reference().SetPosition(mm(x, y + 3.8 if ref.startswith("SW") else y - 3.5))
@@ -243,31 +258,32 @@ def main():
             fp.Reference().SetPosition(mm(x - 5.2, y))
         elif ref.startswith("J") and ref not in ("J1", "J3", "J4", "J9"):
             fp.Reference().SetPosition(mm(x + 6.5, y + 3))
-        if ref == "J1":
+        if ref == "J1" and project_name == "notchdeck-one":
             fp.Reference().SetPosition(mm(59, 54))
-        if ref == "J2":
+        if ref == "J2" and is_main:
             fp.Reference().SetPosition(mm(55.8, 85))
         if ref == "J3":
             fp.Reference().SetPosition(mm(93, 74.5))
         if ref == "J9":
-            fp.Reference().SetPosition(mm(87.5, 149))
+            fp.Reference().SetLayer(P.F_Fab)
         if ref == "U7":
             fp.Reference().SetPosition(mm(65, 66.5))
-        if ref in ("U10", "U11"):
+        if ref in ("U10", "U11", "U12"):
             fp.Reference().SetPosition(mm(x - 4, y))
-        if ref in ("J10", "J11"):
-            fp.Reference().SetPosition(mm(x + 8, y))
-        if ref == "J12":
-            fp.Reference().SetPosition(mm(56, 105))
-        if ref == "J5":
-            fp.Reference().SetPosition(mm(189, 103))
+        if ref == "U12":
+            fp.Reference().SetPosition(mm(x, y + 3.5))
+        if ref in ("J10", "J11", "J12", "J5", "J15") or (project_name == "notchdeck-buttons" and ref == "J1"):
+            fp.Reference().SetLayer(P.F_Fab)
+            fp.Reference().SetPosition(mm(x,y))
         if ref in ("D17", "D18"):
             fp.Reference().SetLayer(P.F_Fab)
-        if ref == "U1":
+        if ref == "U1" and is_main:
             fp.Reference().SetPosition(mm(102, 53))
             for item in fp.GraphicalItems():
                 if isinstance(item, P.PCB_TEXT):
                     item.SetLayer(P.F_Fab)
+        if ref == "U1" and not is_main:
+            fp.Reference().SetPosition(mm(x, y - 7.2))
         field_style(fp.Reference())
         for pad in fp.Pads():
             entry = pins.get((ref, pad.GetNumber()))
@@ -280,113 +296,48 @@ def main():
                 raise ValueError(f"Unexpected pad {ref}.{pad.GetNumber()}")
         placed[ref] = fp
 
-    for a, b in [
-        ((50, 50), (195, 50)),
-        ((195, 50), (195, 155)),
-        ((195, 155), (50, 155)),
-        ((50, 155), (50, 50)),
-    ]:
-        line(board, a, b)
-    # Four provisional M3 mounting holes, excluded from schematic/BOM/positions.
-    for i, (x, y) in enumerate([(55, 55), (190, 55), (190, 150), (55, 150)], 1):
-        fp = load_footprint("MountingHole:MountingHole_3.2mm_M3")
-        fp.SetReference(f"H{i}")
-        fp.SetValue("M3 provisional")
-        fp.SetAttributes(
-            fp.GetAttributes()
-            | P.FP_EXCLUDE_FROM_BOM
-            | P.FP_EXCLUDE_FROM_POS_FILES
-            | P.FP_BOARD_ONLY
-        )
-        board.Add(fp)
-        fp.SetPosition(mm(x, y))
-        fp.Value().SetVisible(False)
-        fp.Reference().SetPosition(mm(x, y + 4.5 if y < 100 else y - 4.5))
-        field_style(fp.Reference())
-
-    # Radio's antenna end overhangs the north edge. No copper in this region
-    # on any of the four layers. Footprint exclusion is manual because U1's
-    # own antenna body must overlap the region.
-    z = P.ZONE(board)
-    z.SetIsRuleArea(True)
-    layers = P.LSET()
-    for layer in (P.F_Cu, P.In1_Cu, P.In2_Cu, P.B_Cu):
-        layers.AddLayer(layer)
-    z.SetLayerSet(layers)
-    z.SetZoneName("U1 ANTENNA - NO COPPER ALL LAYERS")
-    z.SetDoNotAllowTracks(True)
-    z.SetDoNotAllowVias(True)
-    z.SetDoNotAllowPads(True)
-    z.SetDoNotAllowZoneFills(True)
-    z.Outline().NewOutline()
-    for x, y in [(81, 43), (105, 43), (105, 51.3), (81, 51.3)]:
-        z.Outline().Append(P.FromMM(x), P.FromMM(y))
-    board.Add(z)
-    text(board, "ANTENNA: NO COPPER / METAL", 93, 46, 0.8, P.Dwgs_User)
-    text(board, "NOTCHDECK ONE", 145, 69, 1.3)
-    text(board, "REV D / DUAL + MASCON", 177, 65, 0.8)
-    text(board, "USB", 60, 66, 0.8)
-    text(board, "BAT+  GND", 59, 91, 0.8)
-    text(board, "3V3", 73, 51, 0.8)
-    text(board, "CHG", 78, 51, 0.8)
-    text(board, "SWD", 93, 90, 1)
-    text(board, "TC2030", 104, 87, 1)
-    text(board, "RESET", 106, 56, 0.8)
-    text(board, "POWER / COMBINED AXIS", 81, 123, 1)
-    text(board, "Align magnet to U5 center", 82, 127, 0.8, P.Dwgs_User)
-    text(board, "REV F / N / R", 82, 139, 1)
-    text(
-        board, "PROVISIONAL 145 x 105 mm - MECHANICS TBD", 122.5, 158, 1.2, P.Dwgs_User
-    )
-    text(board, "UNROUTED / DO NOT FABRICATE", 146, 150, 1)
-    for row in range(4):
-        for col in range(4):
-            n = row * 4 + col + 1
-            name = f"BTN {n}" if n <= 12 else ["UP", "DOWN", "LEFT", "RIGHT"][n - 13]
-            text(board, name, 122 + col * 19, 84 + row * 19 + 6, 0.8)
-    text(board, "POWER MAG", 133, 61.5, 0.8)
-    text(board, "BRAKE MAG", 158, 61.5, 0.8)
-    text(board, "J10 EXT: REMOVE R37/R38", 81, 134, 0.8)
-    text(board, "POWER GRAY", 62, 101, 0.8)
-    for value, x in [("BRAKE / MASCON", 190), ("GRAY", 187)]:
-        item = P.PCB_TEXT(board)
-        item.SetText(value)
-        item.SetPosition(mm(x, 135))
-        item.SetLayer(P.F_SilkS)
-        field_style(item, 0.8)
-        item.SetTextAngle(P.EDA_ANGLE(90, P.DEGREES_T))
-        board.Add(item)
-    for value, x, y in [
-        ("J12 POWER: 1 GND / 2 S0 / 3 S1 / 4 S2 / 5 3V3", 84, 119),
-        ("J5 BRAKE / MASCON: 1 GND / 2 S0 / 3 S1 / 4 S2 / 5 S3 / 6 3V3", 161, 130),
-        ("GRAY CONTACTS: LEAVE 3V3 WIRE OUT", 108, 137),
-    ]:
-        item = P.PCB_TEXT(board)
-        item.SetText(value)
-        item.SetPosition(mm(x, y))
-        item.SetLayer(P.B_SilkS)
-        item.SetMirrored(True)
-        field_style(item, 0.8)
-        board.Add(item)
-    # Reserve physical shaft/magnet space as a drawing, not a copper exclusion.
-    ring = P.PCB_SHAPE(board)
-    ring.SetShape(P.SHAPE_T_CIRCLE)
-    ring.SetCenter(mm(81, 113))
-    ring.SetEnd(mm(91, 113))
-    ring.SetLayer(P.Dwgs_User)
-    ring.SetWidth(P.FromMM(0.1))
-    board.Add(ring)
+    width,height=(115,90) if is_main else (86,120)
+    corners=[(50,50),(50+width,50),(50+width,50+height),(50,50+height)]
+    for a,b in zip(corners,corners[1:]+corners[:1]):line(board,a,b)
+    for i,(x,y) in enumerate([(55,55),(45+width,55),(45+width,45+height),(55,45+height)],1):
+        fp=load_footprint("MountingHole:MountingHole_3.2mm_M3")
+        fp.SetReference(f"H{i}");fp.SetValue("M3 provisional")
+        if f"H{i}" in identities:fp.SetUuid(P.KIID(identities[f"H{i}"][1]))
+        fp.SetAttributes(fp.GetAttributes()|P.FP_EXCLUDE_FROM_BOM|P.FP_EXCLUDE_FROM_POS_FILES|P.FP_BOARD_ONLY)
+        board.Add(fp);fp.SetPosition(mm(x,y));fp.Value().SetVisible(False);fp.Reference().SetLayer(P.F_Fab)
+        fp.Reference().SetPosition(mm(x,y));field_style(fp.Reference())
+    if is_main:
+        z=P.ZONE(board);z.SetIsRuleArea(True)
+        layers=P.LSET()
+        for layer in (P.F_Cu,P.In1_Cu,P.In2_Cu,P.B_Cu):layers.AddLayer(layer)
+        z.SetLayerSet(layers);z.SetZoneName("U1 ANTENNA - NO COPPER ALL LAYERS")
+        z.SetDoNotAllowTracks(True);z.SetDoNotAllowVias(True);z.SetDoNotAllowPads(True);z.SetDoNotAllowZoneFills(True)
+        z.Outline().NewOutline()
+        for x,y in [(81,43),(105,43),(105,51.3),(81,51.3)]:z.Outline().Append(P.FromMM(x),P.FromMM(y))
+        board.Add(z)
+        text(board,"ANTENNA: NO COPPER / METAL",93,46,.8,P.Dwgs_User)
+        for value,x,y in [("USB",60,66),("BAT+ GND",59,91),("SWD",93,90),("TC2030",104,87),("RESET",106,56),("POWER GRAY",62,101),("BRAKE / MASCON GRAY",146,117),("POWER MAG",119,138),("BRAKE MAG",145,138),("REV F/N/R",79,138),("SELECT",128,111),("START",147,111),("J15 BUTTON FFC",135,69),("REMOVE R37/R38 FOR J10",80,120)]:text(board,value,x,y,.8)
+        text(board,"NOTCHDECK LOGIC / REV E",123,98,1)
+        notes=["J15 -> BUTTON J1: 6-WAY 1mm FFC TYPE A", "J15: 1 GND / 2 3V3 / 3 SDA / 4 SCL / 5 IRQ / 6 USB5V", "MAIN PIN n -> BUTTON PIN 7-n - POWER OFF TO INSERT", "SW18 SELECT=BTN7; SW19 START=BTN8 (PARALLEL)", "J12: 1 GND / 2..4 POWER S0..S2 / 5 3V3", "J5: 1 GND / 2..5 BRAKE S0..S3 / 6 3V3", "PASSIVE GRAY CAMS: LEAVE 3V3 CAVITY EMPTY"]
+    else:
+        text(board,"NOTCHDECK BUTTONS / REV E",93,55,1)
+        for row in range(4):
+            for col in range(4):
+                n=row*4+col+1
+                name=f"BTN {n}" if n<=12 else ["UP","DOWN","LEFT","RIGHT"][n-13]
+                text(board,name,64.5+col*19,77+row*19,.8)
+        text(board,"J1 -> MAIN J15",93,160,.8)
+        text(board,"PANEL SWD",66,161,.8)
+        notes=["6-WAY 1mm FFC TYPE A - CONTACTS TOWARD PCB", "J1: 1 USB5V / 2 IRQ / 3 SCL / 4 SDA / 5 3V3 / 6 GND", "MAIN J15 PIN n -> THIS J1 PIN 7-n", "USB RGB ONLY - 250mA PANEL CURRENT TARGET", "STM32G030 / I2C 0x20 / SEPARATE FIRMWARE"]
+    for i,value in enumerate(notes):
+        text(board,value,50+width/2,(95 if is_main else 80)+i*4,.8,P.B_SilkS)
+    for drawing in board.GetDrawings():
+        if isinstance(drawing,P.PCB_TEXT) and drawing.GetLayer()==P.B_SilkS:drawing.SetMirrored(True)
+    text(board,f"PROVISIONAL {width} x {height} mm / UNROUTED - DO NOT FABRICATE",50+width/2,54+height,1,P.Dwgs_User)
     board.BuildConnectivity()
-    # SaveBoard also serializes project defaults. Save in isolation and copy
-    # only the PCB so the user's ERC/design/netclass settings stay untouched.
     with tempfile.TemporaryDirectory(prefix="notchdeck-save-") as tmp:
-        boardfile = Path(tmp) / args.output.name
-        P.SaveBoard(str(boardfile), board)
-        shutil.copyfile(boardfile, args.output)
-    print(
-        f"Saved {args.output}: {len(placed)} electrical footprints + 4 mounting holes, {len(nets)} nets"
-    )
+        file=Path(tmp)/output.name;P.SaveBoard(str(file),board);shutil.copyfile(file,output)
+    print(f"Saved {output}: {len(placed)} electrical footprints + 4 mounting holes, {len(nets)} nets")
 
 
-if __name__ == "__main__":
-    main()
+if __name__=="__main__":main()

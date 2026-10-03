@@ -46,33 +46,29 @@ def audit(xml_file):
         J3.1 J4.1 J9.1 R6.1 R7.1 R8.1 R9.1 R10.1 R12.1 R13.1
         R14.1 R15.1 R16.1 R17.1 R22.1 R23.1 U1.19 U1.23 U2.5 U5.1 U5.2
         C38.1 C39.1 C40.1 J10.1 J11.1 J5.6 J12.5 U9.14 U10.5 U11.5
-        R27.1 R28.1 R29.1 R30.1 R31.1 R32.1 R33.1 R39.1 R40.1 R41.1""",
+        R27.1 R28.1 R29.1 R30.1 R31.1 R32.1 R33.1 R39.1 R40.1 R41.1 J15.2 R42.1 U12.5 C44.1""",
     )
     net(
         "/USB_VBUS",
-        endpoints("C13.1 C18.1 C20.1 D19.2 J1.A4 J1.A9 J1.B4 J1.B9 R5.1 U1.27 U3.4 U7.5 U8.5")
-        | {f"D{i}.1" for i in range(1, 17)}
-        | {f"C{i}.1" for i in range(21, 37)},
+        endpoints("C18.1 J15.6 D19.2 J1.A4 J1.A9 J1.B4 J1.B9 R5.1 U1.27 U3.4 U7.5"),
     )
     net("/Power/BAT+", "C10.1 C19.1 J2.1 Q1.3 U3.3 U4.2 U4.3")
     net("/Power/VSYS", "C7.1 D19.1 Q1.2 U2.1 U2.3")
     net(
         "GND",
         endpoints("""D17.1 J1.A1 J1.A12 J1.B1 J1.B12 J1.SH J2.2 J3.3 J3.5 J3.9 J4.5
-        J5.1 J9.3 R1.1 R2.1 R3.2 R4.2 R24.2 R26.2
-        U1.5 U1.21 U1.24 U2.2 U3.2 U4.1 U4.4 U4.6 U4.9 U5.4 U5.8 U7.2 U8.1 U8.3
-        J10.2 J11.2 J12.1 U9.1 U9.2 U9.7 U10.2 U11.2""")
-        | {f"C{i}.2" for i in range(1, 44)}
-        | {f"D{i}.3" for i in range(1, 17)}
-        | {f"SW{i}.2" for i in range(1, 18)},
+        J5.1 J9.3 R1.1 R2.1 R3.2 R4.2 R24.2
+        U1.5 U1.21 U1.24 U2.2 U3.2 U4.1 U4.4 U4.6 U4.9 U5.4 U5.8 U7.2 U12.2
+        J15.1 SW18.2 SW19.2 J10.2 J11.2 J12.1 U9.1 U9.2 U9.7 U10.2 U11.2""")
+        | {f"C{i}.2" for i in range(1, 45) if i not in (13,20) and not 21 <= i <= 36}
+        | {"SW17.2"},
     )
-    for i, pad in enumerate([1, 2, 6, 17, 32, 33, 40, 42, 41, 43, 11, 13], 1):
-        net(f"/BTN{i}", f"SW{i}.1 U1.{pad}")
-    for name, sw, pad in [("UP", 13, 34), ("DOWN", 14, 35), ("LEFT", 15, 36), ("RIGHT", 16, 38)]:
-        net("/HAT_" + name, f"SW{sw}.1 U1.{pad}")
+    net("/BTN7", "SW18.1 U1.40")
+    net("/BTN8", "SW19.1 U1.42")
+    net("/PANEL_INT", "J15.5 R42.2 U1.1")
     for name, pins in {
-        "/I2C0_SDA": "R9.2 U1.12 U9.13",
-        "/I2C0_SCL": "R10.2 U1.14 U9.12",
+        "/I2C0_SDA": "R9.2 U1.12 U9.13 J15.3 U12.1 U12.6",
+        "/I2C0_SCL": "R10.2 U1.14 U9.12 J15.4 U12.3 U12.4",
         "/Lever/POWER_MAG_SDA": "U9.5 R27.2 R37.2 J10.3 U10.1 U10.6",
         "/Lever/POWER_MAG_SCL": "U9.6 R28.2 R38.2 J10.4 U10.3 U10.4",
         "/Lever/BRAKE_MAG_SDA": "U9.9 R29.2 J11.3 U11.1 U11.6",
@@ -91,9 +87,6 @@ def audit(xml_file):
         "/MCU/SWDCLK": "J3.4 J4.4 U1.39",
         "/nRESET": "C6.1 J3.10 J4.3 SW17.1 U1.26 U9.3 R39.2",
         "/REVERSER_AIN": "C37.1 R25.2 U1.7",
-        "/WS2812_DIN": "R26.1 U1.16 U8.2",
-        "/Controls/LED_DATA": "D1.4 R11.2",
-        "/Controls/LED_ROW2": "D8.2 D9.4",
     }.items():
         net(name, pins)
     for i, pad in enumerate([3, 4, 18, 15]):
@@ -109,15 +102,14 @@ def audit(xml_file):
         "J9.2 R23.2 R24.1 R25.1",
         "D17.2 R12.2",
         "D18.2 R13.2",
-        "R11.1 U8.4",
     ]
     internal += [f"J5.{2+i} R{14+i}.2 R{18+i}.1" for i in range(4)]
     internal += [f"J12.{2+i} R{31+i}.2 R{34+i}.1" for i in range(3)]
-    internal += [f"D{i}.2 D{i+1}.4" for i in range(1, 16) if i != 8]
     for pins in internal:
         first = pins.split()[0]
         net(by_pin[first], pins)
-    nc = endpoints("D16.2 J1.A8 J1.B8 J3.6 J3.7 J3.8 J4.6 U1.25 U2.4 U5.3 U5.5 U9.11")
+    nc = endpoints("J1.A8 J1.B8 J3.6 J3.7 J3.8 J4.6 U1.25 U2.4 U5.3 U5.5 U9.11")
+    nc |= {f"U1.{p}" for p in (2,6,11,13,16,17,32,33,34,35,36,38,41,43)}
     for pin in nc:
         name = by_pin[pin]
         assert name.startswith("unconnected-"), f"{pin}: expected explicit NC, got {name}"
@@ -131,10 +123,9 @@ def audit(xml_file):
         ), f"{name}: missing {pins-actual[name]}, unexpected {actual[name]-pins}"
     # Values/variants crucial to the power path and input interface.
     comps = {c.get("ref"): c for c in doc.findall("./components/comp")}
-    assert len(comps) == 140, f"Unexpected component count: {len(comps)}"
+    assert len(comps) == 93, f"Unexpected component count: {len(comps)}"
     for ref, value in {
         "U3": "MCP73832-2-OT",
-        "U8": "74AHCT1G125",
         "U9": "TCA9543APWR",
         "R37": "0",
         "R38": "0",
@@ -142,7 +133,9 @@ def audit(xml_file):
         "R3": "2k",
         "R4": "100k",
         "R5": "1k",
-        "C13": "1uF",
+        "R42": "10k",
+        "SW18": "SELECT",
+        "SW19": "START",
     }.items():
         assert comps[ref].findtext("value") == value, (ref, value)
     for ref, comp in comps.items():

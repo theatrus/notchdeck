@@ -11,7 +11,8 @@ macOS app bundle (`/Applications/KiCad/KiCad.app/...`).
 | `kicad-sch-check.py` | `make check-<project>` | Sanity-check a schematic: component count, missing footprints, duplicate refs, ERC tally. Exits non-zero on a structural problem. |
 | `kicad-sch-render.sh` | `make render-<project>` | Render schematic sheet(s) to PNG for a quick visual review. |
 | `notchdeck-netcheck.py` | `make verify-notchdeck-one` | Independent complete pin/net contract and strict native ERC. |
-| `notchdeck-boardcheck.py` | `make verify-pcb-notchdeck-one` | Compare every PCB pad, footprint identity and schematic UUID path to the native netlist. |
+| `notchdeck-panelcheck.py` | `make verify-notchdeck-buttons` | Complete panel pin/net contract, FFC reversal and strict ERC. |
+| `notchdeck-boardcheck.py` | `make verify-pcb-<project>` | Compare every PCB pad, footprint identity and schematic UUID path to the native netlist. |
 | `notchdeck-bomcheck.py` | `make verify-bom-notchdeck-one` | Compare native assembly BOM identity, quantities, footprints and exclusions to reviewed JLCPCB selections. |
 | `notchdeck-floorplan.py` | — | Seed the provisional 4×4 PCB placement; subsequent edits belong in the saved PCB. |
 | `jlcpcb-package.sh` | `make jlc-<project>` | Gerbers + drill + BOM + CPL → JLCPCB zip. |
@@ -34,7 +35,7 @@ make render-notchdeck-one   # eyeball it
 
 NotchDeck's manifest now captures **components, wiring, hierarchical ports and
 layout**. The `Capture` helper groups local circuits and checks that every pin is
-wired or explicitly NC. The root connects MCU, Power, Lever and Controls.
+wired or explicitly NC. The logic root connects MCU, Power, Lever and Controls; the button root connects Controller and Buttons. `notchdeck_capture.py` shares the Capture helper.
 By default, `gen` keeps existing sheets intact. Close the NotchDeck schematic editor,
 then use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply manifest changes.
 Manual editor changes must be reflected in the manifest before a forced rebuild.
@@ -45,7 +46,7 @@ page numbers and the project records the actual root UUID.
 `make verify-notchdeck-one` exports KiCad XML and compares **every endpoint** to
 `scripts/notchdeck-netcheck.py`, then requires zero ERC violations. This independent
 contract checks rail isolation, MCU pads, both I2C buses, USB pairs, the power path,
-SWD/reset, all switches, reverser and all sixteen LEDs. Set `NETCHECK_OUT` to a
+SWD/reset, all switches, reverser and the panel link; the panel contract covers the matrix and LEDs. Set `NETCHECK_OUT` to a
 local directory to retain netlist/JSON reports. It checks both opens and extra pins
 (shorts), not just whether an expected pair happens to share a net.
 
@@ -54,7 +55,7 @@ are flattened with property overrides, matching KiCad's library resolver.
 Notes render in a fixed-width font; use `K.note_block()` and `K.pin_table()` in
 manifests when writing pin maps or wiring tables that need alignment.
 
-`notchdeck-one/bom/jlcpcb-parts.json` holds reviewed sourcing assignments. The
+Each project’s `bom/jlcpcb-parts.json` holds reviewed sourcing assignments. The
 manifest writes its LCSC/MPN/Manufacturer/Datasheet and hidden BOM review properties
 onto each symbol; the engine also supports generic hidden `properties` dictionaries.
 The assembly export groups by sourcing identity as well as value/footprint and
@@ -95,3 +96,7 @@ Normal `make gen` never runs it. Edit the saved board in KiCad from this point o
   temp dir (override with `$RENDER_OUT`); pass sheet name(s) to render a subset.
 - Derived symbols are now flattened correctly, including their overridden properties;
   no library-mismatch ERC warnings are expected for this project.
+
+## Rev E two-board exports
+
+`make verify` covers both projects. PCB/BOM audit scripts accept `--project notchdeck-one|notchdeck-buttons`. The floorplan script accepts the same selector. `make jlc` builds separate ZIPs, each with Gerbers, drill, BOM and `<project>-CPL.csv`. It does not gate fabrication readiness; both saved boards are still unrouted. One Molex FFC per system is listed separately in `hardware/system-bom.csv`. Consolidated stock in `hardware/jlcpcb-five-set-stock.csv` counts both boards.

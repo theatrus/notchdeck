@@ -1,49 +1,57 @@
 {
-  "schematic": "hardware/notchdeck-one/notchdeck-one.kicad_sch",
-  "last_sync": "2026-10-03T22:05:32.836283+00:00",
+  "schematics": [
+    "hardware/notchdeck-one/notchdeck-one.kicad_sch",
+    "hardware/notchdeck-buttons/notchdeck-buttons.kicad_sch"
+  ],
+  "last_sync": "2026-10-03T23:10:00Z",
   "parts": {
     "CL05B104KO5NNNC": {
       "file": "C1525.pdf",
       "manufacturer": "Samsung Electro-Mechanics",
-      "description": "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "description": "100nF 16V X7R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C1525",
       "status": "ok",
       "references": [
-        "C1",
-        "C2",
-        "C6",
-        "C10",
-        "C11",
-        "C14",
-        "C15",
-        "C16",
-        "C17",
-        "C20",
-        "C21",
-        "C22",
-        "C23",
-        "C24",
-        "C25",
-        "C26",
-        "C27",
-        "C28",
-        "C29",
-        "C30",
-        "C31",
-        "C32",
-        "C33",
-        "C34",
-        "C35",
-        "C36",
-        "C37",
-        "C38",
-        "C39",
-        "C40",
-        "C41",
-        "C42",
-        "C43"
+        "notchdeck-one:C1",
+        "notchdeck-one:C2",
+        "notchdeck-one:C6",
+        "notchdeck-one:C10",
+        "notchdeck-one:C11",
+        "notchdeck-one:C14",
+        "notchdeck-one:C15",
+        "notchdeck-one:C16",
+        "notchdeck-one:C17",
+        "notchdeck-one:C37",
+        "notchdeck-one:C38",
+        "notchdeck-one:C39",
+        "notchdeck-one:C40",
+        "notchdeck-one:C41",
+        "notchdeck-one:C42",
+        "notchdeck-one:C43",
+        "notchdeck-one:C44",
+        "notchdeck-buttons:C21",
+        "notchdeck-buttons:C22",
+        "notchdeck-buttons:C23",
+        "notchdeck-buttons:C24",
+        "notchdeck-buttons:C25",
+        "notchdeck-buttons:C26",
+        "notchdeck-buttons:C27",
+        "notchdeck-buttons:C28",
+        "notchdeck-buttons:C29",
+        "notchdeck-buttons:C30",
+        "notchdeck-buttons:C31",
+        "notchdeck-buttons:C32",
+        "notchdeck-buttons:C33",
+        "notchdeck-buttons:C34",
+        "notchdeck-buttons:C35",
+        "notchdeck-buttons:C36",
+        "notchdeck-buttons:C20",
+        "notchdeck-buttons:C1",
+        "notchdeck-buttons:C3",
+        "notchdeck-buttons:C4",
+        "notchdeck-buttons:C5"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
@@ -51,14 +59,15 @@
     "CL21A475KAQNNNE": {
       "file": "C1779.pdf",
       "manufacturer": "Samsung Electro-Mechanics",
-      "description": "25V 4.7uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "description": "25V 4.7uF X5R \u00b110% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1779",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C1779",
       "status": "ok",
       "references": [
-        "C18",
-        "C19"
+        "notchdeck-one:C18",
+        "notchdeck-one:C19",
+        "notchdeck-buttons:C2"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
@@ -66,13 +75,13 @@
     "KT-0603R": {
       "file": "C2286.pdf",
       "manufacturer": "Hubei KENTO Elec",
-      "description": "-40℃~+85℃ 1.8V~2.4V 120° 20mA 300mcd 40mW 615nm~630nm 645nm Discrete Diode Red Water Clear 0603 LED Indication - Discrete ROHS",
+      "description": "-40\u2103~+85\u2103 1.8V~2.4V 120\u00b0 20mA 300mcd 40mW 615nm~630nm 645nm Discrete Diode Red Water Clear 0603 LED Indication - Discrete ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/011ec3e8cb1e825f6961d29bc4db4c7a.pdf?productCode=C2286",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C2286",
       "status": "ok",
       "references": [
-        "D18"
+        "notchdeck-one:D18"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 610865
@@ -80,13 +89,13 @@
     "0402WGF2001TCE": {
       "file": "C4109.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 2kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 2k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C4109",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C4109",
       "status": "ok",
       "references": [
-        "R3"
+        "notchdeck-one:R3"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -94,13 +103,13 @@
     "SN74AHCT1G125DBVR": {
       "file": "C7484.pdf",
       "manufacturer": "TI",
-      "description": "-40℃~+125℃ 1 1 10uA 4.5V~5.5V 6.5ns@5V,15pF 74AHCT 8mA 8mA Tri-State Unidirectional SOT-23-5 Buffers, Drivers, Receivers, Transceivers ROHS",
+      "description": "-40\u2103~+125\u2103 1 1 10uA 4.5V~5.5V 6.5ns@5V,15pF 74AHCT 8mA 8mA Tri-State Unidirectional SOT-23-5 Buffers, Drivers, Receivers, Transceivers ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/74b1f7dfbe12452e8a365e0596ae902b.pdf?productCode=C7484",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C7484",
       "status": "ok",
       "references": [
-        "U8"
+        "notchdeck-buttons:U8"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 958974
@@ -108,15 +117,17 @@
     "USBLC6-2SC6": {
       "file": "C7519.pdf",
       "manufacturer": "ST",
-      "description": "-40℃~+125℃ 150nA 17V 2 3.5pF 5.25V 5A 6V ESD IEC 61000-4-2 Unidirectional SOT-23-6L ESD and Surge Protection (TVS/ESD) ROHS",
+      "description": "-40\u2103~+125\u2103 150nA 17V 2 3.5pF 5.25V 5A 6V ESD IEC 61000-4-2 Unidirectional SOT-23-6L ESD and Surge Protection (TVS/ESD) ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0d3a2ab954b34651a0695e7ccf534db0.pdf?productCode=C7519",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C7519",
       "status": "ok",
       "references": [
-        "U7",
-        "U10",
-        "U11"
+        "notchdeck-one:U7",
+        "notchdeck-one:U10",
+        "notchdeck-one:U11",
+        "notchdeck-one:U12",
+        "notchdeck-buttons:U2"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 224255
@@ -130,7 +141,7 @@
       "lcsc": "C8598",
       "status": "ok",
       "references": [
-        "D19"
+        "notchdeck-one:D19"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 745783
@@ -138,23 +149,23 @@
     "0402WGF1001TCE": {
       "file": "C11702.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 1k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C11702",
       "status": "ok",
       "references": [
-        "R5",
-        "R12",
-        "R13",
-        "R18",
-        "R19",
-        "R20",
-        "R21",
-        "R25",
-        "R34",
-        "R35",
-        "R36"
+        "notchdeck-one:R5",
+        "notchdeck-one:R12",
+        "notchdeck-one:R13",
+        "notchdeck-one:R18",
+        "notchdeck-one:R19",
+        "notchdeck-one:R20",
+        "notchdeck-one:R21",
+        "notchdeck-one:R25",
+        "notchdeck-one:R34",
+        "notchdeck-one:R35",
+        "notchdeck-one:R36"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -162,13 +173,13 @@
     "AO3401A": {
       "file": "C15127.pdf",
       "manufacturer": "AOS",
-      "description": "1 P-Channel 14nC@10V 30V 47mΩ@10V、60mΩ@4.5V、85mΩ@2.5V 4A 55pF 645pF 80pF 900mV SOT-23 MOSFETs ROHS",
+      "description": "1 P-Channel 14nC@10V 30V 47m\u03a9@10V\u300160m\u03a9@4.5V\u300185m\u03a9@2.5V 4A 55pF 645pF 80pF 900mV SOT-23 MOSFETs ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/fee353dd1e9e0bc90b295f14f381aa4c.pdf?productCode=C15127",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C15127",
       "status": "ok",
       "references": [
-        "Q1"
+        "notchdeck-one:Q1"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 326568
@@ -176,14 +187,14 @@
     "CL21A106KAYNNNE": {
       "file": "C15850.pdf",
       "manufacturer": "Samsung Electro-Mechanics",
-      "description": "10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "description": "10uF 25V X5R \u00b110% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C15850",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C15850",
       "status": "ok",
       "references": [
-        "C5",
-        "C9"
+        "notchdeck-one:C5",
+        "notchdeck-one:C9"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
@@ -191,14 +202,14 @@
     "0603WAF0000T5E": {
       "file": "C21189.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 0\u03a9 100mW 75V Thick Film Resistor \u00b11% 0603 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/f42da6c80a0747bae77c2f98f4e46d1d.pdf?productCode=C21189",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C21189",
       "status": "ok",
       "references": [
-        "R37",
-        "R38"
+        "notchdeck-one:R37",
+        "notchdeck-one:R38"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 861204
@@ -206,13 +217,13 @@
     "0402WGF3300TCE": {
       "file": "C25104.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 330\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C25104",
       "status": "ok",
       "references": [
-        "R11"
+        "notchdeck-buttons:R11"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -220,18 +231,20 @@
     "0402WGF1003TCE": {
       "file": "C25741.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 100k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C25741",
       "status": "ok",
       "references": [
-        "R4",
-        "R8",
-        "R22",
-        "R23",
-        "R24",
-        "R26"
+        "notchdeck-one:R4",
+        "notchdeck-one:R8",
+        "notchdeck-one:R22",
+        "notchdeck-one:R23",
+        "notchdeck-one:R24",
+        "notchdeck-buttons:R26",
+        "notchdeck-buttons:R6",
+        "notchdeck-buttons:R7"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -239,22 +252,28 @@
     "0402WGF1002TCE": {
       "file": "C25744.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 10k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25744",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C25744",
       "status": "ok",
       "references": [
-        "R14",
-        "R15",
-        "R16",
-        "R17",
-        "R31",
-        "R32",
-        "R33",
-        "R39",
-        "R40",
-        "R41"
+        "notchdeck-one:R14",
+        "notchdeck-one:R15",
+        "notchdeck-one:R16",
+        "notchdeck-one:R17",
+        "notchdeck-one:R31",
+        "notchdeck-one:R32",
+        "notchdeck-one:R33",
+        "notchdeck-one:R39",
+        "notchdeck-one:R40",
+        "notchdeck-one:R41",
+        "notchdeck-one:R42",
+        "notchdeck-buttons:R1",
+        "notchdeck-buttons:R2",
+        "notchdeck-buttons:R3",
+        "notchdeck-buttons:R4",
+        "notchdeck-buttons:R5"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -262,20 +281,20 @@
     "0402WGF4701TCE": {
       "file": "C25900.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 4.7k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25900",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C25900",
       "status": "ok",
       "references": [
-        "R6",
-        "R7",
-        "R9",
-        "R10",
-        "R27",
-        "R28",
-        "R29",
-        "R30"
+        "notchdeck-one:R6",
+        "notchdeck-one:R7",
+        "notchdeck-one:R9",
+        "notchdeck-one:R10",
+        "notchdeck-one:R27",
+        "notchdeck-one:R28",
+        "notchdeck-one:R29",
+        "notchdeck-one:R30"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -283,14 +302,14 @@
     "0402WGF5101TCE": {
       "file": "C25905.pdf",
       "manufacturer": "UNI-ROYAL",
-      "description": "-55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
+      "description": "-55\u2103~+155\u2103 5.1k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25905",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C25905",
       "status": "ok",
       "references": [
-        "R1",
-        "R2"
+        "notchdeck-one:R1",
+        "notchdeck-one:R2"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -298,13 +317,13 @@
     "CL21B105KBFNNNE": {
       "file": "C28323.pdf",
       "manufacturer": "Samsung Electro-Mechanics",
-      "description": "1uF 50V X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "description": "1uF 50V X7R \u00b110% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C28323",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C28323",
       "status": "ok",
       "references": [
-        "C13"
+        "notchdeck-buttons:C13"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
@@ -312,13 +331,13 @@
     "MCP73832T-2ACI/OT": {
       "file": "C38066.pdf",
       "manufacturer": "MICROCHIP",
-      "description": "-40℃~+85℃ 1 1uA 3.75V~6V 4.2V 550mA Charging IC Lithium Battery SOT-23-5 Battery Management ROHS",
+      "description": "-40\u2103~+85\u2103 1 1uA 3.75V~6V 4.2V 550mA Charging IC Lithium Battery SOT-23-5 Battery Management ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/852a87d0adc246b1ba9a5a84f9d77888.pdf?productCode=C38066",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C38066",
       "status": "ok",
       "references": [
-        "U3"
+        "notchdeck-one:U3"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 842807
@@ -326,13 +345,13 @@
     "AP2112K-3.3TRG1": {
       "file": "C51118.pdf",
       "manufacturer": "DIODES",
-      "description": "-40℃~+85℃@(Ta) 1 250mV@(600mA) 3.3V 50uVrms 55uA 600mA 65dB@(1kHz) 6V Fixed Over Current Protection、Thermal Shutdown、Enable control Positive SOT-25-5 Voltage Regulators - Linear, Low Drop Out (LDO) Regulators ROHS",
+      "description": "-40\u2103~+85\u2103@(Ta) 1 250mV@(600mA) 3.3V 50uVrms 55uA 600mA 65dB@(1kHz) 6V Fixed Over Current Protection\u3001Thermal Shutdown\u3001Enable control Positive SOT-25-5 Voltage Regulators - Linear, Low Drop Out (LDO) Regulators ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/5b29baebdc4332b382a530ff21092301.pdf?productCode=C51118",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C51118",
       "status": "ok",
       "references": [
-        "U2"
+        "notchdeck-one:U2"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 755270
@@ -340,45 +359,85 @@
     "CL05A105KA5NQNC": {
       "file": "C52923.pdf",
       "manufacturer": "Samsung Electro-Mechanics",
-      "description": "1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "description": "1uF 25V X5R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C52923",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C52923",
       "status": "ok",
       "references": [
-        "C3",
-        "C4",
-        "C7",
-        "C8",
-        "C12"
+        "notchdeck-one:C3",
+        "notchdeck-one:C4",
+        "notchdeck-one:C7",
+        "notchdeck-one:C8",
+        "notchdeck-one:C12"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
     },
+    "1N4148W": {
+      "file": "C81598.pdf",
+      "manufacturer": "ST(Semtech)",
+      "description": "150mA 1A 1V@50mA 1uA@75V 400mW 4ns 75V Independent SOD-123 Switching Diodes ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/8abd7fc00ebe41ffb03ad1383c10753b.pdf?productCode=C81598",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C81598",
+      "status": "ok",
+      "references": [
+        "notchdeck-buttons:D20",
+        "notchdeck-buttons:D21",
+        "notchdeck-buttons:D22",
+        "notchdeck-buttons:D23",
+        "notchdeck-buttons:D24",
+        "notchdeck-buttons:D25",
+        "notchdeck-buttons:D26",
+        "notchdeck-buttons:D27",
+        "notchdeck-buttons:D28",
+        "notchdeck-buttons:D29",
+        "notchdeck-buttons:D30",
+        "notchdeck-buttons:D31",
+        "notchdeck-buttons:D32",
+        "notchdeck-buttons:D33",
+        "notchdeck-buttons:D34",
+        "notchdeck-buttons:D35"
+      ]
+    },
     "TYPE-C-31-M-12": {
       "file": "C165948.pdf",
       "manufacturer": "Korean Hroparts Elec",
-      "description": "-30℃~+80℃ 1 10,000 cycles 16P 20V 5A 7.35mm Female Surface Mount, Right Angle Type-C SMD USB Connectors ROHS",
+      "description": "-30\u2103~+80\u2103 1 10,000 cycles 16P 20V 5A 7.35mm Female Surface Mount, Right Angle Type-C SMD USB Connectors ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/9e56b777c022540fcce7c7f67825f55e.pdf?productCode=C165948",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C165948",
       "status": "ok",
       "references": [
-        "J1"
+        "notchdeck-one:J1"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 118176
     },
+    "AFA07-S06FCA-00": {
+      "file": "C262712.pdf",
+      "manufacturer": "JUSHUO",
+      "description": "0.3mm 1mm 2.5mm 6P Bottom Contact Copper alloy Slide Lock Surface Mount, Right Angle Tin SMD,P=1mm,\u5367\u8d34 FFC, FPC (Flat Flexible) Connector Assemblies ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/b01391708457137d9b8d8b493bdc4f0c.pdf?productCode=C262712",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C262712",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:J15",
+        "notchdeck-buttons:J1"
+      ]
+    },
     "S3B-PH-SM4-TB(LF)(SN)": {
       "file": "C265101.pdf",
       "manufacturer": "JST",
-      "description": "-25℃~+85℃ 1 100V 1x3P 2A 2mm 3 3P 5.5mm 8.6mm 9.9mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,卧贴 Wire To Board Connector ROHS",
+      "description": "-25\u2103~+85\u2103 1 100V 1x3P 2A 2mm 3 3P 5.5mm 8.6mm 9.9mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,\u5367\u8d34 Wire To Board Connector ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/6c6fce4367275d84ec6a99bf09f1250f.pdf?productCode=C265101",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C265101",
       "status": "ok",
       "references": [
-        "J9"
+        "notchdeck-one:J9"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 118956
@@ -386,174 +445,17 @@
     "S4B-PH-SM4-TB(LF)(SN)": {
       "file": "C265102.pdf",
       "manufacturer": "JST",
-      "description": "-25℃~+85℃ 1 100V 11.9mm 1x4P 2A 2mm 4 4P 5.5mm 8.6mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,卧贴 Wire To Board Connector ROHS",
+      "description": "-25\u2103~+85\u2103 1 100V 11.9mm 1x4P 2A 2mm 4 4P 5.5mm 8.6mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,\u5367\u8d34 Wire To Board Connector ROHS",
       "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/6c6fce4367275d84ec6a99bf09f1250f.pdf?productCode=C265102",
       "source": "reviewed JLCPCB selection; manufacturer PDF",
       "lcsc": "C265102",
       "status": "ok",
       "references": [
-        "J10",
-        "J11"
+        "notchdeck-one:J10",
+        "notchdeck-one:J11"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 118956
-    },
-    "S2B-PH-SM4-TB(LF)(SN)": {
-      "file": "C295747.pdf",
-      "manufacturer": "JST",
-      "description": "-25℃~+85℃ 1 100V 1x2P 2 2A 2P 2mm 5.5mm 7.9mm 8.6mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,卧贴 Wire To Board Connector ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C295747",
-      "status": "ok",
-      "references": [
-        "J2"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 719637
-    },
-    "TS-1187A-B-A-B": {
-      "file": "C318884.pdf",
-      "manufacturer": "XKB Connection",
-      "description": "-30℃~+85℃ 1.5mm 1.6N 100,000 cycles 12V 5.1mm 5.1mm 50mA Gold No Round Button SPST Surface Mount,Vertical Without Bracket SMD-4P,5.1x5.1mm Tactile Switches ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C318884",
-      "status": "ok",
-      "references": [
-        "SW1",
-        "SW2",
-        "SW3",
-        "SW4",
-        "SW5",
-        "SW6",
-        "SW7",
-        "SW8",
-        "SW9",
-        "SW10",
-        "SW11",
-        "SW12",
-        "SW13",
-        "SW14",
-        "SW15",
-        "SW16",
-        "SW17"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 805305
-    },
-    "E73-2G4M08S1C": {
-      "file": "C356849.pdf",
-      "manufacturer": "Ebyte",
-      "description": "-103dBm、-95dBm -40℃~+85℃ 120m 17.05mA 3.3V 8.27mA 8dBm Bluetooth 5.0、Bluetooth 4.2 PWM、SPI、ADC、USB、I2C、ISP、JTAG、DMA nRF52840 Chip SMD,18x13mm Bluetooth Modules ROHS",
-      "datasheet_url": "https://devzone.nordicsemi.com/cfs-file/__key/support-attachments/beef5d1b77644c448dabff31668f3a47-501ceb3d34d541b591f720b20ce1b1ba/E73_2D00_2G4M08S1C_5F00_Usermanual_5F00_v1.9.pdf",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C356849",
-      "status": "ok",
-      "references": [
-        "U1"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 683591
-    },
-    "FTSH-105-01-L-DV-K-TR": {
-      "file": "C448647.pdf",
-      "manufacturer": "Samtec",
-      "description": "-55℃~+125℃ 1.27mm 10P 2 3.4A Phosphor bronze Surface Mount,Vertical SMD,P=1.27mm Board-to-Board and Backplane Connector ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/75565f450863f224a13c3fa6d9c6afc1.pdf?productCode=C448647",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C448647",
-      "status": "ok",
-      "references": [
-        "J3"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 531254
-    },
-    "AS5600-ASOT": {
-      "file": "C499458.pdf",
-      "manufacturer": "ams",
-      "description": "-40℃~+125℃ 0°~360° 1.75mm 3.3V、5V 3.9mm 4.9mm 6.5mA I2C Magnetic rotary position sensor No SOIC-8 Position Sensors ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0163ccf74074c4b353a988081c09f0dd.pdf?productCode=C499458",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C499458",
-      "status": "ok",
-      "references": [
-        "U5"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 829975
-    },
-    "XL-1608SYGC-06": {
-      "file": "C965805.pdf",
-      "manufacturer": "XINGLIGHT",
-      "description": "-40℃~+85℃ 120° 2.2V 25mA 55mW 570nm~575nm 575nm 60mcd Discrete Diode Top-mount Water Clear Yellow Green 0603 LED Indication - Discrete ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/db39074692074ba57d43d76e9fc6dbf2.pdf?productCode=C965805",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C965805",
-      "status": "ok",
-      "references": [
-        "D17"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 1577978
-    },
-    "TCA9543APWR": {
-      "file": "C2653307.pdf",
-      "manufacturer": "TI",
-      "description": "-40℃~+85℃ 1.65V~5.5V 10uA 1ns@5.5V,50pF 2uA 3mA Bus Switch Level shifting、Hot-swap protection Single Supply TSSOP-14 Signal Switches, Multiplexers, Decoders ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/4107098bf2c5ce9d0a240a1c4ceb8054.pdf?productCode=C2653307",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C2653307",
-      "status": "ok",
-      "references": [
-        "U9"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 867884
-    },
-    "MAX17048G+T10": {
-      "file": "C2682616.pdf",
-      "manufacturer": "MAXIM",
-      "description": "-40℃~+85℃ 1 2.5V~4.5V 3uA I2C Lithium Battery Not supported Not supported DFN-8-EP(2x2) Battery Management ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/6ea2434b9fcbd476e93afe7bcb1f53c0.pdf?productCode=C2682616",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C2682616",
-      "status": "ok",
-      "references": [
-        "U4"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 1109267
-    },
-    "XL-5050RGBC-2812B": {
-      "file": "C2843785.pdf",
-      "manufacturer": "XINGLIGHT",
-      "description": "-20℃~+85℃ 0.3mA 1.6mm 120° 2000V 3.5V~5.5V 4kHz 5mm 5mm 800Kbit/s G:1300mcd~1800mcd、R:500mcd~700mcd、B:300mcd~500mcd R:620nm~635nm、B:465nm~475nm、G:520nm~535nm Top-mount Water Clear SMD5050-4P RGB LEDs(Built-in IC) ROHS",
-      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C2843785",
-      "status": "ok",
-      "references": [
-        "D1",
-        "D2",
-        "D3",
-        "D4",
-        "D5",
-        "D6",
-        "D7",
-        "D8",
-        "D9",
-        "D10",
-        "D11",
-        "D12",
-        "D13",
-        "D14",
-        "D15",
-        "D16"
-      ],
-      "verification": "catalog identity matched; see BOM review notes for drawing checks",
-      "size_bytes": 1441474
     },
     "S5B-PH-SM4-TB(LF)(SN)": {
       "file": "C265104.pdf",
@@ -564,7 +466,7 @@
       "lcsc": "C265104",
       "status": "ok",
       "references": [
-        "J12"
+        "notchdeck-one:J12"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 928413
@@ -578,10 +480,181 @@
       "lcsc": "C265405",
       "status": "ok",
       "references": [
-        "J5"
+        "notchdeck-one:J5"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 117749
+    },
+    "S2B-PH-SM4-TB(LF)(SN)": {
+      "file": "C295747.pdf",
+      "manufacturer": "JST",
+      "description": "-25\u2103~+85\u2103 1 100V 1x2P 2 2A 2P 2mm 5.5mm 7.9mm 8.6mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,\u5367\u8d34 Wire To Board Connector ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C295747",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:J2"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 719637
+    },
+    "TS-1187A-B-A-B": {
+      "file": "C318884.pdf",
+      "manufacturer": "XKB Connection",
+      "description": "-30\u2103~+85\u2103 1.5mm 1.6N 100,000 cycles 12V 5.1mm 5.1mm 50mA Gold No Round Button SPST Surface Mount,Vertical Without Bracket SMD-4P,5.1x5.1mm Tactile Switches ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C318884",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:SW17",
+        "notchdeck-one:SW18",
+        "notchdeck-one:SW19",
+        "notchdeck-buttons:SW1",
+        "notchdeck-buttons:SW2",
+        "notchdeck-buttons:SW3",
+        "notchdeck-buttons:SW4",
+        "notchdeck-buttons:SW5",
+        "notchdeck-buttons:SW6",
+        "notchdeck-buttons:SW7",
+        "notchdeck-buttons:SW8",
+        "notchdeck-buttons:SW9",
+        "notchdeck-buttons:SW10",
+        "notchdeck-buttons:SW11",
+        "notchdeck-buttons:SW12",
+        "notchdeck-buttons:SW13",
+        "notchdeck-buttons:SW14",
+        "notchdeck-buttons:SW15",
+        "notchdeck-buttons:SW16"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 805305
+    },
+    "E73-2G4M08S1C": {
+      "file": "C356849.pdf",
+      "manufacturer": "Ebyte",
+      "description": "-103dBm\u3001-95dBm -40\u2103~+85\u2103 120m 17.05mA 3.3V 8.27mA 8dBm Bluetooth 5.0\u3001Bluetooth 4.2 PWM\u3001SPI\u3001ADC\u3001USB\u3001I2C\u3001ISP\u3001JTAG\u3001DMA nRF52840 Chip SMD,18x13mm Bluetooth Modules ROHS",
+      "datasheet_url": "https://devzone.nordicsemi.com/cfs-file/__key/support-attachments/beef5d1b77644c448dabff31668f3a47-501ceb3d34d541b591f720b20ce1b1ba/E73_2D00_2G4M08S1C_5F00_Usermanual_5F00_v1.9.pdf",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C356849",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:U1"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 683591
+    },
+    "FTSH-105-01-L-DV-K-TR": {
+      "file": "C448647.pdf",
+      "manufacturer": "Samtec",
+      "description": "-55\u2103~+125\u2103 1.27mm 10P 2 3.4A Phosphor bronze Surface Mount,Vertical SMD,P=1.27mm Board-to-Board and Backplane Connector ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/75565f450863f224a13c3fa6d9c6afc1.pdf?productCode=C448647",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C448647",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:J3"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 531254
+    },
+    "AS5600-ASOT": {
+      "file": "C499458.pdf",
+      "manufacturer": "ams",
+      "description": "-40\u2103~+125\u2103 0\u00b0~360\u00b0 1.75mm 3.3V\u30015V 3.9mm 4.9mm 6.5mA I2C Magnetic rotary position sensor No SOIC-8 Position Sensors ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0163ccf74074c4b353a988081c09f0dd.pdf?productCode=C499458",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C499458",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:U5"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 829975
+    },
+    "STM32G030F6P6TR": {
+      "file": "C529330.pdf",
+      "manufacturer": "ST",
+      "description": "-40\u2103~+85\u2103 12bit 17 2V~3.6V 32 Bit 32KB 64MHz 8KB ARM Cortex-M0+ Built-in+External FLASH TSSOP-20 Microcontrollers (MCU/MPU/SOC) ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/753f35401d4598e355b1dd55569495e1.pdf?productCode=C529330",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C529330",
+      "status": "ok",
+      "references": [
+        "notchdeck-buttons:U1"
+      ]
+    },
+    "XL-1608SYGC-06": {
+      "file": "C965805.pdf",
+      "manufacturer": "XINGLIGHT",
+      "description": "-40\u2103~+85\u2103 120\u00b0 2.2V 25mA 55mW 570nm~575nm 575nm 60mcd Discrete Diode Top-mount Water Clear Yellow Green 0603 LED Indication - Discrete ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/db39074692074ba57d43d76e9fc6dbf2.pdf?productCode=C965805",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C965805",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:D17"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 1577978
+    },
+    "TCA9543APWR": {
+      "file": "C2653307.pdf",
+      "manufacturer": "TI",
+      "description": "-40\u2103~+85\u2103 1.65V~5.5V 10uA 1ns@5.5V,50pF 2uA 3mA Bus Switch Level shifting\u3001Hot-swap protection Single Supply TSSOP-14 Signal Switches, Multiplexers, Decoders ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/4107098bf2c5ce9d0a240a1c4ceb8054.pdf?productCode=C2653307",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C2653307",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:U9"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 867884
+    },
+    "MAX17048G+T10": {
+      "file": "C2682616.pdf",
+      "manufacturer": "MAXIM",
+      "description": "-40\u2103~+85\u2103 1 2.5V~4.5V 3uA I2C Lithium Battery Not supported Not supported DFN-8-EP(2x2) Battery Management ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/6ea2434b9fcbd476e93afe7bcb1f53c0.pdf?productCode=C2682616",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C2682616",
+      "status": "ok",
+      "references": [
+        "notchdeck-one:U4"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 1109267
+    },
+    "XL-5050RGBC-2812B": {
+      "file": "C2843785.pdf",
+      "manufacturer": "XINGLIGHT",
+      "description": "-20\u2103~+85\u2103 0.3mA 1.6mm 120\u00b0 2000V 3.5V~5.5V 4kHz 5mm 5mm 800Kbit/s G:1300mcd~1800mcd\u3001R:500mcd~700mcd\u3001B:300mcd~500mcd R:620nm~635nm\u3001B:465nm~475nm\u3001G:520nm~535nm Top-mount Water Clear SMD5050-4P RGB LEDs(Built-in IC) ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C2843785",
+      "status": "ok",
+      "references": [
+        "notchdeck-buttons:D1",
+        "notchdeck-buttons:D2",
+        "notchdeck-buttons:D3",
+        "notchdeck-buttons:D4",
+        "notchdeck-buttons:D5",
+        "notchdeck-buttons:D6",
+        "notchdeck-buttons:D7",
+        "notchdeck-buttons:D8",
+        "notchdeck-buttons:D9",
+        "notchdeck-buttons:D10",
+        "notchdeck-buttons:D11",
+        "notchdeck-buttons:D12",
+        "notchdeck-buttons:D13",
+        "notchdeck-buttons:D14",
+        "notchdeck-buttons:D15",
+        "notchdeck-buttons:D16"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 1441474
     }
   }
 }

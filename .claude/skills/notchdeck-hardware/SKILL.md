@@ -32,7 +32,7 @@ Lives in `hardware/notchdeck-one/`. To modify the schematic, use the
 | MCU & Programming | `mcu.kicad_sch` | U1 E73, decoupling, SWD header J3, Tag-Connect J4, reset |
 | Power | `power.kicad_sch` | USB-C J1, ESD U7, charger U3, LDO U2, load-share Q1/D19, fuel-gauge U4, battery J2 |
 | Lever | `lever.kicad_sch` | AS5600 U5, TCA9543A U9, dual magnetic ports and 7 Gray inputs |
-| Controls | `controls.kicad_sch` | 16 buttons (SW1–16), 16 WS2812B (D1–16), status/charge LEDs, U8 AHCT buffer, J9 reverser |
+| Controls | `controls.kicad_sch` | FFC J15, SW18/19 Select/Start, status/charge LEDs, J9 reverser |
 
 ## Hard constraints (do not violate)
 
@@ -40,11 +40,8 @@ Lives in `hardware/notchdeck-one/`. To modify the schematic, use the
    0x36** → they MUST be on separate buses. AS5600 = **TWIM0** (SDA P0.26/pad12,
    SCL P0.06/pad14); MAX17048 = **TWIM1** (SDA P0.12/pad20, SCL P0.07/pad22).
    4.7 kΩ pull-ups per bus to +3V3.
-2. **NFC pins as GPIO.** P0.09/P0.10 (pads 41/43) are reused as GPIO → firmware
-   must set `nfct-pins-as-gpios` in the UICR devicetree node.
-3. **No LFXO.** P0.00/P0.01 (pads 11/13) are GPIO → LFCLK runs from the internal
-   RC (fine for BLE). To fit a 32.768 kHz crystal, reclaim these and drop
-   BTN11/BTN12.
+2. **Rev E frees former button GPIOs.** NFC pins P0.09/P0.10 are NC; older Rev C/D firmware used them as buttons. Do not drive panel wiring with the old overlay.
+3. **No LFXO.** No 32.768kHz crystal is populated; retain internal RC LFCLK. P0.00/P0.01 are now NC.
 4. **nRESET in UICR.** P0.18 (pad 26) is `nRESET` → enable reset in UICR (Zephyr
    default). Bootloader double-tap-to-DFU; no separate BOOT pin.
 
@@ -73,15 +70,8 @@ only one at a time. Channel0=power/combined J10/U5, channel1=brake J11. Remove b
 R37/R38 before using an external sensor on J10. MAX17048 stays on TWIM1.
 J5 pins2–5 carry four brake/combined Gray bits; J12 pins2–4 carry three power
 bits on P0.29/P0.31/P0.30. Both use pin1 GND and final pin 3V3 (unwired in passive harnesses).
-Rev D replaces the individual Rev C bit connectors with 6-pin/5-pin keyed ports. No spare GPIO remains. New cam maps reserve all-open as invalid.
+Rev D replaces the individual Rev C bit connectors with 6-pin/5-pin keyed ports. Rev E leaves fourteen former button/RGB GPIOs NC. New cam maps reserve all-open as invalid.
 
 ## Status
 
-**Revision D is wired.** Run `make verify-notchdeck-one`: zero ERC violations,
-all 439 endpoints checked. Q1 drain=BAT+, source=VSYS; R4 pulls gate down, R5=1k
-from VBUS to gate. U3 is MCP73832 (open-drain STAT). RGB is USB-only through U8
-SN74AHCT1G125, with local decoupling; firmware must hold DIN low without USB.
-J9 is a 3-pin SPDT center-off reverser with midpoint bias and ADC filtering.
-The PCB has an unrouted 4×4 floorplan and a fully assigned JLCPCB catalog BOM.
-See `hardware/README.md` for remaining electrical,
-procurement, firmware and layout checks before fabrication.
+**Revision E is wired on two assemblies.** `make verify` checks the main 318 endpoints and panel 235 endpoints, strict zero ERC, PCB nets/UUIDs and both BOMs. Both PCBs are unrouted. Main is 115×90mm/four layers; panel is 86×120mm/two layers with 4×4 buttons. Main SW18/19 retain Select/Start; the STM32G030 scans the diode matrix and controls USB-only RGB locally. FFC main J15 pin n connects to panel J1 pin 7−n with the specified Molex Type A cable. See `hardware/notchdeck-buttons/README.md` for bonded pin aliases, I²C target 0x20, SWD and firmware requirements. Panel and main integration firmware remain unimplemented. Q1 and charger constraints are unchanged; both boards have fully assigned JLCPCB BOMs. See `hardware/README.md` for pre-fabrication work.

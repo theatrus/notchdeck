@@ -221,14 +221,37 @@ if handsolder:
 PYEOF
 
 # --- README ------------------------------------------------------------------
+# Reject an assembly package with missing, duplicated or mismatched placements.
+python3 - "$OUT_DIR/${NAME}-BOM.csv" "$OUT_DIR/${NAME}-CPL.csv" <<'PYEOF'
+import csv, sys
+with open(sys.argv[1], newline="") as f:
+    rows = list(csv.DictReader(f))
+bom = []
+for row in rows:
+    refs = [ref.strip() for ref in row["Designator"].split(",") if ref.strip()]
+    assert int(row["Qty"]) == len(refs), f"BOM quantity mismatch: {row}"
+    assert row["LCSC Part #"], f"Missing assembly part: {refs}"
+    bom.extend(refs)
+with open(sys.argv[2], newline="") as f:
+    cpl = [row["Designator"] for row in csv.DictReader(f)]
+assert len(bom) == len(set(bom)), "Duplicate BOM references"
+assert len(cpl) == len(set(cpl)), "Duplicate CPL references"
+assert set(bom) == set(cpl), f"BOM/CPL mismatch: {set(bom) ^ set(cpl)}"
+print(f"[jlcpcb]   verified {len(bom)} matching BOM/CPL placements")
+PYEOF
+
 cat > "$OUT_DIR/README.txt" <<EOF
 JLCPCB manufacturing package for ${NAME}
 Generated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
+This is an export of the saved design, not a fabrication approval. The current
+Rev E NotchDeck boards are unrouted floorplans. Complete routing, design checks,
+power-budget and assembly review before ordering.
+
 Files:
-  gerbers/*.gbr           Gerber files (top/inner/bottom copper, mask, silk, paste)
-  gerbers/*.drl           Excellon drill files (PTH and NPTH separate)
-  gerbers/*-drl_map.gbr   Optional drill map
+  gerbers/*              Gerber layers (KiCad/Protel layer extensions)
+  gerbers/*.drl           Excellon drill file (PTH and NPTH merged)
+  gerbers/*drl_map*       Optional drill map
   ${NAME}-BOM.csv         JLCPCB-format BOM (upload as Assembly > Add BOM File)
   ${NAME}-CPL.csv         Pick-and-place (upload as Assembly > Add CPL File)
 
@@ -238,8 +261,8 @@ To order:
   3. Verify part matching; fix any unmatched LCSC numbers manually
 
 Notes:
-  - Gerber layer names use KiCad's native scheme. JLCPCB auto-detects via X2.
-  - Drill origin is set to absolute (matches Gerber aux origin).
+  - Gerbers use KiCad's layer filenames; X2 attributes are disabled.
+  - Drill, Gerber and CPL coordinates use the same plot/drill-file origin.
   - CPL rotations are KiCad's convention. Some footprints (SOT-23, QFN, SOIC)
     may need JLCPCB-specific rotation offsets — verify in JLCPCB's preview
     step before confirming the order.

@@ -37,8 +37,6 @@ K.register_stdlib("Battery_Management", "MCP73832-2-OT")
 K.register_stdlib("Power_Protection", "USBLC6-2SC6")
 K.register_stdlib("Transistor_FET", "Q_PMOS_GSD")
 K.register_stdlib("Switch", "SW_Push")
-K.register_stdlib("LED", "WS2812B")
-K.register_stdlib("74xGxx", "74AHCT1G125")
 K.register_lib(
     "notchdeck", NOTCH_SYM, "E73-2G4M08S1C", "AS5600", "MAX17048", "SWD_2x05", "SWD_TC2030", "TCA9543APWR"
 )
@@ -51,7 +49,6 @@ LED0603 = "LED_SMD:LED_0603_1608Metric"
 SOT235 = "Package_TO_SOT_SMD:SOT-23-5"
 SOT23 = "Package_TO_SOT_SMD:SOT-23"
 BTN = "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-WS2812FP = "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 
 
 def R(ref, val):
@@ -210,26 +207,17 @@ LEVER = dict(
     ],
 )
 
-ctrl = []
-for i in range(1, 17):
-    ctrl.append(dict(ref=f"SW{i}", lib_id="Switch:SW_Push", value="SW_Push", fp=BTN))
-for i in range(1, 17):
-    ctrl.append(
-        dict(
-            ref=f"D{i}",
-            lib_id="LED:WS2812B",
-            value="WS2812B",
-            fp=WS2812FP,
-        )
-    )
-ctrl += [
-    C("C13", "1uF", C0805),
-    R("R11", "330"),
+ctrl = [
     dict(ref="D17", lib_id="Device:LED", value="LED", fp=LED0603),
     R("R12", "1k"),
     dict(ref="D18", lib_id="Device:LED", value="LED", fp=LED0603),
     R("R13", "1k"),
-]
+    dict(ref="J15", lib_id="Connector_Generic:Conn_01x06", value="BUTTON MCU FFC",
+         fp="Connector_FFC-FPC:JUSHUO_AFA07-S06FCA-00_1x6-1MP_P1.0mm_Horizontal"),
+    dict(ref="SW18", lib_id="Switch:SW_Push", value="SELECT", fp=BTN),
+    dict(ref="SW19", lib_id="Switch:SW_Push", value="START", fp=BTN),
+] + [R("R42", "10k"), C("C44", "100nF"),
+     dict(ref="U12", lib_id="Power_Protection:USBLC6-2SC6", value="USBLC6-2SC6", fp="Package_TO_SOT_SMD:SOT-23-6")]
 CONTROLS = dict(
     name="Controls",
     file="controls.kicad_sch",
@@ -245,13 +233,6 @@ K.register_stdlib("power", "+3V3", "GND", "PWR_FLAG")
 POWER["small"] += [C("C18", "4.7uF", C0805), C("C19", "4.7uF", C0805), R("R22", "100k")]
 CONTROLS["small"] += [
     dict(
-        ref="U8",
-        lib_id="74xGxx:74AHCT1G125",
-        value="74AHCT1G125",
-        fp=SOT235,
-    ),
-    C("C20", "100nF"),
-    dict(
         ref="J9",
         lib_id="Connector_Generic:Conn_01x03",
         value="REV F-N-R",
@@ -261,8 +242,7 @@ CONTROLS["small"] += [
     R("R24", "100k"),
     R("R25", "1k"),
     C("C37", "100nF"),
-    R("R26", "100k"),
-] + [C(f"C{i}", "100nF") for i in range(21, 37)]
+]
 
 # Rev C: independent magnetic and Gray-code interfaces for two handles.
 # U5 is the optional onboard power/combined sensor; remove R37/R38 when J10
@@ -313,167 +293,36 @@ for ref, note in sourcing["non_assembly"].items():
     assert parts_by_ref[ref].get("in_bom") is False
     parts_by_ref[ref]["properties"] = {"BOM Comments": note}
 assert assigned | set(sourcing["non_assembly"]) == set(parts_by_ref)
-TITLE = dict(title="NotchDeck One", date="2026-10-03", rev="D", company="BenchBits")
+TITLE = dict(title="NotchDeck One", date="2026-10-03", rev="E", company="BenchBits")
 G = 2.54
 
 
-class Capture:
-    def __init__(self, sh):
-        self.sh = sh
-        sh["_dir"] = PROJ_DIR
-        sh["uuid"] = K._schematic_uuid(os.path.join(PROJ_DIR, sh["file"])) or K.U()
-        self.path = f"/{ROOT_UUID}/{sh['uuid']}"
-        self.parts = {c["ref"]: c for c in sh.get("big", []) + sh.get("small", [])}
-        self.placed = {}
-        self.extra = []
-        self.segments = []
-        self.points = set()
-        self.connected = set()
-        self.power_count = 0
-        self.notes = []
+from notchdeck_capture import Capture as BoardCapture
 
-    def place(self, ref, x, y, angle=0, **kw):
-        c = dict(self.parts[ref], x=x * G, y=y * G, angle=angle, **kw)
-        self.placed[ref] = c
-        return c
 
-    def pin(self, ref, n):
-        self.connected.add((ref, str(n)))
-        return K.pin_at(self.placed[ref], str(n))[:2]
-
-    def wire(self, *points):
-        for a, b in zip(points, points[1:]):
-            a, b = tuple(round(v, 4) for v in a), tuple(round(v, 4) for v in b)
-            assert a[0] == b[0] or a[1] == b[1], (a, b)
-            if a != b:
-                self.segments.append((a, b))
-                self.points.update((a, b))
-
-    def join(self, a, b, via=()):
-        self.wire(self.pin(*a), *via, self.pin(*b))
-
-    def label(self, net, p, angle=0):
-        self.points.add(p)
-        self.extra.append(K.w_label(net, *p, angle))
-
-    def stub(self, ref, pin, net, length=2, kind="label"):
-        x, y, a = K.pin_at(self.placed[ref], str(pin))
-        dx, dy = K._OUTWARD[a]
-        p = (round(x + dx * length * G, 4), round(y + dy * length * G, 4))
-        self.wire(self.pin(ref, pin), p)
-        if kind == "power":
-            self.power(net, p)
-        else:
-            self.label(net, p, K._lbl_angle(dx, dy))
-        return p
-
-    def nc(self, ref, *pins):
-        for n in pins:
-            x, y = self.pin(ref, n)
-            self.extra.append(f'\t(no_connect (at {x} {y}) (uuid "{K.U()}"))\n')
-
-    def power(self, net, p, flag=False):
-        if net not in ("GND", "+3V3") and not flag:
-            self.label(net, p)
-            return
-        self.power_count += 1
-        ref = f"#PWR{int(self.sh['page'])*100+self.power_count:03}"
-        sym = "PWR_FLAG" if flag else net
-        self.placed[ref] = dict(
-            ref=ref,
-            lib_id="power:" + sym,
-            value=sym,
-            x=p[0],
-            y=p[1],
-            in_bom=False,
-            hide_value=net == "GND",
-            value_offset=(-2.54, -3.81),
-        )
-        self.points.add(p)
-
-    def rail(self, net, pins, y, flag=False):
-        ps = [self.pin(*p) for p in pins]
-        yy = y * G
-        xs = sorted(set(p[0] for p in ps))
-        for p in ps:
-            self.wire(p, (p[0], yy))
-        for a, b in zip(xs, xs[1:]):
-            self.wire((a, yy), (b, yy))
-        self.power(net, (xs[0], yy))
-        if flag:
-            self.power(net, (xs[-1], yy), flag=True)
-
-    def port(self, net, x, y, shape="bidirectional"):
-        p = (x * G, y * G)
-        q = ((x + 10) * G, y * G)
-        self.extra.append(K.w_hlabel(net, *p, 180, shape))
-        self.wire(p, q)
-        self.label(net, q)
-
-    def note(self, x, y, text):
-        self.notes.append((x * G, y * G, text))
-
-    def finish(self):
-        assert not set(self.parts) - set(self.placed), set(self.parts) - set(self.placed)
-        missing = {
-            (r, p["number"])
-            for r, c in self.placed.items()
-            if not r.startswith("#")
-            for p in K.pin_geom(c["lib_id"])
-        } - self.connected
-        assert not missing, missing
-        edges = set()
-        for a, b in self.segments:
-            pts = sorted(
-                {
-                    p
-                    for p in self.points
-                    if (a[0] == b[0] == p[0] and min(a[1], b[1]) <= p[1] <= max(a[1], b[1]))
-                    or (a[1] == b[1] == p[1] and min(a[0], b[0]) <= p[0] <= max(a[0], b[0]))
-                }
-            )
-            edges.update(zip(pts, pts[1:]))
-        from collections import Counter
-
-        degree = Counter(p for e in edges for p in e)
-        wiring = "".join(K.w_wire(*a, *b) for a, b in sorted(edges))
-        wiring += "".join(K.w_junction(*p) for p, n in degree.items() if n > 2) + "".join(
-            self.extra
-        )
-        self.sh.update(
-            comps=[(c, [(self.path, r)]) for r, c in self.placed.items()],
-            wiring=wiring,
-            notes=self.notes,
-        )
-        K.write_wired_child(self.sh, "notchdeck-one", ROOT_UUID, TITLE, "A3")
+def Capture(sh):
+    return BoardCapture(sh, PROJ_DIR, ROOT_UUID, TITLE, "notchdeck-one")
 
 
 PWR_PORTS = ["USB_VBUS", "USB_DM", "USB_DP", "I2C1_SCL", "I2C1_SDA", "FG_ALRT", "CHG_STAT"]
 LEVER_PORTS = ["I2C0_SCL", "I2C0_SDA", "LEVER_S0", "LEVER_S1", "LEVER_S2", "LEVER_S3",
                "POWER_S0", "POWER_S1", "POWER_S2", "nRESET"]
-BUTTONS = [f"BTN{i}" for i in range(1, 13)] + ["HAT_UP", "HAT_DOWN", "HAT_LEFT", "HAT_RIGHT"]
-CTRL_PORTS = ["WS2812_DIN", "REVERSER_AIN"] + BUTTONS
+CTRL_PORTS = ["PANEL_INT", "REVERSER_AIN", "BTN7", "BTN8"]
 
 s = Capture(MCU)
 s.place("U1", 40, 30, ref_offset=(-10.16, -35.56), value_offset=(-10.16, -33.02))
 pinmap = {
-    1: "BTN1",
-    2: "BTN2",
+    1: "PANEL_INT",
     3: "LEVER_S0",
     4: "LEVER_S1",
     5: "GND",
-    6: "BTN3",
     7: "REVERSER_AIN",
     8: "POWER_S0",
     9: "POWER_S1",
     10: "POWER_S2",
-    11: "BTN11",
     12: "I2C0_SDA",
-    13: "BTN12",
     14: "I2C0_SCL",
     15: "LEVER_S3",
-    16: "WS2812_DIN",
-    17: "BTN4",
     18: "LEVER_S2",
     19: "+3V3",
     20: "I2C1_SDA",
@@ -487,22 +336,14 @@ pinmap = {
     29: "USB_DM",
     30: "CHG_STAT",
     31: "USB_DP",
-    32: "BTN5",
-    33: "BTN6",
-    34: "HAT_UP",
-    35: "HAT_DOWN",
-    36: "HAT_LEFT",
     37: "SWDIO",
-    38: "HAT_RIGHT",
     39: "SWDCLK",
     40: "BTN7",
-    41: "BTN9",
     42: "BTN8",
-    43: "BTN10",
 }
 for pin, net in pinmap.items():
     s.stub("U1", pin, net)  # same-name local rails join the decoupling power symbols
-s.nc("U1", 25)
+s.nc("U1", 25, 2, 6, 11, 13, 16, 17, 32, 33, 34, 35, 36, 38, 41, 43)
 for i in range(1, 6):
     s.place(f"C{i}", 65 + (i - 1) * 8, 28)
 s.rail("+3V3", [(f"C{i}", 1) for i in range(1, 6)], 22)
@@ -535,7 +376,7 @@ for i, n in enumerate(PWR_PORTS + LEVER_PORTS + CTRL_PORTS):
 s.note(
     10,
     88,
-    "SWD headers are parallel; VTref is 3V3. SWO is unused.\nReset: P0.18 / UICR reset enabled; also resets handle mux.\nNFC pins P0.09/P0.10 must be configured as GPIO.\nP0.00/P0.01 are buttons: use calibrated RC LFCLK, no LFXO.\nP0.29/P0.31/P0.30 = power Gray bits S0/S1/S2. No spare GPIO.",
+    "SWD headers are parallel; VTref is 3V3. SWO is unused.\nReset: P0.18 / UICR reset enabled; also resets handle mux.\nRev E leaves NFC pins unconnected; no NFC pin setup required.\nRev E frees 14 GPIOs; still use calibrated RC LFCLK, no LFXO.\nP0.29/P0.31/P0.30 = power Gray bits S0/S1/S2. P1.11 = panel IRQ.",
 )
 s.finish()
 
@@ -760,16 +601,20 @@ for i, n in enumerate([n for n in LEVER_PORTS if n not in ("I2C0_SDA", "I2C0_SCL
 s.finish()
 
 s = Capture(CONTROLS)
-for i, n in enumerate(BUTTONS):
-    x = 17 + (i % 4) * 30
-    y = 14 + (i // 4) * 10
-    r = f"SW{i+1}"
-    s.place(r, x, y, ref_offset=(-2.54, -6.35), value_offset=(-2.54, -3.81), hide_value=True)
-    p = s.stub(r, 1, n)
-    s.extra.pop()
-    s.extra.append(K.w_hlabel(n, *p, 180, "passive"))
-    s.stub(r, 2, "GND", kind="power")
-s.note(60, 50, "Buttons/hat: active-low; MCU internal pull-ups + firmware debounce.")
+# Rev E intelligent button board: 0x20 on I2C0 upstream of the handle mux.
+s.place("J15",18,22,180,ref_offset=(-2.54,-12.7),value_offset=(-2.54,-10.16))
+for pin,net in {1:"GND",2:"+3V3",3:"I2C0_SDA",4:"I2C0_SCL",5:"PANEL_INT",6:"USB_VBUS"}.items():
+    s.stub("J15",pin,net)
+s.place("U12",47,24,ref_offset=(7.62,-12.7),value_offset=(7.62,-10.16))
+for pin,net in {1:"I2C0_SDA",6:"I2C0_SDA",3:"I2C0_SCL",4:"I2C0_SCL",5:"+3V3",2:"GND"}.items():
+    s.stub("U12",pin,net,kind="power" if net in ("+3V3","GND") else "label")
+s.place("R42",77,20);s.stub("R42",1,"+3V3",kind="power");s.stub("R42",2,"PANEL_INT")
+s.place("C44",91,20);s.stub("C44",1,"+3V3",kind="power");s.stub("C44",2,"GND",kind="power")
+for ref,n,x in [("SW18","BTN7",25),("SW19","BTN8",58)]:
+    s.place(ref,x,50,ref_offset=(-2.54,-6.35),value_offset=(-2.54,-3.81))
+    s.stub(ref,1,n);s.stub(ref,2,"GND",kind="power")
+for i,n in enumerate(["PANEL_INT","BTN7","BTN8","I2C0_SDA","I2C0_SCL"]):s.port(n,20+26*i,70)
+s.note(8,79,"J15 -> button J1: 6-way 1mm FFC, Molex 0151670213 Type A (same-side).\nBOTTOM contacts at both ends: main pin n -> button pin 7-n. Not a 1:1 harness.\nMain pinout: 1 GND / 2 3V3 / 3 SDA / 4 SCL / 5 IRQ_N / 6 USB 5V.\n3V3 keeps keys alive on battery; 5V RGB is USB only. Power off before insertion.\nSW18/SW19 remain direct Select/Start. I2C0=100kHz; panel address 0x20.\nExisting R9/R10 provide SDA/SCL pull-ups; no additional panel pull-ups.")
 s.place("J9", 139, 17, ref_offset=(-2.54, -8.89), value_offset=(-5.08, -6.35))
 s.stub("J9", 1, "+3V3", kind="power")
 s.stub("J9", 3, "GND", kind="power")
@@ -801,55 +646,6 @@ for r, c, y in [("R12", "D17", 58), ("R13", "D18", 76)]:
 s.stub("D17", 1, "GND", kind="power")
 s.stub("D18", 1, "CHG_STAT")
 s.port("CHG_STAT", 134, 82)
-s.place("U8", 34, 60, ref_offset=(-5.08, -8.89), value_offset=(-7.62, -6.35))
-s.stub("U8", 1, "GND", kind="power")
-s.stub("U8", 3, "GND", kind="power")
-s.stub("U8", 5, "USB_VBUS")
-p = s.stub("U8", 2, "WS2812_DIN")
-s.extra.pop()
-s.extra.append(K.w_hlabel("WS2812_DIN", *p, 180, "input"))
-s.place("R26", 18, 65)
-s.stub("R26", 1, "WS2812_DIN")
-s.stub("R26", 2, "GND", kind="power")
-s.place("R11", 48, 60, 90, ref_offset=(-2.54, -5.08), value_offset=(-2.54, -2.54))
-s.join(("U8", 4), ("R11", 1))
-s.stub("R11", 2, "LED_DATA")
-s.place("C20", 62, 61)
-s.stub("C20", 1, "USB_VBUS")
-s.stub("C20", 2, "GND", kind="power")
-s.place("C13", 76, 61)
-s.stub("C13", 1, "USB_VBUS")
-s.stub("C13", 2, "GND", kind="power")
-s.note(
-    87,
-    59,
-    "RGB: USB 5V only; 100nF at each LED.\nC13 1uF limits direct VBUS capacitance.\nBudget LEDs + charger against USB source.\nDrive DIN low while USB is absent.",
-)
-for row in range(2):
-    y = 76 + 16 * row
-    for col in range(8):
-        i = row * 8 + col + 1
-        x = 12 + 16 * col
-        r = f"D{i}"
-        cap = f"C{20+i}"
-        s.place(r, x, y, ref_offset=(-3.81, -6.35), value_offset=(-3.81, 6.35), hide_value=True)
-        s.place(cap, x + 5, y - 2.5, ref_offset=(1.27, -2.54), value_offset=(1.27, 2.54))
-        if col:
-            s.join((f"D{i-1}", 2), (r, 4))
-    s.rail(
-        "USB_VBUS",
-        [(f"D{row*8+i}", 1) for i in range(1, 9)] + [(f"C{20+row*8+i}", 1) for i in range(1, 9)],
-        y - 5,
-    )
-    s.rail(
-        "GND",
-        [(f"D{row*8+i}", 3) for i in range(1, 9)] + [(f"C{20+row*8+i}", 2) for i in range(1, 9)],
-        y + 5,
-    )
-s.stub("D1", 4, "LED_DATA")
-s.stub("D8", 2, "LED_ROW2", length=8)
-s.stub("D9", 4, "LED_ROW2")
-s.nc("D16", 2)
 s.port("USB_VBUS", 136, 96)
 s.finish()
 
@@ -860,7 +656,7 @@ mcu_pins = []
 for sh, ports, y, h in [
     (POWER, PWR_PORTS, 12, 18),
     (LEVER, LEVER_PORTS, 33, 22),
-    (CONTROLS, CTRL_PORTS, 58, 42),
+    (CONTROLS, CTRL_PORTS, 58, 22),
 ]:
     pins = []
     for i, n in enumerate(ports):
@@ -869,9 +665,9 @@ for sh, ports, y, h in [
         mcu_pins.append((n, "bidirectional", 57 * G, yy, 0))
         wiring += K.w_wire(57 * G, yy, 108 * G, yy) + K.w_label(n, 73 * G, yy)
     if sh is CONTROLS:
-        for i, n in enumerate(["CHG_STAT", "USB_VBUS"]):
+        for i, n in enumerate(["CHG_STAT", "USB_VBUS", "I2C0_SDA", "I2C0_SCL"]):
             yy = (y + 3 + len(ports) * 2 + i * 2) * G
-            pins.append((n, "input", 108 * G, yy, 180))
+            pins.append((n, "bidirectional" if n.startswith("I2C0_") else "input", 108 * G, yy, 180))
             wiring += K.w_wire(100 * G, yy, 108 * G, yy) + K.w_label(n, 100 * G, yy, 180)
     blocks += K.w_sheet(sh["name"], sh["file"], sh["uuid"], 108 * G, y * G, 41 * G, h * G, pins,
                         project="notchdeck-one", parent_path=f"/{ROOT_UUID}", page=sh["page"])

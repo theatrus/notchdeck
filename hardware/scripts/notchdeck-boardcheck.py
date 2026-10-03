@@ -2,6 +2,7 @@
 """Read-only schematic/PCB pad-net and identity audit; run with KiCad Python."""
 
 from pathlib import Path
+import argparse
 import os
 import shutil
 import subprocess
@@ -12,7 +13,10 @@ import pcbnew as P
 
 
 def main():
-    project = Path(__file__).resolve().parents[1] / "notchdeck-one"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--project", default="notchdeck-one", choices=("notchdeck-one", "notchdeck-buttons"))
+    args=parser.parse_args()
+    project = Path(__file__).resolve().parents[1] / args.project
     with tempfile.TemporaryDirectory(prefix="notchdeck-boardcheck-") as tmp:
         netfile = Path(tmp) / "netlist.xml"
         subprocess.run(
@@ -25,7 +29,7 @@ def main():
                 "kicadxml",
                 "-o",
                 str(netfile),
-                str(project / "notchdeck-one.kicad_sch"),
+                str(project / (args.project+".kicad_sch")),
             ],
             check=True,
         )
@@ -33,7 +37,7 @@ def main():
         # Inspect a copy: pcbnew's project serialization must never touch the
         # user's design rules or settings during this read-only audit.
         boardfile = Path(tmp) / "audit.kicad_pcb"
-        shutil.copyfile(project / "notchdeck-one.kicad_pcb", boardfile)
+        shutil.copyfile(project / (args.project+".kicad_pcb"), boardfile)
         board = P.LoadBoard(str(boardfile))
     components = {c.attrib["ref"]: c for c in tree.findall(".//components/comp")}
     expected = {}

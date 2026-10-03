@@ -1,6 +1,6 @@
-# notchdeck-one — Rev E sourcing
+# notchdeck-buttons — Rev E sourcing
 
-Checked 2026-10-03. This board has **92 installed components across 31 JLCPCB codes**. The [native BOM](jlcpcb-bom.csv), [tracking BOM](bom.csv), [selection JSON](jlcpcb-parts.json), and [stock observations](jlcpcb-stock.csv) agree with the schematic. The JSON drives the MPN, manufacturer, LCSC, datasheet and notes on each symbol.
+Checked 2026-10-03. This board has **84 installed components across 13 JLCPCB codes**. The [native BOM](jlcpcb-bom.csv), [tracking BOM](bom.csv), [selection JSON](jlcpcb-parts.json), and [stock observations](jlcpcb-stock.csv) agree with the schematic. The JSON drives the MPN, manufacturer, LCSC, datasheet and notes on each symbol.
 
 Use the [combined five-set stock report](../../jlcpcb-five-set-stock.csv) for purchasing: parts shared between the two boards must be counted together. Public quantities use JLCPCB’s **Available Order Qty** from direct page checks on 2026-10-03. The STM32G030 uses owned private inventory from the shared local CSV; its balance is not published. The shared inventory is a snapshot, with allocation/reservation breakdown unavailable. Confirm allocation and assembly attrition before ordering. No stock has been reserved or purchased.
 
@@ -11,6 +11,6 @@ The [Molex cable](../../system-bom.csv) is bought once per complete set from Dig
 Both PCBs are unrouted. Native net/ERC, PCB pad/UUID, BOM identity and package BOM/CPL consistency checks verify the saved design and exports. They do not validate PCB routing, CPL rotation at JLCPCB, electrical/thermal margins or cable/enclosure fit. See [hardware status](../../README.md) and [part constraints](../../PARTS.md). PDFs are cached locally; [manifest](../../datasheets/manifest.json) records sources and board-qualified references.
 
 ```sh
-make -C hardware verify-notchdeck-one verify-pcb-notchdeck-one verify-bom-notchdeck-one
-make -C hardware jlc-notchdeck-one
+make -C hardware verify-notchdeck-buttons verify-pcb-notchdeck-buttons verify-bom-notchdeck-buttons
+make -C hardware jlc-notchdeck-buttons
 ```

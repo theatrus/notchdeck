@@ -1,8 +1,8 @@
 # Local datasheet cache
 
 `manifest.json` records manufacturer PDFs for the reviewed JLCPCB selections in
-`../notchdeck-one/bom/jlcpcb-parts.json`. Cached PDFs use their `C<number>.pdf`
-catalog codes and remain git-ignored. Download each manifest URL to its listed
+both projects’ `bom/jlcpcb-parts.json` files. Cached PDFs use their `C<number>.pdf`
+catalog codes and remain git-ignored. References are board-qualified to avoid U1/J1 collisions. Download each manifest URL to its listed
 filename to rebuild the cache.
 
 Catalog matching and document drawing checks are described in

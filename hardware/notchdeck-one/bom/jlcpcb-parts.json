@@ -26,30 +26,14 @@
         "C15",
         "C16",
         "C17",
-        "C20",
-        "C21",
-        "C22",
-        "C23",
-        "C24",
-        "C25",
-        "C26",
-        "C27",
-        "C28",
-        "C29",
-        "C30",
-        "C31",
-        "C32",
-        "C33",
-        "C34",
-        "C35",
-        "C36",
         "C37",
         "C38",
         "C39",
         "C40",
         "C41",
         "C42",
-        "C43"
+        "C43",
+        "C44"
       ],
       "bom_comments": "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
     },
@@ -105,23 +89,6 @@
       ],
       "bom_comments": "-55℃~+155℃ 2kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
     },
-    "C7484": {
-      "mpn": "SN74AHCT1G125DBVR",
-      "manufacturer": "TI",
-      "package": "SOT-23-5",
-      "description": "-40℃~+125℃ 1 1 10uA 4.5V~5.5V 6.5ns@5V,15pF 74AHCT 8mA 8mA Tri-State Unidirectional SOT-23-5 Buffers, Drivers, Receivers, Transceivers ROHS",
-      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
-      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/74b1f7dfbe12452e8a365e0596ae902b.pdf?productCode=C7484",
-      "jlcpcb_url": "https://jlcpcb.com/partdetail/C7484",
-      "jlcpcb_category": "Extended",
-      "jlcpcb_stock_snapshot": 22987,
-      "jlcpcb_unit_price_snapshot_usd": 0.1037,
-      "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C7484&limit=20&full=true",
-      "references": [
-        "U8"
-      ],
-      "bom_comments": "AHCT with TTL-compatible input at 5 V required; do not substitute AHC/HC."
-    },
     "C7519": {
       "mpn": "USBLC6-2SC6",
       "manufacturer": "ST",
@@ -137,7 +104,8 @@
       "references": [
         "U7",
         "U10",
-        "U11"
+        "U11",
+        "U12"
       ],
       "bom_comments": ""
     },
@@ -240,23 +208,6 @@
       ],
       "bom_comments": "Remove BOTH R37/R38 before connecting an external power AS5600 to J10; isolates onboard U5."
     },
-    "C25104": {
-      "mpn": "0402WGF3300TCE",
-      "manufacturer": "UNI-ROYAL",
-      "package": "0402",
-      "description": "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS",
-      "footprint": "Resistor_SMD:R_0402_1005Metric",
-      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104",
-      "jlcpcb_url": "https://jlcpcb.com/partdetail/C25104",
-      "jlcpcb_category": "Basic",
-      "jlcpcb_stock_snapshot": 732878,
-      "jlcpcb_unit_price_snapshot_usd": 0.0012,
-      "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C25104&limit=20&full=true",
-      "references": [
-        "R11"
-      ],
-      "bom_comments": "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
-    },
     "C25741": {
       "mpn": "0402WGF1003TCE",
       "manufacturer": "UNI-ROYAL",
@@ -274,8 +225,7 @@
         "R8",
         "R22",
         "R23",
-        "R24",
-        "R26"
+        "R24"
       ],
       "bom_comments": "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -301,7 +251,8 @@
         "R33",
         "R39",
         "R40",
-        "R41"
+        "R41",
+        "R42"
       ],
       "bom_comments": "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -346,23 +297,6 @@
         "R2"
       ],
       "bom_comments": "-55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
-    },
-    "C28323": {
-      "mpn": "CL21B105KBFNNNE",
-      "manufacturer": "Samsung Electro-Mechanics",
-      "package": "0805",
-      "description": "1uF 50V X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
-      "footprint": "Capacitor_SMD:C_0805_2012Metric",
-      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C28323",
-      "jlcpcb_url": "https://jlcpcb.com/partdetail/C28323",
-      "jlcpcb_category": "Basic",
-      "jlcpcb_stock_snapshot": 2084641,
-      "jlcpcb_unit_price_snapshot_usd": 0.0469,
-      "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C28323&limit=20&full=true",
-      "references": [
-        "C13"
-      ],
-      "bom_comments": "1uF 50V X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
     },
     "C38066": {
       "mpn": "MCP73832T-2ACI/OT",
@@ -503,23 +437,9 @@
       "jlcpcb_unit_price_snapshot_usd": 0.0197,
       "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C318884&limit=20&full=true",
       "references": [
-        "SW1",
-        "SW2",
-        "SW3",
-        "SW4",
-        "SW5",
-        "SW6",
-        "SW7",
-        "SW8",
-        "SW9",
-        "SW10",
-        "SW11",
-        "SW12",
-        "SW13",
-        "SW14",
-        "SW15",
-        "SW16",
-        "SW17"
+        "SW17",
+        "SW18",
+        "SW19"
       ],
       "bom_comments": ""
     },
@@ -627,38 +547,6 @@
       ],
       "bom_comments": "Exact MAX17048G+T10 TDFN variant; land-pattern review remains open."
     },
-    "C2843785": {
-      "mpn": "XL-5050RGBC-2812B",
-      "manufacturer": "XINGLIGHT",
-      "package": "SMD5050-4P",
-      "description": "-20℃~+85℃ 0.3mA 1.6mm 120° 2000V 3.5V~5.5V 4kHz 5mm 5mm 800Kbit/s G:1300mcd~1800mcd、R:500mcd~700mcd、B:300mcd~500mcd R:620nm~635nm、B:465nm~475nm、G:520nm~535nm Top-mount Water Clear SMD5050-4P RGB LEDs(Built-in IC) ROHS",
-      "footprint": "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B",
-      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785",
-      "jlcpcb_url": "https://jlcpcb.com/partdetail/C2843785",
-      "jlcpcb_category": "Extended",
-      "jlcpcb_stock_snapshot": 813565,
-      "jlcpcb_unit_price_snapshot_usd": 0.0549,
-      "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C2843785&limit=20&full=true",
-      "references": [
-        "D1",
-        "D2",
-        "D3",
-        "D4",
-        "D5",
-        "D6",
-        "D7",
-        "D8",
-        "D9",
-        "D10",
-        "D11",
-        "D12",
-        "D13",
-        "D14",
-        "D15",
-        "D16"
-      ],
-      "bom_comments": "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
-    },
     "C265104": {
       "mpn": "S5B-PH-SM4-TB(LF)(SN)",
       "manufacturer": "JST",
@@ -694,6 +582,24 @@
         "J5"
       ],
       "bom_comments": "Rev D brake/mascon Gray harness: pin1=GND, pins2..5=S0..S3, pin6=3V3. Passive cams leave supply cavity empty. Mating PHR-6 housing/crimps separate."
+    },
+    "C262712": {
+      "mpn": "AFA07-S06FCA-00",
+      "manufacturer": "JUSHUO",
+      "package": "SMD,P=1mm,卧贴",
+      "description": "0.3mm 1mm 2.5mm 6P Bottom Contact Copper alloy Slide Lock Surface Mount, Right Angle Tin SMD,P=1mm,卧贴 FFC, FPC (Flat Flexible) Connector Assemblies ROHS",
+      "footprint": "Connector_FFC-FPC:JUSHUO_AFA07-S06FCA-00_1x6-1MP_P1.0mm_Horizontal",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/b01391708457137d9b8d8b493bdc4f0c.pdf?productCode=C262712",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C262712",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 31876,
+      "jlcpcb_available_order_qty_snapshot": 31746,
+      "stock_source": "https://jlcpcb.com/partdetail/C262712",
+      "checked_at_utc": "2026-10-03T23:00:57.351908+00:00",
+      "references": [
+        "J15"
+      ],
+      "bom_comments": "6-way 1mm bottom-contact FFC. Molex 0151670213 Type A cable: main J15 pin n -> button J1 pin 7-n. Cable bought once per set from DigiKey; power off to insert."
     }
   },
   "non_assembly": {

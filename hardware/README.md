@@ -1,107 +1,40 @@
-# NotchDeck — hardware
+# NotchDeck hardware
 
-KiCad 10 project for **NotchDeck One**. Structure and tooling are patterned on the other
-BenchBits hardware projects (tsumikoro / pulsarfab): a `Makefile` driving `kicad-cli` for
-doc generation and JLCPCB packaging, a shared project-local `lib/`, and one subdirectory
-per PCB.
+**Rev E has two wired KiCad 10 assemblies:** `notchdeck-one` is the logic/handle board; `notchdeck-buttons` is the detachable 4×4 key/RGB board. The button board uses an owned **STM32G030F6P6TR / C529330** to scan a diode matrix and drive RGB locally. A six-way 1mm FFC carries I²C, interrupt and power. Select/Start remain direct inputs on the main board, alongside Reset.
 
-```
-hardware/
-├── Makefile                 # docs / bom / jlc targets (kicad-cli), per-project template
-├── scripts/jlcpcb-package.sh# gerbers + drill + BOM + CPL -> <project>-jlcpcb.zip
-├── sym-lib-table            # project-local symbol library  (notchdeck:)
-├── fp-lib-table             # project-local footprint library (notchdeck:)
-├── lib/
-│   ├── symbols/notchdeck.kicad_sym   # vendored symbols (see ATTRIBUTIONS.md)
-│   ├── footprints.pretty/            # vendored footprints
-│   ├── 3dmodels/                     # vendored STEP models
-│   └── ATTRIBUTIONS.md               # source + license per vendored part
-├── datasheets/
-├── PARTS.md                 # real-part -> KiCad symbol/footprint/3D mapping (START HERE)
-└── notchdeck-one/           # the PCB
-    ├── notchdeck-one.kicad_pro / .kicad_sch / .kicad_pcb
-    └── sym-lib-table / fp-lib-table
-```
+| Project | Provisional PCB | Electrical components | Nets / endpoints | Assembly parts |
+|---|---|---:|---|---:|
+| [Logic](notchdeck-one/FLOORPLAN.md) | 115×90mm, four layers | 93 | 74 / 318 | 92 |
+| [Buttons](notchdeck-buttons/README.md) | 86×120mm, two layers; 19mm key pitch | 85 | 56 / 235 | 84 |
 
-## Status
+Both have zero native ERC errors/warnings, complete independent net contracts, and matching PCB pad nets, schematic UUIDs and sourcing properties. Both are **unrouted floorplans**, with no tracks/vias/planes. Native DRC has no rule or schematic-parity violations; 249 logic and 211 button connections remain unrouted. Neither is ready to fabricate.
 
-**Revision C schematic wired and verified (2026-10-03).** The root sheet connects
-MCU, Power, Lever and Controls with explicit hierarchical ports and visible wires.
-Local circuits show USB pair joins and ESD, the battery load-share, charger/LDO,
-RC lever inputs, switch returns, reverser divider/filter and both RGB chain rows.
+Magnetic and Gray-coded power/brake or combined mascon interfaces remain electrically unchanged. See [handle interfaces](../docs/06-handle-interfaces.md). U9 separates the two AS5600 address-0x36 channels; MAX17048 remains on another bus. Remove both R37/R38 before using an external power/combined sensor on J10.
 
-The wiring and layout are captured in [`scripts/notchdeck-one.schgen.py`](scripts/notchdeck-one.schgen.py).
-`make verify-notchdeck-one` checks KiCad's exported netlist against an independent
-pin-level contract: **140 components, 92 nets, 439 pin endpoints, 12 explicit NCs**.
-KiCad 10.0.6 ERC reports **zero errors and zero warnings**, without exclusions.
-All components have footprints. The PCB now has a **provisional 145 × 105 mm,
-four-layer floorplan with a 4×4 button layout on 19 mm pitch** (2026-10-03).
-All 140 electrical footprints match the schematic, with four added mounting holes.
-Native PCB DRC reports zero rule/parity violations and **380 unrouted connections**.
-See [`FLOORPLAN.md`](notchdeck-one/FLOORPLAN.md) for placement details, evidence and
-remaining mechanical/electrical review items. The board is not ready to fabricate.
+## Source of truth and build
 
-Rev C adds independent power and brake sensing: either handle can use an AS5600
-magnetic sensor or a Gray-coded contact cam. U9 isolates the two address-0x36
-magnetic channels. J10/J11 expose their buses; Rev D consolidates Gray contacts into keyed J12 (5-pin power)
-and J5 (6-pin brake/mascon) harnesses. Remove R37/R38 before connecting an
-external power sensor to J10. See [handle interfaces](../docs/06-handle-interfaces.md)
-for pinouts, cam patterns, firmware profiles and calibration requirements.
-
-Electrical corrections made during capture:
-
-- Q1 drain goes to BAT+, source to VSYS; R4 pulls its gate down and R5 connects
-  VBUS to the gate. The former source/drain note would allow unwanted charging
-  through the body diode.
-- U3 is **MCP73832T-2ACI/OT**, whose open-drain STAT safely pulls up to 3V3.
-  Do not substitute the MCP73831 without addressing its driven-high STAT voltage.
-- MAX17048 CELL and VDD connect to BAT+ per the ADI pin table.
-- RGB LEDs use USB VBUS with a populated **SN74AHCT1G125DBVR** buffer; RGB is off
-  during battery operation. C20 and C21–C36 provide local decoupling. C13 is 1uF,
-  reducing the directly connected VBUS capacitance from the former 100uF bulk.
-- J9 adds the missing center-off SPDT reverser input: 3V3 / midpoint / GND,
-  filtered by R25/C37. D17 indicates 3V3; D18 indicates active charging.
-- E73 GPIO electrical types are corrected (especially pad 28, incorrectly marked
-  as power input). Passive SWD connector variants model the two parallel headers;
-  attach only one probe at a time. `SW_RST` is now SW17 and `D_PP` is D19.
-
-This is a connectivity-verified schematic, not a fabrication release. Review the
-500mA charge setting against the selected protected cell and USB source, total USB
-current and inrush, LDO dropout/thermal behavior, assembly placement orientation,
-and MAX17048 exposed-pad land pattern before layout/fabrication. The Rev C firmware overlay implements the handle/button GPIOs, reset/NFC and RC
-LFCLK configuration. A production board/bootloader definition, nav/reverser scan,
-USB-absent LED handling and a suitable LED brightness/current limit remain open.
-
-The [JLCPCB BOM](notchdeck-one/bom/README.md) now covers **139 purchasable parts
-with 34 catalog codes** (2026-10-03 snapshot). Exact manufacturer/MPN and datasheet
-properties are on every symbol. The RGB and keyed SWD footprints follow the
-selected parts' drawings; J4's bare programming contacts are excluded from assembly.
-
-## Workflow
+Edit `scripts/<project>.schgen.py` and each project's `bom/jlcpcb-parts.json`, then generate with the schematic editors closed. `notchdeck_capture.py` supplies shared wire/port capture; `kschgen.py` handles native files. Keep editor changes in those manifests before forcing regeneration. The saved PCBs become the source of truth once placement/routing proceeds; the seed floorplan script refuses to overwrite routed boards.
 
 ```sh
-make help                    # list targets
-make gen-notchdeck-one       # generate missing sheets; preserve existing schematic
-make check-notchdeck-one     # structural sanity check
-make verify-notchdeck-one    # strict ERC + all expected net endpoints
-make verify-pcb-notchdeck-one # schematic/PCB pad-net and UUID consistency
-make verify-bom-notchdeck-one # exact JLCPCB assignments, quantities and exclusions
-make render-notchdeck-one    # render sheets to PNG for visual review
-make docs-notchdeck-one      # schematic SVGs + PCB SVGs + 3D renders + JLCPCB BOM
-make bom-notchdeck-one       # just the BOM (jlcpcb_bom.csv)
-make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
-make clean-docs clean-jlc    # remove generated artifacts
+# From hardware/; <project> is notchdeck-one or notchdeck-buttons.
+KSCHGEN_FORCE=1 make gen-notchdeck-one gen-notchdeck-buttons
+make verify                     # both boards: net/ERC, PCB parity and BOM audits
+make render-notchdeck-one render-notchdeck-buttons
+make docs                       # both boards' images and BOMs
+make jlc                        # two separate Gerber/drill/BOM/CPL ZIPs
+make jlc-notchdeck-buttons       # or export one PCB
 ```
 
-See [`scripts/README.md`](scripts/README.md) for the generation / check / render tooling.
+Pick-and-place files are `<project>/jlcpcb/<project>-CPL.csv`; ZIPs are `<project>/<project>-jlcpcb.zip`. These commands export the current design, including unfinished floorplans; they do not constitute a manufacturing release. Review rotations in JLCPCB before ordering. Generated exports are ignored by Git. CI audits both projects; on Linux pass `KICAD_PYTHON=python3` with `pcbnew` installed. See [script guide](scripts/README.md).
 
-Generated outputs (`*/docs/images/`, `*/jlcpcb/`, `*-jlcpcb.zip`, `jlcpcb_bom.csv`) are
-git-ignored — regenerate with `make`.
+## Sourcing and remaining work
 
-## USB on the E73 — verified
+[PARTS.md](PARTS.md) maps all **176 installed parts / 37 JLCPCB codes** per set. [Five-set stock](jlcpcb-five-set-stock.csv) combines both boards’ usage: public available stock covers all selections except the MCU, covered by owned private stock in the shared local CSV. Private inventory balances remain outside Git. [System BOM](system-bom.csv) adds one DigiKey Molex 0151670213 cable per set. No parts were purchased or reserved; attrition/allocation must be confirmed before ordering. Handle mechanisms, external sensor carriers, cell, keycaps and enclosure are not yet a sourced kit.
 
-The Ebyte E73-2G4M08S1C **exposes the nRF52840 USB lines**: pad 27 = VBS (VBUS),
-pad 29 = D−, pad 31 = D+ (confirmed against Ebyte's pin-definition table; see `PARTS.md`).
-The dual-mode USB design works on the module as-is — no parts change needed.
+- Implement panel MCU firmware and main I²C integration. Existing Rev C/D direct-GPIO button/RGB firmware does **not** operate this Rev E panel. The [panel guide](notchdeck-buttons/README.md) records pin functions, scan behavior, address and programming requirements.
+- Finalize enclosure, cable fit/retention and tolerances, mounting and connector access. The FFC is nominally compatible; its guaranteed thickness tolerance is wider than the connector drawing. Sample-fit or supplier approval remains required.
+- Validate E73 land pattern/antenna region and MAX17048 exposed pad. Review final CPL orientation and assembly eligibility.
+- Resolve USB source/current/inrush and the existing 500mA charger setting. RGB is USB-only; a ≤250mA total panel return target is below the 0.5A FFC-contact rating, but still needs firmware enforcement and a whole-system power budget. Review LDO margins and battery choice.
+- Finish decoupling placement, USB/ESD routing, reference planes and ground stitching; route and run final DRC/DFM/EMC checks. Magnetic detents need measured calibration; handle hardware and power/thermal behavior need bench testing.
 
-Requires `kicad-cli` (KiCad 10) on `PATH`.
+Connectivity and catalog checks establish internal consistency, not complete electrical, mechanical or production validation. No ERC exclusions were added.

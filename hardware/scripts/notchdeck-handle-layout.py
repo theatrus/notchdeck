@@ -45,8 +45,8 @@ def rect(x,y,w,h,cls,rx=0):
     s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" class="{cls}"/>')
 def line(x1,y1,x2,y2,stroke='#18303c',width=1):
     s.append(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{stroke}" stroke-width="{width}"/>')
-text(45,42,'NotchDeck One · Rev D handle integration','title')
-text(45,69,'Own-build Japanese-style controls · one PCB · magnetic or Gray contacts on either handle','sub')
+text(45,42,'NotchDeck One · Rev E handle integration','title')
+text(45,69,'Own-build Japanese-style controls · separate logic + button PCBs · magnetic or Gray contacts on either handle','sub')
 text(45,94,'Provisional 400 × 220 mm panel. Top view, driver at the bottom. Envelopes only; no cutout dimensions.','small')
 for panel_y, mode in [(140,'dual'),(580,'combined')]:
     text(45,panel_y-12,'Separate power + rotary brake' if mode=='dual' else 'Combined mascon alternative','label')
@@ -57,22 +57,29 @@ for panel_y, mode in [(140,'dual'),(580,'combined')]:
     pcb=cfg['pcb'];bx,by=xy(pcb['x'],pcb['y'])
     rect(bx,by,pcb['width']*scale,pcb['depth']*scale,'board')
     text(bx+9,by+42,'MAIN PCB','small')
-    text(bx+9,by+61,'145 × 105','small')
-    # Derived from the actual Rev D PCB placements, relative to its (50,50) corner.
+    text(bx+9,by+61,'115 × 90','small')
+    # Actual Rev E board placements, relative to each (50,50) PCB corner.
+    keys=cfg['button_pcb'];kx,ky=xy(keys['x'],keys['y'])
+    rect(kx,ky,keys['width']*scale,keys['depth']*scale,'board')
+    text(kx+8,ky+18,'BUTTON PCB · 86×120','small')
     for row in range(4):
         for col in range(4):
-            px,py=xy(pcb['x']+72+19*col,pcb['y']+34+19*row)
+            px,py=xy(keys['x']+14.5+19*col,keys['y']+22+19*row)
             rect(px-6,py-6,12,12,'module',2)
-    for hx,hy in [(5,5),(140,5),(140,100),(5,100)]:
-        px,py=xy(pcb['x']+hx,pcb['y']+hy)
-        s.append(f'<circle cx="{px}" cy="{py}" r="3" fill="#fff" stroke="#51836a"/>')
-    for label,px,py in [('J10 MAG P',83,5.8),('J11 MAG B',108,5.8),('J12 GRAY P',5.8,65),('J5 GRAY B/M',139.2,64)]:
+    for px,py in [(78,54),(97,54)]:
+        xx,yy=xy(pcb['x']+px,pcb['y']+py);rect(xx-6,yy-6,12,12,'module',2)
+    for board in [pcb,keys]:
+        for hx,hy in [(5,5),(board['width']-5,5),(board['width']-5,board['depth']-5),(5,board['depth']-5)]:
+            px,py=xy(board['x']+hx,board['y']+hy)
+            s.append(f'<circle cx="{px}" cy="{py}" r="3" fill="#fff" stroke="#51836a"/>')
+    for label,px,py in [('J10',69,84.2),('J11',95,84.2),('J12',5.8,65),('J5',109.2,59)]:
         x,y=xy(pcb['x']+px,pcb['y']+py)
         s.append(f'<circle cx="{x}" cy="{y}" r="3.5" fill="#207f78"/>')
-        # Port labels live outside the populated switch grid.
-        if label.startswith('J10') or label.startswith('J11'):text(x,by-6,label.split()[0],'small','middle')
-        elif label.startswith('J12'):text(bx-8,y-8,'J12','small','end')
-        elif label.startswith('J5'):text(bx+pcb['width']*scale+8,y-8,'J5','small')
+        text(x,y-7,label,'small','middle')
+    x0,y0=xy(pcb['x']+85,pcb['y']+4.2)
+    x1,y1=xy(keys['x']+43,keys['y']+115)
+    line(x0,y0,x1,y1,'#bd8a2e',3)
+    text(kx+8,ky+184,'6-way FFC / STM32','small')
     m=cfg['power_module' if mode=='dual' else 'combined_module'];cx,cy=xy(m['x'],m['y'])
     rect(cx-m['width']*scale/2,cy-m['depth']*scale/2,m['width']*scale,m['depth']*scale,'module',10)
     line(cx,cy-52,cx,cy+52,'#5c77a1',7)
@@ -80,9 +87,9 @@ for panel_y, mode in [(140,'dual'),(580,'combined')]:
     text(cx,cy-65,'POWER' if mode=='dual' else 'MASCON','label','middle')
     text(cx,cy+76,'Off → P5' if mode=='dual' else 'EB ← N → P5','small','middle')
     # Dashed paths indicate optional alternatives, not physical cable lengths.
-    x0,y0=xy(pcb['x']+83,pcb['y']+5.8)
+    x0,y0=xy(pcb['x']+69,pcb['y']+84.2)
     s.append(f'<path d="M{x0},{y0} L{bx-16},{y0} L{cx},{cy-45}" class="wire"/>')
-    gx,gy=xy(pcb['x']+(5.8 if mode=='dual' else 139.2),pcb['y']+(65 if mode=='dual' else 64))
+    gx,gy=xy(pcb['x']+(5.8 if mode=='dual' else 109.2),pcb['y']+(65 if mode=='dual' else 59))
     s.append(f'<path d="M{gx},{gy} L{gx},{oy+132*scale} L{cx+30},{cy-30}" class="wire"/>')
     if mode=='dual':
         m=cfg['brake_module'];cx,cy=xy(m['x'],m['y']);rad=m['radius']*scale
@@ -92,14 +99,14 @@ for panel_y, mode in [(140,'dual'),(580,'combined')]:
             line(cx+(rad-10)*math.cos(th),cy+(rad-10)*math.sin(th),cx+(rad-2)*math.cos(th),cy+(rad-2)*math.sin(th),'#5c77a1',2)
         line(cx,cy,cx+48,cy-28,'#5c77a1',8)
         text(cx,cy+35,'BRAKE','label','middle');text(cx,cy+56,'Release → B8 → EB','small','middle')
-        x0,y0=xy(pcb['x']+108,pcb['y']+5.8)
+        x0,y0=xy(pcb['x']+95,pcb['y']+84.2)
         s.append(f'<path d="M{x0},{y0} L{cx},{y0} L{cx},{cy-rad}" class="wire"/>')
-        gx,gy=xy(pcb['x']+139.2,pcb['y']+64)
+        gx,gy=xy(pcb['x']+109.2,pcb['y']+59)
         s.append(f'<path d="M{gx},{gy} L{cx-30},{cy-rad+5}" class="wire"/>')
     else:
         text(*xy(330,143),'Brake station blank','small','middle')
         text(*xy(330,157),'J11 / J12 unused','small','middle')
-    text(ox+W*scale/2,oy+D*scale-10,'DRIVER','small','middle')
+    text(ox+W*scale/2,oy+D*scale+18,'DRIVER','small','middle')
     tx=775;ty=panel_y+30
     notes=(['POWER · 6 detents','Off, P1–P5','Magnetic J10 / Gray J12','','BRAKE · 10 detents','Release, B1–B8, emergency','Magnetic J11 / Gray J5','','Independent sensors; mixed types allowed.','Brake suppresses traction in firmware.'] if mode=='dual' else ['MASCON · 15 detents','EB, B8–B1, N, P1–P5','Magnetic J10 / Gray J5','','Use one selected sensor backend per handle.','Remove R37 + R38 for external J10 sensor.','Magnetic centers must be measured.','','Chassis carries handle and stop loads.','PCB and sensors carry no shaft load.'])
     for i,note in enumerate(notes):text(tx,ty+i*29,note,'label' if i in (0,4) and mode=='dual' or i==0 else 'sub')

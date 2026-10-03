@@ -67,21 +67,14 @@ jobs:
           mkdir -p ~/.config/kicad/10.0
           cp /usr/share/kicad/template/sym-lib-table ~/.config/kicad/10.0/
           cp /usr/share/kicad/template/fp-lib-table ~/.config/kicad/10.0/
-          python3 scripts/notchdeck-netcheck.py
-          python3 scripts/notchdeck-boardcheck.py
-          kicad-cli sch export bom \
-            --output notchdeck-one/jlcpcb_bom.csv \
-            --fields '${ITEM_NUMBER},Reference,Value,Footprint,${QUANTITY},LCSC,MPN,Manufacturer,BOM Comments' \
-            --labels 'Item,Designator,Comment,Footprint,Qty,LCSC Part #,MPN,Manufacturer,Notes' \
-            --group-by 'Value,Footprint,LCSC,MPN,Manufacturer' \
-            --ref-range-delimiter '' --exclude-dnp \
-            notchdeck-one/notchdeck-one.kicad_sch
-          python3 scripts/notchdeck-bomcheck.py
-          kicad-cli pcb drc --schematic-parity --format json \
-            -o /tmp/notchdeck-drc.json notchdeck-one/notchdeck-one.kicad_pcb
-          python3 -c 'import json; d=json.load(open("/tmp/notchdeck-drc.json")); assert not d["violations"] and not d["schematic_parity"]; print(len(d["unconnected_items"]), "unrouted items (floorplan)")'
+          make verify KICAD_PYTHON=python3
+          for project in notchdeck-one notchdeck-buttons; do
+            kicad-cli pcb drc --schematic-parity --format json \
+              -o "/tmp/$project-drc.json" "$project/$project.kicad_pcb"
+            python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); assert not d["violations"] and not d["schematic_parity"]; print(len(d["unconnected_items"]), "unrouted items (floorplan)")' "/tmp/$project-drc.json"
+          done
       - uses: actions/upload-artifact@v4
         with:
-          name: notchdeck-one-bom
-          path: hardware/notchdeck-one/jlcpcb_bom.csv
+          name: notchdeck-boms
+          path: hardware/*/jlcpcb_bom.csv
           if-no-files-found: warn

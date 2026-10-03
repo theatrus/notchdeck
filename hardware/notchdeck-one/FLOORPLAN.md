@@ -1,127 +1,13 @@
-# NotchDeck One — provisional PCB floorplan
+# Logic board — Rev E floorplan
 
-2026-10-03, KiCad 10.0.6. The schematic is captured and its connectivity checks
-pass. The PCB contains an editable placement study for the requested **4×4 button
-layout**. It is **unrouted and not ready for fabrication**.
+2026-10-03, KiCad 10.0.6. **Unrouted placement study**, 115×90mm from (50,50) to (165,140), four copper layers, provisional 1.6mm thickness. All parts are on top; four 3.2mm mounting holes are 5mm from the corners. There are 93 electrical footprints and four board-only holes.
 
-## Placement
+The button matrix, RGB LEDs, AHCT buffer and their local passives moved to [notchdeck-buttons](../notchdeck-buttons/FLOORPLAN.md). Main SW18 Select at (128,104) and SW19 Start at (147,104) retain direct BTN7/BTN8 inputs; SW17 remains Reset. J15 FFC at (135,54.2), facing the top, connects the button MCU; U12/C44 protect and bypass its I²C/3V3 port. R42 pulls IRQ up.
 
-The rectangular outline is **145 × 105 mm**, from (50, 50) to (195, 155) in KiCad
-coordinates. Four copper layers and 1.6 mm thickness are provisional; no stackup
-or controlled-impedance geometry has been selected. All components are on F.Cu.
+USB and power remain upper left. E73 is at (93,66), rotated 90°, antenna overhanging the top edge by about 2mm. The all-layer rule area at x81…105/y43…51.3 prohibits copper/pads/vias; enclosure-metal clearance and exact module footprint remain review items. Main SWD and Tag-Connect remain below the radio. J12 power Gray faces left at (55.8,115); J5 brake/mascon Gray faces right at (159.2,109). J10/J11 magnetic ports face down at (119,134.2)/(145,134.2); J9 reverser is at (79,134.2). U5 remains at (81,113), with both R37/R38 removable for an external J10 sensor. No shaft hole or validated magnet envelope is provided.
 
-| Area | Placement and intent |
-|---|---|
-| Buttons | SW1–SW16 on a 19 mm square pitch; centers x=122/141/160/179, y=84/103/122/141 mm. First three rows are BTN1–BTN12; bottom row is Up, Down, Left, Right. These are independent inputs, not an electrical scan matrix. |
-| RGB | One LED 7 mm above each button, with its bypass capacitor nearby. D1–D16 follow a serpentine chain; alternating rows rotate the footprints to put DIN toward the preceding LED. |
-| USB and power | J1 faces the top edge. U7 sits behind it; charger, load sharing, LDO and fuel gauge occupy the upper left. J2 faces the left edge. |
-| Radio | U1 at (93, 66), rotated 90°. Its antenna end overhangs the top board edge by approximately 2 mm. An all-layer rule area prohibits pads, tracks, vias and pours at x=81…105, y=43…51.3 mm. Keep other components and enclosure metal out manually; the rule area permits U1's own footprint. |
-| Programming | J3 keyed Samtec SWD header at (93,82) and J4 TC2030 are below the radio; SW17 reset is beside it. J3 moved 2 mm down to clear C9 after its shrouded body was selected. Allow probe/cable access in the enclosure. |
-| Lever | U5 AS5600 center at (81, 113). The 10 mm radius drawing marks provisional shaft/magnet space, **not a shaft hole or validated mechanical clearance**. |
-| Harnesses | Rev D J12 (5-pin power Gray) faces left at (55.8,115); J5 (6-pin brake/mascon Gray) faces right at (189.2,114). J10/J11 magnetic ports face the top edge at x=133/158 mm. J9 reverser faces the bottom edge. |
-| Handle interface | U9 bus switch at (103,96), C38 beside it; U10/U11 and C39/C40 sit behind J10/J11. R37/R38 beside U5 disconnect its bus when an external power sensor is used. Power-contact filters are beside J12; brake filters are near the MCU/handle area. |
-| Mounting | Four board-only 3.2 mm NPTH holes at (55,55), (190,55), (190,150), (55,150). Enclosure bosses and screw-head clearances remain to be designed. |
+Native checks: **zero ERC violations**, complete 318-endpoint/74-net contract including 25 intentional NCs, all schematic/PCB nets and UUID paths match, **zero DRC rule/parity issues and 249 unconnected items**. Sourcing fields, 92 assembly parts and bare J4 exclusion match. These checks do not verify routing, mechanical fit or electrical/thermal margins.
 
-RGB references by physical row, left to right:
+The saved PCB is editable in KiCad. `scripts/notchdeck-floorplan.py --project notchdeck-one` records the provisional seed geometry; `--replace-unrouted` is intentionally explicit and must not overwrite subsequent placement work. Do not use it once routing begins.
 
-```
-D1   D2   D3   D4
-D8   D7   D6   D5
-D9   D10  D11  D12
-D16  D15  D14  D13
-```
-
-The PCB has 140 electrical footprints plus four mechanical mounting holes.
-The saved `.kicad_pcb` is the editable source after this initial placement.
-`scripts/notchdeck-floorplan.py` records the seed geometry; it is not part of
-ordinary schematic generation and must not be used to overwrite subsequent work.
-
-## Checks and evidence
-
-| Check | Result | Evidence / confidence |
-|---|---|---|
-| Schematic net contract | 140 components, 92 nets, 439 unique pin endpoints, 12 intentional NCs | Deterministic comparison of KiCad's exported netlist against `notchdeck-netcheck.py`; internal connectivity consistency |
-| Native ERC | 0 errors, 0 warnings, no exclusions | KiCad 10.0.6 ERC |
-| PCB pad/net audit | All 439 endpoint assignments, references, values, footprint IDs and schematic UUID paths match | Deterministic comparison of XML netlist and native PCB pad data; includes duplicated switch/connector pads |
-| Native PCB DRC with schematic parity | 0 rule violations, 0 parity issues, **380 unconnected items** | KiCad 10.0.6 under the existing project rules; the remaining airwires are expected because routing has not begun |
-| GUI review | Root and all four child sheets opened and visually inspected; PCB opened with placement/ratsnest | Direct visual inspection. Fixed missing sheet-page instances that caused KiCad's automatic-repair warning, and overlapping U7 input wire stubs. |
-| Generator retention | Forced regeneration retained placed-symbol UUIDs; subsequent PCB parity audit passed | Native file/UUID check; future schematic generation retains PCB associations for unchanged references |
-| 3D preview | Outline, holes and radio overhang inspected | Partial model coverage; not an assembly or enclosure fit check |
-
-Reproduce the principal checks from the repository root:
-
-```sh
-make -C hardware verify-notchdeck-one verify-pcb-notchdeck-one
-kicad-cli pcb drc --schematic-parity --format json \
-  -o /tmp/notchdeck-drc.json hardware/notchdeck-one/notchdeck-one.kicad_pcb
-```
-
-The pad audit uses KiCad's Python runtime (override `KICAD_PYTHON` in the Makefile
-on other installations). It inspects a temporary PCB copy so it cannot rewrite
-project settings. Native CLI reports and previews are generated under the ignored
-`docs/images/` directory.
-
-## Open work before routing and fabrication
-
-1. Review the [provisional panel and handle envelopes](../../docs/07-japanese-handle-build.md),
-   then settle enclosure, switch/keycap parts, lever/magnet axis, mounting bosses and
-   connector access. This board shape and all mechanical coordinates are provisional.
-2. Validate the exact E73 land pattern and antenna clearance against the module
-   drawing and enclosure. Its current footprint has no courtyard and uses drilled
-   internal pads; a clean native DRC does not validate that geometry.
-3. Validate MAX17048 package/exposed-pad dimensions. All 139 purchasable components
-   now have exact JLCPCB selections. The RGB part is XINGLIGHT C2843785 with a
-   custom footprint matching its drawing and pin map; the keyed Samtec SWD header
-   likewise has a matching footprint. See [BOM review](bom/README.md). Final CPL
-   rotations and assembly eligibility remain to be checked before ordering.
-4. Review the existing 500 mA charge setting against the protected cell and USB
-   current budget, LED brightness limit/inrush, and LDO dropout/dissipation. The
-   connectivity checks do not establish electrical or thermal margins.
-5. Place an uninterrupted reference plane, route USB through U7 with a short ESD
-   ground return, and review local VBUS bypassing at U7. The EMC analyzer flags its
-   nearest existing bypass approximately 10 mm away. Final placement and routing
-   should resolve this before sign-off. Route short local decoupling loops before
-   the button fanout; keep LED supply current away from sensor returns.
-6. Add ground stitching, test access and assembly fiducials when routing and
-   manufacturing requirements are set. No copper planes, traces or vias exist yet.
-7. Bench-test the shared Rev C/D firmware overlay and both sensor types, measure magnetic
-   detent centers, and implement the remaining nav/reverser scan and RGB behavior.
-   A production board/bootloader definition is still required; see the
-   [handle guide](../../docs/06-handle-interfaces.md).
-
-## Analyzer triage and review limits
-
-On the preceding Rev B floorplan, `analyze_schematic.py`, `analyze_pcb.py --full`,
-`cross_analysis.py`, the EMC analyzer and thermal analyzer were run. Rev D has
-received the native net/ERC/PCB/BOM checks above; those broader analyzer results
-are historical context, not a new Rev D assessment. Cross-analysis reported no findings. Their
-topology reports supplement the native checks; they are not hardware validation.
-
-- **RS-001, missing 3V3 source:** analyzer hierarchy false positive. Native XML
-  places U2.5, U1.19 and U1.23 together on global `+3V3`; ERC is clean.
-- **PU-001, reset pull-up:** the earlier Rev B heuristic is superseded in Rev C.
-  R39 now pulls up the shared nRESET line for the TCA9543A reset input. UICR reset
-  configuration remains required.
-- **EMC missing ground plane/stitching and PCB unrouted errors:** accurate for this
-  placement stage and still open. No EMC pass or numerical compliance claim is made.
-- **Connector filtering / TC2030 ground-pin heuristics:** the standard programming
-  interfaces and existing lever RC filters require context. External harness ESD
-  needs review against cable length and enclosure accessibility; no blanket ferrite
-  additions or connector pinout changes were applied.
-- **Datasheets:** manufacturer PDFs for AP2112, MCP73832, SN74AHCT1G125 and AO3401A
-  were cached locally. AP2112 SOT25 pin table (p. 2), MCP73831/2 pin descriptions
-  (§3), and SN74AHCT1G125 pin functions (table 4-1) were manually cross-checked.
-  See [`NETPLAN.md`](../NETPLAN.md#verified-capture-references-2026-10-02) for the
-  prior capture references. Full current manufacturer pin/land-pattern coverage
-  and structured extraction are incomplete; all-part electrical correctness is
-  **not** established by the net/PCB consistency results.
-- **Thermal:** analyzer skipped assessment because no quantifiable dissipation
-  data/extraction cache was available. Zero assessed components is not a pass.
-- **SPICE:** not run; no supported simulator installed. **Lifecycle:** not run;
-  distributor credentials unavailable. **Gerber/DFM:** not run; this is an unrouted
-  floorplan with no fabrication release. **Prior-review delta:** previous board
-  was an empty scaffold; no prior routed-layout review exists for comparison.
-
-Trust summary: high confidence in native connectivity/parity results and recorded
-placement coordinates; limited confidence in complete part/package, mechanical,
-power, thermal and EMC suitability until the open work above is completed.
+Before fabrication, resolve [hardware open work](../README.md#sourcing-and-remaining-work), exact E73/MAX17048 land patterns, magnet/handle mechanics, USB/current budget and local decoupling. Route uninterrupted reference planes, USB via its ESD array with short ground return, and keep RGB return current separate from sensor return paths. Add test access, fiducials and ground stitching as needed. Historical Rev B analyzer results are not a Rev E EMC/thermal/DFM approval.

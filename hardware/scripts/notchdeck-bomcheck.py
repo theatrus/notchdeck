@@ -13,10 +13,12 @@ import re
 
 
 def main():
-    project = Path(__file__).resolve().parents[1] / "notchdeck-one"
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--bom", type=Path, default=project / "jlcpcb_bom.csv")
+    parser.add_argument("--project", default="notchdeck-one", choices=("notchdeck-one", "notchdeck-buttons"))
+    parser.add_argument("--bom", type=Path)
     args = parser.parse_args()
+    project = Path(__file__).resolve().parents[1] / args.project
+    args.bom = args.bom or project / "jlcpcb_bom.csv"
     source = json.loads((project / "bom/jlcpcb-parts.json").read_text())
     expected = {}
     for code, part in source["parts"].items():
