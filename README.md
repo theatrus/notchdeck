@@ -1,57 +1,87 @@
 # NotchDeck
 
-> **NotchDeck** (a BenchBits product) — **NotchDeck One** is a dual-mode (USB + BLE) train
-> **master controller** ("mascon"): an open-hardware reimplementation of the Zuiki / Densha de GO!
-> style combined mascon or separate Japanese-style power and rotary brake handles,
-> built on a low-power Nordic nRF SoC. The same PCB supports both arrangements.
+[![CI](https://github.com/theatrus/notchdeck/actions/workflows/ci.yml/badge.svg)](https://github.com/theatrus/notchdeck/actions/workflows/ci.yml)
 
-The goal is a controller that plugs in over **USB HID** *and* roams over **Bluetooth LE HID**,
-presenting to every host (Windows / macOS / Linux / Android / iOS / Switch-class hosts) as a
-standard, **driverless HID joystick** — exactly like the commercial Zuiki Mascon does — while
-adding host-controllable **lamps/LEDs** (notch indicator, status RGB, instrument/warning lamps,
-optional display) that simulators can drive.
+**NotchDeck One** is a BenchBits train controller project with USB HID and Bluetooth LE HID.
+It supports our own Japanese-style **separate power lever and rotary brake**, or a
+**combined mascon**. Each handle can use an AS5600 magnetic sensor or a Gray-code
+contact cam. The goal is a driverless joystick with host-controlled lighting;
+host/game compatibility has not yet been bench-tested.
 
-## Why this is feasible as one chip
+## Current design: Rev E
 
-HID is **transport-agnostic**: the same input report (buttons + hat + a notch-lever axis) rides
-over USB HID, Bluetooth Classic HID, or BLE HID-over-GATT with no semantic change — only framing
-(report-ID prefix, endpoint vs GATT characteristic) differs. The **nRF52840** has both a
-full-speed USB 2.0 device controller *and* a BLE 5.x radio on one low-power Cortex-M4F, so a single
-part covers both transports. See [`docs/03-hardware-and-firmware-architecture.md`](docs/03-hardware-and-firmware-architecture.md).
+| Assembly | Function | Provisional floorplan |
+|---|---|---|
+| [Logic / connectors](hardware/notchdeck-one/FLOORPLAN.md) | E73 nRF52840 module, USB/BLE, battery power, handle ports, Select/Start and Reset | 115×90mm, four layers |
+| [Button panel](hardware/notchdeck-buttons/README.md) | STM32G030, detachable 4×4 diode key matrix, 16 RGB LEDs | 86×120mm, two layers, 19mm key pitch |
 
-## Handle configurations
+A six-way 1mm FFC carries power, I²C and interrupt between boards. The selected cable
+is Molex **0151670213** (DigiKey **WM13121-ND**); the panel guide records its reversed
+connector numbering and remaining fit checks. The STM32G030 **C529330** was selected
+from owned JLCPCB inventory.
 
-In combined mode, the power/brake lever is **a single 8-bit analog axis carrying discrete per-notch byte values** —
-*not* a stack of buttons. Emergency = `0x00`, brake `B8…B1` climbs, Neutral ≈ `0x80`, power
-`P1…P5` climbs to `0xFF`. Every consuming app's real job is to *threshold that axis back into named
-notches*. We emit it on the **Y axis** (the convention SDL and the Zuiki driver use). Full encoding
-table in [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.md).
+Both hierarchical schematics are wired and pass strict ERC, complete net checks,
+schematic/PCB parity and BOM audits. **Both PCBs are unrouted floorplans and are not
+ready for fabrication.** The [hardware guide](hardware/README.md) tracks routing,
+mechanical, power-budget and assembly work still required.
 
-Separate-handle mode exposes independent power and brake axes with brake priority.
-Each handle can use an AS5600 magnetic sensor or a Gray-code contact cam. See the
-[handle interfaces](docs/06-handle-interfaces.md) and
-[own-build handle plan](docs/07-japanese-handle-build.md) for harnesses, profiles and
-the provisional 4×4 panel layout.
+The nRF firmware builds against NCS v3.3.0, with host tests and six Rev C/D handle
+profiles compiled in CI. **Rev E panel firmware and main-board I²C integration are
+not implemented.** The old direct-GPIO button/RGB overlay does not operate Rev E.
+Magnetic handles also require measured detent calibration. No production firmware,
+bootloader integration or fabricated-controller validation is claimed.
 
-## Documents
+## Handles and reports
 
-| Doc | Contents |
+Combined mode sends discrete notch values on HID **Y**: EB=`0x00`, N=`0x80`, P5=`0xFF`.
+Separate-handle mode uses **Y=power, X=brake**, with brake priority and neutral
+re-arming. Both magnetic and contact backends use absolute positions. See the
+[handle interface](docs/06-handle-interfaces.md) for cam codes, calibration and
+profiles, and the [own-build guide](docs/07-japanese-handle-build.md) for mechanisms
+and the provisional panel layout.
+
+## Checks and exports
+
+Run from the repository root:
+
+```sh
+make -C firmware test             # host compiler only
+make -C hardware verify           # KiCad 10 + Python with pcbnew
+make -C hardware jlc              # separate logic and button assembly ZIPs
+```
+
+On Linux, pass `KICAD_PYTHON=python3` to hardware checks with KiCad's Python module
+installed. The [hardware guide](hardware/README.md) covers setup and regeneration;
+the [firmware guide](firmware/README.md) covers NCS builds and release commands.
+
+Each hardware ZIP contains Gerbers, drill, BOM and pick-and-place (CPL) files.
+Exports describe the current unfinished boards; exporting does not approve them
+for manufacture. [Sourcing](docs/04-bom-sourcing.md) covers **five complete sets**:
+176 installed parts and 37 JLCPCB codes per set, plus the separate cable. Stock
+observations are dated snapshots, with private inventory retained outside Git.
+
+[GitHub Actions](https://github.com/theatrus/notchdeck/actions/workflows/ci.yml)
+publishes `notchdeck-boms` (both assembly BOMs) and `notchdeck-one-firmware`
+(default nRF52840 DK bring-up UF2/HEX). Handle profiles are compile checks only;
+there is no Rev E or STM32 image in those artifacts. CI checks floorplan DRC rules
+and parity while allowing the documented unrouted connections.
+
+## Documentation
+
+| Guide | Contents |
 |---|---|
-| [`docs/01-research-findings.md`](docs/01-research-findings.md) | What the Zuiki Mascon / MasconPro and the Densha de GO! lineage actually do on the wire — VID/PIDs, HID class, byte tables, the SDL driver, reverse-engineering sources. Verified research. |
-| [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.md) | Our emulation spec: unified HID report descriptor, input/output report layouts, byte offsets (USB vs BLE), notch-axis encoding table, button/hat map, LED output reports. |
-| [`docs/03-hardware-and-firmware-architecture.md`](docs/03-hardware-and-firmware-architecture.md) | nRF SoC selection, dual-mode (USB/BLE) transport arbitration, BLE HOGP + Battery service, USB HID class, power budget, and the LED/lamp/display subsystem. |
-| [`docs/04-bom-sourcing.md`](docs/04-bom-sourcing.md) | JLCPCB/LCSC availability for every block — module, power path, USB-C, lever sensor, LEDs — with part numbers, stock, and fallbacks. Confirms the design is fully assemblable. |
-| [`docs/05-firmware-update.md`](docs/05-firmware-update.md) | User-upgrade strategy: UF2 drag-and-drop over USB (primary), BLE OTA (secondary), SWD (factory/recovery); build outputs and the security trade-off. |
-| [`hardware/NETPLAN.md`](hardware/NETPLAN.md) | E73 pad → peripheral net plan that makes schematic capture mechanical (power tree, USB, dual I²C, buttons, LEDs, SWD/reset). |
-| [`hardware/PARTS.md`](hardware/PARTS.md) | Real JLCPCB parts → KiCad symbol/footprint/3D mapping; current library status. |
-
-## Status
-
-Research, protocol, name, firmware skeleton, KiCad scaffold + vendored part libraries, and the
-E73 net plan are in. The Rev D controller schematic is wired and passes strict ERC plus a complete net audit.
-The PCB has an unrouted floorplan with keyed power and brake/mascon harnesses. Hardware/firmware are not yet
-built or fabricated.
+| [Hardware](hardware/README.md) | KiCad projects, validation, manufacturing exports and open work |
+| [Firmware](firmware/README.md) | Build/test commands, CI artifacts and implementation status |
+| [Architecture](docs/03-hardware-and-firmware-architecture.md) | Two-board design, buses, power and firmware responsibilities |
+| [Sourcing](docs/04-bom-sourcing.md) | Assembly BOMs, five-set stock accounting and external parts |
+| [Parts](hardware/PARTS.md) / [net plan](hardware/NETPLAN.md) | Exact selections, footprints, pad assignments and wiring |
+| [Handle interfaces](docs/06-handle-interfaces.md) | Magnetic/Gray harnesses, codes, profiles and fault behavior |
+| [Japanese-style handle build](docs/07-japanese-handle-build.md) | Own-build mechanics, provisional layout and cam targets |
+| [Protocol](docs/02-emulation-protocol-spec.md) | HID reports, notch encoding and planned lighting features |
+| [Firmware updates](docs/05-firmware-update.md) | Current artifacts, SWD access and proposed user-update path |
+| [Research](docs/01-research-findings.md) | Original Zuiki/Densha de GO! protocol research and references |
 
 ## License
 
-TBD (intend permissive — MIT/Apache-2.0 — for an open-hardware/firmware project).
+TBD; a project-wide license has not yet been selected. Third-party library sources
+and licenses are recorded in [attributions](hardware/lib/ATTRIBUTIONS.md).

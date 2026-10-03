@@ -1,4 +1,4 @@
-# Rev D magnetic and Gray-coded handles
+# Rev E magnetic and Gray-coded handles
 
 The same PCB supports a combined 15-position mascon, or separate power and brake
 handles. Each handle independently uses an AS5600 magnetic sensor or Gray-coded
@@ -28,7 +28,7 @@ Firmware selects channel 0 (0x01) or channel 1 (0x02) on the TCA9543A at 0x70,
 reads status/raw angle at 0x36, then deselects both. The fuel gauge at 0x36 remains
 on the independent I2C1 controller. Do not enable both mux channels simultaneously.
 
-Rev D uses one connector per cam: **J12 power: 1=GND, 2–4=S0–S2, 5=3V3**;
+Rev E retains the Rev D connector per cam: **J12 power: 1=GND, 2–4=S0–S2, 5=3V3**;
 **J5 brake/mascon: 1=GND, 2–5=S0–S3, 6=3V3**. Leave the supply cavity
 empty for passive switch harnesses. These replace J5–J8/J12–J14 in Rev C; the
 MCU pin map is unchanged. A closed switch pulls its bit low;
@@ -104,10 +104,11 @@ storage is implemented yet. Calls must be serialized with the report loop.
 
 ## Firmware profiles and output
 
-From the repository root in an initialized NCS workspace:
+From the repository root in an initialized NCS v3.3.0 workspace. This compiles
+the Rev C/D handle configuration; it does not provide Rev E panel support:
 
 ```sh
-west build -b nrf52840dk/nrf52840 firmware -d build-dual-gray -- \
+west build --sysbuild -b nrf52840dk/nrf52840 firmware -d build-dual-gray -- \
   -DDTC_OVERLAY_FILE=boards/notchdeck_rev_c.overlay \
   '-DEXTRA_CONF_FILE=configs/rev_c.conf;configs/dual_gray.conf'
 ```
@@ -127,6 +128,10 @@ The Rev C overlay also applies to Rev D (identical GPIO assignments). It replace
 configures NFC pins as GPIO, reset in UICR and calibrated RC LFCLK. It still uses
 the DK platform/flash layout for SDK bring-up, not a production board/bootloader.
 The default build without that overlay remains the direct-I2C DK test setup.
+Outputs for this example are `build-dual-gray/firmware/zephyr/zephyr.{uf2,hex}`.
+Rev E retains these handle assignments, but frees the direct panel GPIOs and
+requires new STM32 firmware, a main I²C backend and a matching overlay. See the
+[firmware guide](../firmware/README.md) and [panel interface](../hardware/notchdeck-buttons/README.md).
 
 Dual mode defaults to generic HID **Y=power (0…255)**, **X=brake (0…255)**.
 Z remains reserved for the reverser. The seven-byte report layout is unchanged.
@@ -149,13 +154,14 @@ an unplugged sensor never causes automatic fallback to another backend.
 `make -C firmware test` checks all cam patterns/adjacent transitions, angle wrap and
 reversed travel, calibration rejection, hysteresis, debounce, uptime wrap, stale
 input, brake priority and neutral re-arming. CI compiles all six profiles using the shared Rev C/D pin map.
-Native hardware checks cover 140 symbols, 439 pin endpoints, schematic/PCB identity
-and the 139-part JLCPCB assembly BOM. ERC and floorplan DRC are clean apart from
-380 intentionally unrouted connections.
+Rev E native checks cover both assemblies: logic 93 components/318 endpoints and
+panel 85 components/235 endpoints, with 92 and 84 assembly placements respectively.
+Both have zero ERC errors/warnings and no DRC rule or parity violations;
+249 logic and 211 panel connections remain unrouted. See [hardware status](../hardware/README.md).
 
 Before hardware use: build the cams or sensor carriers, measure/calibrate magnetic
 handles, scope the harness signals, verify unplug/reconnect and startup behavior,
 and test actual HID mappings. Nav/reverser scanning, RGB power limits, final
 bootloader/USB IDs and the broader power/layout reviews remain open. External
 sensor boards, magnets, microload switches, cams and mating harnesses are outside
-the main PCB BOM and its five-board stock check.
+the two PCB assembly BOMs and their five-set stock check.

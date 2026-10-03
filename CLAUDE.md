@@ -10,7 +10,7 @@ Two project skills in `.claude/skills/` cover the hardware work — prefer them 
 re-deriving anything:
 
 - **`notchdeck-hardware`** — design reference: sheet structure, the E73 pad map,
-  the hard constraints (two I²C buses, NFC-as-GPIO, no-LFXO, nRESET/UICR), power
+  the hard constraints (isolated I²C address domains, no-LFXO, nRESET/UICR), power
   architecture, programming, lever options.
 - **`kicad-schgen`** — how to generate / validate / render the schematic with the
   `hardware/scripts/` tooling. **The schematic is generated from a data manifest,
@@ -26,15 +26,15 @@ re-deriving anything:
 ## Hardware workflow
 
 Run from `hardware/`. Set `KICAD_CLI` if `kicad-cli` isn't on PATH (on macOS it's
-in the KiCad app bundle; the scripts fall back to it automatically).
+in the KiCad app bundle). Native Makefile exports need this setting even where
+individual scripts provide an app-bundle fallback.
 
 ```sh
-make gen-notchdeck-one       # regenerate the schematic from its manifest
-make check-notchdeck-one     # components / footprints / dup refs / ERC tally
-make render-notchdeck-one    # render sheets to PNG for visual review
-make docs-notchdeck-one      # schematic + PCB SVGs + 3D renders + JLCPCB BOM
-make bom-notchdeck-one       # JLCPCB BOM only
-make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
+make gen-notchdeck-one gen-notchdeck-buttons  # create missing sheets; preserve existing
+make verify                 # both boards: nets/ERC, PCB parity and BOM audits
+make render-notchdeck-one render-notchdeck-buttons
+make docs                   # both boards: images and JLCPCB BOMs
+make jlc                    # separate fab+assembly ZIPs (still unrouted)
 ```
 
 ## Rules
@@ -42,13 +42,14 @@ make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
 - **Don't hand-edit generated `.kicad_sch` files** — edit `hardware/scripts/<project>.schgen.py` and run `make gen-<project>` for notchdeck-one or notchdeck-buttons.
 - **Close KiCad before regenerating** (eeschema open on those files will clash).
 - Wiring and deliberate block layout now live in the manifest. Default generation
-  preserves existing sheets; use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply
-  manifest changes, with the NotchDeck schematic editor closed.
+  preserves existing sheets; use `KSCHGEN_FORCE=1 make gen-<project>` to apply
+  manifest changes, with the affected schematic editor closed.
 - After changes run `make verify`: both boards’ complete exported pin/net
   contract and zero ERC errors/warnings are required. Review SVG/PNG exports too.
 - Use Makefile targets when possible.
 - Don't violate the hard constraints in the `notchdeck-hardware` skill (esp. the
-  0x36 two-bus split and the NFC/LFXO/UICR firmware requirements).
+  0x36 address isolation and the LFCLK/UICR firmware requirements). Rev E NFC
+  pins are NC; Rev C/D's NFC-as-GPIO button wiring is historical.
 - No ERC exclusions are needed. Derived symbols must resolve without library mismatch warnings.
 
 ## Firmware

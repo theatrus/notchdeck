@@ -1,9 +1,10 @@
 # NotchDeck One — net plan (E73 pad → peripheral)
 
-Connection plan to make the KiCad schematic capture mechanical. Pad numbers are the
+Pad-level reference for the captured schematic. Pad numbers are the
 **E73-2G4M08S1C** module pads (per `lib/symbols/notchdeck:E73-2G4M08S1C`, confirmed against
 Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev E
-default — adjust freely in capture, they're all software-defined.
+default; change the manifest, independent net contract, saved PCB and firmware
+together when reassigning them.
 
 > **Two design constraints baked in here:**
 > 1. **AS5600 and MAX17048 share I²C address `0x36`** → they go on **two separate I²C buses**
@@ -21,11 +22,11 @@ default — adjust freely in capture, they're all software-defined.
 | 5, 21, 24 | GND | **GND** | |
 | 29 | USB_D− | **USB_DM** | to USB-C D− pair |
 | 31 | USB_D+ | **USB_DP** | to USB-C D+ pair |
-| 26 | P0.18/RESET | **nRESET** | RESET button + SWD; double-tap → DFU (see firmware-update doc) |
+| 26 | P0.18/RESET | **nRESET** | RESET button + SWD; double-tap DFU requires the planned bootloader |
 | 37 | SWDIO | **SWDIO** | SWD header |
 | 39 | SWDCLK | **SWDCLK** | SWD header |
-| 12 | P0.26 | **I2C0_SDA** | → AS5600 (bus 0) |
-| 14 | P0.06 | **I2C0_SCL** | → AS5600 (bus 0) |
+| 12 | P0.26 | **I2C0_SDA** | → handle mux + button panel (bus 0) |
+| 14 | P0.06 | **I2C0_SCL** | → handle mux + button panel (bus 0) |
 | 20 | P0.12 | **I2C1_SDA** | → MAX17048 (bus 1) |
 | 22 | P0.07 | **I2C1_SCL** | → MAX17048 (bus 1) |
 | 16 | P0.08 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
@@ -56,7 +57,7 @@ default — adjust freely in capture, they're all software-defined.
 | 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J5.5); GPIO in, ext 10k pull-up + RC debounce |
 | 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J5.4); GPIO in, ext 10k pull-up + RC debounce |
 
-Rev E moves all 16 panel keys and RGB output to the button MCU. Main retains BTN7 (SW18 Select) and BTN8 (SW19 Start); the panel’s corresponding keys are combined with these in firmware. Fourteen former GPIO pads are now intentionally NC. Gray handle inputs and magnetic buses remain independent and unchanged.
+Rev E moves all 16 panel keys and RGB output to the button MCU. Main retains BTN7 (SW18 Select) and BTN8 (SW19 Start); future firmware must combine the panel's corresponding keys with these. Fourteen former GPIO pads are now intentionally NC. Gray handle inputs and magnetic buses remain independent and unchanged.
 
 ## Rev E button interconnect
 
@@ -76,7 +77,7 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
                              └─► [power-path OR-ing] ─► VSYS ─► AP2112K-3.3 ─► +3V3
    BAT+ ───────────────────────► [power-path OR-ing] ─┘                        │
                                                                     ┌──────────┴───────────┐
-                                                            E73 VDD (19) + VDDH (23)   I²C/LED/etc.
+                                                            E73 VDD (19) + VDDH (23)   panel MCU / sensors
 ```
 
 - **+3V3 rail:** AP2112K-3.3 LDO from `VSYS`. Feeds E73 `VDD`(19) **and** `VDDH`(23) tied
@@ -129,7 +130,7 @@ sensor, then deselects both (0x00). Never select 0x03: identical sensor addresse
 would collide. A stuck downstream bus may still require reset or power cycling;
 this is an internal harness interface, not an industrial long-cable link.
 
-Rev D Gray inputs use J5 (six pins) and J12 (five pins). Pin1=GND, then
+Rev E retains the Rev D Gray inputs on J5 (six pins) and J12 (five pins). Pin1=GND, then
 S0 upward; the final pin is 3V3 and is left unwired in passive contact harnesses.
 This consolidates seven Rev C connectors without changing any MCU assignments:
 
@@ -148,11 +149,13 @@ boards and harnesses are separate from the main PCB assembly BOM.
 
 ## Programming / reset (see `../docs/05-firmware-update.md`)
 
-- **SWD header**: SWDIO(37), SWDCLK(39), nRESET(26/P0.18), +3V3, GND. Use a Tag-Connect
-  TC2030-IDC footprint or a 2×5 / 1×6 0.05″ header for factory bootloader install + debug.
-- **RESET button** → nRESET (P0.18) to GND, with the bootloader's **double-tap-to-DFU** (no
-  separate BOOT pin needed). 100 nF on nRESET.
-- USB-C is the user-upgrade path (UF2 mass-storage). Details in the firmware-update doc.
+- **Main SWD**: SWDIO(37), SWDCLK(39), nRESET(26/P0.18), +3V3, GND at
+  J3 keyed 2×5 header and bare J4 TC2030 contacts; use only one probe connection.
+- **RESET SW17** → nRESET (P0.18) to GND; 100nF on nRESET. Double-tap DFU
+  requires a compatible bootloader, which is not integrated yet.
+- **Panel SWD** is separate at bare J2 TC2030. No panel USB or I²C updater exists.
+- USB-C UF2 mass-storage is the proposed main-board user-upgrade path; see
+  [update status](../docs/05-firmware-update.md) before using build artifacts.
 
 ## Decoupling & misc
 
@@ -173,8 +176,9 @@ boards and harnesses are separate from the main PCB assembly BOM.
 
 The power-path P-FET (AO3401A) + Schottky (B5819W), USB ESD (USBLC6-2SC6), reset button, SWD
 header, populated WS2812 level shifter (74AHCT1G125), and the pull-up/gate/decoupling passives are
-all in [`PARTS.md`](PARTS.md) → "Power-path, protection & programming". All are stdlib KiCad
-symbols with shipped 3D and are stocked at JLCPCB (AO3401A + B5819W are basic parts).
+all listed in [`PARTS.md`](PARTS.md), with exact catalog codes and footprints.
+Some parts use project-local symbols/footprints and lack dedicated 3D models;
+see [attributions](lib/ATTRIBUTIONS.md). Stock observations are dated in the BOM files.
 
 ## Verified capture references (2026-10-02)
 

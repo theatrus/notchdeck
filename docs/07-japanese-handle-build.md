@@ -38,7 +38,7 @@ The AS5600 carrier PCB and cam/switch brackets remain to be detailed.
 
 ## Harnesses
 
-Rev D replaces the individual Rev C bit plugs with one keyed harness per cam:
+Rev E retains Rev D's keyed harness per cam, replacing the individual Rev C bit plugs:
 
 | Pin | J12 POWER GRAY, PHR-5 housing | J5 BRAKE / MASCON GRAY, PHR-6 housing |
 |---|---|---|
@@ -108,8 +108,9 @@ are invalid; individual broken/shorted wires can still resemble valid positions.
 Measure magnetic margins and signal quality with the handles under load. Only
 then freeze the panel openings, bearings, stops and spring settings.
 
-The main PCB BOM is entirely JLCPCB catalog parts with recorded public availability
-for five boards. Mating housings/crimps, external AS5600 carrier boards, microload
+Both PCB BOMs use JLCPCB catalog parts. The dated stock check covers five complete
+sets, using owned private stock for the STM32 and public availability for the other
+selections; see [sourcing](04-bom-sourcing.md). Mating housings/crimps, external AS5600 carrier boards, microload
 switches, magnets and mechanical hardware are **not yet a sourced assembly kit**.
 Their stock must be checked once those exact parts are selected; private inventory
 can be used where available. No parts have been ordered.

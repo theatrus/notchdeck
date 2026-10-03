@@ -1,178 +1,108 @@
-# Hardware & Firmware Architecture — NotchDeck
+# Hardware and firmware architecture — Rev E
 
-How the dual-mode (USB + BLE) HID stack from [`02-emulation-protocol-spec.md`](02-emulation-protocol-spec.md)
-maps onto a low-power Nordic nRF SoC.
+Rev E separates the controller's logic/handle connectors from its 4×4 button panel.
+Both schematics are wired and checked; both PCBs remain unrouted. This describes
+the captured design and identifies firmware that still needs implementing.
+See [hardware status](../hardware/README.md) for validation and remaining work.
 
-## 1. SoC selection
+## Board responsibilities
 
-The hard requirement is **a single low-power part that has both a USB device controller and a BLE
-radio**. Most of the nRF52 line has BLE but *no* USB — only a few parts have the USB peripheral.
-
-| Part | Core | Flash / RAM | USB | BLE | Verdict |
-|---|---|---|---|---|---|
-| **nRF52840** | M4F @64 MHz | 1 MB / 256 KB | **FS USB 2.0 device** | 5.x | ✅ **Recommended.** USB + BLE on one chip, ample flash/RAM for HOGP + USB HID + LED engine + (optional) display assets. Mature in nRF Connect SDK / Zephyr. |
-| nRF52833 | M4F @64 MHz | 512 KB / 128 KB | FS USB 2.0 device | 5.x | ✅ Cheaper fallback; fine if no large display assets. |
-| nRF52820 | M4F @64 MHz | 256 KB / 32 KB | FS USB 2.0 device | 5.x | ⚠️ Works but RAM-tight for dual stack + display; minimal builds only. |
-| nRF5340 | dual M33 | 1 MB+256 KB / 512 KB+64 KB | FS USB 2.0 device | 5.x | ◯ Overkill unless a rich display/UI or heavy concurrent processing; higher BOM/complexity. Pick if adding a TFT cab display. |
-| nRF52832 | M4F | 512 KB / 64 KB | **none** | 5.x | ❌ No USB — disqualified. |
-
-**Decision: nRF52840.** Sweet spot of USB + BLE + memory + tooling. Move to nRF5340 only if a
-full graphical cab display drives the requirement; drop to nRF52833 to shave cost if not.
-
-### JLCPCB / LCSC availability (checked May 2026)
-
-All Nordic SoCs here are **Extended** parts (one-time ~$3 feeder fee; must be in stock at order time)
-— there is no Basic nRF52840.
-
-| Option | LCSC | Package | Stock | ~Unit | Notes |
-|---|---|---|---|---|---|
-| **nRF52840-QIAA-R** | `C190794` | aQFN-73 (7×7) | ~1,178 | $3.80 | bare chip; you own crystals + antenna + π-match + RF cert |
-| nRF52840-QIAA-R7 | `C1851953` | aQFN-73 | ~355 | $3.70 | reel variant |
-| nRF52840-CKAA-R | `C3606910` | WLCSP-94 | ~239 | $5.65 | |
-| nRF52840-QFAA-F-R | `C3606918` | QFN-48 | ~112 | $10.30 | |
-| **Ebyte E73-2G4M08S1C** (onboard antenna) | `C356849` | module 18×13 mm | ~240 | $7.19 | **nRF52840 module: onboard ceramic chip antenna + crystals + matching, pre-cert.** ← integrated-antenna part |
-| Ebyte E73-2G4M08S1**CX** (u.FL) | `C2764963` | module 18×13 mm | ~399 | $5.96 | same module but **IPEX/u.FL connector** for an *external* antenna |
-| nRF52833-QDAA-R | `C2895249` | **QFN-40 (5×5)** | ~4,196 | $3.26 | fallback SoC; easier package, better stock, 512 KB/128 KB |
-| nRF52833-QIAA-R | `C504799` | aQFN-73 | ~590 | $3.53 | |
-
-Not in the JLCPCB library (would need consigned assembly): Raytac **MDBT50Q**, Insight **ISP1807**.
-
-**Sourcing recommendation:**
-1. **Prototype → Ebyte E73-2G4M08S1C module, onboard ceramic antenna** (`C356849`). No RF layout/tuning,
-   no external antenna part, certified, in stock — de-risks the first spin. (Use the `…S1CX` / `C2764963`
-   only if you specifically want a u.FL external antenna.) Keep the module's antenna end at the board edge
-   with a ground keep-out, and don't enclose it in metal.
-2. **Cost-down rev → bare nRF52840-QIAA** (`C190794`) once the RF/antenna/cert work is justified.
-3. **If aQFN-73 placement or stock is a concern → nRF52833-QDAA** (`C2895249`): QFN-40, ~4k stock,
-   still USB+BLE; accept 512 KB/128 KB (fine unless a graphical display is added).
-
-SoftDevice/stack: **nRF Connect SDK (Zephyr)** — it ships both building blocks:
-- USB HID device class (`usb_hid`, `CONFIG_USB_DEVICE_HID`)
-- BLE HID-over-GATT / HOGP via the HIDS service (`CONFIG_BT_HIDS`)
-- Battery Service, Device Information Service, settings/bonding storage
-
-Both can be compiled in and selected at runtime — see transport arbitration below.
-
-## 2. Block diagram (logical)
-
-```
-                +-----------------------------+
-   USB-C  <---->|  USB FS device (HID)        |\
-   (VBUS sense) |                             | \
-                +-----------------------------+  \      +------------------+
-                                                   ---->|  Report Engine   |
-   2.4 GHz <--->|  BLE radio (HOGP / HIDS)    |---/      |  - notch decode  |
-   antenna      |  + Battery + DIS services   |/        |  - debounce      |
-                +-----------------------------+         |  - button matrix |
-                                                        |  - LED policy    |
-   Lever encoder  --(detent contacts / hall / pot)----->|                  |
-   Buttons        --(GPIO matrix)--------------------->  +---------+--------+
-   Hat            --(GPIO)                                        |
-                                                                  v
-                                          +----------------------------------------+
-                                          | LED / lamp subsystem                   |
-                                          |  - notch indicator bar (WS2812B)       |
-                                          |  - RGB status LED                      |
-                                          |  - warning lamps (ATS/door/EB/overspd) |
-                                          |  - optional SPI OLED/TFT (speed/notch) |
-                                          +----------------------------------------+
-   Battery (Li-ion) -> PMIC/charger (nPM1300) -> 3V3 + fuel gauge -> Battery Service
-```
-
-## 3. Dual-mode transport arbitration
-
-One report engine, two transports. Default policy: **USB takes priority when VBUS is present**;
-otherwise BLE. (Simultaneous double-input is confusing for hosts, so mutual exclusion by default,
-configurable.)
-
-```
-on boot:
-    init report engine (encoder, buttons, LEDs)
-    if VBUS present:
-        enumerate USB HID; radio idle (lowest EMI/power) or advertise-on-demand
-        mode = USB
-    else:
-        start BLE advertising (HOGP); mode = BLE; enter low-power
-on VBUS rising edge:
-    switch to USB; stop/park BLE link (optionally keep bond)
-on VBUS falling edge (unplug):
-    tear down USB; resume BLE advertising/reconnect
-```
-
-- **VBUS detect** via the nRF `USBREG`/`VBUSDETECT` (or a divider on a GPIO) is the mode signal.
-- The **same `HID_REPORT_DESCRIPTOR`** feeds the USB HID class *and* the BLE HIDS Report Map — one
-  source of truth. Only framing differs (USB endpoint vs GATT Report characteristic; mind the
-  report-ID prefix noted in the protocol spec §2).
-- Output reports (LEDs) arrive via USB SET_REPORT/interrupt-OUT or the BLE HID Output Report
-  characteristic — both land in the same handler.
-
-### BLE GATT services
-- **HID Service `0x1812`** (HOGP): Report Map (= our descriptor), Input/Output/Feature Report
-  characteristics, Protocol Mode, HID Information, HID Control Point. Appearance `0x03C4` (Gamepad).
-- **Battery Service `0x180F`** — % from the fuel gauge.
-- **Device Information Service `0x180A`** — manufacturer / model / FW rev.
-- Security: LE Secure Connections + bonding; store bonds in Zephyr `settings`. Standard HOGP pairs
-  with Windows/macOS/Linux/Android/iOS out of the box.
-
-## 4. Input front-end
-
-- **Handles:** Rev D supports a combined mascon or separate power and rotary brake
-  mechanisms. Each independently uses AS5600 magnetic sensing or a 3/4-bit Gray
-  contact cam. Firmware implements debounce, calibrated angle hysteresis, brake
-  priority and neutral re-arming. See [interfaces](06-handle-interfaces.md) and the
-  [own-build plan](07-japanese-handle-build.md) for the implemented design.
-- **Buttons / hat:** sixteen direct GPIO inputs, standard scan + debounce →
-  the two button bytes and hat nibble.
-- **Optional reverser:** 3-position switch → Z axis (`0x00`/`0x80`/`0xFF`) or two buttons.
-
-## 5. LED / lamp subsystem
-
-Implements protocol §5/§7. Two control sources merged by the LED policy: **local** (lever-driven
-notch bar, connection/battery status) and **host** (output report) — host wins while present, with
-fallback after a timeout.
-
-- **Notch bar:** WS2812B strip driven by nRF **PWM + EasyDMA** (or I2S) for glitch-free timing
-  without bit-banging. Brake side amber→red toward EB, power side green, neutral center pip.
-- **Status RGB:** one addressable or PWM RGB LED.
-- **Warning lamps + buzzer:** GPIO / PWM from output-report indicator bits.
-- **Optional display:** SPI OLED (SSD1306/SH1107) or small TFT showing speed (output byte 5) + notch;
-  this is the nRF5340-justifying feature if it grows into a full cab cluster.
-
-## 6. Power budget (battery / BLE mode)
-
-| Rail / load | Notes |
+| Logic: `notchdeck-one` | Panel: `notchdeck-buttons` |
 |---|---|
-| nRF52840 BLE connected | ~ single-digit mA average at modest connection interval; µA in sleep |
-| USB attached | bus-powered; LEDs can run full brightness |
-| WS2812B strip | the dominant battery load — ~tens of mA **per LED** at full white. **Gate behind a load switch; default dimmed on battery; allow host/idle to sleep them** (protocol §5 flags). |
-| Charger / PMIC | **nPM1300** (Li-ion charge + buck + fuel gauge + load switches) pairs well with nRF52840 and feeds the Battery Service. |
+| Ebyte E73-2G4M08S1C, nRF52840, JLCPCB C356849 | STM32G030F6P6TR, JLCPCB C529330 from owned inventory |
+| USB HID and BLE HOGP, report engine and handle decoding | 4×4 diode matrix scan/debounce and local RGB generation |
+| USB-C, charger, battery power path, 3V3 and fuel gauge | 3V3 MCU/key power and USB-only RGB power from FFC |
+| Magnetic and Gray handle ports, optional reverser input | 16 keys at 19mm pitch and 16 addressable RGB LEDs |
+| Local Select/Start plus Reset; SWD access | Separate TC2030 SWD access |
+| 115×90mm, four layers | 86×120mm, two layers |
 
-Rule: **addressable LEDs are the runtime killer, not the radio.** Keep them off/dim unless on USB or
-explicitly enabled.
+The nRF52840 supplies USB and BLE on one device. The second MCU keeps matrix/RGB
+wiring local to the removable panel and reduces the interconnect to six conductors.
+Its scan and I²C-target firmware is **not implemented yet**.
 
-## 7. Suggested repo layout (when firmware lands)
-
+```text
+USB host <--> E73 nRF52840 <--> BLE host
+                  |
+                  +-- I2C0 --+-- STM32 panel (planned address 0x20)
+                  |          |      +-- 4x4 diode key matrix
+                  |          |      +-- AHCT buffer --> 16 RGB LEDs
+                  |          +-- TCA9543A mux (0x70)
+                  |                 +-- channel 0: power / combined AS5600 (0x36)
+                  |                 +-- channel 1: brake AS5600 (0x36)
+                  +-- I2C1 ------ MAX17048 fuel gauge (0x36)
+                  +-- GPIO ------ Gray handle ports, Select/Start, panel IRQ
+                  +-- ADC ------- optional reverser
 ```
-notchdeck/
-├── docs/                      # this research + spec (here now)
-├── firmware/                  # nRF Connect SDK (Zephyr) app
-│   ├── src/
-│   │   ├── hid_descriptor.h   # the shared HID report descriptor (spec §1)
-│   │   ├── report_engine.c    # encoder/button -> input report; output report -> LEDs
-│   │   ├── transport_usb.c    # USB HID class glue
-│   │   ├── transport_ble.c    # HOGP / HIDS glue
-│   │   └── leds.c             # notch bar / status / lamps / display
-│   ├── boards/                # custom board overlay/defconfig
-│   └── prj.conf
-├── hardware/                  # KiCad project (schematic + PCB)
-└── host-tools/                # optional test/remap utilities
-```
 
-## 8. Build/runtime profiles
+## Inputs and panel link
 
-- `single-axis` (default) — lever on Y, Zuiki-compatible.
-- `two-axis` — DGC-255-style brake/power split with `0xFF` transitions.
-- `notch-count` — restrict emitted notches to a train class (4–7 power notches), set via feature
-  report (spec §6) or a build-time Kconfig.
-- `zuiki-compat-vidpid` (off by default) — advertise `0x33DD/0x0006` + USB no-report-ID offsets so
-  SDL's dedicated ZUIKI driver binds; otherwise use our own VID/PID + generic HID parsing.
+The [handle interface](06-handle-interfaces.md) supports a combined 15-position
+mascon, or independent power Off/P1–P5 and brake Release/B1–B8/EB. Each active
+handle independently selects magnetic or Gray-code sensing. Existing nRF code
+implements calibrated angle hysteresis, Gray debounce, brake priority, stale-input
+fault handling and neutral re-arming. Magnetic calibration arrays are intentionally
+empty until actual detent angles are measured.
+
+Both AS5600 channels use address 0x36. The mux selects one channel at a time;
+the MAX17048 with the same address uses a separate nRF I²C controller. Remove
+**both R37 and R38** to isolate onboard U5 before connecting an external
+power/combined sensor at J10. J11 always needs an external brake sensor.
+
+The six-way FFC carries GND, 3V3, SDA, SCL, IRQ and USB_VBUS. Two identical
+bottom-contact connectors and the specified Type A cable use **main J15 pin n →
+panel J1 pin 7−n**. The [panel guide](../hardware/notchdeck-buttons/README.md)
+defines the exact cable, connector pinout, MCU aliases and scan requirements.
+I²C runs at 100kHz; its versioned panel register/packet protocol remains to be
+defined. The main firmware must merge panel input with local Select/Start,
+release panel keys on communications loss, and send bounded RGB commands.
+
+Rev E frees the old direct button/RGB GPIOs, including NFC pins. No external LF
+crystal is populated; retain the nRF RC LFCLK and P0.18 reset/UICR configuration.
+The [net plan](../hardware/NETPLAN.md) is the pad-level reference. Rev C/D firmware
+overlays do not support the new panel despite unchanged handle pin assignments.
+
+## HID and transport behavior
+
+USB and BLE use the same descriptor and seven-byte input/output payloads; USB
+includes a report-ID prefix. Combined handles emit the canonical Y-notch values;
+dual profiles use Y=power and X=brake, or can select combined output with brake
+priority. See the [protocol spec](02-emulation-protocol-spec.md).
+
+Current `main.c` selects USB when VBUS is present **at boot**, otherwise BLE.
+Live USB plug/unplug arbitration is still TODO. BLE includes HIDS, Battery Service,
+Device Information and settings/bond storage, but live fuel-gauge updates are not
+implemented. Host/game compatibility needs device testing. Feature report 3 is
+declared in the descriptor without implemented handlers or a finalized layout.
+
+## Power and lighting
+
+USB_VBUS feeds the USB regulator, MCP73832 charger and panel RGB rail. A Schottky
+USB feed and AO3401A battery power path supply VSYS, then AP2112K-3.3 supplies both
+MCUs and key/sensor circuitry. MAX17048 monitors BAT+. This is the discrete power
+path captured in the schematics; the earlier nPM1300 proposal is not populated.
+
+The RGB chain and SN74AHCT1G125 level shifter are on the button board and powered
+only from USB. The STM32 must hold RGB output low without VBUS and use timer/DMA
+to avoid blocking I²C. Target **≤250mA total panel return current**, including
+3V3 and LED loads. This limit is not yet enforced. The existing 500mA charger
+setting, USB source allowance/inrush, battery choice and LDO margins require a
+complete power review before fabrication. USB presence does not authorize
+unrestricted full-white LEDs.
+
+The current nRF `leds.c` is an older direct-strip skeleton: its host override,
+warning lamps, speed/status rendering and timeout behavior are incomplete. Rev E
+needs a panel transport backend. There is no selected display or buzzer assembly.
+
+## Implementation and validation
+
+NCS is pinned to v3.3.0 in `firmware/west.yml`. CI runs host report/handle tests,
+checks generated mechanical drawings, and compiles the DK bring-up image plus six
+Rev C/D handle profiles. The [firmware guide](../firmware/README.md) documents
+commands and exact artifact paths. These checks do not establish Rev E firmware
+support or a production bootloader/flash layout.
+
+Hardware CI verifies both schematics' nets/ERC, PCB identity/pad nets, BOMs and
+native DRC. Unconnected items are allowed only because the saved PCBs are
+floorplans. Routing, final mechanical fit, power/thermal review, assembly checks
+and bench validation remain open. Current selections and dated stock records
+are linked from [sourcing](04-bom-sourcing.md).

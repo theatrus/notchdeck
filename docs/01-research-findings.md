@@ -4,6 +4,10 @@ Captured from a multi-source, adversarially-verified research pass (24/25 claims
 direct read of the SDL driver source. This is the factual basis for our emulation spec in
 [`02-emulation-protocol-spec.md`](02-emulation-protocol-spec.md).
 
+This records research on commercial controllers, not verified NotchDeck host
+support. For the current Rev E design and implementation limits, start with the
+[project README](../README.md) and [firmware guide](../firmware/README.md).
+
 ## TL;DR
 
 - The Zuiki controllers are **plain USB HID joysticks** — *not* XInput, *not* Switch Pro Controller

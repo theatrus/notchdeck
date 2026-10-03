@@ -26,7 +26,6 @@ sed -i '' 's|\${KICAD.*_3RD_PARTY}/3dmodels/.*/|\${KIPRJMOD}/../lib/3dmodels/|' 
 | AMS AS5600 (magnetic angle) | ✅ `notchdeck:AS5600` (authored) | stdlib `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` | stdlib | in-house, from ams datasheet v1-06 pinout (Fig.4) | own work |
 | ADI MAX17048 (fuel gauge) | ✅ `notchdeck:MAX17048` (authored) | stdlib `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` | stdlib | in-house, from ADI datasheet pinout | own work |
 | USB-C 16P receptacle (HRO TYPE-C-31-M-12, C165948) | stdlib | stdlib `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | stdlib | KiCad standard library | CC-BY-SA 4.0 |
-| Nordic nPM1300 (optional, Option A only) | ☐ not yet | stdlib `Package_DFN_QFN:QFN-32-1EP_5x5mm…` | ☐ | Nordic KiCad lib / SnapEDA | _TBD_ |
 
 ### E73-2G4M08S1C — details
 
@@ -42,7 +41,8 @@ Source repo: <https://github.com/joric/nrfmicro> — released into the public do
 so no attribution is required; recorded here for provenance. The nrfmicro footprint pin/pad
 numbering and the extracted symbol come from the same project, so they are mutually consistent.
 
-(☐ = still to import. "stdlib" = KiCad-shipped, nothing vendored.)
+("stdlib" = KiCad-shipped, nothing vendored. The earlier nPM1300 proposal was not
+imported or selected; Rev E uses the discrete power path.)
 
 ### Revision B schematic symbol corrections
 

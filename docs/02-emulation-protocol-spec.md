@@ -6,8 +6,14 @@ Defines the on-wire HID contract our device presents over **both** transports. D
 2. **One report descriptor** shared by USB and BLE; only framing differs (report-ID prefix).
 3. **Lever = one 8-bit axis** carrying discrete notch bytes — bit-compatible with the Zuiki/SDL
    convention (lever on **Y**), so existing tooling (BRMascon, SDL passthrough, sim native support)
-   "just works."
+   can map the same notch values. Actual host/game compatibility needs testing.
 4. A clean **host→device output report** for LEDs / lamps / instrument data.
+
+**Implementation status (Rev E):** input/output report layouts exist in firmware,
+and six handle profiles compile. Dual handles use the same report with Y=power
+and X=brake. Panel key/nav integration and most lighting behavior remain unfinished.
+Feature report 3 is declared in the descriptor but has no implemented handlers;
+its layout below is reserved. See [firmware status](../firmware/README.md).
 
 ## 0. Identity
 
@@ -21,7 +27,8 @@ Defines the on-wire HID contract our device presents over **both** transports. D
 > Compatibility note: if you *deliberately* want SDL's dedicated `SDL_HIDAPI_DriverZUIKI` to bind
 > (rather than generic HID parsing), you must advertise `0x33DD/0x0006` *and* match the USB
 > "old state packet" offsets exactly (no report ID). We **do not** do this by default — generic HID
-> parsing of our own descriptor is cleaner and legal. Documented only as an option.
+> parsing uses our own descriptor. No Zuiki-identity compatibility profile is
+> implemented; shipping IDs must be allocated to this project.
 
 ## 1. Unified HID Report Descriptor
 
@@ -109,22 +116,20 @@ static const uint8_t HID_REPORT_DESCRIPTOR[] = {
 
 **7 payload bytes.** Offsets shown two ways because the report-ID prefix differs by transport.
 
-| Payload byte | With report ID (USB SetIdle / BLE GATT) | Field | Notes |
+| Payload byte / BLE value offset | USB report offset (including ID) | Field | Notes |
 |---|---|---|---|
 | 0 | byte 1 | Buttons 1–8 | bit0=B1 … bit7=B8 |
 | 1 | byte 2 | Buttons 9–16 | |
 | 2 | byte 3 | Hat (low nibble) + pad | `0..7` = N,NE,E,SE,S,SW,W,NW; `0x0F`/`8` = centered (null) |
-| 3 | byte 4 | **X** axis | reserved / center `0x80` |
-| **4** | byte 5 | **Y axis = POWER/BRAKE LEVER** | discrete notch bytes (§4) |
+| 3 | byte 4 | **X** axis | combined: center `0x80`; dual: brake `0..255` |
+| **4** | byte 5 | **Y axis** | combined: discrete notch bytes (§4); dual: power `0..255` |
 | 5 | byte 6 | **Z** axis | reserved: reverser (3-pos) or center `0x80` |
 | 6 | byte 7 | **Rz** axis | reserved: aux dial or center `0x80` |
 
-> **The offset gotcha, resolved.** Over **USB** we can run with *no* report-ID prefix (single report),
-> in which case payload byte *N* == wire byte *N* and the layout is **identical to the Zuiki/SDL
-> "old state packet"** (buttons[0..1], hat[2], X/Y/Z/Rz at [3..6], lever at [4]). Over **BLE HID**,
-> HOGP report references effectively put each report in its own characteristic; if a 1-byte report ID
-> is present on-wire it shifts everything by one — handle it in the host or keep report IDs consistent.
-> Either way we control the descriptor, so there is no ambiguity for a conforming host.
+The current USB implementation prefixes the seven-byte payload with report ID 1.
+BLE HIDS identifies it through the Report Reference and sends the seven-byte
+payload without that prefix. Payload offsets remain identical. This is not the
+Zuiki USB packet without report IDs; its notch values inform our encoding.
 
 ## 3. Button & hat map
 
@@ -146,11 +151,17 @@ Mirror the SDL/Zuiki gamepad-button assignment so existing remappers line up, th
 Buttons are momentary (1=pressed). The host (or an adapter like BRMascon) decides whether to treat
 them as held or as edge-triggered taps.
 
+Rev E physically provides panel keys BTN1–BTN12 plus Up/Down/Left/Right; the last
+four feed the hat once panel integration is implemented. Main Select/Start must
+be ORed with panel buttons 7/8. HID button slots 13–16 remain available for future
+inputs; the descriptor capacity is not a count of dedicated button switches.
+
 ## 4. Notch-lever axis encoding (Y axis) — **canonical**
 
-We adopt the Zuiki ZKNS-001 native bytes verbatim so the device is drop-in compatible. **Snap
-directly between values — emit no transition bytes.** Optionally debounce in firmware (a few ms) to
-avoid chatter from the detent contacts.
+Combined mode adopts the Zuiki ZKNS-001 notch values. This alone does not establish
+drop-in compatibility with host software. **Snap directly between values — emit
+no transition bytes.** The implemented Gray backend uses 16ms stable-state debounce;
+magnetic sensing uses calibrated centers and hysteresis.
 
 | Notch | Y byte | Normalized (host, [−1,+1]) |
 |---|---|---|
@@ -171,15 +182,21 @@ avoid chatter from the detent contacts.
 | P5 | `0xFF` | +1.00 |
 
 Notes:
-- 15 positions = EB + B8…B1 + N + P1…P5. For trains with fewer notches, firmware emits only the
-  used subset (the lever's physical detents define how many).
+- 15 positions = EB + B8…B1 + N + P1…P5. Runtime notch-count selection is not
+  implemented; current profiles use the documented P5/B8 baseline.
 - Center: hardware-native neutral is `0x80`; the SDL driver centers at `0x7f`. The 1-LSB difference
   is cosmetic. **Pick `0x80` for neutral** (matches Zuiki docs); hosts that recenter at `0x7f` will
   read neutral as ≈+0.004, negligible.
-- **Optional two-axis (DGC-255) compat mode:** brake on one axis, power on another, with `0xFF`
-  transition markers. Selectable build/runtime profile; default is single-axis.
+- **Implemented dual mode:** Y=power Off…P5 and X=brake Release…EB, each scaled
+  `0..255`, with brake suppressing power. There are no DGC-255 transition markers
+  or runtime profile selector. Build-time `CONFIG_NOTCHDECK_SPLIT_AXES=n` selects
+  combined Y encoding. See [handle profiles](06-handle-interfaces.md#firmware-profiles-and-output).
 
 ## 5. OUTPUT report (host → device), Report ID 2 — LEDs / lamps
+
+The table defines intended behavior. Transport reception and partial brightness/
+ownership logic exist; status overrides, speed/indicator rendering and host timeout
+remain TODO. Rev E also needs the I²C panel backend and enforced current limits.
 
 7 payload bytes. This is how a simulator drives our lights (the same role Zuiki's repurposed
 "rumble/effect" packet plays — the sim writes an output report; over BLE the host writes the HID
@@ -207,7 +224,8 @@ TBD as features land.
 
 ## 7. Lights & LEDs we can offer
 
-Driven locally by the lever always, and host-overridable via §5.
+These are proposed behaviors, not completed features. Rev E has a 16-pixel panel
+chain; there is no separate display, buzzer or warning-lamp assembly selected.
 
 1. **Notch position indicator** — a linear bar (addressable WS2812B strip, or discrete/charlieplexed
    LEDs) mirroring the lever: brake notches one color (e.g. amber→red toward EB), power another
@@ -222,9 +240,10 @@ Driven locally by the lever always, and host-overridable via §5.
    (plus an optional piezo for the ATS/EB buzzer).
 5. **Backlight** — lever scale / button legends, brightness from byte 4.
 
-**Power-aware behavior:** on USB, full brightness is fine. On battery/BLE, default to dimmed and
-gate the addressable strip behind a load switch; `flags bit1 (sleep LEDs)` and the brightness byte
-let the host (or local idle timer) cut LED current to protect runtime. See power budget in
+**Rev E power behavior:** the panel RGB supply is USB-only; keys remain powered
+on battery. Firmware must keep RGB output low without VBUS and enforce the panel
+return-current target (≤250mA) within the total USB/charger budget. A host brightness
+request must not override that limit. See power budget in
 [`03-hardware-and-firmware-architecture.md`](03-hardware-and-firmware-architecture.md).
 
 ## 8. Report size summary (on the wire)
@@ -235,5 +254,5 @@ let the host (or local idle timer) cut LED current to protect runtime. See power
 | LED/lamp | 2 | OUT | 7 B | 8 B |
 | Config/instrument | 3 | FEATURE | 7 B | 8 B |
 
-Small, fixed-size reports — fits a single BLE ATT MTU and one USB FS interrupt packet with room to
-spare; trivially within nRF52840 buffers.
+The +ID column is the USB report length; BLE input/output characteristic values
+carry the seven-byte payload. Feature report 3 remains reserved and unimplemented.

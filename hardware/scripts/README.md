@@ -13,8 +13,8 @@ macOS app bundle (`/Applications/KiCad/KiCad.app/...`).
 | `notchdeck-netcheck.py` | `make verify-notchdeck-one` | Independent complete pin/net contract and strict native ERC. |
 | `notchdeck-panelcheck.py` | `make verify-notchdeck-buttons` | Complete panel pin/net contract, FFC reversal and strict ERC. |
 | `notchdeck-boardcheck.py` | `make verify-pcb-<project>` | Compare every PCB pad, footprint identity and schematic UUID path to the native netlist. |
-| `notchdeck-bomcheck.py` | `make verify-bom-notchdeck-one` | Compare native assembly BOM identity, quantities, footprints and exclusions to reviewed JLCPCB selections. |
-| `notchdeck-floorplan.py` | — | Seed the provisional 4×4 PCB placement; subsequent edits belong in the saved PCB. |
+| `notchdeck-bomcheck.py` | `make verify-bom-<project>` | Compare native assembly BOM identity, quantities, footprints and exclusions to reviewed JLCPCB selections. |
+| `notchdeck-floorplan.py` | — | Seed the selected board's provisional placement; subsequent edits belong in the saved PCB. |
 | `jlcpcb-package.sh` | `make jlc-<project>` | Gerbers + drill + BOM + CPL → JLCPCB zip. |
 
 ## Generating a schematic from a manifest
@@ -28,16 +28,17 @@ sheet symbols + one child `.kicad_sch` per block, every part resolving to a real
 library symbol + footprint, `extends`-derived symbols handled).
 
 ```sh
-make gen-notchdeck-one      # generate missing sheets; keep existing files
-make check-notchdeck-one    # verify it
-make render-notchdeck-one   # eyeball it
+# From hardware/; use either project name for individual targets.
+make gen-notchdeck-one gen-notchdeck-buttons  # missing sheets only
+make verify                                  # strict audits on both boards
+make render-notchdeck-one render-notchdeck-buttons
 ```
 
 NotchDeck's manifest now captures **components, wiring, hierarchical ports and
 layout**. The `Capture` helper groups local circuits and checks that every pin is
 wired or explicitly NC. The logic root connects MCU, Power, Lever and Controls; the button root connects Controller and Buttons. `notchdeck_capture.py` shares the Capture helper.
 By default, `gen` keeps existing sheets intact. Close the NotchDeck schematic editor,
-then use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply manifest changes.
+then use `KSCHGEN_FORCE=1 make gen-<project>` to apply manifest changes.
 Manual editor changes must be reflected in the manifest before a forced rebuild.
 The wired-sheet writer retains placed-symbol UUIDs by reference so forced rebuilds
 keep existing PCB footprint associations. Root sheet instances include explicit
@@ -59,11 +60,11 @@ Each project’s `bom/jlcpcb-parts.json` holds reviewed sourcing assignments. Th
 manifest writes its LCSC/MPN/Manufacturer/Datasheet and hidden BOM review properties
 onto each symbol; the engine also supports generic hidden `properties` dictionaries.
 The assembly export groups by sourcing identity as well as value/footprint and
-disables compressed reference ranges. `make verify-bom-notchdeck-one` checks this
+disables compressed reference ranges. `make verify-bom-<project>` checks this
 native export; `--bom <csv>` can inspect a saved snapshot. It does not query live stock.
 Refresh the tracked `bom/jlcpcb-bom.csv` and BOM-skill `bom/bom.csv` after sourcing
 changes pass verification. PCB consistency also checks sourcing properties and
-BOM/placement exclusions, including the bare J4 programming contacts.
+BOM/placement exclusions, including bare logic J4 and panel J2 programming contacts.
 
 **A new board:** copy an existing `*.schgen.py`, change the `register_*` calls,
 the component lists and the notes, then add the project to `PROJECTS` in the

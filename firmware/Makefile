@@ -3,7 +3,7 @@
 # Targets:
 #   make build         west build for $(BOARD)
 #   make flash         build + flash over SWD (J-Link / CMSIS-DAP)
-#   make uf2           build + show the drag-and-drop .uf2 artifact
+#   make uf2           build + show the application .uf2 artifact
 #   make release       build + copy versioned .uf2/.hex into dist/
 #   make menuconfig    open Kconfig UI for the current build
 #   make clean         remove build/ and dist/
@@ -17,6 +17,7 @@ HOSTCC    ?= cc
 BOARD     ?= nrf52840dk/nrf52840
 BUILD     ?= build
 APP       := notchdeck-one
+APP_OUT   = $(BUILD)/firmware/zephyr
 
 # Version from the Zephyr VERSION file (also drives app_version.h).
 VER := $(shell awk -F'= ' '/^VERSION_MAJOR/{a=$$2} /^VERSION_MINOR/{b=$$2} /^PATCHLEVEL/{c=$$2} END{printf "%s.%s.%s",a,b,c}' VERSION)
@@ -29,7 +30,7 @@ help:
 	@echo "  make test        host unit test (no Zephyr toolchain needed)"
 	@echo "  make build       west build"
 	@echo "  make flash       build + flash via SWD"
-	@echo "  make uf2         build + locate the .uf2 (drag-and-drop update)"
+	@echo "  make uf2         build + locate the .uf2 (bootloader integration pending)"
 	@echo "  make release     build + versioned artifacts in dist/"
 	@echo "  make menuconfig  Kconfig UI"
 	@echo "  make clean       remove build/ and dist/"
@@ -43,23 +44,24 @@ test:
 	@$(BUILD)/host_handle_test
 
 build:
-	$(WEST) build -b $(BOARD) -d $(BUILD) .
+	$(WEST) build --sysbuild -b $(BOARD) -d $(BUILD) .
 
 flash: build
 	$(WEST) flash -d $(BUILD)
 
 uf2: build
-	@echo "UF2 (double-tap RESET, then drag onto the NOTCHDECK drive):"
-	@ls -la $(BUILD)/zephyr/zephyr.uf2
+	@echo "Application UF2 (requires a compatible bootloader and flash layout):"
+	@ls -la $(APP_OUT)/zephyr.uf2
 
 release: build
 	@mkdir -p dist
-	@cp $(BUILD)/zephyr/zephyr.uf2 dist/$(APP)-v$(VER).uf2
-	@cp $(BUILD)/zephyr/zephyr.hex dist/$(APP)-v$(VER).hex
-	@echo "release artifacts:"; ls -la dist/
+	@cp $(APP_OUT)/zephyr.uf2 dist/$(APP)-v$(VER).uf2
+	@cp $(APP_OUT)/zephyr.hex dist/$(APP)-v$(VER).hex
+	@echo "release artifacts:"
+	@ls -la dist/
 
 menuconfig:
-	$(WEST) build -d $(BUILD) -t menuconfig
+	$(WEST) build -d $(BUILD)/firmware -t menuconfig
 
 clean:
 	rm -rf $(BUILD) dist

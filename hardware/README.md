@@ -9,6 +9,12 @@
 
 Both have zero native ERC errors/warnings, complete independent net contracts, and matching PCB pad nets, schematic UUIDs and sourcing properties. Both are **unrouted floorplans**, with no tracks/vias/planes. Native DRC has no rule or schematic-parity violations; 249 logic and 211 button connections remain unrouted. Neither is ready to fabricate.
 
+Open `notchdeck-one/notchdeck-one.kicad_pro` and
+`notchdeck-buttons/notchdeck-buttons.kicad_pro` in KiCad 10 to inspect the complete
+projects, then open each project's root schematic or PCB from its project manager.
+The root schematics link the child sheets; symbols/footprints use standard KiCad
+libraries plus the shared project-local `lib/` directory.
+
 Magnetic and Gray-coded power/brake or combined mascon interfaces remain electrically unchanged. See [handle interfaces](../docs/06-handle-interfaces.md). U9 separates the two AS5600 address-0x36 channels; MAX17048 remains on another bus. Remove both R37/R38 before using an external power/combined sensor on J10.
 
 ## Source of truth and build
@@ -26,6 +32,18 @@ make jlc-notchdeck-buttons       # or export one PCB
 ```
 
 Pick-and-place files are `<project>/jlcpcb/<project>-CPL.csv`; ZIPs are `<project>/<project>-jlcpcb.zip`. These commands export the current design, including unfinished floorplans; they do not constitute a manufacturing release. Review rotations in JLCPCB before ordering. Generated exports are ignored by Git. CI audits both projects; on Linux pass `KICAD_PYTHON=python3` with `pcbnew` installed. See [script guide](scripts/README.md).
+
+Use `KICAD_CLI=/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli` on macOS
+if the executable is not on PATH; the Makefile's native export targets need it.
+The default `KICAD_PYTHON` points to KiCad's bundled macOS Python. Headless Linux
+also needs the standard symbol/footprint tables installed, as shown in
+[CI setup](../.github/workflows/ci.yml). Rendering PNG sheets requires an SVG
+converter listed in the script guide.
+
+CI publishes both generated BOM CSVs as `notchdeck-boms`; it does not publish
+assembly ZIPs or CPLs. `make verify` does not include native DRC: CI runs that
+separately, rejects rule/parity violations and reports unrouted counts. Before
+manufacturing, all unintended unconnected items must also be resolved.
 
 ## Sourcing and remaining work
 

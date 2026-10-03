@@ -18,7 +18,7 @@ jobs:
           python3 hardware/scripts/notchdeck-handle-layout.py
           git diff --exit-code -- hardware/mechanical/
 
-  # Full nRF Connect SDK build for the nRF52840. Produces the .uf2 update artifact.
+  # DK bring-up build and Rev C/D compile checks; no production bootloader yet.
   firmware-build:
     runs-on: ubuntu-22.04
     steps:
@@ -31,11 +31,11 @@ jobs:
           app-path: firmware
           toolchains: arm-zephyr-eabi
       - name: Build (nrf52840dk)
-        run: west build -b nrf52840dk/nrf52840 firmware -d build
+        run: make -C firmware uf2 BUILD=../build
       - name: Build Rev C/D handle profiles
         run: |
           for profile in combined_magnetic combined_gray dual_magnetic dual_gray dual_mixed dual_gray_power; do
-            west build -b nrf52840dk/nrf52840 firmware -d "build-$profile" -- \
+            west build --sysbuild -b nrf52840dk/nrf52840 firmware -d "build-$profile" -- \
               -DDTC_OVERLAY_FILE=boards/notchdeck_rev_c.overlay \
               "-DEXTRA_CONF_FILE=configs/rev_c.conf;configs/$profile.conf"
           done
