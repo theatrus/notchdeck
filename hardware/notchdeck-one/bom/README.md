@@ -1,22 +1,23 @@
 # NotchDeck One — JLCPCB sourcing snapshot
 
-Checked **2026-10-03**: all **115 purchasable components** have exact JLCPCB catalog
-part numbers, manufacturer/MPN, footprints and datasheet links. There are **29 unique
-part numbers**: 16 Basic and 13 Extended in the dated catalog snapshot. All 29
-reported positive stock. The native export has 34 rows because shared parts serve
+Checked **2026-10-03**: all **144 purchasable components** have exact JLCPCB catalog
+part numbers, manufacturer/MPN, footprints and datasheet links. There are **32 unique
+part numbers**: 17 Basic and 15 Extended in the dated catalog snapshot. All 32
+reported positive stock. The native export has 41 rows because shared parts serve
 different functional values, such as the reset button and lever connectors.
 
 This is an **unrouted placement study**, not a fabrication release or an order.
-Stock, categories and prices came from the community `jlcsearch` JLCPCB catalog;
+The original stock/category/price snapshot came from the community `jlcsearch`
+JLCPCB catalog; the three Rev C additions were also verified on JLCPCB directly;
 each query URL and timestamp is retained in `jlcpcb-parts.json`. LCSC's separate
 inventory was not used as JLCPCB stock. Recheck JLCPCB stock, assembly eligibility,
 fees, attrition and CPL orientation when preparing an order.
 
 ## Direct JLCPCB stock check
 
-Rechecked all 29 exact part numbers on **JLCPCB's own public product pages** on
+Rechecked the original 29 exact part numbers on **JLCPCB's own public product pages** on
 **2026-10-03, 20:18–20:20 UTC (13:18–13:20 PDT)**. All have positive **Available
-Order Qty**, covering all 115 placements per board. No substitutions are needed
+Order Qty**, covering their current Rev C usage. No substitutions are needed
 for zero stock. These direct observations supersede the older community stock
 snapshot for availability; category and price snapshots were not refreshed.
 
@@ -30,10 +31,15 @@ estimating coverage. The lowest coverage items are:
 | [E73-2G4M08S1C, C356849](https://jlcpcb.com/partdetail/C356849) | 1,231 | 1 | 1,231 |
 | [Samtec SWD header, C448647](https://jlcpcb.com/partdetail/C448647) | 1,931 | 1 | 1,931 |
 | [JST PH 3-pin, C265101](https://jlcpcb.com/partdetail/C265101) | 2,132 | 1 | 2,132 |
-| [JST PH 2-pin, C295747](https://jlcpcb.com/partdetail/C295747) | 17,701 | 5 | 3,540 |
+| [JST PH 2-pin, C295747](https://jlcpcb.com/partdetail/C295747) | 17,701 | 8 | 2,212 |
 | [MCP73832 charger, C38066](https://jlcpcb.com/partdetail/C38066) | 5,112 | 1 | 5,112 |
 
-The requested build is **five boards: 575 installed components**. Every public
+Rev C adds C2653307 (TCA9543APWR, 561 available), C265102 (4-pin JST PH,
+19,632 available), and C21189 (0Ω 0603 links, 21,815,066 available), checked
+directly on JLCPCB at **21:06 UTC on 2026-10-03**. These require 5, 10 and 10
+parts respectively for this build. The switch has the lowest current coverage: 561 boards.
+
+The requested build is **five boards: 720 installed components**. Every public
 available quantity exceeds the five-board requirement, recorded in the CSV.
 Board equivalents are integer available quantity divided by parts per board;
 they exclude assembly attrition, spares and inventory reservations. They are not
@@ -91,8 +97,9 @@ Custom footprint provenance and the Samtec drawing URL are in
 
 J4 is the bare TC2030-NL programming contact pattern: no physical component is
 ordered or placed. It is excluded from both BOM and placement output. H1–H4 are
-PCB-only mounting holes. The protected cell, mating cables, probe, magnet, lever,
-external switches, keycaps and enclosure are outside this PCB assembly BOM.
+PCB-only mounting holes. The default assembly includes U5 and R37/R38. Remove both links for an external
+power/combined AS5600; the brake magnetic sensor is always external. The protected cell, mating cables, probe, magnet, lever,
+external magnetic sensor boards, switches, keycaps and enclosure are outside this PCB assembly BOM.
 
 The imported E73 land pattern/antenna clearance and MAX17048 exposed-pad land
 pattern remain review items. Charging current, USB power/inrush, RGB brightness,
@@ -111,12 +118,12 @@ kicad-cli pcb drc --schematic-parity --format json \
 ```
 
 - Native ERC: zero errors/warnings, no exclusions.
-- Net contract: 116 components, 80 nets, 360 endpoints, 14 intentional NCs.
+- Net contract: 145 components, 92 nets, 442 endpoints, 12 intentional NCs.
 - PCB audit: all endpoints, schematic UUID paths, part fields and BOM/placement
   exclusions match.
-- BOM audit: 115 references, 29 codes, quantities, MPNs, manufacturers, footprints
+- BOM audit: 144 references, 32 codes, quantities, MPNs, manufacturers, footprints
   and notes match the reviewed selection data.
-- Native PCB DRC: zero rule/parity issues; **313 unconnected items** remain.
+- Native PCB DRC: zero rule/parity issues; **383 unconnected items** remain.
 
 The audit checks saved design consistency, not current catalog stock or tested
 hardware behavior. No components or boards have been ordered.

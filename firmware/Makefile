@@ -39,6 +39,8 @@ test:
 	@mkdir -p $(BUILD)
 	$(HOSTCC) -std=c11 -Wall -Wextra -Isrc test/host_report_test.c -o $(BUILD)/host_report_test
 	@$(BUILD)/host_report_test
+	$(HOSTCC) -std=c11 -Wall -Wextra -Werror -Isrc test/host_handle_test.c src/handle_decode.c -o $(BUILD)/host_handle_test
+	@$(BUILD)/host_handle_test
 
 build:
 	$(WEST) build -b $(BOARD) -d $(BUILD) .

@@ -8,6 +8,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "handle_decode.h"
 
 /* Notch indices, low (full brake/EB) -> high (full power). */
 enum notchdeck_notch {
@@ -22,7 +23,13 @@ enum notchdeck_notch {
 /* Initialise the lever sensor (I2C to AS5600). Returns 0 on success. */
 int lever_init(void);
 
-/* Read the current notch index (with hysteresis/debounce applied). */
+/* Sample once per report; getters below return the same cached sample. */
+void lever_poll(void);
+const struct handle_state *lever_get_state(void);
+bool lever_uses_split_axes(void);
+int lever_set_calibration(enum handle_role role, const struct handle_calibration *cal);
+
+/* Read the cached combined notch index. */
 enum notchdeck_notch lever_get_notch(void);
 
 /* Convenience: the canonical HID Y-axis byte for the current notch. */

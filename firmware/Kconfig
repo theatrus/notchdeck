@@ -1,0 +1,29 @@
+mainmenu "NotchDeck"
+source "Kconfig.zephyr"
+
+menu "NotchDeck handle interfaces"
+config NOTCHDECK_REV_C
+    bool "Use Rev C hardware (handle mux and Gray-code GPIO overlay)"
+    help
+      Requires boards/notchdeck_rev_c.overlay. Leave disabled for legacy DK
+      bring-up with an AS5600 wired directly to I2C0.
+config NOTCHDECK_DUAL_HANDLES
+    bool "Separate power and brake handles"
+    depends on NOTCHDECK_REV_C
+config NOTCHDECK_COMBINED_GRAY
+    bool "Combined handle uses the four Gray-code inputs"
+    depends on NOTCHDECK_REV_C && !NOTCHDECK_DUAL_HANDLES
+config NOTCHDECK_POWER_GRAY
+    bool "Power handle uses the three Gray-code inputs"
+    depends on NOTCHDECK_DUAL_HANDLES
+config NOTCHDECK_BRAKE_GRAY
+    bool "Brake handle uses the four Gray-code inputs"
+    depends on NOTCHDECK_DUAL_HANDLES
+config NOTCHDECK_SPLIT_AXES
+    bool "Report power on Y and brake on X as separate axes"
+    depends on NOTCHDECK_DUAL_HANDLES
+    default y
+    help
+      Generic HID axes, not exact DGC-255 emulation. Disable for the existing
+      combined Y-axis notch encoding, with brake taking priority.
+endmenu

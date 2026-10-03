@@ -2,13 +2,13 @@
 
 Connection plan to make the KiCad schematic capture mechanical. Pad numbers are the
 **E73-2G4M08S1C** module pads (per `lib/symbols/notchdeck:E73-2G4M08S1C`, confirmed against
-Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are a proposed
+Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev C
 default — adjust freely in capture, they're all software-defined.
 
 > **Two design constraints baked in here:**
 > 1. **AS5600 and MAX17048 share I²C address `0x36`** → they go on **two separate I²C buses**
 >    (nRF52840 TWIM0 + TWIM1), not one shared bus.
-> 2. **NFC pins** P0.09/P0.10 are reused as GPIO → firmware must set `CONFIG_NFCT_PINS_AS_GPIO`.
+> 2. **NFC pins** P0.09/P0.10 are reused as GPIO → firmware must set `nfct-pins-as-gpios` in the UICR devicetree node.
 >    **P0.18** is used as `nRESET` → enable reset in UICR (Zephyr default). **P0.00/P0.01** are
 >    used as GPIO → LFCLK runs from the internal RC (no 32.768 kHz crystal); see LFXO note.
 
@@ -52,16 +52,16 @@ default — adjust freely in capture, they're all software-defined.
 | 13 | P0.01/XL2 | BTN12 (or LFXO) | GPIO if no 32 kHz xtal |
 | 3 | P0.03/AIN1 | **LEVER_S0** | coded-switch bit 0 (J5); GPIO in, ext 10k pull-up + RC debounce |
 | 4 | P0.28/AIN4 | **LEVER_S1** | coded-switch bit 1 (J6); GPIO in, ext 10k pull-up + RC debounce |
-| 8 | P0.29/AIN5 | spare (analog) | expansion |
-| 9 | P0.31/AIN7 | spare (analog) | expansion |
-| 10 | P0.30/AIN6 | spare (analog) | expansion |
+| 8 | P0.29/AIN5 | **POWER_S0** | power Gray bit 0, J12, external pull-up + RC |
+| 9 | P0.31/AIN7 | **POWER_S1** | power Gray bit 1, J13, external pull-up + RC |
+| 10 | P0.30/AIN6 | **POWER_S2** | power Gray bit 2, J14, external pull-up + RC |
 | 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J8); GPIO in, ext 10k pull-up + RC debounce |
 | 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J7); GPIO in, ext 10k pull-up + RC debounce |
 
 Budget: 12 momentary buttons + 4-way hat (16 HID buttons + hat), 2× I²C, WS2812, reverser
-ADC, 2 status inputs, **4-bit coded-switch lever input** (LEVER_S0–S3 on P0.03/P0.28/P0.04/P0.05)
-— with **3 spare analog GPIOs** left (P0.29/P0.31/P0.30) for expansion. The coded-switch bits
-are dedicated (not shared with the AS5600 I²C0), so both lever front-ends can be populated at once.
+ADC, 2 status inputs, four brake/combined Gray bits and three power Gray bits.
+**No spare GPIO remains.** Gray inputs and magnetic buses are independent; each
+handle's sensor type is explicitly selected in firmware.
 
 ## Power architecture
 
@@ -104,81 +104,44 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
 - **ESD:** add a low-cap TVS array on D+/D−/VBUS (e.g. USBLC6-2 / SRV05 class) near the
   connector. (U7 is populated.)
 
-## I²C buses (two, to dodge the 0x36 collision)
+## I²C buses and independent handle inputs (Rev C)
 
-- **TWIM0 — AS5600** (U5): SDA=P0.26(12), SCL=P0.06(14), 4.7 kΩ pull-ups to +3V3.
-  - VDD5V(1)+VDD3V3(2) → +3V3 (3.3 V mode: tie both, 100 nF + 1 µF decoupling).
-  - OUT(3)=NC, PGO(5)=NC, DIR(8)→GND (CW = increasing), SDA(6)/SCL(7)→bus, GND(4)→GND.
-  - Mechanical: diametric magnet centered over the package on the lever shaft.
-- **TWIM1 — MAX17048** (U4): SDA=P0.12(20), SCL=P0.07(22), 4.7 kΩ pull-ups to +3V3.
+- **TWIM0:** SDA=P0.26 (pad12), SCL=P0.06 (pad14), R9/R10 4.7k pull-ups.
+  U9 TCA9543APWR at 0x70 isolates two AS5600 address-0x36 channels. A0/A1 are
+  grounded, RESET follows nRESET with R39 10k pull-up; INT0/INT1 have 10k pull-ups
+  and INT output is deliberately unconnected. C38 bypasses its 3V3 supply.
+- **Channel 0:** POWER_MAG_SDA/SCL, R27/R28 4.7k pull-ups, J10 power/combined
+  sensor. Onboard U5 connects through R37/R38 (0Ω0603). **Remove BOTH links before
+  attaching an external AS5600 to J10.** U5 remains powered but isolated.
+- **Channel 1:** BRAKE_MAG_SDA/SCL, R29/R30 4.7k pull-ups, J11 external brake sensor.
+- **J10/J11:** pin1=3V3, pin2=GND, pin3=SDA, pin4=SCL. U10/U11 USBLC6-2SC6
+  protect data lines; C39/C40 bypass the ports. Use 3.3V sensors with local
+  decoupling, short internal harnesses (≤20cm target), 100kHz and verify rise times.
+  Do not hot-plug or add harness pull-ups without recalculating bus loading.
+- **U5:** VDD5V(1)+VDD3V3(2) to3V3, C11/C12 local decoupling, DIR(8) and GND(4)
+  grounded, OUT(3)/PGO(5) deliberately NC. Diametric magnet above package center.
+- **TWIM1:** MAX17048 U4 at 0x36, SDA=P0.12 (pad20), SCL=P0.07 (pad22).
+  It remains physically independent of both magnetic handles.
 
-## Lever sensing — two front-ends (interchangeable, or populate both)
+Firmware enables only one U9 channel at a time (write 0x01 or 0x02), reads the
+sensor, then deselects both (0x00). Never select 0x03: identical sensor addresses
+would collide. A stuck downstream bus may still require reset or power cycling;
+this is an internal harness interface, not an industrial long-cable link.
 
-The lever is a **discrete-detent** input (15 positions: EB, B8–B1, N, P1–P5), so this is
-"which detent am I in," not a precision-angle problem. The choice is **contained entirely in
-firmware `lever.c`** (`lever_get_notch()` returns a notch index); the notch→HID-byte table and
-everything downstream are sensor-agnostic. Two options — and because the coded-switch bits are on
-dedicated GPIO, both can be populated at once (firmware picks, or cross-checks one against the other):
+Gray contact inputs use pin1=signal, pin2=GND on each two-pin connector:
 
-### Option 1 — AS5600 magnetic angle (default)
+| Role | Connectors | Nets / GPIOs | Input circuits |
+|---|---|---|---|
+| Brake or combined | J5–J8, S0–S3 | LEVER_S0–S3; P0.03/P0.28/P0.04/P0.05 | R14–17 10k pull-ups, R18–21 1k series, C14–17 100nF |
+| Power | J12–J14, S0–S2 | POWER_S0–S2; P0.29/P0.31/P0.30 | R31–33 10k pull-ups, R34–36 1k series, C41–43 100nF |
 
-Per the I²C section above. **Why drift isn't a concern here:** the AS5600 reports the *direction*
-of a diametric magnet's field (ratiometric `atan2`), so magnet temp-coefficient (~−0.12 %/°C) and
-aging barely shift the angle; on-chip temp compensation handles the silicon. Absolute accuracy is
-~±1–2° (it's a budget part) against **~6–12° notch spacing**, and the mechanical detent **parks
-the lever at each band's center**, far from the decision thresholds — so quantization is robust
-(firmware adds hysteresis). It's *absolute* (no power-on homing). Real risks are mechanical, not
-drift: magnet centering, air-gap (0.5–3 mm), shaft runout. Optional upgrade if you ever want more
-margin: MT6701 (14-bit, ~same cost, JLCPCB-stocked).
-
-### Option 2 — 4 binary/Gray coded switches (deterministic, authentic)
-
-**4 switches** encode the notch position — either an on-board cam on the shaft, or (the mascon
-case) a coded-switch assembly in the handle **wired in on a harness**. **Zero drift, zero
-calibration, decodes as pure GPIO** — and it's how the real Densha de GO! / DGC-255 controllers
-work (research doc §4). Use **Gray code** so exactly one bit changes per detent transition (no
-transient-invalid codes); an unused/unknown code → hold last valid. Binary (BCD) coded switches
-also work — de-Gray is just skipped in firmware.
-
-This front-end is **on-board and dedicated** (its own 4 GPIO + connectors + debounce), so it can be
-populated **alongside** the AS5600 (Option 1), not only as a swap — see "coexists" below.
-
-4-bit Gray map (S3 S2 S1 S0), one bit changes between physically adjacent notches:
-
-| Notch | code | | Notch | code |
-|---|---|---|---|---|
-| EB | 0000 | | B1 | 1100 |
-| B8 | 0001 | | N  | 1101 |
-| B7 | 0011 | | P1 | 1111 |
-| B6 | 0010 | | P2 | 1110 |
-| B5 | 0110 | | P3 | 1010 |
-| B4 | 0111 | | P4 | 1011 |
-| B3 | 0101 | | P5 | 1001 |
-| B2 | 0100 | | *(unused)* | 1000 |
-
-For an **on-board cam** (instead of the mascon harness) driving the same 4 nets, pick a switch
-element:
-- **Hall (recommended): 4× DRV5032FB** (SOT-23, contactless, no wear) + small magnet lobes on the
-  cam. SMD-assemblable at JLCPCB.
-- **Mechanical: 4× snap-action** (Omron SS-5GL / D2F-class, cam-lever actuated) — cheapest, most
-  authentic *feel*, but contacts wear (~10⁵–10⁶ cycles) and are usually hand-mounted.
-
-**GPIO — dedicated (coexists with the AS5600 on I²C0):** the 4 bits take 4 spare analog GPIO so
-neither front-end blocks the other. `LEVER_S0`=P0.03(3), `LEVER_S1`=P0.28(4), `LEVER_S2`=P0.04(18),
-`LEVER_S3`=P0.05(15). Active-low: each switch shorts its bit line to GND; open = high. MAX17048
-stays on TWIM1, AS5600 on TWIM0. (This supersedes the earlier "reuse the freed I²C0 pins" plan,
-which only worked as an AS5600 *swap*.)
-
-**Connectors + hardware debounce (mascon harness):** the coded switches live in the handle and come
-in on **one 2-pin JST-PH per bit** — `J5`=S0, `J6`=S1, `J7`=S2, `J8`=S3 (pin 1 = bit line, pin 2 =
-GND). Each bit has an on-board **RC debounce**: 10 kΩ pull-up to +3V3, 1 kΩ series into the GPIO,
-100 nF to GND → τ ≈ 1.1 ms release / 0.1 ms press. The series R also limits the cap-discharge
-current and adds ESD margin on the cable; firmware still applies a few-ms software debounce on top.
-Parts: `R14–R17` (pull-ups), `R18–R21` (series), `C14–C17` (caps) on the Lever sheet.
-
-**Recommendation:** ship Option 1 (AS5600) for the simplest BOM. Populate the coded-switch input
-(J5–J8) when you want calibration-free determinism / maximum authenticity or must interface a real
-mascon's coded switch — and since its pins are dedicated, you can stuff both and let firmware choose.
+Use contacts rated for microloads around **3.3V / 0.33mA**. A high-current switch
+may not reliably conduct such a small current. RC time constants are about1.1ms
+on release and0.1ms on closure; firmware adds16ms stability filtering. Open=1,
+closed=0. The new cam maps reserve all-open as invalid and **supersede the earlier
+Rev B table**. See [handle guide](../docs/06-handle-interfaces.md) for every pattern,
+calibration, profile selection and fault behavior. External cams/switches/sensor
+boards and harnesses are separate from the main PCB assembly BOM.
 
 ## Programming / reset (see `../docs/05-firmware-update.md`)
 

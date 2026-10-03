@@ -1,153 +1,163 @@
-/*
- * NotchDeck One — lever sensing & notch quantization.
- *
- * SKELETON. Reads a 12-bit absolute angle from an AS5600 over I2C (no external
- * driver dependency — direct register reads), then quantizes the active arc into
- * the 15 mascon notches with per-boundary hysteresis to kill chatter at detents.
- *
- * TODO(hw): set LEVER_ANGLE_MIN/MAX to the real mechanical end-stops after
- *           assembling the detented shaft + diametric magnet, and confirm the
- *           rotation direction (flip LEVER_REVERSED if EB/P5 come out swapped).
- *
- * The sensor choice is contained in THIS file: the alternative front-end
- * (cam + 4 Gray-coded switches) only rewrites lever_get_notch() to read 4 GPIO
- * through a Gray-code lookup — the notch table and everything downstream are
- * unchanged. See hardware/NETPLAN.md -> "Lever sensing".
- */
+/* Independent sensor backends, shared notch processing; Rev C pinout in overlay. */
 #include "lever.h"
-
+#include "handle_calibration.h"
+#include <errno.h>
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
+#include <zephyr/drivers/gpio.h>
 #include <zephyr/logging/log.h>
-
 LOG_MODULE_REGISTER(lever, LOG_LEVEL_INF);
 
-/* AS5600: 7-bit address 0x36; RAW ANGLE in regs 0x0C (hi, 4 bits) / 0x0D (lo). */
-#define AS5600_ADDR        0x36
-#define AS5600_REG_RAWANGLE 0x0C
+#define AS5600_ADDR 0x36
+#define AS5600_STATUS 0x0B
+#define HANDLE_MUX_ADDR 0x70
+static const struct device *const i2c_dev = DEVICE_DT_GET(DT_NODELABEL(i2c0));
+static struct handle_filter first_filter, brake_filter;
+static struct handle_calibration first_cal, brake_cal;
+static struct handle_state state = {.brake = 9, .combined = NOTCH_EB, .fault = true};
+static bool armed;
+static bool initialized;
+static bool use_dual = IS_ENABLED(CONFIG_NOTCHDECK_DUAL_HANDLES);
+static bool first_gray;
+static bool brake_gray = IS_ENABLED(CONFIG_NOTCHDECK_BRAKE_GRAY);
 
-/* I2C bus the AS5600 hangs off — see board overlay (&i2c0 / as5600 node). */
-#define LEVER_I2C_NODE     DT_NODELABEL(i2c0)
-static const struct device *const i2c_dev = DEVICE_DT_GET(LEVER_I2C_NODE);
-
-/* Active mechanical arc of the lever, in raw 12-bit AS5600 counts (0..4095). */
-#define LEVER_ANGLE_MIN    200    /* TODO: measure — EB end stop */
-#define LEVER_ANGLE_MAX    3900   /* TODO: measure — P5 end stop */
-#define LEVER_REVERSED     0      /* set 1 if direction is inverted */
-
-/* Hysteresis: fraction of one sector the lever must cross to switch notches. */
-#define HYST_NUM           1
-#define HYST_DEN           3
-
-/* Canonical per-notch HID Y byte (spec §4). Index order matches enum. */
-static const uint8_t notch_byte[NOTCH_COUNT] = {
-	[NOTCH_EB] = 0x00,
-	[NOTCH_B8] = 0x05, [NOTCH_B7] = 0x13, [NOTCH_B6] = 0x20, [NOTCH_B5] = 0x2E,
-	[NOTCH_B4] = 0x3C, [NOTCH_B3] = 0x49, [NOTCH_B2] = 0x57, [NOTCH_B1] = 0x65,
-	[NOTCH_N]  = 0x80,
-	[NOTCH_P1] = 0x9F, [NOTCH_P2] = 0xB7, [NOTCH_P3] = 0xCE, [NOTCH_P4] = 0xE6,
-	[NOTCH_P5] = 0xFF,
+#if defined(CONFIG_NOTCHDECK_REV_C)
+#define INPUT_SPEC(name) GPIO_DT_SPEC_GET(DT_NODELABEL(name), gpios)
+static const struct gpio_dt_spec brake_bits[] = {
+    INPUT_SPEC(brake_s0), INPUT_SPEC(brake_s1), INPUT_SPEC(brake_s2), INPUT_SPEC(brake_s3)
 };
-
-static enum notchdeck_notch current_notch = NOTCH_N;
-
-uint8_t notchdeck_notch_byte(enum notchdeck_notch n)
+static const struct gpio_dt_spec power_bits[] = {
+    INPUT_SPEC(power_s0), INPUT_SPEC(power_s1), INPUT_SPEC(power_s2)
+};
+static int setup_bits(const struct gpio_dt_spec *bits, size_t count)
 {
-	if (n < 0 || n >= NOTCH_COUNT) {
-		return notch_byte[NOTCH_N];
-	}
-	return notch_byte[n];
+    for (size_t i = 0; i < count; i++) {
+        if (!gpio_is_ready_dt(&bits[i])) return -ENODEV;
+        int err = gpio_pin_configure_dt(&bits[i], GPIO_INPUT);
+        if (err) return err;
+    }
+    return 0;
+}
+static int read_gray(bool power)
+{
+    const struct gpio_dt_spec *bits = power ? power_bits : brake_bits;
+    size_t count = power ? ARRAY_SIZE(power_bits) : ARRAY_SIZE(brake_bits);
+    unsigned levels = 0;
+    for (size_t i = 0; i < count; i++) {
+        /* Read actual voltage levels. Do not invert contact closure. */
+        int level = gpio_pin_get_raw(bits[i].port, bits[i].pin);
+        if (level < 0) return -1;
+        levels |= (unsigned)level << i;
+    }
+    return handle_gray_position(power ? HANDLE_POWER : (use_dual ? HANDLE_BRAKE : HANDLE_COMBINED), levels);
+}
+#else
+static int read_gray(bool power) { ARG_UNUSED(power); return -1; }
+#endif
+
+static int read_angle(unsigned channel)
+{
+    if (!device_is_ready(i2c_dev)) return -1;
+    if (IS_ENABLED(CONFIG_NOTCHDECK_REV_C)) {
+        uint8_t mask = handle_mux_mask(channel);
+        if (!mask || i2c_write(i2c_dev, &mask, 1, HANDLE_MUX_ADDR)) return -1;
+    }
+    /* STATUS, RAW_ANGLE_H, RAW_ANGLE_L. Reject no magnet, weak or strong field. */
+    uint8_t bytes[3];
+    int err = i2c_burst_read(i2c_dev, AS5600_ADDR, AS5600_STATUS, bytes, sizeof(bytes));
+    if (IS_ENABLED(CONFIG_NOTCHDECK_REV_C)) {
+        uint8_t off = 0;
+        int deselect = i2c_write(i2c_dev, &off, 1, HANDLE_MUX_ADDR);
+        if (deselect) return -1;
+    }
+    if (err || (bytes[0] & 0x38) != 0x20) return -1;
+    return ((bytes[1] & 0x0F) << 8) | bytes[2];
+}
+
+int lever_set_calibration(enum handle_role role, const struct handle_calibration *cal)
+{
+    if (!handle_calibration_valid(cal, role)) return -EINVAL;
+    if ((!use_dual && role == HANDLE_COMBINED) || (use_dual && role == HANDLE_POWER)) {
+        first_cal = *cal;
+        handle_filter_init(&first_filter);
+    } else if (use_dual && role == HANDLE_BRAKE) {
+        brake_cal = *cal;
+        handle_filter_init(&brake_filter);
+    } else return -EINVAL;
+    armed = false;
+    state = (struct handle_state){.brake = 9, .combined = NOTCH_EB, .fault = true};
+    return 0;
 }
 
 int lever_init(void)
 {
-	if (!device_is_ready(i2c_dev)) {
-		LOG_ERR("I2C bus not ready");
-		return -ENODEV;
-	}
-	LOG_INF("lever ready (AS5600 @ 0x%02x)", AS5600_ADDR);
-	return 0;
-}
-
-/* Read raw 12-bit angle; returns -1 on bus error. */
-static int read_raw_angle(void)
-{
-	uint8_t buf[2];
-	int err = i2c_burst_read(i2c_dev, AS5600_ADDR, AS5600_REG_RAWANGLE, buf, sizeof(buf));
-
-	if (err) {
-		return -1;
-	}
-	return ((int)(buf[0] & 0x0F) << 8) | buf[1];   /* 0..4095 */
-}
-
-/* Clamp + (optional) reverse + scale the raw angle into 0..(NOTCH_COUNT-1) sectors. */
-static enum notchdeck_notch raw_to_notch_nominal(int raw, int *sector_lo, int *sector_hi)
-{
-	int span = LEVER_ANGLE_MAX - LEVER_ANGLE_MIN;
-
-	if (span <= 0) {
-		return NOTCH_N;
-	}
-	if (raw < LEVER_ANGLE_MIN) {
-		raw = LEVER_ANGLE_MIN;
-	}
-	if (raw > LEVER_ANGLE_MAX) {
-		raw = LEVER_ANGLE_MAX;
-	}
-
-	int pos = raw - LEVER_ANGLE_MIN;
-#if LEVER_REVERSED
-	pos = span - pos;
+    first_gray = use_dual ? IS_ENABLED(CONFIG_NOTCHDECK_POWER_GRAY) : IS_ENABLED(CONFIG_NOTCHDECK_COMBINED_GRAY);
+    first_cal = use_dual ? power_calibration : combined_calibration;
+    brake_cal = brake_calibration;
+    handle_filter_init(&first_filter);
+    handle_filter_init(&brake_filter);
+    armed = false;
+    state = (struct handle_state){.brake = 9, .combined = NOTCH_EB, .fault = true};
+    initialized = false;
+#if defined(CONFIG_NOTCHDECK_REV_C)
+    int err;
+    if ((use_dual && brake_gray) || (!use_dual && first_gray)) {
+        err = setup_bits(brake_bits, ARRAY_SIZE(brake_bits));
+        if (err) return err;
+    }
+    if (use_dual && first_gray) {
+        err = setup_bits(power_bits, ARRAY_SIZE(power_bits));
+        if (err) return err;
+    }
 #endif
-
-	int sector_w = span / NOTCH_COUNT;
-	int idx = (sector_w > 0) ? (pos / sector_w) : NOTCH_N;
-
-	if (idx >= NOTCH_COUNT) {
-		idx = NOTCH_COUNT - 1;
-	}
-	if (sector_lo && sector_hi) {
-		*sector_lo = LEVER_ANGLE_MIN + idx * sector_w;
-		*sector_hi = *sector_lo + sector_w;
-	}
-	return (enum notchdeck_notch)idx;
+    bool magnetic = !first_gray || (use_dual && !brake_gray);
+    if (magnetic && !device_is_ready(i2c_dev)) return -ENODEV;
+    if (magnetic && IS_ENABLED(CONFIG_NOTCHDECK_REV_C)) {
+        uint8_t off = 0;
+        int err = i2c_write(i2c_dev, &off, 1, HANDLE_MUX_ADDR);
+        if (err) return err;
+    }
+    initialized = true;
+    LOG_INF("handles: %s; first=%s brake=%s", use_dual ? "dual" : "combined",
+            first_gray ? "Gray" : "magnetic", use_dual ? (brake_gray ? "Gray" : "magnetic") : "unused");
+    if ((!first_gray && !handle_calibration_valid(&first_cal, use_dual ? HANDLE_POWER : HANDLE_COMBINED)) ||
+        (use_dual && !brake_gray && !handle_calibration_valid(&brake_cal, HANDLE_BRAKE))) {
+        LOG_WRN("magnetic detent calibration required before enabling handle output");
+    }
+    return 0;
 }
 
-enum notchdeck_notch lever_get_notch(void)
+static void poll_one(struct handle_filter *filter, bool gray, enum handle_role role,
+                     unsigned channel, const struct handle_calibration *cal, uint32_t now)
 {
-	int raw = read_raw_angle();
-
-	if (raw < 0) {
-		return current_notch;   /* hold last good on bus error */
-	}
-
-	int lo, hi;
-	enum notchdeck_notch nominal = raw_to_notch_nominal(raw, &lo, &hi);
-
-	if (nominal == current_notch) {
-		return current_notch;
-	}
-
-	/* Require the lever to move past a hysteresis margin into the new sector
-	 * before we accept the change — prevents flicker at detent boundaries. */
-	int sector_w = hi - lo;
-	int margin = (sector_w * HYST_NUM) / HYST_DEN;
-
-	if (nominal > current_notch) {
-		if (raw >= lo + margin) {
-			current_notch = nominal;
-		}
-	} else { /* nominal < current_notch */
-		if (raw <= hi - margin) {
-			current_notch = nominal;
-		}
-	}
-	return current_notch;
+    int position = -1;
+    if (gray) position = read_gray(role == HANDLE_POWER);
+    else if (handle_calibration_valid(cal, role)) {
+        int raw = read_angle(channel);
+        if (raw >= 0) position = handle_angle_position(cal, (unsigned)raw, filter->valid ? filter->position : -1);
+    }
+    handle_filter_update(filter, position, now, gray ? HANDLE_DEBOUNCE_MS : 0);
 }
 
-uint8_t lever_get_notch_byte(void)
+void lever_poll(void)
 {
-	return notchdeck_notch_byte(lever_get_notch());
+    uint32_t now = k_uptime_get_32();
+    if (initialized) {
+        poll_one(&first_filter, first_gray, use_dual ? HANDLE_POWER : HANDLE_COMBINED, 0, &first_cal, now);
+        if (use_dual) poll_one(&brake_filter, brake_gray, HANDLE_BRAKE, 1, &brake_cal, now);
+    }
+    bool valid = initialized && handle_filter_fresh(&first_filter, now) &&
+                 (!use_dual || handle_filter_fresh(&brake_filter, now));
+    state = handle_resolve(use_dual, first_filter.position, brake_filter.position, valid, &armed);
 }
+
+const struct handle_state *lever_get_state(void) { return &state; }
+bool lever_uses_split_axes(void) { return use_dual && IS_ENABLED(CONFIG_NOTCHDECK_SPLIT_AXES); }
+enum notchdeck_notch lever_get_notch(void) { return (enum notchdeck_notch)state.combined; }
+uint8_t notchdeck_notch_byte(enum notchdeck_notch n)
+{
+    static const uint8_t bytes[NOTCH_COUNT] = {0x00,0x05,0x13,0x20,0x2E,0x3C,0x49,0x57,0x65,0x80,0x9F,0xB7,0xCE,0xE6,0xFF};
+    return bytes[n >= 0 && n < NOTCH_COUNT ? n : NOTCH_N];
+}
+uint8_t lever_get_notch_byte(void) { return notchdeck_notch_byte(lever_get_notch()); }

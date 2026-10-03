@@ -4,10 +4,11 @@ Dual-mode (USB HID + BLE HOGP) controller firmware for the nRF52840, on the
 **nRF Connect SDK (Zephyr)**. Implements the protocol in
 [`../docs/02-emulation-protocol-spec.md`](../docs/02-emulation-protocol-spec.md).
 
-> **Status: SKELETON.** This compiles *conceptually* against NCS but is **not yet built
-> or tested**, and pin assignments are placeholders. The local editor will flag missing
-> `zephyr/*.h` includes — that's expected; these sources only resolve under the NCS build
-> system, not a bare clang. Treat it as a structured starting point, not flashable yet.
+The firmware builds in CI against NCS. Rev C adds independently selectable magnetic
+and Gray-coded handles, with host tests and six compile profiles. It has not been
+bench-validated on the controller. Magnetic calibration is deliberately empty until
+real detent angles are measured. See [handle interfaces](../docs/06-handle-interfaces.md)
+for wiring, profiles, calibration and fault behavior.
 
 ## Layout
 
@@ -45,9 +46,9 @@ E73 / custom PCB later (and move `boards/*.overlay` content into it).
 - **One HID descriptor, two transports.** `hid_descriptor.h` feeds both the USB HID class
   and the BLE HIDS Report Map — single source of truth. Mind the report-ID prefix
   difference between transports (spec §2).
-- **Lever = one axis.** `lever.c` quantizes the AS5600 angle into the 15 mascon notches
-  using the canonical Zuiki byte values (EB=0x00 … N=0x80 … P5=0xFF), with per-boundary
-  hysteresis. No transition values are emitted.
+- **Handles.** Combined mascon or independent power/brake, with magnetic/Gray
+  backends per handle. Dual mode reports generic power Y and brake X; optional
+  combined output retains the canonical notch values. Brake overrides traction.
 - **LEDs.** Local lever-follow + connection/battery status by default; a host Output report
   (the channel Zuiki repurposes from "rumble") takes over for in-sim signalling.
 
@@ -73,9 +74,14 @@ E73 / custom PCB later (and move `boards/*.overlay` content into it).
 
 ## TODOs before first flash
 
-- Set real `LEVER_ANGLE_MIN/MAX` and direction in `lever.c` after assembling the shaft.
-- Map real button/nav/reverser GPIOs in the board overlay and `report_engine.c`.
+- Measure detent centers into `handle_calibration.h` for each magnetic handle.
+- Bench-test the Rev C pin map and implement nav/reverser scanning in `report_engine.c`.
 - Define WS2812 SPI pinctrl for the target board.
 - Allocate real USB VID/PID (`prj.conf`) — do **not** ship pid.codes placeholders or
   Zuiki's `0x33DD`.
 - Implement live VBUS plug/unplug transport switching (skeleton picks once at boot).
+
+Rev C builds use `boards/notchdeck_rev_c.overlay` plus `configs/rev_c.conf` and a
+handle profile; see the [build examples](../docs/06-handle-interfaces.md#firmware-profiles-and-output).
+`make test` also runs the sensor-independent handle behavior tests in
+`test/host_handle_test.c`.

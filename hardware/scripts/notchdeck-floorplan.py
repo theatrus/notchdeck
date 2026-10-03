@@ -77,6 +77,22 @@ PLACEMENT = {
     "D18": (78, 54, 0),
     "R13": (78, 56.5, 0),
 }
+# Rev C dual handle interfaces. Preserve the original button grid.
+PLACEMENT.update({
+    "U9": (103, 96, 0), "U10": (133, 65, 0), "U11": (158, 65, 0),
+    "J10": (133, 55.8, 180), "J11": (158, 55.8, 180),
+    "J12": (189.2, 95, 90), "J13": (189.2, 114, 90), "J14": (189.2, 133, 90),
+    "R9": (96, 91, 90), "R10": (98, 91, 90),
+    "R27": (99, 103, 0), "R28": (102, 103, 0),
+    "R29": (105, 103, 0), "R30": (108, 103, 0),
+    "R37": (87, 111, 90), "R38": (87, 114, 90), "R39": (106, 69, 90),
+    "R40": (98, 98, 90), "R41": (98, 100, 90),
+    "C38": (103, 100.3, 0), "C39": (137, 65, 90), "C40": (162, 65, 90),
+})
+for i in range(3):
+    PLACEMENT[f"R{31+i}"] = (97, 111 + 7*i, 90)
+    PLACEMENT[f"R{34+i}"] = (100, 113 + 7*i, 0)
+    PLACEMENT[f"C{41+i}"] = (103, 113 + 7*i, 90)
 for i in range(4):
     y = 99 + i * 12
     PLACEMENT[f"J{i+5}"] = (55.8, y, 270)
@@ -172,7 +188,7 @@ def main():
     board.GetDesignSettings().SetBoardThickness(P.FromMM(1.6))
     title = board.GetTitleBlock()
     title.SetTitle("NotchDeck One - provisional floorplan")
-    title.SetRevision("B")
+    title.SetRevision("C")
     title.SetDate("2026-10-03")
     title.SetCompany("BenchBits")
     nets, pins = {}, {}
@@ -238,6 +254,12 @@ def main():
             fp.Reference().SetPosition(mm(87.5, 149))
         if ref == "U7":
             fp.Reference().SetPosition(mm(65, 66.5))
+        if ref in ("U10", "U11"):
+            fp.Reference().SetPosition(mm(x - 4, y))
+        if ref in ("J10", "J11"):
+            fp.Reference().SetPosition(mm(x + 8, y))
+        if ref in ("J12", "J13", "J14"):
+            fp.Reference().SetPosition(mm(x - 6.5, y + 3))
         if ref in ("D17", "D18"):
             fp.Reference().SetLayer(P.F_Fab)
         if ref == "U1":
@@ -300,8 +322,8 @@ def main():
         z.Outline().Append(P.FromMM(x), P.FromMM(y))
     board.Add(z)
     text(board, "ANTENNA: NO COPPER / METAL", 93, 46, 0.8, P.Dwgs_User)
-    text(board, "NOTCHDECK ONE", 144, 58, 2)
-    text(board, "REV B  /  PLACEMENT STUDY", 144, 62, 1)
+    text(board, "NOTCHDECK ONE", 145, 69, 1.3)
+    text(board, "REV C / DUAL HANDLES", 177, 65, 0.8)
     text(board, "USB", 60, 66, 0.8)
     text(board, "BAT+  GND", 59, 91, 0.8)
     text(board, "3V3", 73, 51, 0.8)
@@ -309,7 +331,7 @@ def main():
     text(board, "SWD", 93, 90, 1)
     text(board, "TC2030", 104, 87, 1)
     text(board, "RESET", 106, 56, 0.8)
-    text(board, "LEVER AXIS", 81, 123, 1)
+    text(board, "POWER / COMBINED AXIS", 81, 123, 1)
     text(board, "Align magnet to U5 center", 82, 127, 0.8, P.Dwgs_User)
     text(board, "REV F / N / R", 82, 139, 1)
     text(
@@ -317,12 +339,17 @@ def main():
     )
     text(board, "UNROUTED / DO NOT FABRICATE", 146, 150, 1)
     for i in range(4):
-        text(board, f"S{i}", 60, 99 + i * 12 + 4.4, 0.8)
+        text(board, f"BRAKE S{i}", 64.5, 104.5 + i * 12, 0.8)
     for row in range(4):
         for col in range(4):
             n = row * 4 + col + 1
             name = f"BTN {n}" if n <= 12 else ["UP", "DOWN", "LEFT", "RIGHT"][n - 13]
             text(board, name, 122 + col * 19, 84 + row * 19 + 6, 0.8)
+    text(board, "POWER MAG", 133, 61.5, 0.8)
+    text(board, "BRAKE MAG", 158, 61.5, 0.8)
+    text(board, "J10 EXT: REMOVE R37/R38", 96, 134, 0.8)
+    for i in range(3):
+        text(board, f"PWR S{i}", 184.5, 88.7 + 19*i, 0.8)
     # Reserve physical shaft/magnet space as a drawing, not a copper exclusion.
     ring = P.PCB_SHAPE(board)
     ring.SetShape(P.SHAPE_T_CIRCLE)

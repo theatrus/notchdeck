@@ -1,7 +1,7 @@
 ---
 name: notchdeck-hardware
 description: >-
-  NotchDeck One hardware design reference — the dual-mode (USB + BLE) one-handle
+  NotchDeck One hardware design reference — the dual-mode (USB + BLE) combined/dual-handle
   train master controller built on an Ebyte E73-2G4M08S1C (nRF52840). Use when
   reasoning about the schematic, pin assignments, power architecture, the I2C
   bus split, programming/SWD, the lever sensor options, or which part goes where.
@@ -10,7 +10,7 @@ description: >-
 
 # NotchDeck One — hardware design reference
 
-Dual-mode (USB-C wired + BLE) one-handle train-master controller. MCU+radio is
+Dual-mode (USB-C wired + BLE) combined/dual-handle train-master controller. MCU+radio is
 the **Ebyte E73-2G4M08S1C** module (nRF52840, on-board antenna, USB pads exposed).
 Lives in `hardware/notchdeck-one/`. To modify the schematic, use the
 **kicad-schgen** skill (it is generated from a manifest, not hand-edited).
@@ -31,7 +31,7 @@ Lives in `hardware/notchdeck-one/`. To modify the schematic, use the
 |---|---|---|
 | MCU & Programming | `mcu.kicad_sch` | U1 E73, decoupling, SWD header J3, Tag-Connect J4, reset |
 | Power | `power.kicad_sch` | USB-C J1, ESD U7, charger U3, LDO U2, load-share Q1/D19, fuel-gauge U4, battery J2 |
-| Lever | `lever.kicad_sch` | AS5600 U5 + I2C0 pull-ups/decoupling |
+| Lever | `lever.kicad_sch` | AS5600 U5, TCA9543A U9, dual magnetic ports and 7 Gray inputs |
 | Controls | `controls.kicad_sch` | 16 buttons (SW1–16), 16 WS2812B (D1–16), status/charge LEDs, U8 AHCT buffer, J9 reverser |
 
 ## Hard constraints (do not violate)
@@ -41,7 +41,7 @@ Lives in `hardware/notchdeck-one/`. To modify the schematic, use the
    SCL P0.06/pad14); MAX17048 = **TWIM1** (SDA P0.12/pad20, SCL P0.07/pad22).
    4.7 kΩ pull-ups per bus to +3V3.
 2. **NFC pins as GPIO.** P0.09/P0.10 (pads 41/43) are reused as GPIO → firmware
-   must set `CONFIG_NFCT_PINS_AS_GPIO`.
+   must set `nfct-pins-as-gpios` in the UICR devicetree node.
 3. **No LFXO.** P0.00/P0.01 (pads 11/13) are GPIO → LFCLK runs from the internal
    RC (fine for BLE). To fit a 32.768 kHz crystal, reclaim these and drop
    BTN11/BTN12.
@@ -63,18 +63,21 @@ SWD: SWDIO(37), SWDCLK(39), nRESET(26), +3V3, GND — wired to **both** J3
 (2×05 1.27 mm header) and **J4 (`Conn_ARM_SWD_TagConnect_TC2030-NL`, no-legs
 Tag-Connect pads)** in parallel. USB-C is the user UF2 upgrade path.
 
-## Lever sensing (firmware-contained choice)
+## Handle sensing
 
-15 discrete detents (EB, B8–B1, N, P1–P5). Two interchangeable front-ends; the
-choice is contained in firmware `lever.c`:
-- **Option 1 (default): AS5600** magnetic angle on I²C0 — absolute, no homing.
-- **Option 2: cam + 4 Gray-coded switches** (Hall DRV5032 or snap-action),
-  decodes as 4 GPIO, using dedicated P0.03/P0.28/P0.04/P0.05 pins; both front-ends can coexist.
+Combined 15-position mascon, or separate power Off/P1–P5 and brake Release/B1–B8/EB.
+Each handle independently selects AS5600 magnetic or Gray contacts in firmware.
+See `docs/06-handle-interfaces.md` for connector pinouts, cam maps and calibration.
+U9 TCA9543A (0x70) separates two address-0x36 magnetic channels on TWIM0; enable
+only one at a time. Channel0=power/combined J10/U5, channel1=brake J11. Remove both
+R37/R38 before using an external sensor on J10. MAX17048 stays on TWIM1.
+J5–J8 are four brake/combined Gray bits; J12–J14 use P0.29/P0.31/P0.30 for three
+power bits. No spare GPIO remains. New cam maps reserve all-open as invalid.
 
 ## Status
 
-**Revision B is wired.** Run `make verify-notchdeck-one`: zero ERC violations,
-all 360 endpoints checked. Q1 drain=BAT+, source=VSYS; R4 pulls gate down, R5=1k
+**Revision C is wired.** Run `make verify-notchdeck-one`: zero ERC violations,
+all 442 endpoints checked. Q1 drain=BAT+, source=VSYS; R4 pulls gate down, R5=1k
 from VBUS to gate. U3 is MCP73832 (open-drain STAT). RGB is USB-only through U8
 SN74AHCT1G125, with local decoupling; firmware must hold DIN low without USB.
 J9 is a 3-pin SPDT center-off reverser with midpoint bias and ADC filtering.

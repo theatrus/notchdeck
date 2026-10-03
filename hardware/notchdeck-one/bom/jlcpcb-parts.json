@@ -43,7 +43,13 @@
         "C34",
         "C35",
         "C36",
-        "C37"
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
       ],
       "bom_comments": "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
     },
@@ -129,7 +135,9 @@
       "jlcpcb_unit_price_snapshot_usd": 0.1639,
       "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C7519&limit=20&full=true",
       "references": [
-        "U7"
+        "U7",
+        "U10",
+        "U11"
       ],
       "bom_comments": ""
     },
@@ -170,7 +178,10 @@
         "R19",
         "R20",
         "R21",
-        "R25"
+        "R25",
+        "R34",
+        "R35",
+        "R36"
       ],
       "bom_comments": "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -208,6 +219,26 @@
         "C9"
       ],
       "bom_comments": "10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    "C21189": {
+      "mpn": "0603WAF0000T5E",
+      "manufacturer": "UNI-ROYAL",
+      "package": "0603",
+      "description": "-55℃~+155℃ 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/f42da6c80a0747bae77c2f98f4e46d1d.pdf?productCode=C21189",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C21189",
+      "jlcpcb_category": "Basic",
+      "jlcpcb_stock_snapshot": 23710479,
+      "jlcpcb_available_order_snapshot": 21815066,
+      "jlcpcb_unit_price_snapshot_usd": 0.0023,
+      "stock_source": "https://jlcpcb.com/partdetail/C21189",
+      "checked_at_utc": "2026-10-03T21:06:42.257Z",
+      "references": [
+        "R37",
+        "R38"
+      ],
+      "bom_comments": "Remove BOTH R37/R38 before connecting an external power AS5600 to J10; isolates onboard U5."
     },
     "C25104": {
       "mpn": "0402WGF3300TCE",
@@ -264,7 +295,13 @@
         "R14",
         "R15",
         "R16",
-        "R17"
+        "R17",
+        "R31",
+        "R32",
+        "R33",
+        "R39",
+        "R40",
+        "R41"
       ],
       "bom_comments": "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -284,7 +321,11 @@
         "R6",
         "R7",
         "R9",
-        "R10"
+        "R10",
+        "R27",
+        "R28",
+        "R29",
+        "R30"
       ],
       "bom_comments": "-55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -412,6 +453,26 @@
       ],
       "bom_comments": "External center-off reverser and mating harness not included."
     },
+    "C265102": {
+      "mpn": "S4B-PH-SM4-TB(LF)(SN)",
+      "manufacturer": "JST",
+      "package": "SMD,P=2mm,卧贴",
+      "description": "-25℃~+85℃ 1 100V 11.9mm 1x4P 2A 2mm 4 4P 5.5mm 8.6mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,卧贴 Wire To Board Connector ROHS",
+      "footprint": "Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/6c6fce4367275d84ec6a99bf09f1250f.pdf?productCode=C265102",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C265102",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 25405,
+      "jlcpcb_available_order_snapshot": 19632,
+      "jlcpcb_unit_price_snapshot_usd": 0.3066,
+      "stock_source": "https://jlcpcb.com/partdetail/C265102",
+      "checked_at_utc": "2026-10-03T21:06:34.042Z",
+      "references": [
+        "J10",
+        "J11"
+      ],
+      "bom_comments": "3.3V magnetic handle: pin 1=3V3, 2=GND, 3=SDA, 4=SCL. Mating harness/sensor separate."
+    },
     "C295747": {
       "mpn": "S2B-PH-SM4-TB(LF)(SN)",
       "manufacturer": "JST",
@@ -429,7 +490,10 @@
         "J5",
         "J6",
         "J7",
-        "J8"
+        "J8",
+        "J12",
+        "J13",
+        "J14"
       ],
       "bom_comments": "Mating harnesses not included. J2: protected 1S cell, pin 1 positive / pin 2 ground. J5-J8: lever signal / ground."
     },
@@ -515,7 +579,7 @@
       "references": [
         "U5"
       ],
-      "bom_comments": ""
+      "bom_comments": "Onboard power/combined magnetic sensor. Remove R37/R38 for external power sensor on J10."
     },
     "C965805": {
       "mpn": "XL-1608SYGC-06",
@@ -533,6 +597,25 @@
         "D17"
       ],
       "bom_comments": ""
+    },
+    "C2653307": {
+      "mpn": "TCA9543APWR",
+      "manufacturer": "TI",
+      "package": "TSSOP-14",
+      "description": "-40℃~+85℃ 1.65V~5.5V 10uA 1ns@5.5V,50pF 2uA 3mA Bus Switch Level shifting、Hot-swap protection Single Supply TSSOP-14 Signal Switches, Multiplexers, Decoders ROHS",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/4107098bf2c5ce9d0a240a1c4ceb8054.pdf?productCode=C2653307",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C2653307",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 599,
+      "jlcpcb_available_order_snapshot": 561,
+      "jlcpcb_unit_price_snapshot_usd": 0.8503,
+      "stock_source": "https://jlcpcb.com/partdetail/C2653307",
+      "checked_at_utc": "2026-10-03T21:06:22.556Z",
+      "references": [
+        "U9"
+      ],
+      "bom_comments": "Address 0x70. Enable only one downstream channel at a time; RESET follows board nRESET."
     },
     "C2682616": {
       "mpn": "MAX17048G+T10",

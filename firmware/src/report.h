@@ -26,8 +26,8 @@
 struct __attribute__((packed)) notchdeck_in_report {
 	uint16_t buttons;   /* bit0 = button 1 ... bit15 = button 16 */
 	uint8_t  hat;       /* low nibble = direction (see NOTCHDECK_HAT_*), high nibble pad */
-	uint8_t  x;         /* reserved, NOTCHDECK_AXIS_CENTER */
-	uint8_t  y;         /* POWER/BRAKE LEVER notch byte (see lever.h) */
+	uint8_t  x;         /* split mode: brake 0..255; combined mode: center */
+	uint8_t  y;         /* combined notch byte, or split power 0..255 */
 	uint8_t  z;         /* reserved (reverser), NOTCHDECK_AXIS_CENTER */
 	uint8_t  rz;        /* reserved (aux dial),  NOTCHDECK_AXIS_CENTER */
 };

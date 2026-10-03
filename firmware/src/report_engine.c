@@ -33,7 +33,7 @@ int report_engine_init(void)
 	int err = lever_init();
 
 	if (err) {
-		LOG_WRN("lever_init failed (%d) — lever will read neutral", err);
+		LOG_WRN("lever_init failed (%d) — handle fault, power inhibited", err);
 	}
 
 	for (size_t i = 0; i < NUM_BUTTONS; i++) {
@@ -59,8 +59,15 @@ void report_engine_build(struct notchdeck_in_report *rep)
 	/* TODO(hw): scan the 4/5-way nav switch into rep->hat. */
 	rep->hat = NOTCHDECK_HAT_CENTER;
 
-	rep->x  = NOTCHDECK_AXIS_CENTER;
-	rep->y  = lever_get_notch_byte();   /* the load-bearing input */
+	lever_poll();
+	const struct handle_state *handles = lever_get_state();
+	if (lever_uses_split_axes()) {
+		rep->x = handle_axis_value(handles->brake, 9);
+		rep->y = handle_axis_value(handles->power, 5);
+	} else {
+		rep->x = NOTCHDECK_AXIS_CENTER;
+		rep->y = lever_get_notch_byte();
+	}
 	rep->z  = NOTCHDECK_AXIS_CENTER;    /* TODO(hw): reverser */
 	rep->rz = NOTCHDECK_AXIS_CENTER;
 }

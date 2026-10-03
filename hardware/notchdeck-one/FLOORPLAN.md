@@ -18,7 +18,8 @@ or controlled-impedance geometry has been selected. All components are on F.Cu.
 | Radio | U1 at (93, 66), rotated 90°. Its antenna end overhangs the top board edge by approximately 2 mm. An all-layer rule area prohibits pads, tracks, vias and pours at x=81…105, y=43…51.3 mm. Keep other components and enclosure metal out manually; the rule area permits U1's own footprint. |
 | Programming | J3 keyed Samtec SWD header at (93,82) and J4 TC2030 are below the radio; SW17 reset is beside it. J3 moved 2 mm down to clear C9 after its shrouded body was selected. Allow probe/cable access in the enclosure. |
 | Lever | U5 AS5600 center at (81, 113). The 10 mm radius drawing marks provisional shaft/magnet space, **not a shaft hole or validated mechanical clearance**. |
-| Harnesses | J5–J8 face the left edge, ordered S0–S3 top to bottom with local RC networks. J9 reverser faces the bottom edge. |
+| Harnesses | J5–J8 face left: brake/combined S0–S3. J12–J14 face right: power S0–S2. J10/J11 magnetic ports face the top edge at x=133/158 mm. J9 reverser faces the bottom edge. |
+| Handle interface | U9 bus switch at (103,96), C38 beside it; U10/U11 and C39/C40 sit behind J10/J11. R37/R38 beside U5 disconnect its bus when an external power sensor is used. New power-contact filters are near the MCU/handle area. |
 | Mounting | Four board-only 3.2 mm NPTH holes at (55,55), (190,55), (190,150), (55,150). Enclosure bosses and screw-head clearances remain to be designed. |
 
 RGB references by physical row, left to right:
@@ -30,7 +31,7 @@ D9   D10  D11  D12
 D16  D15  D14  D13
 ```
 
-The PCB has 116 electrical footprints plus four mechanical mounting holes.
+The PCB has 145 electrical footprints plus four mechanical mounting holes.
 The saved `.kicad_pcb` is the editable source after this initial placement.
 `scripts/notchdeck-floorplan.py` records the seed geometry; it is not part of
 ordinary schematic generation and must not be used to overwrite subsequent work.
@@ -39,10 +40,10 @@ ordinary schematic generation and must not be used to overwrite subsequent work.
 
 | Check | Result | Evidence / confidence |
 |---|---|---|
-| Schematic net contract | 116 components, 80 nets, 360 unique pin endpoints, 14 intentional NCs | Deterministic comparison of KiCad's exported netlist against `notchdeck-netcheck.py`; internal connectivity consistency |
+| Schematic net contract | 145 components, 92 nets, 442 unique pin endpoints, 12 intentional NCs | Deterministic comparison of KiCad's exported netlist against `notchdeck-netcheck.py`; internal connectivity consistency |
 | Native ERC | 0 errors, 0 warnings, no exclusions | KiCad 10.0.6 ERC |
-| PCB pad/net audit | All 360 endpoint assignments, references, values, footprint IDs and schematic UUID paths match | Deterministic comparison of XML netlist and native PCB pad data; includes duplicated switch/connector pads |
-| Native PCB DRC with schematic parity | 0 rule violations, 0 parity issues, **313 unconnected items** | KiCad 10.0.6 under the existing project rules; the remaining airwires are expected because routing has not begun |
+| PCB pad/net audit | All 442 endpoint assignments, references, values, footprint IDs and schematic UUID paths match | Deterministic comparison of XML netlist and native PCB pad data; includes duplicated switch/connector pads |
+| Native PCB DRC with schematic parity | 0 rule violations, 0 parity issues, **383 unconnected items** | KiCad 10.0.6 under the existing project rules; the remaining airwires are expected because routing has not begun |
 | GUI review | Root and all four child sheets opened and visually inspected; PCB opened with placement/ratsnest | Direct visual inspection. Fixed missing sheet-page instances that caused KiCad's automatic-repair warning, and overlapping U7 input wire stubs. |
 | Generator retention | Forced regeneration retained placed-symbol UUIDs; subsequent PCB parity audit passed | Native file/UUID check; future schematic generation retains PCB associations for unchanged references |
 | 3D preview | Outline, holes and radio overhang inspected | Partial model coverage; not an assembly or enclosure fit check |
@@ -67,7 +68,7 @@ project settings. Native CLI reports and previews are generated under the ignore
 2. Validate the exact E73 land pattern and antenna clearance against the module
    drawing and enclosure. Its current footprint has no courtyard and uses drilled
    internal pads; a clean native DRC does not validate that geometry.
-3. Validate MAX17048 package/exposed-pad dimensions. All 115 purchasable components
+3. Validate MAX17048 package/exposed-pad dimensions. All 144 purchasable components
    now have exact JLCPCB selections. The RGB part is XINGLIGHT C2843785 with a
    custom footprint matching its drawing and pin map; the keyed Samtec SWD header
    likewise has a matching footprint. See [BOM review](bom/README.md). Final CPL
@@ -82,21 +83,24 @@ project settings. Native CLI reports and previews are generated under the ignore
    the button fanout; keep LED supply current away from sensor returns.
 6. Add ground stitching, test access and assembly fiducials when routing and
    manufacturing requirements are set. No copper planes, traces or vias exist yet.
-7. Implement the board-specific firmware pin map, reset/NFC configuration, internal
-   RC LFCLK, separate I2C buses, and USB-dependent RGB behavior described in
-   [`NETPLAN.md`](../NETPLAN.md). The development-kit overlay is not that board definition.
+7. Bench-test the Rev C firmware overlay and both sensor types, measure magnetic
+   detent centers, and implement the remaining nav/reverser scan and RGB behavior.
+   A production board/bootloader definition is still required; see the
+   [handle guide](../../docs/06-handle-interfaces.md).
 
 ## Analyzer triage and review limits
 
-`analyze_schematic.py`, `analyze_pcb.py --full`, `cross_analysis.py`, the EMC analyzer
-and the thermal analyzer were run. Cross-analysis reported no findings. Their
+On the preceding Rev B floorplan, `analyze_schematic.py`, `analyze_pcb.py --full`,
+`cross_analysis.py`, the EMC analyzer and thermal analyzer were run. Rev C has
+received the native net/ERC/PCB/BOM checks above; those broader analyzer results
+are historical context, not a new Rev C assessment. Cross-analysis reported no findings. Their
 topology reports supplement the native checks; they are not hardware validation.
 
 - **RS-001, missing 3V3 source:** analyzer hierarchy false positive. Native XML
   places U2.5, U1.19 and U1.23 together on global `+3V3`; ERC is clean.
-- **PU-001, reset pull-up:** heuristic remains a firmware/reset-configuration
-  review item. The schematic relies on the MCU's reset behavior; no external
-  resistor was added merely to satisfy the heuristic.
+- **PU-001, reset pull-up:** the earlier Rev B heuristic is superseded in Rev C.
+  R39 now pulls up the shared nRESET line for the TCA9543A reset input. UICR reset
+  configuration remains required.
 - **EMC missing ground plane/stitching and PCB unrouted errors:** accurate for this
   placement stage and still open. No EMC pass or numerical compliance claim is made.
 - **Connector filtering / TC2030 ground-pin heuristics:** the standard programming

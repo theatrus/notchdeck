@@ -1,6 +1,6 @@
 {
   "schematic": "hardware/notchdeck-one/notchdeck-one.kicad_sch",
-  "last_sync": "2026-10-03T20:08:32.440495+00:00",
+  "last_sync": "2026-10-03T21:10:44.143727+00:00",
   "parts": {
     "CL05B104KO5NNNC": {
       "file": "C1525.pdf",
@@ -37,7 +37,13 @@
         "C34",
         "C35",
         "C36",
-        "C37"
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
@@ -108,7 +114,9 @@
       "lcsc": "C7519",
       "status": "ok",
       "references": [
-        "U7"
+        "U7",
+        "U10",
+        "U11"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 224255
@@ -143,7 +151,10 @@
         "R19",
         "R20",
         "R21",
-        "R25"
+        "R25",
+        "R34",
+        "R35",
+        "R36"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -176,6 +187,21 @@
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
+    },
+    "0603WAF0000T5E": {
+      "file": "C21189.pdf",
+      "manufacturer": "UNI-ROYAL",
+      "description": "-55℃~+155℃ 0Ω 100mW 75V Thick Film Resistor ±1% 0603 Chip Resistor - Surface Mount ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/f42da6c80a0747bae77c2f98f4e46d1d.pdf?productCode=C21189",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C21189",
+      "status": "ok",
+      "references": [
+        "R37",
+        "R38"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 861204
     },
     "0402WGF3300TCE": {
       "file": "C25104.pdf",
@@ -222,7 +248,13 @@
         "R14",
         "R15",
         "R16",
-        "R17"
+        "R17",
+        "R31",
+        "R32",
+        "R33",
+        "R39",
+        "R40",
+        "R41"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -239,7 +271,11 @@
         "R6",
         "R7",
         "R9",
-        "R10"
+        "R10",
+        "R27",
+        "R28",
+        "R29",
+        "R30"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -347,6 +383,21 @@
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 118956
     },
+    "S4B-PH-SM4-TB(LF)(SN)": {
+      "file": "C265102.pdf",
+      "manufacturer": "JST",
+      "description": "-25℃~+85℃ 1 100V 11.9mm 1x4P 2A 2mm 4 4P 5.5mm 8.6mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount, Right Angle Tin UL94V-0 SMD,P=2mm,卧贴 Wire To Board Connector ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/6c6fce4367275d84ec6a99bf09f1250f.pdf?productCode=C265102",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C265102",
+      "status": "ok",
+      "references": [
+        "J10",
+        "J11"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 118956
+    },
     "S2B-PH-SM4-TB(LF)(SN)": {
       "file": "C295747.pdf",
       "manufacturer": "JST",
@@ -360,7 +411,10 @@
         "J5",
         "J6",
         "J7",
-        "J8"
+        "J8",
+        "J12",
+        "J13",
+        "J14"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 719637
@@ -406,9 +460,8 @@
       "references": [
         "U1"
       ],
-      "verification": "Manufacturer-authored manual; title verified against Nordic-hosted copy. Land pattern review open.",
-      "size_bytes": 683591,
-      "download_url": "https://allnewsemi.com.cn/uploadfile/202506/3380c58169a3efe.pdf"
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 683591
     },
     "FTSH-105-01-L-DV-K-TR": {
       "file": "C448647.pdf",
@@ -451,6 +504,20 @@
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 1577978
+    },
+    "TCA9543APWR": {
+      "file": "C2653307.pdf",
+      "manufacturer": "TI",
+      "description": "-40℃~+85℃ 1.65V~5.5V 10uA 1ns@5.5V,50pF 2uA 3mA Bus Switch Level shifting、Hot-swap protection Single Supply TSSOP-14 Signal Switches, Multiplexers, Decoders ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/4107098bf2c5ce9d0a240a1c4ceb8054.pdf?productCode=C2653307",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C2653307",
+      "status": "ok",
+      "references": [
+        "U9"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 867884
     },
     "MAX17048G+T10": {
       "file": "C2682616.pdf",

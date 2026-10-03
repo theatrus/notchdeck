@@ -1,6 +1,6 @@
 # Claude Code Guidelines — NotchDeck
 
-NotchDeck One: a dual-mode (USB-C + BLE) one-handle train-master controller built
+NotchDeck One: a dual-mode (USB-C + BLE) combined/dual-handle train-master controller built
 on an Ebyte **E73-2G4M08S1C** (nRF52840) module. This repo holds the KiCad
 hardware (`hardware/`), firmware (`firmware/`), and design docs (`docs/`).
 
@@ -54,6 +54,6 @@ make jlc-notchdeck-one       # full JLCPCB fab+assembly zip
 
 ## Firmware
 
-Firmware lives in `firmware/` (see `firmware/README.md`). The lever sensor choice
-(AS5600 vs cam switches) is contained in firmware `lever.c`; the notch→HID table
-is sensor-agnostic.
+Firmware lives in `firmware/` (see `firmware/README.md`). Handle types are configured independently through Kconfig profiles. See
+`docs/06-handle-interfaces.md`; pure decoding/filtering lives in `handle_decode.c`,
+sensor access in `lever.c`. Run `make -C firmware test` after behavior changes.

@@ -31,7 +31,7 @@ K.register_stdlib(
     "Conn_ARM_JTAG_SWD_10",
     "Conn_ARM_SWD_TagConnect_TC2030-NL",
 )
-K.register_stdlib("Connector_Generic", "Conn_01x02", "Conn_01x03")
+K.register_stdlib("Connector_Generic", "Conn_01x02", "Conn_01x03", "Conn_01x04")
 K.register_stdlib("Regulator_Linear", "AP2112K-3.3")
 K.register_stdlib("Battery_Management", "MCP73832-2-OT")
 K.register_stdlib("Power_Protection", "USBLC6-2SC6")
@@ -40,7 +40,7 @@ K.register_stdlib("Switch", "SW_Push")
 K.register_stdlib("LED", "WS2812B")
 K.register_stdlib("74xGxx", "74AHCT1G125")
 K.register_lib(
-    "notchdeck", NOTCH_SYM, "E73-2G4M08S1C", "AS5600", "MAX17048", "SWD_2x05", "SWD_TC2030"
+    "notchdeck", NOTCH_SYM, "E73-2G4M08S1C", "AS5600", "MAX17048", "SWD_2x05", "SWD_TC2030", "TCA9543APWR"
 )
 
 # ---- footprint shorthands ---------------------------------------------------
@@ -285,6 +285,31 @@ CONTROLS["small"] += [
     R("R26", "100k"),
 ] + [C(f"C{i}", "100nF") for i in range(21, 37)]
 
+# Rev C: independent magnetic and Gray-code interfaces for two handles.
+# U5 is the optional onboard power/combined sensor; remove R37/R38 when J10
+# carries an external AS5600. The two mux channels must never be enabled together.
+LEVER["title"] = "Power and brake handle interfaces"
+LEVER["small"] += [
+    dict(ref="U9", lib_id="notchdeck:TCA9543APWR", value="TCA9543APWR",
+         fp="Package_SO:TSSOP-14_4.4x5mm_P0.65mm"),
+    *[dict(ref=f"U{i}", lib_id="Power_Protection:USBLC6-2SC6", value="USBLC6-2SC6",
+           fp="Package_TO_SOT_SMD:SOT-23-6") for i in (10, 11)],
+    *[dict(ref=f"J{i}", lib_id="Connector_Generic:Conn_01x04", value=value,
+           fp="Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal")
+      for i, value in [(10, "POWER MAG"), (11, "BRAKE MAG")]],
+    *[dict(ref=f"J{12+i}", lib_id="Connector_Generic:Conn_01x02", value=f"POWER S{i}",
+           fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal") for i in range(3)],
+    *[R(f"R{i}", "4.7k") for i in range(27, 31)],
+    *[R(f"R{i}", "10k") for i in range(31, 34)],
+    *[R(f"R{i}", "1k") for i in range(34, 37)],
+    *[dict(ref=f"R{i}", lib_id="Device:R", value="0",
+           fp="Resistor_SMD:R_0603_1608Metric") for i in (37, 38)],
+    *[R(f"R{i}", "10k") for i in range(39, 42)],
+    *[C(f"C{i}", "100nF") for i in range(38, 44)],
+]
+for c in LEVER["big"]:
+    c["value"] = c["value"].replace("CODE", "BRAKE")
+
 # Reviewed JLCPCB selections are versioned separately from the wiring/layout.
 # Emit them onto every symbol so KiCad remains the BOM export source of truth.
 with open(os.path.join(PROJ_DIR, "bom", "jlcpcb-parts.json")) as source:
@@ -303,7 +328,7 @@ for code, part in sourcing["parts"].items():
         c.update(lcsc=code, mpn=part["mpn"], mfr=part["manufacturer"], datasheet=part["datasheet"])
         c["properties"] = {
             "JLCPCB Part Type": part["jlcpcb_category"],
-            "BOM Checked": sourcing["checked_at_utc"][:10],
+            "BOM Checked": part.get("checked_at_utc", sourcing["checked_at_utc"])[:10],
             "BOM Comments": part["bom_comments"],
         }
         assigned.add(ref)
@@ -311,7 +336,7 @@ for ref, note in sourcing["non_assembly"].items():
     assert parts_by_ref[ref].get("in_bom") is False
     parts_by_ref[ref]["properties"] = {"BOM Comments": note}
 assert assigned | set(sourcing["non_assembly"]) == set(parts_by_ref)
-TITLE = dict(title="NotchDeck One", date="2026-10-02", rev="B", company="BenchBits")
+TITLE = dict(title="NotchDeck One", date="2026-10-03", rev="C", company="BenchBits")
 G = 2.54
 
 
@@ -447,7 +472,8 @@ class Capture:
 
 
 PWR_PORTS = ["USB_VBUS", "USB_DM", "USB_DP", "I2C1_SCL", "I2C1_SDA", "FG_ALRT", "CHG_STAT"]
-LEVER_PORTS = ["I2C0_SCL", "I2C0_SDA", "LEVER_S0", "LEVER_S1", "LEVER_S2", "LEVER_S3"]
+LEVER_PORTS = ["I2C0_SCL", "I2C0_SDA", "LEVER_S0", "LEVER_S1", "LEVER_S2", "LEVER_S3",
+               "POWER_S0", "POWER_S1", "POWER_S2", "nRESET"]
 BUTTONS = [f"BTN{i}" for i in range(1, 13)] + ["HAT_UP", "HAT_DOWN", "HAT_LEFT", "HAT_RIGHT"]
 CTRL_PORTS = ["WS2812_DIN", "REVERSER_AIN"] + BUTTONS
 
@@ -461,6 +487,9 @@ pinmap = {
     5: "GND",
     6: "BTN3",
     7: "REVERSER_AIN",
+    8: "POWER_S0",
+    9: "POWER_S1",
+    10: "POWER_S2",
     11: "BTN11",
     12: "I2C0_SDA",
     13: "BTN12",
@@ -496,7 +525,7 @@ pinmap = {
 }
 for pin, net in pinmap.items():
     s.stub("U1", pin, net)  # same-name local rails join the decoupling power symbols
-s.nc("U1", 8, 9, 10, 25)
+s.nc("U1", 25)
 for i in range(1, 6):
     s.place(f"C{i}", 65 + (i - 1) * 8, 28)
 s.rail("+3V3", [(f"C{i}", 1) for i in range(1, 6)], 22)
@@ -525,11 +554,11 @@ s.label("nRESET", (q[0], p[1]))
 s.stub("SW17", 2, "GND", kind="power")
 s.stub("C6", 2, "GND", kind="power")
 for i, n in enumerate(PWR_PORTS + LEVER_PORTS + CTRL_PORTS):
-    s.port(n, 132, 12 + 2.5 * i)
+    s.port(n, 132, 10 + 2.5 * i)
 s.note(
     10,
     88,
-    "SWD headers are parallel; VTref is 3V3. SWO is unused.\nReset: P0.18 / UICR reset enabled; double-tap enters bootloader.\nNFC pins P0.09/P0.10 must be configured as GPIO.\nP0.00/P0.01 are buttons: use calibrated RC LFCLK, no LFXO.\nSpare analog GPIOs P0.29/P0.31/P0.30 are intentionally NC.",
+    "SWD headers are parallel; VTref is 3V3. SWO is unused.\nReset: P0.18 / UICR reset enabled; also resets handle mux.\nNFC pins P0.09/P0.10 must be configured as GPIO.\nP0.00/P0.01 are buttons: use calibrated RC LFCLK, no LFXO.\nP0.29/P0.31/P0.30 = power Gray bits S0/S1/S2. No spare GPIO.",
 )
 s.finish()
 
@@ -656,59 +685,94 @@ s.power("GND", (12 * G, 108 * G), flag=True)
 s.finish()
 
 s = Capture(LEVER)
-s.place("U5", 38, 27, ref_offset=(-10.16, -12.7), value_offset=(-10.16, -10.16))
-s.place("C11", 14, 27)
-s.place("C12", 23, 27)
-s.rail("+3V3", [("C11", 1), ("C12", 1)], 20)
-s.rail("GND", [("C11", 2), ("C12", 2)], 34)
-for pin in [1, 2]:
+s.place("U9", 28, 23, ref_offset=(7.62, -22.86), value_offset=(7.62, -20.32))
+for pin, net in {13: "I2C0_SDA", 12: "I2C0_SCL", 3: "nRESET",
+                 5: "POWER_MAG_SDA", 6: "POWER_MAG_SCL",
+                 9: "BRAKE_MAG_SDA", 10: "BRAKE_MAG_SCL",
+                 4: "MUX_INT0", 8: "MUX_INT1"}.items():
+    end = s.stub("U9", pin, net)
+    if net in ("I2C0_SDA", "I2C0_SCL", "nRESET"):
+        s.extra.pop()
+        s.extra.append(K.w_hlabel(net, *end, 180, "bidirectional"))
+for pin in (1, 2, 7):
+    s.stub("U9", pin, "GND", kind="power")
+s.stub("U9", 14, "+3V3", kind="power")
+s.nc("U9", 11)
+s.place("C38", 9, 15)
+s.stub("C38", 1, "+3V3", kind="power")
+s.stub("C38", 2, "GND", kind="power")
+for ref, net, x, y in [
+    ("R9", "I2C0_SDA", 10, 35), ("R10", "I2C0_SCL", 19, 35),
+    ("R39", "nRESET", 18, 10),
+    ("R40", "MUX_INT0", 43, 35), ("R41", "MUX_INT1", 53, 35),
+    ("R27", "POWER_MAG_SDA", 65, 13), ("R28", "POWER_MAG_SCL", 77, 13),
+    ("R29", "BRAKE_MAG_SDA", 65, 26), ("R30", "BRAKE_MAG_SCL", 77, 26),
+]:
+    s.place(ref, x, y)
+    s.stub(ref, 1, "+3V3", kind="power")
+    a = s.pin(ref, 2)
+    b = (a[0], a[1] + 2 * G)
+    c = (b[0] + 2 * G, b[1])
+    s.wire(a, b, c)
+    s.label(net, c)
+s.note(45, 6, "U9: 0x70 (A0=A1=0)\nCH0 power/combined; CH1 brake\nINT inputs held high; INT output unused")
+
+s.place("U5", 105, 23, ref_offset=(-10.16, -12.7), value_offset=(-10.16, -10.16))
+for ref, x in [("C11", 138), ("C12", 147)]:
+    s.place(ref, x, 17)
+    s.stub(ref, 1, "+3V3", kind="power")
+    s.stub(ref, 2, "GND", kind="power")
+for pin in (1, 2):
     s.stub("U5", pin, "+3V3", kind="power")
-for pin in [4, 8]:
+for pin in (4, 8):
     s.stub("U5", pin, "GND", kind="power")
 s.nc("U5", 3, 5)
-for pin, net, r, x in [(6, "I2C0_SDA", "R9", 59), (7, "I2C0_SCL", "R10", 72)]:
-    s.place(r, x, 20)
-    a = s.pin("U5", pin)
-    b = s.pin(r, 2)
-    s.wire(a, (b[0], a[1]), b)
-    s.label(net, (b[0], a[1]))
-    s.stub(r, 1, "+3V3", kind="power")
-s.note(
-    90,
-    18,
-    "AS5600: 3.3V mode, VDD5V tied to VDD3V3.\nI2C0 / 0x36; separate from the fuel gauge.\nDIR = GND, clockwise increases angle.\nOUT and PGO intentionally unused.",
-)
-for i in range(4):
-    x = 18 + 37 * i
-    y = 62
-    j = f"J{5+i}"
-    pu = f"R{14+i}"
-    rs = f"R{18+i}"
-    cap = f"C{14+i}"
-    s.place(j, x, y, 180, ref_offset=(-2.54, -7.62), value_offset=(-2.54, -5.08))
-    s.place(pu, x + 9, y - 10)
-    s.place(rs, x + 17, y, 90, ref_offset=(-2.54, -5.08), value_offset=(-2.54, -2.54))
-    s.place(cap, x + 24, y + 8)
-    p = s.pin(j, 1)
-    q = s.pin(rs, 1)
-    b = s.pin(pu, 2)
-    s.wire(p, q)
-    s.wire(b, (b[0], p[1]))
-    s.stub(pu, 1, "+3V3", kind="power")
-    p = s.pin(rs, 2)
-    q = s.pin(cap, 1)
-    s.wire(p, (q[0], p[1]), q)
-    s.label(f"LEVER_S{i}", (q[0], p[1]))
+for pin, ref, net, y in [(6, "R37", "POWER_MAG_SDA", 23), (7, "R38", "POWER_MAG_SCL", 28)]:
+    s.place(ref, 132, y, 90, ref_offset=(-2.54, -5.08), value_offset=(-2.54, -2.54))
+    p, q = s.pin("U5", pin), s.pin(ref, 1)
+    s.wire(p, (118 * G, p[1]), (118 * G, q[1]), q)
+    s.label("U5_" + net, (120 * G, q[1]))
+    s.stub(ref, 2, net)
+s.note(91, 33, "Onboard U5: 3.3V mode, DIR=GND.\nREMOVE R37 AND R38 for external power sensor on J10.\nOnly one AS5600 may be connected on each channel.")
+
+for j, esd, cap, prefix, x in [("J10", "U10", "C39", "POWER", 20), ("J11", "U11", "C40", "BRAKE", 87)]:
+    s.place(j, x, 49, 180, ref_offset=(-2.54, -8.89), value_offset=(-2.54, -6.35))
+    s.place(esd, x + 28, 48, ref_offset=(7.62, -12.7), value_offset=(7.62, -10.16))
+    for pin, net in [(1, "+3V3"), (2, "GND"), (3, prefix + "_MAG_SDA"), (4, prefix + "_MAG_SCL")]:
+        s.stub(j, pin, net)
+    for pin, net in [(1, prefix + "_MAG_SDA"), (6, prefix + "_MAG_SDA"),
+                     (3, prefix + "_MAG_SCL"), (4, prefix + "_MAG_SCL")]:
+        s.stub(esd, pin, net)
+    s.stub(esd, 5, "+3V3", kind="power")
+    s.stub(esd, 2, "GND", kind="power")
+    s.place(cap, x + 46, 48)
+    s.stub(cap, 1, "+3V3", kind="power")
     s.stub(cap, 2, "GND", kind="power")
-    s.stub(j, 2, "GND", kind="power")
-    s.note(x - 2, 80, f"S{i}: switch closes to GND.\n10k pull-up / 1k series / 100nF.")
-for i, n in enumerate(LEVER_PORTS):
-    s.port(n, 15 + i * 24, 94)
-s.note(
-    12,
-    103,
-    "J5-J8: pin 1 = switch signal, pin 2 = GND. Both sensing front-ends may be populated.\nRC release ~1.1ms, press ~0.1ms. Firmware still debounces and decodes binary/Gray detent codes.",
-)
+s.note(8, 55, "J10/J11: 1=3V3  2=GND  3=SDA  4=SCL. Internal harness <=20cm target, 100kHz; verify rise time.\n3.3V sensors only; no extra harness pull-ups. No hot-plug. External sensors require local decoupling.")
+
+for count, y, js, pus, rss, caps, prefix in [
+    (4, 72, 5, 14, 18, 14, "LEVER"),
+    (3, 99, 12, 31, 34, 41, "POWER"),
+]:
+    for i in range(count):
+        x = 15 + 37 * i
+        j, pu, rs, cap = f"J{js+i}", f"R{pus+i}", f"R{rss+i}", f"C{caps+i}"
+        s.place(j, x, y, 180, ref_offset=(-2.54, -7.62), value_offset=(-2.54, -5.08))
+        s.place(pu, x + 9, y - (10 if prefix == "LEVER" else 8))
+        s.place(rs, x + 17, y, 90, ref_offset=(-2.54, -5.08), value_offset=(-2.54, -2.54))
+        s.place(cap, x + 24, y + 5)
+        p, q, b = s.pin(j, 1), s.pin(rs, 1), s.pin(pu, 2)
+        s.wire(p, q)
+        s.wire(b, (b[0], p[1]))
+        s.stub(pu, 1, "+3V3", kind="power")
+        p, q = s.pin(rs, 2), s.pin(cap, 1)
+        s.wire(p, (q[0], p[1]), q)
+        s.label(f"{prefix}_S{i}", (q[0], p[1]))
+        s.stub(cap, 2, "GND", kind="power")
+        s.stub(j, 2, "GND", kind="power")
+s.note(8, 83, "GRAY CONTACTS: J5-J8 = brake / combined (4 bits); J12-J14 = power (3 bits).\nPin 1=signal, 2=GND. Open=1, closed=0; reserve all-open as invalid. 10k/1k/100nF + software debounce.\nUse microload contacts qualified for 3.3V / 0.33mA, or revise pull-ups to suit the chosen switch.")
+for i, n in enumerate([n for n in LEVER_PORTS if n not in ("I2C0_SDA", "I2C0_SCL", "nRESET")]):
+    s.port(n, 132, 84 + i * 2)
 s.finish()
 
 s = Capture(CONTROLS)
@@ -811,8 +875,8 @@ pro = []
 mcu_pins = []
 for sh, ports, y, h in [
     (POWER, PWR_PORTS, 12, 19),
-    (LEVER, LEVER_PORTS, 34, 16),
-    (CONTROLS, CTRL_PORTS, 54, 42),
+    (LEVER, LEVER_PORTS, 33, 23),
+    (CONTROLS, CTRL_PORTS, 58, 42),
 ]:
     pins = []
     for i, n in enumerate(ports):
@@ -828,7 +892,7 @@ for sh, ports, y, h in [
     blocks += K.w_sheet(sh["name"], sh["file"], sh["uuid"], 108 * G, y * G, 41 * G, h * G, pins,
                         project="notchdeck-one", parent_path=f"/{ROOT_UUID}", page=sh["page"])
     pro.append([sh["uuid"], sh["name"]])
-blocks += K.w_sheet(MCU["name"], MCU["file"], MCU["uuid"], 20 * G, 12 * G, 37 * G, 84 * G, mcu_pins,
+blocks += K.w_sheet(MCU["name"], MCU["file"], MCU["uuid"], 20 * G, 12 * G, 37 * G, 88 * G, mcu_pins,
                     project="notchdeck-one", parent_path=f"/{ROOT_UUID}", page=MCU["page"])
 pro.insert(0, [MCU["uuid"], MCU["name"]])
 wiring += K.text_note(
@@ -837,7 +901,7 @@ wiring += K.text_note(
     7 * G,
 )
 wiring += K.text_note(
-    "Two isolated I2C buses: AS5600 and MAX17048 both use address 0x36.\nUSB powers the RGB array; battery powers controller + sensors. PCB is a provisional, unrouted floorplan.",
+    "Handle mux: I2C0 -> independent power/brake AS5600 channels (0x36); MAX17048 stays on I2C1.\nUSB powers the RGB array; battery powers controller + sensors. PCB is a provisional, unrouted floorplan.",
     20 * G,
     104 * G,
 )

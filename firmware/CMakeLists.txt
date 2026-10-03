@@ -7,6 +7,7 @@ target_sources(app PRIVATE
 	src/main.c
 	src/report_engine.c
 	src/lever.c
+	src/handle_decode.c
 	src/leds.c
 	src/transport_usb.c
 	src/transport_ble.c

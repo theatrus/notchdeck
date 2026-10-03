@@ -75,3 +75,10 @@ are not provided. Verify final assembly rotation in the assembler's CPL preview.
   the left. [Samtec catalog package drawing](https://datasheet.lcsc.com/datasheet/pdf/75565f450863f224a13c3fa6d9c6afc1.pdf?productCode=C448647)
   gives the keyed body envelope of 5.08×11.18mm. The selected `-K` option has no
   alignment holes; courtyard adds 0.5mm to the pad/body envelope.
+
+### TCA9543APWR (Rev C)
+
+Project-authored `notchdeck:TCA9543APWR` symbol, own work, transcribed from the
+[TI TCA9543A datasheet pin-functions table](https://www.ti.com/lit/ds/symlink/tca9543a.pdf).
+PW/TSSOP14 mapping: 1=A0,2=A1,3=RESET,4=INT0,5=SD0,6=SC0,7=GND,8=INT1,
+9=SD1,10=SC1,11=INT,12=SCL,13=SDA,14=VCC. Standard KiCad TSSOP14 footprint.

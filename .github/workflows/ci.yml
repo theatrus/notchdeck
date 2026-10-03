@@ -28,6 +28,13 @@ jobs:
           toolchains: arm-zephyr-eabi
       - name: Build (nrf52840dk)
         run: west build -b nrf52840dk/nrf52840 firmware -d build
+      - name: Build Rev C handle profiles
+        run: |
+          for profile in combined_magnetic combined_gray dual_magnetic dual_gray dual_mixed dual_gray_power; do
+            west build -b nrf52840dk/nrf52840 firmware -d "build-$profile" -- \
+              -DDTC_OVERLAY_FILE=boards/notchdeck_rev_c.overlay \
+              "-DEXTRA_CONF_FILE=configs/rev_c.conf;configs/$profile.conf"
+          done
       - name: Collect artifacts
         run: |
           mkdir -p dist
@@ -52,25 +59,19 @@ jobs:
         working-directory: hardware
         run: |
           kicad-cli version
-          # Library validation — the meaningful check while the schematic is an
-          # empty scaffold. These are fatal: a library regression fails CI.
-          kicad-cli sym upgrade lib/symbols/notchdeck.kicad_sym
-          kicad-cli fp upgrade lib/footprints.pretty
-          # ERC + BOM are non-fatal for now: the empty scaffold is authored by a
-          # newer KiCad than this image (10.0.3 vs 10.0.0), so the load can fail
-          # on a format skew. Tighten these once real schematic capture lands and
-          # the CI image matches the authoring version. (kicad-cli direct: the
-          # image may not ship `make`.)
-          kicad-cli sch erc notchdeck-one/notchdeck-one.kicad_sch \
-            || echo "::warning::schematic ERC skipped (empty scaffold / KiCad version skew)"
+          python3 scripts/notchdeck-netcheck.py
+          python3 scripts/notchdeck-boardcheck.py
           kicad-cli sch export bom \
             --output notchdeck-one/jlcpcb_bom.csv \
-            --fields '${ITEM_NUMBER},Reference,Value,Footprint,${QUANTITY},LCSC,MPN,Manufacturer' \
-            --labels 'Item,Designator,Comment,Footprint,Qty,LCSC Part #,MPN,Manufacturer' \
-            --group-by 'Value,Footprint' \
-            --exclude-dnp \
-            notchdeck-one/notchdeck-one.kicad_sch \
-            || echo "::warning::BOM export skipped (empty scaffold / KiCad version skew)"
+            --fields '${ITEM_NUMBER},Reference,Value,Footprint,${QUANTITY},LCSC,MPN,Manufacturer,BOM Comments' \
+            --labels 'Item,Designator,Comment,Footprint,Qty,LCSC Part #,MPN,Manufacturer,Notes' \
+            --group-by 'Value,Footprint,LCSC,MPN,Manufacturer' \
+            --ref-range-delimiter '' --exclude-dnp \
+            notchdeck-one/notchdeck-one.kicad_sch
+          python3 scripts/notchdeck-bomcheck.py
+          kicad-cli pcb drc --schematic-parity --format json \
+            -o /tmp/notchdeck-drc.json notchdeck-one/notchdeck-one.kicad_pcb
+          python3 -c 'import json; d=json.load(open("/tmp/notchdeck-drc.json")); assert not d["violations"] and not d["schematic_parity"]; print(len(d["unconnected_items"]), "unrouted items (floorplan)")'
       - uses: actions/upload-artifact@v4
         with:
           name: notchdeck-one-bom
