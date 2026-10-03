@@ -47,11 +47,11 @@ jobs:
           if-no-files-found: warn
 
   # Hardware sanity: KiCad libraries parse, schematic ERC, BOM exports.
-  # Uses the KiCad 9+/nightly CLI; bump the tag if the project format outpaces it.
+  # Pinned release with libraries; the old nightly tag predates the file format.
   hardware-checks:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/kicad/kicad:nightly
+      image: ghcr.io/kicad/kicad:10.0.1-full@sha256:4af6719b866c269157c77aef47ddd9c045372ea5eba5b6edd35ce1450b14a0a6
       options: --user root      # kicad image defaults to a non-root user; runner temp needs root
     steps:
       - uses: actions/checkout@v5

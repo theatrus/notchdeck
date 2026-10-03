@@ -874,8 +874,8 @@ wiring = ""
 pro = []
 mcu_pins = []
 for sh, ports, y, h in [
-    (POWER, PWR_PORTS, 12, 19),
-    (LEVER, LEVER_PORTS, 33, 23),
+    (POWER, PWR_PORTS, 12, 18),
+    (LEVER, LEVER_PORTS, 33, 22),
     (CONTROLS, CTRL_PORTS, 58, 42),
 ]:
     pins = []
