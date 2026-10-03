@@ -42,13 +42,14 @@ jobs:
       - name: Collect artifacts
         run: |
           mkdir -p dist
-          cp build/zephyr/zephyr.uf2 dist/notchdeck-one.uf2 || true
-          cp build/zephyr/zephyr.hex dist/notchdeck-one.hex || true
+          # NCS sysbuild places this app's outputs under its firmware domain.
+          cp build/firmware/zephyr/zephyr.uf2 dist/notchdeck-one.uf2
+          cp build/firmware/zephyr/zephyr.hex dist/notchdeck-one.hex
       - uses: actions/upload-artifact@v4
         with:
           name: notchdeck-one-firmware
           path: dist/
-          if-no-files-found: warn
+          if-no-files-found: error
 
   # Hardware sanity: KiCad libraries parse, schematic ERC, BOM exports.
   # Pinned release with libraries; the old nightly tag predates the file format.
@@ -82,4 +83,4 @@ jobs:
         with:
           name: notchdeck-boms
           path: hardware/*/jlcpcb_bom.csv
-          if-no-files-found: warn
+          if-no-files-found: error
