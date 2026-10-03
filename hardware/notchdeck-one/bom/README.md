@@ -33,13 +33,19 @@ estimating coverage. The lowest coverage items are:
 | [JST PH 2-pin, C295747](https://jlcpcb.com/partdetail/C295747) | 17,701 | 5 | 3,540 |
 | [MCP73832 charger, C38066](https://jlcpcb.com/partdetail/C38066) | 5,112 | 1 | 5,112 |
 
-The intended build quantity has not been specified. Board equivalents are integer
-available quantity divided by parts per board; they exclude assembly attrition,
-spares and inventory reservations. They are not a guaranteed build capacity.
-The public browser session was signed out: **private stock is unverified and has
-not been counted**. If a future check finds shortages or unclear availability,
-ask the owner to confirm private-stock part numbers and usable quantities before
-substituting. No parts were purchased or reserved.
+The requested build is **five boards: 575 installed components**. Every public
+available quantity exceeds the five-board requirement, recorded in the CSV.
+Board equivalents are integer available quantity divided by parts per board;
+they exclude assembly attrition, spares and inventory reservations. They are not
+a guaranteed build capacity.
+
+This public-stock check does not count private inventory. A separate shared local
+snapshot is saved one directory above the repository as
+`jlcpcb-private-inventory.csv`, for use across projects. It preserves JLCPCB,
+global-sourcing and consigned balances separately; reserved/incoming fields are
+blank when not exposed by the library table. Use exact catalog codes for matching.
+If a future check finds shortages or unclear availability, confirm usable private
+quantities with the owner before substituting. No parts were purchased or reserved.
 
 ## Files and source of truth
 
