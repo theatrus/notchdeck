@@ -22,6 +22,7 @@
 # Requires kicad-cli (KiCad 9+/10) on PATH.
 
 KICAD_CLI ?= kicad-cli
+KICAD_PYTHON ?= /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3.9
 
 # Add new PCB projects here.
 PROJECTS    := notchdeck-one
@@ -52,6 +53,7 @@ help:
 	@echo "  gen-<project>      Regenerate schematic from scripts/<project>.schgen.py"
 	@echo "  check-<project>    Sanity-check schematic (comps/footprints/dups/ERC)"
 	@echo "  verify-notchdeck-one  Strict ERC + complete controller pin/net audit"
+	@echo "  verify-pcb-notchdeck-one  Complete schematic/PCB pad-net and UUID audit"
 	@echo "  render-<project>   Render schematic sheets to PNG for visual review"
 	@echo "  clean-docs         Remove generated docs"
 	@echo "  clean-jlc          Remove generated JLCPCB packages"
@@ -131,3 +133,7 @@ $(foreach p,$(PROJECTS),$(eval $(call PROJECT_TEMPLATE,$(p))))
 .PHONY: verify-notchdeck-one
 verify-notchdeck-one:
 	@KICAD_CLI=$(KICAD_CLI) python3 $(SCRIPTS_DIR)/notchdeck-netcheck.py
+
+.PHONY: verify-pcb-notchdeck-one
+verify-pcb-notchdeck-one:
+	@KICAD_CLI=$(KICAD_CLI) $(KICAD_PYTHON) $(SCRIPTS_DIR)/notchdeck-boardcheck.py

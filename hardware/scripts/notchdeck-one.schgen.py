@@ -563,7 +563,8 @@ for pins, ep, y, x in [(["A7", "B7"], 1, 23, 32), (["A6", "B6"], 3, 25, 36)]:
     end = s.pin("U7", ep)
     s.wire(joint, (45 * G, joint[1]), (45 * G, end[1]), end)
 for a, b, n in [(1, 6, "USB_DM"), (3, 4, "USB_DP")]:
-    s.stub("U7", a, n, length=1)
+    # The input already has a wire from J1; a reverse stub overlaps it.
+    s.label(n, s.pin("U7", a), 180)
     s.stub("U7", b, n)
 s.stub("U7", 5, "USB_VBUS")
 s.stub("U7", 2, "GND", kind="power")
@@ -837,9 +838,11 @@ for sh, ports, y, h in [
             yy = (y + 3 + len(ports) * 2 + i * 2) * G
             pins.append((n, "input", 108 * G, yy, 180))
             wiring += K.w_wire(100 * G, yy, 108 * G, yy) + K.w_label(n, 100 * G, yy, 180)
-    blocks += K.w_sheet(sh["name"], sh["file"], sh["uuid"], 108 * G, y * G, 41 * G, h * G, pins)
+    blocks += K.w_sheet(sh["name"], sh["file"], sh["uuid"], 108 * G, y * G, 41 * G, h * G, pins,
+                        project="notchdeck-one", parent_path=f"/{ROOT_UUID}", page=sh["page"])
     pro.append([sh["uuid"], sh["name"]])
-blocks += K.w_sheet(MCU["name"], MCU["file"], MCU["uuid"], 20 * G, 12 * G, 37 * G, 84 * G, mcu_pins)
+blocks += K.w_sheet(MCU["name"], MCU["file"], MCU["uuid"], 20 * G, 12 * G, 37 * G, 84 * G, mcu_pins,
+                    project="notchdeck-one", parent_path=f"/{ROOT_UUID}", page=MCU["page"])
 pro.insert(0, [MCU["uuid"], MCU["name"]])
 wiring += K.text_note(
     "NOTCHDECK ONE / CONTROLLER INTERCONNECT\n3V3 and GND are global power rails; signals use explicit hierarchical ports.",
@@ -847,7 +850,7 @@ wiring += K.text_note(
     7 * G,
 )
 wiring += K.text_note(
-    "Two isolated I2C buses: AS5600 and MAX17048 both use address 0x36.\nUSB powers the RGB array; battery powers controller + sensors. PCB layout remains to be done.",
+    "Two isolated I2C buses: AS5600 and MAX17048 both use address 0x36.\nUSB powers the RGB array; battery powers controller + sensors. PCB is a provisional, unrouted floorplan.",
     20 * G,
     104 * G,
 )

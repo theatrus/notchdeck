@@ -10,6 +10,9 @@ macOS app bundle (`/Applications/KiCad/KiCad.app/...`).
 | `kschgen.py` | — | Generic generation engine imported by the `*.schgen.py` manifests. |
 | `kicad-sch-check.py` | `make check-<project>` | Sanity-check a schematic: component count, missing footprints, duplicate refs, ERC tally. Exits non-zero on a structural problem. |
 | `kicad-sch-render.sh` | `make render-<project>` | Render schematic sheet(s) to PNG for a quick visual review. |
+| `notchdeck-netcheck.py` | `make verify-notchdeck-one` | Independent complete pin/net contract and strict native ERC. |
+| `notchdeck-boardcheck.py` | `make verify-pcb-notchdeck-one` | Compare every PCB pad, footprint identity and schematic UUID path to the native netlist. |
+| `notchdeck-floorplan.py` | — | Seed the provisional 4×4 PCB placement; subsequent edits belong in the saved PCB. |
 | `jlcpcb-package.sh` | `make jlc-<project>` | Gerbers + drill + BOM + CPL → JLCPCB zip. |
 
 ## Generating a schematic from a manifest
@@ -23,7 +26,7 @@ sheet symbols + one child `.kicad_sch` per block, every part resolving to a real
 library symbol + footprint, `extends`-derived symbols handled).
 
 ```sh
-make gen-notchdeck-one      # rewrite the sheets from scripts/notchdeck-one.schgen.py
+make gen-notchdeck-one      # generate missing sheets; keep existing files
 make check-notchdeck-one    # verify it
 make render-notchdeck-one   # eyeball it
 ```
@@ -34,6 +37,9 @@ wired or explicitly NC. The root connects MCU, Power, Lever and Controls.
 By default, `gen` keeps existing sheets intact. Close the NotchDeck schematic editor,
 then use `KSCHGEN_FORCE=1 make gen-notchdeck-one` to apply manifest changes.
 Manual editor changes must be reflected in the manifest before a forced rebuild.
+The wired-sheet writer retains placed-symbol UUIDs by reference so forced rebuilds
+keep existing PCB footprint associations. Root sheet instances include explicit
+page numbers and the project records the actual root UUID.
 
 `make verify-notchdeck-one` exports KiCad XML and compares **every endpoint** to
 `scripts/notchdeck-netcheck.py`, then requires zero ERC violations. This independent
@@ -50,6 +56,26 @@ manifests when writing pin maps or wiring tables that need alignment.
 **A new board:** copy an existing `*.schgen.py`, change the `register_*` calls,
 the component lists and the notes, then add the project to `PROJECTS` in the
 `Makefile`. No engine changes needed.
+
+## PCB placement and consistency
+
+`make verify-pcb-notchdeck-one` requires a Python interpreter with KiCad's `pcbnew`
+module. The Makefile defaults to the macOS KiCad bundled Python; override
+`KICAD_PYTHON` elsewhere. Both new PCB tools respect `KICAD_CLI` (default
+`kicad-cli` on PATH). The audit loads a temporary board copy to keep project
+settings read-only. Native DRC remains a separate check:
+
+```sh
+make verify-pcb-notchdeck-one
+kicad-cli pcb drc --schematic-parity notchdeck-one/notchdeck-one.kicad_pcb
+```
+
+`notchdeck-floorplan.py` is a seed script, **not a round-trip PCB generator**.
+It refuses to overwrite a populated board unless explicitly passed
+`--replace-unrouted`, and always refuses boards containing tracks, vias or copper
+pours. Close the PCB editor before using it. SaveBoard runs in a temporary
+directory and copies only the PCB back, preserving project design rules.
+Normal `make gen` never runs it. Edit the saved board in KiCad from this point on.
 
 ## Notes
 

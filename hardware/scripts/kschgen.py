@@ -509,7 +509,7 @@ def w_symbol(c, project, instances):
          "\t\t(exclude_from_sim no)\n"
          f"\t\t(in_bom {inbom})\n\t\t(on_board yes)\n"
          f"\t\t(dnp {dnp})\n"
-         f'\t\t(uuid "{U()}")\n')
+         f'\t\t(uuid "{c.get("uuid") or U()}")\n')
     rx, ry = c.get("ref_offset", (3.81, -2.54))
     vx, vy = c.get("value_offset", (3.81, 2.54))
     s += _prop("Reference", ref0, x + rx, y + ry, hide=ref0.startswith("#"), angle=c.get("angle", 0) % 180)
@@ -531,7 +531,7 @@ def w_symbol(c, project, instances):
 
 
 # ---- sheet symbol (with hierarchical pins) ---------------------------------
-def w_sheet(name, file, uuid, x, y, w, h, pins):
+def w_sheet(name, file, uuid, x, y, w, h, pins, *, project=None, parent_path=None, page=None):
     """A sheet symbol. pins = [(name, ptype, px, py, angle), ...] on its border."""
     s = ("\t(sheet\n"
          f"\t\t(at {x:.4f} {y:.4f})\n\t\t(size {w:.4f} {h:.4f})\n"
@@ -551,6 +551,10 @@ def w_sheet(name, file, uuid, x, y, w, h, pins):
               f'\t\t\t(at {px:.4f} {py:.4f} {pa})\n'
               f'\t\t\t(effects (font (size 1.27 1.27)) (justify {justify}))\n'
               f'\t\t\t(uuid "{U()}")\n\t\t)\n')
+    if project is not None:
+        assert parent_path is not None and page is not None
+        s += (f'\t\t(instances (project "{esc(project)}" '
+              f'(path "{parent_path}" (page "{page}"))))\n')
     s += "\t)\n"
     return s
 
@@ -577,6 +581,20 @@ def write_wired_child(sh, project, root_uuid, title, paper, force=False):
     if os.path.exists(path) and not _force_regen(force):
         print(f"  {sh['file']:24s} kept existing ({sh['uuid']})")
         return
+    # KiCad and this emitter both use one-tab indentation for placed symbols.
+    # Retain their identities so a forced regeneration does not orphan PCB
+    # footprint associations. Library symbols are quoted and do not match.
+    existing_ids = {}
+    if os.path.exists(path):
+        previous = open(path, encoding="utf-8").read()
+        for block in re.findall(r'\n\t\(symbol\n(.*?)\n\t\)', previous, re.S):
+            ref = re.search(r'\(property "Reference" "([^"]+)"', block)
+            uid = re.search(r'\(uuid "([^"]+)"', block)
+            if ref and uid:
+                existing_ids[ref.group(1)] = uid.group(1)
+    for c, inst in sh["comps"]:
+        if inst[0][1] in existing_ids:
+            c["uuid"] = existing_ids[inst[0][1]]
     ctitle = dict(title=f'{title.get("title","")} — {sh["title"]}',
                   date=title.get("date"), rev=title.get("rev"),
                   company=title.get("company"))
@@ -621,8 +639,11 @@ def write_root(project, proj_dir, root_uuid, title, sheet_symbols, wiring,
     if os.path.exists(pro):
         pj = json.load(open(pro))
         sheets_array = [[root_uuid, project]] + pro_sheets
-        if pj.get("sheets") != sheets_array:
+        top_levels = [dict(filename=f"{project}.kicad_sch", name=project, uuid=root_uuid)]
+        if (pj.get("sheets") != sheets_array
+                or pj.get("schematic", {}).get("top_level_sheets") != top_levels):
             pj["sheets"] = sheets_array
+            pj.setdefault("schematic", {})["top_level_sheets"] = top_levels
             json.dump(pj, open(pro, "w"), indent=2)
             print(f"updated {project}.kicad_pro sheets array")
 

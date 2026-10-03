@@ -20,6 +20,8 @@ twister-out*/
 *.kicad_pcb-bak
 *.kicad_sch-bak
 *.kicad_prl
+# Local KiCad plugin diagnostic output
+*kleplace.log
 fp-info-cache
 ~*.*
 .history/
@@ -29,6 +31,8 @@ hardware/*/docs/images/
 hardware/*/jlcpcb/
 hardware/*/*-jlcpcb.zip
 hardware/*/jlcpcb_bom.csv
+hardware/datasheets/*.pdf
+hardware/datasheets/*.txt
 
 # Editor / OS
 .DS_Store

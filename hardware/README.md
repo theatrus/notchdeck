@@ -34,7 +34,12 @@ The wiring and layout are captured in [`scripts/notchdeck-one.schgen.py`](script
 `make verify-notchdeck-one` checks KiCad's exported netlist against an independent
 pin-level contract: **116 components, 80 nets, 360 pin endpoints, 14 explicit NCs**.
 KiCad 10.0.6 ERC reports **zero errors and zero warnings**, without exclusions.
-All components have footprints; the PCB remains an empty scaffold.
+All components have footprints. The PCB now has a **provisional 145 × 105 mm,
+four-layer floorplan with a 4×4 button layout on 19 mm pitch** (2026-10-03).
+All 116 electrical footprints match the schematic, with four added mounting holes.
+Native PCB DRC reports zero rule/parity violations and **313 unrouted connections**.
+See [`FLOORPLAN.md`](notchdeck-one/FLOORPLAN.md) for placement details, evidence and
+remaining mechanical/electrical review items. The board is not ready to fabricate.
 
 Electrical corrections made during capture:
 
@@ -65,9 +70,10 @@ procurement IDs must be selected; stale LCSC IDs were removed.
 
 ```sh
 make help                    # list targets
-make gen-notchdeck-one       # regenerate the schematic from its manifest
+make gen-notchdeck-one       # generate missing sheets; preserve existing schematic
 make check-notchdeck-one     # structural sanity check
 make verify-notchdeck-one    # strict ERC + all expected net endpoints
+make verify-pcb-notchdeck-one # schematic/PCB pad-net and UUID consistency
 make render-notchdeck-one    # render sheets to PNG for visual review
 make docs-notchdeck-one      # schematic SVGs + PCB SVGs + 3D renders + JLCPCB BOM
 make bom-notchdeck-one       # just the BOM (jlcpcb_bom.csv)

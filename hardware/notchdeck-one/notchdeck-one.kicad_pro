@@ -274,7 +274,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "0.1"
+      "sch_revision": "B"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -570,7 +570,28 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Power",
+        "pattern": "+3V3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/USB_VBUS"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Power/BAT+"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Power/VSYS"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -708,7 +729,7 @@
       {
         "filename": "notchdeck-one.kicad_sch",
         "name": "notchdeck-one",
-        "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+        "uuid": "9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01"
       }
     ],
     "used_designators": "",
