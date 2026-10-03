@@ -177,7 +177,7 @@ def main():
             check=True,
         )
         result = audit(xml_file)
-        subprocess.run(
+        erc_run = subprocess.run(
             [
                 cli,
                 "sch",
@@ -189,11 +189,17 @@ def main():
                 str(erc_file),
                 str(schematic),
             ],
-            check=True,
+            check=False,
         )
         report = json.loads(erc_file.read_text())
         violations = [v for s in report["sheets"] for v in s["violations"]]
-        assert not violations, violations
+        if violations:
+            from collections import Counter
+            print("ERC violation types:", dict(Counter(v["type"] for v in violations)))
+            for violation in violations[:8]:
+                print(json.dumps(violation, indent=2))
+        assert not violations, f"{len(violations)} ERC violations"
+        erc_run.check_returncode()
         print("PASS: KiCad ERC, zero errors and zero warnings")
         if output := os.environ.get("NETCHECK_OUT"):
             folder = Path(output)

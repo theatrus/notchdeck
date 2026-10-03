@@ -59,6 +59,10 @@ jobs:
         working-directory: hardware
         run: |
           kicad-cli version
+          # Headless runs have no first-launch wizard to install global tables.
+          mkdir -p ~/.config/kicad/10.0
+          cp /usr/share/kicad/template/sym-lib-table ~/.config/kicad/10.0/
+          cp /usr/share/kicad/template/fp-lib-table ~/.config/kicad/10.0/
           python3 scripts/notchdeck-netcheck.py
           python3 scripts/notchdeck-boardcheck.py
           kicad-cli sch export bom \
