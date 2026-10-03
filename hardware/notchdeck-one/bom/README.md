@@ -12,6 +12,35 @@ each query URL and timestamp is retained in `jlcpcb-parts.json`. LCSC's separate
 inventory was not used as JLCPCB stock. Recheck JLCPCB stock, assembly eligibility,
 fees, attrition and CPL orientation when preparing an order.
 
+## Direct JLCPCB stock check
+
+Rechecked all 29 exact part numbers on **JLCPCB's own public product pages** on
+**2026-10-03, 20:18–20:20 UTC (13:18–13:20 PDT)**. All have positive **Available
+Order Qty**, covering all 115 placements per board. No substitutions are needed
+for zero stock. These direct observations supersede the older community stock
+snapshot for availability; category and price snapshots were not refreshed.
+
+[`jlcpcb-stock.csv`](jlcpcb-stock.csv) records every part's headline stock,
+available order quantity, minimum quantity, usage per board, timestamp and URL.
+Use **Available Order Qty**, not the larger headline **In Stock** figure, when
+estimating coverage. The lowest coverage items are:
+
+| Part | Available order quantity | Used per board | Board equivalents before attrition |
+|---|---:|---:|---:|
+| [E73-2G4M08S1C, C356849](https://jlcpcb.com/partdetail/C356849) | 1,231 | 1 | 1,231 |
+| [Samtec SWD header, C448647](https://jlcpcb.com/partdetail/C448647) | 1,931 | 1 | 1,931 |
+| [JST PH 3-pin, C265101](https://jlcpcb.com/partdetail/C265101) | 2,132 | 1 | 2,132 |
+| [JST PH 2-pin, C295747](https://jlcpcb.com/partdetail/C295747) | 17,701 | 5 | 3,540 |
+| [MCP73832 charger, C38066](https://jlcpcb.com/partdetail/C38066) | 5,112 | 1 | 5,112 |
+
+The intended build quantity has not been specified. Board equivalents are integer
+available quantity divided by parts per board; they exclude assembly attrition,
+spares and inventory reservations. They are not a guaranteed build capacity.
+The public browser session was signed out: **private stock is unverified and has
+not been counted**. If a future check finds shortages or unclear availability,
+ask the owner to confirm private-stock part numbers and usable quantities before
+substituting. No parts were purchased or reserved.
+
 ## Files and source of truth
 
 - [`jlcpcb-parts.json`](jlcpcb-parts.json): reviewed part choices, reference assignments,
@@ -21,7 +50,8 @@ fees, attrition and CPL orientation when preparing an order.
   comma-separated designators and the required `LCSC Part #` column. No reference ranges.
 - [`bom.csv`](bom.csv): BOM-skill tracking export. `Chosen_Distributor=LCSC` denotes
   its production sourcing channel. `LC_Stock` is intentionally blank because this
-  review checked JLCPCB inventory, recorded separately in the JSON.
+  review checked JLCPCB inventory. Current direct observations are in
+  `jlcpcb-stock.csv`; the older community snapshot is retained in the JSON.
 - [`../../datasheets/manifest.json`](../../datasheets/manifest.json): selected datasheet
   URLs and local cache paths. PDFs stay in `hardware/datasheets/` and are git-ignored.
 

@@ -7,6 +7,7 @@ code, exact manufacturer/MPN, datasheet and assembly notes for each component.
 - [JLCPCB upload BOM](notchdeck-one/bom/jlcpcb-bom.csv)
 - [Tracking BOM](notchdeck-one/bom/bom.csv)
 - [Reviewed selection data and dated stock snapshot](notchdeck-one/bom/jlcpcb-parts.json)
+- [Direct JLCPCB available-stock audit, 2026-10-03](notchdeck-one/bom/jlcpcb-stock.csv)
 - [Sourcing evidence, changes and review limits](notchdeck-one/bom/README.md)
 
 The PCB remains an unrouted placement study. Catalog matching does not establish
@@ -95,6 +96,7 @@ make verify-notchdeck-one verify-pcb-notchdeck-one verify-bom-notchdeck-one
 ```
 
 Run from `hardware/`. The PCB must be updated from the schematic after a part or
-footprint change. Refresh the tracked CSV snapshots after checks pass. Stock is
-a dated community JLCPCB catalog snapshot; recheck it and the CPL orientation in
+footprint change. Refresh the tracked CSV snapshots after checks pass. Direct JLCPCB
+stock observations are recorded separately from the older community snapshot;
+recheck availability and CPL orientation in
 JLCPCB before any future assembly order.
