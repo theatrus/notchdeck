@@ -3,7 +3,7 @@ source "Kconfig.zephyr"
 
 menu "NotchDeck handle interfaces"
 config NOTCHDECK_REV_C
-    bool "Use Rev C hardware (handle mux and Gray-code GPIO overlay)"
+    bool "Use Rev C/D hardware (handle mux and Gray-code GPIO overlay)"
     help
       Requires boards/notchdeck_rev_c.overlay. Leave disabled for legacy DK
       bring-up with an AS5600 wired directly to I2C0.

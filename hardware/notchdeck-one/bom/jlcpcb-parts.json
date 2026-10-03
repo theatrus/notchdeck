@@ -486,16 +486,9 @@
       "jlcpcb_unit_price_snapshot_usd": 0.2052,
       "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C295747&limit=20&full=true",
       "references": [
-        "J2",
-        "J5",
-        "J6",
-        "J7",
-        "J8",
-        "J12",
-        "J13",
-        "J14"
+        "J2"
       ],
-      "bom_comments": "Mating harnesses not included. J2: protected 1S cell, pin 1 positive / pin 2 ground. J5-J8: lever signal / ground."
+      "bom_comments": "Two-pin JST PH battery connector. Pin1=BAT+, pin2=GND. Mating harness separate."
     },
     "C318884": {
       "mpn": "TS-1187A-B-A-B",
@@ -665,6 +658,42 @@
         "D16"
       ],
       "bom_comments": "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+    },
+    "C265104": {
+      "mpn": "S5B-PH-SM4-TB(LF)(SN)",
+      "manufacturer": "JST",
+      "package": "SMD,P=2mm,Right Angle",
+      "description": "5-pin 2mm JST PH SMT side-entry header; 2A rated with AWG24",
+      "footprint": "Connector_JST:JST_PH_S5B-PH-SM4-TB_1x05-1MP_P2.00mm_Horizontal",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/d87682fbfaf1a1bc6a21af6a6a17fd27.pdf?productCode=C265104",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C265104",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 11310,
+      "jlcpcb_available_order_qty_snapshot": 11239,
+      "stock_source": "https://jlcpcb.com/partdetail/C265104",
+      "checked_at_utc": "2026-10-03T22:01:07Z",
+      "references": [
+        "J12"
+      ],
+      "bom_comments": "Rev D power Gray harness: pin1=GND, pins2..4=S0..S2, pin5=3V3. Passive cams leave supply cavity empty. Mating PHR-5 housing/crimps separate."
+    },
+    "C265405": {
+      "mpn": "S6B-PH-SM4-TB(LF)(SN)",
+      "manufacturer": "JST",
+      "package": "SMD,P=2mm,Right Angle",
+      "description": "6-pin 2mm JST PH SMT side-entry header; 2A rated with AWG24",
+      "footprint": "Connector_JST:JST_PH_S6B-PH-SM4-TB_1x06-1MP_P2.00mm_Horizontal",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/fd6b0599884a99953f02d32fdcec9311.pdf?productCode=C265405",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C265405",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 5539,
+      "jlcpcb_available_order_qty_snapshot": 5121,
+      "stock_source": "https://jlcpcb.com/partdetail/C265405",
+      "checked_at_utc": "2026-10-03T22:01:06.383Z",
+      "references": [
+        "J5"
+      ],
+      "bom_comments": "Rev D brake/mascon Gray harness: pin1=GND, pins2..5=S0..S3, pin6=3V3. Passive cams leave supply cavity empty. Mating PHR-6 housing/crimps separate."
     }
   },
   "non_assembly": {

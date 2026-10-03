@@ -1,4 +1,4 @@
-/* Independent sensor backends, shared notch processing; Rev C pinout in overlay. */
+/* Independent sensor backends, shared notch processing; Rev C/D MCU pinout in overlay. */
 #include "lever.h"
 #include "handle_calibration.h"
 #include <errno.h>

@@ -1,18 +1,20 @@
-# Rev C magnetic and Gray-coded handles
+# Rev D magnetic and Gray-coded handles
 
 The same PCB supports a combined 15-position mascon, or separate power and brake
 handles. Each handle independently uses an AS5600 magnetic sensor or Gray-coded
 contacts. Dual-handle ranges are power Off/P1–P5 and brake Release/B1–B8/EB.
 Both types are absolute: there is no incremental position count to lose at startup.
 Mechanical detents establish the feel and stable positions in either case.
+See the [own-build Japanese-style handle plan](07-japanese-handle-build.md) for
+mechanical arrangement, harness construction and provisional detent/cam targets.
 
 ## Connections
 
 | Handle | Magnetic | Gray contacts |
 |---|---|---|
-| Power (dual) | J10, mux channel 0; onboard U5 is the default sensor | J12=S0, J13=S1, J14=S2 |
-| Brake (dual) | J11, mux channel 1; requires an external sensor board | J5=S0, J6=S1, J7=S2, J8=S3 |
-| Combined mascon | J10/U5, mux channel 0 | J5–J8 as above |
+| Power (dual) | J10, mux channel 0; onboard U5 is the default sensor | J12: pins2–4=S0–S2 |
+| Brake (dual) | J11, mux channel 1; requires an external sensor board | J5: pins2–5=S0–S3 |
+| Combined mascon | J10/U5, mux channel 0 | J5 as above |
 
 J10/J11 are keyed four-pin JST PH: **1=3V3, 2=GND, 3=SDA, 4=SCL**. Use a 3.3V
 AS5600 board with local decoupling and no additional pull-ups. This is a short
@@ -26,7 +28,10 @@ Firmware selects channel 0 (0x01) or channel 1 (0x02) on the TCA9543A at 0x70,
 reads status/raw angle at 0x36, then deselects both. The fuel gauge at 0x36 remains
 on the independent I2C1 controller. Do not enable both mux channels simultaneously.
 
-Each contact connector has **1=signal, 2=GND**. A closed switch pulls its bit low;
+Rev D uses one connector per cam: **J12 power: 1=GND, 2–4=S0–S2, 5=3V3**;
+**J5 brake/mascon: 1=GND, 2–5=S0–S3, 6=3V3**. Leave the supply cavity
+empty for passive switch harnesses. These replace J5–J8/J12–J14 in Rev C; the
+MCU pin map is unchanged. A closed switch pulls its bit low;
 open is high. External 10k pull-ups, 1k series resistors and 100nF capacitors are
 already populated. Select gold/microload contacts qualified at 3.3V and roughly
 0.33mA, or revise the circuit for the selected switch's required current. Do not
@@ -118,7 +123,7 @@ Replace the final profile with one of:
 | `dual_mixed.conf` | Magnetic | Gray |
 | `dual_gray_power.conf` | Gray | Magnetic |
 
-The Rev C overlay replaces DK pin assignments, disables conflicting DK peripherals,
+The Rev C overlay also applies to Rev D (identical GPIO assignments). It replaces DK pin assignments, disables conflicting DK peripherals,
 configures NFC pins as GPIO, reset in UICR and calibrated RC LFCLK. It still uses
 the DK platform/flash layout for SDK bring-up, not a production board/bootloader.
 The default build without that overlay remains the direct-I2C DK test setup.
@@ -143,10 +148,10 @@ an unplugged sensor never causes automatic fallback to another backend.
 
 `make -C firmware test` checks all cam patterns/adjacent transitions, angle wrap and
 reversed travel, calibration rejection, hysteresis, debounce, uptime wrap, stale
-input, brake priority and neutral re-arming. CI compiles all six Rev C profiles.
-Native hardware checks cover 145 symbols, 442 pin endpoints, schematic/PCB identity
-and the 144-part JLCPCB assembly BOM. ERC and floorplan DRC are clean apart from
-383 intentionally unrouted connections.
+input, brake priority and neutral re-arming. CI compiles all six profiles using the shared Rev C/D pin map.
+Native hardware checks cover 140 symbols, 439 pin endpoints, schematic/PCB identity
+and the 139-part JLCPCB assembly BOM. ERC and floorplan DRC are clean apart from
+380 intentionally unrouted connections.
 
 Before hardware use: build the cams or sensor carriers, measure/calibrate magnetic
 handles, scope the harness signals, verify unplug/reconnect and startup behavior,

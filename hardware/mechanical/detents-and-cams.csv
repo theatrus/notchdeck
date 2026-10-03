@@ -1,0 +1,32 @@
+handle,position,provisional_angle_deg,levels_msb_first,switches_closed_to_ground,header,header_pins_connected_to_pin1
+power,Off,0,001,S1 S2,J12,3 4
+power,P1,10,011,S2,J12,4
+power,P2,20,010,S0 S2,J12,2 4
+power,P3,30,110,S0,J12,2
+power,P4,40,100,S0 S1,J12,2 3
+power,P5,50,101,S1,J12,3
+brake,Release,0,0000,S0 S1 S2 S3,J5,2 3 4 5
+brake,B1,12,0001,S1 S2 S3,J5,3 4 5
+brake,B2,24,0011,S2 S3,J5,4 5
+brake,B3,36,0010,S0 S2 S3,J5,2 4 5
+brake,B4,48,0110,S0 S3,J5,2 5
+brake,B5,60,0111,S3,J5,5
+brake,B6,72,0101,S1 S3,J5,3 5
+brake,B7,84,0100,S0 S1 S3,J5,2 3 5
+brake,B8,96,1100,S0 S1,J5,2 3
+brake,EB,120,1101,S1,J5,3
+combined,EB,-70,1110,S0,J5,2
+combined,B8,-56,1010,S0 S2,J5,2 4
+combined,B7,-49,1011,S2,J5,4
+combined,B6,-42,1001,S1 S2,J5,3 4
+combined,B5,-35,1000,S0 S1 S2,J5,2 3 4
+combined,B4,-28,0000,S0 S1 S2 S3,J5,2 3 4 5
+combined,B3,-21,0001,S1 S2 S3,J5,3 4 5
+combined,B2,-14,0011,S2 S3,J5,4 5
+combined,B1,-7,0010,S0 S2 S3,J5,2 4 5
+combined,N,0,0110,S0 S3,J5,2 5
+combined,P1,7,0111,S3,J5,5
+combined,P2,14,0101,S1 S3,J5,3 5
+combined,P3,21,0100,S0 S1 S3,J5,2 3 5
+combined,P4,28,1100,S0 S1,J5,2 3
+combined,P5,35,1101,S1,J5,3

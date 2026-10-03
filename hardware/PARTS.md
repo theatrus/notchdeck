@@ -1,6 +1,6 @@
 # NotchDeck One — selected JLCPCB parts
 
-The current assembly BOM has **144 components across 32 JLCPCB catalog part numbers**.
+The current assembly BOM has **139 components across 34 JLCPCB catalog part numbers**.
 Selections were checked on **2026-10-03**. The schematic exports the selected LCSC
 code, exact manufacturer/MPN, datasheet and assembly notes for each component.
 
@@ -40,7 +40,9 @@ assembly eligibility, final stock, electrical margins or enclosure fit.
 | J1 | 1 | TYPE-C-31-M-12 | Korean Hroparts Elec | [C165948](https://jlcpcb.com/partdetail/C165948) | `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` |
 | J9 | 1 | S3B-PH-SM4-TB(LF)(SN) | JST | [C265101](https://jlcpcb.com/partdetail/C265101) | `Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal` |
 | J10, J11 | 2 | S4B-PH-SM4-TB(LF)(SN) | JST | [C265102](https://jlcpcb.com/partdetail/C265102) | `Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal` |
-| J2, J5, J6, J7, J8, J12, J13, J14 | 8 | S2B-PH-SM4-TB(LF)(SN) | JST | [C295747](https://jlcpcb.com/partdetail/C295747) | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` |
+| J12 | 1 | S5B-PH-SM4-TB(LF)(SN) | JST | [C265104](https://jlcpcb.com/partdetail/C265104) | `Connector_JST:JST_PH_S5B-PH-SM4-TB_1x05-1MP_P2.00mm_Horizontal` |
+| J5 | 1 | S6B-PH-SM4-TB(LF)(SN) | JST | [C265405](https://jlcpcb.com/partdetail/C265405) | `Connector_JST:JST_PH_S6B-PH-SM4-TB_1x06-1MP_P2.00mm_Horizontal` |
+| J2 | 1 | S2B-PH-SM4-TB(LF)(SN) | JST | [C295747](https://jlcpcb.com/partdetail/C295747) | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` |
 | SW1… (see CSV for exact list) | 17 | TS-1187A-B-A-B | XKB Connection | [C318884](https://jlcpcb.com/partdetail/C318884) | `Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A` |
 | U1 | 1 | E73-2G4M08S1C | Ebyte | [C356849](https://jlcpcb.com/partdetail/C356849) | `notchdeck:EBYTE_E73-2G4M08S1C` |
 | J3 | 1 | FTSH-105-01-L-DV-K-TR | Samtec | [C448647](https://jlcpcb.com/partdetail/C448647) | `notchdeck:Samtec_FTSH-105-01-L-DV-K` |
@@ -81,8 +83,9 @@ keycaps and enclosure are outside this PCB BOM.
   use its documented pad map and USB-only supply, with a firmware current limit.
 - D17: **XL-1608SYGC-06 / C965805**, low-voltage yellow-green indicator.
   D18: **KT-0603R / C2286**, red charge indicator. They must remain separate BOM rows.
-- J2, J5–J8 and J12–J14 share the same two-pin JST part; harness functions and pin assignments
-  differ. J9 uses the matching three-pin family member.
+- J2 is the two-pin battery port; J9 is the three-pin reverser. Rev D uses
+  five-pin J12 for power Gray and six-pin J5 for brake/mascon Gray, distinct
+  from the four-pin J10/J11 magnetic connectors. See the handle guide for pinouts.
 - U4 remains **MAX17048G+T10 / C2682616**. Its exact exposed-pad land pattern still
   needs review, as does the imported E73 footprint and antenna clearance.
 

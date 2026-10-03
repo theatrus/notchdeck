@@ -71,13 +71,14 @@ See `docs/06-handle-interfaces.md` for connector pinouts, cam maps and calibrati
 U9 TCA9543A (0x70) separates two address-0x36 magnetic channels on TWIM0; enable
 only one at a time. Channel0=power/combined J10/U5, channel1=brake J11. Remove both
 R37/R38 before using an external sensor on J10. MAX17048 stays on TWIM1.
-J5–J8 are four brake/combined Gray bits; J12–J14 use P0.29/P0.31/P0.30 for three
-power bits. No spare GPIO remains. New cam maps reserve all-open as invalid.
+J5 pins2–5 carry four brake/combined Gray bits; J12 pins2–4 carry three power
+bits on P0.29/P0.31/P0.30. Both use pin1 GND and final pin 3V3 (unwired in passive harnesses).
+Rev D replaces the individual Rev C bit connectors with 6-pin/5-pin keyed ports. No spare GPIO remains. New cam maps reserve all-open as invalid.
 
 ## Status
 
-**Revision C is wired.** Run `make verify-notchdeck-one`: zero ERC violations,
-all 442 endpoints checked. Q1 drain=BAT+, source=VSYS; R4 pulls gate down, R5=1k
+**Revision D is wired.** Run `make verify-notchdeck-one`: zero ERC violations,
+all 439 endpoints checked. Q1 drain=BAT+, source=VSYS; R4 pulls gate down, R5=1k
 from VBUS to gate. U3 is MCP73832 (open-drain STAT). RGB is USB-only through U8
 SN74AHCT1G125, with local decoupling; firmware must hold DIN low without USB.
 J9 is a 3-pin SPDT center-off reverser with midpoint bias and ADC filtering.

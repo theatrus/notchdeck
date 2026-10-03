@@ -2,7 +2,7 @@
 
 Connection plan to make the KiCad schematic capture mechanical. Pad numbers are the
 **E73-2G4M08S1C** module pads (per `lib/symbols/notchdeck:E73-2G4M08S1C`, confirmed against
-Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev C
+Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev D
 default — adjust freely in capture, they're all software-defined.
 
 > **Two design constraints baked in here:**
@@ -50,13 +50,13 @@ default — adjust freely in capture, they're all software-defined.
 | 43 | P0.10/NFC2 | BTN10 headlight | NFC→GPIO (UICR) |
 | 11 | P0.00/XL1 | BTN11 (or LFXO) | GPIO if no 32 kHz xtal |
 | 13 | P0.01/XL2 | BTN12 (or LFXO) | GPIO if no 32 kHz xtal |
-| 3 | P0.03/AIN1 | **LEVER_S0** | coded-switch bit 0 (J5); GPIO in, ext 10k pull-up + RC debounce |
-| 4 | P0.28/AIN4 | **LEVER_S1** | coded-switch bit 1 (J6); GPIO in, ext 10k pull-up + RC debounce |
-| 8 | P0.29/AIN5 | **POWER_S0** | power Gray bit 0, J12, external pull-up + RC |
-| 9 | P0.31/AIN7 | **POWER_S1** | power Gray bit 1, J13, external pull-up + RC |
-| 10 | P0.30/AIN6 | **POWER_S2** | power Gray bit 2, J14, external pull-up + RC |
-| 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J8); GPIO in, ext 10k pull-up + RC debounce |
-| 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J7); GPIO in, ext 10k pull-up + RC debounce |
+| 3 | P0.03/AIN1 | **LEVER_S0** | coded-switch bit 0 (J5.2); GPIO in, ext 10k pull-up + RC debounce |
+| 4 | P0.28/AIN4 | **LEVER_S1** | coded-switch bit 1 (J5.3); GPIO in, ext 10k pull-up + RC debounce |
+| 8 | P0.29/AIN5 | **POWER_S0** | power Gray bit 0, J12.2, external pull-up + RC |
+| 9 | P0.31/AIN7 | **POWER_S1** | power Gray bit 1, J12.3, external pull-up + RC |
+| 10 | P0.30/AIN6 | **POWER_S2** | power Gray bit 2, J12.4, external pull-up + RC |
+| 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J5.5); GPIO in, ext 10k pull-up + RC debounce |
+| 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J5.4); GPIO in, ext 10k pull-up + RC debounce |
 
 Budget: 12 momentary buttons + 4-way hat (16 HID buttons + hat), 2× I²C, WS2812, reverser
 ADC, 2 status inputs, four brake/combined Gray bits and three power Gray bits.
@@ -104,7 +104,7 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
 - **ESD:** add a low-cap TVS array on D+/D−/VBUS (e.g. USBLC6-2 / SRV05 class) near the
   connector. (U7 is populated.)
 
-## I²C buses and independent handle inputs (Rev C)
+## I²C buses and independent handle inputs (Rev D)
 
 - **TWIM0:** SDA=P0.26 (pad12), SCL=P0.06 (pad14), R9/R10 4.7k pull-ups.
   U9 TCA9543APWR at 0x70 isolates two AS5600 address-0x36 channels. A0/A1 are
@@ -128,12 +128,14 @@ sensor, then deselects both (0x00). Never select 0x03: identical sensor addresse
 would collide. A stuck downstream bus may still require reset or power cycling;
 this is an internal harness interface, not an industrial long-cable link.
 
-Gray contact inputs use pin1=signal, pin2=GND on each two-pin connector:
+Rev D Gray inputs use J5 (six pins) and J12 (five pins). Pin1=GND, then
+S0 upward; the final pin is 3V3 and is left unwired in passive contact harnesses.
+This consolidates seven Rev C connectors without changing any MCU assignments:
 
 | Role | Connectors | Nets / GPIOs | Input circuits |
 |---|---|---|---|
-| Brake or combined | J5–J8, S0–S3 | LEVER_S0–S3; P0.03/P0.28/P0.04/P0.05 | R14–17 10k pull-ups, R18–21 1k series, C14–17 100nF |
-| Power | J12–J14, S0–S2 | POWER_S0–S2; P0.29/P0.31/P0.30 | R31–33 10k pull-ups, R34–36 1k series, C41–43 100nF |
+| Brake or combined | J5.2–J5.5, S0–S3 | LEVER_S0–S3; P0.03/P0.28/P0.04/P0.05 | R14–17 10k pull-ups, R18–21 1k series, C14–17 100nF |
+| Power | J12.2–J12.4, S0–S2 | POWER_S0–S2; P0.29/P0.31/P0.30 | R31–33 10k pull-ups, R34–36 1k series, C41–43 100nF |
 
 Use contacts rated for microloads around **3.3V / 0.33mA**. A high-current switch
 may not reliably conduct such a small current. RC time constants are about1.1ms

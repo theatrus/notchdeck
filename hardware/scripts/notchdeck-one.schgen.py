@@ -31,7 +31,7 @@ K.register_stdlib(
     "Conn_ARM_JTAG_SWD_10",
     "Conn_ARM_SWD_TagConnect_TC2030-NL",
 )
-K.register_stdlib("Connector_Generic", "Conn_01x02", "Conn_01x03", "Conn_01x04")
+K.register_stdlib("Connector_Generic", "Conn_01x02", "Conn_01x03", "Conn_01x04", "Conn_01x05", "Conn_01x06")
 K.register_stdlib("Regulator_Linear", "AP2112K-3.3")
 K.register_stdlib("Battery_Management", "MCP73832-2-OT")
 K.register_stdlib("Power_Protection", "USBLC6-2SC6")
@@ -177,30 +177,9 @@ LEVER = dict(
     title="Lever sensing",
     page="4",
     big=[
-        # One 2-pin JST-PH per coded-switch bit (signal + GND), 4 switches from the mascon.
         dict(
-            ref="J5",
-            lib_id="Connector_Generic:Conn_01x02",
-            value="CODE S0",
-            fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-        ),
-        dict(
-            ref="J6",
-            lib_id="Connector_Generic:Conn_01x02",
-            value="CODE S1",
-            fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-        ),
-        dict(
-            ref="J7",
-            lib_id="Connector_Generic:Conn_01x02",
-            value="CODE S2",
-            fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-        ),
-        dict(
-            ref="J8",
-            lib_id="Connector_Generic:Conn_01x02",
-            value="CODE S3",
-            fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+            ref="J5", lib_id="Connector_Generic:Conn_01x06", value="BRAKE / MASCON GRAY",
+            fp="Connector_JST:JST_PH_S6B-PH-SM4-TB_1x06-1MP_P2.00mm_Horizontal",
         ),
     ],
     small=[
@@ -297,8 +276,8 @@ LEVER["small"] += [
     *[dict(ref=f"J{i}", lib_id="Connector_Generic:Conn_01x04", value=value,
            fp="Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal")
       for i, value in [(10, "POWER MAG"), (11, "BRAKE MAG")]],
-    *[dict(ref=f"J{12+i}", lib_id="Connector_Generic:Conn_01x02", value=f"POWER S{i}",
-           fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal") for i in range(3)],
+    dict(ref="J12", lib_id="Connector_Generic:Conn_01x05", value="POWER GRAY",
+         fp="Connector_JST:JST_PH_S5B-PH-SM4-TB_1x05-1MP_P2.00mm_Horizontal"),
     *[R(f"R{i}", "4.7k") for i in range(27, 31)],
     *[R(f"R{i}", "10k") for i in range(31, 34)],
     *[R(f"R{i}", "1k") for i in range(34, 37)],
@@ -307,8 +286,6 @@ LEVER["small"] += [
     *[R(f"R{i}", "10k") for i in range(39, 42)],
     *[C(f"C{i}", "100nF") for i in range(38, 44)],
 ]
-for c in LEVER["big"]:
-    c["value"] = c["value"].replace("CODE", "BRAKE")
 
 # Reviewed JLCPCB selections are versioned separately from the wiring/layout.
 # Emit them onto every symbol so KiCad remains the BOM export source of truth.
@@ -336,7 +313,7 @@ for ref, note in sourcing["non_assembly"].items():
     assert parts_by_ref[ref].get("in_bom") is False
     parts_by_ref[ref]["properties"] = {"BOM Comments": note}
 assert assigned | set(sourcing["non_assembly"]) == set(parts_by_ref)
-TITLE = dict(title="NotchDeck One", date="2026-10-03", rev="C", company="BenchBits")
+TITLE = dict(title="NotchDeck One", date="2026-10-03", rev="D", company="BenchBits")
 G = 2.54
 
 
@@ -750,27 +727,34 @@ for j, esd, cap, prefix, x in [("J10", "U10", "C39", "POWER", 20), ("J11", "U11"
     s.stub(cap, 2, "GND", kind="power")
 s.note(8, 55, "J10/J11: 1=3V3  2=GND  3=SDA  4=SCL. Internal harness <=20cm target, 100kHz; verify rise time.\n3.3V sensors only; no extra harness pull-ups. No hot-plug. External sensors require local decoupling.")
 
-for count, y, js, pus, rss, caps, prefix in [
-    (4, 72, 5, 14, 18, 14, "LEVER"),
-    (3, 99, 12, 31, 34, 41, "POWER"),
+# Rev D: one polarized harness per cam. Distinct 5/6-pin housings distinguish
+# these contact ports from the 4-pin magnetic ports. Existing GPIOs are unchanged.
+for count, y, j, pus, rss, caps, prefix, raw_prefix in [
+    (4, 72, "J5", 14, 18, 14, "LEVER", "BRAKE"),
+    (3, 99, "J12", 31, 34, 41, "POWER", "POWER"),
 ]:
+    s.place(j, 12, y, 180, ref_offset=(-2.54, -15.24), value_offset=(10.16, -12.7))
+    s.stub(j, 1, "GND")
+    s.stub(j, count + 2, "+3V3")
     for i in range(count):
-        x = 15 + 37 * i
-        j, pu, rs, cap = f"J{js+i}", f"R{pus+i}", f"R{rss+i}", f"C{caps+i}"
-        s.place(j, x, y, 180, ref_offset=(-2.54, -7.62), value_offset=(-2.54, -5.08))
-        s.place(pu, x + 9, y - (10 if prefix == "LEVER" else 8))
-        s.place(rs, x + 17, y, 90, ref_offset=(-2.54, -5.08), value_offset=(-2.54, -2.54))
-        s.place(cap, x + 24, y + 5)
-        p, q, b = s.pin(j, 1), s.pin(rs, 1), s.pin(pu, 2)
-        s.wire(p, q)
-        s.wire(b, (b[0], p[1]))
+        x = 45 + 31 * i if count == 4 else 43 + 29 * i
+        pu, rs, cap = f"R{pus+i}", f"R{rss+i}", f"C{caps+i}"
+        raw = f"{raw_prefix}_RAW_S{i}"
+        s.stub(j, i + 2, raw)
+        s.place(pu, x - 8, y - 7)
+        s.place(rs, x, y, 90, ref_offset=(-2.54, -5.08), value_offset=(-2.54, -2.54))
+        s.place(cap, x + 9, y + 5)
+        p, q = s.pin(rs, 1), s.pin(pu, 2)
+        end = ((x - 13) * G, p[1])
+        s.wire(end, p)
+        s.label(raw, end)
+        s.wire(q, (q[0], p[1]))
         s.stub(pu, 1, "+3V3", kind="power")
         p, q = s.pin(rs, 2), s.pin(cap, 1)
         s.wire(p, (q[0], p[1]), q)
         s.label(f"{prefix}_S{i}", (q[0], p[1]))
         s.stub(cap, 2, "GND", kind="power")
-        s.stub(j, 2, "GND", kind="power")
-s.note(8, 83, "GRAY CONTACTS: J5-J8 = brake / combined (4 bits); J12-J14 = power (3 bits).\nPin 1=signal, 2=GND. Open=1, closed=0; reserve all-open as invalid. 10k/1k/100nF + software debounce.\nUse microload contacts qualified for 3.3V / 0.33mA, or revise pull-ups to suit the chosen switch.")
+s.note(8, 83, "REV D GRAY HARNESS: J5 brake/mascon: 1=GND, 2..5=S0..S3, 6=3V3. J12 power: 1=GND, 2..4=S0..S2, 5=3V3.\nDry contacts connect bits to GND; leave 3V3 unpopulated in passive harness. Open=1, closed=0; all-open is invalid.\n10k / 1k / 100nF + software debounce. Use microload contacts qualified for 3.3V / 0.33mA. Not compatible with Rev C cables.")
 for i, n in enumerate([n for n in LEVER_PORTS if n not in ("I2C0_SDA", "I2C0_SCL", "nRESET")]):
     s.port(n, 132, 84 + i * 2)
 s.finish()

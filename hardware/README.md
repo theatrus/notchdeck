@@ -32,19 +32,19 @@ RC lever inputs, switch returns, reverser divider/filter and both RGB chain rows
 
 The wiring and layout are captured in [`scripts/notchdeck-one.schgen.py`](scripts/notchdeck-one.schgen.py).
 `make verify-notchdeck-one` checks KiCad's exported netlist against an independent
-pin-level contract: **145 components, 92 nets, 442 pin endpoints, 12 explicit NCs**.
+pin-level contract: **140 components, 92 nets, 439 pin endpoints, 12 explicit NCs**.
 KiCad 10.0.6 ERC reports **zero errors and zero warnings**, without exclusions.
 All components have footprints. The PCB now has a **provisional 145 × 105 mm,
 four-layer floorplan with a 4×4 button layout on 19 mm pitch** (2026-10-03).
-All 145 electrical footprints match the schematic, with four added mounting holes.
-Native PCB DRC reports zero rule/parity violations and **383 unrouted connections**.
+All 140 electrical footprints match the schematic, with four added mounting holes.
+Native PCB DRC reports zero rule/parity violations and **380 unrouted connections**.
 See [`FLOORPLAN.md`](notchdeck-one/FLOORPLAN.md) for placement details, evidence and
 remaining mechanical/electrical review items. The board is not ready to fabricate.
 
 Rev C adds independent power and brake sensing: either handle can use an AS5600
 magnetic sensor or a Gray-coded contact cam. U9 isolates the two address-0x36
-magnetic channels. J10/J11 expose their buses; J12–J14 add the power contact inputs,
-while J5–J8 serve brake or a combined handle. Remove R37/R38 before connecting an
+magnetic channels. J10/J11 expose their buses; Rev D consolidates Gray contacts into keyed J12 (5-pin power)
+and J5 (6-pin brake/mascon) harnesses. Remove R37/R38 before connecting an
 external power sensor to J10. See [handle interfaces](../docs/06-handle-interfaces.md)
 for pinouts, cam patterns, firmware profiles and calibration requirements.
 
@@ -72,8 +72,8 @@ and MAX17048 exposed-pad land pattern before layout/fabrication. The Rev C firmw
 LFCLK configuration. A production board/bootloader definition, nav/reverser scan,
 USB-absent LED handling and a suitable LED brightness/current limit remain open.
 
-The [JLCPCB BOM](notchdeck-one/bom/README.md) now covers **144 purchasable parts
-with 32 catalog codes** (2026-10-03 snapshot). Exact manufacturer/MPN and datasheet
+The [JLCPCB BOM](notchdeck-one/bom/README.md) now covers **139 purchasable parts
+with 34 catalog codes** (2026-10-03 snapshot). Exact manufacturer/MPN and datasheet
 properties are on every symbol. The RGB and keyed SWD footprints follow the
 selected parts' drawings; J4's bare programming contacts are excluded from assembly.
 

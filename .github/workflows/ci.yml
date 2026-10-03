@@ -13,6 +13,10 @@ jobs:
       - uses: actions/checkout@v5
       - name: Host protocol test
         run: make -C firmware test
+      - name: Verify handle drawings and cam table match firmware
+        run: |
+          python3 hardware/scripts/notchdeck-handle-layout.py
+          git diff --exit-code -- hardware/mechanical/
 
   # Full nRF Connect SDK build for the nRF52840. Produces the .uf2 update artifact.
   firmware-build:
@@ -28,7 +32,7 @@ jobs:
           toolchains: arm-zephyr-eabi
       - name: Build (nrf52840dk)
         run: west build -b nrf52840dk/nrf52840 firmware -d build
-      - name: Build Rev C handle profiles
+      - name: Build Rev C/D handle profiles
         run: |
           for profile in combined_magnetic combined_gray dual_magnetic dual_gray dual_mixed dual_gray_power; do
             west build -b nrf52840dk/nrf52840 firmware -d "build-$profile" -- \

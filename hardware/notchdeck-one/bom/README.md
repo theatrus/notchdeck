@@ -1,14 +1,14 @@
 # NotchDeck One — JLCPCB sourcing snapshot
 
-Checked **2026-10-03**: all **144 purchasable components** have exact JLCPCB catalog
-part numbers, manufacturer/MPN, footprints and datasheet links. There are **32 unique
-part numbers**: 17 Basic and 15 Extended in the dated catalog snapshot. All 32
-reported positive stock. The native export has 41 rows because shared parts serve
+Checked **2026-10-03**: all **139 purchasable components** have exact JLCPCB catalog
+part numbers, manufacturer/MPN, footprints and datasheet links. There are **34 unique
+part numbers**: 17 Basic and 17 Extended in the dated catalog snapshot. All 34
+reported positive stock. The native export has 36 rows because shared parts serve
 different functional values, such as the reset button and lever connectors.
 
 This is an **unrouted placement study**, not a fabrication release or an order.
 The original stock/category/price snapshot came from the community `jlcsearch`
-JLCPCB catalog; the three Rev C additions were also verified on JLCPCB directly;
+JLCPCB catalog; the Rev C and Rev D additions were also verified on JLCPCB directly;
 each query URL and timestamp is retained in `jlcpcb-parts.json`. LCSC's separate
 inventory was not used as JLCPCB stock. Recheck JLCPCB stock, assembly eligibility,
 fees, attrition and CPL orientation when preparing an order.
@@ -17,21 +17,21 @@ fees, attrition and CPL orientation when preparing an order.
 
 Rechecked the original 29 exact part numbers on **JLCPCB's own public product pages** on
 **2026-10-03, 20:18–20:20 UTC (13:18–13:20 PDT)**. All have positive **Available
-Order Qty**, covering their current Rev C usage. No substitutions are needed
+Order Qty**, covering their current Rev D usage. No substitutions are needed
 for zero stock. These direct observations supersede the older community stock
 snapshot for availability; category and price snapshots were not refreshed.
 
 [`jlcpcb-stock.csv`](jlcpcb-stock.csv) records every part's headline stock,
 available order quantity, minimum quantity, usage per board, timestamp and URL.
 Use **Available Order Qty**, not the larger headline **In Stock** figure, when
-estimating coverage. The lowest coverage items are:
+estimating coverage. Selected original-part availability figures are:
 
 | Part | Available order quantity | Used per board | Board equivalents before attrition |
 |---|---:|---:|---:|
 | [E73-2G4M08S1C, C356849](https://jlcpcb.com/partdetail/C356849) | 1,231 | 1 | 1,231 |
 | [Samtec SWD header, C448647](https://jlcpcb.com/partdetail/C448647) | 1,931 | 1 | 1,931 |
 | [JST PH 3-pin, C265101](https://jlcpcb.com/partdetail/C265101) | 2,132 | 1 | 2,132 |
-| [JST PH 2-pin, C295747](https://jlcpcb.com/partdetail/C295747) | 17,701 | 8 | 2,212 |
+| [JST PH 2-pin, C295747](https://jlcpcb.com/partdetail/C295747) | 17,701 | 1 | 17,701 |
 | [MCP73832 charger, C38066](https://jlcpcb.com/partdetail/C38066) | 5,112 | 1 | 5,112 |
 
 Rev C adds C2653307 (TCA9543APWR, 561 available), C265102 (4-pin JST PH,
@@ -39,7 +39,14 @@ Rev C adds C2653307 (TCA9543APWR, 561 available), C265102 (4-pin JST PH,
 directly on JLCPCB at **21:06 UTC on 2026-10-03**. These require 5, 10 and 10
 parts respectively for this build. The switch has the lowest current coverage: 561 boards.
 
-The requested build is **five boards: 720 installed components**. Every public
+Rev D adds [C265104, 5-pin JST PH](https://jlcpcb.com/partdetail/C265104)
+and [C265405, 6-pin JST PH](https://jlcpcb.com/partdetail/C265405), directly checked
+at **22:01 UTC on 2026-10-03**: 11,239 and 5,121 available respectively. Each
+requires five pieces for this build. J2 is now the only two-pin JST connector.
+Manufacturer PH-family SMT side-entry drawings and KiCad pad count/pitch agree;
+final assembly rotation and harness fit remain to be checked.
+
+The requested build is **five boards: 695 installed components**. Every public
 available quantity exceeds the five-board requirement, recorded in the CSV.
 Board equivalents are integer available quantity divided by parts per board;
 they exclude assembly attrition, spares and inventory reservations. They are not
@@ -84,7 +91,7 @@ silently merge merely because both have the functional value `LED`.
 | U5 / D19 | AS5600-ASOT / JSCJ B5819W SL | Corrected ordering suffix and manufacturer to the catalog identities. High confidence. |
 | D1–D16 | XINGLIGHT XL-5050RGBC-2812B, C2843785 | Manufacturer PDF p11: 5×5mm body, 1.3mm square pads, centers x=±2.2 / y=±1.55mm; top-view 1=VDD, 2=DOUT, 3=GND, 4=DIN. New footprint follows this pattern. High confidence in drawing transcription; CPL rotation still requires review. |
 | J3 | Samtec FTSH-105-01-L-DV-K-TR, C448647 | Keyed shroud requires a larger body/courtyard than the generic header. Samtec FTSH-DV footprint drawing rev H: 0.74×2.79mm pads, 6.86mm outer span, 1.27mm pitch. No alignment holes for the selected -K option. New footprint; moved 2mm down to clear C9. High confidence in drawing transcription. |
-| J2/J5–J9 | Exact JST PH SMT right-angle variants | Manufacturer drawing and selected KiCad family/pin count agree. High confidence in part identity. Mating harnesses are separate. |
+| J2/J5/J9–J12 | Exact JST PH SMT right-angle variants | Manufacturer drawing and selected KiCad family/pin count agree. High confidence in part identity. Mating harnesses are separate. |
 | SW1–SW17 | XKB TS-1187A-B-A-B, C318884 | Exact TS-1187A package variant; drawing reviewed against the existing footprint. High confidence in identity and pad grouping. |
 | D17 / D18 | C965805 yellow-green / C2286 red | Separate catalog parts and BOM rows; low-Vf green selected for the existing 3V3 indicator circuit. Catalog/datasheet evidence. |
 | Passives | Samsung MLCCs and UNI-ROYAL resistors | Catalog value, tolerance, voltage and imperial package checked against the schematic. Ratings included in symbol BOM Comments. Catalog evidence; no measured DC-bias/thermal characterization. |
@@ -118,12 +125,12 @@ kicad-cli pcb drc --schematic-parity --format json \
 ```
 
 - Native ERC: zero errors/warnings, no exclusions.
-- Net contract: 145 components, 92 nets, 442 endpoints, 12 intentional NCs.
+- Net contract: 140 components, 92 nets, 439 endpoints, 12 intentional NCs.
 - PCB audit: all endpoints, schematic UUID paths, part fields and BOM/placement
   exclusions match.
-- BOM audit: 144 references, 32 codes, quantities, MPNs, manufacturers, footprints
+- BOM audit: 139 references, 34 codes, quantities, MPNs, manufacturers, footprints
   and notes match the reviewed selection data.
-- Native PCB DRC: zero rule/parity issues; **383 unconnected items** remain.
+- Native PCB DRC: zero rule/parity issues; **380 unconnected items** remain.
 
 The audit checks saved design consistency, not current catalog stock or tested
 hardware behavior. No components or boards have been ordered.

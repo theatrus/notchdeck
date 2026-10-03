@@ -2,9 +2,8 @@
 
 > **NotchDeck** (a BenchBits product) — **NotchDeck One** is a dual-mode (USB + BLE) train
 > **master controller** ("mascon"): an open-hardware reimplementation of the Zuiki / Densha de GO!
-> style one-handle power/brake lever, built on a low-power Nordic nRF SoC. *"One handle. Every notch."*
->
-> The "One" is the one-handle unit; the name leaves room for a two-handle **NotchDeck Two** later.
+> style combined mascon or separate Japanese-style power and rotary brake handles,
+> built on a low-power Nordic nRF SoC. The same PCB supports both arrangements.
 
 The goal is a controller that plugs in over **USB HID** *and* roams over **Bluetooth LE HID**,
 presenting to every host (Windows / macOS / Linux / Android / iOS / Switch-class hosts) as a
@@ -20,13 +19,19 @@ over USB HID, Bluetooth Classic HID, or BLE HID-over-GATT with no semantic chang
 full-speed USB 2.0 device controller *and* a BLE 5.x radio on one low-power Cortex-M4F, so a single
 part covers both transports. See [`docs/03-hardware-and-firmware-architecture.md`](docs/03-hardware-and-firmware-architecture.md).
 
-## The one load-bearing input
+## Handle configurations
 
-The power/brake lever is **a single 8-bit analog axis carrying discrete per-notch byte values** —
+In combined mode, the power/brake lever is **a single 8-bit analog axis carrying discrete per-notch byte values** —
 *not* a stack of buttons. Emergency = `0x00`, brake `B8…B1` climbs, Neutral ≈ `0x80`, power
 `P1…P5` climbs to `0xFF`. Every consuming app's real job is to *threshold that axis back into named
 notches*. We emit it on the **Y axis** (the convention SDL and the Zuiki driver use). Full encoding
 table in [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.md).
+
+Separate-handle mode exposes independent power and brake axes with brake priority.
+Each handle can use an AS5600 magnetic sensor or a Gray-code contact cam. See the
+[handle interfaces](docs/06-handle-interfaces.md) and
+[own-build handle plan](docs/07-japanese-handle-build.md) for harnesses, profiles and
+the provisional 4×4 panel layout.
 
 ## Documents
 
@@ -43,7 +48,8 @@ table in [`docs/02-emulation-protocol-spec.md`](docs/02-emulation-protocol-spec.
 ## Status
 
 Research, protocol, name, firmware skeleton, KiCad scaffold + vendored part libraries, and the
-E73 net plan are in. The controller schematic is wired and passes strict ERC plus a complete net audit; PCB layout is next. Hardware/firmware are not yet
+E73 net plan are in. The Rev D controller schematic is wired and passes strict ERC plus a complete net audit.
+The PCB has an unrouted floorplan with keyed power and brake/mascon harnesses. Hardware/firmware are not yet
 built or fabricated.
 
 ## License

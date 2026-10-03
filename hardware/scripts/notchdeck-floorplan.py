@@ -81,7 +81,7 @@ PLACEMENT = {
 PLACEMENT.update({
     "U9": (103, 96, 0), "U10": (133, 65, 0), "U11": (158, 65, 0),
     "J10": (133, 55.8, 180), "J11": (158, 55.8, 180),
-    "J12": (189.2, 95, 90), "J13": (189.2, 114, 90), "J14": (189.2, 133, 90),
+    "J12": (55.8, 115, 270), "J5": (189.2, 114, 90),
     "R9": (96, 91, 90), "R10": (98, 91, 90),
     "R27": (99, 103, 0), "R28": (102, 103, 0),
     "R29": (105, 103, 0), "R30": (108, 103, 0),
@@ -89,16 +89,15 @@ PLACEMENT.update({
     "R40": (98, 98, 90), "R41": (98, 100, 90),
     "C38": (103, 100.3, 0), "C39": (137, 65, 90), "C40": (162, 65, 90),
 })
+# Rev D consolidates each Gray cam into a single polarized harness.
 for i in range(3):
-    PLACEMENT[f"R{31+i}"] = (97, 111 + 7*i, 90)
-    PLACEMENT[f"R{34+i}"] = (100, 113 + 7*i, 0)
-    PLACEMENT[f"C{41+i}"] = (103, 113 + 7*i, 90)
+    PLACEMENT[f"R{31+i}"] = (62, 109 + 7*i, 90)
+    PLACEMENT[f"R{34+i}"] = (64, 111 + 7*i, 0)
+    PLACEMENT[f"C{41+i}"] = (66.5, 111 + 7*i, 90)
 for i in range(4):
-    y = 99 + i * 12
-    PLACEMENT[f"J{i+5}"] = (55.8, y, 270)
-    PLACEMENT[f"R{i+14}"] = (62, y - 1.8, 90)
-    PLACEMENT[f"R{i+18}"] = (64, y + 0.5, 0)
-    PLACEMENT[f"C{i+14}"] = (66.5, y + 0.5, 90)
+    PLACEMENT[f"R{14+i}"] = (97, 110 + 7*i, 90)
+    PLACEMENT[f"R{18+i}"] = (100, 112 + 7*i, 0)
+    PLACEMENT[f"C{14+i}"] = (103, 112 + 7*i, 90)
 for row in range(4):
     for col in range(4):
         x, y = 122 + col * 19, 84 + row * 19
@@ -188,7 +187,7 @@ def main():
     board.GetDesignSettings().SetBoardThickness(P.FromMM(1.6))
     title = board.GetTitleBlock()
     title.SetTitle("NotchDeck One - provisional floorplan")
-    title.SetRevision("C")
+    title.SetRevision("D")
     title.SetDate("2026-10-03")
     title.SetCompany("BenchBits")
     nets, pins = {}, {}
@@ -258,8 +257,10 @@ def main():
             fp.Reference().SetPosition(mm(x - 4, y))
         if ref in ("J10", "J11"):
             fp.Reference().SetPosition(mm(x + 8, y))
-        if ref in ("J12", "J13", "J14"):
-            fp.Reference().SetPosition(mm(x - 6.5, y + 3))
+        if ref == "J12":
+            fp.Reference().SetPosition(mm(56, 105))
+        if ref == "J5":
+            fp.Reference().SetPosition(mm(189, 103))
         if ref in ("D17", "D18"):
             fp.Reference().SetLayer(P.F_Fab)
         if ref == "U1":
@@ -323,7 +324,7 @@ def main():
     board.Add(z)
     text(board, "ANTENNA: NO COPPER / METAL", 93, 46, 0.8, P.Dwgs_User)
     text(board, "NOTCHDECK ONE", 145, 69, 1.3)
-    text(board, "REV C / DUAL HANDLES", 177, 65, 0.8)
+    text(board, "REV D / DUAL + MASCON", 177, 65, 0.8)
     text(board, "USB", 60, 66, 0.8)
     text(board, "BAT+  GND", 59, 91, 0.8)
     text(board, "3V3", 73, 51, 0.8)
@@ -338,8 +339,6 @@ def main():
         board, "PROVISIONAL 145 x 105 mm - MECHANICS TBD", 122.5, 158, 1.2, P.Dwgs_User
     )
     text(board, "UNROUTED / DO NOT FABRICATE", 146, 150, 1)
-    for i in range(4):
-        text(board, f"BRAKE S{i}", 64.5, 104.5 + i * 12, 0.8)
     for row in range(4):
         for col in range(4):
             n = row * 4 + col + 1
@@ -347,9 +346,28 @@ def main():
             text(board, name, 122 + col * 19, 84 + row * 19 + 6, 0.8)
     text(board, "POWER MAG", 133, 61.5, 0.8)
     text(board, "BRAKE MAG", 158, 61.5, 0.8)
-    text(board, "J10 EXT: REMOVE R37/R38", 96, 134, 0.8)
-    for i in range(3):
-        text(board, f"PWR S{i}", 184.5, 88.7 + 19*i, 0.8)
+    text(board, "J10 EXT: REMOVE R37/R38", 81, 134, 0.8)
+    text(board, "POWER GRAY", 62, 101, 0.8)
+    for value, x in [("BRAKE / MASCON", 190), ("GRAY", 187)]:
+        item = P.PCB_TEXT(board)
+        item.SetText(value)
+        item.SetPosition(mm(x, 135))
+        item.SetLayer(P.F_SilkS)
+        field_style(item, 0.8)
+        item.SetTextAngle(P.EDA_ANGLE(90, P.DEGREES_T))
+        board.Add(item)
+    for value, x, y in [
+        ("J12 POWER: 1 GND / 2 S0 / 3 S1 / 4 S2 / 5 3V3", 84, 119),
+        ("J5 BRAKE / MASCON: 1 GND / 2 S0 / 3 S1 / 4 S2 / 5 S3 / 6 3V3", 161, 130),
+        ("GRAY CONTACTS: LEAVE 3V3 WIRE OUT", 108, 137),
+    ]:
+        item = P.PCB_TEXT(board)
+        item.SetText(value)
+        item.SetPosition(mm(x, y))
+        item.SetLayer(P.B_SilkS)
+        item.SetMirrored(True)
+        field_style(item, 0.8)
+        board.Add(item)
     # Reserve physical shaft/magnet space as a drawing, not a copper exclusion.
     ring = P.PCB_SHAPE(board)
     ring.SetShape(P.SHAPE_T_CIRCLE)

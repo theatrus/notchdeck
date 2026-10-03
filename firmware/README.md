@@ -81,7 +81,10 @@ E73 / custom PCB later (and move `boards/*.overlay` content into it).
   Zuiki's `0x33DD`.
 - Implement live VBUS plug/unplug transport switching (skeleton picks once at boot).
 
-Rev C builds use `boards/notchdeck_rev_c.overlay` plus `configs/rev_c.conf` and a
+Rev C and Rev D builds use `boards/notchdeck_rev_c.overlay` plus `configs/rev_c.conf` and a
 handle profile; see the [build examples](../docs/06-handle-interfaces.md#firmware-profiles-and-output).
 `make test` also runs the sensor-independent handle behavior tests in
 `test/host_handle_test.c`.
+
+Rev D changes the Gray harness connectors only; the Rev C overlay and all six
+profiles remain compatible. See `docs/07-japanese-handle-build.md` for assemblies.

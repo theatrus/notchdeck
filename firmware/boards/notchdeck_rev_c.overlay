@@ -1,4 +1,4 @@
-/* Rev C E73 module mapping. Apply as DTC_OVERLAY_FILE, replacing the DK overlay.
+/* Rev C/D E73 module mapping. Apply as DTC_OVERLAY_FILE, replacing the DK overlay.
  * Board platform remains DK for SDK bring-up; bootloader/USB IDs still provisional. */
 #include <zephyr/dt-bindings/gpio/gpio.h>
 #include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>

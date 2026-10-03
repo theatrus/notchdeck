@@ -116,12 +116,12 @@ on VBUS falling edge (unplug):
 
 ## 4. Input front-end
 
-- **Lever:** the cleanest emulation matches the real hardware — **detented rotary with one contact
-  set per notch** (or a gray-coded/absolute encoder, or a hall-effect absolute sensor). Firmware maps
-  the decoded position straight to the §4 notch byte. A potentiometer is possible but needs
-  hysteresis windows per notch and risks drift — prefer discrete detent sensing for crisp,
-  transition-free output. Debounce a few ms; emit only on settled change.
-- **Buttons / hat:** GPIO matrix (or direct GPIO if pin count allows), standard scan + debounce →
+- **Handles:** Rev D supports a combined mascon or separate power and rotary brake
+  mechanisms. Each independently uses AS5600 magnetic sensing or a 3/4-bit Gray
+  contact cam. Firmware implements debounce, calibrated angle hysteresis, brake
+  priority and neutral re-arming. See [interfaces](06-handle-interfaces.md) and the
+  [own-build plan](07-japanese-handle-build.md) for the implemented design.
+- **Buttons / hat:** sixteen direct GPIO inputs, standard scan + debounce →
   the two button bytes and hat nibble.
 - **Optional reverser:** 3-position switch → Z axis (`0x00`/`0x80`/`0xFF`) or two buttons.
 

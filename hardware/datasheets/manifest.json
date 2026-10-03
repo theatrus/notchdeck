@@ -1,6 +1,6 @@
 {
   "schematic": "hardware/notchdeck-one/notchdeck-one.kicad_sch",
-  "last_sync": "2026-10-03T21:10:44.143727+00:00",
+  "last_sync": "2026-10-03T22:05:32.836283+00:00",
   "parts": {
     "CL05B104KO5NNNC": {
       "file": "C1525.pdf",
@@ -407,14 +407,7 @@
       "lcsc": "C295747",
       "status": "ok",
       "references": [
-        "J2",
-        "J5",
-        "J6",
-        "J7",
-        "J8",
-        "J12",
-        "J13",
-        "J14"
+        "J2"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 719637
@@ -561,6 +554,34 @@
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 1441474
+    },
+    "S5B-PH-SM4-TB(LF)(SN)": {
+      "file": "C265104.pdf",
+      "manufacturer": "JST",
+      "description": "5-pin 2mm JST PH SMT side-entry header; 2A rated with AWG24",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/d87682fbfaf1a1bc6a21af6a6a17fd27.pdf?productCode=C265104",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C265104",
+      "status": "ok",
+      "references": [
+        "J12"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 928413
+    },
+    "S6B-PH-SM4-TB(LF)(SN)": {
+      "file": "C265405.pdf",
+      "manufacturer": "JST",
+      "description": "6-pin 2mm JST PH SMT side-entry header; 2A rated with AWG24",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/fd6b0599884a99953f02d32fdcec9311.pdf?productCode=C265405",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C265405",
+      "status": "ok",
+      "references": [
+        "J5"
+      ],
+      "verification": "catalog identity matched; see BOM review notes for drawing checks",
+      "size_bytes": 117749
     }
   }
 }

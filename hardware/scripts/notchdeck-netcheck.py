@@ -45,7 +45,7 @@ def audit(xml_file):
         """C1.1 C2.1 C3.1 C4.1 C5.1 C8.1 C9.1 C11.1 C12.1
         J3.1 J4.1 J9.1 R6.1 R7.1 R8.1 R9.1 R10.1 R12.1 R13.1
         R14.1 R15.1 R16.1 R17.1 R22.1 R23.1 U1.19 U1.23 U2.5 U5.1 U5.2
-        C38.1 C39.1 C40.1 J10.1 J11.1 U9.14 U10.5 U11.5
+        C38.1 C39.1 C40.1 J10.1 J11.1 J5.6 J12.5 U9.14 U10.5 U11.5
         R27.1 R28.1 R29.1 R30.1 R31.1 R32.1 R33.1 R39.1 R40.1 R41.1""",
     )
     net(
@@ -59,9 +59,9 @@ def audit(xml_file):
     net(
         "GND",
         endpoints("""D17.1 J1.A1 J1.A12 J1.B1 J1.B12 J1.SH J2.2 J3.3 J3.5 J3.9 J4.5
-        J5.2 J6.2 J7.2 J8.2 J9.3 R1.1 R2.1 R3.2 R4.2 R24.2 R26.2
+        J5.1 J9.3 R1.1 R2.1 R3.2 R4.2 R24.2 R26.2
         U1.5 U1.21 U1.24 U2.2 U3.2 U4.1 U4.4 U4.6 U4.9 U5.4 U5.8 U7.2 U8.1 U8.3
-        J10.2 J11.2 J12.2 J13.2 J14.2 U9.1 U9.2 U9.7 U10.2 U11.2""")
+        J10.2 J11.2 J12.1 U9.1 U9.2 U9.7 U10.2 U11.2""")
         | {f"C{i}.2" for i in range(1, 44)}
         | {f"D{i}.3" for i in range(1, 17)}
         | {f"SW{i}.2" for i in range(1, 18)},
@@ -111,8 +111,8 @@ def audit(xml_file):
         "D18.2 R13.2",
         "R11.1 U8.4",
     ]
-    internal += [f"J{5+i}.1 R{14+i}.2 R{18+i}.1" for i in range(4)]
-    internal += [f"J{12+i}.1 R{31+i}.2 R{34+i}.1" for i in range(3)]
+    internal += [f"J5.{2+i} R{14+i}.2 R{18+i}.1" for i in range(4)]
+    internal += [f"J12.{2+i} R{31+i}.2 R{34+i}.1" for i in range(3)]
     internal += [f"D{i}.2 D{i+1}.4" for i in range(1, 16) if i != 8]
     for pins in internal:
         first = pins.split()[0]
@@ -131,7 +131,7 @@ def audit(xml_file):
         ), f"{name}: missing {pins-actual[name]}, unexpected {actual[name]-pins}"
     # Values/variants crucial to the power path and input interface.
     comps = {c.get("ref"): c for c in doc.findall("./components/comp")}
-    assert len(comps) == 145, f"Unexpected component count: {len(comps)}"
+    assert len(comps) == 140, f"Unexpected component count: {len(comps)}"
     for ref, value in {
         "U3": "MCP73832-2-OT",
         "U8": "74AHCT1G125",

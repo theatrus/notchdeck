@@ -1,0 +1,15 @@
+{
+  "revision": "D",
+  "units": "mm",
+  "status": "Provisional own-build geometry; no machining cutouts or magnetic calibration",
+  "panel": {"width": 400, "depth": 220},
+  "pcb": {"x": 110, "y": 18, "width": 145, "depth": 105},
+  "power_module": {"x": 60, "y": 145, "width": 80, "depth": 110},
+  "brake_module": {"x": 330, "y": 145, "radius": 55},
+  "combined_module": {"x": 60, "y": 145, "width": 80, "depth": 110},
+  "detents": {
+    "power": {"labels": ["Off", "P1", "P2", "P3", "P4", "P5"], "angles_deg": [0, 10, 20, 30, 40, 50]},
+    "brake": {"labels": ["Release", "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "EB"], "angles_deg": [0, 12, 24, 36, 48, 60, 72, 84, 96, 120]},
+    "combined": {"labels": ["EB", "B8", "B7", "B6", "B5", "B4", "B3", "B2", "B1", "N", "P1", "P2", "P3", "P4", "P5"], "angles_deg": [-70, -56, -49, -42, -35, -28, -21, -14, -7, 0, 7, 14, 21, 28, 35]}
+  }
+}
