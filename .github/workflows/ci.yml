@@ -59,6 +59,11 @@ jobs:
       options: --user root      # kicad image defaults to a non-root user; runner temp needs root
     steps:
       - uses: actions/checkout@v5
+      - name: Install hardware validation dependencies
+        run: |
+          # The KiCad image includes Python and libraries, but not GNU Make.
+          apt-get update
+          apt-get install --yes --no-install-recommends make
       - name: Validate libraries + export BOM
         working-directory: hardware
         run: |
