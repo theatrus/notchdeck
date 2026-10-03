@@ -996,7 +996,7 @@
 			(at 96.5200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0163ccf74074c4b353a988081c09f0dd.pdf?productCode=C499458"
 			(at 96.5200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -1004,22 +1004,34 @@
 			(at 96.5200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "AS5600-ASOM"
+		(property "MPN" "AS5600-ASOT"
 			(at 96.5200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Manufacturer" "AMS"
+		(property "Manufacturer" "ams"
 			(at 96.5200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2f5e9b49-9fcc-4dba-bcfa-4b6ebd812499"))
-		(pin "2" (uuid "6d957886-1036-4166-ac5c-a1943ca3ef4b"))
-		(pin "3" (uuid "90451fc4-e15c-4b14-9057-1c9ff7c65475"))
-		(pin "4" (uuid "45edbf55-e125-4837-ad32-5657ace34d4d"))
-		(pin "5" (uuid "50ac05c3-9de6-4800-97e5-9a54dbbbdf2c"))
-		(pin "6" (uuid "93b35c5f-a304-4961-990c-3df5b968a2b9"))
-		(pin "7" (uuid "d2ac6b3c-73f2-4a43-a246-62c664ee7976"))
-		(pin "8" (uuid "9ce9c11c-82ef-41cb-830e-586d15b3a9d1"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 96.5200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 96.5200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 96.5200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8f003ac3-abd9-45e9-bf35-1e57d4c8827d"))
+		(pin "2" (uuid "f5c6a5f9-6bae-4905-8972-c4a0662cbfe8"))
+		(pin "3" (uuid "d9e5f85e-f1fa-444a-a568-cd7d78156f74"))
+		(pin "4" (uuid "380932ed-02fc-4661-a0d6-51f25f4c663b"))
+		(pin "5" (uuid "90f08051-c818-4923-a489-2935297cb2e8"))
+		(pin "6" (uuid "7d524f35-29bd-4548-b28e-7729c8ff2ee2"))
+		(pin "7" (uuid "da6b29d1-a4b9-4f8f-a9fb-c36f61987c86"))
+		(pin "8" (uuid "3a79ec5e-12c9-403b-9585-d621ffa06a0e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1050,12 +1062,36 @@
 			(at 35.5600 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 35.5600 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9c8eda62-5041-4108-87b8-9c3da04e8807"))
-		(pin "2" (uuid "f38d06c6-1172-4190-b1e5-0e9cd185af3c"))
+		(property "LCSC" "C1525"
+			(at 35.5600 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 35.5600 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 35.5600 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 35.5600 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 35.5600 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 35.5600 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7eeb0298-aaa5-4275-8251-6cdc4e9ab0a4"))
+		(pin "2" (uuid "9dfaf044-f676-4191-8385-4d1b4136c43e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1086,12 +1122,36 @@
 			(at 58.4200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C52923"
 			(at 58.4200 68.5800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "747252cb-3c80-4604-b59b-d617e6dfd3bd"))
-		(pin "2" (uuid "04240d9f-d4fd-4eff-a90d-8a8cb99fe4f9"))
+		(property "LCSC" "C52923"
+			(at 58.4200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 58.4200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 58.4200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 58.4200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 58.4200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 58.4200 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "06ef4e5d-5b2d-48b4-b282-e444710c4ec5"))
+		(pin "2" (uuid "679ba783-32ec-4c27-bd03-cb7c26566ace"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1126,7 +1186,7 @@
 			(at 35.5600 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "422bce8c-ee76-452c-8a7c-95b5cc72a88c"))
+		(pin "1" (uuid "b98b72e2-272e-4717-8035-7d2cc4212c9a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1161,7 +1221,7 @@
 			(at 35.5600 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9a5b8284-b282-402a-a453-253346fae55c"))
+		(pin "1" (uuid "4cdde9a7-98de-4a8c-871b-4e3f9c4286df"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1196,7 +1256,7 @@
 			(at 78.7400 63.5000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "88575802-4876-4b84-b8ee-e7c582769777"))
+		(pin "1" (uuid "89ce2587-4d62-4492-85fe-52b13f7a595a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1231,7 +1291,7 @@
 			(at 78.7400 66.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "dd5b1eb8-1e43-4066-af75-96ff605ba689"))
+		(pin "1" (uuid "71d6bbf3-5434-48c0-bcfb-d6c4c2f1eb71"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1266,7 +1326,7 @@
 			(at 78.7400 73.6600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a21c59d8-72d7-470b-a3f7-a440c0d6e4ec"))
+		(pin "1" (uuid "47eb516b-9b3b-44d4-addf-fdb984b6fb3d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1301,7 +1361,7 @@
 			(at 114.3000 73.6600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "efeac52c-eed2-4661-9a21-d94e4340518e"))
+		(pin "1" (uuid "d3332d96-5282-467e-9045-e601ad664236"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1332,12 +1392,36 @@
 			(at 149.8600 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25900"
 			(at 149.8600 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9df5ef5b-887f-414a-8830-feca486fbf7d"))
-		(pin "2" (uuid "a6628bda-136c-43a6-b39a-ac88b8075146"))
+		(property "LCSC" "C25900"
+			(at 149.8600 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF4701TCE"
+			(at 149.8600 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 149.8600 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 149.8600 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 149.8600 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 149.8600 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "e1ba6b3a-fa89-4a4f-8833-13c4aa1fa19d"))
+		(pin "2" (uuid "6927d05c-b4c3-4dc0-b882-04c190dbddba"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1372,7 +1456,7 @@
 			(at 149.8600 41.9100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "08416c82-da17-45e9-9177-2a9ab2acf333"))
+		(pin "1" (uuid "e5411920-bdfa-48cc-b600-9bc1373b2401"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1403,12 +1487,36 @@
 			(at 182.8800 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25900"
 			(at 182.8800 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "b1d03150-f402-4313-8b6b-51a1a58f5781"))
-		(pin "2" (uuid "a6bd49f0-192c-48e2-bb4e-2e8aefde9fe6"))
+		(property "LCSC" "C25900"
+			(at 182.8800 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF4701TCE"
+			(at 182.8800 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 182.8800 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 182.8800 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 182.8800 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 182.8800 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a5e5ca92-324c-43b0-b365-2375c21a534d"))
+		(pin "2" (uuid "9c4c324c-3562-4821-ae08-142481a049ab"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1443,7 +1551,7 @@
 			(at 182.8800 41.9100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "06b16fa4-ee59-4c69-afe1-03bfbd8d1f81"))
+		(pin "1" (uuid "6d03e303-ba5f-4166-a4bc-2668c3506103"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1474,11 +1582,15 @@
 			(at 45.7200 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
 			(at 45.7200 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "S2B-PH-SM4-TB"
+		(property "LCSC" "C295747"
+			(at 45.7200 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
 			(at 45.7200 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -1486,8 +1598,20 @@
 			(at 45.7200 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "8e86e908-ec7a-4229-9cfc-d6bef6eeef58"))
-		(pin "2" (uuid "f816efa0-f2d0-48d1-8413-46fa43837917"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 45.7200 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 45.7200 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Mating harnesses not included. J2: protected 1S cell, pin 1 positive / pin 2 ground. J5-J8: lever signal / ground."
+			(at 45.7200 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "95d47dbc-4f61-4a50-b429-782a66e38266"))
+		(pin "2" (uuid "84c5fbb6-e346-4632-bfd3-56132ca65fe4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1518,12 +1642,36 @@
 			(at 68.5800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25744"
 			(at 68.5800 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "e3e873b1-cce7-4436-ad91-eb4e5e858c1f"))
-		(pin "2" (uuid "4d54da0b-7ad2-42bb-bd42-86e0db57b98f"))
+		(property "LCSC" "C25744"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 68.5800 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d9db7b4b-4e40-41a4-98d5-8caaba4c95e1"))
+		(pin "2" (uuid "417de11e-110d-4760-87de-fa390b4489d5"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1554,12 +1702,36 @@
 			(at 88.9000 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 88.9000 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4266b33d-40d5-4d4c-b093-cf3a2917c46b"))
-		(pin "2" (uuid "09fbbc0d-65c6-4ae5-adc2-4e4ccec09247"))
+		(property "LCSC" "C11702"
+			(at 88.9000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 88.9000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 88.9000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 88.9000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 88.9000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 88.9000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a0f64193-2328-47e8-bb13-d30eda536c5e"))
+		(pin "2" (uuid "97b3eeed-8529-47da-9c49-173234f3160f"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1590,12 +1762,36 @@
 			(at 106.6800 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 106.6800 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f7cda17c-263a-4d5b-a74f-29cc65ecc3e7"))
-		(pin "2" (uuid "26f6610f-d3cc-4c9a-a6cb-165dfb5d9e00"))
+		(property "LCSC" "C1525"
+			(at 106.6800 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 106.6800 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 106.6800 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 106.6800 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 106.6800 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 106.6800 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "391f8d10-5ddf-4eb5-bead-d1c054c57e71"))
+		(pin "2" (uuid "6019abad-d339-44bd-9f59-c906562b6cf8"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1630,7 +1826,7 @@
 			(at 68.5800 123.1900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4f3abada-83d9-441c-b482-58ff122ec46a"))
+		(pin "1" (uuid "3fae1a1c-b74f-4904-940a-2caababb226a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1665,7 +1861,7 @@
 			(at 106.6800 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "aeb70526-c938-45ab-9b73-29d53ca056e3"))
+		(pin "1" (uuid "c28d2b26-d698-4784-86bb-889f5d6c2d7c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1700,7 +1896,7 @@
 			(at 55.8800 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "833f1809-c1b5-4bb2-ad21-acf6293dafa8"))
+		(pin "1" (uuid "c928289d-e15b-4517-b835-e9c36deeb99e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1731,11 +1927,15 @@
 			(at 139.7000 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
 			(at 139.7000 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "S2B-PH-SM4-TB"
+		(property "LCSC" "C295747"
+			(at 139.7000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
 			(at 139.7000 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -1743,8 +1943,20 @@
 			(at 139.7000 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "b17ca038-ace6-4972-9b11-7f33a0b9093c"))
-		(pin "2" (uuid "5bb932ae-7dc9-4389-a2df-55ca0b1c6697"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 139.7000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 139.7000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Mating harnesses not included. J2: protected 1S cell, pin 1 positive / pin 2 ground. J5-J8: lever signal / ground."
+			(at 139.7000 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f8285d3c-68d7-46b4-964c-be0939769260"))
+		(pin "2" (uuid "9857848f-c66e-4ac5-824f-09830d8d4ebe"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1775,12 +1987,36 @@
 			(at 162.5600 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25744"
 			(at 162.5600 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "8b1972e6-aac7-4314-8ddd-7c471bae55b8"))
-		(pin "2" (uuid "a4db62d0-935c-44f1-ab3c-0fc279d3e679"))
+		(property "LCSC" "C25744"
+			(at 162.5600 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 162.5600 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 162.5600 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 162.5600 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 162.5600 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 162.5600 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1d201ad8-1c24-4121-a460-c787726935fc"))
+		(pin "2" (uuid "bd53dcce-a6fa-433d-a2d8-0d01fb67e625"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1811,12 +2047,36 @@
 			(at 182.8800 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 182.8800 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1ea01211-a653-4563-b534-475b349de486"))
-		(pin "2" (uuid "34d4f79e-521d-4d3e-8173-6a90d0be4778"))
+		(property "LCSC" "C11702"
+			(at 182.8800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 182.8800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 182.8800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 182.8800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 182.8800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 182.8800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7bb93ab4-d1da-4b0e-a4fe-404511fcb567"))
+		(pin "2" (uuid "bafaf46c-f701-4c1c-b71f-42141440a9e6"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1847,12 +2107,36 @@
 			(at 200.6600 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 200.6600 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "287fac70-0767-4b26-8318-ffd76beab092"))
-		(pin "2" (uuid "4143f7cb-be9f-482d-a55b-c6a238e5b407"))
+		(property "LCSC" "C1525"
+			(at 200.6600 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 200.6600 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 200.6600 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 200.6600 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 200.6600 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 200.6600 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "18a17e11-65a0-49f2-ad98-107ab4f7182a"))
+		(pin "2" (uuid "9b8f5ff7-a53f-4611-9a34-11bfe1f8219b"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1887,7 +2171,7 @@
 			(at 162.5600 123.1900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "11fef0fe-8b33-468b-892c-9b86014dd708"))
+		(pin "1" (uuid "a5ce7694-6ed3-493b-b410-cf70562b23b9"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1922,7 +2206,7 @@
 			(at 200.6600 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6bf1049b-6a86-4c86-a6d5-40fd50ca05d3"))
+		(pin "1" (uuid "833ce630-dd9e-48fc-a579-bbe083889b46"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1957,7 +2241,7 @@
 			(at 149.8600 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f86f7998-492d-4858-969c-8f4067a9be6f"))
+		(pin "1" (uuid "7e04cfbf-6e0a-4e7c-a0c0-190ef0571da1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -1988,11 +2272,15 @@
 			(at 233.6800 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
 			(at 233.6800 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "S2B-PH-SM4-TB"
+		(property "LCSC" "C295747"
+			(at 233.6800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
 			(at 233.6800 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -2000,8 +2288,20 @@
 			(at 233.6800 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "c42fabdd-e05d-41a8-8b8e-f2d9f749f06d"))
-		(pin "2" (uuid "005fbebc-d080-4227-a7f3-157053ebe8f2"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 233.6800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 233.6800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Mating harnesses not included. J2: protected 1S cell, pin 1 positive / pin 2 ground. J5-J8: lever signal / ground."
+			(at 233.6800 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "99c1ddcb-cc97-4ef1-86e9-bd289344de6f"))
+		(pin "2" (uuid "fd92ed73-b658-42a6-9088-25373492be1b"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2032,12 +2332,36 @@
 			(at 256.5400 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25744"
 			(at 256.5400 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3e2fbe49-371e-4d68-96b1-43d6d02f9133"))
-		(pin "2" (uuid "5a526f6f-978d-4438-bcf6-6856305279e9"))
+		(property "LCSC" "C25744"
+			(at 256.5400 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 256.5400 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 256.5400 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 256.5400 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 256.5400 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 256.5400 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d49dc3dd-3473-40df-8a6d-f36c8a3413d2"))
+		(pin "2" (uuid "56ed380c-f245-4b79-8e53-c348509f3ff2"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2068,12 +2392,36 @@
 			(at 276.8600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 276.8600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "ada20b19-4599-4543-80f5-e8af151d577f"))
-		(pin "2" (uuid "20e62ed8-98ef-481a-a5bf-850dafb64c5d"))
+		(property "LCSC" "C11702"
+			(at 276.8600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 276.8600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 276.8600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 276.8600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 276.8600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 276.8600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a134251c-58ed-4206-a7ce-5e48ea69495f"))
+		(pin "2" (uuid "5e9d9e23-2aee-46f2-aa2e-1e0b654c96ab"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2104,12 +2452,36 @@
 			(at 294.6400 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 294.6400 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6d0f3961-9026-4ab3-8652-ae22cc6dcfd4"))
-		(pin "2" (uuid "24bfddcc-c6bc-4ad8-a0a9-e71e2c6c9c58"))
+		(property "LCSC" "C1525"
+			(at 294.6400 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 294.6400 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 294.6400 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 294.6400 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 294.6400 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 294.6400 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4e8c66e6-1a1e-4ac1-ab45-98ae71c93364"))
+		(pin "2" (uuid "a371c01c-b826-4879-bd3c-5a4a58b5e686"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2144,7 +2516,7 @@
 			(at 256.5400 123.1900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "7e179cab-5672-4afb-b04f-9fbea60fbfa6"))
+		(pin "1" (uuid "8f1997f9-701e-4fb5-ac9d-6e4c7479cc3f"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2179,7 +2551,7 @@
 			(at 294.6400 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2b0e7b8e-7028-4e0d-86a0-fdb201575749"))
+		(pin "1" (uuid "d95fa3de-5560-4909-a4a4-a7a830c04773"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2214,7 +2586,7 @@
 			(at 243.8400 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6e0d2d84-aaef-44c0-90ca-dee395a698bf"))
+		(pin "1" (uuid "5d3fb770-a13a-4062-83d1-5fd5d297fb68"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2245,11 +2617,15 @@
 			(at 327.6600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
 			(at 327.6600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "S2B-PH-SM4-TB"
+		(property "LCSC" "C295747"
+			(at 327.6600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
 			(at 327.6600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -2257,8 +2633,20 @@
 			(at 327.6600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a44d9179-616f-4a61-84d3-756dee517fe7"))
-		(pin "2" (uuid "329d2182-f123-479d-86e5-b1ed269cac5a"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 327.6600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 327.6600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Mating harnesses not included. J2: protected 1S cell, pin 1 positive / pin 2 ground. J5-J8: lever signal / ground."
+			(at 327.6600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8636d7a5-e01b-41e4-ad09-dcd0609c70a6"))
+		(pin "2" (uuid "4711bb67-deb1-45a7-9b6c-c96218d66a6f"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2289,12 +2677,36 @@
 			(at 350.5200 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25744"
 			(at 350.5200 132.0800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "74c653b6-d341-4134-8e97-b7bdcde0aaea"))
-		(pin "2" (uuid "41dd492b-57c7-4361-bb73-d89acf6ad695"))
+		(property "LCSC" "C25744"
+			(at 350.5200 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 350.5200 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 350.5200 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 350.5200 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 350.5200 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 350.5200 132.0800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6c0876ca-0194-4471-8b92-ed410d115085"))
+		(pin "2" (uuid "9d875feb-faff-4e83-9787-b9b4b08931fe"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2325,12 +2737,36 @@
 			(at 370.8400 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 370.8400 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "aaf21831-678b-42b4-8036-01074bb3062f"))
-		(pin "2" (uuid "7ccec803-1599-405b-bc59-48d28e938b89"))
+		(property "LCSC" "C11702"
+			(at 370.8400 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 370.8400 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 370.8400 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 370.8400 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 370.8400 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 370.8400 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "da1e3d6b-ed3a-48da-bd80-a003535d268d"))
+		(pin "2" (uuid "c697844e-9ad7-45ca-a518-5f161f5e0922"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2361,12 +2797,36 @@
 			(at 388.6200 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 388.6200 177.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f0381f3d-3bfd-47f1-b3d7-84d25da00822"))
-		(pin "2" (uuid "42a61f30-112a-4547-b59f-0a09a593e550"))
+		(property "LCSC" "C1525"
+			(at 388.6200 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 388.6200 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 388.6200 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 388.6200 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 388.6200 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 388.6200 177.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "f00b0ac8-d0d2-4999-ab62-f6512f642cf4"))
+		(pin "2" (uuid "2ba337c0-6b62-43b3-89f4-00469f1f7c41"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2401,7 +2861,7 @@
 			(at 350.5200 123.1900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5d7004c8-5d77-4d64-aff2-ac5b4472355f"))
+		(pin "1" (uuid "1a506587-0971-4b1a-984e-9cddc7c1ea3c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2436,7 +2896,7 @@
 			(at 388.6200 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "69cb0e42-a2c9-4ef1-a82b-80452354e7d5"))
+		(pin "1" (uuid "17cd6e9f-3fe3-42ce-a68d-2908de5853ca"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2471,7 +2931,7 @@
 			(at 337.8200 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "22b7f9bc-59e3-4425-9877-e7a8f8e10d28"))
+		(pin "1" (uuid "b626ffa3-dfe1-4198-a253-2362df5ef730"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/4d8b3eca-f05c-4607-a10a-8a1e17845aee"
@@ -2483,365 +2943,365 @@
 	)
 	(wire (pts (xy 35.5600 50.8000) (xy 35.5600 64.7700))
 		(stroke (width 0) (type default))
-		(uuid "95372c27-d6f1-43d7-8e72-f8d005e6de0f")
+		(uuid "39cbbe3a-395e-4153-aeaa-9551f139b29b")
 	)
 	(wire (pts (xy 35.5600 50.8000) (xy 58.4200 50.8000))
 		(stroke (width 0) (type default))
-		(uuid "61f62d50-e408-48bf-9e62-bbfbf67982c9")
+		(uuid "a1408c4a-270b-4b61-9521-ad2f5acf7cb8")
 	)
 	(wire (pts (xy 35.5600 72.3900) (xy 35.5600 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "a294cd41-de07-4b8e-ad3a-523e752d04b5")
+		(uuid "ead71710-eebc-43eb-985d-3641c1ecfa68")
 	)
 	(wire (pts (xy 35.5600 86.3600) (xy 58.4200 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "0f206bba-a437-44a3-b90d-980f457eae3d")
+		(uuid "6ab3a963-f65e-4f60-8b7b-dbe2091bfaa2")
 	)
 	(wire (pts (xy 38.1000 238.7600) (xy 63.5000 238.7600))
 		(stroke (width 0) (type default))
-		(uuid "1b6f3a9b-9b35-475a-ae2d-b0096425ffc8")
+		(uuid "3dbee262-03d4-4abd-9df5-8617efddb719")
 	)
 	(wire (pts (xy 50.8000 154.9400) (xy 55.8800 154.9400))
 		(stroke (width 0) (type default))
-		(uuid "18b0c1cd-d3a2-4a75-8084-d1f4534285e4")
+		(uuid "bdb21474-340d-422e-acea-20ed68a73c16")
 	)
 	(wire (pts (xy 50.8000 157.4800) (xy 68.5800 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "a7bde120-7520-4503-b29c-a2ddf30bc8c5")
+		(uuid "a59e0761-5dba-42f5-8a78-98324e85eb03")
 	)
 	(wire (pts (xy 58.4200 50.8000) (xy 58.4200 64.7700))
 		(stroke (width 0) (type default))
-		(uuid "0c8af566-24f7-4a88-ab40-f333519b3d93")
+		(uuid "b17264f0-856b-426a-9d24-f70494bf56ac")
 	)
 	(wire (pts (xy 58.4200 72.3900) (xy 58.4200 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "7c56d098-1c17-4f10-b717-9f4a75384ee4")
+		(uuid "0fe0dfb0-82f4-459a-a40e-a86238a64500")
 	)
 	(wire (pts (xy 68.5800 123.1900) (xy 68.5800 128.2700))
 		(stroke (width 0) (type default))
-		(uuid "7ef0aa55-104a-4584-96c7-1e8fa886b5ad")
+		(uuid "9a80ead9-9c25-43af-b49b-5f045774f900")
 	)
 	(wire (pts (xy 68.5800 135.8900) (xy 68.5800 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "94abca52-7359-478c-ba46-2255bb65b07c")
+		(uuid "d3522888-a634-4a91-a9e5-0169d9386f8e")
 	)
 	(wire (pts (xy 68.5800 157.4800) (xy 85.0900 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "c4e6d872-f8f8-4d91-87fb-45c75e84d929")
+		(uuid "cb486e5d-09c1-4655-867d-3ea98bb46a96")
 	)
 	(wire (pts (xy 78.7400 63.5000) (xy 83.8200 63.5000))
 		(stroke (width 0) (type default))
-		(uuid "e162d54a-adad-4384-9fa3-e8a6a984ec6b")
+		(uuid "79557f52-b810-4c4f-b439-b3bcedad82ee")
 	)
 	(wire (pts (xy 78.7400 66.0400) (xy 83.8200 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "6220c88d-ef96-4957-a9d6-cebe17dcc10d")
+		(uuid "360c32db-d51d-4e41-b196-8cf9c73a03cb")
 	)
 	(wire (pts (xy 78.7400 73.6600) (xy 83.8200 73.6600))
 		(stroke (width 0) (type default))
-		(uuid "6af40b53-5da8-4392-8f71-62920bbdb5a3")
+		(uuid "a906b1ad-c3b6-4920-9cf0-1134dfe53ca1")
 	)
 	(wire (pts (xy 92.7100 157.4800) (xy 106.6800 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "3a0dc545-61a4-404f-b90f-29a072712a6b")
+		(uuid "e32313b9-1a42-46c6-83fa-426aebb835db")
 	)
 	(wire (pts (xy 99.0600 238.7600) (xy 124.4600 238.7600))
 		(stroke (width 0) (type default))
-		(uuid "a93a805a-97a4-4b35-a464-ff96325a6abd")
+		(uuid "e3e98d89-a8c8-4927-aac6-69bbef408ede")
 	)
 	(wire (pts (xy 106.6800 157.4800) (xy 106.6800 173.9900))
 		(stroke (width 0) (type default))
-		(uuid "155c0cad-1eea-423a-8473-52ce1cf43d5c")
+		(uuid "75a78da5-e443-417b-811a-bb7a27ad435c")
 	)
 	(wire (pts (xy 106.6800 181.6100) (xy 106.6800 186.6900))
 		(stroke (width 0) (type default))
-		(uuid "1e813d1a-b821-4158-b8c0-a0e00864b375")
+		(uuid "136ba0d4-084b-4048-95e6-79284d0111cb")
 	)
 	(wire (pts (xy 109.2200 68.5800) (xy 149.8600 68.5800))
 		(stroke (width 0) (type default))
-		(uuid "b9354c65-54fe-44f3-aa3d-d172490dd418")
+		(uuid "8752ac1c-8c65-498a-b71a-9b707e468e89")
 	)
 	(wire (pts (xy 109.2200 71.1200) (xy 182.8800 71.1200))
 		(stroke (width 0) (type default))
-		(uuid "77100794-bae0-4ee8-87ac-ac213034ab79")
+		(uuid "d0aab655-1420-4935-92b2-2d474f23105d")
 	)
 	(wire (pts (xy 109.2200 73.6600) (xy 114.3000 73.6600))
 		(stroke (width 0) (type default))
-		(uuid "c6795910-6b7b-477b-8a3b-e884ed2668b2")
+		(uuid "5ddc748e-8533-4321-a6d5-3cec57d04542")
 	)
 	(wire (pts (xy 144.7800 154.9400) (xy 149.8600 154.9400))
 		(stroke (width 0) (type default))
-		(uuid "8911704e-a9de-458d-8461-76f71941cb6c")
+		(uuid "9b787eca-eb6d-492b-b7a6-3931ef4c7ca0")
 	)
 	(wire (pts (xy 144.7800 157.4800) (xy 162.5600 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "4dea3a77-ef80-4bec-9fb2-d62808cf505b")
+		(uuid "7731e766-9f17-4e65-b008-cf3e5f76260a")
 	)
 	(wire (pts (xy 149.8600 41.9100) (xy 149.8600 46.9900))
 		(stroke (width 0) (type default))
-		(uuid "9f7bba96-42f4-4265-9855-1e6a496f7119")
+		(uuid "d9f3cc6c-e72a-4a4c-bbf2-918bbf0c7444")
 	)
 	(wire (pts (xy 149.8600 54.6100) (xy 149.8600 68.5800))
 		(stroke (width 0) (type default))
-		(uuid "d8a6ce23-212d-4587-b56f-2425d427f213")
+		(uuid "be761c95-049f-4561-b3dc-64125a1bb590")
 	)
 	(wire (pts (xy 160.0200 238.7600) (xy 185.4200 238.7600))
 		(stroke (width 0) (type default))
-		(uuid "d209e8fc-9516-44b2-aacd-8f3684727af6")
+		(uuid "3268e012-fdb8-4325-b617-a88f3d560db6")
 	)
 	(wire (pts (xy 162.5600 123.1900) (xy 162.5600 128.2700))
 		(stroke (width 0) (type default))
-		(uuid "f9281546-adbf-4252-bcd1-8b370017b0ef")
+		(uuid "8089c964-a711-43e5-a3e3-f073a0e9d22b")
 	)
 	(wire (pts (xy 162.5600 135.8900) (xy 162.5600 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "ca63a2b8-f95d-4b57-88e9-3c1601383ea7")
+		(uuid "07b35cfd-7d27-42fb-9517-ad876d7dc0c5")
 	)
 	(wire (pts (xy 162.5600 157.4800) (xy 179.0700 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "8292e165-4de7-4f07-8dae-901bf6372e3e")
+		(uuid "56f29abe-f52f-4baa-9af6-7eb7047da179")
 	)
 	(wire (pts (xy 182.8800 41.9100) (xy 182.8800 46.9900))
 		(stroke (width 0) (type default))
-		(uuid "5d2ce953-8012-4d72-a6bc-bfaf1047842d")
+		(uuid "0a3e8825-60c2-4d09-b74b-963e7a2ef227")
 	)
 	(wire (pts (xy 182.8800 54.6100) (xy 182.8800 71.1200))
 		(stroke (width 0) (type default))
-		(uuid "0893607d-0537-4992-a5a8-dd1f6c34550b")
+		(uuid "a67bb247-a3b4-4dc1-99a6-d2a647707aa9")
 	)
 	(wire (pts (xy 186.6900 157.4800) (xy 200.6600 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "8c5f94f7-371a-4994-9fe6-b5d2dc644553")
+		(uuid "61fcdd72-8232-4602-881a-3f55d0572cea")
 	)
 	(wire (pts (xy 200.6600 157.4800) (xy 200.6600 173.9900))
 		(stroke (width 0) (type default))
-		(uuid "dd211be9-161f-4b64-81e3-53c752ac285d")
+		(uuid "97bebf9f-0c96-41ed-8dda-7ad609697e9f")
 	)
 	(wire (pts (xy 200.6600 181.6100) (xy 200.6600 186.6900))
 		(stroke (width 0) (type default))
-		(uuid "a5dbf982-575d-47aa-96a7-9702f2eee66e")
+		(uuid "a46c6d9e-c590-49cb-8813-db468d7b125a")
 	)
 	(wire (pts (xy 220.9800 238.7600) (xy 246.3800 238.7600))
 		(stroke (width 0) (type default))
-		(uuid "a84753d6-2e0b-4312-965f-0bf538d1717e")
+		(uuid "e2d520a0-e333-4273-8f37-fbae1be2b42c")
 	)
 	(wire (pts (xy 238.7600 154.9400) (xy 243.8400 154.9400))
 		(stroke (width 0) (type default))
-		(uuid "c7590c5c-c8b1-4f7d-a597-3918dc263c2d")
+		(uuid "001850c5-fe40-4e65-9db3-1cdc3402209a")
 	)
 	(wire (pts (xy 238.7600 157.4800) (xy 256.5400 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "15cf6dbf-d185-47bc-b156-203c71fdb4b0")
+		(uuid "d893e494-b773-4eac-b489-a40340478dc4")
 	)
 	(wire (pts (xy 256.5400 123.1900) (xy 256.5400 128.2700))
 		(stroke (width 0) (type default))
-		(uuid "a601fd4c-e887-4192-bdae-976572cc2711")
+		(uuid "99a6c2d2-22cf-45bd-bf25-858b66a9524a")
 	)
 	(wire (pts (xy 256.5400 135.8900) (xy 256.5400 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "6c1059b8-5c09-4e20-aa0b-adc1ef10ba9a")
+		(uuid "89b58dff-43de-4db0-8fd5-2c6841dd6475")
 	)
 	(wire (pts (xy 256.5400 157.4800) (xy 273.0500 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "dc288105-4e8d-4283-a499-c8c3617d76aa")
+		(uuid "9adbdc63-322b-4b80-818e-3f20a27b69a5")
 	)
 	(wire (pts (xy 280.6700 157.4800) (xy 294.6400 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "c73fc9a0-8149-4a1b-89e0-9a2f89784af9")
+		(uuid "7ca2636b-0915-4b90-b2b0-03721f5ca69c")
 	)
 	(wire (pts (xy 281.9400 238.7600) (xy 307.3400 238.7600))
 		(stroke (width 0) (type default))
-		(uuid "a41ccdab-7feb-48e6-8ef2-f4432fd6a5fb")
+		(uuid "04ea1597-c5cb-4799-9248-dbe81285a105")
 	)
 	(wire (pts (xy 294.6400 157.4800) (xy 294.6400 173.9900))
 		(stroke (width 0) (type default))
-		(uuid "42530e42-3491-4890-b7f4-b3d59c80f900")
+		(uuid "f8398187-97da-400a-8a78-38770fea93ae")
 	)
 	(wire (pts (xy 294.6400 181.6100) (xy 294.6400 186.6900))
 		(stroke (width 0) (type default))
-		(uuid "11aef00d-ea1f-4ef3-8b5c-ec5af8229b86")
+		(uuid "336564c1-3cfd-4667-bbe6-39e7b3c5a812")
 	)
 	(wire (pts (xy 332.7400 154.9400) (xy 337.8200 154.9400))
 		(stroke (width 0) (type default))
-		(uuid "20920fff-7ccd-4dcb-baa8-9f4c0024b2b3")
+		(uuid "93f48f55-61f9-403d-81ff-1e0fd783e9af")
 	)
 	(wire (pts (xy 332.7400 157.4800) (xy 350.5200 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "8583269b-c49a-439a-8cda-03b98c50435d")
+		(uuid "073143b9-781f-4cb2-9864-9f8dcdcf5247")
 	)
 	(wire (pts (xy 342.9000 238.7600) (xy 368.3000 238.7600))
 		(stroke (width 0) (type default))
-		(uuid "c2d6ff6a-392e-460c-897e-d5eb1d124a30")
+		(uuid "7a553739-d941-4390-865f-687d14a8e567")
 	)
 	(wire (pts (xy 350.5200 123.1900) (xy 350.5200 128.2700))
 		(stroke (width 0) (type default))
-		(uuid "0cdc7197-d1e2-4211-8808-9aaabce06fe8")
+		(uuid "ec12399e-954d-4da3-a36f-0f387e0d9b2b")
 	)
 	(wire (pts (xy 350.5200 135.8900) (xy 350.5200 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "74b81019-5d55-45a0-8277-bab4845021f2")
+		(uuid "2853fa29-4ec7-4f82-a4b2-67d86b3443da")
 	)
 	(wire (pts (xy 350.5200 157.4800) (xy 367.0300 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "8e797893-4560-4be3-ad4c-70d591da3eaa")
+		(uuid "746470ed-9e8e-48f4-9591-6aee61cba8a1")
 	)
 	(wire (pts (xy 374.6500 157.4800) (xy 388.6200 157.4800))
 		(stroke (width 0) (type default))
-		(uuid "9e1bbcc2-3a76-4f0b-a75c-9772207ef7f8")
+		(uuid "6a68887e-b7c6-4f69-bef3-0a46240615c7")
 	)
 	(wire (pts (xy 388.6200 157.4800) (xy 388.6200 173.9900))
 		(stroke (width 0) (type default))
-		(uuid "2f82d604-cb78-4560-aab2-838030206336")
+		(uuid "948ac234-a933-4852-9653-f3eb7bb14c1e")
 	)
 	(wire (pts (xy 388.6200 181.6100) (xy 388.6200 186.6900))
 		(stroke (width 0) (type default))
-		(uuid "fbb162fb-9d9f-48be-94c3-48faf5d51401")
+		(uuid "8e539deb-ebc2-4fd4-a2b6-7220cb5aebad")
 	)
 	(junction (at 350.5200 157.4800) (diameter 0) (color 0 0 0 0)
-		(uuid "37d1621b-c11b-48b1-9be0-9b4d2a610de4")
+		(uuid "68aa0049-9838-40c1-86ac-d12c2645301a")
 	)
 	(junction (at 256.5400 157.4800) (diameter 0) (color 0 0 0 0)
-		(uuid "42ebc6da-4250-4e6d-b440-efd27765a61e")
+		(uuid "54794213-d014-4088-8653-ab9c4f0a3dd1")
 	)
 	(junction (at 68.5800 157.4800) (diameter 0) (color 0 0 0 0)
-		(uuid "592022d5-0426-4048-a6f2-c757e1027aae")
+		(uuid "bea1c4c8-fa5e-481a-936c-0fe5a3354c76")
 	)
 	(junction (at 162.5600 157.4800) (diameter 0) (color 0 0 0 0)
-		(uuid "d1cf7069-f84f-4691-ae27-f607aa86b9ea")
+		(uuid "8c52ff4b-e03c-4056-b92a-5c1dd3a91438")
 	)
-	(no_connect (at 109.22 63.5) (uuid "7bd437a2-4a63-485b-a93c-18e6c09b6f50"))
-	(no_connect (at 109.22 66.04) (uuid "197fadff-cb6c-4d8e-add6-f8f66865059a"))
+	(no_connect (at 109.22 63.5) (uuid "edc9db6c-0ea8-4b37-ae35-febeacc93eb5"))
+	(no_connect (at 109.22 66.04) (uuid "8b12e4df-cd30-443a-b009-959b0a90e7dd"))
 	(label "I2C0_SDA"
 		(at 149.8600 68.5800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "86ac881b-fcdd-4a47-9bbb-727822d788af")
+		(uuid "27d99b8f-1db1-458d-93b5-06ddcb558e2d")
 	)
 	(label "I2C0_SCL"
 		(at 182.8800 71.1200 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "e434fe7f-285e-4e2c-8697-09931f1b9880")
+		(uuid "616f10da-0f25-454c-bb97-3c918a4ecccf")
 	)
 	(label "LEVER_S0"
 		(at 106.6800 157.4800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "cb0f44e0-07a2-43b7-ac6b-5fb38112c305")
+		(uuid "b9de6022-4797-4687-aa86-d03c23eb40de")
 	)
 	(label "LEVER_S1"
 		(at 200.6600 157.4800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1484f515-4bdc-4b06-b614-ee9473128e5f")
+		(uuid "649f831e-0918-4514-9e77-00ec86b43f97")
 	)
 	(label "LEVER_S2"
 		(at 294.6400 157.4800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "b84fc74a-33ac-4125-8f6c-1019350592fd")
+		(uuid "723e814f-03e1-43a2-8fc4-f00f1d117d91")
 	)
 	(label "LEVER_S3"
 		(at 388.6200 157.4800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "3454680b-c38d-49ee-a2dc-a9f4cd307b5b")
+		(uuid "3ccd3999-ddf8-4ea3-9321-456c71d43855")
 	)
 	(hierarchical_label "I2C0_SCL"
 		(shape bidirectional)
 		(at 38.1000 238.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "8c6d2129-3fe0-477e-a882-54a5ceb8319c")
+		(uuid "8bfa5219-7f87-44d4-b203-7f1e4a7a0ae2")
 	)
 	(label "I2C0_SCL"
 		(at 63.5000 238.7600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "18fd1a26-5a9e-4094-86e1-0f136a2830bc")
+		(uuid "ee3464f4-949f-45f4-b6a5-189b6da8a93f")
 	)
 	(hierarchical_label "I2C0_SDA"
 		(shape bidirectional)
 		(at 99.0600 238.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "75bc4cb9-27ca-4ff1-bfaa-4fa71abd3c45")
+		(uuid "01588e5c-222b-4c34-96bc-1b454e20fec9")
 	)
 	(label "I2C0_SDA"
 		(at 124.4600 238.7600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "f0879857-966d-4dc2-94fd-5df141618581")
+		(uuid "bf25f846-d843-463c-929c-f67fb274c71b")
 	)
 	(hierarchical_label "LEVER_S0"
 		(shape bidirectional)
 		(at 160.0200 238.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "a1800668-d6ef-42fe-ab6a-b170f5fd3990")
+		(uuid "47375ac2-3fe2-4f97-9f94-76c48d978573")
 	)
 	(label "LEVER_S0"
 		(at 185.4200 238.7600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "152a3c1b-f7cb-4dd0-9813-32258ca426ca")
+		(uuid "4a2b4920-c0d8-4a69-b627-95d7a20c3124")
 	)
 	(hierarchical_label "LEVER_S1"
 		(shape bidirectional)
 		(at 220.9800 238.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "340a779a-855f-4ff2-a2ad-2a2faf8e743e")
+		(uuid "b0086faf-eacf-4193-a8c6-c67d107b7f52")
 	)
 	(label "LEVER_S1"
 		(at 246.3800 238.7600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "ee6b96ff-5f6f-44ba-8caa-67b3a1876825")
+		(uuid "9db2173f-b4d4-4b79-bb60-669d9e134280")
 	)
 	(hierarchical_label "LEVER_S2"
 		(shape bidirectional)
 		(at 281.9400 238.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "cf2d1d1f-57be-4187-84db-45ed9e52cd0f")
+		(uuid "c1d84d1b-6f9b-4ba5-bafe-5110d0111a99")
 	)
 	(label "LEVER_S2"
 		(at 307.3400 238.7600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "cfcddb94-af8d-43da-b6b6-46724c3f0660")
+		(uuid "de117854-7aab-4604-b4cb-98e7c7f514af")
 	)
 	(hierarchical_label "LEVER_S3"
 		(shape bidirectional)
 		(at 342.9000 238.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "6fed773c-4feb-485b-8be6-06cac2b18f2e")
+		(uuid "a1ee4a4f-7169-45a8-b8c5-27573be01fe1")
 	)
 	(label "LEVER_S3"
 		(at 368.3000 238.7600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "de0ea604-8de3-42b0-a3f4-6d2a03273a34")
+		(uuid "265306aa-278b-430c-82d0-70ce04b677af")
 	)
 	(text "AS5600: 3.3V mode, VDD5V tied to VDD3V3.\nI2C0 / 0x36; separate from the fuel gauge.\nDIR = GND, clockwise increases angle.\nOUT and PGO intentionally unused."
 		(exclude_from_sim no)
 		(at 228.60 45.72 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "abd37134-b8da-404e-a22d-8d4218e9cf25")
+		(uuid "aa41cac8-fd0d-4428-92af-a8edf66d9716")
 	)
 	(text "S0: switch closes to GND.\n10k pull-up / 1k series / 100nF."
 		(exclude_from_sim no)
 		(at 40.64 203.20 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "43df71b6-7084-493b-85fa-35e757ae11de")
+		(uuid "de9ef110-9eb7-4bbc-b454-da0e085ad9ab")
 	)
 	(text "S1: switch closes to GND.\n10k pull-up / 1k series / 100nF."
 		(exclude_from_sim no)
 		(at 134.62 203.20 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "29d4eef9-3991-4624-b1db-a4f86e14f7ea")
+		(uuid "ec586d12-4d13-4b60-8603-f20c19a3cad4")
 	)
 	(text "S2: switch closes to GND.\n10k pull-up / 1k series / 100nF."
 		(exclude_from_sim no)
 		(at 228.60 203.20 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "6188237a-55f4-45f2-9fe0-7150331629c3")
+		(uuid "0b323d22-a725-4919-a737-a55dfca134a0")
 	)
 	(text "S3: switch closes to GND.\n10k pull-up / 1k series / 100nF."
 		(exclude_from_sim no)
 		(at 322.58 203.20 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "cdf6231e-9ef7-4cb1-892a-08d1fe4df997")
+		(uuid "852563fa-8ef0-4f73-8fa0-7f1d5dddba35")
 	)
 	(text "J5-J8: pin 1 = switch signal, pin 2 = GND. Both sensing front-ends may be populated.\nRC release ~1.1ms, press ~0.1ms. Firmware still debounces and decodes binary/Gray detent codes."
 		(exclude_from_sim no)
 		(at 30.48 261.62 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "ff7918c7-2d8a-48ee-a772-0d514a2f7497")
+		(uuid "32654ed2-424a-4451-846f-022c8beaf38f")
 	)
 	(sheet_instances
 		(path "/"

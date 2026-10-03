@@ -13,7 +13,7 @@ The component manifest and Capture layout below are the source of truth.
 The reusable KiCad emitters live in scripts/kschgen.py.
 """
 
-import os, sys
+import json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import kschgen as K
@@ -51,7 +51,7 @@ LED0603 = "LED_SMD:LED_0603_1608Metric"
 SOT235 = "Package_TO_SOT_SMD:SOT-23-5"
 SOT23 = "Package_TO_SOT_SMD:SOT-23"
 BTN = "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-WS2812FP = "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+WS2812FP = "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 
 
 def R(ref, val):
@@ -74,21 +74,19 @@ MCU = dict(
             lib_id="notchdeck:E73-2G4M08S1C",
             value="E73-2G4M08S1C",
             fp="notchdeck:EBYTE_E73-2G4M08S1C",
-            lcsc="C356849",
-            mpn="E73-2G4M08S1C",
-            mfr="Ebyte",
         ),
         dict(
             ref="J3",
             lib_id="notchdeck:SWD_2x05",
             value="SWD",
-            fp="Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+            fp="notchdeck:Samtec_FTSH-105-01-L-DV-K",
         ),
         dict(
             ref="J4",
             lib_id="notchdeck:SWD_TC2030",
             value="TC2030_NL",
             fp="Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical",
+            in_bom=False,
         ),
     ],
     small=[
@@ -113,8 +111,6 @@ POWER = dict(
             lib_id="Connector:USB_C_Receptacle_USB2.0_16P",
             value="USB-C",
             fp="Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
-            lcsc="C165948",
-            mpn="TYPE-C-31-M-12",
         ),
     ],
     small=[
@@ -123,9 +119,6 @@ POWER = dict(
             lib_id="Power_Protection:USBLC6-2SC6",
             value="USBLC6-2SC6",
             fp="Package_TO_SOT_SMD:SOT-23-6",
-            lcsc="C2687116",
-            mpn="USBLC6-2SC6",
-            mfr="ST",
         ),
         R("R1", "5.1k"),
         R("R2", "5.1k"),
@@ -134,8 +127,6 @@ POWER = dict(
             lib_id="Battery_Management:MCP73832-2-OT",
             value="MCP73832-2-OT",
             fp=SOT235,
-            mpn="MCP73832T-2ACI/OT",
-            mfr="Microchip",
         ),
         R("R3", "2k"),
         dict(
@@ -143,9 +134,6 @@ POWER = dict(
             lib_id="Regulator_Linear:AP2112K-3.3",
             value="AP2112K-3.3",
             fp=SOT235,
-            lcsc="C23380830",
-            mpn="AP2112K-3.3TRG1",
-            mfr="Diodes",
         ),
         C("C7", "1uF"),
         C("C8", "1uF"),
@@ -155,18 +143,12 @@ POWER = dict(
             lib_id="Transistor_FET:Q_PMOS_GSD",
             value="AO3401A",
             fp=SOT23,
-            lcsc="C15127",
-            mpn="AO3401A",
-            mfr="AOS",
         ),
         dict(
             ref="D19",
             lib_id="Device:D_Schottky",
             value="B5819W",
             fp="Diode_SMD:D_SOD-123",
-            lcsc="C8598",
-            mpn="B5819W",
-            mfr="Slkor",
         ),
         R("R4", "100k"),
         R("R5", "1k"),
@@ -175,9 +157,6 @@ POWER = dict(
             lib_id="notchdeck:MAX17048",
             value="MAX17048",
             fp="Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm",
-            lcsc="C2682616",
-            mpn="MAX17048G+T10",
-            mfr="Analog Devices",
         ),
         C("C10", "100nF"),
         R("R6", "4.7k"),
@@ -188,8 +167,6 @@ POWER = dict(
             lib_id="Connector_Generic:Conn_01x02",
             value="BAT 1S",
             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-            mpn="S2B-PH-SM4-TB",
-            mfr="JST",
         ),
     ],
 )
@@ -206,32 +183,24 @@ LEVER = dict(
             lib_id="Connector_Generic:Conn_01x02",
             value="CODE S0",
             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-            mpn="S2B-PH-SM4-TB",
-            mfr="JST",
         ),
         dict(
             ref="J6",
             lib_id="Connector_Generic:Conn_01x02",
             value="CODE S1",
             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-            mpn="S2B-PH-SM4-TB",
-            mfr="JST",
         ),
         dict(
             ref="J7",
             lib_id="Connector_Generic:Conn_01x02",
             value="CODE S2",
             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-            mpn="S2B-PH-SM4-TB",
-            mfr="JST",
         ),
         dict(
             ref="J8",
             lib_id="Connector_Generic:Conn_01x02",
             value="CODE S3",
             fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-            mpn="S2B-PH-SM4-TB",
-            mfr="JST",
         ),
     ],
     small=[
@@ -240,9 +209,6 @@ LEVER = dict(
             lib_id="notchdeck:AS5600",
             value="AS5600",
             fp="Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
-            lcsc="C499458",
-            mpn="AS5600-ASOM",
-            mfr="AMS",
         ),
         C("C11", "100nF"),
         C("C12", "1uF"),
@@ -275,8 +241,6 @@ for i in range(1, 17):
             lib_id="LED:WS2812B",
             value="WS2812B",
             fp=WS2812FP,
-            lcsc="C2843785",
-            mpn="XL-5050RGBC-2812B",
         )
     )
 ctrl += [
@@ -306,8 +270,6 @@ CONTROLS["small"] += [
         lib_id="74xGxx:74AHCT1G125",
         value="74AHCT1G125",
         fp=SOT235,
-        mpn="SN74AHCT1G125DBVR",
-        mfr="Texas Instruments",
     ),
     C("C20", "100nF"),
     dict(
@@ -315,8 +277,6 @@ CONTROLS["small"] += [
         lib_id="Connector_Generic:Conn_01x03",
         value="REV F-N-R",
         fp="Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal",
-        mpn="S3B-PH-SM4-TB",
-        mfr="JST",
     ),
     R("R23", "100k"),
     R("R24", "100k"),
@@ -324,6 +284,33 @@ CONTROLS["small"] += [
     C("C37", "100nF"),
     R("R26", "100k"),
 ] + [C(f"C{i}", "100nF") for i in range(21, 37)]
+
+# Reviewed JLCPCB selections are versioned separately from the wiring/layout.
+# Emit them onto every symbol so KiCad remains the BOM export source of truth.
+with open(os.path.join(PROJ_DIR, "bom", "jlcpcb-parts.json")) as source:
+    sourcing = json.load(source)
+parts_by_ref = {
+    c["ref"]: c
+    for sheet in (MCU, POWER, LEVER, CONTROLS)
+    for c in sheet["big"] + sheet["small"]
+}
+assigned = set()
+for code, part in sourcing["parts"].items():
+    for ref in part["references"]:
+        assert ref not in assigned, f"Duplicate sourcing assignment: {ref}"
+        c = parts_by_ref[ref]
+        assert c["fp"] == part["footprint"], f"Sourced footprint mismatch: {ref}"
+        c.update(lcsc=code, mpn=part["mpn"], mfr=part["manufacturer"], datasheet=part["datasheet"])
+        c["properties"] = {
+            "JLCPCB Part Type": part["jlcpcb_category"],
+            "BOM Checked": sourcing["checked_at_utc"][:10],
+            "BOM Comments": part["bom_comments"],
+        }
+        assigned.add(ref)
+for ref, note in sourcing["non_assembly"].items():
+    assert parts_by_ref[ref].get("in_bom") is False
+    parts_by_ref[ref]["properties"] = {"BOM Comments": note}
+assert assigned | set(sourcing["non_assembly"]) == set(parts_by_ref)
 TITLE = dict(title="NotchDeck One", date="2026-10-02", rev="B", company="BenchBits")
 G = 2.54
 

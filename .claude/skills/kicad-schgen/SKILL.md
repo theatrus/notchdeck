@@ -39,4 +39,7 @@ make it pass. Review circuit behavior and rendered sheets as well; ERC cannot
 prove voltage compatibility, power budgeting or footprint correctness.
 
 Revision B baseline: 116 components, 80 nets, 360 endpoints, 14 intentional NCs.
-The PCB is still a scaffold. See `hardware/README.md` for pre-fabrication work.
+The PCB has an unrouted 4×4 floorplan. Sourcing selections live in
+`hardware/notchdeck-one/bom/jlcpcb-parts.json`; run `make verify-bom-notchdeck-one`
+and `make verify-pcb-notchdeck-one` after part changes. See `hardware/README.md`
+for pre-fabrication work.

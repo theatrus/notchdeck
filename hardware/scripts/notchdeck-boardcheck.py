@@ -56,6 +56,29 @@ def main():
         assert fp.GetFPIDAsString() == comp.findtext(
             "footprint"
         ), f"Footprint mismatch: {ref}"
+        fields = {f.attrib["name"]: f.text or "" for f in comp.findall("fields/field")}
+        pcb_fields = {f.GetName(): f.GetText() for f in fp.GetFields()}
+        for name in (
+            "LCSC",
+            "MPN",
+            "Manufacturer",
+            "BOM Comments",
+            "BOM Checked",
+            "JLCPCB Part Type",
+        ):
+            assert pcb_fields.get(name, "") == fields.get(
+                name, ""
+            ), f"{name} mismatch: {ref}"
+        assert pcb_fields.get("Datasheet", "") == comp.findtext(
+            "datasheet", ""
+        ), f"Datasheet mismatch: {ref}"
+        excluded = comp.find("property[@name='exclude_from_bom']") is not None
+        assert (
+            bool(fp.GetAttributes() & P.FP_EXCLUDE_FROM_BOM) == excluded
+        ), f"BOM exclusion mismatch: {ref}"
+        assert (
+            bool(fp.GetAttributes() & P.FP_EXCLUDE_FROM_POS_FILES) == excluded
+        ), f"Placement exclusion mismatch: {ref}"
         path = comp.find("sheetpath").attrib["tstamps"] + comp.findtext("tstamps")
         assert fp.GetPath().AsString().rstrip("/") == path.rstrip(
             "/"
@@ -77,7 +100,7 @@ def main():
     assert actual == expected, f"Missing pads: {set(expected) - set(actual)}"
     print(
         f"PASS: {len(fps)} footprints, {len(set(actual.values()))} nets, "
-        f"{len(actual)} unique pin endpoints and all schematic UUID paths match"
+        f"{len(actual)} unique pin endpoints, sourcing fields and all schematic UUID paths match"
     )
     print(
         f"PCB stage: {len(board.GetTracks())} tracks/vias, "

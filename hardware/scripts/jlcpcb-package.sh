@@ -186,9 +186,9 @@ rm -f "$RAW_CPL"
 echo "[jlcpcb] generating BOM"
 "$KICAD_CLI" sch export bom \
     --output "$OUT_DIR/${NAME}-BOM.csv" \
-    --fields '${ITEM_NUMBER},Reference,Value,Footprint,${QUANTITY},LCSC,MPN,Manufacturer' \
-    --labels "Item,Designator,Comment,Footprint,Qty,LCSC Part #,MPN,Manufacturer" \
-    --group-by 'Value,Footprint' \
+    --fields '${ITEM_NUMBER},Reference,Value,Footprint,${QUANTITY},LCSC,MPN,Manufacturer,BOM Comments' \
+    --labels "Item,Designator,Comment,Footprint,Qty,LCSC Part #,MPN,Manufacturer,Notes" \
+    --group-by 'Value,Footprint,LCSC,MPN,Manufacturer' \
     --ref-delimiter ',' \
     --ref-range-delimiter '' \
     --exclude-dnp \

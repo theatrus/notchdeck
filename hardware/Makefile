@@ -27,8 +27,8 @@ KICAD_PYTHON ?= /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framewo
 # Add new PCB projects here.
 PROJECTS    := notchdeck-one
 
-BOM_FIELDS  := $${ITEM_NUMBER},Reference,Value,Footprint,$${QUANTITY},LCSC,MPN,Manufacturer
-BOM_LABELS  := Item,Designator,Comment,Footprint,Qty,LCSC Part \#,MPN,Manufacturer
+BOM_FIELDS  := $${ITEM_NUMBER},Reference,Value,Footprint,$${QUANTITY},LCSC,MPN,Manufacturer,BOM Comments
+BOM_LABELS  := Item,Designator,Comment,Footprint,Qty,LCSC Part \#,MPN,Manufacturer,Notes
 
 SCRIPTS_DIR := scripts
 JLC_SCRIPT  := $(SCRIPTS_DIR)/jlcpcb-package.sh
@@ -54,6 +54,7 @@ help:
 	@echo "  check-<project>    Sanity-check schematic (comps/footprints/dups/ERC)"
 	@echo "  verify-notchdeck-one  Strict ERC + complete controller pin/net audit"
 	@echo "  verify-pcb-notchdeck-one  Complete schematic/PCB pad-net and UUID audit"
+	@echo "  verify-bom-notchdeck-one  Export and audit all JLCPCB part assignments"
 	@echo "  render-<project>   Render schematic sheets to PNG for visual review"
 	@echo "  clean-docs         Remove generated docs"
 	@echo "  clean-jlc          Remove generated JLCPCB packages"
@@ -104,7 +105,8 @@ bom-$(1): $$($(1)_SCH)
 	    --output $$($(1)_BOM) \
 	    --fields '$$(BOM_FIELDS)' \
 	    --labels '$$(BOM_LABELS)' \
-	    --group-by 'Value,Footprint' \
+	    --group-by 'Value,Footprint,LCSC,MPN,Manufacturer' \
+	    --ref-range-delimiter '' \
 	    --exclude-dnp \
 	    $$($(1)_SCH)
 
@@ -137,3 +139,7 @@ verify-notchdeck-one:
 .PHONY: verify-pcb-notchdeck-one
 verify-pcb-notchdeck-one:
 	@KICAD_CLI=$(KICAD_CLI) $(KICAD_PYTHON) $(SCRIPTS_DIR)/notchdeck-boardcheck.py
+
+.PHONY: verify-bom-notchdeck-one
+verify-bom-notchdeck-one: bom-notchdeck-one
+	@python3 $(SCRIPTS_DIR)/notchdeck-bomcheck.py

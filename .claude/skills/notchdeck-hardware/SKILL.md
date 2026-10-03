@@ -78,5 +78,6 @@ all 360 endpoints checked. Q1 drain=BAT+, source=VSYS; R4 pulls gate down, R5=1k
 from VBUS to gate. U3 is MCP73832 (open-drain STAT). RGB is USB-only through U8
 SN74AHCT1G125, with local decoupling; firmware must hold DIN low without USB.
 J9 is a 3-pin SPDT center-off reverser with midpoint bias and ADC filtering.
-The PCB remains a scaffold. See `hardware/README.md` for remaining electrical,
+The PCB has an unrouted 4×4 floorplan and a fully assigned JLCPCB catalog BOM.
+See `hardware/README.md` for remaining electrical,
 procurement, firmware and layout checks before fabrication.

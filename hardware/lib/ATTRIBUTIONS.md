@@ -55,3 +55,23 @@ They use passive signal pins to model physical connectors wired in parallel;
 only one probe may be connected at a time. Graphics and pin numbering are unchanged.
 Source: installed KiCad symbol library, KiCad library contributors.
 License: [CC-BY-SA 4.0 with the KiCad library exception](https://www.kicad.org/libraries/license/).
+
+### Selected JLCPCB footprint drawings (2026-10-03)
+
+The following footprints are original project work transcribed from manufacturer
+dimensions, not imported third-party KiCad library graphics. Dedicated 3D models
+are not provided. Verify final assembly rotation in the assembler's CPL preview.
+
+- `footprints.pretty/LED_XINGLIGHT_XL-5050RGBC-2812B.kicad_mod`: XINGLIGHT
+  XL-5050RGBC-2812B, JLCPCB C2843785. [Manufacturer datasheet, p11](https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785)
+  (PDF title includes `WS2812B`). The 5×5mm body has four 1.3mm-square lands;
+  pad centers x=±2.2mm, y=±1.55mm. Top view: 1 VDD upper left, 2 DOUT lower left,
+  3 GND lower right, 4 DIN upper right. The package chamfer is at GND; the separate
+  silkscreen dot marks pin 1. Courtyard adds 0.25mm to the land/body envelope.
+- `footprints.pretty/Samtec_FTSH-105-01-L-DV-K.kicad_mod`: Samtec
+  FTSH-105-01-L-DV-K-TR, JLCPCB C448647. [Samtec FTSH-DV footprint drawing, rev H](https://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-footprint.pdf),
+  sheet 1: 1.27mm pitch, 0.74×2.79mm lands, 6.86mm outer span. The drawing is
+  rotated 90° for KiCad's two-column symbol convention, pin 1 upper left, odds on
+  the left. [Samtec catalog package drawing](https://datasheet.lcsc.com/datasheet/pdf/75565f450863f224a13c3fa6d9c6afc1.pdf?productCode=C448647)
+  gives the keyed body envelope of 5.08×11.18mm. The selected `-K` option has no
+  alignment holes; courtyard adds 0.5mm to the pad/body envelope.

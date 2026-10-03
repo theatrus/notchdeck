@@ -16,7 +16,7 @@ or controlled-impedance geometry has been selected. All components are on F.Cu.
 | RGB | One LED 7 mm above each button, with its bypass capacitor nearby. D1–D16 follow a serpentine chain; alternating rows rotate the footprints to put DIN toward the preceding LED. |
 | USB and power | J1 faces the top edge. U7 sits behind it; charger, load sharing, LDO and fuel gauge occupy the upper left. J2 faces the left edge. |
 | Radio | U1 at (93, 66), rotated 90°. Its antenna end overhangs the top board edge by approximately 2 mm. An all-layer rule area prohibits pads, tracks, vias and pours at x=81…105, y=43…51.3 mm. Keep other components and enclosure metal out manually; the rule area permits U1's own footprint. |
-| Programming | J3 SWD and J4 TC2030 are below the radio; SW17 reset is beside it. Allow probe/cable access in the enclosure. |
+| Programming | J3 keyed Samtec SWD header at (93,82) and J4 TC2030 are below the radio; SW17 reset is beside it. J3 moved 2 mm down to clear C9 after its shrouded body was selected. Allow probe/cable access in the enclosure. |
 | Lever | U5 AS5600 center at (81, 113). The 10 mm radius drawing marks provisional shaft/magnet space, **not a shaft hole or validated mechanical clearance**. |
 | Harnesses | J5–J8 face the left edge, ordered S0–S3 top to bottom with local RC networks. J9 reverser faces the bottom edge. |
 | Mounting | Four board-only 3.2 mm NPTH holes at (55,55), (190,55), (190,150), (55,150). Enclosure bosses and screw-head clearances remain to be designed. |
@@ -67,10 +67,11 @@ project settings. Native CLI reports and previews are generated under the ignore
 2. Validate the exact E73 land pattern and antenna clearance against the module
    drawing and enclosure. Its current footprint has no courtyard and uses drilled
    internal pads; a clean native DRC does not validate that geometry.
-3. Resolve the exact RGB LED part and pin-1/pad convention (WS2812B symbol versus
-   the selected SK6812-family footprint), MAX17048 package/exposed-pad dimensions,
-   and remaining MPNs. The sourcing analyzer reports only 17/34 unique BOM lines
-   with MPNs. No part substitutions were made during floorplanning.
+3. Validate MAX17048 package/exposed-pad dimensions. All 115 purchasable components
+   now have exact JLCPCB selections. The RGB part is XINGLIGHT C2843785 with a
+   custom footprint matching its drawing and pin map; the keyed Samtec SWD header
+   likewise has a matching footprint. See [BOM review](bom/README.md). Final CPL
+   rotations and assembly eligibility remain to be checked before ordering.
 4. Review the existing 500 mA charge setting against the protected cell and USB
    current budget, LED brightness limit/inrush, and LDO dropout/dissipation. The
    connectivity checks do not establish electrical or thermal margins.

@@ -55,7 +55,7 @@ PLACEMENT = {
     "C5": (102, 68.5, 90),
     "SW17": (105.5, 61, 0),
     "C6": (102, 65.5, 90),
-    "J3": (93, 80, 0),
+    "J3": (93, 82, 0),
     "J4": (104, 80, 0),
     "U5": (81, 113, 0),
     "C11": (75.7, 111.5, 90),
@@ -194,7 +194,13 @@ def main():
         fp.SetReference(ref)
         fp.SetValue(c.findtext("value"))
         fp.SetField("Datasheet", c.findtext("datasheet", ""))
-        fp.SetAttributes(fp.GetAttributes() & ~P.FP_EXCLUDE_FROM_BOM)
+        excluded = c.find("property[@name='exclude_from_bom']") is not None
+        attrs = fp.GetAttributes()
+        if excluded:
+            attrs |= P.FP_EXCLUDE_FROM_BOM | P.FP_EXCLUDE_FROM_POS_FILES
+        else:
+            attrs &= ~P.FP_EXCLUDE_FROM_BOM
+        fp.SetAttributes(attrs)
         path = P.KIID_PATH()
         ids = c.find("sheetpath").attrib["tstamps"].strip("/").split("/")
         ids += c.findtext("tstamps").split()
@@ -300,7 +306,7 @@ def main():
     text(board, "BAT+  GND", 59, 91, 0.8)
     text(board, "3V3", 73, 51, 0.8)
     text(board, "CHG", 78, 51, 0.8)
-    text(board, "SWD", 93, 87, 1)
+    text(board, "SWD", 93, 90, 1)
     text(board, "TC2030", 104, 87, 1)
     text(board, "RESET", 106, 56, 0.8)
     text(board, "LEVER AXIS", 81, 123, 1)

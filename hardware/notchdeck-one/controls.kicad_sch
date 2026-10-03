@@ -1594,12 +1594,36 @@
 			(at 43.1800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 43.1800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fe4ac818-7196-4301-915e-fb2d398a93ff"))
-		(pin "2" (uuid "7c3a30d5-06c2-4d09-bc07-efb8eb3e05a9"))
+		(property "LCSC" "C318884"
+			(at 43.1800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 43.1800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 43.1800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 43.1800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 43.1800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 43.1800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "90dfd8b7-0ebf-4216-b0d9-7936efdeb414"))
+		(pin "2" (uuid "bd368066-aeb6-42cf-b249-3a54571511ba"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1634,7 +1658,7 @@
 			(at 53.3400 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fd594492-2083-4fd3-b3e1-6999c4162645"))
+		(pin "1" (uuid "632ad50b-fc6a-439f-9b11-d864a5171741"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1665,12 +1689,36 @@
 			(at 119.3800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 119.3800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "363edb9c-5968-444f-baa2-eabeae1a7483"))
-		(pin "2" (uuid "57166af2-a59a-486f-b1ad-01806f04c6fc"))
+		(property "LCSC" "C318884"
+			(at 119.3800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 119.3800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 119.3800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 119.3800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 119.3800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 119.3800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "e041eaec-5900-41af-a5b9-0e71ba4d133f"))
+		(pin "2" (uuid "5f2015c3-246d-4fc7-85a9-80b4699416b5"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1705,7 +1753,7 @@
 			(at 129.5400 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "38f6a892-8e48-4863-b99c-43cfa40134ff"))
+		(pin "1" (uuid "bc413bd8-9f3d-4939-9cfa-e990d02ca99a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1736,12 +1784,36 @@
 			(at 195.5800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 195.5800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d071ffd3-54cc-44af-9b43-71cdde5c0184"))
-		(pin "2" (uuid "9adc55b7-be28-4f76-afb2-d21f61c3f235"))
+		(property "LCSC" "C318884"
+			(at 195.5800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 195.5800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 195.5800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 195.5800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 195.5800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 195.5800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "04abbf34-8b64-4747-aefa-139df142a3ec"))
+		(pin "2" (uuid "740eba3b-d36a-4795-aec8-e6c286299024"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1776,7 +1848,7 @@
 			(at 205.7400 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "72585195-e029-43ef-986e-7544c0feefe8"))
+		(pin "1" (uuid "3c5e961d-f28b-4179-8141-77ef2bcfa48c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1807,12 +1879,36 @@
 			(at 271.7800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 271.7800 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "60c58e1a-07b5-4c75-a7ed-53e9ff262a21"))
-		(pin "2" (uuid "2b98732f-98a4-478e-bbe4-202522294eb2"))
+		(property "LCSC" "C318884"
+			(at 271.7800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 271.7800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 271.7800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 271.7800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 271.7800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 271.7800 35.5600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3e82dfc6-2370-4526-ba10-bfcc3998a75b"))
+		(pin "2" (uuid "84fe1b1b-2ba0-4c41-8e7d-72b9685ef2e4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1847,7 +1943,7 @@
 			(at 281.9400 35.5600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "155096b1-92d3-44a9-9315-c893e62aab86"))
+		(pin "1" (uuid "1f6bda17-9ae6-40ff-8dbc-b58f905d26cd"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1878,12 +1974,36 @@
 			(at 43.1800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 43.1800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "c4a1d104-04a6-4077-b5b4-4ae757e4ffb9"))
-		(pin "2" (uuid "d0055f6a-b974-4e6a-aafb-68e9cf43b76c"))
+		(property "LCSC" "C318884"
+			(at 43.1800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 43.1800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 43.1800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 43.1800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 43.1800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 43.1800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3609eed9-e39d-4268-9eb4-50b83835ebe6"))
+		(pin "2" (uuid "d84ea5b6-be5f-41e1-a6b7-0f7c29cae19a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1918,7 +2038,7 @@
 			(at 53.3400 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "7e750d32-6071-4b8d-9da6-10210bb68adb"))
+		(pin "1" (uuid "2712d52a-7713-4c93-b975-35fd14754083"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1949,12 +2069,36 @@
 			(at 119.3800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 119.3800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "0da44256-1aba-4194-8f35-deb2362ba824"))
-		(pin "2" (uuid "e747e74a-5d92-4d7c-a93f-ba6f588a5c5c"))
+		(property "LCSC" "C318884"
+			(at 119.3800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 119.3800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 119.3800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 119.3800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 119.3800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 119.3800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "407c151d-b13f-46e1-99e3-fe7c748f4dc5"))
+		(pin "2" (uuid "0f8fe845-ab49-4267-96db-9b5041be1a33"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1989,7 +2133,7 @@
 			(at 129.5400 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "03f182e6-ff82-43d5-b0ea-8b4669deff25"))
+		(pin "1" (uuid "8374d91d-61cb-4d97-8b60-a45777ca4382"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2020,12 +2164,36 @@
 			(at 195.5800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 195.5800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4dfbb3f6-b9c4-4324-84e5-6f6462f017d1"))
-		(pin "2" (uuid "351bad97-bf4c-41df-920f-2bee9d4d8ed5"))
+		(property "LCSC" "C318884"
+			(at 195.5800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 195.5800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 195.5800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 195.5800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 195.5800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 195.5800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "2f4234b5-c967-4dca-8f2c-6e1c71ff4bf6"))
+		(pin "2" (uuid "73953d76-26cc-42d4-a593-adbe264d022d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2060,7 +2228,7 @@
 			(at 205.7400 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "49f21044-c74c-4b25-90f5-74329ae86404"))
+		(pin "1" (uuid "28a9d44f-bc51-46ab-97f6-a1baa81326b4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2091,12 +2259,36 @@
 			(at 271.7800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 271.7800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "7a452c1d-e589-4426-a52d-05ecfe85c33b"))
-		(pin "2" (uuid "bd702f9e-5ba4-47d9-8fec-bccf199e9ffb"))
+		(property "LCSC" "C318884"
+			(at 271.7800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 271.7800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 271.7800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 271.7800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 271.7800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 271.7800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "28183935-a5f2-4d6f-8b2b-dbcba9df57f2"))
+		(pin "2" (uuid "73479c72-44c3-4694-98a8-f6602bbaef65"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2131,7 +2323,7 @@
 			(at 281.9400 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1f9882d3-381c-4e4f-8a97-88f2ce39c304"))
+		(pin "1" (uuid "6ce77ae0-e163-4e84-84f2-1b4e2f8d26dc"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2162,12 +2354,36 @@
 			(at 43.1800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 43.1800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6a2d1c9a-695d-4be7-b009-f499c79780f9"))
-		(pin "2" (uuid "8e7f75be-251b-40f5-b26a-1e26fc06c9da"))
+		(property "LCSC" "C318884"
+			(at 43.1800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 43.1800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 43.1800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 43.1800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 43.1800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 43.1800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8dd2eaf1-0d09-4c33-986f-b0432d3a347a"))
+		(pin "2" (uuid "b7d659d2-ef1e-4102-baaa-bd40ba9cff8d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2202,7 +2418,7 @@
 			(at 53.3400 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "557de2de-2807-4597-9d17-0f3467da9832"))
+		(pin "1" (uuid "2e5a100c-f070-459a-9a68-af9579ef6eb9"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2233,12 +2449,36 @@
 			(at 119.3800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 119.3800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9d85d278-b695-4bc3-885c-aa73da33aaaa"))
-		(pin "2" (uuid "2f88654a-792e-49ff-869f-387cb8fbd4d1"))
+		(property "LCSC" "C318884"
+			(at 119.3800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 119.3800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 119.3800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 119.3800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 119.3800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 119.3800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "964cef3a-e5a9-4f3a-ad7a-5de4c2e3062e"))
+		(pin "2" (uuid "f9082dd7-2720-4465-adf8-190f42105e17"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2273,7 +2513,7 @@
 			(at 129.5400 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5eca6dac-88f8-42e0-8d64-5b8c89545833"))
+		(pin "1" (uuid "b9dd138b-095e-4101-9c73-46cd97fb3db7"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2304,12 +2544,36 @@
 			(at 195.5800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 195.5800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2436f8b0-41c1-4eed-9ddb-e3a567f30177"))
-		(pin "2" (uuid "fd3a5caa-2764-461e-9a4e-ad23d5700ef6"))
+		(property "LCSC" "C318884"
+			(at 195.5800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 195.5800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 195.5800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 195.5800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 195.5800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 195.5800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a378a6e8-e11f-41bb-86b6-c3505c11280c"))
+		(pin "2" (uuid "fc1e2570-9b0a-4eb1-ae0d-44facb678125"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2344,7 +2608,7 @@
 			(at 205.7400 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2516edbe-2cac-4eba-89ff-86f4beaf0bee"))
+		(pin "1" (uuid "90332bee-bc70-4213-a377-d2bf419f8718"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2375,12 +2639,36 @@
 			(at 271.7800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 271.7800 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "e7788cda-1f02-4a92-bc06-612d9e6af337"))
-		(pin "2" (uuid "9e54bb4a-2828-47c7-b0a4-491ab6e058bf"))
+		(property "LCSC" "C318884"
+			(at 271.7800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 271.7800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 271.7800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 271.7800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 271.7800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 271.7800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "aef8935e-5b01-42f6-9a99-17bc4eaa907a"))
+		(pin "2" (uuid "dd4014a5-b133-457b-ba4b-e8892ec3cd65"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2415,7 +2703,7 @@
 			(at 281.9400 86.3600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a3dabf01-6fc6-4087-bd37-ac9d71aed081"))
+		(pin "1" (uuid "0c98ea88-ec2b-4ba4-a067-10b77b5a8cc0"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2446,12 +2734,36 @@
 			(at 43.1800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 43.1800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a51bff17-7262-40c1-81e6-df99a5c5181e"))
-		(pin "2" (uuid "0afe6aa6-df5f-4a47-9982-426408c4daab"))
+		(property "LCSC" "C318884"
+			(at 43.1800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 43.1800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 43.1800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 43.1800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 43.1800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 43.1800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "585dac37-7db1-4ee1-bd88-466177357e42"))
+		(pin "2" (uuid "beccdcc3-d2f4-453f-adfd-3b5fb50ef5d2"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2486,7 +2798,7 @@
 			(at 53.3400 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f7f458e2-8606-4420-958c-548a4b0ae6b2"))
+		(pin "1" (uuid "a363001f-6b4c-40b0-90a7-64d79ecbcaf1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2517,12 +2829,36 @@
 			(at 119.3800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 119.3800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5cf65a62-16a9-4f2b-8827-e61404b2b382"))
-		(pin "2" (uuid "d0335a93-110f-45ba-a82a-8eab0a72c240"))
+		(property "LCSC" "C318884"
+			(at 119.3800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 119.3800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 119.3800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 119.3800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 119.3800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 119.3800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5e4249fd-552f-479c-986a-1f46a3ba6a9c"))
+		(pin "2" (uuid "6201693e-c98e-41c1-be47-18ac7d168ca8"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2557,7 +2893,7 @@
 			(at 129.5400 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9a57e8d8-d173-41f1-a2e5-be8537f88c99"))
+		(pin "1" (uuid "c7fe473d-7744-4c2a-9d4e-545279395801"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2588,12 +2924,36 @@
 			(at 195.5800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 195.5800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "8a6f4d8b-8783-47ff-b1c2-b553a0e6c7ea"))
-		(pin "2" (uuid "ba19f974-bf47-49cd-9b08-80459789c804"))
+		(property "LCSC" "C318884"
+			(at 195.5800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 195.5800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 195.5800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 195.5800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 195.5800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 195.5800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d54aca73-d7f9-42a2-8a91-37ff10f39d4d"))
+		(pin "2" (uuid "9065176c-87d3-46e9-8587-1a87422418f1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2628,7 +2988,7 @@
 			(at 205.7400 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "273f50ca-a934-4bac-9b1a-b1faf2ac5539"))
+		(pin "1" (uuid "f785d51c-6f99-44e7-9ac6-56864cf43c7c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2659,12 +3019,36 @@
 			(at 271.7800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/56c8799ae5193945a16a1ffbe378246a.pdf?productCode=C318884"
 			(at 271.7800 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4bc4d359-45cf-4328-b5de-b725f639a876"))
-		(pin "2" (uuid "566ea9e5-48da-459d-ab4a-16c816f779c6"))
+		(property "LCSC" "C318884"
+			(at 271.7800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 271.7800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 271.7800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 271.7800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 271.7800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 271.7800 111.7600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "45a5becc-14cd-46ab-8adf-78aa5b5336ba"))
+		(pin "2" (uuid "3ea26e8d-5dcf-4031-8960-8b924c25cad8"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2699,7 +3083,7 @@
 			(at 281.9400 111.7600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fcc1e15b-c589-4ece-b637-6083849329aa"))
+		(pin "1" (uuid "caf0879e-ff47-4c07-b9b3-232436a77812"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2730,11 +3114,15 @@
 			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/6c6fce4367275d84ec6a99bf09f1250f.pdf?productCode=C265101"
 			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "MPN" "S3B-PH-SM4-TB"
+		(property "LCSC" "C265101"
+			(at 353.0600 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S3B-PH-SM4-TB(LF)(SN)"
 			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -2742,9 +3130,21 @@
 			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "69d2f109-a0cc-48d2-badf-688c516cc1f6"))
-		(pin "2" (uuid "e8b5ffe0-a61a-45d5-ba99-0dc973e71987"))
-		(pin "3" (uuid "b0672f00-27c0-4cf5-b4b2-2b2c189905da"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 353.0600 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 353.0600 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "External center-off reverser and mating harness not included."
+			(at 353.0600 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4773c7c1-1810-4274-83bc-12d2f90f8b11"))
+		(pin "2" (uuid "75cead7a-c2e1-4c7f-b98c-ee2d63557dc4"))
+		(pin "3" (uuid "220cf507-b6f6-48f6-a6c3-b99e5c04eece"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2779,7 +3179,7 @@
 			(at 342.9000 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "79156c91-73d7-4fce-81f0-54211c4cbaec"))
+		(pin "1" (uuid "c7e497d1-28e3-4825-bb70-f2eb50e99e7c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2814,7 +3214,7 @@
 			(at 342.9000 45.7200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "7faeb8ff-a6f5-40e0-979d-7a6da7cd33da"))
+		(pin "1" (uuid "03ddcd35-b772-41ce-834a-d755076b8e20"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2845,12 +3245,36 @@
 			(at 304.8000 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
 			(at 304.8000 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a1451421-d9fa-4726-92bc-7b894bb1fc55"))
-		(pin "2" (uuid "e5c49a7c-0bb0-4379-98c2-badc9a1fda71"))
+		(property "LCSC" "C25741"
+			(at 304.8000 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 304.8000 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 304.8000 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 304.8000 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 304.8000 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 304.8000 50.8000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c060165a-c74f-4d84-934e-53d4bc04a9dc"))
+		(pin "2" (uuid "b946e019-5640-4e05-a1a4-e9437fb86922"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2881,12 +3305,36 @@
 			(at 304.8000 81.2800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
 			(at 304.8000 81.2800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "222b1800-b5af-40d4-8ca7-f31aa2b90059"))
-		(pin "2" (uuid "11d89c63-c9eb-4414-9063-34eff5f3ddda"))
+		(property "LCSC" "C25741"
+			(at 304.8000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 304.8000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 304.8000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 304.8000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 304.8000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 304.8000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "80218022-9a7d-4d12-a3a1-26764877f4db"))
+		(pin "2" (uuid "37be4ef3-ee88-4b5b-a061-9345ef04dca6"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2917,12 +3365,36 @@
 			(at 337.8200 66.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 337.8200 66.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "01ae832f-9565-45a9-a8f0-902a8642f143"))
-		(pin "2" (uuid "ec81c213-7b7e-4781-8787-8b24e014b937"))
+		(property "LCSC" "C11702"
+			(at 337.8200 66.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 337.8200 66.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 337.8200 66.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 337.8200 66.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 337.8200 66.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 337.8200 66.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6598bac5-511a-4f4f-807d-713d139b5e69"))
+		(pin "2" (uuid "8b327e03-d33b-4512-8801-f2905dd65671"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2953,12 +3425,36 @@
 			(at 370.8400 83.8200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 370.8400 83.8200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "804b5e5a-18aa-4166-a11f-5177b7e48e56"))
-		(pin "2" (uuid "661bcc7b-30a1-48a3-ad4f-2b4af7a33a6b"))
+		(property "LCSC" "C1525"
+			(at 370.8400 83.8200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 370.8400 83.8200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 370.8400 83.8200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 370.8400 83.8200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 370.8400 83.8200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 370.8400 83.8200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "41455335-3b27-4917-b1f9-f2623227c3c2"))
+		(pin "2" (uuid "cd897e73-60a1-40ff-a22e-b3e88a84aa0e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2993,7 +3489,7 @@
 			(at 304.8000 41.9100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "bd1f0dd8-c5aa-4c83-97ff-96c8a7b08ccb"))
+		(pin "1" (uuid "222eea99-b2e7-48c6-8620-e6ca47e05815"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3028,7 +3524,7 @@
 			(at 304.8000 90.1700 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4bef7aca-963a-4fdc-aec0-2879352273d2"))
+		(pin "1" (uuid "151a49d7-1894-46f4-b185-18eeadc1c603"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3063,7 +3559,7 @@
 			(at 370.8400 92.7100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d7a64371-884c-46a4-96f7-306ef6116bda"))
+		(pin "1" (uuid "f41f88ba-2f3f-4085-ba0a-683d86d3eaae"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3094,12 +3590,36 @@
 			(at 378.4600 147.3200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 378.4600 147.3200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d5cec6a3-c79c-4b74-8df3-b9abf0bfaed9"))
-		(pin "2" (uuid "a8787ce3-6ac0-496b-b4b4-25be10d87a4f"))
+		(property "LCSC" "C11702"
+			(at 378.4600 147.3200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 378.4600 147.3200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 378.4600 147.3200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 378.4600 147.3200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 378.4600 147.3200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 378.4600 147.3200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c9a9b5ea-abf7-4020-a13f-fd156b0d2d46"))
+		(pin "2" (uuid "11600cfe-865b-4179-b1fc-585272ea06c1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3130,12 +3650,36 @@
 			(at 378.4600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/db39074692074ba57d43d76e9fc6dbf2.pdf?productCode=C965805"
 			(at 378.4600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "43470118-0db1-4a94-9776-7faf14b91863"))
-		(pin "2" (uuid "feb882fc-ff0e-4eae-a79f-a555bce87d5b"))
+		(property "LCSC" "C965805"
+			(at 378.4600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "XL-1608SYGC-06"
+			(at 378.4600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "XINGLIGHT"
+			(at 378.4600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 378.4600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 378.4600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 378.4600 157.4800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5809d538-ae01-4c72-bf7a-16553a8325c1"))
+		(pin "2" (uuid "9bcb5d51-17d8-45f5-85ac-b12f97fac141"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3170,7 +3714,7 @@
 			(at 378.4600 138.4300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "64b7aabe-3ca8-48d6-a322-d41a8ff47250"))
+		(pin "1" (uuid "3841ed5b-0864-4b11-aa55-23153fb2435a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3201,12 +3745,36 @@
 			(at 378.4600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
 			(at 378.4600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "44cea2e9-c95e-4e18-83b6-93a551204ce1"))
-		(pin "2" (uuid "ac39d828-7548-46b0-bb60-6281653c8b89"))
+		(property "LCSC" "C11702"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 378.4600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "30d90330-8ab4-4b50-a7db-5a26713983f5"))
+		(pin "2" (uuid "cf742ec7-6bbd-4ab2-b526-68dda128e381"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3237,12 +3805,36 @@
 			(at 378.4600 203.2000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/011ec3e8cb1e825f6961d29bc4db4c7a.pdf?productCode=C2286"
 			(at 378.4600 203.2000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d34355c1-08c2-4b25-8e4d-ec07b37a9b75"))
-		(pin "2" (uuid "c4e3d5ff-035c-43d8-9393-b95816b840b7"))
+		(property "LCSC" "C2286"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "KT-0603R"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Hubei KENTO Elec"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" ""
+			(at 378.4600 203.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4f56e262-61a5-4872-b081-34917256d133"))
+		(pin "2" (uuid "0f9bd130-5d4a-4624-b30f-c5d60331dad1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3277,7 +3869,7 @@
 			(at 378.4600 184.1500 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5d8d08f3-c229-411e-b5c7-d841197c4fd8"))
+		(pin "1" (uuid "8868a574-57b6-42ed-a2de-2c3f13356b96"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3312,7 +3904,7 @@
 			(at 378.4600 166.3700 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "af19d187-d00f-43b3-ba92-85e12f94d589"))
+		(pin "1" (uuid "9da4d5ca-09a9-4ff4-9cf6-f466c7f2591d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3343,7 +3935,11 @@
 			(at 86.3600 152.4000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/74b1f7dfbe12452e8a365e0596ae902b.pdf?productCode=C7484"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C7484"
 			(at 86.3600 152.4000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -3351,15 +3947,27 @@
 			(at 86.3600 152.4000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "TI"
 			(at 86.3600 152.4000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2c50c008-b7a4-4500-b1af-9b260e99db42"))
-		(pin "2" (uuid "cc7899dd-107a-4c3e-8891-e57a31963990"))
-		(pin "3" (uuid "0249c480-7147-4996-b18f-6bba71bf266d"))
-		(pin "4" (uuid "bbe50699-5ac1-4b05-a7db-6b1642386075"))
-		(pin "5" (uuid "6365862d-da52-4431-b17c-dd42fd2b207c"))
+		(property "JLCPCB Part Type" "Extended"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "AHCT with TTL-compatible input at 5 V required; do not substitute AHC/HC."
+			(at 86.3600 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "822c97b3-e3ee-416b-b493-a391a8902c04"))
+		(pin "2" (uuid "9a9a3bd9-4934-4777-9696-ea864ef612f5"))
+		(pin "3" (uuid "418abbbb-6536-4b30-b779-90946270e7ca"))
+		(pin "4" (uuid "632c3882-8c48-4a36-921c-d4882c29d4ed"))
+		(pin "5" (uuid "67c0ec79-d6a1-45ad-b6eb-61f423d250e3"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3394,7 +4002,7 @@
 			(at 86.3600 137.1600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "50302060-f33b-436c-a011-bbcfbb8f3167"))
+		(pin "1" (uuid "ebb94de5-e0ae-4e52-b17e-dfab928fc6e4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3429,7 +4037,7 @@
 			(at 81.2800 167.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "98f521cd-fde9-42f8-b3ad-351feef40be9"))
+		(pin "1" (uuid "13deec74-5116-4e07-b2aa-1bcd8919d8ac"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3460,12 +4068,36 @@
 			(at 45.7200 165.1000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
 			(at 45.7200 165.1000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "53d4d8cf-eddb-4504-af1a-10068084e843"))
-		(pin "2" (uuid "b6b0e8ed-1126-420b-b493-5a94285dc400"))
+		(property "LCSC" "C25741"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 45.7200 165.1000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "2fa6e78b-275a-4436-9666-ab83d71aaa3b"))
+		(pin "2" (uuid "16fde056-b800-4a66-97fd-c1df4a40d229"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3500,7 +4132,7 @@
 			(at 45.7200 173.9900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3acfe357-ed6a-47b5-bfe9-3c6552327b73"))
+		(pin "1" (uuid "021e85e7-4c73-4b9e-bb35-11863b994851"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3531,12 +4163,36 @@
 			(at 121.9200 152.4000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104"
 			(at 121.9200 152.4000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1c51c614-3e45-4540-8ddd-6e8cb68005ba"))
-		(pin "2" (uuid "deae08d4-7215-448d-8bec-7f66def76dba"))
+		(property "LCSC" "C25104"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF3300TCE"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 121.9200 152.4000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d5784204-a4b7-4ea2-8ef6-7a4595fc7f9b"))
+		(pin "2" (uuid "7e987d17-d434-42e6-8b74-b1e39315800e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3567,12 +4223,36 @@
 			(at 157.4800 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 157.4800 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "5a3bd21a-f0a1-4f76-b0ce-b8a4b1a997b7"))
-		(pin "2" (uuid "3b04af85-386f-4712-b454-edf280084733"))
+		(property "LCSC" "C1525"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 157.4800 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3c36d48c-ab13-4b0e-b797-8da1228b96a5"))
+		(pin "2" (uuid "a45b9ea4-38a0-42e4-8640-e327fef388a9"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3607,7 +4287,7 @@
 			(at 157.4800 163.8300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "41c5a1fa-4989-4b6d-ba69-9879b436527f"))
+		(pin "1" (uuid "3815a7c6-030d-4658-a1ea-27823d07255e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3638,12 +4318,36 @@
 			(at 193.0400 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C28323"
 			(at 193.0400 154.9400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "8fe1241f-1af0-494f-8dca-ca7ee8ec3ab0"))
-		(pin "2" (uuid "abd1e959-4fc5-4357-a546-41b7ef002b7a"))
+		(property "LCSC" "C28323"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL21B105KBFNNNE"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "1uF 50V X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 193.0400 154.9400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "2e252edf-49da-4673-86de-d6b5496454cd"))
+		(pin "2" (uuid "7dafcbe5-cf4a-4bfc-911a-92c65946ee09"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3678,7 +4382,7 @@
 			(at 193.0400 163.8300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3245de4a-4f80-43d9-aa55-f075eb92b4b6"))
+		(pin "1" (uuid "4c8693fc-4c8c-48de-8013-9e8e8bf934e6"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3705,11 +4409,11 @@
 			(at 26.6700 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 30.4800 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 30.4800 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -3721,10 +4425,26 @@
 			(at 30.4800 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "98d80fc5-7a50-4ddd-8c5a-66d775aa36ca"))
-		(pin "2" (uuid "0727065c-be0f-46d5-a6e2-242de331637e"))
-		(pin "3" (uuid "b1d65f44-ae74-4e51-8b49-7a8342212b8d"))
-		(pin "4" (uuid "0f249d9d-f706-4fde-b746-b33158c484bd"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 30.4800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3e6467f1-2fee-4798-bb18-e1a70d604922"))
+		(pin "2" (uuid "7885d4a3-3f86-4afe-b628-c19a975924bf"))
+		(pin "3" (uuid "c2af4b7e-1e18-4613-b357-8531781d6d45"))
+		(pin "4" (uuid "783a8fee-d174-43f2-82ce-d0df44019d9c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3755,12 +4475,36 @@
 			(at 43.1800 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 43.1800 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "7903a0ad-1fc7-496f-9be5-6965760d94b1"))
-		(pin "2" (uuid "1c9db198-5389-46de-90c7-cc8faa6ec736"))
+		(property "LCSC" "C1525"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 43.1800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a82027de-1189-42f2-a56a-ad4dda5754c9"))
+		(pin "2" (uuid "b34821c6-b486-4bea-8e18-47655ee7a67d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3787,11 +4531,11 @@
 			(at 67.3100 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 71.1200 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 71.1200 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -3803,10 +4547,26 @@
 			(at 71.1200 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f22c3316-5703-4cdd-a791-da922bdafe7c"))
-		(pin "2" (uuid "659b1d73-d27d-4b6c-97c8-32edeb6fc424"))
-		(pin "3" (uuid "5d39027d-c689-4c83-a333-c21aa0386701"))
-		(pin "4" (uuid "dfe6b3df-e39e-41ba-b918-ad213fae757d"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 71.1200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "36077e23-d91c-45c4-a847-dd6117590955"))
+		(pin "2" (uuid "417e9ab1-becc-42d6-a0f9-c239d453a64b"))
+		(pin "3" (uuid "47864c10-a31e-4af0-917e-cf0ae7e1e1b7"))
+		(pin "4" (uuid "4f8a8844-6c7e-4523-878c-2b2b1fce216b"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3837,12 +4597,36 @@
 			(at 83.8200 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 83.8200 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "6fe6d3d1-ae92-48a3-8847-4606c8bc07cf"))
-		(pin "2" (uuid "5b57de3b-8f46-4172-aef2-e2306c26b749"))
+		(property "LCSC" "C1525"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 83.8200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "054203ef-0834-40e3-b90f-084b0d2b8f86"))
+		(pin "2" (uuid "d8eb392b-cd91-483a-ab68-d35be1188a7b"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3869,11 +4653,11 @@
 			(at 107.9500 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 111.7600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 111.7600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -3885,10 +4669,26 @@
 			(at 111.7600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "437f4efc-6c7a-40af-a12f-c84520b1eeb7"))
-		(pin "2" (uuid "8621c22f-4fc2-4298-b9d8-4a0d014a3e34"))
-		(pin "3" (uuid "56d28725-809a-4a2c-8f9a-d3d49c035bc9"))
-		(pin "4" (uuid "8bf5bca1-4b47-42ed-b3c0-142dc9ad474c"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 111.7600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4257ab45-16d6-4509-aca1-4af60610b5d3"))
+		(pin "2" (uuid "13230dfa-719d-4c39-96e9-4fe2027cfae1"))
+		(pin "3" (uuid "dda58487-2310-4b4a-a4fb-22adea1baccd"))
+		(pin "4" (uuid "debce393-78a0-4392-a757-d2747f9b8739"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3919,12 +4719,36 @@
 			(at 124.4600 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 124.4600 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4cbe44dd-1c97-4ad8-8238-5a3385cd78ce"))
-		(pin "2" (uuid "72b52a23-2884-4638-811d-8d670f0e9ac1"))
+		(property "LCSC" "C1525"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 124.4600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "cb9d8c90-3757-4976-8ffd-cf9904818946"))
+		(pin "2" (uuid "409234e0-153b-4d33-bb64-cf9b9008a4f5"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3951,11 +4775,11 @@
 			(at 148.5900 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 152.4000 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 152.4000 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -3967,10 +4791,26 @@
 			(at 152.4000 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f779ee2e-8fe7-4995-b7ec-a70063352d3e"))
-		(pin "2" (uuid "a2a274a9-eaed-4760-b9fd-9e5d3627f686"))
-		(pin "3" (uuid "1eb19da8-0666-4f8f-a7d3-c5988243668c"))
-		(pin "4" (uuid "404558cd-6099-4c74-bc58-bfa0ba09a94f"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 152.4000 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7daeb816-8b6a-4138-bc77-6c4ed6469713"))
+		(pin "2" (uuid "436733d3-d3b7-47fe-a03c-cba254d81e4a"))
+		(pin "3" (uuid "4d0d8f6f-2e50-4c41-983b-42c73c3f2e6c"))
+		(pin "4" (uuid "3b4a2ccf-d241-43c6-82a3-08f74b1f499f"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4001,12 +4841,36 @@
 			(at 165.1000 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 165.1000 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "cf6dab9b-c4c3-4053-b36a-32e233714941"))
-		(pin "2" (uuid "5c68adae-129d-4340-a88c-7ba3a34fe208"))
+		(property "LCSC" "C1525"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 165.1000 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1e05228c-85eb-4b16-bf8b-8d3fcdea31ff"))
+		(pin "2" (uuid "a5fa668c-7ba6-4444-bff5-383d3e5ab300"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4033,11 +4897,11 @@
 			(at 189.2300 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 193.0400 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 193.0400 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4049,10 +4913,26 @@
 			(at 193.0400 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9b7bf7ec-8409-4879-964c-b64f247848df"))
-		(pin "2" (uuid "213fca7b-bb3a-4e0e-aff8-e0c51d3d15d9"))
-		(pin "3" (uuid "4f83462d-aea9-45a3-9b1c-9c54c8528d62"))
-		(pin "4" (uuid "0d229575-2253-4b5f-a4b3-426216c5a9fd"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 193.0400 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c4a7af9d-5640-4f0f-961d-64430e9e2a13"))
+		(pin "2" (uuid "e9861ebe-1a35-4a4e-88a8-bef62f0099de"))
+		(pin "3" (uuid "377be931-d663-485e-b3d3-ec5ba975a73f"))
+		(pin "4" (uuid "fd512c13-b381-4d3d-864d-35dfed101006"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4083,12 +4963,36 @@
 			(at 205.7400 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 205.7400 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2b77f443-4f9d-4dd1-a221-f48cfd80d260"))
-		(pin "2" (uuid "794789cb-b38e-4cfd-b027-c8fb548385e3"))
+		(property "LCSC" "C1525"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 205.7400 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "64e89f41-be63-4158-a3e9-436323d813bf"))
+		(pin "2" (uuid "b05e3adf-2373-4836-a050-ba596c78f38c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4115,11 +5019,11 @@
 			(at 229.8700 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 233.6800 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 233.6800 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4131,10 +5035,26 @@
 			(at 233.6800 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2fa2ac74-9634-4b43-b66d-01b45c8b164b"))
-		(pin "2" (uuid "6b49d63d-e255-4d55-bf96-55e7a75a410b"))
-		(pin "3" (uuid "46ab3176-0f6c-48fc-a4c8-5c4265fc4ebb"))
-		(pin "4" (uuid "5549ad9e-92d6-4a57-a1d3-e90004ad2101"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 233.6800 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "14035d60-3fbd-409b-8309-16eb21dcf05a"))
+		(pin "2" (uuid "a2dfab50-cd4f-4b1f-8f8d-3f01ef492be1"))
+		(pin "3" (uuid "ef589749-03d0-44a6-9a5f-4074dbba5303"))
+		(pin "4" (uuid "0c917c7c-46ce-43cf-ac11-9f5e690b64ff"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4165,12 +5085,36 @@
 			(at 246.3800 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 246.3800 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4bc91d0c-3378-4183-bbad-e1872c8863fa"))
-		(pin "2" (uuid "964826f1-92c4-4f34-b373-151e06053d1f"))
+		(property "LCSC" "C1525"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 246.3800 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "310d8797-7abf-4ec2-955c-ec1642fbaf03"))
+		(pin "2" (uuid "4fc1d3b2-cc1b-4898-aa59-ce695d215827"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4197,11 +5141,11 @@
 			(at 270.5100 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 274.3200 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 274.3200 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4213,10 +5157,26 @@
 			(at 274.3200 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2a9a58b8-7bc7-4f7e-98a3-fff7aade2cea"))
-		(pin "2" (uuid "5a291408-911a-4a2f-bed5-79b41081f43d"))
-		(pin "3" (uuid "10dbcbb6-4392-4ec8-8c75-5287715f9ed1"))
-		(pin "4" (uuid "28c67414-b5c3-4b79-85d8-a9f4d20339ff"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 274.3200 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "69accabf-8f26-40c9-b6bc-2afcabea806e"))
+		(pin "2" (uuid "b71173a1-f4fb-43a6-ac32-f2e22b4b7b96"))
+		(pin "3" (uuid "8cb76de7-360c-464a-b4e4-1b3d38e801a3"))
+		(pin "4" (uuid "0f287910-1e3f-42de-9ce9-76f296d6e55d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4247,12 +5207,36 @@
 			(at 287.0200 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 287.0200 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "457a42d4-070a-4849-a1b2-1b027c3b7767"))
-		(pin "2" (uuid "2464f146-8c65-48f8-8031-9d72d652175a"))
+		(property "LCSC" "C1525"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 287.0200 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a848c735-3896-4719-afc5-7d58ff00102e"))
+		(pin "2" (uuid "715db762-d470-4c5d-934b-70ba0fd00993"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4279,11 +5263,11 @@
 			(at 311.1500 199.3900 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 314.9600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 314.9600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4295,10 +5279,26 @@
 			(at 314.9600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a79fd202-5ede-46e9-baf7-7db81f7fb036"))
-		(pin "2" (uuid "43873dce-7e0e-4f45-abd4-3878d00d791e"))
-		(pin "3" (uuid "95b46232-1471-4783-9728-5b4f6e45de8d"))
-		(pin "4" (uuid "da71a590-7ba3-41cf-8d35-b51027415c04"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 314.9600 193.0400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "37e02a67-34fc-456f-86ce-bbbe948f27df"))
+		(pin "2" (uuid "5528d10a-782d-478b-b4ea-a52f2db02f8e"))
+		(pin "3" (uuid "4c811fc2-3d34-46f7-b74b-054e2382c87b"))
+		(pin "4" (uuid "99aea9fc-4253-4b99-8d15-d23c938f5fa7"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4329,12 +5329,36 @@
 			(at 327.6600 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 327.6600 186.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "be054383-e9fa-475e-908e-b556d2c85d3c"))
-		(pin "2" (uuid "20f53ee3-7454-45c8-a3ac-cbeb497afc24"))
+		(property "LCSC" "C1525"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 327.6600 186.6900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "35a0fdba-f84b-476d-8be3-e11b577e9c0f"))
+		(pin "2" (uuid "4ff2146f-40a7-43f1-8bc3-ef949bbcab81"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4369,7 +5393,7 @@
 			(at 30.4800 205.7400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "eab24bc2-16ad-4a73-bfa7-ddb4c630d0d0"))
+		(pin "1" (uuid "a3ac9fe7-e2ef-4274-8603-9ece638812de"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4396,11 +5420,11 @@
 			(at 26.6700 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 30.4800 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 30.4800 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4412,10 +5436,26 @@
 			(at 30.4800 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "e42fe3f8-36fa-46a2-bc57-f797c877edd5"))
-		(pin "2" (uuid "f2ce8ded-dcae-407d-baae-51fac6e14559"))
-		(pin "3" (uuid "0e40030e-7f80-461e-a565-5b5ff067c607"))
-		(pin "4" (uuid "1869db8f-7cf0-4958-b556-5f464c215fe1"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 30.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5f3c9949-cdf6-4474-90a6-ba2c0f283a1e"))
+		(pin "2" (uuid "5424f083-d61f-4b7c-b9b0-67317d207fe3"))
+		(pin "3" (uuid "f5d2a4ca-5306-4854-b5d6-4fac38a257dd"))
+		(pin "4" (uuid "4bb2bdce-4e6b-43ae-832a-6c7428fece19"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4446,12 +5486,36 @@
 			(at 43.1800 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 43.1800 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "dcf77f7c-c7da-4f58-b55c-266dc41dd8ba"))
-		(pin "2" (uuid "43263c08-46c5-4ed4-a152-3a12f680d539"))
+		(property "LCSC" "C1525"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 43.1800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "04f70b1c-bb50-4d7f-8187-074ed78582e3"))
+		(pin "2" (uuid "6c2ac023-49df-4cd9-8cb9-f71f12ce485a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4478,11 +5542,11 @@
 			(at 67.3100 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 71.1200 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 71.1200 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4494,10 +5558,26 @@
 			(at 71.1200 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "78ef0d69-8513-468a-8b35-67c26ffe0aed"))
-		(pin "2" (uuid "6a76acce-0b03-42ea-932e-e2ee8ac3ff4a"))
-		(pin "3" (uuid "89330a99-bda0-42a9-9d71-1dd72ae04125"))
-		(pin "4" (uuid "8b6d4cca-433b-4485-9950-fdfd14153f4f"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 71.1200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7c2de2d5-b0ea-4ca7-917d-a3941ba5eb8b"))
+		(pin "2" (uuid "bda9ce9b-c90b-4f8a-bf28-f86c702bd10e"))
+		(pin "3" (uuid "e07b1f41-550d-48d0-a09e-b755f58b9261"))
+		(pin "4" (uuid "96a52619-c63e-4350-9713-7a275ed5b283"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4528,12 +5608,36 @@
 			(at 83.8200 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 83.8200 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "31f406ef-9ed5-44a9-a865-a0fda8f8fa68"))
-		(pin "2" (uuid "09eb4ad0-5ad8-4ecc-b458-d9e50e15c327"))
+		(property "LCSC" "C1525"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 83.8200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "9f673175-7198-4d63-9ca4-622e74a7367b"))
+		(pin "2" (uuid "0c716635-8578-42b8-8265-e80042a9d7ee"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4560,11 +5664,11 @@
 			(at 107.9500 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 111.7600 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 111.7600 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4576,10 +5680,26 @@
 			(at 111.7600 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3dc29f1f-dd77-4c0c-9eaa-2900fcf8fe41"))
-		(pin "2" (uuid "fbaa8d5b-5ffe-4042-b27e-84dd68183048"))
-		(pin "3" (uuid "01a919e0-8123-46f7-98b0-b299c13c19a6"))
-		(pin "4" (uuid "ff292b3d-c8fe-4c6a-a727-d95784927b54"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 111.7600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "29a73faf-beb8-464d-897c-1d3478c0fc03"))
+		(pin "2" (uuid "1c92b53a-b2b4-432e-a114-3ef474f39b2e"))
+		(pin "3" (uuid "7e3e23f1-cf71-4f67-8544-bd595802eaa3"))
+		(pin "4" (uuid "8ec663d3-397e-4f40-9dc4-43f30ab847d2"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4610,12 +5730,36 @@
 			(at 124.4600 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 124.4600 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "761ad850-add8-4804-9294-3dc763a620a6"))
-		(pin "2" (uuid "9dbaf3b2-9d47-4dd8-86ff-84126bed9f47"))
+		(property "LCSC" "C1525"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 124.4600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "78c7b808-03ba-4c12-9fca-befdc543e820"))
+		(pin "2" (uuid "907a91a6-b90a-461d-9a31-4e3c05c66993"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4642,11 +5786,11 @@
 			(at 148.5900 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 152.4000 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 152.4000 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4658,10 +5802,26 @@
 			(at 152.4000 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "9c56d89a-6797-4b99-9860-1975c2aefb32"))
-		(pin "2" (uuid "60c13411-e594-46cf-947e-2aacf2c517a0"))
-		(pin "3" (uuid "150d80dc-9f68-4811-a4bb-e9503f1016b2"))
-		(pin "4" (uuid "9fbac5c8-65d9-452c-be11-81f5f612be20"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 152.4000 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b7eed2e8-466d-4a42-a49a-5f5271fa3a4e"))
+		(pin "2" (uuid "c3fcb541-6cf1-4586-a3cc-f5e01e2293a5"))
+		(pin "3" (uuid "6be07189-6028-44ea-817d-e3c2e3905a4f"))
+		(pin "4" (uuid "1b04937f-9e34-47fa-9417-3243a7c1e43e"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4692,12 +5852,36 @@
 			(at 165.1000 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 165.1000 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4e7dd9a1-5575-458f-a58b-9518003596f1"))
-		(pin "2" (uuid "51d1e256-f62d-4248-b787-c014f2db5cf1"))
+		(property "LCSC" "C1525"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 165.1000 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4af09df1-22cd-40c8-989c-ccb458824dbe"))
+		(pin "2" (uuid "aa0e9811-12b3-4101-98e7-5715afc107dc"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4724,11 +5908,11 @@
 			(at 189.2300 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 193.0400 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 193.0400 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4740,10 +5924,26 @@
 			(at 193.0400 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3bc694ea-afcc-4542-ac46-3e37ca5b8135"))
-		(pin "2" (uuid "2b20ca8b-d6bf-4cb2-a642-e727d1cb8e6e"))
-		(pin "3" (uuid "ca23bffa-f314-4436-a5db-b790f8597c60"))
-		(pin "4" (uuid "94c4cda2-88fe-4b9e-ac64-1b403ef6c38f"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 193.0400 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "efef4e5d-4940-48e9-bb1e-ebf39831ead0"))
+		(pin "2" (uuid "d01f8546-877a-4c12-94dc-664dcb034b52"))
+		(pin "3" (uuid "8fd85d94-8fd2-4b55-826f-b5be6f14af22"))
+		(pin "4" (uuid "d0617f38-ad28-40e1-a28e-38f65d71dcea"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4774,12 +5974,36 @@
 			(at 205.7400 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 205.7400 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fcb40313-4775-45b0-a388-2aa2b7a2c10f"))
-		(pin "2" (uuid "95ce61d3-790d-4d42-9e1a-e6f286170002"))
+		(property "LCSC" "C1525"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 205.7400 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "30094764-f795-4d34-a41e-476245d286cd"))
+		(pin "2" (uuid "05f6d9f3-5678-47fd-b214-9eb15b790226"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4806,11 +6030,11 @@
 			(at 229.8700 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 233.6800 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 233.6800 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4822,10 +6046,26 @@
 			(at 233.6800 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "787465a0-7573-400b-be0e-d33285257214"))
-		(pin "2" (uuid "9d3a33f1-9efd-40cf-ba25-921d380cc3db"))
-		(pin "3" (uuid "ffe4ec19-c57c-44ee-93be-aec50389a2ea"))
-		(pin "4" (uuid "88c97e94-e61e-4810-9e40-6b4e68557825"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 233.6800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "19d430f2-5a8d-444e-95c1-90074e9388e0"))
+		(pin "2" (uuid "92744375-ca4a-4056-90e4-ef6c057fca86"))
+		(pin "3" (uuid "ec1eccb0-9f38-4ef5-a66b-f34cd4264105"))
+		(pin "4" (uuid "ddbdf0ce-48ac-46f9-92a2-934a82aeef46"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4856,12 +6096,36 @@
 			(at 246.3800 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 246.3800 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "81bdcae9-8ecb-43e5-82fa-d9e244456cb0"))
-		(pin "2" (uuid "1c067711-f4e2-4c19-bc86-2e0b00b42820"))
+		(property "LCSC" "C1525"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 246.3800 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "b1f0b396-c79f-45cc-8dbe-40c7bf04c396"))
+		(pin "2" (uuid "89bf9d85-90e6-4e67-a6a0-6ac7f8aebf5b"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4888,11 +6152,11 @@
 			(at 270.5100 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 274.3200 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 274.3200 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4904,10 +6168,26 @@
 			(at 274.3200 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "3756035e-d8a3-48ec-91ce-64ba9eecd927"))
-		(pin "2" (uuid "fad1af82-78fa-4a6e-a963-9cadec89aa4f"))
-		(pin "3" (uuid "f09adaf1-ef17-47e8-a8d3-5cfce768e38d"))
-		(pin "4" (uuid "2132d070-c034-445d-b459-51f9afa362af"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 274.3200 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "4fc454d6-1cbd-4771-86ed-472a10230e29"))
+		(pin "2" (uuid "87ee0d69-a31a-4ad0-8448-bba3da5e3945"))
+		(pin "3" (uuid "364d65ef-0492-46ae-9b63-24d60c3065b5"))
+		(pin "4" (uuid "122c788c-10fe-42d4-ab91-c26182b7e364"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4938,12 +6218,36 @@
 			(at 287.0200 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 287.0200 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "046d8d78-5796-410a-8544-a82d4e3781d3"))
-		(pin "2" (uuid "0c1a73b4-9fe9-4f61-acba-b70d3eefca27"))
+		(property "LCSC" "C1525"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 287.0200 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7d6f9333-1630-46bb-9a42-eddacc48c5ca"))
+		(pin "2" (uuid "75ecf4ce-a0b2-403a-9eee-050f0a63d0e4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -4970,11 +6274,11 @@
 			(at 311.1500 240.0300 0)
 			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
 		)
-		(property "Footprint" "LED_SMD:LED_OPSCO_SK6812_PLCC4_5.0x5.0mm_P3.1mm"
+		(property "Footprint" "notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B"
 			(at 314.9600 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/40b65f6fea0587c0483bbbd4496835fd.pdf?productCode=C2843785"
 			(at 314.9600 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
@@ -4986,10 +6290,26 @@
 			(at 314.9600 233.6800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f8e3bb55-f321-4f95-85c7-cd3c851c80a2"))
-		(pin "2" (uuid "f0aeb964-ad78-4e4b-9a49-c5ca11626174"))
-		(pin "3" (uuid "91be89f5-6140-4275-b7d8-bcd2e79d2f94"))
-		(pin "4" (uuid "bff2d307-cc42-4cf4-b3d5-0de2243064e2"))
+		(property "Manufacturer" "XINGLIGHT"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Same RGB part for D1-D16. Check pin 1 and polarity in CPL preview; firmware brightness/current limit required."
+			(at 314.9600 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d0583db7-1aca-4444-8cb7-c93630ca59cd"))
+		(pin "2" (uuid "2de5d4e2-fc38-4e33-bb1f-33c79b028444"))
+		(pin "3" (uuid "f0545705-9d51-4947-9571-f2539035e716"))
+		(pin "4" (uuid "f97958a6-5898-41d5-9ff4-fadf525a8db4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -5020,12 +6340,36 @@
 			(at 327.6600 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
 			(at 327.6600 227.3300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "bb137911-da6e-4f02-93b8-de65c716bc64"))
-		(pin "2" (uuid "949746ba-9fdc-4970-b3d6-757cbc824f1f"))
+		(property "LCSC" "C1525"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 327.6600 227.3300 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "38d502eb-f2c8-4418-a03d-02b50ed0687a"))
+		(pin "2" (uuid "f555c768-7171-4086-9eed-7cd4fffeb380"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -5060,7 +6404,7 @@
 			(at 30.4800 246.3800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d038053c-5c53-40e3-a3f3-8c7e67b34d04"))
+		(pin "1" (uuid "745618de-db55-4868-9861-e986866c30e4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -5072,1219 +6416,1219 @@
 	)
 	(wire (pts (xy 17.7800 193.0400) (xy 22.8600 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "3c4887b1-b2e7-4e64-8953-ccc9787cb9a4")
+		(uuid "13ba1b34-a3b2-4a1a-a264-a5b283aa9468")
 	)
 	(wire (pts (xy 17.7800 233.6800) (xy 22.8600 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "10ac6722-c197-4163-9396-d86b380b3c2a")
+		(uuid "c859da41-5385-4720-b723-e3c64353bc74")
 	)
 	(wire (pts (xy 30.4800 180.3400) (xy 30.4800 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "d9be8b15-a0ea-4bb8-a5cb-f67744dc02ca")
+		(uuid "f18a4179-87de-4376-ba40-b7780aee933a")
 	)
 	(wire (pts (xy 30.4800 180.3400) (xy 43.1800 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "00949bb4-c85c-4c2f-9887-429af21edd28")
+		(uuid "884f57cf-cf3a-4f96-a900-350404377533")
 	)
 	(wire (pts (xy 30.4800 200.6600) (xy 30.4800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "1efb6645-d84a-4a91-97c5-03a54c354485")
+		(uuid "63d676ed-86c9-4700-bea2-35176419c83d")
 	)
 	(wire (pts (xy 30.4800 205.7400) (xy 43.1800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "86dbcdb1-72f5-43c7-88e7-0076deece1f9")
+		(uuid "05768426-23ac-42ec-be5a-240ae601ef61")
 	)
 	(wire (pts (xy 30.4800 220.9800) (xy 30.4800 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "819da074-c8ad-4e2e-9d34-fa1f1744d601")
+		(uuid "baf9510f-23f6-4f13-95e5-572dc983bc25")
 	)
 	(wire (pts (xy 30.4800 220.9800) (xy 43.1800 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "bcca5f5d-467e-431e-810a-df87170eb7f0")
+		(uuid "b535f547-4ac6-459e-9fe3-6a84e2f98cf2")
 	)
 	(wire (pts (xy 30.4800 241.3000) (xy 30.4800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "5f0251c2-bd17-4daa-9f04-417a2ced2b89")
+		(uuid "485d8b54-bf5d-4e9f-9baa-9dc937114ec5")
 	)
 	(wire (pts (xy 30.4800 246.3800) (xy 43.1800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "f9ec9beb-7f0a-4e0e-a5c1-ad1d44a28747")
+		(uuid "bf0025bb-9e76-4afa-94c2-b5f12afb35cd")
 	)
 	(wire (pts (xy 33.0200 35.5600) (xy 38.1000 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "b84074eb-ee5b-460e-aa91-04554ac4b68a")
+		(uuid "3d247783-0d22-4cef-b1a3-2f19e9f47e85")
 	)
 	(wire (pts (xy 33.0200 60.9600) (xy 38.1000 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "975e3f5a-7847-4b7c-a2dd-e41a852e95b0")
+		(uuid "1490fa15-d440-48d7-b31f-68288ad30886")
 	)
 	(wire (pts (xy 33.0200 86.3600) (xy 38.1000 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "c321d9f9-e2c6-4516-93a4-b9dc4c12e6c5")
+		(uuid "67a96da0-e990-4403-983c-924cc3f31ec5")
 	)
 	(wire (pts (xy 33.0200 111.7600) (xy 38.1000 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "c255dfbb-98f7-48ce-b463-8165c187b2c9")
+		(uuid "229e7017-c591-4d98-89e4-967b0af35550")
 	)
 	(wire (pts (xy 38.1000 193.0400) (xy 63.5000 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "086d8e0c-027e-4f62-9cc9-6e1c9ff8e12f")
+		(uuid "3dde38f9-b24b-4858-b5aa-cdbf506ab3d8")
 	)
 	(wire (pts (xy 38.1000 233.6800) (xy 63.5000 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "3a6cb3a5-919b-4bde-8af3-972ffa5de93a")
+		(uuid "ce7b8c87-51ab-40a2-a0b9-428e9b9fc281")
 	)
 	(wire (pts (xy 43.1800 180.3400) (xy 43.1800 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "ed51aba7-b95b-4683-afca-521be297e93f")
+		(uuid "e71f3de7-a589-45e8-8a74-149463410223")
 	)
 	(wire (pts (xy 43.1800 180.3400) (xy 71.1200 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "974a8667-fc44-4980-9725-d1fd851750e1")
+		(uuid "e6b07bc1-048e-4657-be83-4210f660a514")
 	)
 	(wire (pts (xy 43.1800 190.5000) (xy 43.1800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "0eb6f807-cd00-4119-95bf-730512a63f1c")
+		(uuid "7ac605aa-89d1-4426-890b-370d3ab0f1e9")
 	)
 	(wire (pts (xy 43.1800 205.7400) (xy 71.1200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "274350b1-6d38-470c-9da7-ff50419380ff")
+		(uuid "f64abcdc-2d72-4101-8146-0f108c1f60ac")
 	)
 	(wire (pts (xy 43.1800 220.9800) (xy 43.1800 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "bf9d0cc1-197a-4f09-8667-14bba80550ab")
+		(uuid "902511fe-48ee-470b-9027-87fb78c4f1e5")
 	)
 	(wire (pts (xy 43.1800 220.9800) (xy 71.1200 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "979ce2db-b701-49fd-b607-00561e845120")
+		(uuid "cca07083-6fda-4d2e-ae3f-4e578b0972b1")
 	)
 	(wire (pts (xy 43.1800 231.1400) (xy 43.1800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "92b34608-3d35-4da3-a725-6b5615fe73bf")
+		(uuid "a9700ea5-22c2-42a3-89bc-73afeaf12a06")
 	)
 	(wire (pts (xy 43.1800 246.3800) (xy 71.1200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "0fca64d2-52c3-4899-b49d-3fd6e477da50")
+		(uuid "7db798a2-0ef7-45fb-a8be-5f90c56ad0da")
 	)
 	(wire (pts (xy 45.7200 156.2100) (xy 45.7200 161.2900))
 		(stroke (width 0) (type default))
-		(uuid "66848842-8a77-4c7b-bc1b-677b05516c20")
+		(uuid "e5d458a3-ee7d-4f50-8518-4fe590c98552")
 	)
 	(wire (pts (xy 45.7200 168.9100) (xy 45.7200 173.9900))
 		(stroke (width 0) (type default))
-		(uuid "36395c4b-9b98-47a8-954e-a5fa36defb1d")
+		(uuid "3854dba0-1b45-4224-9306-6364b30afdfa")
 	)
 	(wire (pts (xy 48.2600 35.5600) (xy 53.3400 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "6f4fd4a1-c0e6-4c5d-86f3-ead3cd3df43a")
+		(uuid "a46a658c-38c2-4727-a06f-b0aaa69ac4ab")
 	)
 	(wire (pts (xy 48.2600 60.9600) (xy 53.3400 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "2792b2cf-191c-4a9d-b3f0-216f5a98607a")
+		(uuid "380c3e2b-ff63-4029-993a-8a6eff014e44")
 	)
 	(wire (pts (xy 48.2600 86.3600) (xy 53.3400 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "c325bda1-98d9-43dc-a135-a7ee2834fca1")
+		(uuid "f4d9606c-1f50-4a99-b86c-b606b62b6d43")
 	)
 	(wire (pts (xy 48.2600 111.7600) (xy 53.3400 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "8e9c906d-b36a-4fd2-adec-dd64f4b00634")
+		(uuid "e5be1c67-4542-4b7d-935d-197c722086bc")
 	)
 	(wire (pts (xy 66.0400 152.4000) (xy 71.1200 152.4000))
 		(stroke (width 0) (type default))
-		(uuid "8c20b8db-49e2-4f0b-9719-c0c566386784")
+		(uuid "acf4f735-8a31-4ffc-9472-a4a679ad1125")
 	)
 	(wire (pts (xy 71.1200 180.3400) (xy 71.1200 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "e9808b30-5bfe-4ed0-9692-dac6f825a44f")
+		(uuid "a85e0ac1-2e15-47e7-b1c1-f8179f7524ad")
 	)
 	(wire (pts (xy 71.1200 180.3400) (xy 83.8200 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "2c1cf7ac-b17a-43d2-9d67-a3ae8704bfae")
+		(uuid "2bd8120b-9fc8-40b8-95b2-fb591f7fdbd9")
 	)
 	(wire (pts (xy 71.1200 200.6600) (xy 71.1200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "26512367-7213-4192-ae2d-dabb659776af")
+		(uuid "bd3eb7af-401e-40b7-8ab0-7d7e16f66150")
 	)
 	(wire (pts (xy 71.1200 205.7400) (xy 83.8200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "c3e38789-6d8c-44a2-9fa0-b0aa627f2af2")
+		(uuid "fcbf2ab6-1949-46e0-a357-72521597f19a")
 	)
 	(wire (pts (xy 71.1200 220.9800) (xy 71.1200 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "fe45dfb4-1839-493e-87ac-9a8d0de4012c")
+		(uuid "57a837fc-7e48-459d-b91a-0bcb4d732e3a")
 	)
 	(wire (pts (xy 71.1200 220.9800) (xy 83.8200 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "d451eaa2-f10a-4e2e-97c7-36302bdcbaca")
+		(uuid "54e14078-f139-4e8e-9ec7-9d501a314f52")
 	)
 	(wire (pts (xy 71.1200 241.3000) (xy 71.1200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "fb342b5f-f886-4bfa-8cd8-8f19781fe56e")
+		(uuid "4771d4da-b0cf-44de-9e9b-bf3c8516d2d0")
 	)
 	(wire (pts (xy 71.1200 246.3800) (xy 83.8200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "c354da0b-1a70-45cd-a961-409b70562d8d")
+		(uuid "b59db973-725d-4b57-9d8b-b3c5e1f8c0b1")
 	)
 	(wire (pts (xy 78.7400 193.0400) (xy 104.1400 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "c494cc22-3064-4258-86de-0510084e22b7")
+		(uuid "9f9f8547-3e41-4165-b040-8a89f1ce7897")
 	)
 	(wire (pts (xy 78.7400 233.6800) (xy 104.1400 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "5357386a-3d1d-4178-a41e-9b6af662f1c2")
+		(uuid "223b7e98-1df5-4063-a6d1-d773d7ea7c28")
 	)
 	(wire (pts (xy 81.2800 137.1600) (xy 81.2800 142.2400))
 		(stroke (width 0) (type default))
-		(uuid "701dccdd-66f0-42ee-bb17-f0b463f06b49")
+		(uuid "badedb3d-fe2a-496b-b149-8cecc269eef3")
 	)
 	(wire (pts (xy 81.2800 162.5600) (xy 81.2800 167.6400))
 		(stroke (width 0) (type default))
-		(uuid "6cdb18b9-1a0a-435d-9bb6-784fbdabf046")
+		(uuid "767d0ffb-1388-4a16-9ff5-074f60d10db8")
 	)
 	(wire (pts (xy 83.8200 180.3400) (xy 83.8200 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "5b5e9ad0-c073-4c23-b1a3-597d753ce65d")
+		(uuid "0d642687-7c9a-4677-bba1-18fbaca19481")
 	)
 	(wire (pts (xy 83.8200 180.3400) (xy 111.7600 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "f98d7204-5b44-425a-95d0-cf80f7502f13")
+		(uuid "84a0f2fa-915d-425a-b9b2-0312cca41db3")
 	)
 	(wire (pts (xy 83.8200 190.5000) (xy 83.8200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "d8c06155-a6c2-457a-b0ef-28cae6f61b0b")
+		(uuid "2fc454de-bc6e-4d10-84a5-9a0880411931")
 	)
 	(wire (pts (xy 83.8200 205.7400) (xy 111.7600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "6e0da9df-f8a0-484d-a25e-5c46537f9694")
+		(uuid "58273d08-ca57-401c-8967-43249b06da51")
 	)
 	(wire (pts (xy 83.8200 220.9800) (xy 83.8200 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "ab648632-e81e-4bf6-8247-1a4f7ce16f07")
+		(uuid "e725873d-b027-48f7-a330-fe2e4562474f")
 	)
 	(wire (pts (xy 83.8200 220.9800) (xy 111.7600 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "85f20763-3cad-46f1-a294-ed6e2a2d4211")
+		(uuid "69f42458-e6dd-4ef9-b6bd-5e78e35c1ebc")
 	)
 	(wire (pts (xy 83.8200 231.1400) (xy 83.8200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "80e567bd-08c4-4be7-b5b8-0b9593e2cda0")
+		(uuid "b6a3a6ee-1ca8-43aa-a8a4-2403d0b4d4f0")
 	)
 	(wire (pts (xy 83.8200 246.3800) (xy 111.7600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "b8d63f8f-5f68-4e45-8f80-56cac08438fc")
+		(uuid "db4c3640-4b2d-4287-b127-d4f9c7614356")
 	)
 	(wire (pts (xy 86.3600 137.1600) (xy 86.3600 142.2400))
 		(stroke (width 0) (type default))
-		(uuid "3052fa6b-4b11-49d9-a481-358536a42890")
+		(uuid "b9bf1d9c-5175-4292-a871-2d95ab29ab86")
 	)
 	(wire (pts (xy 99.0600 152.4000) (xy 118.1100 152.4000))
 		(stroke (width 0) (type default))
-		(uuid "f7a4e795-ae7f-4bdd-8c25-c50aeecef6b4")
+		(uuid "61904b4e-2167-43f9-b011-14cb6325551b")
 	)
 	(wire (pts (xy 109.2200 35.5600) (xy 114.3000 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "4ba215d0-8f75-43c2-a80c-a86487deb854")
+		(uuid "a5747e49-a6db-405d-8f80-1f2d9f74e1c5")
 	)
 	(wire (pts (xy 109.2200 60.9600) (xy 114.3000 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "0f6aa955-af5b-4d91-87a5-8cf0646ee677")
+		(uuid "477e694d-7d02-40db-b43c-a54be9f2d21a")
 	)
 	(wire (pts (xy 109.2200 86.3600) (xy 114.3000 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "32e135e0-7b61-4d59-830a-8061e4d06a26")
+		(uuid "d86048ac-42c3-4bf0-8253-818f01e0ada0")
 	)
 	(wire (pts (xy 109.2200 111.7600) (xy 114.3000 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "2d0bc149-9961-433c-a934-ceda20681682")
+		(uuid "6aa82fbd-6a50-4a97-941c-c5864287c974")
 	)
 	(wire (pts (xy 111.7600 180.3400) (xy 111.7600 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "f38bbf7f-3fe8-4940-a283-b5ea65fba348")
+		(uuid "381a2d9b-0d63-4ea9-8dca-bca12934e799")
 	)
 	(wire (pts (xy 111.7600 180.3400) (xy 124.4600 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "1191d4ae-90c0-4424-a98b-941349e16985")
+		(uuid "9149d8de-cc17-42be-9279-d421a0c9a955")
 	)
 	(wire (pts (xy 111.7600 200.6600) (xy 111.7600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "bc7dd9b3-97ec-48af-9037-222887612d2c")
+		(uuid "788d6201-cf6e-401c-813e-9f419e198dc6")
 	)
 	(wire (pts (xy 111.7600 205.7400) (xy 124.4600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "90f23dee-9d7d-4fd8-9d0d-8ca200f100a9")
+		(uuid "cb43feb9-3a51-4497-99ca-632d1ee80132")
 	)
 	(wire (pts (xy 111.7600 220.9800) (xy 111.7600 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "b65c1bd4-57ab-4aa5-b43c-58f3a78e6de9")
+		(uuid "2f76d2c3-b8fd-450a-853a-1d51fef66a14")
 	)
 	(wire (pts (xy 111.7600 220.9800) (xy 124.4600 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "c7c9a98c-f264-4a95-b7f0-8d325f20af1e")
+		(uuid "5d463388-f2ad-47b6-a91e-efd3613c1e7b")
 	)
 	(wire (pts (xy 111.7600 241.3000) (xy 111.7600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "2cdd23d1-7338-4177-b43d-141c6c12d4d7")
+		(uuid "ab70787b-e1a6-47c3-af33-bc5cedf2b923")
 	)
 	(wire (pts (xy 111.7600 246.3800) (xy 124.4600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "3d5f7d4b-9376-4074-8d77-b38edea4ea81")
+		(uuid "86c59620-ff0e-41d9-b541-ad3aa11150cc")
 	)
 	(wire (pts (xy 119.3800 193.0400) (xy 144.7800 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "88f19cca-2d3b-4f7b-825f-d707d263c974")
+		(uuid "ae1f36f2-8497-411e-8df8-c129350c25be")
 	)
 	(wire (pts (xy 119.3800 233.6800) (xy 144.7800 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "fbd49d63-47b6-433f-b34f-db4928a4535f")
+		(uuid "979958a4-dfbc-41f1-a0b4-828d6a45b9a0")
 	)
 	(wire (pts (xy 124.4600 35.5600) (xy 129.5400 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "65c6f409-639d-4d09-bed8-230a4ee925e4")
+		(uuid "1abd8ab7-442b-496c-b99c-885804f83d20")
 	)
 	(wire (pts (xy 124.4600 60.9600) (xy 129.5400 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "64cdde88-5147-4dfe-8086-f99adf5816c5")
+		(uuid "4587112a-df62-434a-9d61-976476588736")
 	)
 	(wire (pts (xy 124.4600 86.3600) (xy 129.5400 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "775fb806-4a3b-4889-b371-7d21f73898c9")
+		(uuid "c837f6dd-ee59-489f-9b78-c022b30d0740")
 	)
 	(wire (pts (xy 124.4600 111.7600) (xy 129.5400 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "6d2ab668-21a2-47b2-8448-5a28254e553e")
+		(uuid "72474800-69b5-4939-b523-577819e72983")
 	)
 	(wire (pts (xy 124.4600 180.3400) (xy 124.4600 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "f28175dc-a727-4689-ae04-a93796ef73fd")
+		(uuid "0ac46f1c-3786-4754-a803-62765ecf6d77")
 	)
 	(wire (pts (xy 124.4600 180.3400) (xy 152.4000 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "32fc5ad7-d73c-41cb-97a4-81e2c15a5f9d")
+		(uuid "22fec21c-6703-420c-98d4-872a8ea21817")
 	)
 	(wire (pts (xy 124.4600 190.5000) (xy 124.4600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "f29af29f-1b0b-410b-80bb-0677469ae155")
+		(uuid "7cb38624-18e8-4725-ae9e-a4f3089765ab")
 	)
 	(wire (pts (xy 124.4600 205.7400) (xy 152.4000 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "fbbc6847-cf2b-4842-a32d-b3774a5498c8")
+		(uuid "c960e1bf-6b7e-4a3a-90ba-8b1057d13042")
 	)
 	(wire (pts (xy 124.4600 220.9800) (xy 124.4600 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "616efa80-09c6-4c71-acda-4bea4465de5c")
+		(uuid "b5889c0c-7f10-4b74-8d9a-71b576a5857b")
 	)
 	(wire (pts (xy 124.4600 220.9800) (xy 152.4000 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "d9169102-d7f4-432a-8b61-f305d147cf37")
+		(uuid "92feadec-16be-49dc-a31f-c016d57e358d")
 	)
 	(wire (pts (xy 124.4600 231.1400) (xy 124.4600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "cb197b6b-8e12-48dd-b798-bcd1a2407f75")
+		(uuid "c24fc6eb-65c6-4412-bec8-834bde0dc680")
 	)
 	(wire (pts (xy 124.4600 246.3800) (xy 152.4000 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "3d59ba28-3920-47ba-8677-144b1366483b")
+		(uuid "266f53bb-2d8a-4fab-b1e4-7f43136b9a68")
 	)
 	(wire (pts (xy 125.7300 152.4000) (xy 130.8100 152.4000))
 		(stroke (width 0) (type default))
-		(uuid "6875fa84-7411-42e5-bfb4-b4a982ae127b")
+		(uuid "85f87a37-37f9-471b-b646-9557dce1a195")
 	)
 	(wire (pts (xy 152.4000 180.3400) (xy 152.4000 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "72c96471-5b25-4717-b6a2-e43f7f42e740")
+		(uuid "bbd72fb5-70af-4416-a860-d29fc579a36a")
 	)
 	(wire (pts (xy 152.4000 180.3400) (xy 165.1000 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "eb26d216-4796-4625-99ea-f029cb079880")
+		(uuid "1483eb62-113a-481d-b12c-22c2b7115d3f")
 	)
 	(wire (pts (xy 152.4000 200.6600) (xy 152.4000 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "0868d335-c3fa-46f2-b3b5-864d701c62b4")
+		(uuid "a7872405-a173-4b15-a1f6-3cb007495419")
 	)
 	(wire (pts (xy 152.4000 205.7400) (xy 165.1000 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "a0103891-0350-448f-9e50-ee58395804a7")
+		(uuid "1057020f-a1fd-4dfc-9ed0-b7458be787f0")
 	)
 	(wire (pts (xy 152.4000 220.9800) (xy 152.4000 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "d4fa0bfb-bbd3-4408-87b0-5fc398f38a9b")
+		(uuid "e8ab0cce-c9f1-4c41-9f7d-a4e6467d950b")
 	)
 	(wire (pts (xy 152.4000 220.9800) (xy 165.1000 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "3ab15c1a-997a-47a0-b049-749192e7ef7a")
+		(uuid "a7474341-85c4-45ce-a188-34b394dbe228")
 	)
 	(wire (pts (xy 152.4000 241.3000) (xy 152.4000 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "e4c0fe06-7850-4b87-b105-109e66157ed9")
+		(uuid "68a876e8-4c50-4f95-ac50-d82015e88b58")
 	)
 	(wire (pts (xy 152.4000 246.3800) (xy 165.1000 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "05031005-5e53-4573-9be6-1f7131eb2305")
+		(uuid "69f0f635-37df-4040-bc4b-ff7c85c565a2")
 	)
 	(wire (pts (xy 157.4800 146.0500) (xy 157.4800 151.1300))
 		(stroke (width 0) (type default))
-		(uuid "8bd27937-b62f-44fd-a321-52a8ccacdd0a")
+		(uuid "9535fc19-4a90-4794-bd74-8ef1fe503f1a")
 	)
 	(wire (pts (xy 157.4800 158.7500) (xy 157.4800 163.8300))
 		(stroke (width 0) (type default))
-		(uuid "e5cd6ae4-d3e9-4b6e-b7b9-dfb7659885aa")
+		(uuid "8f03f2c1-0ace-4a61-8c64-19c1fdbc3a41")
 	)
 	(wire (pts (xy 160.0200 193.0400) (xy 185.4200 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "4c0bb52f-df3d-4918-ac8a-d2488908c8d1")
+		(uuid "d3b3547c-d33f-4e6a-b01d-e0e8b0f9eac1")
 	)
 	(wire (pts (xy 160.0200 233.6800) (xy 185.4200 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "db6f89e1-ae77-44c8-a16f-6063252e7267")
+		(uuid "236664fb-00dd-4b25-8e15-818b18b680a5")
 	)
 	(wire (pts (xy 165.1000 180.3400) (xy 165.1000 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "9ee1c76a-bf63-4bb3-99c6-e38de68f43c4")
+		(uuid "8c25bdfc-9542-4717-8d5b-ad60bf58b985")
 	)
 	(wire (pts (xy 165.1000 180.3400) (xy 193.0400 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "016c4192-162f-42ad-a556-17143f9ab662")
+		(uuid "3017128c-f9fa-401e-b615-665b9c830de9")
 	)
 	(wire (pts (xy 165.1000 190.5000) (xy 165.1000 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "f58a4496-bcc5-4a0f-95d2-de7fe7859f55")
+		(uuid "df798d20-8861-455e-a4d7-31b4a53e8a09")
 	)
 	(wire (pts (xy 165.1000 205.7400) (xy 193.0400 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "6021d91d-f0d5-4e61-8daa-6e430dd4ab6a")
+		(uuid "ae7d619b-0c0e-4d08-8f09-323ca56b21d8")
 	)
 	(wire (pts (xy 165.1000 220.9800) (xy 165.1000 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "ddac2615-1941-49c0-9428-ba9d7d0e4b2d")
+		(uuid "303821ae-38a8-4fa1-a704-676d50927b17")
 	)
 	(wire (pts (xy 165.1000 220.9800) (xy 193.0400 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "c9681789-5f14-49be-a390-1299e556c0fb")
+		(uuid "712dd126-90ea-433b-82b4-449877d1ab72")
 	)
 	(wire (pts (xy 165.1000 231.1400) (xy 165.1000 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "5bda5c57-e8c0-4af9-853b-b2312b615412")
+		(uuid "a16614b4-1641-4067-8660-c2bf301b6997")
 	)
 	(wire (pts (xy 165.1000 246.3800) (xy 193.0400 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "c35459d6-aed7-48cd-b433-a25ad74d8538")
+		(uuid "e1193424-e7bc-470e-bc9e-c6d48fac2f0e")
 	)
 	(wire (pts (xy 185.4200 35.5600) (xy 190.5000 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "5cc51111-d9ca-42d9-b516-881232b01e18")
+		(uuid "8f2418ea-0c1a-4fd2-9fbf-c021f0051453")
 	)
 	(wire (pts (xy 185.4200 60.9600) (xy 190.5000 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "9313aaab-0a3c-4d92-999f-5c6066a6dbd2")
+		(uuid "57dadc6e-844b-43c4-ab31-a7a48e947086")
 	)
 	(wire (pts (xy 185.4200 86.3600) (xy 190.5000 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "cc9f0ab7-7f78-489c-a58a-39fa188c7003")
+		(uuid "0b5780a8-de9f-4003-8918-d0e2f3c1ea3b")
 	)
 	(wire (pts (xy 185.4200 111.7600) (xy 190.5000 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "425c7073-0998-4c0d-adb4-576c99971e07")
+		(uuid "8daab3b5-ad34-470c-a72a-b396db905a98")
 	)
 	(wire (pts (xy 193.0400 146.0500) (xy 193.0400 151.1300))
 		(stroke (width 0) (type default))
-		(uuid "45360285-4a50-46b1-bda0-d9fb0f3b4741")
+		(uuid "1f030f29-c09a-47c7-a28c-1229244e762c")
 	)
 	(wire (pts (xy 193.0400 158.7500) (xy 193.0400 163.8300))
 		(stroke (width 0) (type default))
-		(uuid "a99bf1cf-f832-48d5-a342-c565fa9b5c54")
+		(uuid "ebce08ca-0eb4-401c-ac21-72bad06c541d")
 	)
 	(wire (pts (xy 193.0400 180.3400) (xy 193.0400 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "e3d623bc-b60a-406c-a94e-53219c2efac9")
+		(uuid "883ea22b-fe22-42a2-a499-395d7bf3152e")
 	)
 	(wire (pts (xy 193.0400 180.3400) (xy 205.7400 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "e3ea9855-d184-4995-ba68-5931a5f43463")
+		(uuid "e8b05ae5-aae2-42e4-b70b-e2fe45b0aec2")
 	)
 	(wire (pts (xy 193.0400 200.6600) (xy 193.0400 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "76cf7b3c-3b98-49ce-9623-5b6a3b12c086")
+		(uuid "2ce2090b-4074-41f0-bf7a-4c78fd6093a7")
 	)
 	(wire (pts (xy 193.0400 205.7400) (xy 205.7400 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "bd4bcc99-2bd7-43dd-b5bc-5cc89ee32ecf")
+		(uuid "7d5c58eb-f65c-4afb-9f03-f06e270aced2")
 	)
 	(wire (pts (xy 193.0400 220.9800) (xy 193.0400 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "35a8e8e0-6f59-48db-912a-1312a53705ff")
+		(uuid "bb0377ef-9973-4bd3-ab35-5734f6f0c42c")
 	)
 	(wire (pts (xy 193.0400 220.9800) (xy 205.7400 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "2da3c15a-01f9-4a4b-ba51-85b4597fc61f")
+		(uuid "4c797c81-13d0-4115-bd13-ace66a9121f9")
 	)
 	(wire (pts (xy 193.0400 241.3000) (xy 193.0400 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "7346bd76-8f32-493e-95d4-9071e6d76edd")
+		(uuid "aaa2df52-4bff-4910-a1be-ce97f4b540b7")
 	)
 	(wire (pts (xy 193.0400 246.3800) (xy 205.7400 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "2298bf93-1351-448c-9e4c-5e162e084081")
+		(uuid "b3f71da8-c905-4867-b848-7c137c0ccce9")
 	)
 	(wire (pts (xy 200.6600 35.5600) (xy 205.7400 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "9fa8fcb3-b529-430d-89f6-c4555dbe6199")
+		(uuid "ee8e9aa4-e160-4e85-b149-134c75d1ebee")
 	)
 	(wire (pts (xy 200.6600 60.9600) (xy 205.7400 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "10e5d07a-adc3-46ef-b8a5-7dd55afaf349")
+		(uuid "4d9cb0b4-910c-4c1b-9c37-0f5a08215c86")
 	)
 	(wire (pts (xy 200.6600 86.3600) (xy 205.7400 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "8b067cb9-cc82-437d-b5ac-e6483ff087a7")
+		(uuid "4ac500f7-3207-440c-9800-01e33381a10b")
 	)
 	(wire (pts (xy 200.6600 111.7600) (xy 205.7400 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "2fb0b439-40ac-4ae8-83cb-dbe4bca9d73a")
+		(uuid "39aba189-7b00-4163-8d40-b779aee14f36")
 	)
 	(wire (pts (xy 200.6600 193.0400) (xy 226.0600 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "2e4592ff-0e00-4864-9f8d-a3817fb752c5")
+		(uuid "6e296394-f36c-4a5b-9ae4-6e05d5accbd8")
 	)
 	(wire (pts (xy 200.6600 233.6800) (xy 226.0600 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "0e469e7a-894c-4e75-bb25-ba288695d680")
+		(uuid "48cef11a-299b-41bf-bb1e-b22a5625bdbf")
 	)
 	(wire (pts (xy 205.7400 180.3400) (xy 205.7400 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "b3594250-82d3-41ed-b7b1-3af45a286337")
+		(uuid "d7b4a027-d14e-441f-8554-7ec0753796e5")
 	)
 	(wire (pts (xy 205.7400 180.3400) (xy 233.6800 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "8a0e4fa8-0fbb-45b8-834d-cc93da7beea1")
+		(uuid "bd10c2fc-1c34-49a5-a6a4-9cf029fbad20")
 	)
 	(wire (pts (xy 205.7400 190.5000) (xy 205.7400 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "7d8f87ac-0b0e-42ea-9685-408797b374a3")
+		(uuid "8f044ea8-a424-4d5d-94c3-cf9a84060604")
 	)
 	(wire (pts (xy 205.7400 205.7400) (xy 233.6800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "a6d06df4-c117-4f32-84cf-783aadda30f7")
+		(uuid "c074617b-bf82-4c26-b346-14d7ba0b587b")
 	)
 	(wire (pts (xy 205.7400 220.9800) (xy 205.7400 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "d1b9fdd5-91b9-4410-b72f-fa194202c190")
+		(uuid "cbdc5a97-9b2e-4fad-a713-6e3306f6ab57")
 	)
 	(wire (pts (xy 205.7400 220.9800) (xy 233.6800 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "24928a93-f15b-46b0-af87-f311b2e5fb51")
+		(uuid "e9a777e1-ce65-4141-ba1d-87d11c49bae9")
 	)
 	(wire (pts (xy 205.7400 231.1400) (xy 205.7400 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "b36b3e98-8310-4661-a757-a530f1c5169b")
+		(uuid "acb486fe-cb37-45f6-a61d-cb05fc179617")
 	)
 	(wire (pts (xy 205.7400 246.3800) (xy 233.6800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "2e057bd0-ccd2-401d-bd2f-49247bb2bf92")
+		(uuid "14bee5ba-acf1-4656-adb7-afbea0154373")
 	)
 	(wire (pts (xy 233.6800 180.3400) (xy 233.6800 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "3d18a81c-eb09-42b1-bf37-b70b196a7916")
+		(uuid "ef5517d2-28e2-40f4-8661-7bd6092c698d")
 	)
 	(wire (pts (xy 233.6800 180.3400) (xy 246.3800 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "c1211db0-5dd3-400b-b76d-f7ff2abdf72a")
+		(uuid "4af3ae49-c093-4ae6-bd09-397bfffbc9aa")
 	)
 	(wire (pts (xy 233.6800 200.6600) (xy 233.6800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "acbc5d17-5cf3-413e-bebf-5f9a0772a9d0")
+		(uuid "faf3a3c1-36dd-4da4-b15f-94839813dbf6")
 	)
 	(wire (pts (xy 233.6800 205.7400) (xy 246.3800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "27fe0bff-6373-4763-af01-50d952989ec7")
+		(uuid "c292b1ae-79a9-4882-bf66-dfb33dc8c5fc")
 	)
 	(wire (pts (xy 233.6800 220.9800) (xy 233.6800 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "b249421f-3cda-418e-af9b-72bacc4a727c")
+		(uuid "cf472429-2598-4d5d-b3af-410ccf3b0f1c")
 	)
 	(wire (pts (xy 233.6800 220.9800) (xy 246.3800 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "a0406d15-9767-4d0d-9a7a-4074573348e6")
+		(uuid "6bad9ebf-1dba-4d22-a37c-276a8e71a120")
 	)
 	(wire (pts (xy 233.6800 241.3000) (xy 233.6800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "e3110b73-bdf7-43bc-923d-9eb20ccaae72")
+		(uuid "be87177d-35c7-4add-860b-0689be64c058")
 	)
 	(wire (pts (xy 233.6800 246.3800) (xy 246.3800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "5ecf0665-41a0-4bc0-9102-eaddd1cec48b")
+		(uuid "203bce36-5690-46a6-a8ca-ad1a9c5e8dec")
 	)
 	(wire (pts (xy 241.3000 193.0400) (xy 266.7000 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "2cc6204e-5c19-4e71-91b7-8386e6d28b20")
+		(uuid "fdc40cc1-b871-41b8-8559-14e81eb08545")
 	)
 	(wire (pts (xy 241.3000 233.6800) (xy 266.7000 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "06f3be77-a961-483d-a314-ba10ebe6a6f3")
+		(uuid "750305f2-805b-4df2-af3e-eb73083bf6c6")
 	)
 	(wire (pts (xy 246.3800 180.3400) (xy 246.3800 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "7a23fb52-5b61-4b23-be5b-6039094e2586")
+		(uuid "4e8891d5-258d-4370-8489-a2d1bab2ffed")
 	)
 	(wire (pts (xy 246.3800 180.3400) (xy 274.3200 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "d4c28723-3f76-461b-b26a-f412502bd860")
+		(uuid "ab73b72c-d728-4a4b-bd7f-043519ff3bf8")
 	)
 	(wire (pts (xy 246.3800 190.5000) (xy 246.3800 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "ba38ed87-6632-4697-a9a2-bb735e2fae2b")
+		(uuid "0293a97f-269c-46bf-b4db-4b0d113ed7ea")
 	)
 	(wire (pts (xy 246.3800 205.7400) (xy 274.3200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "14784030-9496-4c56-9bad-e56c026a0590")
+		(uuid "290a3c8c-168e-4b68-aa03-6d3ed744432f")
 	)
 	(wire (pts (xy 246.3800 220.9800) (xy 246.3800 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "38426d64-3c01-4e73-940a-920ec0183fc0")
+		(uuid "3b0ecbf8-dee1-4071-be9d-b9128404dab8")
 	)
 	(wire (pts (xy 246.3800 220.9800) (xy 274.3200 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "9a3fb94f-db83-4e45-985b-33ed4508d293")
+		(uuid "84d02087-9923-4763-a755-b088995bf4e3")
 	)
 	(wire (pts (xy 246.3800 231.1400) (xy 246.3800 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "efb3ab82-91b0-475d-a402-efee1b870ff7")
+		(uuid "3f089454-7b96-4e15-94d2-2bdf8866b514")
 	)
 	(wire (pts (xy 246.3800 246.3800) (xy 274.3200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "83106360-9739-44d3-9a72-395e08524e91")
+		(uuid "2bfdfb2a-4ac3-4cb8-ae21-f76be736d984")
 	)
 	(wire (pts (xy 261.6200 35.5600) (xy 266.7000 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "5d833d53-76f7-4ec8-84e1-3af1f3255e0a")
+		(uuid "aee85b54-98d8-402f-83d5-9a3c2c03d9ad")
 	)
 	(wire (pts (xy 261.6200 60.9600) (xy 266.7000 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "00d46152-e7eb-45c1-bd11-be5955d4fdb2")
+		(uuid "c7adb56d-6b67-4ad5-9db0-4e20006b57f1")
 	)
 	(wire (pts (xy 261.6200 86.3600) (xy 266.7000 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "bad52245-d75d-4217-a0cc-a868a053068d")
+		(uuid "3d87bdcb-dee5-4ffc-98ba-4171c98cd4e4")
 	)
 	(wire (pts (xy 261.6200 111.7600) (xy 266.7000 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "84d280cf-0bab-49ba-959c-649ef8212f8c")
+		(uuid "5573899a-77a7-4016-b86a-60f6dae070af")
 	)
 	(wire (pts (xy 274.3200 180.3400) (xy 274.3200 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "79fc36d7-6f95-486f-b6db-137ec4e861b2")
+		(uuid "bfbfdd3c-9abe-42a8-a6ed-39687a570f06")
 	)
 	(wire (pts (xy 274.3200 180.3400) (xy 287.0200 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "eb8d01e2-3a7b-4c6b-90c7-c1cb1e40b9ea")
+		(uuid "7b6d175a-ec5a-4963-949b-f43c8ea69323")
 	)
 	(wire (pts (xy 274.3200 200.6600) (xy 274.3200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "95d7c12f-1d1f-4482-8656-215cc374f89f")
+		(uuid "682034f1-04fe-46bc-ab92-a08b1ad22e11")
 	)
 	(wire (pts (xy 274.3200 205.7400) (xy 287.0200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "a23bfeb7-105e-48ec-8a85-5d9e24860ebf")
+		(uuid "41230895-0c4d-4342-bab6-d4bf5b9dc208")
 	)
 	(wire (pts (xy 274.3200 220.9800) (xy 274.3200 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "64328875-72fd-4292-94ce-3081bd921fb7")
+		(uuid "46f202b5-b9db-4b2d-aa63-52575573091f")
 	)
 	(wire (pts (xy 274.3200 220.9800) (xy 287.0200 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "78032775-73ea-497b-9d86-113d9ffab855")
+		(uuid "76be890b-f192-4650-b2ec-a611895645dc")
 	)
 	(wire (pts (xy 274.3200 241.3000) (xy 274.3200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "78c5afce-b352-41b8-b8df-e530523802e8")
+		(uuid "4649529a-9029-4455-9642-68ef1c02abea")
 	)
 	(wire (pts (xy 274.3200 246.3800) (xy 287.0200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "37c2fb1f-49cb-41f0-95f4-435873abbf9e")
+		(uuid "75078ed1-d85c-4ef5-8999-ca07550fc928")
 	)
 	(wire (pts (xy 276.8600 35.5600) (xy 281.9400 35.5600))
 		(stroke (width 0) (type default))
-		(uuid "debad7c8-cc86-4134-a9b9-49320f7ad2c6")
+		(uuid "62916051-95f8-411b-a238-b39d03d60142")
 	)
 	(wire (pts (xy 276.8600 60.9600) (xy 281.9400 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "3cdeafeb-2eec-4db7-bfc8-d50048ee0615")
+		(uuid "6c2e6519-c6be-489b-8cad-b733e59bb81f")
 	)
 	(wire (pts (xy 276.8600 86.3600) (xy 281.9400 86.3600))
 		(stroke (width 0) (type default))
-		(uuid "df1fd007-1c7f-4ef4-a8fa-d26491850472")
+		(uuid "9d09d008-1e19-47a5-80d3-4dacd685dfd8")
 	)
 	(wire (pts (xy 276.8600 111.7600) (xy 281.9400 111.7600))
 		(stroke (width 0) (type default))
-		(uuid "875e5739-980e-4a7b-943b-29e6b7eac170")
+		(uuid "b96970c5-744e-425b-ae94-f90d2ea37ce8")
 	)
 	(wire (pts (xy 281.9400 193.0400) (xy 307.3400 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "be76a082-ce4c-4f12-91c8-e06a665f160c")
+		(uuid "15505ca8-b7b7-4973-a84f-3c02a50ac90b")
 	)
 	(wire (pts (xy 281.9400 233.6800) (xy 307.3400 233.6800))
 		(stroke (width 0) (type default))
-		(uuid "4552e92e-415f-41bc-be75-f6a3fc551a6b")
+		(uuid "65672ac2-2f6e-4ae6-a4ba-af0e13f912af")
 	)
 	(wire (pts (xy 287.0200 180.3400) (xy 287.0200 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "5dead18c-d0f2-4024-b2fb-ddbfefadd54f")
+		(uuid "78e92cf6-1751-4ee1-ba82-4cd2d6cd5a6b")
 	)
 	(wire (pts (xy 287.0200 180.3400) (xy 314.9600 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "6ab3bd53-e89f-4339-916d-8569726d95c1")
+		(uuid "fd8c442a-614a-42c4-896e-bc4656cda593")
 	)
 	(wire (pts (xy 287.0200 190.5000) (xy 287.0200 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "9284d2ef-7722-4932-a939-182d7a35709b")
+		(uuid "1c9b0c48-561b-45db-abe6-95a696570110")
 	)
 	(wire (pts (xy 287.0200 205.7400) (xy 314.9600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "2232be0b-119c-4ba3-804e-df2efd5f82a4")
+		(uuid "3e5c4c94-b13b-4fda-aea4-c56028f12023")
 	)
 	(wire (pts (xy 287.0200 220.9800) (xy 287.0200 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "2e1f8269-a982-4009-81f2-89f924cb1280")
+		(uuid "1b688f91-6d19-4e87-a9d9-4c3dd1faaf77")
 	)
 	(wire (pts (xy 287.0200 220.9800) (xy 314.9600 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "3ed94821-7d66-42cb-aab9-f13bcf4ea4ed")
+		(uuid "2ea1f9f2-2d2c-4eac-9a5a-b3b7279d425a")
 	)
 	(wire (pts (xy 287.0200 231.1400) (xy 287.0200 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "24e75495-ba8a-441f-b00b-2c0e2ed94494")
+		(uuid "c3d3a703-409d-46c5-a404-619aee054b04")
 	)
 	(wire (pts (xy 287.0200 246.3800) (xy 314.9600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "65e9e3dd-869f-445a-90c8-31487a7c1b36")
+		(uuid "bc58f20f-25ad-4b0f-9fcf-f2428b1153b1")
 	)
 	(wire (pts (xy 304.8000 41.9100) (xy 304.8000 46.9900))
 		(stroke (width 0) (type default))
-		(uuid "e7ade7db-6475-4e06-b7ca-bf735812b34d")
+		(uuid "d2d5153c-8957-489d-921e-31733c2a8cad")
 	)
 	(wire (pts (xy 304.8000 54.6100) (xy 304.8000 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "faab2023-f07f-4b46-8ad1-b63297e6cef7")
+		(uuid "4ee0b411-457a-47df-8eb2-e5c47f463e9f")
 	)
 	(wire (pts (xy 304.8000 66.0400) (xy 304.8000 77.4700))
 		(stroke (width 0) (type default))
-		(uuid "525ce24a-7a23-4218-88f9-9a4b5323872b")
+		(uuid "5e69e0f2-4f20-4b86-b465-5db90525d47e")
 	)
 	(wire (pts (xy 304.8000 66.0400) (xy 317.5000 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "7747befc-2a63-42c1-b101-bdc471f0e6f1")
+		(uuid "703a5db5-4501-4b4d-ad08-5430f482a668")
 	)
 	(wire (pts (xy 304.8000 85.0900) (xy 304.8000 90.1700))
 		(stroke (width 0) (type default))
-		(uuid "ec14283c-4ccd-4d3d-bacc-b7af3e12ed4d")
+		(uuid "bd15281d-0924-4f81-925e-b1997a136477")
 	)
 	(wire (pts (xy 314.9600 180.3400) (xy 314.9600 185.4200))
 		(stroke (width 0) (type default))
-		(uuid "c5874068-d7f7-4c9c-8058-a83a124b5191")
+		(uuid "dc7a63be-6150-414a-9ea4-557514b8bce8")
 	)
 	(wire (pts (xy 314.9600 180.3400) (xy 327.6600 180.3400))
 		(stroke (width 0) (type default))
-		(uuid "a1b32e85-9f68-4fa4-9f2e-d9bf711269f8")
+		(uuid "13ce1952-b954-4d70-b208-d371e93ade40")
 	)
 	(wire (pts (xy 314.9600 200.6600) (xy 314.9600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "eb8b1658-ae4b-4f4b-8664-870812339781")
+		(uuid "7e5290a4-4547-4e16-aead-c0e9a29a78bf")
 	)
 	(wire (pts (xy 314.9600 205.7400) (xy 327.6600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "54546fce-4b92-4f9a-a08b-60773e44525f")
+		(uuid "9578edf3-4117-4fd2-b102-1f9906f1b574")
 	)
 	(wire (pts (xy 314.9600 220.9800) (xy 314.9600 226.0600))
 		(stroke (width 0) (type default))
-		(uuid "567ce570-e355-4b33-80f5-c343321f7043")
+		(uuid "c762d3f7-4f85-48ed-9c3e-3e7ec82c07c7")
 	)
 	(wire (pts (xy 314.9600 220.9800) (xy 327.6600 220.9800))
 		(stroke (width 0) (type default))
-		(uuid "faa95959-3f7e-4ce8-b1c5-40071e1e5bf8")
+		(uuid "6f1c2178-1d77-4a6b-9fbe-b62b8f7d78de")
 	)
 	(wire (pts (xy 314.9600 241.3000) (xy 314.9600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "d6e794be-c067-4f8a-a3fd-6222918d745e")
+		(uuid "93dc4926-d443-464d-b4c6-0927ebc152c8")
 	)
 	(wire (pts (xy 314.9600 246.3800) (xy 327.6600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "9ec9061b-99d6-499a-9ca9-04e05287c358")
+		(uuid "ac2778e2-9827-4ad0-8354-ce3d3bfacff0")
 	)
 	(wire (pts (xy 317.5000 43.1800) (xy 317.5000 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "de3380ce-4d5c-4860-a656-dcc2fc89d24a")
+		(uuid "3d44e240-d612-4cd3-a015-bbe080ec8049")
 	)
 	(wire (pts (xy 317.5000 43.1800) (xy 347.9800 43.1800))
 		(stroke (width 0) (type default))
-		(uuid "142ca680-76fc-44d2-afb8-5ebdca0ad581")
+		(uuid "4b35ed99-1d54-4520-a361-225a1878692e")
 	)
 	(wire (pts (xy 317.5000 66.0400) (xy 334.0100 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "dca10a7e-0ac3-41db-9cc7-048092d860a7")
+		(uuid "68c19570-a21b-4bf1-ad4c-0509fc30362a")
 	)
 	(wire (pts (xy 320.0400 109.2200) (xy 345.4400 109.2200))
 		(stroke (width 0) (type default))
-		(uuid "6f85fcdd-adfd-4b15-b728-09641467f6dd")
+		(uuid "7f52720d-440e-4b70-8b23-cabbb35c6715")
 	)
 	(wire (pts (xy 322.5800 193.0400) (xy 342.9000 193.0400))
 		(stroke (width 0) (type default))
-		(uuid "8103d79a-76e8-4f9f-832e-c9591dfa7abb")
+		(uuid "85b3dd04-1164-4e64-b9b8-00f36a4db302")
 	)
 	(wire (pts (xy 327.6600 180.3400) (xy 327.6600 182.8800))
 		(stroke (width 0) (type default))
-		(uuid "ec3fee2a-3982-40a0-877b-daaa54a0ec9d")
+		(uuid "2c612dd7-135a-498e-a88e-fa24895d6a2b")
 	)
 	(wire (pts (xy 327.6600 190.5000) (xy 327.6600 205.7400))
 		(stroke (width 0) (type default))
-		(uuid "d6fe3fc6-b25a-4acb-af78-afe54b5bf66b")
+		(uuid "aa3ba29a-f347-4358-be29-eeb4c63032f1")
 	)
 	(wire (pts (xy 327.6600 220.9800) (xy 327.6600 223.5200))
 		(stroke (width 0) (type default))
-		(uuid "3043571c-dcd4-49d6-b52c-278383edaba3")
+		(uuid "24105150-5c4b-4b73-ba2c-48b169bd3a0b")
 	)
 	(wire (pts (xy 327.6600 231.1400) (xy 327.6600 246.3800))
 		(stroke (width 0) (type default))
-		(uuid "5cbc5df3-1770-4651-9f24-2d807b5f1771")
+		(uuid "878c5402-0613-4e2b-827f-931f7d69e43e")
 	)
 	(wire (pts (xy 340.3600 208.2800) (xy 365.7600 208.2800))
 		(stroke (width 0) (type default))
-		(uuid "9f73c91c-f026-41cb-b8d4-f04f8454d8d4")
+		(uuid "10a931f1-2e95-4d21-a5c0-588d726020df")
 	)
 	(wire (pts (xy 341.6300 66.0400) (xy 370.8400 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "a3c8cc16-f577-47ee-affe-8c7b9302da32")
+		(uuid "46a59dde-9d0d-40c3-933f-b4a5f8121659")
 	)
 	(wire (pts (xy 342.9000 40.6400) (xy 347.9800 40.6400))
 		(stroke (width 0) (type default))
-		(uuid "b4968ad7-b2b4-41da-a996-cfb6e5606ae9")
+		(uuid "518fa9e4-19ba-474d-840a-558ff9a084e3")
 	)
 	(wire (pts (xy 342.9000 45.7200) (xy 347.9800 45.7200))
 		(stroke (width 0) (type default))
-		(uuid "2f84ac18-5cd5-4f90-9c3e-268eb5cd0ef4")
+		(uuid "acff9cae-d0ae-4c47-a960-4f56482b0c16")
 	)
 	(wire (pts (xy 345.4400 243.8400) (xy 370.8400 243.8400))
 		(stroke (width 0) (type default))
-		(uuid "f6cf0928-0137-4d7b-a703-04a8257d5a07")
+		(uuid "8dc3fdc1-a94b-45d3-b06b-39b49f48258c")
 	)
 	(wire (pts (xy 370.8400 66.0400) (xy 370.8400 80.0100))
 		(stroke (width 0) (type default))
-		(uuid "7cf5f0c8-a6a1-4985-9fc4-32cdf2223524")
+		(uuid "69896795-ebc2-4067-8af9-b3e403136d86")
 	)
 	(wire (pts (xy 370.8400 87.6300) (xy 370.8400 92.7100))
 		(stroke (width 0) (type default))
-		(uuid "ea98ab1f-a8ba-4adf-ac50-4938b6144206")
+		(uuid "4d77aa3e-9798-4ac8-bd41-6e741df5ec1d")
 	)
 	(wire (pts (xy 378.4600 138.4300) (xy 378.4600 143.5100))
 		(stroke (width 0) (type default))
-		(uuid "f051fda7-df8b-488b-835e-23d8d7894e19")
+		(uuid "75af5ec0-b069-4470-8c35-eb6145443570")
 	)
 	(wire (pts (xy 378.4600 151.1300) (xy 378.4600 153.6700))
 		(stroke (width 0) (type default))
-		(uuid "66e376be-d5b4-4209-a528-3710c8a89bdb")
+		(uuid "c0c5cc9c-e239-4be4-b24a-bbfe271e0783")
 	)
 	(wire (pts (xy 378.4600 161.2900) (xy 378.4600 166.3700))
 		(stroke (width 0) (type default))
-		(uuid "d1fa85f9-08ff-47e7-b759-1f478bac65ea")
+		(uuid "0832fa9c-432f-42e6-bcd7-fe57794755d5")
 	)
 	(wire (pts (xy 378.4600 184.1500) (xy 378.4600 189.2300))
 		(stroke (width 0) (type default))
-		(uuid "f87097c5-cf83-484e-ad88-67ac27588dec")
+		(uuid "145f2d8b-15c0-45a5-9bbb-98baa125f0a8")
 	)
 	(wire (pts (xy 378.4600 196.8500) (xy 378.4600 199.3900))
 		(stroke (width 0) (type default))
-		(uuid "0173a22e-2f9c-4f57-9e00-0ad58d0b8944")
+		(uuid "b2b33d1e-0810-4925-9910-1c09d07f5574")
 	)
 	(wire (pts (xy 378.4600 207.0100) (xy 378.4600 212.0900))
 		(stroke (width 0) (type default))
-		(uuid "9b20e8a0-3bc6-43da-b986-88203e446c3b")
+		(uuid "b7188c4d-800e-410d-bb85-c303068dc9b0")
 	)
 	(junction (at 314.9600 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "1385509c-52c3-4578-82f4-4462bdff852b")
+		(uuid "d9e0c246-91c8-4055-9f83-2823190b3799")
 	)
 	(junction (at 193.0400 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "e43a6268-30b2-46a1-8075-11775b535724")
+		(uuid "5c5e5605-77a4-43c9-958f-b6890b1048b7")
 	)
 	(junction (at 205.7400 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "e8c203e6-bf0c-4a13-902d-9fca24e9f1b3")
+		(uuid "359b706b-5f6d-4026-a3fa-f6069333ae5e")
 	)
 	(junction (at 83.8200 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "4aec1ff4-ac97-49f6-933e-66879d2fc1c0")
+		(uuid "f998259b-e5b0-42f8-91b1-d810a6163c76")
 	)
 	(junction (at 314.9600 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "68bf0a02-b38f-4769-bc58-4279dc01f137")
+		(uuid "8ad82a33-4750-4402-8002-cf66a3755dd5")
 	)
 	(junction (at 152.4000 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "0cdc31c7-4366-400b-94e6-ca26982f3ca8")
+		(uuid "280d7b57-94cd-4eb3-8116-bfff885092ec")
 	)
 	(junction (at 165.1000 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "a0d2543c-f088-45e7-961a-18dc64da8468")
+		(uuid "3c4a75a4-eccb-414d-ac8c-5b546d40ed5d")
 	)
 	(junction (at 193.0400 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "ede1efee-5a76-4bd7-9a3d-81063d4fbb9b")
+		(uuid "d93ce1b8-12e3-4372-bb81-a55e56f0b7cb")
 	)
 	(junction (at 274.3200 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "58eb8c1f-8ccf-4765-a7af-0fbe72e6caa7")
+		(uuid "a8cef9a4-cb2a-4536-8873-06950ac62dfb")
 	)
 	(junction (at 287.0200 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "d0139f88-e1e7-4b7a-95d3-abb92e3c949e")
+		(uuid "202e8e76-d044-48d7-92d9-43a51905eb12")
 	)
 	(junction (at 314.9600 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "0b787856-e1ee-403d-b10c-07f69b7d0acf")
+		(uuid "5c3c42ea-7380-481c-81da-1c05855a49b3")
 	)
 	(junction (at 111.7600 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "8aad6cab-c80e-4a57-988e-678955eee9b3")
+		(uuid "15fa87e9-a9f2-47b8-9e10-0368a60dff24")
 	)
 	(junction (at 274.3200 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "95470a5a-4548-49cf-ad6a-38acc7b36446")
+		(uuid "c2ed30e8-ba9f-4356-bc37-9ad4f4baef68")
 	)
 	(junction (at 71.1200 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "9dee4a17-91db-4939-9718-643abf0db5cb")
+		(uuid "0017fb91-2811-42dd-8ae1-7b8a31f7c18f")
 	)
 	(junction (at 233.6800 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "41157efe-9209-43b8-9fcd-e9fa94908230")
+		(uuid "7c5273d1-29e1-45e1-8205-d24258903c6d")
 	)
 	(junction (at 111.7600 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "f01e9194-87ff-479a-b109-560cb0bdacdf")
+		(uuid "7dda3786-b69c-4f05-8ee4-da51d6dad8b2")
 	)
 	(junction (at 71.1200 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "0f30efc7-76c5-42c5-a80e-aabb49497384")
+		(uuid "8a497a8d-a66e-4054-ae3e-7e8aa63eca4a")
 	)
 	(junction (at 111.7600 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "fae0802e-6cb7-4a86-85dd-64b5dbe860fd")
+		(uuid "9d1cc66c-d913-4853-9a1c-b3c5b4877d69")
 	)
 	(junction (at 314.9600 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "5cb8adfc-50d2-4a48-b740-6c83af56290c")
+		(uuid "b9600e6f-64bc-4fd8-b92d-c7826d6b9102")
 	)
 	(junction (at 124.4600 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "0696cc08-e5e3-43d2-9c56-4cf80de75fbf")
+		(uuid "cc015fa9-6c38-48f0-9c1b-efc756b2f1ff")
 	)
 	(junction (at 43.1800 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "46c3746e-0718-4cd0-971b-819f778465f4")
+		(uuid "bc4b4d95-3e29-44d1-bfd4-874687a7ceb9")
 	)
 	(junction (at 124.4600 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "765d0f80-0c51-4598-bcf5-e299e4d856e7")
+		(uuid "9ee0abb3-6157-4123-b94d-d3f35ad3db35")
 	)
 	(junction (at 152.4000 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "04a88c7c-297b-4b5b-88d4-123c7405cd61")
+		(uuid "6d3f508a-795d-46e2-8b72-1a12868b0c0d")
 	)
 	(junction (at 205.7400 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "5d9a0275-c29a-46ac-a26e-72303db146c4")
+		(uuid "1e1c4d45-9168-4e9e-a248-ac7fc9aa11b5")
 	)
 	(junction (at 124.4600 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "bcf0256c-b322-4e8c-a966-851432e86b7c")
+		(uuid "6b3d2964-d54b-4e29-9059-a9c998ee6935")
 	)
 	(junction (at 287.0200 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "c8c78d93-1e9d-4e85-b982-42c240849ce9")
+		(uuid "a5179a96-e53a-4544-8c63-7712d28ae31d")
 	)
 	(junction (at 165.1000 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "4fc3583a-e5a2-483a-8ff6-b70418116ce4")
+		(uuid "28cab84e-bf8a-47b2-9eb0-07ff9f7d7073")
 	)
 	(junction (at 43.1800 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "ab08b12f-a05e-4108-9804-ae4e8527fcb9")
+		(uuid "ef307f47-7781-4373-a15b-2f28b44ef889")
 	)
 	(junction (at 274.3200 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "26a4812c-ae4a-4408-98d0-89e806f92f9c")
+		(uuid "d9d635e7-21f8-48bb-bd09-bc25396f7a0c")
 	)
 	(junction (at 205.7400 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "277fc8b4-501c-4416-9d19-c0d809f0a2b0")
+		(uuid "62aa110c-db93-4404-bcd9-73a00756a331")
 	)
 	(junction (at 233.6800 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "ced53e77-f416-4969-9a00-df99cee579fb")
+		(uuid "b14e20bb-2ea3-48b4-b5f1-d0fb63ffeaea")
 	)
 	(junction (at 71.1200 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "d09564b5-8444-422d-867e-2b5b151ed260")
+		(uuid "2807592c-5559-4ba7-ba73-84a220a6bcb0")
 	)
 	(junction (at 83.8200 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "8a858e25-385c-4000-95e1-f81de5ec9132")
+		(uuid "17fb6445-32fa-41a7-b946-8bd8e3ecd92e")
 	)
 	(junction (at 233.6800 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "3c760198-47b5-44d2-9804-4a4502c6d9ef")
+		(uuid "a88768db-cf7e-421d-bef3-7912950f73bb")
 	)
 	(junction (at 246.3800 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "46ff540d-76a8-491f-8a27-74350ce0d4f3")
+		(uuid "d2fd1f71-5824-447a-8076-b6f66bfda75a")
 	)
 	(junction (at 317.5000 66.0400) (diameter 0) (color 0 0 0 0)
-		(uuid "1e2a779c-5b4d-402b-9a43-48fb779e5d50")
+		(uuid "13738275-ae7b-4dd7-8f2f-33d92b879d8c")
 	)
 	(junction (at 246.3800 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "d7edf5f8-fcdf-4b00-bdd9-16a7807b378d")
+		(uuid "4b8eb717-82d1-4034-97d9-6c5c67a0408c")
 	)
 	(junction (at 246.3800 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "c408ebd9-1293-47e8-9ac4-5a04897257d9")
+		(uuid "a9a450a0-3de0-4659-9efc-d95cad6d70e8")
 	)
 	(junction (at 274.3200 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "2cc2ced2-f942-4937-8b5d-38f3d41260bb")
+		(uuid "ac088336-771e-41b3-94a4-7911ef18277f")
 	)
 	(junction (at 165.1000 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "10fec739-90f6-43c5-b6cd-3585e19b0080")
+		(uuid "e0edae5e-b35b-450a-82ff-2374e06715e7")
 	)
 	(junction (at 83.8200 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "3d957c0e-b5e9-4106-a641-2fe7e3757870")
+		(uuid "b1339d13-435d-4e10-8e04-205bbdc6833e")
 	)
 	(junction (at 193.0400 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "fdb8dd9e-cd8d-45ac-bf4d-960abcbfd5a3")
+		(uuid "1b53b926-1866-49c1-a755-71f2a2f4a2ca")
 	)
 	(junction (at 233.6800 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "16145750-acad-4d7e-81e4-6f8c7095050d")
+		(uuid "db2e14fa-d212-4345-a2fb-c5e7cbc58cc2")
 	)
 	(junction (at 43.1800 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "bd5354e7-87a3-4d1d-bc9e-5629382abc6b")
+		(uuid "012b99e7-f42c-46e0-95ea-d402bf17d9a2")
 	)
 	(junction (at 111.7600 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "f7ecb9f8-4d64-4869-ba02-256bc327adfc")
+		(uuid "421bf2ec-5bd5-4e74-8ec6-d3a1ec8c722f")
 	)
 	(junction (at 246.3800 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "335a04a1-fbf1-40b6-8bad-fc5b7e4b2384")
+		(uuid "31348cb9-223f-4fb6-ab92-effdcb5f33a0")
 	)
 	(junction (at 287.0200 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "263213c0-734e-42b4-bfa8-6bce5a244a2d")
+		(uuid "66393f1f-afe0-4074-8c7a-25120bd7c313")
 	)
 	(junction (at 83.8200 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "0862bbe0-40fe-4fd4-bc10-09dba7e4bb6b")
+		(uuid "bd07e02b-01cc-416e-a714-07c8fa6cb67f")
 	)
 	(junction (at 193.0400 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "419c1952-4e24-4d6c-8c0b-5ca39cd9f285")
+		(uuid "863cc28a-4dcc-4e4f-8122-edaa29b94b1d")
 	)
 	(junction (at 152.4000 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "31cef134-650e-424b-b75e-66ab94b868ec")
+		(uuid "3b3bf306-f6b5-4d5e-b802-7e8f6697e240")
 	)
 	(junction (at 71.1200 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "6017ebf3-ddd7-45ce-9a51-3c73290fb9c5")
+		(uuid "47212270-acc9-4120-bab2-3a3ff12f9014")
 	)
 	(junction (at 205.7400 180.3400) (diameter 0) (color 0 0 0 0)
-		(uuid "00b3150e-2508-4bd0-bfb5-82f3b0630e89")
+		(uuid "16b2657a-a023-43ca-a380-cdeb54f1593d")
 	)
 	(junction (at 152.4000 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "0455f2ed-8bf5-470c-ba21-7f30770e5fd7")
+		(uuid "d3e2c129-2e59-4266-9942-c1c15807bbdf")
 	)
 	(junction (at 124.4600 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "0f84ad53-f337-42aa-96f3-425778044c66")
+		(uuid "f103e5a0-3481-4408-b512-458e799167f4")
 	)
 	(junction (at 304.8000 66.0400) (diameter 0) (color 0 0 0 0)
-		(uuid "435f88e5-8d12-41cf-af58-7667a6f74571")
+		(uuid "38c62cc4-2ae5-4b0c-9a92-53998aa1f885")
 	)
 	(junction (at 165.1000 246.3800) (diameter 0) (color 0 0 0 0)
-		(uuid "7d6aa6c4-cde7-4689-9c82-17c8368ca3ae")
+		(uuid "d300291d-9655-4a76-9374-f5e4aa2fa49d")
 	)
 	(junction (at 43.1800 205.7400) (diameter 0) (color 0 0 0 0)
-		(uuid "be2ccf40-ff52-4512-8175-12c493a3f9b0")
+		(uuid "00471038-5530-4e7f-9089-d5c1febca09d")
 	)
 	(junction (at 287.0200 220.9800) (diameter 0) (color 0 0 0 0)
-		(uuid "bc77c749-d122-4742-8733-875f7b972ed8")
+		(uuid "046d3ec7-15fb-4f9c-9b84-c4ce8a7d778d")
 	)
 	(hierarchical_label "BTN1"
 		(shape passive)
 		(at 33.0200 35.5600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "0af8f57b-9928-4971-bd3d-b24e8703d167")
+		(uuid "3269e390-3e4e-481a-a7c0-f9a2714aef43")
 	)
 	(hierarchical_label "BTN2"
 		(shape passive)
 		(at 109.2200 35.5600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "ba208ba2-3869-4874-93bd-12a91740d921")
+		(uuid "28efdfb9-370b-4bec-8127-b050a1f271aa")
 	)
 	(hierarchical_label "BTN3"
 		(shape passive)
 		(at 185.4200 35.5600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "39a75b48-0f3c-49cb-afd0-28b4e45c70a8")
+		(uuid "88a9ba56-3c0e-4b9f-807d-fbbd84d988ef")
 	)
 	(hierarchical_label "BTN4"
 		(shape passive)
 		(at 261.6200 35.5600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "4bdaca1b-5ed7-4fb7-8045-187bafbfec38")
+		(uuid "1dde967e-3dd5-43dd-a6fd-e87a716d91e3")
 	)
 	(hierarchical_label "BTN5"
 		(shape passive)
 		(at 33.0200 60.9600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "e7005b0f-c52d-428f-8988-7674bab09593")
+		(uuid "14d4fdf0-b889-4c92-b443-f3a225e9516c")
 	)
 	(hierarchical_label "BTN6"
 		(shape passive)
 		(at 109.2200 60.9600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "69fe0eb5-3dbb-42ea-9d02-28adea1a269d")
+		(uuid "992e827e-c691-4889-b3a0-2e5fc4168e66")
 	)
 	(hierarchical_label "BTN7"
 		(shape passive)
 		(at 185.4200 60.9600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "3b5a9e8b-d0db-48c6-8042-428b55b0a9f3")
+		(uuid "1d36ccba-3d68-4bcf-9782-86c49e21403e")
 	)
 	(hierarchical_label "BTN8"
 		(shape passive)
 		(at 261.6200 60.9600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "0173ef48-eea8-4acb-90af-a4b2d24a59ba")
+		(uuid "97f67725-02fe-4212-a4ae-142cc2fa5db3")
 	)
 	(hierarchical_label "BTN9"
 		(shape passive)
 		(at 33.0200 86.3600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "bab3e38d-d365-4755-bbd6-192f930e7a81")
+		(uuid "486efd2f-c26d-4e60-999c-e224acc16564")
 	)
 	(hierarchical_label "BTN10"
 		(shape passive)
 		(at 109.2200 86.3600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "26190ee4-32c9-4c0e-9001-223caa4edaba")
+		(uuid "f99048b1-93a6-4f8a-adaf-20f5b5c81d2d")
 	)
 	(hierarchical_label "BTN11"
 		(shape passive)
 		(at 185.4200 86.3600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "ca269467-777a-4769-8710-87b4a70d92c3")
+		(uuid "97c3004a-ddc9-43bd-bce2-0f55c0e643ca")
 	)
 	(hierarchical_label "BTN12"
 		(shape passive)
 		(at 261.6200 86.3600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "270b4da3-91f0-4357-b37d-5237f9e8d793")
+		(uuid "a45a2b18-2d2f-4659-b52d-05b6870f8487")
 	)
 	(hierarchical_label "HAT_UP"
 		(shape passive)
 		(at 33.0200 111.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "2fd06050-74f6-49d6-a87f-1e225f585c8d")
+		(uuid "6e63cbcc-5844-41ff-9bcb-ea12079463cc")
 	)
 	(hierarchical_label "HAT_DOWN"
 		(shape passive)
 		(at 109.2200 111.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "9fa50a1b-fc28-4d95-a5da-39a6b71354ad")
+		(uuid "2f38dfe8-bbfb-428b-9273-d103df9bd1f2")
 	)
 	(hierarchical_label "HAT_LEFT"
 		(shape passive)
 		(at 185.4200 111.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "4c761f3b-fb97-47d6-8559-79c70d83a02a")
+		(uuid "001b6752-9217-4ec5-9ff6-6e52f256dcd0")
 	)
 	(hierarchical_label "HAT_RIGHT"
 		(shape passive)
 		(at 261.6200 111.7600 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "353188ef-8c92-45b3-8b23-9d3e01e1906e")
+		(uuid "1321b999-c63b-4985-8eb0-8d9000f84d9d")
 	)
 	(label "REVERSER_AIN"
 		(at 370.8400 66.0400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "cc12a76f-f63e-4397-96fe-0e2fffb785ab")
+		(uuid "dc9c4ee1-7d4d-445f-a9aa-da630db171a4")
 	)
 	(hierarchical_label "REVERSER_AIN"
 		(shape bidirectional)
 		(at 320.0400 109.2200 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "c45532f0-b05c-435d-a5ef-e2e7b1cb89cc")
+		(uuid "ad6f3c0c-2806-4fc5-907e-71ebb4625738")
 	)
 	(label "REVERSER_AIN"
 		(at 345.4400 109.2200 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "93f215d1-79c1-479c-9f2b-8511a4a16253")
+		(uuid "6f09b999-9d21-4fd0-919d-dc6dbd73b042")
 	)
 	(label "CHG_STAT"
 		(at 378.4600 212.0900 90)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "288d2630-bade-49e7-bafa-8591e41a0bf6")
+		(uuid "282e54e4-7678-449d-b92f-6629c14dce3b")
 	)
 	(hierarchical_label "CHG_STAT"
 		(shape bidirectional)
 		(at 340.3600 208.2800 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "8f1fada6-c08c-4753-8a45-f5e11620cf9f")
+		(uuid "51cf5056-fa47-4ed3-8587-b606fa20ae29")
 	)
 	(label "CHG_STAT"
 		(at 365.7600 208.2800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "9989a52b-c330-4148-8b12-02ce3b4e84a8")
+		(uuid "f53b5ce5-c4de-4497-8401-996470e60e99")
 	)
 	(label "USB_VBUS"
 		(at 81.2800 137.1600 270)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "270359fd-388f-461e-8d57-db297d63ea59")
+		(uuid "c55a759f-a67a-4ef4-a3bf-812e5b3ebb7f")
 	)
 	(hierarchical_label "WS2812_DIN"
 		(shape input)
 		(at 66.0400 152.4000 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "92c5aa41-8713-40dd-a550-77c1dcde8308")
+		(uuid "4f47bcef-63c2-4a79-960c-4a6abff289c9")
 	)
 	(label "WS2812_DIN"
 		(at 45.7200 156.2100 270)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "19c58685-f404-4500-8a4a-f9d1c3f64d1d")
+		(uuid "32aae6ad-04af-43e5-9349-b12e04a468be")
 	)
 	(label "LED_DATA"
 		(at 130.8100 152.4000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "edbdfb22-de82-443b-b712-0c8453d967cf")
+		(uuid "f58e0395-3f91-4e89-a2d8-e0cba523a3ea")
 	)
 	(label "USB_VBUS"
 		(at 157.4800 146.0500 270)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "6f17b4cf-af1e-4052-9b11-7da14d60183a")
+		(uuid "87c1293b-76d9-4812-8cb1-876dddf31b7c")
 	)
 	(label "USB_VBUS"
 		(at 193.0400 146.0500 270)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "f7332adc-c876-4ede-ab8a-4e682274646a")
+		(uuid "c482eec9-73bc-41d7-8031-d8a68fac9cdc")
 	)
 	(label "USB_VBUS"
 		(at 30.4800 180.3400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "64d46bf9-83ca-4aed-aa2f-653c207d54ef")
+		(uuid "acda187a-7fd3-4534-94c5-5133984abb0a")
 	)
 	(label "USB_VBUS"
 		(at 30.4800 220.9800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "c3e6442b-324d-40f9-8477-243fd99b001b")
+		(uuid "89a66b64-469c-42b5-8ecb-a522fd89f9f9")
 	)
 	(label "LED_DATA"
 		(at 17.7800 193.0400 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "966e04f7-2c67-4481-b8d4-cbf6c011d32f")
+		(uuid "3060e6d9-0f78-417e-95f6-01a89c5dd457")
 	)
 	(label "LED_ROW2"
 		(at 342.9000 193.0400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1a05b986-30ef-4b0a-9470-e0e969adcee0")
+		(uuid "9a1c9d4f-2c74-4483-a68d-64feb5b9b641")
 	)
 	(label "LED_ROW2"
 		(at 17.7800 233.6800 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "6d749976-5178-4c02-a351-e65ae019d97f")
+		(uuid "3f6bfb31-82ca-4d7d-9368-767c67ae074a")
 	)
-	(no_connect (at 322.58 233.68) (uuid "de865eee-866e-4ee2-8f74-7df62f45aad2"))
+	(no_connect (at 322.58 233.68) (uuid "dc3adfc4-a7fe-424a-ae30-54165b122539"))
 	(hierarchical_label "USB_VBUS"
 		(shape bidirectional)
 		(at 345.4400 243.8400 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "95a1abc3-38b2-4e29-8877-f9aa8cb90a40")
+		(uuid "7bcc402f-1b00-4d62-bd9a-9ca5ee8e79c4")
 	)
 	(label "USB_VBUS"
 		(at 370.8400 243.8400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1fe80541-96d3-4516-8136-4574974345e4")
+		(uuid "051d86b6-cdc6-42be-a055-a02719b68783")
 	)
 	(text "Buttons/hat: active-low; MCU internal pull-ups + firmware debounce."
 		(exclude_from_sim no)
 		(at 152.40 127.00 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "c613dd2e-39d9-43a3-b2e8-c0602fe74b2e")
+		(uuid "4173db35-0aa7-4881-ab99-036b2dd9a900")
 	)
 	(text "J9: 1=3V3, 2=common, 3=GND.\nSPDT center-off: F / N / R."
 		(exclude_from_sim no)
 		(at 309.88 121.92 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "b1ee09a8-750e-4bdd-8b53-e31b162a8df1")
+		(uuid "852f0795-9e48-439d-b9c8-c23243bc5dce")
 	)
 	(text "RGB: USB 5V only; 100nF at each LED.\nC13 1uF limits direct VBUS capacitance.\nBudget LEDs + charger against USB source.\nDrive DIN low while USB is absent."
 		(exclude_from_sim no)
 		(at 220.98 149.86 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "1f4048c5-068a-4f74-a415-e719dc3b8d2d")
+		(uuid "9e565d9c-e5c9-4d39-a776-7ae01ec6fd27")
 	)
 	(sheet_instances
 		(path "/"

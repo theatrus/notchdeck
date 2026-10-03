@@ -60,11 +60,15 @@ Electrical corrections made during capture:
 
 This is a connectivity-verified schematic, not a fabrication release. Review the
 500mA charge setting against the selected protected cell and USB source, total USB
-current and inrush, LDO dropout/thermal behavior, exact LED sourcing/pad orientation,
+current and inrush, LDO dropout/thermal behavior, assembly placement orientation,
 and MAX17048 exposed-pad land pattern before layout/fabrication. The firmware still
 has a development-kit overlay; a board definition must implement NETPLAN's GPIOs,
-USB-absent LED handling and a suitable LED brightness/current limit. Updated U3/U8
-procurement IDs must be selected; stale LCSC IDs were removed.
+USB-absent LED handling and a suitable LED brightness/current limit.
+
+The [JLCPCB BOM](notchdeck-one/bom/README.md) now covers **115 purchasable parts
+with 29 catalog codes** (2026-10-03 snapshot). Exact manufacturer/MPN and datasheet
+properties are on every symbol. The RGB and keyed SWD footprints follow the
+selected parts' drawings; J4's bare programming contacts are excluded from assembly.
 
 ## Workflow
 
@@ -74,6 +78,7 @@ make gen-notchdeck-one       # generate missing sheets; preserve existing schema
 make check-notchdeck-one     # structural sanity check
 make verify-notchdeck-one    # strict ERC + all expected net endpoints
 make verify-pcb-notchdeck-one # schematic/PCB pad-net and UUID consistency
+make verify-bom-notchdeck-one # exact JLCPCB assignments, quantities and exclusions
 make render-notchdeck-one    # render sheets to PNG for visual review
 make docs-notchdeck-one      # schematic SVGs + PCB SVGs + 3D renders + JLCPCB BOM
 make bom-notchdeck-one       # just the BOM (jlcpcb_bom.csv)

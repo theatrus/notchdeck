@@ -12,6 +12,7 @@ macOS app bundle (`/Applications/KiCad/KiCad.app/...`).
 | `kicad-sch-render.sh` | `make render-<project>` | Render schematic sheet(s) to PNG for a quick visual review. |
 | `notchdeck-netcheck.py` | `make verify-notchdeck-one` | Independent complete pin/net contract and strict native ERC. |
 | `notchdeck-boardcheck.py` | `make verify-pcb-notchdeck-one` | Compare every PCB pad, footprint identity and schematic UUID path to the native netlist. |
+| `notchdeck-bomcheck.py` | `make verify-bom-notchdeck-one` | Compare native assembly BOM identity, quantities, footprints and exclusions to reviewed JLCPCB selections. |
 | `notchdeck-floorplan.py` | — | Seed the provisional 4×4 PCB placement; subsequent edits belong in the saved PCB. |
 | `jlcpcb-package.sh` | `make jlc-<project>` | Gerbers + drill + BOM + CPL → JLCPCB zip. |
 
@@ -52,6 +53,16 @@ The engine supports component rotation and field offsets. Derived-library symbol
 are flattened with property overrides, matching KiCad's library resolver.
 Notes render in a fixed-width font; use `K.note_block()` and `K.pin_table()` in
 manifests when writing pin maps or wiring tables that need alignment.
+
+`notchdeck-one/bom/jlcpcb-parts.json` holds reviewed sourcing assignments. The
+manifest writes its LCSC/MPN/Manufacturer/Datasheet and hidden BOM review properties
+onto each symbol; the engine also supports generic hidden `properties` dictionaries.
+The assembly export groups by sourcing identity as well as value/footprint and
+disables compressed reference ranges. `make verify-bom-notchdeck-one` checks this
+native export; `--bom <csv>` can inspect a saved snapshot. It does not query live stock.
+Refresh the tracked `bom/jlcpcb-bom.csv` and BOM-skill `bom/bom.csv` after sourcing
+changes pass verification. PCB consistency also checks sourcing properties and
+BOM/placement exclusions, including the bare J4 programming contacts.
 
 **A new board:** copy an existing `*.schgen.py`, change the `register_*` calls,
 the component lists and the notes, then add the project to `PROJECTS` in the

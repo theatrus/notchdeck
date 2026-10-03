@@ -1,149 +1,100 @@
-# NotchDeck One — parts mapping (real parts → KiCad symbols / footprints / 3D)
+# NotchDeck One — selected JLCPCB parts
 
-Maps every BOM line to a **real, JLCPCB-sourced part** (see
-[`../docs/04-bom-sourcing.md`](../docs/04-bom-sourcing.md)) and to a concrete KiCad
-**symbol + footprint + 3D model**, preferring **KiCad standard libraries** and falling
-back to **vendored pre-built library parts** (with 3D) only where the stdlib lacks them.
+The current assembly BOM has **115 components across 29 JLCPCB catalog part numbers**.
+Selections were checked on **2026-10-03**. The schematic exports the selected LCSC
+code, exact manufacturer/MPN, datasheet and assembly notes for each component.
 
-Verified against the installed **KiCad 10** standard libraries. Symbol/footprint
-properties to set on each part so the BOM/CPL flow works: `Value`, `Footprint`,
-`LCSC`, `MPN`, `Manufacturer` (the Makefile/`jlcpcb-package.sh` export these columns).
+- [JLCPCB upload BOM](notchdeck-one/bom/jlcpcb-bom.csv)
+- [Tracking BOM](notchdeck-one/bom/bom.csv)
+- [Reviewed selection data and dated stock snapshot](notchdeck-one/bom/jlcpcb-parts.json)
+- [Sourcing evidence, changes and review limits](notchdeck-one/bom/README.md)
 
-Legend — **Status**: `stdlib` = ships with KiCad · `vendor` = drop into `lib/` (see below).
+The PCB remains an unrouted placement study. Catalog matching does not establish
+assembly eligibility, final stock, electrical margins or enclosure fit.
 
-## Default build (Option B power path)
+## Current assembly
 
-| Block | Ref | Qty | Part / Value | LCSC | MPN (Manufacturer) | KiCad symbol | Footprint | 3D | Status |
-|---|---|---|---|---|---|---|---|---|---|
-| **MCU+radio** | U1 | 1 | Ebyte E73-2G4M08S1C (nRF52840, onboard antenna; USB on pads 27/29/31) | C356849 | E73-2G4M08S1C (Ebyte) | `notchdeck:E73-2G4M08S1C` | `notchdeck:EBYTE_E73-2G4M08S1C` | E73 STEP | **vendored ✓** |
-| **3V3 LDO** | U2 | 1 | AP2112K-3.3 | C23380830 | AP2112K-3.3TRG1 (Diodes) | `Regulator_Linear:AP2112K-3.3` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
-| **Charger** | U3 | 1 | MCP73832-2-OT | *(select for MCP73832)* | MCP73832T-2ACI/OT (Microchip) | `Battery_Management:MCP73832-2-OT` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib | stdlib |
-| **Fuel gauge** | U4 | 1 | MAX17048 | C2682616 | MAX17048G+T10 (Analog Devices) | `notchdeck:MAX17048` | `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` *(verify EP vs land pattern)* | stdlib FP | **sym authored ✓** |
-| **USB-C** | J1 | 1 | USB-C 2.0 receptacle 16P (HRO) | C165948 | TYPE-C-31-M-12 | `Connector:USB_C_Receptacle_USB2.0_16P` | `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | stdlib | **all stdlib ✓** |
-| **Lever sensor** | U5 | 1 | AS5600 (12-bit magnetic angle) | C499458 | AS5600-ASOM (AMS) | `notchdeck:AS5600` | `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` | stdlib | **sym authored ✓** |
-| **Notch/status LEDs** | D1.. | ~16 | WS2812B (addressable RGB) | C965555 *(2020)* / C2843785 *(5050)* | WS2812B-2020 / XL-5050RGBC-2812B | `LED:WS2812B` | 2020: `notchdeck:LED_WS2812B-2020` · 5050: `LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm` | stdlib (5050) | sym stdlib / FP per pkg |
-| **Cab buttons** | SW1.. | ≤16 | SMD tactile | *(pick in-stock)* | e.g. TS-1187A / SKRPACE010 | `Switch:SW_Push` | stdlib `Button_Switch_SMD:*` or vendored | stdlib | stdlib |
-| **Battery conn.** | J2 | 1 | JST-PH 2-pin | *(in-stock)* | S2B-PH-SM4-TB (JST) | `Connector:Conn_01x02` *(or Connector_JST sym)* | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` | stdlib | stdlib |
-| **CC resistors** | R1,R2 | 2 | 5.1 kΩ 0402 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib | stdlib |
-| **Decoupling** | C1.. | n | 100 nF / 1 µF / 10 µF 0402-0805 | *(in-stock)* | — | `Device:C` | `Capacitor_SMD:C_0402_1005Metric` (etc.) | stdlib | stdlib |
-| **Charge-rate R** | R3 | 1 | MCP73832 PROG (set Icharge) | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib | stdlib |
-| **Status/charge LEDs** | D17.. | 1-2 | 0603 LED | *(in-stock)* | — | `Device:LED` | `LED_SMD:LED_0603_1608Metric` | stdlib | stdlib |
+| References | Qty | Selected MPN | Manufacturer | JLCPCB part | KiCad footprint |
+|---|---:|---|---|---|---|
+| C1…C37 (see CSV for exact list) | 27 | CL05B104KO5NNNC | Samsung Electro-Mechanics | [C1525](https://jlcpcb.com/partdetail/C1525) | `Capacitor_SMD:C_0402_1005Metric` |
+| C18, C19 | 2 | CL21A475KAQNNNE | Samsung Electro-Mechanics | [C1779](https://jlcpcb.com/partdetail/C1779) | `Capacitor_SMD:C_0805_2012Metric` |
+| D18 | 1 | KT-0603R | Hubei KENTO Elec | [C2286](https://jlcpcb.com/partdetail/C2286) | `LED_SMD:LED_0603_1608Metric` |
+| R3 | 1 | 0402WGF2001TCE | UNI-ROYAL | [C4109](https://jlcpcb.com/partdetail/C4109) | `Resistor_SMD:R_0402_1005Metric` |
+| U8 | 1 | SN74AHCT1G125DBVR | TI | [C7484](https://jlcpcb.com/partdetail/C7484) | `Package_TO_SOT_SMD:SOT-23-5` |
+| U7 | 1 | USBLC6-2SC6 | ST | [C7519](https://jlcpcb.com/partdetail/C7519) | `Package_TO_SOT_SMD:SOT-23-6` |
+| D19 | 1 | B5819W SL | JSCJ | [C8598](https://jlcpcb.com/partdetail/C8598) | `Diode_SMD:D_SOD-123` |
+| R5, R12, R13, R18, R19, R20, R21, R25 | 8 | 0402WGF1001TCE | UNI-ROYAL | [C11702](https://jlcpcb.com/partdetail/C11702) | `Resistor_SMD:R_0402_1005Metric` |
+| Q1 | 1 | AO3401A | AOS | [C15127](https://jlcpcb.com/partdetail/C15127) | `Package_TO_SOT_SMD:SOT-23` |
+| C5, C9 | 2 | CL21A106KAYNNNE | Samsung Electro-Mechanics | [C15850](https://jlcpcb.com/partdetail/C15850) | `Capacitor_SMD:C_0805_2012Metric` |
+| R11 | 1 | 0402WGF3300TCE | UNI-ROYAL | [C25104](https://jlcpcb.com/partdetail/C25104) | `Resistor_SMD:R_0402_1005Metric` |
+| R4, R8, R22, R23, R24, R26 | 6 | 0402WGF1003TCE | UNI-ROYAL | [C25741](https://jlcpcb.com/partdetail/C25741) | `Resistor_SMD:R_0402_1005Metric` |
+| R14, R15, R16, R17 | 4 | 0402WGF1002TCE | UNI-ROYAL | [C25744](https://jlcpcb.com/partdetail/C25744) | `Resistor_SMD:R_0402_1005Metric` |
+| R6, R7, R9, R10 | 4 | 0402WGF4701TCE | UNI-ROYAL | [C25900](https://jlcpcb.com/partdetail/C25900) | `Resistor_SMD:R_0402_1005Metric` |
+| R1, R2 | 2 | 0402WGF5101TCE | UNI-ROYAL | [C25905](https://jlcpcb.com/partdetail/C25905) | `Resistor_SMD:R_0402_1005Metric` |
+| C13 | 1 | CL21B105KBFNNNE | Samsung Electro-Mechanics | [C28323](https://jlcpcb.com/partdetail/C28323) | `Capacitor_SMD:C_0805_2012Metric` |
+| U3 | 1 | MCP73832T-2ACI/OT | MICROCHIP | [C38066](https://jlcpcb.com/partdetail/C38066) | `Package_TO_SOT_SMD:SOT-23-5` |
+| U2 | 1 | AP2112K-3.3TRG1 | DIODES | [C51118](https://jlcpcb.com/partdetail/C51118) | `Package_TO_SOT_SMD:SOT-23-5` |
+| C3, C4, C7, C8, C12 | 5 | CL05A105KA5NQNC | Samsung Electro-Mechanics | [C52923](https://jlcpcb.com/partdetail/C52923) | `Capacitor_SMD:C_0402_1005Metric` |
+| J1 | 1 | TYPE-C-31-M-12 | Korean Hroparts Elec | [C165948](https://jlcpcb.com/partdetail/C165948) | `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` |
+| J9 | 1 | S3B-PH-SM4-TB(LF)(SN) | JST | [C265101](https://jlcpcb.com/partdetail/C265101) | `Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal` |
+| J2, J5, J6, J7, J8 | 5 | S2B-PH-SM4-TB(LF)(SN) | JST | [C295747](https://jlcpcb.com/partdetail/C295747) | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` |
+| SW1…SW17 (see CSV for exact list) | 17 | TS-1187A-B-A-B | XKB Connection | [C318884](https://jlcpcb.com/partdetail/C318884) | `Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A` |
+| U1 | 1 | E73-2G4M08S1C | Ebyte | [C356849](https://jlcpcb.com/partdetail/C356849) | `notchdeck:EBYTE_E73-2G4M08S1C` |
+| J3 | 1 | FTSH-105-01-L-DV-K-TR | Samtec | [C448647](https://jlcpcb.com/partdetail/C448647) | `notchdeck:Samtec_FTSH-105-01-L-DV-K` |
+| U5 | 1 | AS5600-ASOT | ams | [C499458](https://jlcpcb.com/partdetail/C499458) | `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` |
+| D17 | 1 | XL-1608SYGC-06 | XINGLIGHT | [C965805](https://jlcpcb.com/partdetail/C965805) | `LED_SMD:LED_0603_1608Metric` |
+| U4 | 1 | MAX17048G+T10 | MAXIM | [C2682616](https://jlcpcb.com/partdetail/C2682616) | `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` |
+| D1…D16 (see CSV for exact list) | 16 | XL-5050RGBC-2812B | XINGLIGHT | [C2843785](https://jlcpcb.com/partdetail/C2843785) | `notchdeck:LED_XINGLIGHT_XL-5050RGBC-2812B` |
 
-## Optional: Option A integrated PMIC (replaces U2/U3/U4)
+## Symbols, footprints and models
 
-| Block | Ref | Part | LCSC | MPN | KiCad symbol | Footprint | 3D | Status |
-|---|---|---|---|---|---|---|---|---|
-| PMIC | U6 | nPM1300 | C7501206 | nPM1300-QEAA (Nordic) | `notchdeck:nPM1300` | `Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm` | vendor STEP | **vendor sym** |
+The generated schematic retains functional symbol values (for example `WS2812B`
+and `LED`); the **MPN/LCSC fields select the purchased part**. The generator loads
+`notchdeck-one/bom/jlcpcb-parts.json` and rejects missing or duplicate assignments.
+Part choices belong in that file; circuitry and symbol selection remain in
+`scripts/notchdeck-one.schgen.py`.
 
-## Power-path, protection & programming (from the net plan)
+Standard KiCad symbols/footprints are used where they match. E73, AS5600, MAX17048
+and passive SWD connector symbols are project-local; their provenance is in
+[lib/ATTRIBUTIONS.md](lib/ATTRIBUTIONS.md). The selected RGB LED and keyed Samtec
+header now use project-local footprints drawn from manufacturer dimensions.
+They do not yet have dedicated 3D models. Standard library models and the vendored
+E73 STEP are previews, not evidence of mechanical fit.
 
-Support parts used by the wired schematic. Confirm current sourcing before assembly.
+J4 is a bare TC2030-NL contact pattern, excluded from BOM and placement output.
+The four PCB-only mounting holes likewise have no assembly part. Mating cables,
+protected cell, programming probe, magnet, lever/cam hardware, external switches,
+keycaps and enclosure are outside this PCB BOM.
 
-| Block | Ref | Part / value | LCSC | MPN (Manufacturer) | KiCad symbol | Footprint | Status |
-|---|---|---|---|---|---|---|---|
-| **USB ESD** | U7 | USBLC6-2SC6 | C2687116 | USBLC6-2SC6 (ST) | `Power_Protection:USBLC6-2SC6` | `Package_TO_SOT_SMD:SOT-23-6` | stdlib |
-| **Power-path PMOS** | Q1 | AO3401A (P-ch, load-share) | C15127 *(basic)* | AO3401A (AOS) | `Transistor_FET:Q_PMOS_GSD` | `Package_TO_SOT_SMD:SOT-23` | stdlib |
-| **Power-path diode** | D19 | B5819W Schottky (VBUS→VSYS) | C8598 *(basic)* | B5819W (Slkor) | `Device:D_Schottky` | `Diode_SMD:D_SOD-123` | stdlib |
-| **Reset button** | SW17 | SMD tactile | *(in-stock)* | e.g. TS-1187A | `Switch:SW_Push` | `Button_Switch_SMD:*` | stdlib |
-| **SWD header** | J3 | 2×5 1.27 mm (Cortex debug) | *(in-stock / Tag-Connect)* | — | `notchdeck:SWD_2x05` | `Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD` | stdlib |
-| **WS2812 level shift** | U8 | 74AHCT1G125 | *(select for AHCT)* | SN74AHCT1G125DBVR (TI) | `74xGxx:74AHCT1G125` | `Package_TO_SOT_SMD:SOT-23-5` | stdlib |
-| **Gate / pull resistors** | R_PP.. | 100 kΩ 0402 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
-| **I²C pull-ups** | R_I2C.. | 4.7 kΩ 0402 ×4 | *(in-stock)* | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
+## Electrical selection constraints
 
-J3 and J4 (`notchdeck:SWD_TC2030`) use passive connector symbols derived from
-KiCad's ARM debug connectors; only one debug probe may be attached at a time.
-U8 is populated and powered from USB VBUS. The RGB chain is USB-only.
-R4=100k gate pulldown; R5=1k between USB VBUS and Q1 gate.
+- U3: **MCP73832T-2ACI/OT / C38066**, open-drain STAT; no MCP73831 substitution.
+- U8: **SN74AHCT1G125DBVR / C7484**, TTL-compatible input at a 5 V supply.
+  An AHC/HC part is not a drop-in replacement.
+- U2: **Diodes AP2112K-3.3TRG1 / C51118**; the previous code identified a different manufacturer.
+- U7: **ST USBLC6-2SC6 / C7519**; the previous code identified a different manufacturer.
+- D1–D16: **XINGLIGHT XL-5050RGBC-2812B / C2843785**, 5050 four-pad package;
+  use its documented pad map and USB-only supply, with a firmware current limit.
+- D17: **XL-1608SYGC-06 / C965805**, low-voltage yellow-green indicator.
+  D18: **KT-0603R / C2286**, red charge indicator. They must remain separate BOM rows.
+- J2 and J5–J8 share the same two-pin JST part; harness functions and pin assignments
+  differ. J9 uses the matching three-pin family member.
+- U4 remains **MAX17048G+T10 / C2682616**. Its exact exposed-pad land pattern still
+  needs review, as does the imported E73 footprint and antenna clearance.
 
-Added during wiring: C18/C19 4.7uF charger bypass (0805); R22 100k STAT pull-up;
-C20 100nF U8 bypass; C21–C36 100nF LED bypass; R26 100k LED data pulldown;
-J9 JST S3B-PH-SM4-TB with `Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal`;
-R23/R24 100k reverser bias, R25 1k series and C37 100nF filter. Resistors and 100nF
-capacitors use 0402 footprints. C13 is now 1uF 0805, rated at least 10V.
-U3/U8 MPNs are recorded but replacement LCSC codes are intentionally unassigned.
+Alternative PMIC and cam/Hall architectures in [the design research](../docs/04-bom-sourcing.md)
+are not populated or sourced by this BOM. See [NETPLAN.md](NETPLAN.md) for the
+implemented wiring and [FLOORPLAN.md](notchdeck-one/FLOORPLAN.md) for open layout work.
 
-## Coded-switch lever input (Option 2 — 4-bit binary/Gray, coexists with AS5600)
+## Regeneration and checks
 
-A 4-bit coded switch reports notch position as pure GPIO (see `NETPLAN.md` → "Lever sensing").
-Its 4 bits are on **dedicated GPIO** (P0.03/P0.28/P0.04/P0.05), so this coexists with the AS5600
-(U5) — populate either front-end or both. The switches themselves live in the **mascon handle** and
-wire in on a harness: **one 2-pin JST-PH per bit** (signal + GND), each bit active-low with an
-on-board RC debounce. These are on-board parts of the default build (on the Lever sheet):
+```sh
+# Close the NotchDeck schematic editor before forced generation.
+KSCHGEN_FORCE=1 make gen-notchdeck-one
+make verify-notchdeck-one verify-pcb-notchdeck-one verify-bom-notchdeck-one
+```
 
-| Block | Ref | Qty | Part / value | MPN (Manufacturer) | KiCad symbol | Footprint | Status |
-|---|---|---|---|---|---|---|---|
-| **Coded-switch conn.** | J5–J8 | 4 | JST-PH 2-pin (per bit: signal + GND) | S2B-PH-SM4-TB (JST) | `Connector_Generic:Conn_01x02` | `Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal` | stdlib |
-| **Bit pull-ups** | R14–R17 | 4 | 10 kΩ 0402 (to +3V3) | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
-| **Bit series R** | R18–R21 | 4 | 1 kΩ 0402 (RC debounce + GPIO/ESD limit) | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
-| **Debounce caps** | C14–C17 | 4 | 100 nF 0402 (to GND) | — | `Device:C` | `Capacitor_SMD:C_0402_1005Metric` | stdlib |
-
-Debounce per bit: `+3V3 → 10k pull-up → bit line (Jn.1, switch to GND)`, then `1k series → GPIO`
-with `100 nF → GND`. τ ≈ 1.1 ms on release / 0.1 ms on press — a small hardware debounce; firmware
-adds a few ms on top. The 1 kΩ series also limits cap-discharge current and gives cable ESD margin.
-All stdlib; same JST-PH family as the battery J2, so no new symbols/footprints. (If any switch is a
-maintained/latching type or a shared-common wafer, tie its common to a GND pin and keep the per-bit
-RC — the topology is unchanged.)
-
-### On-board cam alternative (in place of the mascon harness)
-
-If the 4 switches are actuated by an **on-board cam** on the shaft rather than an external mascon,
-drop J5–J8 and drive the same 4 nets (LEVER_S0–S3) from a cam switch element — pick one:
-
-| Block | Ref | Part | LCSC | MPN | KiCad symbol | Footprint | Status |
-|---|---|---|---|---|---|---|---|
-| Hall switch ×4 (recommended) | U5a–d | DRV5032FB | C2655033 | DRV5032FBDBZR (TI) | generic 3-pin / vendor | `Package_TO_SOT_SMD:SOT-23` | **vendor sym** (not in stdlib) |
-| or snap-action ×4 | SW_La–d | SS-5GL (Omron) | C87120 | SS-5GL2 | `Switch:SW_SPST` | through-hole / hand-mount | stdlib sym |
-| Hall pull-ups / lobe magnets | — | 4.7 kΩ + small NdFeB | — | — | `Device:R` | `Resistor_SMD:R_0402_1005Metric` | stdlib |
-
-Notes: DRV5032FB is contactless (no wear), SOT-23, JLCPCB-stocked (~13k, $0.20) — needs a 3-pin
-Hall-switch symbol (generic or vendored; not in KiCad stdlib). SS-5GL is the authentic cam
-microswitch (through-hole, ~$0.60) — most authentic feel, but contacts wear and it's hand-mounted.
-
-## Library status (what's in `lib/` now)
-
-All default-build parts now resolve to a symbol + footprint + 3D model. Verified with
-`kicad-cli sym upgrade` (symbols parse) and `kicad-cli fp upgrade` (footprint parses).
-
-| Part | Symbol | Footprint | 3D | Done? |
-|---|---|---|---|---|
-| **E73-2G4M08S1C** (U1) | `notchdeck:E73-2G4M08S1C` (43 pins) | `notchdeck:EBYTE_E73-2G4M08S1C` (43 pads) | `lib/3dmodels/EBYTE_E73-2G4M08S1C.step` | ✅ vendored from nrfmicro (public domain) |
-| **AS5600** (U5) | `notchdeck:AS5600` (authored, datasheet pinout) | stdlib `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm` | stdlib (shipped) | ✅ |
-| **MAX17048** (U4) | `notchdeck:MAX17048` (authored, datasheet pinout, incl. EP=pin9) | stdlib `Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm` | stdlib (shipped) | ✅ |
-| **USB-C** (J1) | stdlib `Connector:USB_C_Receptacle_USB2.0_16P` | stdlib `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | stdlib (shipped) | ✅ all stdlib (use LCSC C165948) |
-| AP2112K / MCP73832 / WS2812B(5050) / passives / JST | stdlib | stdlib | stdlib | ✅ |
-| **nPM1300** (U6, Option A only) | _not yet_ — Nordic KiCad lib / SnapEDA | stdlib `Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm` | needs STEP | ☐ deferred (only for Option A) |
-
-Notes / to verify in KiCad GUI:
-- Authored AS5600/MAX17048 symbols: double-check pin↔number against the datasheet figure
-  (done from datasheet, but confirm in ERC) and that the MAX17048 stdlib EP land matches the
-  Maxim recommended land pattern.
-- E73 3D model: confirm orientation/offset aligns with the footprint origin in the 3D viewer
-  (vendored STEP placed at 0/0/0 — may need a rotate/offset tweak).
-- If you prefer the 2020 WS2812B (`C965555`) over the 5050, that footprint must be vendored;
-  the 5050 (`C2843785`) is stdlib and needs nothing.
-
-> The import workflow (for nPM1300 or any future part) lives in `lib/ATTRIBUTIONS.md`:
-> drop `.kicad_mod` → `lib/footprints.pretty/`, STEP → `lib/3dmodels/`, append the symbol to
-> `lib/symbols/notchdeck.kicad_sym`, repoint the 3D path to `${KIPRJMOD}/../lib/3dmodels/`.
-
-## ✓ Verified — E73 exposes USB (dual-mode confirmed)
-
-Confirmed from Ebyte's official E73-2G4M08S1C pin-definition table (43 pads total): the
-module brings the nRF52840 USB lines out to castellated pads, so the dual-mode USB design
-works on the E73 as-is — **no parts change, bare-chip fallback not needed.**
-
-| Pad | Name | Function | Wire to |
-|---|---|---|---|
-| 27 | VBS | USB 5V (VBUS) — feeds nRF52840 USB regulator + VBUS-detect | USB-C VBUS (+ `vbus_present()` sense) |
-| 29 | D− | USB D− | USB-C D− (CC-side pair) |
-| 31 | D+ | USB D+ | USB-C D+ |
-
-Corroborated by USB(-C) boards built on this exact module: joric/nrfmicro and
-ddB0515/nRF52840-BBoard. Source: <https://www.cdebyte.com/products/E73-2G4M08S1C/2>.
-
-## JLCPCB assembly notes
-
-- BOM/CPL are generated by `make jlc-notchdeck-one` (→ `notchdeck-one-jlcpcb.zip`).
-- Set `LCSC` on every assembled part so JLCPCB auto-matches; mark non-assembled parts DNP.
-- QFN/SOT/DFN parts may need JLCPCB-specific **rotation offsets** — verify in JLCPCB's CPL
-  preview before confirming (the package script's README.txt reiterates this).
+Run from `hardware/`. The PCB must be updated from the schematic after a part or
+footprint change. Refresh the tracked CSV snapshots after checks pass. Stock is
+a dated community JLCPCB catalog snapshot; recheck it and the CPL orientation in
+JLCPCB before any future assembly order.

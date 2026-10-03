@@ -283,6 +283,9 @@ def _comp(c, project, root_uuid, sheet_uuid):
     for k, fld in (("lcsc", "LCSC"), ("mpn", "MPN"), ("mfr", "Manufacturer")):
         if c.get(k):
             s += _prop(fld, c[k], x, y, hide=True, justify="")
+    for fld, value in c.get("properties", {}).items():
+        assert fld not in {"Reference", "Value", "Footprint", "Datasheet", "LCSC", "MPN", "Manufacturer"}
+        s += _prop(fld, str(value), x, y, hide=True, justify="")
     for pn in pin_numbers(c["lib_id"]):
         s += f'\t\t(pin "{pn}" (uuid "{U()}"))\n'
     s += ("\t\t(instances\n"
@@ -520,6 +523,9 @@ def w_symbol(c, project, instances):
     for k, fld in (("lcsc", "LCSC"), ("mpn", "MPN"), ("mfr", "Manufacturer")):
         if c.get(k):
             s += _prop(fld, c[k], x, y, hide=True, justify="")
+    for fld, value in c.get("properties", {}).items():
+        assert fld not in {"Reference", "Value", "Footprint", "Datasheet", "LCSC", "MPN", "Manufacturer"}
+        s += _prop(fld, str(value), x, y, hide=True, justify="")
     for pn in pin_numbers(c["lib_id"]):
         s += f'\t\t(pin "{pn}" (uuid "{U()}"))\n'
     s += "\t\t(instances\n" + f'\t\t\t(project "{project}"\n'
