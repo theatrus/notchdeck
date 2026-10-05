@@ -38,7 +38,7 @@ K.register_stdlib("Power_Protection", "USBLC6-2SC6")
 K.register_stdlib("Transistor_FET", "Q_PMOS_GSD", "Q_NMOS_GDS", "2N7002")
 K.register_stdlib("Switch", "SW_Push")
 K.register_lib(
-    "notchdeck", NOTCH_SYM, "E73-2G4M08S1C", "AS5600", "MAX17048", "SWD_2x05", "SWD_TC2030", "TCA9543APWR", "TPS259531DSGR"
+    "notchdeck", NOTCH_SYM, "E73-2G4M08S1C", "AS5600", "MAX17048", "SWD_2x05", "SWD_TC2030", "TCA9543APWR", "TPS259461LRPWR"
 )
 
 # ---- footprint shorthands ---------------------------------------------------
@@ -161,12 +161,6 @@ POWER = dict(
         R("R6", "4.7k"),
         R("R7", "4.7k"),
         R("R8", "100k"),
-        dict(
-            ref="J2",
-            lib_id="Connector_Generic:Conn_01x02",
-            value="BAT 1S",
-            fp="Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
-        ),
     ],
 )
 
@@ -269,9 +263,11 @@ LEVER["small"] += [
     *[C(f"C{i}", "100nF") for i in range(38, 44)],
 ]
 
-# Rev F: battery-powered, protected low-side actuator outputs.
+# Rev G: battery-powered, protected low-side actuator outputs.
 ACTUATORS = dict(name="Actuators", file="actuators.kicad_sch",
-    title="Solenoids, buzzer and external PWM", page="6", big=[], small=[
+    title="Battery protection, solenoids and buzzer", page="6", big=[], small=[
+        dict(ref="J2", lib_id="Connector_Generic:Conn_01x04", value="BAT 1S / 2+2",
+             fp="Connector_Molex:Molex_Micro-Fit_3.0_43045-0400_2x02_P3.00mm_Horizontal"),
         *[dict(ref=f"Q{i}", lib_id="Transistor_FET:Q_NMOS_GDS", value="ZXMS6005DGTA",
                fp="Package_TO_SOT_SMD:SOT-223-3_TabPin2") for i in (2, 3, 4)],
         *[dict(ref=f"J{i}", lib_id="Connector_Generic:Conn_01x02", value=name,
@@ -280,12 +276,13 @@ ACTUATORS = dict(name="Actuators", file="actuators.kicad_sch",
         dict(ref="J19", lib_id="Connector_Generic:Conn_01x04", value="EXTERNAL PWM 3V3",
              fp="Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal"),
         *[dict(ref=f"D{i}", lib_id="Device:D_Schottky", value="B360A",
-               fp="Diode_SMD:D_SMA") for i in (20, 21, 22, 23)],
-        dict(ref="U13", lib_id="notchdeck:TPS259531DSGR", value="TPS259531DSGR",
-             fp="Package_DFN_QFN:DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm"),
+               fp="Diode_SMD:D_SMA") for i in (20, 21, 22, 23, 24)],
+        dict(ref="U13", lib_id="notchdeck:TPS259461LRPWR", value="TPS259461LRPWR",
+             fp="notchdeck:TI_RPW0010A"),
         dict(ref="Q5", lib_id="Transistor_FET:2N7002", value="2N7002", fp=SOT23),
-        *[R(f"R{i}", "1k") for i in (52,54,56)],
-        *[R(f"R{i}", "100k") for i in (53,55)],
+        R("R54", "1k"), R("R56", "330"),
+        dict(ref="R60", lib_id="Device:R", value="100", fp="Resistor_SMD:R_0603_1608Metric"),
+        *[R(f"R{i}", "100k") for i in (52,53,55)],
         R("R57", "10k"), R("R58", "330"), C("C47", "1uF"), C("C48", "100nF"),
         *[R(f"R{i}", "330") for i in (43, 44, 45)],
         *[R(f"R{i}", "100k") for i in (46, 47, 48)],
@@ -320,7 +317,7 @@ for ref, note in sourcing["non_assembly"].items():
     assert parts_by_ref[ref].get("in_bom") is False
     parts_by_ref[ref]["properties"] = {"BOM Comments": note}
 assert assigned | set(sourcing["non_assembly"]) == set(parts_by_ref)
-TITLE = dict(title="NotchDeck One", date="2026-10-04", rev="F", company="BenchBits")
+TITLE = dict(title="NotchDeck One", date="2026-10-04", rev="G", company="BenchBits")
 G = 2.54
 
 
@@ -335,7 +332,7 @@ PWR_PORTS = ["USB_VBUS", "USB_DM", "USB_DP", "I2C1_SCL", "I2C1_SDA", "FG_ALRT", 
 LEVER_PORTS = ["I2C0_SCL", "I2C0_SDA", "LEVER_S0", "LEVER_S1", "LEVER_S2", "LEVER_S3",
                "POWER_S0", "POWER_S1", "POWER_S2", "nRESET"]
 CTRL_PORTS = ["PANEL_INT", "REVERSER_AIN", "BTN7", "BTN8"]
-ACT_PORTS = ["SOL1_PWM", "SOL2_PWM", "BUZZ_PWM", "ACT_EN", "ACT_nFAULT"]
+ACT_PORTS = ["SOL1_PWM", "SOL2_PWM", "BUZZ_PWM", "ACT_EN", "BAT_nFAULT"]
 
 s = Capture(MCU)
 s.place("U1", 40, 30, ref_offset=(-10.16, -35.56), value_offset=(-10.16, -33.02))
@@ -368,7 +365,7 @@ pinmap = {
     33: "SOL2_PWM",
     34: "BUZZ_PWM",
     35: "ACT_EN",
-    36: "ACT_nFAULT",
+    36: "BAT_nFAULT",
     37: "SWDIO",
     39: "SWDCLK",
     40: "BTN7",
@@ -409,7 +406,7 @@ for i, n in enumerate(PWR_PORTS + LEVER_PORTS + CTRL_PORTS + ACT_PORTS):
 s.note(
     10,
     88,
-    "SWD headers are parallel; VTref is 3V3. SWO is unused.\nReset: P0.18 / UICR reset enabled; also resets handle mux.\nRev F: P0.20 SOL1, P0.13 SOL2, P0.22 BUZZ; active high.\n9 spare GPIOs; calibrated RC LFCLK, no LFXO/NFC.\nActuator firmware must default OFF; see ACTUATORS.md.",
+    "SWD headers are parallel; VTref is 3V3. SWO is unused.\nReset: P0.18 / UICR reset enabled; also resets handle mux.\nRev G: P0.20 SOL1, P0.13 SOL2, P0.22 BUZZ; active high.\n9 spare GPIOs; calibrated RC LFCLK, no LFXO/NFC.\nActuator firmware must default OFF; see ACTUATORS.md.",
 )
 s.finish()
 
@@ -444,7 +441,7 @@ for ref, pin, x in [("R1", "A5", 32), ("R2", "B5", 41)]:
 s.place("D19", 84, 14, 180, ref_offset=(-2.54, -5.08), value_offset=(-5.08, -2.54))
 s.place("Q1", 84, 27, 90, ref_offset=(-2.54, -8.89), value_offset=(-5.08, -6.35))
 s.stub("D19", 2, "USB_VBUS")
-s.stub("Q1", 3, "BAT_RAW")
+s.stub("Q1", 3, "BAT_PROT")
 d = s.pin("D19", 1)
 q = s.pin("Q1", 2)
 s.wire(d, (96 * G, d[1]), (96 * G, q[1]), q)
@@ -462,7 +459,7 @@ s.stub("R4", 2, "GND", kind="power")
 s.note(
     74,
     52,
-    "Q1: D = BAT+, S = VSYS.\nR5 1k from VBUS; R4 100k to GND.\nBody diode blocks VSYS charging BAT+.",
+    "Q1: D = BAT_PROT, S = VSYS.\nR5 1k from VBUS; R4 100k to GND.\nBody diode blocks VSYS charging BAT_PROT.",
 )
 s.place("U2", 128, 25, ref_offset=(-5.08, -10.16), value_offset=(-5.08, -7.62))
 s.place("C7", 116, 28)
@@ -493,20 +490,16 @@ s.place("R59",14,77)
 s.stub("R59",1,"+3V3",kind="power")
 a,b=s.pin("R59",2),s.pin("Q6",1)
 s.wire(a,(a[0],b[1]),b);s.label("CHARGE_ENABLE",(a[0],b[1]))
-s.port("CHARGE_ENABLE", 65, 95)
+s.port("CHARGE_ENABLE", 80, 102)
 s.stub("U3", 2, "GND", kind="power")
 s.place("C18", 20, 57)
 s.place("C19", 58, 69)
-s.place("J2", 72, 66)
 s.rail("USB_VBUS", [("U3", 4), ("C18", 1)], 51, flag=True)
 s.stub("C18", 2, "GND", kind="power")
 a = s.pin("U3", 3)
 b = s.pin("C19", 1)
-c = s.pin("J2", 1)
 s.wire(a, (b[0], a[1]), b)
-s.wire((b[0], a[1]), (c[0], a[1]), c)
-s.label("BAT_RAW", a)
-s.stub("J2", 2, "GND", kind="power")
+s.label("BAT_PROT", a)
 s.stub("C19", 2, "GND", kind="power")
 s.stub("U3", 1, "CHG_STAT")
 s.place("R22", 53, 81)
@@ -515,13 +508,13 @@ s.stub("R22", 2, "CHG_STAT")
 s.note(
     10,
     89,
-    "U3 is MCP73832 (open-drain STAT), not MCP73831.\nR3 = 2k: nominal 500mA charge. Q6 opens PROG return during actuation.\nJ2: protected 1S Li-ion pack, pin 1 positive, pin 2 GND.\nMatch cell/USB budget; bench-check Q6 charge current and off leakage.",
+    "U3 is MCP73832 (open-drain STAT), not MCP73831.\nR3 = 2k: nominal 500mA charge. Q6 opens PROG return during actuation.\nBAT_PROT comes from full-input U13 on the Actuators sheet.\nMatch cell/USB budget; bench-check Q6 charge current and off leakage.",
 )
 s.place("U4", 115, 70, ref_offset=(-10.16, -12.7), value_offset=(-10.16, -10.16))
 s.place("C10", 100, 65)
-s.stub("U4", 3, "BAT_RAW")
-s.stub("U4", 2, "BAT_RAW")
-s.stub("C10", 1, "BAT_RAW")
+s.stub("U4", 3, "BAT_PROT")
+s.stub("U4", 2, "BAT_PROT")
+s.stub("C10", 1, "BAT_PROT")
 s.stub("C10", 2, "GND", kind="power")
 for pin in [1, 4, 6, 9]:
     s.stub("U4", pin, "GND", kind="power")
@@ -534,11 +527,11 @@ s.rail("+3V3", [("R6", 1), ("R7", 1), ("R8", 1)], 58)
 s.note(
     100,
     83,
-    "MAX17048: I2C1 / address 0x36.\nCELL + VDD -> BAT+; CTG/QSTRT/EP -> GND.\nAS5600 has its own bus to avoid address collision.",
+    "MAX17048: I2C1 / address 0x36.\nCELL + VDD -> BAT_PROT; CTG/QSTRT/EP -> GND.\nAS5600 has its own bus to avoid address collision.",
 )
 for i, n in enumerate(PWR_PORTS):
     s.port(n, 12 + 21 * i, 94)
-s.port("BAT_RAW", 35, 105)
+s.port("BAT_PROT", 35, 105)
 s.power("GND", (12 * G, 108 * G))
 s.power("GND", (12 * G, 108 * G), flag=True)
 s.finish()
@@ -693,45 +686,53 @@ s.finish()
 # Each channel is drawn as a complete visible current loop. ZXMS6005 is an
 # internally protected MOSFET: pin 1=input, pin 2/tab=drain, pin 3=source.
 s = Capture(ACTUATORS)
-s.note(8, 7, "1S BATTERY ACTUATORS: 1A/channel target; 1.3A operating bank budget including buzzer.\nU13 fast electronic current limit (~1.54A nominal); no one-time fuse. Protected battery pack required upstream.")
-s.place("U13", 43, 22, ref_offset=(-10.16, -17.78), value_offset=(-10.16, -15.24))
-s.place("C47", 21, 17)
-s.rail("BAT_RAW", [("U13", 3), ("U13", 4), ("C47", 1)], 11)
-s.port("BAT_RAW", 12, 11)
-s.stub("C47", 2, "GND", kind="power")
-s.place("C45", 62, 23); s.place("C46", 72, 23)
-s.place("D23", 82, 23, 270, ref_offset=(2.54, -2.54), value_offset=(2.54, 0))
-a=s.pin("U13",5)
+s.note(8, 7, "FULL BATTERY INPUT: ~5.05A electronic limit, latched thermal fault; no disposable fuse.\nTwo 2A strikes, <=100ms each provisional; <=4.3A total input target. Protected >=6A pack required.")
+s.place("J2", 18, 17, ref_offset=(-7.62,-12.7), value_offset=(-7.62,-10.16))
+s.rail("BAT_RAW", [("J2",1),("J2",2)], 11, flag=True)
+s.rail("GND", [("J2",3),("J2",4)], 23)
+s.place("U13", 55, 23, ref_offset=(-10.16,-17.78), value_offset=(-10.16,-15.24))
+s.place("C47", 35, 17)
+s.rail("BAT_RAW", [("U13",5),("C47",1)], 11)
+s.stub("C47",2,"GND",kind="power")
+s.place("C45",73,23);s.place("C46",83,23)
+s.place("D23",93,23,270,ref_offset=(2.54,-2.54),value_offset=(2.54,0))
+a=s.pin("U13",6)
 for ref in ("C45","C46","D23"):
     b=s.pin(ref,1);s.wire(a,(b[0],a[1]),b)
     s.stub(ref,2,"GND",kind="power")
-s.label("ACT_BAT",(72*G,a[1]))
-s.rail("GND",[("U13",8),("U13",9)],32)
-s.place("C48",31,29)
-a,b=s.pin("U13",1),s.pin("C48",1);s.wire(a,(b[0],a[1]),b)
+s.label("BAT_PROT",(83*G,a[1]))
+s.port("BAT_PROT",73,11)
+# Reverse-only bootstrap path permits charging a depleted/disabled pack.
+# K=raw battery, A=charger/protected rail. It cannot bypass discharge protection.
+s.place("D24",110,13,ref_offset=(-2.54,-5.08),value_offset=(-2.54,-2.54))
+s.stub("D24",1,"BAT_RAW");s.stub("D24",2,"BAT_PROT")
+s.stub("U13",8,"GND",kind="power");s.stub("U13",2,"GND",kind="power")
+s.nc("U13",3,10)  # unused SPLYGD; no ITIMER capacitor = fastest current limit
+s.place("R60",43,26,90,ref_offset=(-2.54,-5.08),value_offset=(-2.54,-2.54))
+s.place("C48",35,34)
+s.join(("R60",2),("U13",7))
+a,b=s.pin("R60",1),s.pin("C48",1);s.wire(a,(b[0],a[1]),b)
 s.stub("C48",2,"GND",kind="power")
-s.place("R56",52,29);s.place("R58",52,34)
-a,b=s.pin("U13",7),s.pin("R56",1);s.wire(a,(b[0],a[1]),b)
+s.place("R56",65,30);s.place("R58",65,35)
+a,b=s.pin("U13",9),s.pin("R56",1);s.wire(a,(b[0],a[1]),b)
 s.join(("R56",2),("R58",1));s.stub("R58",2,"GND",kind="power")
-s.place("R52",22,24,90,ref_offset=(-2.54,-5.08),value_offset=(-2.54,-2.54))
-s.place("R53",26,30)
-a,b=s.pin("R52",2),s.pin("U13",2)
-s.wire(a,(28*G,a[1]),(28*G,b[1]),b)
-c=s.pin("R53",1);s.wire(a,(c[0],a[1]),c);s.label("ACT_ENABLE",a)
-s.stub("R53",2,"GND",kind="power");s.stub("R52",1,"ACT_EN")
-s.place("Q5",107,19,ref_offset=(5.08,0),value_offset=(5.08,2.54))
-s.place("R54",94,19,90,ref_offset=(-2.54,-5.08),value_offset=(-2.54,-2.54))
-s.place("R55",100,27)
+s.place("R52",24,27);s.place("R53",24,33)
+s.stub("R52",1,"BAT_RAW")
+a,b=s.pin("R52",2),s.pin("R53",1);s.wire(a,b)
+p=s.pin("U13",1);s.wire(a,(40*G,a[1]),(40*G,p[1]),p)
+s.label("BAT_ENABLE",(30*G,a[1]));s.stub("R53",2,"GND",kind="power")
+s.place("Q5",121,23,ref_offset=(5.08,0),value_offset=(5.08,2.54))
+s.place("R54",108,23,90,ref_offset=(-2.54,-5.08),value_offset=(-2.54,-2.54))
+s.place("R55",114,30)
 s.join(("R54",2),("Q5",1))
 a,b=s.pin("R55",1),s.pin("Q5",1);s.wire(a,(a[0],b[1]),b)
-s.rail("GND",[("Q5",2),("R55",2)],32)
+s.rail("GND",[("Q5",2),("R55",2)],35)
 s.stub("Q5",3,"CHARGE_ENABLE");s.stub("R54",1,"ACT_EN")
-s.place("R57",131,17)
-s.stub("R57",1,"+3V3",kind="power");s.stub("R57",2,"ACT_nFAULT")
-s.stub("U13",6,"ACT_nFAULT")
-s.port("ACT_EN",115,27);s.port("ACT_nFAULT",138,27);s.port("CHARGE_ENABLE",138,33)
-s.note(92, 7, "Q5 opens the charger PROG return via Q6 while ACT_EN is high.\nCharging pauses during actuation; R53 defaults the bank OFF.")
-s.note(59, 32, "ILM: 1k + 330R = 1.33k. dVdt: 100nF (~10ms at 4.2V).\nFLT is thermal fault, not an instant short interrupt; firmware must latch OFF.\nKeep C47 at IN and D23 at OUT. Battery input harness <=10cm target.")
+s.place("R57",138,20)
+s.stub("R57",1,"+3V3",kind="power");s.stub("R57",2,"BAT_nFAULT")
+s.stub("U13",4,"BAT_nFAULT")
+s.port("ACT_EN",122,37);s.port("BAT_nFAULT",138,29);s.port("CHARGE_ENABLE",138,35)
+s.note(73,32,"R56+R58=660R: 3334/660=5.05A. ITIMER open.\n100nF+100R dVdt: ~210ms at 4.2V.\nACT_EN pauses charging; PWM pulldowns default loads OFF.")
 for i, net in enumerate(ACT_PORTS[:3]):
     x = 12 + 49 * i
     q, j, d = f"Q{2+i}", f"J{16+i}", f"D{20+i}"
@@ -746,7 +747,7 @@ for i, net in enumerate(ACT_PORTS[:3]):
     a = s.pin(d, 2)
     s.wire(drain, a, (neg[0], a[1]), neg)
     s.label(["SOL1_LOW", "SOL2_LOW", "BUZZ_LOW"][i], (neg[0], a[1]))
-    s.rail("ACT_BAT", [(j, 1), (d, 1)], 40)
+    s.rail("BAT_PROT", [(j, 1), (d, 1)], 40)
     s.join((rg, 2), (q, 1))
     a, b = s.pin(pd, 1), s.pin(q, 1)
     s.wire(a, (a[0], b[1]), b)
@@ -754,7 +755,7 @@ for i, net in enumerate(ACT_PORTS[:3]):
     end = s.stub(rg, 1, net)
     s.extra.pop()
     s.extra.append(K.w_hlabel(net, *end, 180, "input"))
-    s.note(x, 84, "ZXMS6005: 1 IN / 2+tab D / 3 S\n330R input; 100k OFF bias; B360A flyback.\n" + ("Timed strike -> 500Hz hold PWM." if i < 2 else "1S-rated active buzzer; ON/OFF."))
+    s.note(x, 84, "ZXMS6005: 1 IN / 2+tab D / 3 S\n330R input; 100k OFF bias; B360A flyback.\n" + ("2A strike <=100ms -> 500Hz calibrated hold." if i < 2 else "1S-rated active buzzer; ON/OFF."))
 s.place("J19", 112, 92, ref_offset=(0, -10.16), value_offset=(0, -7.62))
 s.stub("J19", 1, "GND", kind="power")
 for i, net in enumerate(ACT_PORTS[:3]):
@@ -790,8 +791,8 @@ for sh, ports, y, h in [
             wiring += K.w_wire(100 * G, yy, 108 * G, yy) + K.w_label(n, 100 * G, yy, 180)
     if sh in (POWER, ACTUATORS):
         yy = (y + 3 + len(ports) * 2) * G
-        pins.append(("BAT_RAW", "passive", 108 * G, yy, 180))
-        wiring += K.w_wire(100 * G, yy, 108 * G, yy) + K.w_label("BAT_RAW", 100 * G, yy, 180)
+        pins.append(("BAT_PROT", "passive", 108 * G, yy, 180))
+        wiring += K.w_wire(100 * G, yy, 108 * G, yy) + K.w_label("BAT_PROT", 100 * G, yy, 180)
     if sh in (POWER, ACTUATORS):
         yy = (y + 3 + (len(ports) + 1) * 2) * G
         pins.append(("CHARGE_ENABLE", "passive", 108 * G, yy, 180))
@@ -808,7 +809,7 @@ wiring += K.text_note(
     7 * G,
 )
 wiring += K.text_note(
-    "Handle mux: I2C0 -> independent power/brake AS5600 channels (0x36); MAX17048 stays on I2C1.\nUSB powers RGB; protected battery powers actuators. PWM/strike-hold firmware pending; PCB remains unrouted.",
+    "Handle mux: I2C0 -> independent power/brake AS5600 channels (0x36); MAX17048 stays on I2C1.\nUSB powers RGB; full battery input is electronically protected. PWM/strike-hold firmware pending; PCB remains unrouted.",
     20 * G,
     104 * G,
 )

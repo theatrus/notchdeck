@@ -6,12 +6,13 @@ C4109,0402WGF2001TCE,R3,1,8125906,7670976,1,7670976,Not counted; see shared loca
 C7519,USBLC6-2SC6,"U7,U10,U11,U12",4,48647,45024,1,11256,Not counted; see shared local inventory,2026-10-03T20:18:46.694Z,https://jlcpcb.com/partdetail/C7519,5,20,yes
 C8545,2N7002,"Q5,Q6",2,1610353,1469056,1,734528,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C8545,5,10,yes
 C8598,B5819W SL,D19,1,468318,379749,1,379749,Not counted; see shared local inventory,2026-10-03T20:19:15.807Z,https://jlcpcb.com/partdetail/C8598,5,5,yes
-C11702,0402WGF1001TCE,"R5,R12,R13,R18,R19,R20,R21,R25,R34,R35,R36,R49,R50,R51,R52,R54,R56",17,7144013,4622690,1,271922,Not counted; see shared local inventory,2026-10-03T20:19:54.376Z,https://jlcpcb.com/partdetail/C11702,5,85,yes
+C11702,0402WGF1001TCE,"R5,R12,R13,R18,R19,R20,R21,R25,R34,R35,R36,R49,R50,R51,R54",15,7144013,4622690,1,308179,Not counted; see shared local inventory,2026-10-03T20:19:54.376Z,https://jlcpcb.com/partdetail/C11702,5,75,yes
 C15127,AO3401A,Q1,1,762245,652460,1,652460,Not counted; see shared local inventory,2026-10-03T20:20:12.725Z,https://jlcpcb.com/partdetail/C15127,5,5,yes
 C15850,CL21A106KAYNNNE,"C5,C9",2,4946531,3661824,1,1830912,Not counted; see shared local inventory,2026-10-03T20:19:20.335Z,https://jlcpcb.com/partdetail/C15850,5,10,yes
 C21189,0603WAF0000T5E,"R37,R38",2,23710479,21815066,1,10907533,Not counted; see shared local inventory,2026-10-03T21:06:42.257Z,https://jlcpcb.com/partdetail/C21189,5,10,yes
-C25104,0402WGF3300TCE,"R43,R44,R45,R58",4,1186323,971999,1,242999,Not counted; see shared local inventory,2026-10-03T20:19:56.517Z,https://jlcpcb.com/partdetail/C25104,5,20,yes
-C25741,0402WGF1003TCE,"R4,R8,R22,R23,R24,R46,R47,R48,R53,R55,R59",11,8241090,6852140,1,622921,Not counted; see shared local inventory,2026-10-03T20:19:53.172Z,https://jlcpcb.com/partdetail/C25741,5,55,yes
+C22775,0603WAF1000T5E,R60,1,7325193,,,,Not counted; see shared local inventory,2026-10-05T05:23:01Z,https://jlcsearch.tscircuit.com/api/search?q=C22775&limit=20&full=true,5,5,Displayed/catalog stock covers; order allocation unverified
+C25104,0402WGF3300TCE,"R43,R44,R45,R58,R56",5,1186323,971999,1,194399,Not counted; see shared local inventory,2026-10-03T20:19:56.517Z,https://jlcpcb.com/partdetail/C25104,5,25,yes
+C25741,0402WGF1003TCE,"R4,R8,R22,R23,R24,R46,R47,R48,R53,R55,R59,R52",12,8241090,6852140,1,571011,Not counted; see shared local inventory,2026-10-03T20:19:53.172Z,https://jlcpcb.com/partdetail/C25741,5,60,yes
 C25744,0402WGF1002TCE,"R14,R15,R16,R17,R31,R32,R33,R39,R40,R41,R42,R57",12,21715183,17588427,1,1465702,Not counted; see shared local inventory,2026-10-03T20:19:57.691Z,https://jlcpcb.com/partdetail/C25744,5,60,yes
 C25900,0402WGF4701TCE,"R6,R7,R9,R10,R27,R28,R29,R30",8,15458967,13957146,1,1744643,Not counted; see shared local inventory,2026-10-03T20:19:55.461Z,https://jlcpcb.com/partdetail/C25900,5,40,yes
 C25905,0402WGF5101TCE,"R1,R2",2,5965396,5321611,1,2660805,Not counted; see shared local inventory,2026-10-03T20:19:48.736Z,https://jlcpcb.com/partdetail/C25905,5,10,yes
@@ -25,14 +26,15 @@ C265101,S3B-PH-SM4-TB(LF)(SN),J9,1,2290,2132,1,2132,Not counted; see shared loca
 C265102,S4B-PH-SM4-TB(LF)(SN),"J10,J11,J19",3,25172,18511,1,6170,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C265102,5,15,yes
 C265104,S5B-PH-SM4-TB(LF)(SN),J12,1,11310,11239,1,11239,Not counted; see shared local inventory,2026-10-03T22:01:07Z,https://jlcpcb.com/partdetail/C265104,5,5,yes
 C265405,S6B-PH-SM4-TB(LF)(SN),J5,1,5539,5121,1,5121,Not counted; see shared local inventory,2026-10-03T22:01:06.383Z,https://jlcpcb.com/partdetail/C265405,5,5,yes
-C295747,S2B-PH-SM4-TB(LF)(SN),"J2,J16,J17,J18",4,18132,17404,1,4351,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C295747,5,20,yes
+C295747,S2B-PH-SM4-TB(LF)(SN),"J16,J17,J18",3,18132,17404,1,5801,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C295747,5,15,yes
 C309062,CL32B226KAJNNNE,"C45,C46",2,139699,115150,1,57575,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C309062,5,10,yes
 C318884,TS-1187A-B-A-B,"SW17,SW18,SW19",3,472881,415024,1,138341,Not counted; see shared local inventory,2026-10-03T20:18:49.172Z,https://jlcpcb.com/partdetail/C318884,5,15,yes
 C356849,E73-2G4M08S1C,U1,1,1679,1231,1,1231,Not counted; see shared local inventory,2026-10-03T20:18:12.774Z,https://jlcpcb.com/partdetail/C356849,5,5,yes
 C448647,FTSH-105-01-L-DV-K-TR,J3,1,2002,1931,1,1931,Not counted; see shared local inventory,2026-10-03T20:18:10.974Z,https://jlcpcb.com/partdetail/C448647,5,5,yes
 C499458,AS5600-ASOT,U5,1,40312,39743,1,39743,Not counted; see shared local inventory,2026-10-03T20:18:43.642Z,https://jlcpcb.com/partdetail/C499458,5,5,yes
+C585880,430450401,J2,1,31,,,,Not counted; see shared local inventory,2026-10-05T05:23:01Z,jlcsearch catalog; not live allocation,5,5,Displayed/catalog stock covers; order allocation unverified
 C965805,XL-1608SYGC-06,D17,1,998906,992339,1,992339,Not counted; see shared local inventory,2026-10-03T20:19:13.088Z,https://jlcpcb.com/partdetail/C965805,5,5,yes
-C2155674,TPS259531DSGR,U13,1,3197,3063,1,3063,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C2155674,5,5,yes
 C2653307,TCA9543APWR,U9,1,599,561,1,561,Not counted; see shared local inventory,2026-10-03T21:06:22.556Z,https://jlcpcb.com/partdetail/C2653307,5,5,yes
 C2682616,MAX17048G+T10,U4,1,25220,24727,1,24727,Not counted; see shared local inventory,2026-10-03T20:18:16.018Z,https://jlcpcb.com/partdetail/C2682616,5,5,yes
-C6807778,B360A,"D20,D21,D22,D23",4,8760,8503,1,2125,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C6807778,5,20,yes
+C3662776,TPS259461LRPWR,U13,1,110,,,,Not counted; see shared local inventory,2026-10-05T05:23:01Z,https://jlcpcb.com/partdetail/C3662776,5,5,Displayed/catalog stock covers; order allocation unverified
+C6807778,B360A,"D20,D21,D22,D23,D24",5,8760,8503,1,1700,Not counted; see shared local inventory,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C6807778,5,25,yes

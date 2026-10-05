@@ -83,7 +83,7 @@ Project-authored `notchdeck:TCA9543APWR` symbol, own work, transcribed from the
 PW/TSSOP14 mapping: 1=A0,2=A1,3=RESET,4=INT0,5=SD0,6=SC0,7=GND,8=INT1,
 9=SD1,10=SC1,11=INT,12=SCL,13=SDA,14=VCC. Standard KiCad TSSOP14 footprint.
 
-### TPS259531DSGR (Rev F)
+### TPS259531DSGR (historical Rev F; replaced in Rev G)
 
 Project-authored `notchdeck:TPS259531DSGR` symbol, own work, transcribed from
 [TI TPS2595 datasheet](https://www.ti.com/lit/ds/symlink/tps2595.pdf), DSG pin
@@ -92,3 +92,18 @@ The `531` variant is active-high enable with auto-retry. EP is a visible ground 
 Standard KiCad `DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm` footprint: matching pitch
 and exposed pad; longer outer lands than the TI drawing. Final assembly and
 thermal-via review remain.
+
+### TPS259461LRPWR (Rev G)
+
+Project-authored symbol and `footprints.pretty/TI_RPW0010A.kicad_mod`, own work,
+from [TI TPS25946](https://www.ti.com/lit/ds/symlink/tps25946.pdf), pin table and
+RPW0010A drawing 4225183/A. Pins: 1 EN/UVLO, 2 OVLO, 3 SPLYGD, 4 FLT,
+5 IN, 6 OUT, 7 DVDT, 8 GND, 9 ILM, 10 ITIMER. The 2×2mm HotRod package has
+no ground EP. Full-height power lands are 0.3×2.4mm centered at x=±0.25mm.
+Corner lands use overlapping same-number pad sections; central paste openings
+are split to approximately 81% area, following TI's 82% example. Standard
+0.1mm stencil target. Verify final manufacturing paste and CPL rotation.
+
+J2's standard KiCad 43045-0400 footprint supports the selected Molex 43045-0401
+finish. Compared with [Molex SD-43045-001](https://datasheet.lcsc.com/datasheet/pdf/b6e3df063c26f8567b294b4b1d02bfdf.pdf?productCode=C585880):
+3mm pin grid, 1.02mm signal drill, 3mm locating hole. The -0401 change is finish.

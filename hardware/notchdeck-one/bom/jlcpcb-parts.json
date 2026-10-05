@@ -154,9 +154,7 @@
         "R49",
         "R50",
         "R51",
-        "R52",
-        "R54",
-        "R56"
+        "R54"
       ],
       "bom_comments": "-55\u2103~+155\u2103 1k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -238,7 +236,8 @@
         "R48",
         "R53",
         "R55",
-        "R59"
+        "R59",
+        "R52"
       ],
       "bom_comments": "-55\u2103~+155\u2103 100k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -439,7 +438,6 @@
       "jlcpcb_unit_price_snapshot_usd": 0.2052,
       "stock_source": "https://jlcpcb.com/partdetail/C295747",
       "references": [
-        "J2",
         "J16",
         "J17",
         "J18"
@@ -643,7 +641,8 @@
         "R43",
         "R44",
         "R45",
-        "R58"
+        "R58",
+        "R56"
       ],
       "bom_comments": "-55\u2103~+155\u2103 330\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
     },
@@ -687,9 +686,10 @@
         "D20",
         "D21",
         "D22",
-        "D23"
+        "D23",
+        "D24"
       ],
-      "bom_comments": "3A/60V Schottky: D20-D22 flyback K=ACT_BAT/A=load negative; D23 output clamp K=ACT_BAT/A=GND.",
+      "bom_comments": "D20-D22 flyback K=BAT_PROT/A=load return; D23 clamp K=BAT_PROT/A=GND; D24 charging recovery K=BAT_RAW/A=BAT_PROT.",
       "jlcpcb_available_order_qty_snapshot": 8503,
       "live_price_snapshot_usd": 0.0423,
       "live_price_min_qty": 1
@@ -716,27 +716,6 @@
       "live_price_snapshot_usd": 0.353,
       "live_price_min_qty": 1
     },
-    "C2155674": {
-      "mpn": "TPS259531DSGR",
-      "manufacturer": "TI",
-      "package": "WSON-8-EP(2x2)",
-      "description": "-40\u2103~+125\u2103@(Tj) 0.75mm 1 2.7V~18V 2mm 2mm 34m\u03a9 Integrated FET Surface Mount WSON-8-EP(2x2) Surge Protection Devices (SPDs) ROHS",
-      "footprint": "Package_DFN_QFN:DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm",
-      "datasheet": "https://www.ti.com/lit/ds/symlink/tps2595.pdf",
-      "jlcpcb_url": "https://jlcpcb.com/partdetail/C2155674",
-      "jlcpcb_category": "Extended",
-      "jlcpcb_stock_snapshot": 3197,
-      "jlcpcb_unit_price_snapshot_usd": 0.8714,
-      "stock_source": "https://jlcpcb.com/partdetail/C2155674",
-      "references": [
-        "U13"
-      ],
-      "bom_comments": "Electronic current limiter, auto-retry; MCU must latch off thermal fault",
-      "jlcpcb_available_order_qty_snapshot": 3063,
-      "checked_at_utc": "2026-10-05T04:35:00Z",
-      "live_price_snapshot_usd": 0.8714,
-      "live_price_min_qty": 1
-    },
     "C8545": {
       "mpn": "2N7002",
       "manufacturer": "JSCJ",
@@ -758,6 +737,60 @@
       "checked_at_utc": "2026-10-05T04:35:00Z",
       "live_price_snapshot_usd": 0.0178,
       "live_price_min_qty": 1
+    },
+    "C3662776": {
+      "mpn": "TPS259461LRPWR",
+      "manufacturer": "Texas Instruments",
+      "package": "VQFN-HR-10 2x2mm RPW",
+      "description": "Full battery input electronic limit 5.05A nominal; bidirectional when on, latch-off after thermal fault. 660 ohm ILM; ITIMER open.",
+      "footprint": "notchdeck:TI_RPW0010A",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps25946.pdf",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C3662776",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 110,
+      "jlcpcb_unit_price_snapshot_usd": 1.9086,
+      "stock_source": "JLCPCB live parts browser",
+      "references": [
+        "U13"
+      ],
+      "bom_comments": "Full battery input electronic limit 5.05A nominal; bidirectional when on, latch-off after thermal fault. 660 ohm ILM; ITIMER open.",
+      "checked_at_utc": "2026-10-05T05:23:01Z"
+    },
+    "C585880": {
+      "mpn": "430450401",
+      "manufacturer": "Molex",
+      "package": "THT right-angle 2x2 3mm",
+      "description": "Owned Micro-Fit battery inlet: 1+2 positive, 3+4 GND. Populate both contacts per polarity with 20AWG leads. THT assembly.",
+      "footprint": "Connector_Molex:Molex_Micro-Fit_3.0_43045-0400_2x02_P3.00mm_Horizontal",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/b6e3df063c26f8567b294b4b1d02bfdf.pdf?productCode=C585880",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C585880",
+      "jlcpcb_category": "Extended",
+      "jlcpcb_stock_snapshot": 31,
+      "jlcpcb_unit_price_snapshot_usd": 1.8775,
+      "stock_source": "jlcsearch catalog; not live allocation",
+      "references": [
+        "J2"
+      ],
+      "bom_comments": "Owned Micro-Fit battery inlet: 1+2 positive, 3+4 GND. Populate both contacts per polarity with 20AWG leads. THT assembly.",
+      "checked_at_utc": "2026-10-05T05:23:01Z"
+    },
+    "C22775": {
+      "mpn": "0603WAF1000T5E",
+      "manufacturer": "UNI-ROYAL",
+      "package": "0603",
+      "description": "Owned 100 ohm resistor in series with 100nF DVDT capacitor as TI requires for >10nF.",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C22775",
+      "jlcpcb_url": "https://jlcpcb.com/partdetail/C22775",
+      "jlcpcb_category": "Basic",
+      "jlcpcb_stock_snapshot": 7325193,
+      "jlcpcb_unit_price_snapshot_usd": 0.0023,
+      "stock_source": "https://jlcsearch.tscircuit.com/api/search?q=C22775&limit=20&full=true",
+      "references": [
+        "R60"
+      ],
+      "bom_comments": "100 ohm resistor in series with 100nF DVDT capacitor as TI recommends for >10nF. Existing private stock is reserved; top-up required.",
+      "checked_at_utc": "2026-10-05T05:23:01Z"
     }
   },
   "non_assembly": {

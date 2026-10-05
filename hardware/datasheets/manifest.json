@@ -3,7 +3,7 @@
     "hardware/notchdeck-one/notchdeck-one.kicad_sch",
     "hardware/notchdeck-buttons/notchdeck-buttons.kicad_sch"
   ],
-  "last_sync": "2026-10-05T04:38:00Z",
+  "last_sync": "2026-10-05T05:23:01Z",
   "parts": {
     "CL05B104KO5NNNC": {
       "file": "C1525.pdf",
@@ -170,9 +170,7 @@
         "notchdeck-one:R49",
         "notchdeck-one:R50",
         "notchdeck-one:R51",
-        "notchdeck-one:R52",
-        "notchdeck-one:R54",
-        "notchdeck-one:R56"
+        "notchdeck-one:R54"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -234,6 +232,7 @@
         "notchdeck-one:R44",
         "notchdeck-one:R45",
         "notchdeck-one:R58",
+        "notchdeck-one:R56",
         "notchdeck-buttons:R11"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
@@ -259,6 +258,7 @@
         "notchdeck-one:R53",
         "notchdeck-one:R55",
         "notchdeck-one:R59",
+        "notchdeck-one:R52",
         "notchdeck-buttons:R26",
         "notchdeck-buttons:R6",
         "notchdeck-buttons:R7"
@@ -514,7 +514,6 @@
       "lcsc": "C295747",
       "status": "ok",
       "references": [
-        "notchdeck-one:J2",
         "notchdeck-one:J16",
         "notchdeck-one:J17",
         "notchdeck-one:J18"
@@ -706,7 +705,8 @@
         "notchdeck-one:D20",
         "notchdeck-one:D21",
         "notchdeck-one:D22",
-        "notchdeck-one:D23"
+        "notchdeck-one:D23",
+        "notchdeck-one:D24"
       ],
       "status": "ok"
     },
@@ -723,18 +723,6 @@
       ],
       "status": "ok"
     },
-    "TPS259531DSGR": {
-      "file": "C2155674.pdf",
-      "manufacturer": "TI",
-      "description": "-40\u2103~+125\u2103@(Tj) 0.75mm 1 2.7V~18V 2mm 2mm 34m\u03a9 Integrated FET Surface Mount WSON-8-EP(2x2) Surge Protection Devices (SPDs) ROHS",
-      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps2595.pdf",
-      "source": "reviewed JLCPCB selection; manufacturer PDF",
-      "lcsc": "C2155674",
-      "references": [
-        "notchdeck-one:U13"
-      ],
-      "status": "ok"
-    },
     "2N7002": {
       "file": "C8545.pdf",
       "manufacturer": "JSCJ",
@@ -745,6 +733,42 @@
       "references": [
         "notchdeck-one:Q5",
         "notchdeck-one:Q6"
+      ],
+      "status": "ok"
+    },
+    "TPS259461LRPWR": {
+      "file": "C3662776.pdf",
+      "manufacturer": "Texas Instruments",
+      "description": "Full battery input electronic limit 5.05A nominal; bidirectional when on, latch-off after thermal fault. 660 ohm ILM; ITIMER open.",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps25946.pdf",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C3662776",
+      "references": [
+        "notchdeck-one:U13"
+      ],
+      "status": "ok"
+    },
+    "430450401": {
+      "file": "C585880.pdf",
+      "manufacturer": "Molex",
+      "description": "Owned Micro-Fit battery inlet: 1+2 positive, 3+4 GND. Populate both contacts per polarity with 20AWG leads. THT assembly.",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/b6e3df063c26f8567b294b4b1d02bfdf.pdf?productCode=C585880",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C585880",
+      "references": [
+        "notchdeck-one:J2"
+      ],
+      "status": "ok"
+    },
+    "0603WAF1000T5E": {
+      "file": "C22775.pdf",
+      "manufacturer": "UNI-ROYAL",
+      "description": "Owned 100 ohm resistor in series with 100nF DVDT capacitor as TI requires for >10nF.",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C22775",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C22775",
+      "references": [
+        "notchdeck-one:R60"
       ],
       "status": "ok"
     }

@@ -1,4 +1,4 @@
-# BOM and sourcing — Rev F logic / Rev E panel
+# BOM and sourcing — Rev G logic / Rev E panel
 
 The controller has **two separately assembled PCBs**. All installed board components have
 selected JLCPCB catalog codes. The following counts and stock observations are
@@ -6,11 +6,11 @@ dated in the CSV rows (actuator additions: **2026-10-04 PDT**), not reservations
 
 | Assembly | Installed parts per board | Unique JLCPCB codes | Tracked assembly BOM |
 |---|---:|---:|---|
-| Logic / handles / actuators | 127 | 37 | [notchdeck-one](../hardware/notchdeck-one/bom/jlcpcb-bom.csv) |
+| Logic / handles / actuators | 129 | 39 | [notchdeck-one](../hardware/notchdeck-one/bom/jlcpcb-bom.csv) |
 | Button / RGB panel | 84 | 13 | [notchdeck-buttons](../hardware/notchdeck-buttons/bom/jlcpcb-bom.csv) |
-| Complete set | 211 | 42 across both boards | [Five-set stock requirements](../hardware/jlcpcb-five-set-stock.csv) |
+| Complete set | 213 | 44 across both boards | [Five-set stock requirements](../hardware/jlcpcb-five-set-stock.csv) |
 
-Five sets need **1,055 installed parts before assembly attrition**, plus five
+Five sets need **1,065 installed parts before assembly attrition**, plus five
 interconnect cables. Bare programming contacts and mounting holes are excluded
 from BOM/CPL. Shared catalog codes are counted across both boards in the five-set
 report; do not independently allocate the same stock balance to each board.
@@ -35,22 +35,19 @@ and [panel BOM notes](../hardware/notchdeck-buttons/bom/README.md).
 - **Keys:** sixteen 1N4148W / C81598 isolation diodes per panel, with an
   STM32-scanned matrix; two functional buttons and Reset remain on the main PCB.
 
-Public JLCPCB **Available Order Qty** covered the combined requirement for all
-selections except the panel MCU, covered by owned inventory. Reusable private
-inventory is at `~/Dropbox-elec/github/jlcpcb-private-inventory.csv`; balances
-stay outside this repository. It is a snapshot, and allocation/reservation detail
-was unavailable. Confirm free allocation, assembly attrition, current stock and
-fees before an order. The user placed the earlier Rev E order and the shared
-inventory was refreshed afterward. Do not count incoming quantities again
-when they are already included in `total_private_qty`.
+Dated public availability or owned stock covers five sets. The new C3662776
+protector has 110 displayed in stock; exact order allocation remains to confirm.
+Private inventory is at `~/Dropbox-elec/github/jlcpcb-private-inventory.csv`,
+outside Git. Balances are snapshots; confirm free allocation, attrition and fees
+before ordering. Do not count incoming quantities again when already credited.
 
-## Rev F actuator top-up for 20 sets
+## Rev G actuator top-up for 20 sets
 
 With 10% spares (22 board-equivalents) and Tenkiro targets held aside, the local
-reconciliation currently needs **36 C174045 FETs, 22 C2155674 electronic limiters,
-66 C295747 two-pin connectors and 16 C265102 four-pin connectors**. Other added
-parts fit the owned balance, including the four B360A diodes per main board and
-two 22µF capacitors. Exact private balances and dated public observations are
+reconciliation currently needs **36 C174045 FETs, 22 C3662776 electronic limiters,
+44 C295747 two-pin connectors and 16 C265102 four-pin connectors**. C22775 needs 22 more (recommend buying 100), preserving Tenkiro's reservation. Other added
+parts fit the owned balance, including the five B360A diodes per main board and
+two 22µF capacitors and the C585880 Micro-Fit inlet. Exact private balances and dated public observations are
 in `~/Dropbox-elec/github/notchdeck-actuator-expansion-2026-10-04.csv`, outside Git.
 No actuator top-up has been added to a cart or purchased. These are assembly
 components only; coils, buzzer, pack and harnesses remain separate.

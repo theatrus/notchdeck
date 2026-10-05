@@ -127,6 +127,7 @@ PLACEMENT.update({
     "R56": (79, 90, 0), "R58": (79, 92, 0), "R57": (73, 98, 90),
     "R49": (66, 94, 0), "R50": (66, 97, 0), "R51": (66, 100, 0),
 })
+PLACEMENT.update({"J2": (60, 79, 90), "C19": (66.5, 76.5, 90), "U4": (68, 86, 0), "C10": (65.5, 86, 90), "R6": (71, 84, 0), "R7": (71, 86, 0), "R8": (71, 88, 0), "D24": (87, 88, 90), "R60": (74, 94.5, 0)})
 BUTTON_PLACEMENT={
  "J1":(93,165,0),"J2":(66,154,0),"U1":(94,147,90),"U2":(106,162,0),
  "U8":(118,151,0),"R11":(118,146,0),"R26":(114,151,90),"C20":(122,151,90),"C13":(124,141,90),
@@ -218,7 +219,7 @@ def main():
     placements=PLACEMENT if is_main else BUTTON_PLACEMENT
     board.SetCopperLayerCount(4 if is_main else 2)
     board.GetDesignSettings().SetBoardThickness(P.FromMM(1.6))
-    title=board.GetTitleBlock();title.SetTitle(project_name+" - provisional floorplan");title.SetRevision("F" if is_main else "E");title.SetDate("2026-10-04" if is_main else "2026-10-03");title.SetCompany("BenchBits")
+    title=board.GetTitleBlock();title.SetTitle(project_name+" - provisional floorplan");title.SetRevision("G" if is_main else "E");title.SetDate("2026-10-04" if is_main else "2026-10-03");title.SetCompany("BenchBits")
     nets, pins = {}, {}
     for n in tree.findall(".//nets/net"):
         name = n.attrib["name"]
@@ -293,7 +294,7 @@ def main():
             fp.Reference().SetPosition(mm(x,y))
         if ref in ("D17", "D18"):
             fp.Reference().SetLayer(P.F_Fab)
-        if is_main and ref in ("J16", "J17", "J18", "J19", "D20", "D21", "D22", "D23", "Q6"):
+        if is_main and ref in ("J16", "J17", "J18", "J19", "D20", "D21", "D22", "D23", "D24", "Q6"):
             fp.Reference().SetLayer(P.F_Fab)
             fp.Reference().SetPosition(mm(x, y))
         if is_main and ref in ("Q2", "Q3", "Q4"):
@@ -337,8 +338,8 @@ def main():
         for x,y in [(81,43),(105,43),(105,51.3),(81,51.3)]:z.Outline().Append(P.FromMM(x),P.FromMM(y))
         board.Add(z)
         text(board,"ANTENNA: NO COPPER / METAL",93,46,.8,P.Dwgs_User)
-        for value,x,y in [("USB",60,66),("BAT+ GND",59,88),("SWD",93,90),("TC2030",104,87),("RESET",106,56),("POWER GRAY",62,129),("BRAKE / MASCON GRAY",146,117),("POWER MAG",119,138),("BRAKE MAG",145,138),("REV F/N/R",79,138),("SELECT",128,111),("START",147,111),("J15 BUTTON FFC",135,69),("REMOVE R37/R38 FOR J10",80,120)]:text(board,value,x,y,.8)
-        text(board,"NOTCHDECK LOGIC / REV F",123,98,1)
+        for value,x,y in [("USB",60,66),("J2: 1,2 BAT+ / 3,4 GND",62,89),("SWD",93,90),("TC2030",104,87),("RESET",106,56),("POWER GRAY",62,129),("BRAKE / MASCON GRAY",146,117),("POWER MAG",119,138),("BRAKE MAG",145,138),("REV F/N/R",79,138),("SELECT",128,111),("START",147,111),("J15 BUTTON FFC",135,69),("REMOVE R37/R38 FOR J10",80,120)]:text(board,value,x,y,.8)
+        text(board,"NOTCHDECK LOGIC / REV G",123,98,1)
         for value,x,y in [("SOL1",160,81),("SOL2",160,96),("BUZZ",117,61),("J19 3V3 PWM ONLY",78,103)]:text(board,value,x,y,.8)
         notes=["J15 -> BUTTON J1: 6-WAY 1mm FFC TYPE A", "J15: 1 GND / 2 3V3 / 3 SDA / 4 SCL / 5 IRQ / 6 USB5V", "MAIN PIN n -> BUTTON PIN 7-n - POWER OFF TO INSERT", "SW18 SELECT=BTN7; SW19 START=BTN8 (PARALLEL)", "J12: 1 GND / 2..4 POWER S0..S2 / 5 3V3", "J5: 1 GND / 2..5 BRAKE S0..S3 / 6 3V3", "PASSIVE GRAY CAMS: LEAVE 3V3 CAVITY EMPTY"]
     else:

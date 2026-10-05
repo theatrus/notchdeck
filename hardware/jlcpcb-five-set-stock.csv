@@ -7,12 +7,13 @@ C7484,SN74AHCT1G125DBVR,0,1,1,5,5,39527,public stock covers build,2026-10-03T20:
 C7519,USBLC6-2SC6,4,1,5,5,25,45024,public stock covers build,2026-10-03T20:18:46.694Z,https://jlcpcb.com/partdetail/C7519
 C8545,2N7002,2,0,2,5,10,1469056,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C8545
 C8598,B5819W SL,1,0,1,5,5,379749,public stock covers build,2026-10-03T20:19:15.807Z,https://jlcpcb.com/partdetail/C8598
-C11702,0402WGF1001TCE,17,0,17,5,85,4622690,public stock covers build,2026-10-03T20:19:54.376Z,https://jlcpcb.com/partdetail/C11702
+C11702,0402WGF1001TCE,15,0,15,5,75,4622690,public stock covers build,2026-10-03T20:19:54.376Z,https://jlcpcb.com/partdetail/C11702
 C15127,AO3401A,1,0,1,5,5,652460,public stock covers build,2026-10-03T20:20:12.725Z,https://jlcpcb.com/partdetail/C15127
 C15850,CL21A106KAYNNNE,2,0,2,5,10,3661824,public stock covers build,2026-10-03T20:19:20.335Z,https://jlcpcb.com/partdetail/C15850
 C21189,0603WAF0000T5E,2,0,2,5,10,21815066,public stock covers build,2026-10-03T21:06:42.257Z,https://jlcpcb.com/partdetail/C21189
-C25104,0402WGF3300TCE,4,1,5,5,25,971999,public stock covers build,2026-10-03T20:19:56.517Z,https://jlcpcb.com/partdetail/C25104
-C25741,0402WGF1003TCE,11,3,14,5,70,6852140,public stock covers build,2026-10-03T20:19:53.172Z,https://jlcpcb.com/partdetail/C25741
+C22775,0603WAF1000T5E,1,0,1,5,5,,displayed/catalog stock covers; order allocation unverified,2026-10-05T05:23:01Z,https://jlcsearch.tscircuit.com/api/search?q=C22775&limit=20&full=true
+C25104,0402WGF3300TCE,5,1,6,5,30,971999,public stock covers build,2026-10-03T20:19:56.517Z,https://jlcpcb.com/partdetail/C25104
+C25741,0402WGF1003TCE,12,3,15,5,75,6852140,public stock covers build,2026-10-03T20:19:53.172Z,https://jlcpcb.com/partdetail/C25741
 C25744,0402WGF1002TCE,12,5,17,5,85,17588427,public stock covers build,2026-10-03T20:19:57.691Z,https://jlcpcb.com/partdetail/C25744
 C25900,0402WGF4701TCE,8,0,8,5,40,13957146,public stock covers build,2026-10-03T20:19:55.461Z,https://jlcpcb.com/partdetail/C25900
 C25905,0402WGF5101TCE,2,0,2,5,10,5321611,public stock covers build,2026-10-03T20:19:48.736Z,https://jlcpcb.com/partdetail/C25905
@@ -28,16 +29,17 @@ C265101,S3B-PH-SM4-TB(LF)(SN),1,0,1,5,5,2132,public stock covers build,2026-10-0
 C265102,S4B-PH-SM4-TB(LF)(SN),3,0,3,5,15,18511,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C265102
 C265104,S5B-PH-SM4-TB(LF)(SN),1,0,1,5,5,11239,public stock covers build,2026-10-03T22:01:07Z,https://jlcpcb.com/partdetail/C265104
 C265405,S6B-PH-SM4-TB(LF)(SN),1,0,1,5,5,5121,public stock covers build,2026-10-03T22:01:06.383Z,https://jlcpcb.com/partdetail/C265405
-C295747,S2B-PH-SM4-TB(LF)(SN),4,0,4,5,20,17404,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C295747
+C295747,S2B-PH-SM4-TB(LF)(SN),3,0,3,5,15,17404,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C295747
 C309062,CL32B226KAJNNNE,2,0,2,5,10,115150,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C309062
 C318884,TS-1187A-B-A-B,3,16,19,5,95,415024,public stock covers build,2026-10-03T20:18:49.172Z,https://jlcpcb.com/partdetail/C318884
 C356849,E73-2G4M08S1C,1,0,1,5,5,1231,public stock covers build,2026-10-03T20:18:12.774Z,https://jlcpcb.com/partdetail/C356849
 C448647,FTSH-105-01-L-DV-K-TR,1,0,1,5,5,1931,public stock covers build,2026-10-03T20:18:10.974Z,https://jlcpcb.com/partdetail/C448647
 C499458,AS5600-ASOT,1,0,1,5,5,39743,public stock covers build,2026-10-03T20:18:43.642Z,https://jlcpcb.com/partdetail/C499458
-C529330,STM32G030F6P6TR,0,1,1,5,5,,owned private stock covers build; confirm allocation,2026-10-03T20:30:17.038Z,Shared local jlcpcb-private-inventory.csv (not published)
+C529330,STM32G030F6P6TR,0,1,1,5,5,,private stock covers; verify allocation,2026-10-03T20:30:17.038Z,Shared local jlcpcb-private-inventory.csv (not published)
+C585880,430450401,1,0,1,5,5,,private stock covers; verify allocation,2026-10-05T05:23:01Z,jlcsearch catalog; not live allocation
 C965805,XL-1608SYGC-06,1,0,1,5,5,992339,public stock covers build,2026-10-03T20:19:13.088Z,https://jlcpcb.com/partdetail/C965805
-C2155674,TPS259531DSGR,1,0,1,5,5,3063,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C2155674
 C2653307,TCA9543APWR,1,0,1,5,5,561,public stock covers build,2026-10-03T21:06:22.556Z,https://jlcpcb.com/partdetail/C2653307
 C2682616,MAX17048G+T10,1,0,1,5,5,24727,public stock covers build,2026-10-03T20:18:16.018Z,https://jlcpcb.com/partdetail/C2682616
 C2843785,XL-5050RGBC-2812B,0,16,16,5,80,845639,public stock covers build,2026-10-03T20:18:50.269Z,https://jlcpcb.com/partdetail/C2843785
-C6807778,B360A,4,0,4,5,20,8503,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C6807778
+C3662776,TPS259461LRPWR,1,0,1,5,5,,displayed/catalog stock covers; order allocation unverified,2026-10-05T05:23:01Z,https://jlcpcb.com/partdetail/C3662776
+C6807778,B360A,5,0,5,5,25,8503,public stock covers build,2026-10-05T04:35:00Z,https://jlcpcb.com/partdetail/C6807778

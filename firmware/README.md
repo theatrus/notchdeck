@@ -5,12 +5,12 @@ nRF52840 USB HID + BLE HOGP application using **nRF Connect SDK v3.3.0**, pinned
 handle profiles. Host tests exercise report layout and sensor-independent handle
 behavior. The application has not been validated on a fabricated controller.
 
-## Rev E panel / Rev F actuator support status
+## Rev E panel / Rev G actuator support status
 
-Rev F adds SOL1 P0.20, SOL2 P0.13, BUZZ P0.22, ACT_EN P0.24 and
-ACT_nFAULT P1.00. **No actuator backend is implemented.** Do not attach loads
+Rev G adds SOL1 P0.20, SOL2 P0.13, BUZZ P0.22, ACT_EN P0.24 and
+BAT_nFAULT P1.00. ACT_EN inhibits charging only; stop PWM and keep charging inhibited on a fault. **No actuator backend is implemented.** Do not attach loads
 when using the old Rev C/D overlays: these pins have different roles there.
-Implement the default-off, strike/hold, 1.3A instantaneous bank budget, charger interlock/low
+Implement the default-off, strike/hold, 2A/100ms per-channel strike target and 4.3A total input budget, charger interlock/low
 battery shutdown, watchdog and fault latch requirements in the
 [actuator guide](../hardware/notchdeck-one/ACTUATORS.md) before energizing loads.
 

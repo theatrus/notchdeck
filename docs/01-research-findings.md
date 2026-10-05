@@ -5,7 +5,7 @@ direct read of the SDL driver source. This is the factual basis for our emulatio
 [`02-emulation-protocol-spec.md`](02-emulation-protocol-spec.md).
 
 This records research on commercial controllers, not verified NotchDeck host
-support. For the current Rev F logic / Rev E panel design and implementation limits, start with the
+support. For the current Rev G logic / Rev E panel design and implementation limits, start with the
 [project README](../README.md) and [firmware guide](../firmware/README.md).
 
 ## TL;DR

@@ -8,7 +8,7 @@ It supports our own Japanese-style **separate power lever and rotary brake**, or
 contact cam. The goal is a driverless joystick with host-controlled lighting;
 host/game compatibility has not yet been bench-tested.
 
-## Current design: Rev F logic + Rev E button panel
+## Current design: Rev G logic + Rev E button panel
 
 | Assembly | Function | Provisional floorplan |
 |---|---|---|
@@ -22,9 +22,10 @@ from owned JLCPCB inventory.
 
 The [actuator sheet](hardware/notchdeck-one/ACTUATORS.md) adds two PWM low-side
 outputs, an active-buzzer output and 3.3V signals for an external 12V driver.
-A TPS259531 electronic limiter protects the actuator bank; use a protected 1S
-battery pack for upstream shorts. Charging pauses while the bank is enabled,
-allowing battery-powered actuation during USB operation.
+A TPS259461LRPWR electronic limiter protects the full battery input at 5.05A
+nominal. The provisional target is two simultaneous 2A strikes of up to 100ms,
+then lower PWM hold current. Use a protected ≥6A 1S pack for upstream shorts.
+ACT_EN pauses charging during actuation; the PWM inputs default off.
 
 Both hierarchical schematics are wired and pass strict ERC, complete net checks,
 schematic/PCB parity and BOM audits. **Both PCBs are unrouted floorplans and are not
@@ -32,7 +33,7 @@ ready for fabrication.** The [hardware guide](hardware/README.md) tracks routing
 mechanical, power-budget and assembly work still required.
 
 The nRF firmware builds against NCS v3.3.0, with host tests and six Rev C/D handle
-profiles compiled in CI. **Panel firmware, main-board I²C integration and Rev F actuator control are
+profiles compiled in CI. **Panel firmware, main-board I²C integration and Rev G actuator control are
 not implemented.** Keep loads disconnected when using old Rev C/D firmware.
 Magnetic handles also require measured detent calibration. No production firmware,
 bootloader integration or fabricated-controller validation is claimed.
@@ -63,9 +64,9 @@ the [firmware guide](firmware/README.md) covers NCS builds and release commands.
 Each hardware ZIP contains Gerbers, drill, BOM and pick-and-place (CPL) files.
 Exports describe the current unfinished boards; exporting does not approve them
 for manufacture. [Sourcing](docs/04-bom-sourcing.md) covers **five complete sets**:
-211 installed parts and 42 JLCPCB codes per set, plus the separate cable. Stock
+213 installed parts and 44 JLCPCB codes per set, plus the separate cable. Stock
 observations are dated snapshots, with private inventory retained outside Git.
-The earlier Rev E parts order was placed; the Rev F actuator expansion still
+The earlier Rev E parts order was placed; the Rev G actuator expansion still
 needs a top-up for 20 sets plus 10% spares. See the sourcing guide.
 
 [GitHub Actions](https://github.com/theatrus/notchdeck/actions/workflows/ci.yml)
