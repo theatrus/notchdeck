@@ -1,16 +1,28 @@
-# notchdeck-one — Rev E sourcing
+# notchdeck-one — Rev F sourcing
 
-Checked 2026-10-03. This board has **92 installed components across 31 JLCPCB codes**. The [native BOM](jlcpcb-bom.csv), [tracking BOM](bom.csv), [selection JSON](jlcpcb-parts.json), and [stock observations](jlcpcb-stock.csv) agree with the schematic. The JSON drives the MPN, manufacturer, LCSC, datasheet and notes on each symbol.
+The logic/actuator board has **127 installed components across 37 JLCPCB codes**.
+The [native BOM](jlcpcb-bom.csv), [tracking BOM](bom.csv), [selection JSON](jlcpcb-parts.json)
+and [stock observations](jlcpcb-stock.csv) describe the captured schematic. The
+JSON drives each symbol's MPN, manufacturer, LCSC code, datasheet and notes.
 
-Use the [combined five-set stock report](../../jlcpcb-five-set-stock.csv) for purchasing: parts shared between the two boards must be counted together. Public quantities use JLCPCB’s **Available Order Qty** from direct page checks on 2026-10-03. The STM32G030 uses owned private inventory from the shared local CSV; its balance is not published. The shared inventory is a snapshot, with allocation/reservation breakdown unavailable. Confirm allocation and assembly attrition before ordering. No stock has been reserved or purchased.
+Use the [combined five-set report](../../jlcpcb-five-set-stock.csv) to avoid
+counting shared parts independently on each board. A complete set contains
+211 assembly components and 42 JLCPCB codes. Private balances remain in the
+shared CSV outside Git. The user placed the earlier Rev E order; Rev F adds
+parts that were not included in that order.
 
-The button MCU is C529330; the new FFC connectors are C262712 (31,746 public available, ten needed), and key isolation diodes are C81598 (4,858,639 available, eighty needed). Older part observations retain their actual timestamps. Public availability covers the combined build; the MCU is covered by the local owned balance. The community JSON category/price snapshots are not live quotes and must not be mistaken for LCSC warehouse stock.
+The 2026-10-04 PDT direct JLCPCB page checks show 1,716 orderable C174045 FETs,
+3,063 C2155674 electronic limiters, 17,404 C295747 two-pin connectors and
+18,511 C265102 four-pin connectors. Older rows retain their actual observation
+dates. Community category/price snapshots are estimates, not live quotes.
 
-The [Molex cable](../../system-bom.csv) is bought once per complete set from DigiKey, not included in either PCB assembly BOM. Bare programming contacts and mounting holes are excluded from both BOM and CPL. External handle hardware, sensor carriers and enclosure parts are not a complete sourced kit.
+For 20 sets plus 10% spares, the new top-up is 36 FETs, 22 limiters, 66 two-pin
+and 16 four-pin connectors. The other additions fit owned stock after protecting
+Tenkiro's recorded target. See the local
+`~/Dropbox-elec/github/notchdeck-actuator-expansion-2026-10-04.csv` for balances,
+assumptions and source links. No top-up cart or order has been made. The shared
+inventory does not expose every live reservation; verify allocation at assembly.
 
-Both PCBs are unrouted. Native net/ERC, PCB pad/UUID, BOM identity and package BOM/CPL consistency checks verify the saved design and exports. They do not validate PCB routing, CPL rotation at JLCPCB, electrical/thermal margins or cable/enclosure fit. See [hardware status](../../README.md) and [part constraints](../../PARTS.md). PDFs are cached locally; [manifest](../../datasheets/manifest.json) records sources and board-qualified references.
-
-```sh
-make -C hardware verify-notchdeck-one verify-pcb-notchdeck-one verify-bom-notchdeck-one
-make -C hardware jlc-notchdeck-one
-```
+[Actuator documentation](../ACTUATORS.md) covers the electronic short limiter,
+protected-pack requirement, pin mappings, PWM limits and pending firmware/bench
+work. No one-time fuse is selected. Both PCBs remain unrouted placement studies.

@@ -2,7 +2,7 @@
 
 **There is no production update flow yet.** CI emits UF2 and HEX files for the
 nRF52840 DK bring-up application. The repository does not build a NotchDeck
-bootloader, OTA package or STM32 panel image. Rev E needs two separately programmed
+bootloader, OTA package or STM32 panel image. Rev E/F needs two separately programmed
 MCUs; the existing nRF direct-GPIO application does not operate its panel.
 
 ## Current build outputs

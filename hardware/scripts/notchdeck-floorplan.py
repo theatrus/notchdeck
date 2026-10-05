@@ -111,6 +111,22 @@ PLACEMENT.update({
 PLACEMENT.pop("C13")
 for ref in ("U8","R11","R26","C20"):PLACEMENT.pop(ref)
 PLACEMENT.update({"J15":(135,54.2,180),"U12":(135,62,0),"C44":(140,62,90),"R42":(130,63,90)})
+# Rev F keeps all Rev E component locations and adds the actuator bank.
+PLACEMENT.update({
+    "J16": (159.2, 74, 90), "J17": (159.2, 89, 90),
+    "J18": (117, 55.8, 180), "J19": (55.8, 97, 270),
+    "Q2": (144, 73, 0), "Q3": (144, 89, 0), "Q4": (117, 79, 0),
+    "D20": (152, 72, 90), "D21": (152, 88, 90), "D22": (117, 66, 0),
+    "C45": (150, 79, 90), "C46": (150, 94, 90),
+    "R43": (135, 72, 0), "R44": (135, 88, 0), "R45": (114, 87, 0),
+    "R46": (136, 76, 90), "R47": (136, 92, 90), "R48": (122, 87, 90),
+    "Q6": (70.5, 78.5, 0), "R59": (74, 78.5, 90),
+    "U13": (77, 87, 0), "C47": (74, 87, 90), "D23": (81, 84, 90),
+    "C48": (74, 92, 90), "Q5": (83, 95, 0), "R52": (77, 98, 0),
+    "R53": (80, 98, 90), "R54": (84, 99, 0), "R55": (87, 95, 90),
+    "R56": (79, 90, 0), "R58": (79, 92, 0), "R57": (73, 98, 90),
+    "R49": (66, 94, 0), "R50": (66, 97, 0), "R51": (66, 100, 0),
+})
 BUTTON_PLACEMENT={
  "J1":(93,165,0),"J2":(66,154,0),"U1":(94,147,90),"U2":(106,162,0),
  "U8":(118,151,0),"R11":(118,146,0),"R26":(114,151,90),"C20":(122,151,90),"C13":(124,141,90),
@@ -202,7 +218,7 @@ def main():
     placements=PLACEMENT if is_main else BUTTON_PLACEMENT
     board.SetCopperLayerCount(4 if is_main else 2)
     board.GetDesignSettings().SetBoardThickness(P.FromMM(1.6))
-    title=board.GetTitleBlock();title.SetTitle(project_name+" - provisional floorplan");title.SetRevision("E");title.SetDate("2026-10-03");title.SetCompany("BenchBits")
+    title=board.GetTitleBlock();title.SetTitle(project_name+" - provisional floorplan");title.SetRevision("F" if is_main else "E");title.SetDate("2026-10-04" if is_main else "2026-10-03");title.SetCompany("BenchBits")
     nets, pins = {}, {}
     for n in tree.findall(".//nets/net"):
         name = n.attrib["name"]
@@ -277,6 +293,11 @@ def main():
             fp.Reference().SetPosition(mm(x,y))
         if ref in ("D17", "D18"):
             fp.Reference().SetLayer(P.F_Fab)
+        if is_main and ref in ("J16", "J17", "J18", "J19", "D20", "D21", "D22", "D23", "Q6"):
+            fp.Reference().SetLayer(P.F_Fab)
+            fp.Reference().SetPosition(mm(x, y))
+        if is_main and ref in ("Q2", "Q3", "Q4"):
+            fp.Reference().SetPosition(mm(x, y - 5.5))
         if ref == "U1" and is_main:
             fp.Reference().SetPosition(mm(102, 53))
             for item in fp.GraphicalItems():
@@ -316,8 +337,9 @@ def main():
         for x,y in [(81,43),(105,43),(105,51.3),(81,51.3)]:z.Outline().Append(P.FromMM(x),P.FromMM(y))
         board.Add(z)
         text(board,"ANTENNA: NO COPPER / METAL",93,46,.8,P.Dwgs_User)
-        for value,x,y in [("USB",60,66),("BAT+ GND",59,91),("SWD",93,90),("TC2030",104,87),("RESET",106,56),("POWER GRAY",62,101),("BRAKE / MASCON GRAY",146,117),("POWER MAG",119,138),("BRAKE MAG",145,138),("REV F/N/R",79,138),("SELECT",128,111),("START",147,111),("J15 BUTTON FFC",135,69),("REMOVE R37/R38 FOR J10",80,120)]:text(board,value,x,y,.8)
-        text(board,"NOTCHDECK LOGIC / REV E",123,98,1)
+        for value,x,y in [("USB",60,66),("BAT+ GND",59,88),("SWD",93,90),("TC2030",104,87),("RESET",106,56),("POWER GRAY",62,129),("BRAKE / MASCON GRAY",146,117),("POWER MAG",119,138),("BRAKE MAG",145,138),("REV F/N/R",79,138),("SELECT",128,111),("START",147,111),("J15 BUTTON FFC",135,69),("REMOVE R37/R38 FOR J10",80,120)]:text(board,value,x,y,.8)
+        text(board,"NOTCHDECK LOGIC / REV F",123,98,1)
+        for value,x,y in [("SOL1",160,81),("SOL2",160,96),("BUZZ",117,61),("J19 3V3 PWM ONLY",78,103)]:text(board,value,x,y,.8)
         notes=["J15 -> BUTTON J1: 6-WAY 1mm FFC TYPE A", "J15: 1 GND / 2 3V3 / 3 SDA / 4 SCL / 5 IRQ / 6 USB5V", "MAIN PIN n -> BUTTON PIN 7-n - POWER OFF TO INSERT", "SW18 SELECT=BTN7; SW19 START=BTN8 (PARALLEL)", "J12: 1 GND / 2..4 POWER S0..S2 / 5 3V3", "J5: 1 GND / 2..5 BRAKE S0..S3 / 6 3V3", "PASSIVE GRAY CAMS: LEAVE 3V3 CAVITY EMPTY"]
     else:
         text(board,"NOTCHDECK BUTTONS / REV E",93,55,1)

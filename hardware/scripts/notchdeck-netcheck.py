@@ -46,26 +46,35 @@ def audit(xml_file):
         J3.1 J4.1 J9.1 R6.1 R7.1 R8.1 R9.1 R10.1 R12.1 R13.1
         R14.1 R15.1 R16.1 R17.1 R22.1 R23.1 U1.19 U1.23 U2.5 U5.1 U5.2
         C38.1 C39.1 C40.1 J10.1 J11.1 J5.6 J12.5 U9.14 U10.5 U11.5
-        R27.1 R28.1 R29.1 R30.1 R31.1 R32.1 R33.1 R39.1 R40.1 R41.1 J15.2 R42.1 U12.5 C44.1""",
+        R27.1 R28.1 R29.1 R30.1 R31.1 R32.1 R33.1 R39.1 R40.1 R41.1 J15.2 R42.1 U12.5 C44.1 R57.1 R59.1""",
     )
     net(
         "/USB_VBUS",
         endpoints("C18.1 J15.6 D19.2 J1.A4 J1.A9 J1.B4 J1.B9 R5.1 U1.27 U3.4 U7.5"),
     )
-    net("/Power/BAT+", "C10.1 C19.1 J2.1 Q1.3 U3.3 U4.2 U4.3")
+    net("/BAT_RAW", "C10.1 C19.1 J2.1 Q1.3 U3.3 U4.2 U4.3 U13.3 U13.4 C47.1")
+    net("/Actuators/ACT_BAT", "U13.5 D23.1 C45.1 C46.1 J16.1 J17.1 J18.1 D20.1 D21.1 D22.1")
     net("/Power/VSYS", "C7.1 D19.1 Q1.2 U2.1 U2.3")
     net(
         "GND",
         endpoints("""D17.1 J1.A1 J1.A12 J1.B1 J1.B12 J1.SH J2.2 J3.3 J3.5 J3.9 J4.5
-        J5.1 J9.3 R1.1 R2.1 R3.2 R4.2 R24.2
+        J5.1 J9.3 R1.1 R2.1 R4.2 R24.2
         U1.5 U1.21 U1.24 U2.2 U3.2 U4.1 U4.4 U4.6 U4.9 U5.4 U5.8 U7.2 U12.2
         J15.1 SW18.2 SW19.2 J10.2 J11.2 J12.1 U9.1 U9.2 U9.7 U10.2 U11.2""")
         | {f"C{i}.2" for i in range(1, 45) if i not in (13,20) and not 21 <= i <= 36}
-        | {"SW17.2"},
+        | endpoints("SW17.2 Q2.3 Q3.3 Q4.3 R46.2 R47.2 R48.2 C45.2 C46.2 J19.1 U13.8 U13.9 Q5.2 C47.2 C48.2 R53.2 R55.2 R58.2 D23.2 Q6.2"),
     )
+    net("/ACT_EN", "U1.35 R52.1 R54.1")
+    net("/ACT_nFAULT", "U1.36 R57.2 U13.6")
+    net("/Actuators/ACT_ENABLE", "U13.2 R52.2 R53.1")
+    net("/CHARGE_ENABLE", "Q5.3 Q6.1 R59.2")
     net("/BTN7", "SW18.1 U1.40")
     net("/BTN8", "SW19.1 U1.42")
     net("/PANEL_INT", "J15.5 R42.2 U1.1")
+    for i, (name, pad) in enumerate([( "SOL1",32),("SOL2",33),("BUZZ",34)]):
+        net(f"/{name}_PWM", f"U1.{pad} R{43+i}.1 R{49+i}.1")
+        net(f"/Actuators/{name}_LOW", f"Q{2+i}.2 D{20+i}.2 J{16+i}.2")
+        net(f"/Actuators/{name}_PWM_EXT", f"R{49+i}.2 J19.{2+i}")
     for name, pins in {
         "/I2C0_SDA": "R9.2 U1.12 U9.13 J15.3 U12.1 U12.6",
         "/I2C0_SCL": "R10.2 U1.14 U9.12 J15.4 U12.3 U12.4",
@@ -99,17 +108,23 @@ def audit(xml_file):
         "J1.B5 R2.2",
         "Q1.1 R4.1 R5.2",
         "R3.1 U3.5",
+        "R3.2 Q6.3",
         "J9.2 R23.2 R24.1 R25.1",
         "D17.2 R12.2",
         "D18.2 R13.2",
+        "Q5.1 R54.2 R55.1",
+        "U13.7 R56.1",
+        "R56.2 R58.1",
+        "U13.1 C48.1",
     ]
     internal += [f"J5.{2+i} R{14+i}.2 R{18+i}.1" for i in range(4)]
     internal += [f"J12.{2+i} R{31+i}.2 R{34+i}.1" for i in range(3)]
+    internal += [f"R{43+i}.2 R{46+i}.1 Q{2+i}.1" for i in range(3)]
     for pins in internal:
         first = pins.split()[0]
         net(by_pin[first], pins)
     nc = endpoints("J1.A8 J1.B8 J3.6 J3.7 J3.8 J4.6 U1.25 U2.4 U5.3 U5.5 U9.11")
-    nc |= {f"U1.{p}" for p in (2,6,11,13,16,17,32,33,34,35,36,38,41,43)}
+    nc |= {f"U1.{p}" for p in (2,6,11,13,16,17,38,41,43)}
     for pin in nc:
         name = by_pin[pin]
         assert name.startswith("unconnected-"), f"{pin}: expected explicit NC, got {name}"
@@ -123,7 +138,7 @@ def audit(xml_file):
         ), f"{name}: missing {pins-actual[name]}, unexpected {actual[name]-pins}"
     # Values/variants crucial to the power path and input interface.
     comps = {c.get("ref"): c for c in doc.findall("./components/comp")}
-    assert len(comps) == 93, f"Unexpected component count: {len(comps)}"
+    assert len(comps) == 128, f"Unexpected component count: {len(comps)}"
     for ref, value in {
         "U3": "MCP73832-2-OT",
         "U9": "TCA9543APWR",
@@ -136,8 +151,16 @@ def audit(xml_file):
         "R42": "10k",
         "SW18": "SELECT",
         "SW19": "START",
+        **{f"Q{i}": "ZXMS6005DGTA" for i in (2,3,4)},
+        **{f"D{i}": "B360A" for i in (20,21,22,23)},
+        **{f"R{i}": "330" for i in (43,44,45,58)},
+        **{f"R{i}": "100k" for i in (46,47,48,53,55,59)},
+        **{f"R{i}": "1k" for i in (49,50,51,52,54,56)},
+        "U13": "TPS259531DSGR", "Q5": "2N7002", "Q6": "2N7002", "R57": "10k",
+        "C45": "22uF", "C46": "22uF", "C47": "1uF", "C48": "100nF",
     }.items():
         assert comps[ref].findtext("value") == value, (ref, value)
+    assert "F1" not in comps, "Use electronic/resettable protection only"
     for ref, comp in comps.items():
         assert comp.findtext("footprint"), f"{ref}: no footprint"
     print(

@@ -1,0 +1,4848 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "a984f458-af52-4d6a-b0f7-f2b4c4a92d00")
+	(paper "A3")
+	(title_block
+		(title "NotchDeck One — Solenoids, buzzer and external PWM")
+		(date "2026-10-04")
+		(rev "F")
+		(company "BenchBits")
+	)
+	(lib_symbols
+	(symbol "notchdeck:TPS259531DSGR"
+        (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+        (property "Reference" "U" (at 0 13.97 0) (effects (font (size 1.27 1.27))))
+        (property "Value" "TPS259531DSGR" (at 0 11.43 0) (effects (font (size 1.27 1.27))))
+        (property "Footprint" "Package_DFN_QFN:DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+        (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2595.pdf" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+        (symbol "TPS259531DSGR_0_1" (rectangle (start -10.16 10.16) (end 10.16 -10.16) (stroke (width 0.254) (type default)) (fill (type background))))
+        (symbol "TPS259531DSGR_1_1"
+ (pin power_in line (at -15.24 7.62 0) (length 5.08) (name "IN" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+ (pin power_in line (at -15.24 5.08 0) (length 5.08) (name "IN" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+ (pin input line (at -15.24 0 0) (length 5.08) (name "EN/UVLO" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+ (pin passive line (at -15.24 -7.62 0) (length 5.08) (name "dVdt" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+ (pin power_out line (at 15.24 7.62 180) (length 5.08) (name "OUT" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+ (pin open_collector line (at 15.24 0 180) (length 5.08) (name "~{FLT}" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+ (pin passive line (at 15.24 -7.62 180) (length 5.08) (name "ILM" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+ (pin power_in line (at -2.54 -15.24 90) (length 5.08) (name "GND" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+ (pin power_in line (at 2.54 -15.24 90) (length 5.08) (name "EP" (effects (font (size 1.27 1.27)))) (number "9" (effects (font (size 1.27 1.27)))))
+))
+	(symbol "Device:C"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "C_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_0_1"
+			(polyline
+				(pts
+					(xy -2.032 0.762) (xy 2.032 0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.032 -0.762) (xy 2.032 -0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "C_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "power:GND"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR"
+			(at 0 -6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 0 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "GND_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "GND_1_1"
+			(pin power_in line
+				(at 0 0 270)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:D_Schottky"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Schottky"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "diode Schottky"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "D_Schottky_0_1"
+			(polyline
+				(pts
+					(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 0) (xy -1.27 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "D_Schottky_1_1"
+			(pin passive line
+				(at -3.81 0 0)
+				(length 2.54)
+				(name "K"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 3.81 0 180)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Transistor_FET:2N7002"
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 5.08 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2N7002"
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 5.08 -1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
+			(at 5.08 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "N-Channel Switching MOSFET"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "2N7002_0_1"
+			(polyline
+				(pts
+					(xy 0.254 1.905) (xy 0.254 -1.905)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.254 0) (xy -2.54 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 2.286) (xy 0.762 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 0.508) (xy 0.762 -0.508)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 -1.27) (xy 0.762 -2.286)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 1.651 0)
+				(radius 2.794)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 2.54) (xy 2.54 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.54 1.778)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 2.54 -1.778)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.921 0.381) (xy 3.683 0.381)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "2N7002_1_1"
+			(pin input line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "G"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 -5.08 90)
+				(length 2.54)
+				(name "S"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 5.08 270)
+				(length 2.54)
+				(name "D"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+
+		(property "ki_fp_filters" "SOT?23*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(symbol "power:+3V3"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR"
+			(at 0 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 0 3.556 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "+3V3_0_1"
+			(polyline
+				(pts
+					(xy -0.762 1.27) (xy 0 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 2.54) (xy 0.762 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "+3V3_1_1"
+			(pin power_in line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Transistor_FET:Q_NMOS_GDS"
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 5.08 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Q_NMOS_GDS"
+			(at 5.08 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 5.08 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, gate/drain/source"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Q_NMOS_GDS_0_1"
+			(polyline
+				(pts
+					(xy 0.254 1.905) (xy 0.254 -1.905)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.254 0) (xy -2.54 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 2.286) (xy 0.762 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 0.508) (xy 0.762 -0.508)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 -1.27) (xy 0.762 -2.286)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 1.651 0)
+				(radius 2.794)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 2.54) (xy 2.54 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.54 1.778)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 2.54 -1.778)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.921 0.381) (xy 3.683 0.381)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Q_NMOS_GDS_1_1"
+			(pin input line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "G"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 5.08 270)
+				(length 2.54)
+				(name "D"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 -5.08 90)
+				(length 2.54)
+				(name "S"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Connector_Generic:Conn_01x02"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x02_1_1"
+			(rectangle
+				(start -1.27 1.27)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Connector_Generic:Conn_01x04"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x04"
+			(at 0 -7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x04_1_1"
+			(rectangle
+				(start -1.27 3.81)
+				(end 1.27 -6.35)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 2.667)
+				(end 0 2.413)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -4.953)
+				(end 0 -5.207)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 2.54 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -5.08 0)
+				(length 3.81)
+				(name "Pin_4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	)
+	(symbol
+		(lib_id "notchdeck:TPS259531DSGR")
+		(at 109.2200 55.8800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "68afc8a5-6c46-4af5-bac3-648d5bb46728")
+		(property "Reference" "U13"
+			(at 99.0600 38.1000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "TPS259531DSGR"
+			(at 99.0600 40.6400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2595.pdf"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C2155674"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "TPS259531DSGR"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "TI"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Electronic current limiter, auto-retry; MCU must latch off thermal fault"
+			(at 109.2200 55.8800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "3" (uuid "9de1f7d0-3805-414e-bcc4-b4ef36388c00"))
+		(pin "4" (uuid "64022cf4-b9c8-4540-b0c6-9e79bc0ed590"))
+		(pin "2" (uuid "3b45a88a-f516-42eb-818c-ce593d7dfd40"))
+		(pin "1" (uuid "111f269e-15de-4fbd-a784-60599906ee0d"))
+		(pin "5" (uuid "7c6f0408-2d6b-424d-ab80-e7d5fee1836a"))
+		(pin "6" (uuid "ca955840-97bc-44df-bd7e-c1266d86632b"))
+		(pin "7" (uuid "dee23a27-7a55-4895-9ff4-ed7ded6a94b9"))
+		(pin "8" (uuid "7c498955-964e-49d0-91d3-2c12662caa8f"))
+		(pin "9" (uuid "5507dd6a-7a69-4beb-b783-cdace0371cd6"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "U13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 53.3400 43.1800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2d4ece9a-15f5-4baa-98a1-18d03b821151")
+		(property "Reference" "C47"
+			(at 57.1500 40.6400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1uF"
+			(at 57.1500 45.7200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C52923"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C52923"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 53.3400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a44209b0-d5f1-4cae-bb64-3d36b863ff0a"))
+		(pin "2" (uuid "eef907b0-5fa5-4172-b391-bfc9202527c5"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 53.3400 52.0700 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "4e4c911a-cd6f-425b-9a59-13319c4d9e1f")
+		(property "Reference" "#PWR601"
+			(at 57.1500 49.5300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 50.8000 48.2600 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 53.3400 52.0700 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 53.3400 52.0700 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1ccb5ebe-2b2a-4876-9545-f38f45e1b987"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR601")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 157.4800 58.4200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "241dfc6b-ea3a-440a-9e91-e3d7bf834447")
+		(property "Reference" "C45"
+			(at 161.2900 55.8800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "22uF"
+			(at 161.2900 60.9600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C309062"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C309062"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL32B226KAJNNNE"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "22uF/25V X7R bulk; allow DC-bias derating; near actuator connectors."
+			(at 157.4800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d89213bf-a45a-451c-88d9-fb6051839bcc"))
+		(pin "2" (uuid "ae03f2f3-b3c1-4815-9199-a288fd00319b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "C45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 182.8800 58.4200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd15b583-f4ca-47d1-84d8-09dba59503bd")
+		(property "Reference" "C46"
+			(at 186.6900 55.8800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "22uF"
+			(at 186.6900 60.9600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C309062"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C309062"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL32B226KAJNNNE"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "22uF/25V X7R bulk; allow DC-bias derating; near actuator connectors."
+			(at 182.8800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7ec8519d-52c3-46d6-b0ee-5915a785b54d"))
+		(pin "2" (uuid "b1f64aa4-837a-4def-864b-63b5bf417207"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "C46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 208.2800 58.4200 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3c36634b-7d07-40c8-a704-d3bf1e1c2f54")
+		(property "Reference" "D23"
+			(at 210.8200 55.8800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "B360A"
+			(at 210.8200 58.4200 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/4341698a2794575dc7c94af0a06dfb39.pdf?productCode=C6807778"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C6807778"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "B360A"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "FUXINSEMI"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "3A/60V Schottky: D20-D22 flyback K=ACT_BAT/A=load negative; D23 output clamp K=ACT_BAT/A=GND."
+			(at 208.2800 58.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "681fccca-fc28-4026-a6b1-b1418470c81a"))
+		(pin "2" (uuid "11af5d09-15cf-4bd2-9fcb-7943c2c5058f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "D23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.4800 67.3100 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3df9e451-8541-4a91-a843-0a6ebe4583d0")
+		(property "Reference" "#PWR602"
+			(at 161.2900 64.7700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 154.9400 63.5000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 157.4800 67.3100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 157.4800 67.3100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "9ef25a57-3ad0-42ef-99a3-5920155266d7"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR602")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 182.8800 67.3100 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "6af098f7-14be-43b5-8ec3-e027d0a28877")
+		(property "Reference" "#PWR603"
+			(at 186.6900 64.7700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 180.3400 63.5000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 182.8800 67.3100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 182.8800 67.3100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "e9a562fa-51b1-4b98-8530-940ba3249c6d"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR603")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.2800 67.3100 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c5df682b-4b46-4bde-91b3-85d1e64d0897")
+		(property "Reference" "#PWR604"
+			(at 212.0900 64.7700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 205.7400 63.5000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 208.2800 67.3100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 208.2800 67.3100 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1468c99c-327c-4ce6-b1c2-255ae2eb034a"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR604")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 106.6800 81.2800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "aef06849-f862-436a-b667-a8e502234a6d")
+		(property "Reference" "#PWR605"
+			(at 110.4900 78.7400 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 104.1400 77.4700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 106.6800 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 106.6800 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "7e33833d-8a0e-427f-8003-99441d401476"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR605")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 78.7400 73.6600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1833f620-a84c-46ce-b4a2-629d44d8ca11")
+		(property "Reference" "C48"
+			(at 82.5500 71.1200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100nF"
+			(at 82.5500 76.2000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C1525"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C1525"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 78.7400 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "69ad4cdc-3fe1-4e4c-862e-59d2e107b4a4"))
+		(pin "2" (uuid "17cda0e2-93f5-470d-8bf9-1ffb03374ae9"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "C48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 78.7400 82.5500 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a46001aa-7a36-40b0-ab81-8fcfdde38b11")
+		(property "Reference" "#PWR606"
+			(at 82.5500 80.0100 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 76.2000 78.7400 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 78.7400 82.5500 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 78.7400 82.5500 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "9cc9d431-55c5-4cf6-a13b-a6679962dfd6"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR606")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 132.0800 73.6600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e5997706-94df-43b2-9f5a-b1b78653e006")
+		(property "Reference" "R56"
+			(at 135.8900 71.1200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 135.8900 76.2000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C11702"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 132.0800 73.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "386ff9f5-865e-4657-9dab-a70c743cab2e"))
+		(pin "2" (uuid "3c0054f4-2fa8-423e-bf5e-c9b425b50ade"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R56")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 132.0800 86.3600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "24048dc9-4cd3-45cc-9da1-cbd9d85a9dfe")
+		(property "Reference" "R58"
+			(at 135.8900 83.8200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "330"
+			(at 135.8900 88.9000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25104"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF3300TCE"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 132.0800 86.3600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "bfa50914-c04e-4ed1-af8b-4cb4f93f7836"))
+		(pin "2" (uuid "a881b221-5d59-4226-81ab-30caba3e7aaa"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R58")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 132.0800 95.2500 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "47ae21f1-42d0-4629-9ab5-4eb3b77ec7c6")
+		(property "Reference" "#PWR607"
+			(at 135.8900 92.7100 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 129.5400 91.4400 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 132.0800 95.2500 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 132.0800 95.2500 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d40bb28b-1e6a-4f90-94b0-b57a9b809bf6"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR607")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 55.8800 60.9600 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "40acfd37-0e4c-4e0a-b15f-07082230bfb1")
+		(property "Reference" "R52"
+			(at 53.3400 55.8800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 53.3400 58.4200 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C11702"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 55.8800 60.9600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5d128af4-45b4-45c7-a0cc-46d657de6daa"))
+		(pin "2" (uuid "6a95140f-55af-4cd8-9302-95691f2f0689"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.0400 76.2000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ffb70a19-d916-4637-a678-0bc56764223d")
+		(property "Reference" "R53"
+			(at 69.8500 73.6600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 69.8500 78.7400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25741"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 66.0400 76.2000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "c009a2a5-be91-48fe-a46b-b8f6b00fef3e"))
+		(pin "2" (uuid "88b61b0d-4eaa-415b-8f8c-80d1a68d5af9"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.0400 85.0900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f2257a5-6ced-4e5e-9d74-9abe525229f4")
+		(property "Reference" "#PWR608"
+			(at 69.8500 82.5500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 63.5000 81.2800 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 66.0400 85.0900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 66.0400 85.0900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "53dfec6a-fda6-40f4-b61e-63234dbd7fde"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR608")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:2N7002")
+		(at 271.7800 48.2600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3c9a6156-4fe1-46a0-acdc-b096bddeaa29")
+		(property "Reference" "Q5"
+			(at 276.8600 48.2600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "2N7002"
+			(at 276.8600 50.8000 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/a141b8bd86b14475955ac8c4d3eea0a8.pdf?productCode=C8545"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C8545"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "2N7002"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JSCJ"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Charger PROG interlock: suspend charging while actuator bank is enabled"
+			(at 271.7800 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6eadab6e-5255-414d-820e-531c3d4a5f8c"))
+		(pin "2" (uuid "10624045-47bd-46a7-aa9f-bc90195608ef"))
+		(pin "3" (uuid "fdc53c90-4b7e-41c2-8d3e-d8807ad33cb6"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 238.7600 48.2600 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "94a6e9a9-edb8-4080-955d-13e33078b33e")
+		(property "Reference" "R54"
+			(at 236.2200 43.1800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 236.2200 45.7200 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C11702"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 238.7600 48.2600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "e882b8e0-cfd8-4ca9-8da1-ef86f97f6365"))
+		(pin "2" (uuid "74cddb51-1af3-449a-ae62-1717ceda805b"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R54")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 254.0000 68.5800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "59bfd5da-81ce-42a1-9230-b750ae7e8850")
+		(property "Reference" "R55"
+			(at 257.8100 66.0400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 257.8100 71.1200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25741"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 254.0000 68.5800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "1ad0d946-a100-40d0-b118-ce402cbba716"))
+		(pin "2" (uuid "182cc0ed-254d-4213-9d02-5f472b546129"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 254.0000 81.2800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a926cf4f-92aa-4456-a2cc-927e1c8764b5")
+		(property "Reference" "#PWR609"
+			(at 257.8100 78.7400 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 251.4600 77.4700 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 254.0000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 254.0000 81.2800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "dbe5df89-f161-4d49-821f-4916565911fc"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR609")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 332.7400 43.1800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e51dbee7-56b7-4146-9f2c-a58f7229b933")
+		(property "Reference" "R57"
+			(at 336.5500 40.6400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "10k"
+			(at 336.5500 45.7200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25744"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25744"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 332.7400 43.1800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "d662af12-d270-4c50-9d54-28f0932a2726"))
+		(pin "2" (uuid "82812605-a5a1-471f-a2d7-3bc5f43a82a3"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R57")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 332.7400 34.2900 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b43d6fec-b344-445a-bcc0-7ed11f7e8545")
+		(property "Reference" "#PWR610"
+			(at 336.5500 31.7500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "+3V3"
+			(at 330.2000 30.4800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 332.7400 34.2900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 332.7400 34.2900 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "957f81c0-0f15-4d42-8d88-685150b86dae"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR610")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_NMOS_GDS")
+		(at 81.2800 160.0200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cb50d02a-8b7f-46d5-933f-38a9a32b3f63")
+		(property "Reference" "Q2"
+			(at 86.3600 160.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "ZXMS6005DGTA"
+			(at 86.3600 162.5600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/f028d27543061fafe3ef0d34478a3c92.pdf?productCode=C174045"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C174045"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "ZXMS6005DGTA"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "DIODES"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Protected low-side FET; pin 1 IN, pin 2/tab D, pin 3 S. 3V minimum input; 500Hz solenoid PWM target; qualify low-battery drive and thermal margins."
+			(at 81.2800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "53bca92f-c887-458f-a96d-b09d76206ed2"))
+		(pin "2" (uuid "71084560-ecfc-428d-85bd-903c656a93e9"))
+		(pin "3" (uuid "6521181b-4483-4516-898f-8827cf838af2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 48.2600 160.0200 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f814339a-90ba-4475-bb34-248c71307912")
+		(property "Reference" "R43"
+			(at 45.7200 154.9400 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "330"
+			(at 45.7200 157.4800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25104"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF3300TCE"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 48.2600 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5d9c690f-7478-48e7-9b99-8268baac6c0d"))
+		(pin "2" (uuid "c2c3cd3d-3a86-4d17-bb08-f9ea6239d0b7"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.0400 185.4200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c1c166ec-5179-4ba8-be90-fbc135b4f7b2")
+		(property "Reference" "R46"
+			(at 69.8500 182.8800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 69.8500 187.9600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25741"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 66.0400 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6b75a63a-d5ae-41ec-adb2-955f05a2c6fd"))
+		(pin "2" (uuid "70008c2d-1d16-4bbd-afb9-b38ef62ae4d2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 127.0000 114.3000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e43c953c-3bd2-405a-9e69-a995cfac565c")
+		(property "Reference" "J16"
+			(at 119.3800 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SOLENOID 1"
+			(at 119.3800 106.6800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C295747"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Two-pin JST PH battery connector. Pin1=BAT+, pin2=GND. Mating harness separate."
+			(at 127.0000 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "0d7969ca-e126-47f6-a34b-31c63823c572"))
+		(pin "2" (uuid "1d2e25d7-9b9b-4250-99fa-7162a0cc8238"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 83.8200 129.5400 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "469ef00e-154f-4047-bf83-71a3548a0f67")
+		(property "Reference" "D20"
+			(at 73.6600 129.5400 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "B360A"
+			(at 73.6600 132.0800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/4341698a2794575dc7c94af0a06dfb39.pdf?productCode=C6807778"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C6807778"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "B360A"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "FUXINSEMI"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "3A/60V Schottky: D20-D22 flyback K=ACT_BAT/A=load negative; D23 output clamp K=ACT_BAT/A=GND."
+			(at 83.8200 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "cb8fa671-ceda-4d8d-b671-d2ce1355613c"))
+		(pin "2" (uuid "a68f0fe6-c735-4683-bcd6-de820e20d0e4"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "D20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.0400 200.6600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "90bd8a3c-919a-458a-9bdf-72fcd90e217b")
+		(property "Reference" "#PWR611"
+			(at 69.8500 198.1200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 63.5000 196.8500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 66.0400 200.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 66.0400 200.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a13fbb1b-2e3d-4b80-8e46-c586bb8fcab9"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR611")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_NMOS_GDS")
+		(at 205.7400 160.0200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "99c351a2-c36d-4cf8-9f0c-d4209e3e09e9")
+		(property "Reference" "Q3"
+			(at 210.8200 160.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "ZXMS6005DGTA"
+			(at 210.8200 162.5600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/f028d27543061fafe3ef0d34478a3c92.pdf?productCode=C174045"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C174045"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "ZXMS6005DGTA"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "DIODES"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Protected low-side FET; pin 1 IN, pin 2/tab D, pin 3 S. 3V minimum input; 500Hz solenoid PWM target; qualify low-battery drive and thermal margins."
+			(at 205.7400 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "45120a88-952d-4e0d-a5ef-8cfc86b341d6"))
+		(pin "2" (uuid "fab82c3e-d259-4065-9737-25937c76018d"))
+		(pin "3" (uuid "232de40b-2fc1-40ac-8aa8-5452f68bb986"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 172.7200 160.0200 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2f8420e6-d326-4260-a79e-109a63e90280")
+		(property "Reference" "R44"
+			(at 170.1800 154.9400 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "330"
+			(at 170.1800 157.4800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25104"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF3300TCE"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 172.7200 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "6430416d-761e-4ba0-84d1-8357c57bcb30"))
+		(pin "2" (uuid "8db37db7-6f43-4801-b67c-5d578a97c36c"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 190.5000 185.4200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "030db183-6ba0-42f7-bc0d-e249d84a7eb7")
+		(property "Reference" "R47"
+			(at 194.3100 182.8800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 194.3100 187.9600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25741"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 190.5000 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "46ce0cfe-d6c9-407b-b95c-cc915ba6dda0"))
+		(pin "2" (uuid "ba84d6ce-d0c2-453f-82ba-a2b2690f764d"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 251.4600 114.3000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ccffca8f-8f91-4741-97fb-1cbf7a1c5652")
+		(property "Reference" "J17"
+			(at 243.8400 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SOLENOID 2"
+			(at 243.8400 106.6800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C295747"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Two-pin JST PH battery connector. Pin1=BAT+, pin2=GND. Mating harness separate."
+			(at 251.4600 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "ce9a4d52-b939-46db-bd42-29ca969a1a1b"))
+		(pin "2" (uuid "669a9a63-85a8-491b-b63f-f4dedc1d180f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 208.2800 129.5400 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "51ef6b4d-1b8b-4d40-94a0-0872d11c9ca6")
+		(property "Reference" "D21"
+			(at 198.1200 129.5400 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "B360A"
+			(at 198.1200 132.0800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/4341698a2794575dc7c94af0a06dfb39.pdf?productCode=C6807778"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C6807778"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "B360A"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "FUXINSEMI"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "3A/60V Schottky: D20-D22 flyback K=ACT_BAT/A=load negative; D23 output clamp K=ACT_BAT/A=GND."
+			(at 208.2800 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "3a4910b5-03e1-45c4-9118-90af27e93d9e"))
+		(pin "2" (uuid "be438667-6111-4cbb-8e6b-7848a8e5a752"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "D21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 190.5000 200.6600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "6ae35824-a839-43a8-9fc0-66ac1516c6ae")
+		(property "Reference" "#PWR612"
+			(at 194.3100 198.1200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 187.9600 196.8500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 190.5000 200.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 190.5000 200.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "292adcb3-ed15-486a-a18a-97c65da90d81"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR612")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_NMOS_GDS")
+		(at 330.2000 160.0200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a4125a9e-3b45-4fb6-9550-8d360b44cf20")
+		(property "Reference" "Q4"
+			(at 335.2800 160.0200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "ZXMS6005DGTA"
+			(at 335.2800 162.5600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/f028d27543061fafe3ef0d34478a3c92.pdf?productCode=C174045"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C174045"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "ZXMS6005DGTA"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "DIODES"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Protected low-side FET; pin 1 IN, pin 2/tab D, pin 3 S. 3V minimum input; 500Hz solenoid PWM target; qualify low-battery drive and thermal margins."
+			(at 330.2000 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "17c66127-58a1-4639-ace5-237281e7ef75"))
+		(pin "2" (uuid "14b614e5-1618-482a-9721-63a9405e83a7"))
+		(pin "3" (uuid "804e562b-b5db-4c72-9eb6-75da845503a2"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.1800 160.0200 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "27194e7e-820a-4058-9852-ffd8c9a90312")
+		(property "Reference" "R45"
+			(at 294.6400 154.9400 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "330"
+			(at 294.6400 157.4800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25104"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25104"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF3300TCE"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 297.1800 160.0200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "abb72c9e-7b75-4373-b9a4-e78841962bf9"))
+		(pin "2" (uuid "75c7ab15-0dfe-47d2-bcce-86c8f3e6db6f"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 314.9600 185.4200 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c5249afa-9369-49ab-b7cb-23f8000182a4")
+		(property "Reference" "R48"
+			(at 318.7700 182.8800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "100k"
+			(at 318.7700 187.9600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C25741"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C25741"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 314.9600 185.4200 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "5b8fca7f-8dff-4314-912b-558268150082"))
+		(pin "2" (uuid "3d840d0f-a657-42c3-a345-22365759cea8"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 375.9200 114.3000 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9b4f1a6a-ee07-45d9-ab74-4b5ac15b1d92")
+		(property "Reference" "J18"
+			(at 368.3000 104.1400 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "ACTIVE BUZZER"
+			(at 368.3000 106.6800 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C295747"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S2B-PH-SM4-TB(LF)(SN)"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "Two-pin JST PH battery connector. Pin1=BAT+, pin2=GND. Mating harness separate."
+			(at 375.9200 114.3000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "a72bac5a-4d28-4932-9b1f-e814407d3aa4"))
+		(pin "2" (uuid "55031ba3-b02e-4d3a-8d1f-4b190dd13e24"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "J18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 332.7400 129.5400 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ffca3079-6038-4362-be39-ffcce64421cd")
+		(property "Reference" "D22"
+			(at 322.5800 129.5400 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "B360A"
+			(at 322.5800 132.0800 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/4341698a2794575dc7c94af0a06dfb39.pdf?productCode=C6807778"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C6807778"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "B360A"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "FUXINSEMI"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "3A/60V Schottky: D20-D22 flyback K=ACT_BAT/A=load negative; D23 output clamp K=ACT_BAT/A=GND."
+			(at 332.7400 129.5400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "cb7c4822-281d-4915-8b03-919ce4dcc424"))
+		(pin "2" (uuid "ae4846ce-b43b-4e5e-a144-c745b7b1a453"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "D22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 314.9600 200.6600 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8ba32a9d-8345-4c39-b35a-1ad40ebf5e61")
+		(property "Reference" "#PWR613"
+			(at 318.7700 198.1200 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 312.4200 196.8500 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 314.9600 200.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 314.9600 200.6600 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "06a9fe31-a7c6-455e-8f47-9694941d5852"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR613")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 284.4800 233.6800 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0fffa502-79a8-4cd1-b845-027c6f6b808a")
+		(property "Reference" "J19"
+			(at 284.4800 223.5200 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "EXTERNAL PWM 3V3"
+			(at 284.4800 226.0600 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S4B-PH-SM4-TB_1x04-1MP_P2.00mm_Horizontal"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/6c6fce4367275d84ec6a99bf09f1250f.pdf?productCode=C265102"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C265102"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "S4B-PH-SM4-TB(LF)(SN)"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "JST"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Extended"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-05"
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "3.3V magnetic handle: pin 1=3V3, 2=GND, 3=SDA, 4=SCL. Mating harness/sensor separate."
+			(at 284.4800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "964bcc51-9f56-4ea2-9d2a-dffc5fbd08ee"))
+		(pin "2" (uuid "433f76db-2475-48ac-af03-1487d0bff743"))
+		(pin "3" (uuid "a4117d74-34cc-446c-859d-917cfae6bf63"))
+		(pin "4" (uuid "f4aa2b16-7630-44f4-bbe4-9b12e2e60eb5"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "J19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 274.3200 231.1400 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "fbad1207-739e-4d4c-841a-066db5ee38b4")
+		(property "Reference" "#PWR614"
+			(at 278.1300 228.6000 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Value" "GND"
+			(at 271.7800 227.3300 0)
+			(effects (font (size 1.27 1.27)) (justify left)) (hide yes)
+		)
+		(property "Footprint" ""
+			(at 274.3200 231.1400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 274.3200 231.1400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "64037a74-0815-4959-885e-d9eb1e93bfb0"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "#PWR614")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 208.2800 233.6800 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "76e97643-a52d-4720-80d3-06df80d2728a")
+		(property "Reference" "R49"
+			(at 205.7400 229.8700 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 205.7400 232.4100 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C11702"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 208.2800 233.6800 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "8bd4ba70-5460-4638-bcb2-341ed203d6c9"))
+		(pin "2" (uuid "15f31273-0b23-4ad6-b204-60b3429c9ecf"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R49")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 208.2800 243.8400 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ac539325-d94b-4a4b-91b2-46a40c7d6021")
+		(property "Reference" "R50"
+			(at 205.7400 240.0300 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 205.7400 242.5700 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C11702"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 208.2800 243.8400 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "42001368-9d2e-402a-a693-32a3fc380dc3"))
+		(pin "2" (uuid "bbd1aa03-3187-493d-b811-d99180410476"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 208.2800 254.0000 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "355bfa04-3812-4e13-a02d-7d5227421e1d")
+		(property "Reference" "R51"
+			(at 205.7400 250.1900 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "1k"
+			(at 205.7400 252.7300 90)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf?productCode=C11702"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "LCSC" "C11702"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "JLCPCB Part Type" "Basic"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Checked" "2026-10-03"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(property "BOM Comments" "-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 208.2800 254.0000 0)
+			(effects (font (size 1.27 1.27))) (hide yes)
+		)
+		(pin "1" (uuid "63ba361c-380e-4eae-86cb-a2f130e4455a"))
+		(pin "2" (uuid "90f91f41-b867-4fb8-9f31-87da965b757d"))
+		(instances
+			(project "notchdeck-one"
+				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/a984f458-af52-4d6a-b0f7-f2b4c4a92d00"
+					(reference "R51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire (pts (xy 30.4800 27.9400) (xy 53.3400 27.9400))
+		(stroke (width 0) (type default))
+		(uuid "fe301cc6-c8ff-4080-9af1-ecfb27e5cf3d")
+	)
+	(wire (pts (xy 39.3700 160.0200) (xy 44.4500 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "40429038-e4bc-4a90-b729-afdc376509ce")
+	)
+	(wire (pts (xy 46.9900 60.9600) (xy 52.0700 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "2092bd18-61fb-4e49-8e22-8f7e1ffbae25")
+	)
+	(wire (pts (xy 52.0700 160.0200) (xy 66.0400 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "dce8456f-e212-4efc-b931-cc5719f3dc7c")
+	)
+	(wire (pts (xy 53.3400 27.9400) (xy 53.3400 39.3700))
+		(stroke (width 0) (type default))
+		(uuid "d939afa3-b29d-4d4f-91f7-9d1277222c39")
+	)
+	(wire (pts (xy 53.3400 27.9400) (xy 55.8800 27.9400))
+		(stroke (width 0) (type default))
+		(uuid "942f2540-2039-4151-a29e-931fabcd39d9")
+	)
+	(wire (pts (xy 53.3400 46.9900) (xy 53.3400 52.0700))
+		(stroke (width 0) (type default))
+		(uuid "5392df2f-fbf7-4442-bce3-592f09633dcc")
+	)
+	(wire (pts (xy 55.8800 27.9400) (xy 93.9800 27.9400))
+		(stroke (width 0) (type default))
+		(uuid "4ffb2bad-82e5-479c-8a07-8d69c68ed772")
+	)
+	(wire (pts (xy 59.6900 60.9600) (xy 66.0400 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "2a69b891-2a72-46bb-841c-9b17aaaef7d5")
+	)
+	(wire (pts (xy 66.0400 60.9600) (xy 66.0400 72.3900))
+		(stroke (width 0) (type default))
+		(uuid "1896e4bd-3e6d-4b46-87d2-166d848aff90")
+	)
+	(wire (pts (xy 66.0400 60.9600) (xy 71.1200 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "e5d6407f-316c-4b6a-92ff-c5a29abf11b9")
+	)
+	(wire (pts (xy 66.0400 80.0100) (xy 66.0400 85.0900))
+		(stroke (width 0) (type default))
+		(uuid "586e85b2-35fa-44e1-b744-358991b0aee8")
+	)
+	(wire (pts (xy 66.0400 160.0200) (xy 66.0400 181.6100))
+		(stroke (width 0) (type default))
+		(uuid "45bcff6b-9b02-48f9-b629-09130bb6f9f1")
+	)
+	(wire (pts (xy 66.0400 160.0200) (xy 76.2000 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "f0c38e81-e85d-48c9-a557-2ba7e3e78c8d")
+	)
+	(wire (pts (xy 66.0400 189.2300) (xy 66.0400 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "22a90b89-9e03-4a9d-8fd3-05621e0edcbe")
+	)
+	(wire (pts (xy 66.0400 200.6600) (xy 83.8200 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "94f94c92-84f4-43e6-9543-4ab62673c5ea")
+	)
+	(wire (pts (xy 71.1200 55.8800) (xy 71.1200 60.9600))
+		(stroke (width 0) (type default))
+		(uuid "61df2ac8-8065-45bb-a1b0-2fd49fa19814")
+	)
+	(wire (pts (xy 71.1200 55.8800) (xy 93.9800 55.8800))
+		(stroke (width 0) (type default))
+		(uuid "11f8499b-b191-4b6a-85e0-497bd405214e")
+	)
+	(wire (pts (xy 78.7400 63.5000) (xy 78.7400 69.8500))
+		(stroke (width 0) (type default))
+		(uuid "45f4d9f9-2be0-4110-a291-92b9397f83e0")
+	)
+	(wire (pts (xy 78.7400 63.5000) (xy 93.9800 63.5000))
+		(stroke (width 0) (type default))
+		(uuid "1d20c341-f695-4b5e-9262-9cb78f07bc29")
+	)
+	(wire (pts (xy 78.7400 77.4700) (xy 78.7400 82.5500))
+		(stroke (width 0) (type default))
+		(uuid "ac950c4a-88e1-4f3a-a411-91b7b51d457d")
+	)
+	(wire (pts (xy 83.8200 101.6000) (xy 83.8200 125.7300))
+		(stroke (width 0) (type default))
+		(uuid "e00ca5d7-a18d-4365-94f5-ebc5ca7348da")
+	)
+	(wire (pts (xy 83.8200 101.6000) (xy 121.9200 101.6000))
+		(stroke (width 0) (type default))
+		(uuid "385becce-97c2-461e-a1b5-5a4dfe208797")
+	)
+	(wire (pts (xy 83.8200 133.3500) (xy 83.8200 154.9400))
+		(stroke (width 0) (type default))
+		(uuid "40c0e121-2579-4a8a-a925-823b5f5e7dc4")
+	)
+	(wire (pts (xy 83.8200 133.3500) (xy 121.9200 133.3500))
+		(stroke (width 0) (type default))
+		(uuid "03a43543-9ee4-40c2-a5d9-a1fe177a6484")
+	)
+	(wire (pts (xy 83.8200 165.1000) (xy 83.8200 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "a6042008-7c63-42a9-9ca2-ac53526ea9b6")
+	)
+	(wire (pts (xy 93.9800 27.9400) (xy 93.9800 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "b4c98b4c-4a88-43ce-88d5-a818b5c8fe71")
+	)
+	(wire (pts (xy 93.9800 48.2600) (xy 93.9800 50.8000))
+		(stroke (width 0) (type default))
+		(uuid "b11b110d-2e15-468d-8d42-019f0903fa74")
+	)
+	(wire (pts (xy 106.6800 71.1200) (xy 106.6800 81.2800))
+		(stroke (width 0) (type default))
+		(uuid "59b8c7eb-2c29-498b-b184-7816b863131d")
+	)
+	(wire (pts (xy 106.6800 81.2800) (xy 111.7600 81.2800))
+		(stroke (width 0) (type default))
+		(uuid "a85fef8d-6fa1-45dd-8921-262db578877e")
+	)
+	(wire (pts (xy 111.7600 71.1200) (xy 111.7600 81.2800))
+		(stroke (width 0) (type default))
+		(uuid "2f2c346c-6b7e-42bb-92e6-c999614c3dba")
+	)
+	(wire (pts (xy 121.9200 101.6000) (xy 121.9200 114.3000))
+		(stroke (width 0) (type default))
+		(uuid "3523ca53-4735-4e2f-bd22-9c53796f71d4")
+	)
+	(wire (pts (xy 121.9200 116.8400) (xy 121.9200 133.3500))
+		(stroke (width 0) (type default))
+		(uuid "fad8533b-ec85-4718-abfd-726b5acca8be")
+	)
+	(wire (pts (xy 124.4600 48.2600) (xy 157.4800 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "59a6138f-3fad-4930-a216-f1be82b92c8e")
+	)
+	(wire (pts (xy 124.4600 55.8800) (xy 129.5400 55.8800))
+		(stroke (width 0) (type default))
+		(uuid "b11a753e-8f3c-4335-8bff-0e18c9ad34d8")
+	)
+	(wire (pts (xy 124.4600 63.5000) (xy 132.0800 63.5000))
+		(stroke (width 0) (type default))
+		(uuid "ef6f3f48-f700-43ec-b9b0-39ff9f3069a1")
+	)
+	(wire (pts (xy 132.0800 63.5000) (xy 132.0800 69.8500))
+		(stroke (width 0) (type default))
+		(uuid "99bca770-740a-4fb8-bf91-698ebb125406")
+	)
+	(wire (pts (xy 132.0800 77.4700) (xy 132.0800 82.5500))
+		(stroke (width 0) (type default))
+		(uuid "3e2d6be0-122f-42eb-b62f-87ecab158992")
+	)
+	(wire (pts (xy 132.0800 90.1700) (xy 132.0800 95.2500))
+		(stroke (width 0) (type default))
+		(uuid "b6ed7c06-e21d-458f-9c98-21046405bc75")
+	)
+	(wire (pts (xy 157.4800 48.2600) (xy 157.4800 54.6100))
+		(stroke (width 0) (type default))
+		(uuid "8f116fb8-e3d2-43c8-8fa8-6972e9d44d1f")
+	)
+	(wire (pts (xy 157.4800 48.2600) (xy 182.8800 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "ce36c6ce-b953-4a3d-8dcb-1fd12b3ad078")
+	)
+	(wire (pts (xy 157.4800 62.2300) (xy 157.4800 67.3100))
+		(stroke (width 0) (type default))
+		(uuid "5dc384ac-add1-4aae-ab00-80ecc74e8c69")
+	)
+	(wire (pts (xy 163.8300 160.0200) (xy 168.9100 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "672c0d5d-bac2-428c-8ec4-c2623f4c838e")
+	)
+	(wire (pts (xy 176.5300 160.0200) (xy 190.5000 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "7680126d-2a1f-48fe-9818-b8219350a3db")
+	)
+	(wire (pts (xy 182.8800 48.2600) (xy 182.8800 54.6100))
+		(stroke (width 0) (type default))
+		(uuid "79604270-75f1-4550-b738-06350312666c")
+	)
+	(wire (pts (xy 182.8800 48.2600) (xy 208.2800 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "eafee45d-1283-41dd-bf4c-8f8733401aca")
+	)
+	(wire (pts (xy 182.8800 62.2300) (xy 182.8800 67.3100))
+		(stroke (width 0) (type default))
+		(uuid "70b3599c-34a2-41f5-8c58-70ee0a57bc98")
+	)
+	(wire (pts (xy 190.5000 160.0200) (xy 190.5000 181.6100))
+		(stroke (width 0) (type default))
+		(uuid "34c33882-ab99-4359-92d6-f76425aa0102")
+	)
+	(wire (pts (xy 190.5000 160.0200) (xy 200.6600 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "348177b3-7804-4e00-8028-1d4f4eae9189")
+	)
+	(wire (pts (xy 190.5000 189.2300) (xy 190.5000 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "6b298a91-30ae-4deb-a12c-ba6b97eb2db0")
+	)
+	(wire (pts (xy 190.5000 200.6600) (xy 208.2800 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "cf3d0eac-a07b-4245-8f7f-9e9b69e0bf8e")
+	)
+	(wire (pts (xy 199.3900 233.6800) (xy 204.4700 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "cf8be970-36be-44c8-a027-5624ab6f1fbe")
+	)
+	(wire (pts (xy 199.3900 243.8400) (xy 204.4700 243.8400))
+		(stroke (width 0) (type default))
+		(uuid "45107ea4-3f04-42ce-bbb2-63d6ec81588d")
+	)
+	(wire (pts (xy 199.3900 254.0000) (xy 204.4700 254.0000))
+		(stroke (width 0) (type default))
+		(uuid "b05c4ba4-1ce7-47fb-b06c-77c674d59b5e")
+	)
+	(wire (pts (xy 208.2800 48.2600) (xy 208.2800 54.6100))
+		(stroke (width 0) (type default))
+		(uuid "cc41ae30-32ae-494b-8edf-ef7323e12628")
+	)
+	(wire (pts (xy 208.2800 62.2300) (xy 208.2800 67.3100))
+		(stroke (width 0) (type default))
+		(uuid "3381f413-391d-4e37-b77a-314ded70d8df")
+	)
+	(wire (pts (xy 208.2800 101.6000) (xy 208.2800 125.7300))
+		(stroke (width 0) (type default))
+		(uuid "61933648-0040-4a16-bb80-443741d84e05")
+	)
+	(wire (pts (xy 208.2800 101.6000) (xy 246.3800 101.6000))
+		(stroke (width 0) (type default))
+		(uuid "aec3f0be-894a-4612-bb22-e84752d62116")
+	)
+	(wire (pts (xy 208.2800 133.3500) (xy 208.2800 154.9400))
+		(stroke (width 0) (type default))
+		(uuid "e612d985-4f7a-4765-be9d-8a3bae9149d0")
+	)
+	(wire (pts (xy 208.2800 133.3500) (xy 246.3800 133.3500))
+		(stroke (width 0) (type default))
+		(uuid "3aca6f8b-63da-41a2-9e11-7df82cb1a928")
+	)
+	(wire (pts (xy 208.2800 165.1000) (xy 208.2800 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "73ce8908-f5af-4360-9baa-6f4572bcac31")
+	)
+	(wire (pts (xy 212.0900 233.6800) (xy 256.5400 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "048a0516-81cc-4712-92b8-c34b3fcb39ce")
+	)
+	(wire (pts (xy 212.0900 243.8400) (xy 261.6200 243.8400))
+		(stroke (width 0) (type default))
+		(uuid "2b4a15a0-2448-4986-89c9-15e6ad41fbdd")
+	)
+	(wire (pts (xy 212.0900 254.0000) (xy 266.7000 254.0000))
+		(stroke (width 0) (type default))
+		(uuid "947159ff-9c5f-4afb-8e61-fb6fa7da3833")
+	)
+	(wire (pts (xy 229.8700 48.2600) (xy 234.9500 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "927a0a50-6314-4f8d-9cd0-ad38b78e58b6")
+	)
+	(wire (pts (xy 242.5700 48.2600) (xy 254.0000 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "49771530-cb23-4c96-991e-caa7ad6b3bb7")
+	)
+	(wire (pts (xy 246.3800 101.6000) (xy 246.3800 114.3000))
+		(stroke (width 0) (type default))
+		(uuid "b70335a0-ff8b-47c5-9200-6cc9bb641065")
+	)
+	(wire (pts (xy 246.3800 116.8400) (xy 246.3800 133.3500))
+		(stroke (width 0) (type default))
+		(uuid "aa4be3c4-8113-474f-96a5-6b3a0599db13")
+	)
+	(wire (pts (xy 254.0000 48.2600) (xy 254.0000 64.7700))
+		(stroke (width 0) (type default))
+		(uuid "2e245275-3a47-4e92-9e55-f317142ab64d")
+	)
+	(wire (pts (xy 254.0000 48.2600) (xy 266.7000 48.2600))
+		(stroke (width 0) (type default))
+		(uuid "da98dc69-4a84-4045-9b4f-23a478caa1ea")
+	)
+	(wire (pts (xy 254.0000 72.3900) (xy 254.0000 81.2800))
+		(stroke (width 0) (type default))
+		(uuid "66ea5f81-11eb-4b84-b5f8-143cce93a9da")
+	)
+	(wire (pts (xy 254.0000 81.2800) (xy 274.3200 81.2800))
+		(stroke (width 0) (type default))
+		(uuid "8d742cee-3899-4ed2-9700-435e06368d00")
+	)
+	(wire (pts (xy 256.5400 233.6800) (xy 279.4000 233.6800))
+		(stroke (width 0) (type default))
+		(uuid "f9dfa427-3eef-4a7d-b1de-399206162cf1")
+	)
+	(wire (pts (xy 261.6200 236.2200) (xy 261.6200 243.8400))
+		(stroke (width 0) (type default))
+		(uuid "0af59059-cb1b-4bb2-9752-756c6f7f1e55")
+	)
+	(wire (pts (xy 261.6200 236.2200) (xy 279.4000 236.2200))
+		(stroke (width 0) (type default))
+		(uuid "566b67d8-16e2-40e6-ada3-240d95c42799")
+	)
+	(wire (pts (xy 266.7000 238.7600) (xy 266.7000 254.0000))
+		(stroke (width 0) (type default))
+		(uuid "0bc2e0d4-a30c-4a64-8dc5-7bbb668dc0a5")
+	)
+	(wire (pts (xy 266.7000 238.7600) (xy 279.4000 238.7600))
+		(stroke (width 0) (type default))
+		(uuid "060c07de-2658-4853-91d2-038f21180ab9")
+	)
+	(wire (pts (xy 274.3200 38.1000) (xy 274.3200 43.1800))
+		(stroke (width 0) (type default))
+		(uuid "a86467d4-da34-491e-a247-37b55c85ee88")
+	)
+	(wire (pts (xy 274.3200 53.3400) (xy 274.3200 81.2800))
+		(stroke (width 0) (type default))
+		(uuid "954b80b3-090f-42a8-833d-abfb0a65a30c")
+	)
+	(wire (pts (xy 274.3200 231.1400) (xy 279.4000 231.1400))
+		(stroke (width 0) (type default))
+		(uuid "94760bdc-660e-4522-a628-4b5fcf226c4b")
+	)
+	(wire (pts (xy 288.2900 160.0200) (xy 293.3700 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "6f2edc50-7c38-4933-acae-b786dd2621a9")
+	)
+	(wire (pts (xy 292.1000 68.5800) (xy 317.5000 68.5800))
+		(stroke (width 0) (type default))
+		(uuid "c0179e5f-c880-4e8b-8f84-2616a39c5cf2")
+	)
+	(wire (pts (xy 300.9900 160.0200) (xy 314.9600 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "c77bb1f1-d130-4311-acde-90e3bdb0a691")
+	)
+	(wire (pts (xy 314.9600 160.0200) (xy 314.9600 181.6100))
+		(stroke (width 0) (type default))
+		(uuid "3e0af1d9-903a-42f6-8de8-91857ebc432c")
+	)
+	(wire (pts (xy 314.9600 160.0200) (xy 325.1200 160.0200))
+		(stroke (width 0) (type default))
+		(uuid "14f5c97a-8fce-414a-b095-7bcc98e55dc5")
+	)
+	(wire (pts (xy 314.9600 189.2300) (xy 314.9600 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "16cf57cf-edb5-4b8b-b7fd-f75d62dcc606")
+	)
+	(wire (pts (xy 314.9600 200.6600) (xy 332.7400 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "d5650874-2c36-454a-b2b0-657af11f8e21")
+	)
+	(wire (pts (xy 332.7400 34.2900) (xy 332.7400 39.3700))
+		(stroke (width 0) (type default))
+		(uuid "ab9e0acb-7152-44df-856d-a69c0bfd9bba")
+	)
+	(wire (pts (xy 332.7400 46.9900) (xy 332.7400 52.0700))
+		(stroke (width 0) (type default))
+		(uuid "575b9114-db7c-4cd0-b405-6514942c6de7")
+	)
+	(wire (pts (xy 332.7400 101.6000) (xy 332.7400 125.7300))
+		(stroke (width 0) (type default))
+		(uuid "ab5f34db-5fab-4237-a9e6-2bb9ce41fb9d")
+	)
+	(wire (pts (xy 332.7400 101.6000) (xy 370.8400 101.6000))
+		(stroke (width 0) (type default))
+		(uuid "cbf5a0e5-adfe-4108-b646-bd0f7fd8197d")
+	)
+	(wire (pts (xy 332.7400 133.3500) (xy 332.7400 154.9400))
+		(stroke (width 0) (type default))
+		(uuid "345153d7-4dc1-41ab-b0c3-16d4bc1ebf12")
+	)
+	(wire (pts (xy 332.7400 133.3500) (xy 370.8400 133.3500))
+		(stroke (width 0) (type default))
+		(uuid "22b87294-6b3b-4c60-864f-2075c01ef1cd")
+	)
+	(wire (pts (xy 332.7400 165.1000) (xy 332.7400 200.6600))
+		(stroke (width 0) (type default))
+		(uuid "c986b77a-b146-4e69-9b5a-fe8140e3920f")
+	)
+	(wire (pts (xy 350.5200 68.5800) (xy 375.9200 68.5800))
+		(stroke (width 0) (type default))
+		(uuid "3ca70aba-d9e9-4a0b-ad6f-bb4b4e5519b6")
+	)
+	(wire (pts (xy 350.5200 83.8200) (xy 375.9200 83.8200))
+		(stroke (width 0) (type default))
+		(uuid "6a46b9ec-2798-49f6-9c48-21570275b594")
+	)
+	(wire (pts (xy 370.8400 101.6000) (xy 370.8400 114.3000))
+		(stroke (width 0) (type default))
+		(uuid "a611d3e8-7622-45e4-8959-680b6807a7dd")
+	)
+	(wire (pts (xy 370.8400 116.8400) (xy 370.8400 133.3500))
+		(stroke (width 0) (type default))
+		(uuid "3d7132c7-f0aa-4daa-9cd5-a3118675fb15")
+	)
+	(junction (at 66.0400 160.0200) (diameter 0) (color 0 0 0 0)
+		(uuid "f4e320ee-5764-43d1-8138-478b1e3663e2")
+	)
+	(junction (at 190.5000 160.0200) (diameter 0) (color 0 0 0 0)
+		(uuid "c285b1b5-8c5f-4004-8c98-67d791ab4769")
+	)
+	(junction (at 157.4800 48.2600) (diameter 0) (color 0 0 0 0)
+		(uuid "354068fb-8d5d-4971-bcb6-71fec5338546")
+	)
+	(junction (at 254.0000 48.2600) (diameter 0) (color 0 0 0 0)
+		(uuid "01682c35-7194-4d1d-985e-0906c7ab426e")
+	)
+	(junction (at 66.0400 60.9600) (diameter 0) (color 0 0 0 0)
+		(uuid "1100e9a5-7c3e-464b-b084-ffdd007de18b")
+	)
+	(junction (at 314.9600 160.0200) (diameter 0) (color 0 0 0 0)
+		(uuid "bc5a473d-1b3d-4c33-b1a8-1f10f5d0030b")
+	)
+	(junction (at 182.8800 48.2600) (diameter 0) (color 0 0 0 0)
+		(uuid "c915a5ed-0516-47ab-b1a0-e42e02f27d8b")
+	)
+	(junction (at 53.3400 27.9400) (diameter 0) (color 0 0 0 0)
+		(uuid "c698f54a-849a-4cbf-bd1e-3aa8009399c8")
+	)
+	(label "BAT_RAW"
+		(at 53.3400 27.9400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "de6b74bb-ebee-4d3a-ad01-b12062fb096f")
+	)
+	(hierarchical_label "BAT_RAW"
+		(shape bidirectional)
+		(at 30.4800 27.9400 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ba60631b-a56f-4afd-b99f-e27565ba0d33")
+	)
+	(label "BAT_RAW"
+		(at 55.8800 27.9400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8c0c8288-410d-4012-9d93-2426e820544f")
+	)
+	(label "ACT_BAT"
+		(at 182.8800 48.2600 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "9aa09316-6c49-421b-91a0-d1e2805a2cbd")
+	)
+	(label "ACT_ENABLE"
+		(at 59.6900 60.9600 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "cfd92408-5ff8-4664-95d6-e16927e0cae5")
+	)
+	(label "ACT_EN"
+		(at 46.9900 60.9600 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "75cdf72a-67f2-4f3d-b67a-5ce7f90b6390")
+	)
+	(label "CHARGE_ENABLE"
+		(at 274.3200 38.1000 270)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "9110fd4d-e50a-49e8-a9ec-12384c5e45af")
+	)
+	(label "ACT_EN"
+		(at 229.8700 48.2600 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "c05f34db-d490-4868-9854-caa62c45a9d0")
+	)
+	(label "ACT_nFAULT"
+		(at 332.7400 52.0700 90)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "13d2fe17-42b0-44f3-8cad-9ff14c258481")
+	)
+	(label "ACT_nFAULT"
+		(at 129.5400 55.8800 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "17b9ec18-6fb3-4324-b4d4-aa807f6c3f3d")
+	)
+	(hierarchical_label "ACT_EN"
+		(shape bidirectional)
+		(at 292.1000 68.5800 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "67328864-2ba4-4ca0-a37c-2d6097fdb438")
+	)
+	(label "ACT_EN"
+		(at 317.5000 68.5800 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "158f9bd0-e99a-4dec-9fe1-2273b8515717")
+	)
+	(hierarchical_label "ACT_nFAULT"
+		(shape bidirectional)
+		(at 350.5200 68.5800 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "c3e4bb37-993c-40d7-8858-fbfbf18244af")
+	)
+	(label "ACT_nFAULT"
+		(at 375.9200 68.5800 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "7f338e52-91e4-489e-aeff-31d7c962e31a")
+	)
+	(hierarchical_label "CHARGE_ENABLE"
+		(shape bidirectional)
+		(at 350.5200 83.8200 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "79fd2628-cc3f-47de-911a-767d43c81ab3")
+	)
+	(label "CHARGE_ENABLE"
+		(at 375.9200 83.8200 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "6f455e5c-9a0b-459a-8848-736fbcc03ec5")
+	)
+	(label "SOL1_LOW"
+		(at 121.9200 133.3500 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "34cd7475-9a18-4553-a985-acd43fc548eb")
+	)
+	(label "ACT_BAT"
+		(at 83.8200 101.6000 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "906541ca-d422-459d-8734-486249e08169")
+	)
+	(hierarchical_label "SOL1_PWM"
+		(shape input)
+		(at 39.3700 160.0200 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "ffcbf2a9-1b9f-49da-beb0-4db1b3eb1f97")
+	)
+	(label "SOL2_LOW"
+		(at 246.3800 133.3500 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "33d16551-4f8d-4de2-857e-f93b2330acf4")
+	)
+	(label "ACT_BAT"
+		(at 208.2800 101.6000 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ce938258-0426-4765-a3e6-3d0c5ef36c12")
+	)
+	(hierarchical_label "SOL2_PWM"
+		(shape input)
+		(at 163.8300 160.0200 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "51d76879-8c25-461e-88b4-0de2b5b9c203")
+	)
+	(label "BUZZ_LOW"
+		(at 370.8400 133.3500 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8f4c9976-9803-43df-9a19-6eae6d860bf0")
+	)
+	(label "ACT_BAT"
+		(at 332.7400 101.6000 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "2a4c2561-6fac-42b2-8b39-a015cec46d56")
+	)
+	(hierarchical_label "BUZZ_PWM"
+		(shape input)
+		(at 288.2900 160.0200 180)
+		(effects (font (size 1.27 1.27)) (justify right))
+		(uuid "b0980eaf-4331-4500-883b-f3790b2cd21d")
+	)
+	(label "SOL1_PWM"
+		(at 199.3900 233.6800 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "bd8dacb7-546a-4466-bc04-19ea1195d1de")
+	)
+	(label "SOL1_PWM_EXT"
+		(at 212.0900 233.6800 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "aee98936-8891-4794-b944-bc03aae4f2df")
+	)
+	(label "SOL2_PWM"
+		(at 199.3900 243.8400 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "9a44659d-a0bf-4e37-a804-884827762d5a")
+	)
+	(label "SOL2_PWM_EXT"
+		(at 212.0900 243.8400 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "abf7c922-cd0d-4872-bf27-5abc76f16eee")
+	)
+	(label "BUZZ_PWM"
+		(at 199.3900 254.0000 180)
+		(effects (font (size 1.27 1.27)) (justify right bottom))
+		(uuid "57761c15-4d0b-444b-961a-fd4f3323e786")
+	)
+	(label "BUZZ_PWM_EXT"
+		(at 212.0900 254.0000 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "dcbfe208-73ee-4d76-833c-b8bf263a2299")
+	)
+	(text "1S BATTERY ACTUATORS: 1A/channel target; 1.3A operating bank budget including buzzer.\nU13 fast electronic current limit (~1.54A nominal); no one-time fuse. Protected battery pack required upstream."
+		(exclude_from_sim no)
+		(at 20.32 17.78 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "d5e3ea98-5979-4f2e-807b-e5aaad203c75")
+	)
+	(text "Q5 opens the charger PROG return via Q6 while ACT_EN is high.\nCharging pauses during actuation; R53 defaults the bank OFF."
+		(exclude_from_sim no)
+		(at 233.68 17.78 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "ff087a76-4c4d-4f87-980b-4e99b902c5ad")
+	)
+	(text "ILM: 1k + 330R = 1.33k. dVdt: 100nF (~10ms at 4.2V).\nFLT is thermal fault, not an instant short interrupt; firmware must latch OFF.\nKeep C47 at IN and D23 at OUT. Battery input harness <=10cm target."
+		(exclude_from_sim no)
+		(at 149.86 81.28 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "6cc55168-8290-40fb-999c-b1d334c756e1")
+	)
+	(text "ZXMS6005: 1 IN / 2+tab D / 3 S\n330R input; 100k OFF bias; B360A flyback.\nTimed strike -> 500Hz hold PWM."
+		(exclude_from_sim no)
+		(at 30.48 213.36 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "be3123ba-eade-4253-800a-1af885bf97df")
+	)
+	(text "ZXMS6005: 1 IN / 2+tab D / 3 S\n330R input; 100k OFF bias; B360A flyback.\nTimed strike -> 500Hz hold PWM."
+		(exclude_from_sim no)
+		(at 154.94 213.36 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "1ab48226-04a5-4fc2-b750-33e9bf69d1a3")
+	)
+	(text "ZXMS6005: 1 IN / 2+tab D / 3 S\n330R input; 100k OFF bias; B360A flyback.\n1S-rated active buzzer; ON/OFF."
+		(exclude_from_sim no)
+		(at 279.40 213.36 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "49054cdf-5cf3-4b86-837d-482aecabc0fd")
+	)
+	(text "J19: 1 GND / 2 SOL1 / 3 SOL2 / 4 BUZZ. 3.3V logic ONLY.\nExternal 12V booster+driver must provide its own power and flyback.\nHigh-impedance inputs only; shared GND; no 5V/12V pull-ups.\nJ19 follows MCU PWM even with ACT_EN low. Firmware + calibration pending.\nUse short internal harnesses; no hot-plug or external ESD qualification."
+		(exclude_from_sim no)
+		(at 25.40 246.38 0)
+		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
+		(uuid "35f8d37c-e2c7-45a1-890b-682334ca5c3c")
+	)
+	(sheet_instances
+		(path "/"
+			(page "6")
+		)
+	)
+	(embedded_fonts no)
+)

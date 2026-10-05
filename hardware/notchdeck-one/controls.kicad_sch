@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "NotchDeck One — Controls and indicators")
-		(date "2026-10-03")
-		(rev "E")
+		(date "2026-10-04")
+		(rev "F")
 		(company "BenchBits")
 	)
 	(lib_symbols
@@ -1899,12 +1899,12 @@
 			(at 45.7200 55.8800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "32d6b33a-5723-4d04-82d9-3e560d34f468"))
-		(pin "2" (uuid "898e826f-15a1-4879-83ee-8e47638d7ebf"))
-		(pin "3" (uuid "c2e1923d-c827-4a88-8898-72c8bdc94786"))
-		(pin "4" (uuid "cc5b37eb-9d5a-47ab-a5e1-2d84dedf7a72"))
-		(pin "5" (uuid "e2b3f816-9598-4707-91d6-70e3326c73ce"))
-		(pin "6" (uuid "bb1e14ec-cd50-444e-bd8a-4b4a014212a8"))
+		(pin "1" (uuid "a0bccc70-e9d2-4672-bacc-7ee1eb3f506f"))
+		(pin "2" (uuid "f121825a-cf1b-4dc9-8b42-48768c3c9565"))
+		(pin "3" (uuid "acd887d3-c3eb-4fbb-af4a-6e5ee06cb180"))
+		(pin "4" (uuid "8ee8ae98-49ff-4989-81e5-ad611e488b6e"))
+		(pin "5" (uuid "4b1c9eb4-6c39-415d-b022-aa5acc94cc7d"))
+		(pin "6" (uuid "f36ec101-8dff-4dff-a656-d6c6011898ab"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -1963,12 +1963,12 @@
 			(at 119.3800 60.9600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4334288a-14cb-4728-8113-e1daa47a7f36"))
-		(pin "2" (uuid "081dbfb5-36b7-4368-b8eb-afbc543763b3"))
-		(pin "3" (uuid "75f36583-b94d-482f-a1fc-4833ed25e6d7"))
-		(pin "4" (uuid "5245880a-0a9a-4b59-966d-f46a02f40bc0"))
-		(pin "5" (uuid "50cd547e-08ec-47c2-bb27-366c8c167789"))
-		(pin "6" (uuid "4d067fa3-6bdc-4e32-bfbe-7209c03da902"))
+		(pin "1" (uuid "20df0145-bfb4-49a0-9eb5-81e78572753d"))
+		(pin "2" (uuid "22d04804-5b25-47ad-a27a-7579c97a404f"))
+		(pin "3" (uuid "32f2ccdb-ab8c-4eb9-931b-02adb59ec085"))
+		(pin "4" (uuid "a5af40fb-bb7d-4c1e-8021-930e9424e9a7"))
+		(pin "5" (uuid "11df87fb-2a01-475a-8b6b-a56a4e1e9955"))
+		(pin "6" (uuid "a6dbbb90-934c-46e3-a9f0-de67d8790d73"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2003,7 +2003,7 @@
 			(at 119.3800 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2648ea08-a2cc-4f2a-b472-074ee0e12e7a"))
+		(pin "1" (uuid "fca249ca-790e-44d8-9f63-9358e5f6f95b"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2038,7 +2038,7 @@
 			(at 119.3800 73.6600 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2d2cfd04-3e08-46a4-bd86-d95532f8e207"))
+		(pin "1" (uuid "8e55422a-88d6-43e3-aad3-f306afe3d23d"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2097,8 +2097,8 @@
 			(at 195.5800 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d6a20e96-74a5-448e-9baa-a6e2cd2f89eb"))
-		(pin "2" (uuid "3271196f-d93f-4b8e-be9e-832534e5fcee"))
+		(pin "1" (uuid "89ab2328-c108-43b2-a151-d89dbc858663"))
+		(pin "2" (uuid "d8c02a7a-f4cb-4c60-a638-bdb388882f19"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2133,7 +2133,7 @@
 			(at 195.5800 41.9100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "8b039b65-b2cc-4278-9322-8d05f9548831"))
+		(pin "1" (uuid "8d79864e-ffa2-4197-bd77-6876f4c89cb5"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2192,8 +2192,8 @@
 			(at 231.1400 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "afb78c39-a1a4-4d02-99c3-94ef9ef6efe8"))
-		(pin "2" (uuid "b8515cc1-4492-4126-b79f-d2690b8382a3"))
+		(pin "1" (uuid "95d8c862-ec15-4717-8f37-8965fb2b7d20"))
+		(pin "2" (uuid "6a46e00b-bd17-4657-a4ea-2de0c3348fd0"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2228,7 +2228,7 @@
 			(at 231.1400 41.9100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "ef348190-e8dc-4634-bb6f-bd4cbf1099ae"))
+		(pin "1" (uuid "83c8b909-bd06-4967-bd3e-622f6817f4c0"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2263,7 +2263,7 @@
 			(at 231.1400 59.6900 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "28004451-a4a9-4573-8ad4-746571aa23f4"))
+		(pin "1" (uuid "0e9d5578-b708-428d-9a6a-01ff42074331"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2322,8 +2322,8 @@
 			(at 63.5000 127.0000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4bd526bd-c5d9-470c-a247-c269052e421b"))
-		(pin "2" (uuid "ae31a06a-7e29-40df-abf0-ed6a290b2e98"))
+		(pin "1" (uuid "2c9c9e7f-c5b1-4691-946a-1eacae9c7dae"))
+		(pin "2" (uuid "bf5685c0-b54d-44e8-a90a-04b3fbff698c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2358,7 +2358,7 @@
 			(at 73.6600 127.0000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fd770c8b-859b-4a93-8308-d8fd79bafb09"))
+		(pin "1" (uuid "10c4e07d-7dcb-4480-96f0-f5760c1005d1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2417,8 +2417,8 @@
 			(at 147.3200 127.0000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "b4e34ef6-9d26-4f61-8e54-b2e9492a72be"))
-		(pin "2" (uuid "027b1f33-635c-46e5-8ff1-80812a730827"))
+		(pin "1" (uuid "20d4d96a-8ada-4d2e-962b-85083eec3633"))
+		(pin "2" (uuid "2395945b-0114-4254-aeed-cbdcebdb9121"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2453,7 +2453,7 @@
 			(at 157.4800 127.0000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1a1fe572-84f5-441b-b4dd-5acf67359474"))
+		(pin "1" (uuid "8444ed11-681d-40b8-9554-cfd65bedb7d1"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2512,9 +2512,9 @@
 			(at 353.0600 43.1800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "8eacf04a-894e-4bf0-86c7-7275dc1623a0"))
-		(pin "2" (uuid "15d810a0-f1a0-4b63-9334-bc8df714ba89"))
-		(pin "3" (uuid "eaf79140-35eb-40cc-a4b3-fa54931ef23b"))
+		(pin "1" (uuid "6a8f6fbc-8fe8-478b-9a4d-5de53c7cdd98"))
+		(pin "2" (uuid "3e3e6be2-9bc4-428a-8cd6-3e3c92dc6af3"))
+		(pin "3" (uuid "bd158bcd-ea3a-4513-9a4a-376977cb2403"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2549,7 +2549,7 @@
 			(at 342.9000 40.6400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "abd375ba-17b9-4dcc-a39b-91bb015badd1"))
+		(pin "1" (uuid "b4695980-4275-4905-93cf-a4391587ac01"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2584,7 +2584,7 @@
 			(at 342.9000 45.7200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "fa3c80e3-4eba-4377-bf80-bc9827667a87"))
+		(pin "1" (uuid "3eeda306-77ba-4ee3-af82-3ebc69771914"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2643,8 +2643,8 @@
 			(at 304.8000 50.8000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "a14e8daf-c267-45db-8aa1-bf5342e7a7fa"))
-		(pin "2" (uuid "0503c485-8149-4eab-bc17-4d7da67ff68a"))
+		(pin "1" (uuid "0f29ee54-70f0-41d0-9d55-4566c4e0d6dd"))
+		(pin "2" (uuid "c505083f-3bb6-4c43-a450-c7004d0ff1d2"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2703,8 +2703,8 @@
 			(at 304.8000 81.2800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "f28edb7f-5cdf-4ca0-a154-a3c1e2ddc216"))
-		(pin "2" (uuid "83f979b3-a520-49cb-86fc-7a7c6a9616b0"))
+		(pin "1" (uuid "f62b7eaa-2319-48e2-a62f-89dd326d2a7d"))
+		(pin "2" (uuid "ea77f49e-6342-42fb-bb55-c73e7a449d1a"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2763,8 +2763,8 @@
 			(at 337.8200 66.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "e84190ce-1898-4dcb-aba2-9a233c017609"))
-		(pin "2" (uuid "2322ea19-435c-428b-ab80-fc07e42e1d15"))
+		(pin "1" (uuid "ab7505e1-4db0-48f6-8544-f5707f091677"))
+		(pin "2" (uuid "27cf6845-f9bc-4fb9-9a20-91c9c93906fc"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2823,8 +2823,8 @@
 			(at 370.8400 83.8200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d274c9e7-34a3-46c6-98af-b6991059a19e"))
-		(pin "2" (uuid "b41a0dd2-1395-4a4b-809f-566c0d90cb31"))
+		(pin "1" (uuid "371c243d-f7c5-45f2-b71c-7640b03f0192"))
+		(pin "2" (uuid "1e44c836-4981-4abf-8f09-91e344b6817c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2859,7 +2859,7 @@
 			(at 304.8000 41.9100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "25cc5f6e-32d8-4e09-945f-41baeef31506"))
+		(pin "1" (uuid "1b7876c7-9332-42ed-8e28-650b5d99a6a4"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2894,7 +2894,7 @@
 			(at 304.8000 90.1700 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "35c3e76e-889c-4a56-859b-8e09c5cd4b15"))
+		(pin "1" (uuid "75d5a50d-0aec-4b3f-8fa6-e23704a470d5"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2929,7 +2929,7 @@
 			(at 370.8400 92.7100 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "87a095e0-1a7c-4d8a-b011-bb704833d3f8"))
+		(pin "1" (uuid "7dcef703-7535-4437-800e-f760b5f47ff9"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -2988,8 +2988,8 @@
 			(at 378.4600 147.3200 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "d7947ca8-f3b6-42f0-a8a8-4aa6b46ada7c"))
-		(pin "2" (uuid "10b837f1-42d4-4cf0-825b-770da745ca73"))
+		(pin "1" (uuid "05d3c67c-e88a-4e67-a7e9-00cc4c582f47"))
+		(pin "2" (uuid "94b832df-d98b-4e3e-8541-066eb399e343"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3048,8 +3048,8 @@
 			(at 378.4600 157.4800 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4b8f59e8-f7bb-46eb-b95a-c1e4d1c09d5a"))
-		(pin "2" (uuid "4bb7b0a8-244d-4e47-8dd3-dd737bcd9706"))
+		(pin "1" (uuid "ba491339-df9c-459b-bb8d-0ee27deae26f"))
+		(pin "2" (uuid "498e64de-9621-4120-8b0f-06cfb3ecae9f"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3084,7 +3084,7 @@
 			(at 378.4600 138.4300 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "2433a82e-2a6b-4053-b031-bf34bdd4221e"))
+		(pin "1" (uuid "9b4b2047-99f1-435e-979e-abecfb83689c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3143,8 +3143,8 @@
 			(at 378.4600 193.0400 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "4700b955-f56f-4f64-8b80-ed9aa16c2e3c"))
-		(pin "2" (uuid "1553660c-a868-4ed5-aab9-a7225b0b9402"))
+		(pin "1" (uuid "f6772f90-f065-4053-990f-489198896e03"))
+		(pin "2" (uuid "1ab1966f-21fc-467d-9bed-f5b2a2af3cb8"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3203,8 +3203,8 @@
 			(at 378.4600 203.2000 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "ddb77035-714e-4e5e-8780-c15db6834525"))
-		(pin "2" (uuid "2f6963b6-de6e-46b3-946d-6d73a6a9651f"))
+		(pin "1" (uuid "bb207b45-7e9c-4f1f-b7ef-e15b165f4717"))
+		(pin "2" (uuid "aa35c0d8-ece8-43ca-8325-1bada017472c"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3239,7 +3239,7 @@
 			(at 378.4600 184.1500 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "1da4a4bb-205a-4066-85e5-20ba248dfd59"))
+		(pin "1" (uuid "f163e8c2-d6a6-4deb-ba1e-fbc2813c6bc7"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3274,7 +3274,7 @@
 			(at 378.4600 166.3700 0)
 			(effects (font (size 1.27 1.27))) (hide yes)
 		)
-		(pin "1" (uuid "74550f4b-e89b-444a-8c15-fa304ce0bfa9"))
+		(pin "1" (uuid "956d7428-6c1d-4885-9c66-8221741dcb27"))
 		(instances
 			(project "notchdeck-one"
 				(path "/9b1c0f7a-1d2e-4a3b-8c5d-0e6f7a8b9c01/d0f07d24-fa67-434c-83d8-dc7502ce5528"
@@ -3286,372 +3286,372 @@
 	)
 	(wire (pts (xy 50.8000 48.2600) (xy 55.8800 48.2600))
 		(stroke (width 0) (type default))
-		(uuid "950fb759-142d-49fa-bd11-21eab7a00ba3")
+		(uuid "5eb3e271-b081-48c0-a157-13568ff66270")
 	)
 	(wire (pts (xy 50.8000 50.8000) (xy 55.8800 50.8000))
 		(stroke (width 0) (type default))
-		(uuid "4262ace3-2690-47d0-9de6-2fe3c6302bcc")
+		(uuid "47cc86d9-daaf-4d1a-be11-1cd3bcf511a5")
 	)
 	(wire (pts (xy 50.8000 53.3400) (xy 55.8800 53.3400))
 		(stroke (width 0) (type default))
-		(uuid "5c4fcabf-aa60-4fbf-9aa2-f1c232d0c491")
+		(uuid "aa5a9562-c5b9-460f-8503-325280a04007")
 	)
 	(wire (pts (xy 50.8000 55.8800) (xy 55.8800 55.8800))
 		(stroke (width 0) (type default))
-		(uuid "f8705301-6c8a-464b-800a-0ef91aa1e749")
+		(uuid "1105db24-9c73-494b-ad70-376f91b26196")
 	)
 	(wire (pts (xy 50.8000 58.4200) (xy 55.8800 58.4200))
 		(stroke (width 0) (type default))
-		(uuid "e4401057-24dc-4221-8ae4-b72435d3366c")
+		(uuid "a5325a33-c641-4375-8baa-26e28325ba0d")
 	)
 	(wire (pts (xy 50.8000 60.9600) (xy 55.8800 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "a7a7cd50-d15e-4a52-a569-6f6b0ba000fe")
+		(uuid "141cc257-1443-487e-ad50-4d33e4fbc543")
 	)
 	(wire (pts (xy 50.8000 177.8000) (xy 76.2000 177.8000))
 		(stroke (width 0) (type default))
-		(uuid "d4b89e98-f667-4980-b0af-8b8756f45fab")
+		(uuid "2abaa813-8cc3-4a68-817e-82aac458e170")
 	)
 	(wire (pts (xy 53.3400 127.0000) (xy 58.4200 127.0000))
 		(stroke (width 0) (type default))
-		(uuid "a4a4fae3-9a83-4702-86fe-2647d8b8069a")
+		(uuid "4273b58f-d92b-41f8-8c85-2e850efb28d2")
 	)
 	(wire (pts (xy 68.5800 127.0000) (xy 73.6600 127.0000))
 		(stroke (width 0) (type default))
-		(uuid "440352cb-aff4-4d48-8ceb-3e01d308b946")
+		(uuid "26c9ac2d-e74a-4751-8062-747926b35497")
 	)
 	(wire (pts (xy 109.2200 60.9600) (xy 114.3000 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "ae048aa9-50a2-49ed-ba45-710f947a6ad3")
+		(uuid "d2e79db9-1394-4525-a848-200934082029")
 	)
 	(wire (pts (xy 109.2200 63.5000) (xy 114.3000 63.5000))
 		(stroke (width 0) (type default))
-		(uuid "b71235b7-f879-490f-aa51-1e6d0c45264b")
+		(uuid "2df1f338-eedf-45d6-84b4-54a45ef03b62")
 	)
 	(wire (pts (xy 116.8400 177.8000) (xy 142.2400 177.8000))
 		(stroke (width 0) (type default))
-		(uuid "fd2501e1-94b2-4544-b501-7e05c6bd8c42")
+		(uuid "f97140c0-e267-4082-bc1c-ae0d53cf814c")
 	)
 	(wire (pts (xy 119.3800 50.8000) (xy 119.3800 55.8800))
 		(stroke (width 0) (type default))
-		(uuid "420451e2-0da0-4410-84a7-5b37aea8bc82")
+		(uuid "c1018720-48e5-4d0d-bbf1-cdeae979a372")
 	)
 	(wire (pts (xy 119.3800 68.5800) (xy 119.3800 73.6600))
 		(stroke (width 0) (type default))
-		(uuid "a1620a5a-7f1c-4182-8a24-ab070664f9ad")
+		(uuid "995b1c78-cb57-45d8-80f1-656ead2b23e7")
 	)
 	(wire (pts (xy 124.4600 60.9600) (xy 129.5400 60.9600))
 		(stroke (width 0) (type default))
-		(uuid "9cf41f9e-cc87-4712-8b0b-90e9acafc3e6")
+		(uuid "150143e4-22f6-4736-89ee-fbb9d02895f6")
 	)
 	(wire (pts (xy 124.4600 63.5000) (xy 129.5400 63.5000))
 		(stroke (width 0) (type default))
-		(uuid "18b33e72-4243-4e72-804d-f4602301d380")
+		(uuid "0bee59ec-7d69-446c-be5c-c5e3343e29c8")
 	)
 	(wire (pts (xy 137.1600 127.0000) (xy 142.2400 127.0000))
 		(stroke (width 0) (type default))
-		(uuid "ca257179-6db6-4175-bbb9-6c1d20f3a6e1")
+		(uuid "86e367a4-9a74-49fb-8b8b-05736a5a3537")
 	)
 	(wire (pts (xy 152.4000 127.0000) (xy 157.4800 127.0000))
 		(stroke (width 0) (type default))
-		(uuid "2a36358d-0598-422b-a31e-5f6aa731981e")
+		(uuid "e59e8756-1d01-42b5-90be-8604550c0bd4")
 	)
 	(wire (pts (xy 182.8800 177.8000) (xy 208.2800 177.8000))
 		(stroke (width 0) (type default))
-		(uuid "a6059098-f330-45f5-9627-32be271876a9")
+		(uuid "76fd9f11-802c-4cec-915b-6b9c9c2e3d81")
 	)
 	(wire (pts (xy 195.5800 41.9100) (xy 195.5800 46.9900))
 		(stroke (width 0) (type default))
-		(uuid "339ecdf8-548a-4af0-8655-9a65bb86a6a0")
+		(uuid "f3c112a4-0cb5-4764-8406-6066030b06a7")
 	)
 	(wire (pts (xy 195.5800 54.6100) (xy 195.5800 59.6900))
 		(stroke (width 0) (type default))
-		(uuid "b3b5e2f1-f074-4a6a-be7d-5be28c41ccf9")
+		(uuid "5ffc6354-1665-48df-96e3-940a2b96b4fe")
 	)
 	(wire (pts (xy 231.1400 41.9100) (xy 231.1400 46.9900))
 		(stroke (width 0) (type default))
-		(uuid "93f96f94-10f7-4c9d-a93d-1fd0d65bf39b")
+		(uuid "6e45d126-f79d-4b67-87d1-e1c397bf2b01")
 	)
 	(wire (pts (xy 231.1400 54.6100) (xy 231.1400 59.6900))
 		(stroke (width 0) (type default))
-		(uuid "a02e3c19-b64d-4881-976b-6d2d66599b4b")
+		(uuid "de3d5d76-339c-4f69-8447-9eb6d53ec076")
 	)
 	(wire (pts (xy 248.9200 177.8000) (xy 274.3200 177.8000))
 		(stroke (width 0) (type default))
-		(uuid "404d888b-2a4e-45b9-accc-24b5f9050226")
+		(uuid "442f6cd5-c8bd-4d3d-be4b-58709a7fb531")
 	)
 	(wire (pts (xy 304.8000 41.9100) (xy 304.8000 46.9900))
 		(stroke (width 0) (type default))
-		(uuid "90707259-5151-4b6f-b704-2f959e30f379")
+		(uuid "bf50d1f0-2abd-4848-a679-8abc62a97d17")
 	)
 	(wire (pts (xy 304.8000 54.6100) (xy 304.8000 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "0ed15353-6565-4122-8be4-7f728fef75f7")
+		(uuid "69abdec2-6fef-437b-b949-b24b1f7a0783")
 	)
 	(wire (pts (xy 304.8000 66.0400) (xy 304.8000 77.4700))
 		(stroke (width 0) (type default))
-		(uuid "df5742ec-627d-45c2-bf0e-3452dd65be1d")
+		(uuid "818b19b3-fbc3-4567-b1cb-53f435143a29")
 	)
 	(wire (pts (xy 304.8000 66.0400) (xy 317.5000 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "3f484138-13ef-4cd3-af53-7b0efb2747ec")
+		(uuid "7b31031e-2133-4026-b07e-e0eb7ec9966f")
 	)
 	(wire (pts (xy 304.8000 85.0900) (xy 304.8000 90.1700))
 		(stroke (width 0) (type default))
-		(uuid "48b7f3a3-72dc-4940-bf37-534df9cde464")
+		(uuid "ea1b8873-7df3-4aeb-87d8-f24dc30ecb8c")
 	)
 	(wire (pts (xy 314.9600 177.8000) (xy 340.3600 177.8000))
 		(stroke (width 0) (type default))
-		(uuid "85255141-0474-4384-836a-3a8f6efcf553")
+		(uuid "9cb5c4b6-f1d6-4b59-91b9-97ab17ce02ca")
 	)
 	(wire (pts (xy 317.5000 43.1800) (xy 317.5000 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "eee7fde8-516e-4b44-b47f-47f9776ee324")
+		(uuid "62e40ca4-82f9-4cbc-b311-67a4d758546b")
 	)
 	(wire (pts (xy 317.5000 43.1800) (xy 347.9800 43.1800))
 		(stroke (width 0) (type default))
-		(uuid "9acaf8bf-156e-40b9-99d6-073a3d122935")
+		(uuid "f3dccaeb-4bdf-48f8-9af9-79ce854b3f0d")
 	)
 	(wire (pts (xy 317.5000 66.0400) (xy 334.0100 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "0cb976f9-c58d-4a38-bda4-5f93a7f39e06")
+		(uuid "a732dc82-7b51-4134-b0d8-a7f570096847")
 	)
 	(wire (pts (xy 320.0400 109.2200) (xy 345.4400 109.2200))
 		(stroke (width 0) (type default))
-		(uuid "47e8fb74-b4fd-44e5-808e-f4656f41a320")
+		(uuid "1c6789b6-4b1d-47dc-9233-cc171ec1ddf2")
 	)
 	(wire (pts (xy 340.3600 208.2800) (xy 365.7600 208.2800))
 		(stroke (width 0) (type default))
-		(uuid "04c0cbc6-f94d-4d65-92eb-03f5a080b5e9")
+		(uuid "04aa3f8a-bb42-4026-b0f3-1c4f0fdfef8c")
 	)
 	(wire (pts (xy 341.6300 66.0400) (xy 370.8400 66.0400))
 		(stroke (width 0) (type default))
-		(uuid "792cee08-53f8-422e-bd34-22bb0b902e48")
+		(uuid "4a5993d2-c0fa-48fc-a2eb-1f5af6e733a0")
 	)
 	(wire (pts (xy 342.9000 40.6400) (xy 347.9800 40.6400))
 		(stroke (width 0) (type default))
-		(uuid "25a1ed36-2bac-4ba9-9050-9a8dd4690b02")
+		(uuid "6edc6357-db6c-421a-a447-59438cf4b6c5")
 	)
 	(wire (pts (xy 342.9000 45.7200) (xy 347.9800 45.7200))
 		(stroke (width 0) (type default))
-		(uuid "260623b9-7319-4077-afb6-17a1ec8a74d9")
+		(uuid "a3738de4-d4b3-46cf-8831-1c214f7de361")
 	)
 	(wire (pts (xy 345.4400 243.8400) (xy 370.8400 243.8400))
 		(stroke (width 0) (type default))
-		(uuid "1b90d6e7-352c-4c08-890f-2e19e495a1da")
+		(uuid "75bf8b98-ab40-4197-9d28-445ef9ef053a")
 	)
 	(wire (pts (xy 370.8400 66.0400) (xy 370.8400 80.0100))
 		(stroke (width 0) (type default))
-		(uuid "c65af8c9-6dc1-4f3e-a3bf-31dcb6145573")
+		(uuid "f71133f5-2eff-47ad-ae71-dab0ead4905a")
 	)
 	(wire (pts (xy 370.8400 87.6300) (xy 370.8400 92.7100))
 		(stroke (width 0) (type default))
-		(uuid "9b032951-9381-4bfc-890a-b49323d1d890")
+		(uuid "769fd43a-844c-4775-8acf-151ec1472c86")
 	)
 	(wire (pts (xy 378.4600 138.4300) (xy 378.4600 143.5100))
 		(stroke (width 0) (type default))
-		(uuid "68c21965-b0b7-478b-934b-64ec33c83040")
+		(uuid "89559403-4031-4bcb-85c3-82d9cab933dc")
 	)
 	(wire (pts (xy 378.4600 151.1300) (xy 378.4600 153.6700))
 		(stroke (width 0) (type default))
-		(uuid "ed1cf783-3232-4cc4-aae3-446cf4125e38")
+		(uuid "7dd1b641-fc88-4960-9a3a-6f1c6f4d080d")
 	)
 	(wire (pts (xy 378.4600 161.2900) (xy 378.4600 166.3700))
 		(stroke (width 0) (type default))
-		(uuid "4a8e0ab8-5a92-4c0e-9f26-b5d812192976")
+		(uuid "ef53f28c-b4b2-47b7-b6e8-51b3ef93e80a")
 	)
 	(wire (pts (xy 378.4600 184.1500) (xy 378.4600 189.2300))
 		(stroke (width 0) (type default))
-		(uuid "1b548cb1-ac46-40e0-b266-c445e58c8ee4")
+		(uuid "9a6737bd-2d12-460d-b1a5-cfcfe0c87ec2")
 	)
 	(wire (pts (xy 378.4600 196.8500) (xy 378.4600 199.3900))
 		(stroke (width 0) (type default))
-		(uuid "760afd00-2d27-4dce-9906-6277c11fca6f")
+		(uuid "fe234b68-87d8-4f6f-88a4-af1c8dc5fa72")
 	)
 	(wire (pts (xy 378.4600 207.0100) (xy 378.4600 212.0900))
 		(stroke (width 0) (type default))
-		(uuid "6d423b16-f62d-424d-b939-cffa55312a65")
+		(uuid "2186273b-dcba-44a2-8b60-322ab12b354f")
 	)
 	(junction (at 304.8000 66.0400) (diameter 0) (color 0 0 0 0)
-		(uuid "f4cfe790-4926-47ab-9129-9c0070261da5")
+		(uuid "d338f7ec-ddd1-4f33-b2f8-6729e0cb2422")
 	)
 	(junction (at 317.5000 66.0400) (diameter 0) (color 0 0 0 0)
-		(uuid "75bca74f-ba15-4636-a4aa-2e67d5a5b5e5")
+		(uuid "911057e5-217a-48f9-aa3e-845749b85f31")
 	)
 	(label "GND"
 		(at 55.8800 60.9600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "b31aad2d-dbf6-48da-8067-ab7cd511b52b")
+		(uuid "9e7f1aa3-6e01-4893-802b-108c42b3c151")
 	)
 	(label "+3V3"
 		(at 55.8800 58.4200 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "adab4630-f00a-401c-afa0-ec1a1b59f2a9")
+		(uuid "9f8e2388-fd44-4b53-9cec-d19c073d9534")
 	)
 	(label "I2C0_SDA"
 		(at 55.8800 55.8800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "265ed239-36e1-49fb-8573-4087162a5b47")
+		(uuid "61c91371-a31e-40eb-9e19-3da9de49d9e3")
 	)
 	(label "I2C0_SCL"
 		(at 55.8800 53.3400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "cd4315e0-51ee-4c70-948b-bb6a506e33fb")
+		(uuid "2e89cf99-2fd1-41d4-a847-ff1ee06388b5")
 	)
 	(label "PANEL_INT"
 		(at 55.8800 50.8000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "d4b62ddc-2837-4972-a3e0-a82ff8ac3ffc")
+		(uuid "2a7f3933-0c9d-490e-a755-0b1ed3ed56f0")
 	)
 	(label "USB_VBUS"
 		(at 55.8800 48.2600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "ea97a589-5cd0-4f1c-a227-3dc9ba3a5a03")
+		(uuid "75acf6d6-62ff-449d-8bdc-7033aef76572")
 	)
 	(label "I2C0_SDA"
 		(at 109.2200 60.9600 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "e34d0b4a-b0ce-441e-9e62-709fce25e875")
+		(uuid "dcefb2d0-39f7-45e1-9748-6192f8390e5c")
 	)
 	(label "I2C0_SDA"
 		(at 129.5400 60.9600 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "c620dccb-f5dd-424f-b994-bd8c705c4419")
+		(uuid "da415af8-8feb-40a2-8ca1-130965d049fb")
 	)
 	(label "I2C0_SCL"
 		(at 109.2200 63.5000 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "62dfcc02-3bbc-421f-9543-2cfd6137326c")
+		(uuid "2c921b09-8559-4278-80ef-21add28b41d8")
 	)
 	(label "I2C0_SCL"
 		(at 129.5400 63.5000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "b088a654-9031-4783-b082-5e91c3a33b7c")
+		(uuid "f20ffe54-4226-4fcb-90c1-ea959f16c994")
 	)
 	(label "PANEL_INT"
 		(at 195.5800 59.6900 90)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "6cdee329-5739-43a6-8e21-ce7710baba3e")
+		(uuid "195ef8dd-5344-4dba-8df1-465380336603")
 	)
 	(label "BTN7"
 		(at 53.3400 127.0000 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "4d31218f-91c4-4f43-b842-efaabf22ae1c")
+		(uuid "892e3330-5f26-48c8-9f25-fd8cf298fae9")
 	)
 	(label "BTN8"
 		(at 137.1600 127.0000 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "b9f2ee4d-7f62-4fe9-9bc6-707f128f8fc6")
+		(uuid "facc7f29-1d1d-48a2-bed1-caa59bb20872")
 	)
 	(hierarchical_label "PANEL_INT"
 		(shape bidirectional)
 		(at 50.8000 177.8000 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "31472980-49a3-4b5f-a556-7d241856f909")
+		(uuid "310a7b98-8a1c-4ea9-9f02-d78a2ab44a2b")
 	)
 	(label "PANEL_INT"
 		(at 76.2000 177.8000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "7da8f289-a3a2-43e8-a82c-046afbe38515")
+		(uuid "aa27d50b-b5b2-4555-92b5-f6b02995293f")
 	)
 	(hierarchical_label "BTN7"
 		(shape bidirectional)
 		(at 116.8400 177.8000 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "19b675b3-fd76-40de-aef7-025ec89fda78")
+		(uuid "cce84662-1b8c-43a7-ad4f-a4fb164ff305")
 	)
 	(label "BTN7"
 		(at 142.2400 177.8000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "c6b9bfb1-e042-4f84-8b88-f243e2254e8d")
+		(uuid "8f5b1b6c-b890-49f7-87e0-59e06fabb901")
 	)
 	(hierarchical_label "BTN8"
 		(shape bidirectional)
 		(at 182.8800 177.8000 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "36e9eb1b-4e23-4099-926b-69247c7e8396")
+		(uuid "a78ba7b6-0396-4525-bdbb-f2b4e1617442")
 	)
 	(label "BTN8"
 		(at 208.2800 177.8000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "3c34af2f-61df-4d97-b909-c5e94e23f429")
+		(uuid "db832b1c-f8c8-4c56-b45a-62a7de4d99a8")
 	)
 	(hierarchical_label "I2C0_SDA"
 		(shape bidirectional)
 		(at 248.9200 177.8000 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "ee2e349e-2dfa-4432-a9fc-aaa20ec1bb5d")
+		(uuid "2762fb66-8353-431c-adff-683b8eaab92e")
 	)
 	(label "I2C0_SDA"
 		(at 274.3200 177.8000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "92f4bc32-1c6e-48e6-802d-9ec085ed5912")
+		(uuid "f4a00fa6-5570-474e-b911-efbfdffa16ac")
 	)
 	(hierarchical_label "I2C0_SCL"
 		(shape bidirectional)
 		(at 314.9600 177.8000 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "88ba3500-bfe7-4c56-9209-35fc5c23f560")
+		(uuid "99302fe1-1076-4e99-ab7e-e67726b63351")
 	)
 	(label "I2C0_SCL"
 		(at 340.3600 177.8000 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "3e11a2b2-0a9c-48d1-97ee-633f60457aaf")
+		(uuid "c358c969-f726-4029-98e3-dde161daa9c2")
 	)
 	(label "REVERSER_AIN"
 		(at 370.8400 66.0400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "d1952ca0-1558-4d57-892c-e67f737ae7d6")
+		(uuid "ef872821-5aef-46f2-b7a8-0f0b9a92d5bc")
 	)
 	(hierarchical_label "REVERSER_AIN"
 		(shape bidirectional)
 		(at 320.0400 109.2200 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "edd77e4e-7475-45b5-9313-3c66ac7e130d")
+		(uuid "b6f37cec-2f71-4a57-93c7-dc688bfe8c91")
 	)
 	(label "REVERSER_AIN"
 		(at 345.4400 109.2200 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "9c0df770-0c9c-45a8-9a99-e5b6604b0818")
+		(uuid "4898395c-1d4e-407e-a721-7fa9390f9cb6")
 	)
 	(label "CHG_STAT"
 		(at 378.4600 212.0900 90)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "f23682d8-a0d5-4a3b-8cc5-27a4b5c5ef88")
+		(uuid "decadfef-fad3-4279-ac3f-0328fa3e10f7")
 	)
 	(hierarchical_label "CHG_STAT"
 		(shape bidirectional)
 		(at 340.3600 208.2800 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "679d4e67-9e2d-4e9e-91a5-1d294923b7f2")
+		(uuid "9086c3a9-9478-4307-b42c-7d75a3b5958e")
 	)
 	(label "CHG_STAT"
 		(at 365.7600 208.2800 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "c186612f-18b0-45d6-9e6f-8d6ccfeb490c")
+		(uuid "07afb2cd-e80a-4bd8-8dc2-7d6d8d91746a")
 	)
 	(hierarchical_label "USB_VBUS"
 		(shape bidirectional)
 		(at 345.4400 243.8400 180)
 		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "56b64be1-041f-41da-af02-fe52c16c567a")
+		(uuid "fbc2f4d3-3330-4b92-b000-519cce953708")
 	)
 	(label "USB_VBUS"
 		(at 370.8400 243.8400 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "0def10f0-4bf7-4d58-9d94-054499250247")
+		(uuid "f29322d7-fd6e-4f2d-a2cb-e1e138e7e081")
 	)
 	(text "J15 -> button J1: 6-way 1mm FFC, Molex 0151670213 Type A (same-side).\nBOTTOM contacts at both ends: main pin n -> button pin 7-n. Not a 1:1 harness.\nMain pinout: 1 GND / 2 3V3 / 3 SDA / 4 SCL / 5 IRQ_N / 6 USB 5V.\n3V3 keeps keys alive on battery; 5V RGB is USB only. Power off before insertion.\nSW18/SW19 remain direct Select/Start. I2C0=100kHz; panel address 0x20.\nExisting R9/R10 provide SDA/SCL pull-ups; no additional panel pull-ups."
 		(exclude_from_sim no)
 		(at 20.32 200.66 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "d07d97cb-819e-4d86-a0f0-1648949b2729")
+		(uuid "65ed1d5d-01c1-4734-9cbd-85a27c76e1db")
 	)
 	(text "J9: 1=3V3, 2=common, 3=GND.\nSPDT center-off: F / N / R."
 		(exclude_from_sim no)
 		(at 309.88 121.92 0)
 		(effects (font (face "Courier New") (size 1.27 1.27)) (justify left top))
-		(uuid "79caf2e1-56b1-4b8e-8f25-cf13a91a93e6")
+		(uuid "33a2b51f-80ee-4cc1-a66b-ecb295aca7ab")
 	)
 	(sheet_instances
 		(path "/"

@@ -82,3 +82,13 @@ Project-authored `notchdeck:TCA9543APWR` symbol, own work, transcribed from the
 [TI TCA9543A datasheet pin-functions table](https://www.ti.com/lit/ds/symlink/tca9543a.pdf).
 PW/TSSOP14 mapping: 1=A0,2=A1,3=RESET,4=INT0,5=SD0,6=SC0,7=GND,8=INT1,
 9=SD1,10=SC1,11=INT,12=SCL,13=SDA,14=VCC. Standard KiCad TSSOP14 footprint.
+
+### TPS259531DSGR (Rev F)
+
+Project-authored `notchdeck:TPS259531DSGR` symbol, own work, transcribed from
+[TI TPS2595 datasheet](https://www.ti.com/lit/ds/symlink/tps2595.pdf), DSG pin
+functions: 1=dVdt, 2=EN/UVLO, 3/4=IN, 5=OUT, 6=FLT, 7=ILM, 8=GND, 9=EP.
+The `531` variant is active-high enable with auto-retry. EP is a visible ground pin.
+Standard KiCad `DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm` footprint: matching pitch
+and exposed pad; longer outer lands than the TI drawing. Final assembly and
+thermal-via review remain.

@@ -3,7 +3,7 @@
     "hardware/notchdeck-one/notchdeck-one.kicad_sch",
     "hardware/notchdeck-buttons/notchdeck-buttons.kicad_sch"
   ],
-  "last_sync": "2026-10-03T23:10:00Z",
+  "last_sync": "2026-10-05T04:38:00Z",
   "parts": {
     "CL05B104KO5NNNC": {
       "file": "C1525.pdf",
@@ -31,6 +31,7 @@
         "notchdeck-one:C42",
         "notchdeck-one:C43",
         "notchdeck-one:C44",
+        "notchdeck-one:C48",
         "notchdeck-buttons:C21",
         "notchdeck-buttons:C22",
         "notchdeck-buttons:C23",
@@ -165,7 +166,13 @@
         "notchdeck-one:R25",
         "notchdeck-one:R34",
         "notchdeck-one:R35",
-        "notchdeck-one:R36"
+        "notchdeck-one:R36",
+        "notchdeck-one:R49",
+        "notchdeck-one:R50",
+        "notchdeck-one:R51",
+        "notchdeck-one:R52",
+        "notchdeck-one:R54",
+        "notchdeck-one:R56"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 467557
@@ -223,6 +230,10 @@
       "lcsc": "C25104",
       "status": "ok",
       "references": [
+        "notchdeck-one:R43",
+        "notchdeck-one:R44",
+        "notchdeck-one:R45",
+        "notchdeck-one:R58",
         "notchdeck-buttons:R11"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
@@ -242,6 +253,12 @@
         "notchdeck-one:R22",
         "notchdeck-one:R23",
         "notchdeck-one:R24",
+        "notchdeck-one:R46",
+        "notchdeck-one:R47",
+        "notchdeck-one:R48",
+        "notchdeck-one:R53",
+        "notchdeck-one:R55",
+        "notchdeck-one:R59",
         "notchdeck-buttons:R26",
         "notchdeck-buttons:R6",
         "notchdeck-buttons:R7"
@@ -269,6 +286,7 @@
         "notchdeck-one:R40",
         "notchdeck-one:R41",
         "notchdeck-one:R42",
+        "notchdeck-one:R57",
         "notchdeck-buttons:R1",
         "notchdeck-buttons:R2",
         "notchdeck-buttons:R3",
@@ -369,7 +387,8 @@
         "notchdeck-one:C4",
         "notchdeck-one:C7",
         "notchdeck-one:C8",
-        "notchdeck-one:C12"
+        "notchdeck-one:C12",
+        "notchdeck-one:C47"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 7856403
@@ -452,7 +471,8 @@
       "status": "ok",
       "references": [
         "notchdeck-one:J10",
-        "notchdeck-one:J11"
+        "notchdeck-one:J11",
+        "notchdeck-one:J19"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 118956
@@ -494,7 +514,10 @@
       "lcsc": "C295747",
       "status": "ok",
       "references": [
-        "notchdeck-one:J2"
+        "notchdeck-one:J2",
+        "notchdeck-one:J16",
+        "notchdeck-one:J17",
+        "notchdeck-one:J18"
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 719637
@@ -655,6 +678,75 @@
       ],
       "verification": "catalog identity matched; see BOM review notes for drawing checks",
       "size_bytes": 1441474
+    },
+    "ZXMS6005DGTA": {
+      "file": "C174045.pdf",
+      "manufacturer": "DIODES",
+      "description": "-40\u2103~+125\u2103 1 150m\u03a9 2A 60V Active High Low Side Switch Short-Circuit  Protection(SCP)\u3001Over Voltage Protection\u3001Overcurrent Protection(OCP)\u3001Over Temperature Protection SOT-223-3 Power Distribution Switches ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/f028d27543061fafe3ef0d34478a3c92.pdf?productCode=C174045",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C174045",
+      "references": [
+        "notchdeck-one:Q2",
+        "notchdeck-one:Q3",
+        "notchdeck-one:Q4"
+      ],
+      "cached_download_url": "https://www.diodes.com/assets/Datasheets/ZXMS6005DG.pdf",
+      "cache_note": "Legacy Rev 1 cached; modern Rev 4 also consulted via manufacturer web PDF.",
+      "status": "ok"
+    },
+    "B360A": {
+      "file": "C6807778.pdf",
+      "manufacturer": "FUXINSEMI",
+      "description": "-55\u2103~+150\u2103 100uA@60V 3A 60V 700mV@3A 80A Independent SMA(DO-214AC) Schottky Diodes ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/4341698a2794575dc7c94af0a06dfb39.pdf?productCode=C6807778",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C6807778",
+      "references": [
+        "notchdeck-one:D20",
+        "notchdeck-one:D21",
+        "notchdeck-one:D22",
+        "notchdeck-one:D23"
+      ],
+      "status": "ok"
+    },
+    "CL32B226KAJNNNE": {
+      "file": "C309062.pdf",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "description": "22uF 25V X7R \u00b110% 1210 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf?productCode=C309062",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C309062",
+      "references": [
+        "notchdeck-one:C45",
+        "notchdeck-one:C46"
+      ],
+      "status": "ok"
+    },
+    "TPS259531DSGR": {
+      "file": "C2155674.pdf",
+      "manufacturer": "TI",
+      "description": "-40\u2103~+125\u2103@(Tj) 0.75mm 1 2.7V~18V 2mm 2mm 34m\u03a9 Integrated FET Surface Mount WSON-8-EP(2x2) Surge Protection Devices (SPDs) ROHS",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps2595.pdf",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C2155674",
+      "references": [
+        "notchdeck-one:U13"
+      ],
+      "status": "ok"
+    },
+    "2N7002": {
+      "file": "C8545.pdf",
+      "manufacturer": "JSCJ",
+      "description": "1 N-channel 115mA 2.5V 225mW 50pF 5pF 5\u03a9@10V 60V SOT-23 MOSFETs ROHS",
+      "datasheet_url": "https://datasheet.lcsc.com/datasheet/pdf/a141b8bd86b14475955ac8c4d3eea0a8.pdf?productCode=C8545",
+      "source": "reviewed JLCPCB selection; manufacturer PDF",
+      "lcsc": "C8545",
+      "references": [
+        "notchdeck-one:Q5",
+        "notchdeck-one:Q6"
+      ],
+      "status": "ok"
     }
   }
 }

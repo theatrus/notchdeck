@@ -1,4 +1,4 @@
-# Rev E magnetic and Gray-coded handles
+# Magnetic and Gray-coded handles (Rev E/F)
 
 The same PCB supports a combined 15-position mascon, or separate power and brake
 handles. Each handle independently uses an AS5600 magnetic sensor or Gray-coded
@@ -154,10 +154,10 @@ an unplugged sensor never causes automatic fallback to another backend.
 `make -C firmware test` checks all cam patterns/adjacent transitions, angle wrap and
 reversed travel, calibration rejection, hysteresis, debounce, uptime wrap, stale
 input, brake priority and neutral re-arming. CI compiles all six profiles using the shared Rev C/D pin map.
-Rev E native checks cover both assemblies: logic 93 components/318 endpoints and
-panel 85 components/235 endpoints, with 92 and 84 assembly placements respectively.
+Rev F logic / Rev E panel native checks cover both assemblies: logic 128 components/402 endpoints and
+panel 85 components/235 endpoints, with 127 and 84 assembly placements respectively.
 Both have zero ERC errors/warnings and no DRC rule or parity violations;
-249 logic and 211 panel connections remain unrouted. See [hardware status](../hardware/README.md).
+319 logic and 211 panel connections remain unrouted. See [hardware status](../hardware/README.md).
 
 Before hardware use: build the cams or sensor carriers, measure/calibrate magnetic
 handles, scope the harness signals, verify unplug/reconnect and startup behavior,

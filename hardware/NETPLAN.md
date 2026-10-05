@@ -2,7 +2,7 @@
 
 Pad-level reference for the captured schematic. Pad numbers are the
 **E73-2G4M08S1C** module pads (per `lib/symbols/notchdeck:E73-2G4M08S1C`, confirmed against
-Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev E
+Ebyte's pin table). Parts/refs follow [`PARTS.md`](PARTS.md). GPIO assignments are the captured Rev F
 default; change the manifest, independent net contract, saved PCB and firmware
 together when reassigning them.
 
@@ -37,13 +37,13 @@ together when reassigning them.
 | 2 | P1.10 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 6 | P1.13 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 17 | P1.09 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
-| 32 | P0.20 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
-| 33 | P0.13 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 32 | P0.20 | **SOL1_PWM** | Q2 solenoid 1 input and J19.2 via series resistors |
+| 33 | P0.13 | **SOL2_PWM** | Q3 solenoid 2 input and J19.3 via series resistors |
 | 40 | P1.04 | BTN7 select | |
 | 42 | P1.06 | BTN8 start | |
-| 34 | P0.22 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
-| 35 | P0.24 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
-| 36 | P1.00 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
+| 34 | P0.22 | **BUZZ_PWM** | Q4 active buzzer input and J19.4 via series resistors |
+| 35 | P0.24 | **ACT_EN** | Electronic limiter enable; default low; also suspends charging |
+| 36 | P1.00 | **ACT_nFAULT** | U13 thermal fault, active-low open drain; 10k pull-up |
 | 38 | P1.02 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 41 | P0.09/NFC1 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
 | 43 | P0.10/NFC2 | **NC** | Former direct button/RGB input; intentionally unused in Rev E |
@@ -57,7 +57,7 @@ together when reassigning them.
 | 15 | P0.05/AIN3 | **LEVER_S3** | coded-switch bit 3 (J5.5); GPIO in, ext 10k pull-up + RC debounce |
 | 18 | P0.04/AIN2 | **LEVER_S2** | coded-switch bit 2 (J5.4); GPIO in, ext 10k pull-up + RC debounce |
 
-Rev E moves all 16 panel keys and RGB output to the button MCU. Main retains BTN7 (SW18 Select) and BTN8 (SW19 Start); future firmware must combine the panel's corresponding keys with these. Fourteen former GPIO pads are now intentionally NC. Gray handle inputs and magnetic buses remain independent and unchanged.
+Rev E moves all 16 panel keys and RGB output to the button MCU. Main retains BTN7 (SW18 Select) and BTN8 (SW19 Start); future firmware must combine the panel's corresponding keys with these. Rev F reuses five former GPIOs for the actuator bank, leaving nine spare GPIOs intentionally NC. Gray handle inputs and magnetic buses remain independent and unchanged.
 
 ## Rev E button interconnect
 
@@ -88,7 +88,7 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
   uses this, and firmware reads VBUS-present from it (no GPIO needed — `vbus_present()` in
   `main.c`).
 - **Charger:** MCP73832-2-OT, 1-cell Li-ion. `PROG` resistor sets charge current (e.g. 2 kΩ ≈
-  500 mA, 10 kΩ ≈ 100 mA — match the battery). `STAT` → CHG_STAT (P0.17) + a charge LED.
+  500 mA, 10 kΩ ≈ 100 mA — match the battery). Rev F places Q6 in R3's return so the actuator-enable interlock can float PROG and suspend charging. `STAT` → CHG_STAT (P0.17) + a charge LED.
 - **Power-path:** Q1 AO3401A **drain (3) → BAT+, source (2) → VSYS**;
   its body diode conducts BAT+ toward VSYS and blocks VSYS-to-battery backfeed.
   Gate (1) → R4 100k → GND, and USB_VBUS → R5 1k → gate. D19 B5819W anode (2)
@@ -96,6 +96,12 @@ USB-C VBUS (5V) ──[TVS/ESD]──┬─────────────�
   from the load; R4 turns Q1 on when USB is absent.
 - **Fuel gauge:** MAX17048 `VDD`(3) → BAT+ (it senses its own supply); `CELL`(2) → BAT+ per the ADI pin table (internally unconnected in MAX17048); `CTG`(1), `GND`(4), `EP`(9), `QSTRT`(6) → GND; `ALRT`(5) → FG_ALRT
   (P0.15) with pull-up. See the verified sources below.
+
+## Rev F actuator branch
+
+The sheet `Actuators` receives `BAT_RAW` from Power, a charger-enable link back to Power, and five MCU signals through root-sheet wires. `BAT_RAW` is J2 battery positive after **external protected-pack cutoff**; the older power diagram labels this BAT+. U13 TPS259531 IN3/4 connects to BAT_RAW; OUT5 feeds ACT_BAT. EN2 is default-low; ACT_EN also drives Q5 to open the charger PROG return through Q6; FLT6 goes to P1.00; GND8/EP9 are grounded. ILM7 sees R56+R58=1.33k; dVdt1 sees C48=100nF. The limit is nominally 1.54A, with a 1.3A operating bank budget.
+
+J16/J17/J18 pin1 is ACT_BAT and pin2 is the protected low-side switched return. J19 pins1–4 are GND, SOL1_PWM_EXT, SOL2_PWM_EXT, BUZZ_PWM_EXT; these are **3.3V logic only** and follow the raw MCU commands independently of U13. See [actuator pinouts, battery protection boundaries and strike/hold requirements](notchdeck-one/ACTUATORS.md). There is no one-time fuse. The cell-side protection must handle dead shorts upstream of this branch.
 
 ## USB-C (J1, HRO TYPE-C-31-M-12)
 

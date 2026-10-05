@@ -1,16 +1,16 @@
-# BOM and sourcing — Rev E
+# BOM and sourcing — Rev F logic / Rev E panel
 
-Rev E has **two separately assembled PCBs**. All installed board components have
+The controller has **two separately assembled PCBs**. All installed board components have
 selected JLCPCB catalog codes. The following counts and stock observations are
-the **2026-10-03 snapshot**, not live availability or reservations.
+dated in the CSV rows (actuator additions: **2026-10-04 PDT**), not reservations.
 
 | Assembly | Installed parts per board | Unique JLCPCB codes | Tracked assembly BOM |
 |---|---:|---:|---|
-| Logic / handles | 92 | 31 | [notchdeck-one](../hardware/notchdeck-one/bom/jlcpcb-bom.csv) |
+| Logic / handles / actuators | 127 | 37 | [notchdeck-one](../hardware/notchdeck-one/bom/jlcpcb-bom.csv) |
 | Button / RGB panel | 84 | 13 | [notchdeck-buttons](../hardware/notchdeck-buttons/bom/jlcpcb-bom.csv) |
-| Complete set | 176 | 37 across both boards | [Five-set stock requirements](../hardware/jlcpcb-five-set-stock.csv) |
+| Complete set | 211 | 42 across both boards | [Five-set stock requirements](../hardware/jlcpcb-five-set-stock.csv) |
 
-Five sets need **880 installed parts before assembly attrition**, plus five
+Five sets need **1,055 installed parts before assembly attrition**, plus five
 interconnect cables. Bare programming contacts and mounting holes are excluded
 from BOM/CPL. Shared catalog codes are counted across both boards in the five-set
 report; do not independently allocate the same stock balance to each board.
@@ -40,7 +40,20 @@ selections except the panel MCU, covered by owned inventory. Reusable private
 inventory is at `~/Dropbox-elec/github/jlcpcb-private-inventory.csv`; balances
 stay outside this repository. It is a snapshot, and allocation/reservation detail
 was unavailable. Confirm free allocation, assembly attrition, current stock and
-fees before an order. No purchases or reservations have been made.
+fees before an order. The user placed the earlier Rev E order and the shared
+inventory was refreshed afterward. Do not count incoming quantities again
+when they are already included in `total_private_qty`.
+
+## Rev F actuator top-up for 20 sets
+
+With 10% spares (22 board-equivalents) and Tenkiro targets held aside, the local
+reconciliation currently needs **36 C174045 FETs, 22 C2155674 electronic limiters,
+66 C295747 two-pin connectors and 16 C265102 four-pin connectors**. Other added
+parts fit the owned balance, including the four B360A diodes per main board and
+two 22µF capacitors. Exact private balances and dated public observations are
+in `~/Dropbox-elec/github/notchdeck-actuator-expansion-2026-10-04.csv`, outside Git.
+No actuator top-up has been added to a cart or purchased. These are assembly
+components only; coils, buzzer, pack and harnesses remain separate.
 
 ## Cable and external parts
 
@@ -55,7 +68,7 @@ tolerance mismatch still requiring sample-fit or supplier approval. Nominal
 dimensions alone do not establish production fit.
 
 Mating handle housings/crimps, external AS5600 carriers, microload switches,
-magnets/cams, protected cell, keycaps and enclosure are **not a fully sourced kit**.
+magnets/cams, protected cell, solenoids, active buzzer, keycaps and enclosure are **not a fully sourced kit**.
 The PCB stock report does not cover these items. Select exact parts and check
 their availability when the mechanical design is finalized.
 

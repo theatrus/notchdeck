@@ -1,4 +1,4 @@
-# Hardware and firmware architecture — Rev E
+# Hardware and firmware architecture — Rev F logic / Rev E panel
 
 Rev E separates the controller's logic/handle connectors from its 4×4 button panel.
 Both schematics are wired and checked; both PCBs remain unrouted. This describes
@@ -56,7 +56,7 @@ I²C runs at 100kHz; its versioned panel register/packet protocol remains to be
 defined. The main firmware must merge panel input with local Select/Start,
 release panel keys on communications loss, and send bounded RGB commands.
 
-Rev E frees the old direct button/RGB GPIOs, including NFC pins. No external LF
+Rev F assigns five of the former direct button/RGB GPIOs to actuators and leaves nine spare GPIOs, including NFC pins. No external LF
 crystal is populated; retain the nRF RC LFCLK and P0.18 reset/UICR configuration.
 The [net plan](../hardware/NETPLAN.md) is the pad-level reference. Rev C/D firmware
 overlays do not support the new panel despite unchanged handle pin assignments.
@@ -91,7 +91,13 @@ unrestricted full-white LEDs.
 
 The current nRF `leds.c` is an older direct-strip skeleton: its host override,
 warning lamps, speed/status rendering and timeout behavior are incomplete. Rev E
-needs a panel transport backend. There is no selected display or buzzer assembly.
+needs a panel transport backend. There is no selected display. Rev F provides an external active-buzzer driver, but the buzzer and solenoid assemblies are not yet selected.
+
+## Rev F actuators and protection
+
+Two battery-voltage solenoids and an active buzzer use owned ZXMS6005DGTA low-side drivers, with B360A flyback diodes. J19 provides the same commands at 3.3V for an external 12V booster/driver. U13 TPS259531 limits the actuator feed to about 1.54A nominal; use 1.3A as the operating bank budget and stagger strikes. Q5/Q6 suspend charging in hardware while the actuator bank is enabled, allowing actuation during USB operation. A protected 1S battery pack is required to handle shorts upstream of the board limiter. No disposable fuse is used.
+
+Actuator firmware is pending. The [actuator guide](../hardware/notchdeck-one/ACTUATORS.md) defines pinouts, protection boundaries, timed strike/500Hz hold PWM, fault behavior and bench checks. Duty control does not measure individual coil current; external 12V drivers need their own protection.
 
 ## Implementation and validation
 
